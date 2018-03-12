@@ -1,0 +1,56 @@
+/*-----------------------------------------]
+
+	[Global Main Stylesheet] - V 0.0.1
+	Created On: Dec - 28 - 2016 - Ubuntu 16.04
+
+	Desc: Main stylesheet comprises the
+	imports necessary to style the website
+	and avoids repetition inside the components
+
+----------------------------------------]*/
+
+/*----
+ Mdev Boilerplate
+-----*/
+@import '~@moreira-development/sass-boilerplate/styles/global-main.scss';
+
+/*----
+	Global Variables
+-----*/
+@import './variables.scss';
+
+/*----
+	Global Typography
+-----*/
+@import './typography.scss';
+
+/*----
+ 	Utilities
+-----*/
+@import './utilities.scss';
+
+/*---
+  Scaffolding
+-----*/
+@import './scaffolding.scss';
+
+/*---
+  icons
+-----*/
+@import './icons.scss';
+
+/*----
+  Buttons
+-----*/
+@import './buttons.scss';
+
+/*----
+  Forms
+-----*/
+@import './forms.scss';
+
+/*----
+  Print
+-----*/
+@import './print.scss';
+
