@@ -1,7 +1,6 @@
 <template>
   <section class="mdev-main-content">
-    <hero-main></hero-main>
-    <h1> HOME </h1>
+    <h1> 404404 </h1>
   </section>
 </template>
 

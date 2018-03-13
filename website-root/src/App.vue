@@ -11,10 +11,10 @@
 
 
 <script>
-  
+
   //Local Component registration
   import MainNavigation from './components/shared/navigation.vue';
-  
+
   export default{
 
     components: {

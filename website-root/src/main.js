@@ -13,48 +13,48 @@ import { routes  } from './routes.js';
 import store from './store/store.js';
 
 // Import Auth Plugin
-import Auth from './plugins/auth.js';
+// import Auth from './plugins/auth.js';
 
 // [ i18n - Internationalization ] ----------------------
 
 // Configure I18n Internationalization Locales
-import en from './locales/en.js';
-import pt from './locales/pt.js';
-const locales = {
-  en,
-  pt
-};
+//import en from './locales/en.js';
+//import pt from './locales/pt.js';
+//const locales = {
+//  en,
+//  pt
+//};
 
 // Initialize vue-resource | vue-router | vue-i18n
-Vue.use(VueI18n);
+//Vue.use(VueI18n);
 Vue.use(VueResource);
 Vue.use(VueRouter);
-Vue.use(Auth);
+//Vue.use(Auth);
 
 // Set Language Default [ ENGLISH ]
-Vue.config.lang = 'en';
+//Vue.config.lang = 'en';
 
 // Create Global Method for accepting language change
-Vue.prototype.$locale = {
-  change (lang) {
-    Vue.config.lang = lang;
-  },
-  current () {
-    return Vue.config.lang;
-  }
-};
+//Vue.prototype.$locale = {
+//  change (lang) {
+//    Vue.config.lang = lang;
+//  },
+//  current () {
+//    return Vue.config.lang;
+//  }
+//};
 
 // Set Key:value pairs for translation keys
-Object.keys(locales).forEach(function (lang) {
-  Vue.locale(lang, locales[lang]);
-});
+//Object.keys(locales).forEach(function (lang) {
+//  Vue.locale(lang, locales[lang]);
+//});
 //-----------------------------------------------[ i18n ]
 
 // [ Vue Resource ] ------------------------------------
 // Set Global Root path
 Vue.http.options.root = 'https://vuejs-http-resource.firebaseio.com/';
 
-// Set Global Intercept 
+// Set Global Intercept
 Vue.http.interceptors.push( (request, next) => {
   console.log(request);
   // To use when defining a single API that is not firebase
@@ -65,7 +65,7 @@ Vue.http.interceptors.push( (request, next) => {
     if (response.status == 404){
       alertify.error('Sorry, Our systems are not responding right now.');
     }
-  }); 
+  });
 });
 
 //--------------------------------------[ vue-resource ]
