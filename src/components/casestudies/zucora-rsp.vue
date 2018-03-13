@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-main-content">
-    <h1> 404Page </h1>
+    <h1> ZUCORA RSP </h1>
   </section>
 </template>
 
@@ -9,14 +9,8 @@
 
 <script>
 
-  //Local Component registration
-  import HeroMain       from '../modules/hero-main.vue';
-
   export default{
-
-    components: {
-      'hero-main'       : HeroMain
-    }
+    name: 'ZucoraRsp'
   };
 </script>
 
