@@ -4,8 +4,8 @@
 
 <script>
   export default {
-   name: "CaseStudies",
-   mounted: function() {console.log('CaseStudies Container');}
+   name: "CaseStudiesView",
+   mounted: function() {console.log('Services Container');}
   };
 </script>
 

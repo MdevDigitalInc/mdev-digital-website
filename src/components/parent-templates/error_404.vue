@@ -10,13 +10,8 @@
 <script>
 
   //Local Component registration
-  import HeroMain       from '../modules/hero-main.vue';
-
   export default{
-
-    components: {
-      'hero-main'       : HeroMain
-    }
+    name: 'ErrorPage'
   };
 </script>
 

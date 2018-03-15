@@ -1,19 +1,20 @@
 // Import Parent Compontents
-import Home                 from './components/parent-templates/home.vue';
-import About                from './components/parent-templates/about.vue';
+import About                from './components/about/about.vue';
 import Contact              from './components/parent-templates/contact.vue';
 import ErrorPage            from './components/parent-templates/error_404.vue';
+import Home                 from './components/parent-templates/home.vue';
 // Case Studies
 import CaseStudies          from './components/casestudies/casestudies.vue';
 import CaseStudiesOverview  from './components/casestudies/casestudies-all.vue';
-import ZucoraTwop           from './components/casestudies/zucora-twop.vue';
 import ZucoraRsp            from './components/casestudies/zucora-rsp.vue';
+import ZucoraTwop           from './components/casestudies/zucora-twop.vue';
 // Services
 import Services             from './components/services/services.vue';
-import ServicesOverview     from './components/services/service-all.vue';
 import ServicesAppDev       from './components/services/service-appdev.vue';
+import ServicesBranding     from './components/services/service-branding.vue';
 import ServicesConsulting   from './components/services/service-consulting.vue';
 import ServicesDigiAds      from './components/services/service-digiads.vue';
+import ServicesOverview     from './components/services/service-all.vue';
 import ServicesUx           from './components/services/service-ux.vue';
 
 //import AuthComponent from './components/auth/Authentication.vue';
@@ -71,6 +72,10 @@ export const routes = [
       {
         path: 'overview',
         component: ServicesOverview,
+      },
+      {
+        path: 'branding',
+        component: ServicesBranding,
       },
       {
         path: 'app-development',

@@ -18,55 +18,54 @@ import store from './store/store.js';
 // [ i18n - Internationalization ] ----------------------
 
 // Configure I18n Internationalization Locales
-//import en from './locales/en.js';
+import en from './locales/en.js';
 //import pt from './locales/pt.js';
-//const locales = {
-//  en,
-//  pt
-//};
+const locales = {
+  en
+};
 
 // Initialize vue-resource | vue-router | vue-i18n
-//Vue.use(VueI18n);
+Vue.use(VueI18n);
 Vue.use(VueResource);
 Vue.use(VueRouter);
 //Vue.use(Auth);
 
 // Set Language Default [ ENGLISH ]
-//Vue.config.lang = 'en';
+Vue.config.lang = 'en';
 
 // Create Global Method for accepting language change
-//Vue.prototype.$locale = {
-//  change (lang) {
-//    Vue.config.lang = lang;
-//  },
-//  current () {
-//    return Vue.config.lang;
-//  }
-//};
+Vue.prototype.$locale = {
+  change (lang) {
+    Vue.config.lang = lang;
+  },
+  current () {
+    return Vue.config.lang;
+  }
+};
 
 // Set Key:value pairs for translation keys
-//Object.keys(locales).forEach(function (lang) {
-//  Vue.locale(lang, locales[lang]);
-//});
+Object.keys(locales).forEach(function (lang) {
+  Vue.locale(lang, locales[lang]);
+});
 //-----------------------------------------------[ i18n ]
 
 // [ Vue Resource ] ------------------------------------
 // Set Global Root path
-Vue.http.options.root = 'https://vuejs-http-resource.firebaseio.com/';
+//Vue.http.options.root = 'https://vuejs-http-resource.firebaseio.com/';
 
 // Set Global Intercept
-Vue.http.interceptors.push( (request, next) => {
-  console.log(request);
-  // To use when defining a single API that is not firebase
-  //if (request.url[0] === '/'){
-  //  request.url = "https:apiurl:3030" + request.url;
-  //}
-  next( function(response){
-    if (response.status == 404){
-      alertify.error('Sorry, Our systems are not responding right now.');
-    }
-  });
-});
+//Vue.http.interceptors.push( (request, next) => {
+//  console.log(request);
+//  // To use when defining a single API that is not firebase
+//  //if (request.url[0] === '/'){
+//  //  request.url = "https:apiurl:3030" + request.url;
+//  //}
+//  next( function(response){
+//    if (response.status == 404){
+//      alertify.error('Sorry, Our systems are not responding right now.');
+//    }
+//  });
+//});
 
 //--------------------------------------[ vue-resource ]
 
