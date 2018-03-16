@@ -2,7 +2,7 @@
 import About                from './components/about/about.vue';
 import Contact              from './components/parent-templates/contact.vue';
 import ErrorPage            from './components/parent-templates/error_404.vue';
-import Home                 from './components/parent-templates/home.vue';
+import Home                 from './components/home/home.vue';
 // Case Studies
 import CaseStudies          from './components/casestudies/casestudies.vue';
 import CaseStudiesOverview  from './components/casestudies/casestudies-all.vue';
