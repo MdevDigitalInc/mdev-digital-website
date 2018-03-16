@@ -1,6 +1,5 @@
 <template>
   <section class="mdev-main-content">
-    <hero-main></hero-main>
     <h1> CONTACT </h1>
   </section>
 </template>
@@ -10,14 +9,7 @@
 
 <script>
 
-  //Local Component registration
-  import HeroMain       from '../modules/hero-main.vue';
-
   export default{
-
-    components: {
-      'hero-main'       : HeroMain
-    }
   };
 </script>
 

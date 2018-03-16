@@ -4,7 +4,7 @@
 
 <script>
   export default {
-   name: "Services",
+   name: "ServicesView",
    mounted: function() {console.log('Services Container');}
   };
 </script>

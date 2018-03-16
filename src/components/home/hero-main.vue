@@ -9,6 +9,7 @@
 <script>
 
 	export default {
+    name: 'MainHero',
     data: function() {
       return{
         heroStyles: {
