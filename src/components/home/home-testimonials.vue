@@ -1,5 +1,5 @@
 <template>
-    <h1> Homepage Case Studies </h1>
+    <h1> Homepage TESTIMONIALS </h1>
 </template>
 
 
