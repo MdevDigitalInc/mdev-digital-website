@@ -1,7 +1,6 @@
 <template>
   <section class="mdev-main-content">
-    <hero-main></hero-main>
-    <h1> HOME </h1>
+    <h1> Philosophy </h1>
   </section>
 </template>
 
@@ -10,14 +9,8 @@
 
 <script>
 
-  //Local Component registration
-  import HeroMain       from '../modules/hero-main.vue';
-
   export default{
-
-    components: {
-      'hero-main'       : HeroMain
-    }
+    name: 'Philosophy'
   };
 </script>
 
