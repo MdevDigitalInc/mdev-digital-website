@@ -109,7 +109,13 @@ module.exports = {
               }
             },
             'postcss-loader',
-            'sass-loader'
+            'sass-loader',
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: './src/assets/styles/component-lean-main.scss'
+              }
+            }
           ]
         }),
       },
@@ -153,7 +159,8 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({ options: { postcss: [ autoprefixer ]  } }),
     new VueLoaderPlugin(),
     new StyleLintPlugin({
-      syntax: 'scss'
+      syntax: 'scss',
+      files: ['**/*.vue']
     }),
     // Text Extraction & Chunking
     new ExtractTextPlugin("assets/styles/styles[hash].css"),
