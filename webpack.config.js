@@ -73,37 +73,46 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-                test: /\.vue$/,
-                loader: 'vue-loader',
-                options: {
-                            loaders: {
-                                          js: 'babel-loader'
-                                        }
-                          }
-              },
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            js: 'babel-loader'
+          }
+        }
+      },
+      {
+        test: /\.js$/,
+          exclude: /(node_modules)/,
+          use: [{
+            loader: "babel-loader",
+            options: { presets: ['es2015'] }
+          }]
+        },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+        fallback: "style-loader",
+          use: ["css-loader"]
+        })
+      },
+      {
+        test: /\.scss$/,
+        use:
+        ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
             {
-                      test: /\.js$/,
-                      exclude: /(node_modules|bower_components)/,
-                      use: [{
-                                  loader: "babel-loader",
-                                  options: { presets: ['es2015'] }
-                                }]
-                    },
-            {
-                      test: /\.css$/,
-                      use: ExtractTextPlugin.extract({
-                                  fallback: "style-loader",
-                                  use: ["css-loader"]
-                                })
-                    },
-            {
-                      test: /\.scss$/,
-                      use:
-                          ExtractTextPlugin.extract({
-                                          fallback: "style-loader",
-                                          use: ['css-loader', 'sass-loader']
-                                        })
-                    },
+              loader: 'css-loader',
+              options: {
+                importLoaders: 2 // 0 => no loaders (default); 1 => postcss-loader; 2 => postcss-loader, sass-loader
+              }
+            },
+            'postcss-loader',
+            'sass-loader'
+          ]
+        }),
+      },
       // Image Processing
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,

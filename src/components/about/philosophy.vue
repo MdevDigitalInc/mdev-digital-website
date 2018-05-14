@@ -21,7 +21,6 @@
 	/*-----/
 	Global Main
 	/-----*/
-	@import '../../assets/styles/component-lean-main.scss';
 
 	/*--------------------------------------*/
 	/* Main Component Styles                */

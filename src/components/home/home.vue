@@ -38,12 +38,12 @@
 
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 	/*-----/
 	Global Main
 	/-----*/
-  @import '../../assets/styles/global-main.scss';
+  //@import '../../assets/styles/global-main.scss';
 	/*--------------------------------------*/
 	/* Main Component Styles                */
 	/*--------------------------------------*/
