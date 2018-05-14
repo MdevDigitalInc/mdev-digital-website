@@ -13,14 +13,12 @@
     "deploy": "s3-website deploy"
   },
   "dependencies": {
-    "@moreira-development/sass-boilerplate": "^1.1.2",
-    "vue": "^2.5.16",
-    "vue-i18n": "^5.0.0",
-    "vue-resource": "^1.5.0",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "style-loader": "^0.21.0",
+    "stylelint-processor-html": "^1.0.0",
+    "vue": "^2.5.16"
   },
   "devDependencies": {
+    "@moreira-development/sass-boilerplate": "^1.1.2",
     "autoprefixer": "^8.5.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
@@ -47,6 +45,10 @@
     "stylelint-webpack-plugin": "^0.10.4",
     "url-loader": "^1.0.1",
     "vue-loader": "^15.0.10",
+    "vue-i18n": "^5.0.0",
+    "vue-resource": "^1.5.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.8.3",

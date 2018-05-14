@@ -31,7 +31,6 @@
 Global Main
 /-----*/
 @import './assets/styles/global-main.scss';
-
 /*--------------------------------------*/
 /* Main Component Styles                */
 /*--------------------------------------*/

@@ -23,7 +23,18 @@ const StyleLintPlugin = require('stylelint-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require ('html-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
+const setPath = function(folderName) {
+  return path.join(__dirname, folderName);
+}
+
+const isProd = function() {
+  return (process.env.NODE_ENV === 'production') ? true : false;
+}
+const buildingForLocal = () => {
+  return (NODE_ENV === 'development');
+};
 // Module Exports
 module.exports = {
   // Asset Splitting [ Vendor | Build ]
@@ -42,6 +53,15 @@ module.exports = {
     publicPath: '/',
     filename: 'app/[name][hash].js'
   },
+  optimization:{
+    runtimeChunk: false,
+    splitChunks: {
+      chunks: "all", //Taken from https://gist.github.com/sokra/1522d586b8e5c0f5072d7565c2bee693
+    }
+  },
+  resolveLoader: {
+    modules: [setPath('/node_modules')]
+  },
   // Module Rules & Loaders
   module: {
     rules: [
@@ -52,29 +72,38 @@ module.exports = {
         use: 'eslint-loader',
         exclude: /node_modules/
       },
-      // Template Processing
       {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            scss: ExtractTextPlugin.extract({
-              use: 'css-loader?-autoprefixer!sass-loader!postcss-loader',
-              fallback: 'vue-style-loader'
-            })
-          },
-          // Must have postcss require autoprefixer for @import's to get piped.
-          postcss: [
-            require('postcss-cssnext')()
-          ]
-        }
-      },
-      // JavaScript Processing
-      {
-        test: /\.js$/,
-        use: ['babel-loader','eslint-loader'],
-        exclude: /node_modules/
-      },
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                options: {
+                            loaders: {
+                                          js: 'babel-loader'
+                                        }
+                          }
+              },
+            {
+                      test: /\.js$/,
+                      exclude: /(node_modules|bower_components)/,
+                      use: [{
+                                  loader: "babel-loader",
+                                  options: { presets: ['es2015'] }
+                                }]
+                    },
+            {
+                      test: /\.css$/,
+                      use: ExtractTextPlugin.extract({
+                                  fallback: "style-loader",
+                                  use: ["css-loader"]
+                                })
+                    },
+            {
+                      test: /\.scss$/,
+                      use:
+                          ExtractTextPlugin.extract({
+                                          fallback: "style-loader",
+                                          use: ['css-loader', 'sass-loader']
+                                        })
+                    },
       // Image Processing
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
@@ -113,6 +142,7 @@ module.exports = {
   plugins: [
     // Auto Prefix & Linting
     new webpack.LoaderOptionsPlugin({ options: { postcss: [ autoprefixer ]  } }),
+    new VueLoaderPlugin(),
     new StyleLintPlugin({
       syntax: 'scss'
     }),
@@ -121,9 +151,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
-    new CommonsChunkPlugin({
-      name: "vendors",
-    }),
+
     new FaviconsWebpackPlugin({
       logo: './src/assets/images/favicon.png',
       prefix: 'icons-[hash]/',
@@ -183,12 +211,6 @@ if (process.env.NODE_ENV === 'production') {
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true

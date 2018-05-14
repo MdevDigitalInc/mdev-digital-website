@@ -38,17 +38,15 @@
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 	/*-----/
 	Global Main
 	/-----*/
-	@import '../../assets/styles/component-lean-main.scss';
-
+  @import '../../assets/styles/global-main.scss';
 	/*--------------------------------------*/
 	/* Main Component Styles                */
 	/*--------------------------------------*/
-
 
 	/*--------------------------------------*/
 
