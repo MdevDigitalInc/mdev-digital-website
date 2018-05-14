@@ -10,9 +10,19 @@
 ----------------------------------------]*/
 
 /*----
+ Reset
+-----*/
+@import 'reset.scss';
+
+/*----
  Mdev Boilerplate
 -----*/
-@import '~@moreira-development/sass-boilerplate/styles/global-main.scss';
+@import '~@moreira-development/sass-boilerplate-lean/styles/global-main.scss';
+
+/*----
+  Flex
+-----*/
+@import './flex.scss';
 
 /*----
 	Global Variables

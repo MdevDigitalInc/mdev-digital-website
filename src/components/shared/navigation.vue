@@ -119,7 +119,7 @@
   /*--------------------------------------*/
   /* Lean Import for Components           */
   /*--------------------------------------*/
-//  @import '../../assets/styles/global-main.scss';
+  @import '../../assets/styles/global-main.scss';
   /* Disable because they are already linted */
   /* stylelint-disable */
   /* stylelint-enable */
@@ -156,7 +156,7 @@
     }
 
     .mdev-main-nav-links {
-      color: black;
+      color: $color-brand-primary;
     }
 
     .mdev-main-nav-links a {

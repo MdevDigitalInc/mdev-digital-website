@@ -16,7 +16,7 @@
     "vue": "^2.5.16"
   },
   "devDependencies": {
-    "@moreira-development/sass-boilerplate": "^1.1.2",
+    "@moreira-development/sass-boilerplate-lean": "^1.0.0",
     "autoprefixer": "^8.5.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
