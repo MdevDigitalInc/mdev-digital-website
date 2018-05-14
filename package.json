@@ -5,16 +5,14 @@
   "author": "Lucas Moreira <l.moreira@Live.ca>",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
+    "dev": "webpack-dev-server --mode development --open --inline --hot",
     "lintcss": "stylelint '**/*.vue' --syntax scss",
-    "build": "cross-env NODE_ENV=production webpack -p --progress --hide-modules",
+    "build": "webpack --mode production -p --progress --hide-modules",
     "clean": "rm -r dist/",
     "build-deploy": "npm run clean && npm run build && s3-website deploy",
     "deploy": "s3-website deploy"
   },
   "dependencies": {
-    "style-loader": "^0.21.0",
-    "stylelint-processor-html": "^1.0.0",
     "vue": "^2.5.16"
   },
   "devDependencies": {
@@ -42,6 +40,8 @@
     "robotstxt-webpack-plugin": "^4.0.1",
     "sass-loader": "^7.0.1",
     "stylelint": "^9.2.0",
+    "style-loader": "^0.21.0",
+    "stylelint-processor-html": "^1.0.0",
     "stylelint-webpack-plugin": "^0.10.4",
     "url-loader": "^1.0.1",
     "vue-loader": "^15.0.10",
