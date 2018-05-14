@@ -59,8 +59,8 @@ module.exports = {
         options: {
           loaders: {
             scss: ExtractTextPlugin.extract({
-              loader: 'css-loader?-autoprefixer!sass-loader!postcss-loader',
-              fallbackLoader: 'vue-style-loader'
+              use: 'css-loader?-autoprefixer!sass-loader!postcss-loader',
+              fallback: 'vue-style-loader'
             })
           },
           // Must have postcss require autoprefixer for @import's to get piped.
@@ -121,8 +121,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
+    new CommonsChunkPlugin({
+      name: "vendors",
     }),
     new FaviconsWebpackPlugin({
       logo: './src/assets/images/favicon.png',
