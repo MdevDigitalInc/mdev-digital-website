@@ -119,9 +119,9 @@
   /*--------------------------------------*/
   /* Lean Import for Components           */
   /*--------------------------------------*/
-  @import '../../assets/styles/global-main.scss';
   /* Disable because they are already linted */
   /* stylelint-disable */
+  @import '../../assets/styles/global-main.scss';
   /* stylelint-enable */
 
   /*--------------------------------------*/

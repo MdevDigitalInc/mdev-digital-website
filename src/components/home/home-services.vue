@@ -3,24 +3,45 @@
 </template>
 
 
-
 <script>
+  export default{
+    name: 'HomeServices',
+    data: function(){
+      return{
 
-	export default {
-    name: 'HomeCaseStudies'
-	};
+      };
+    },
 
+    mounted: function(){
+      console.log('Element Mounted');
+    },
+
+    methods: {
+      loadImage(path){
+        return require('../../assets/images/' + path);
+      },
+      // Change Language METHOD
+      change () {
+        let current = this.$locale.current();
+        if (current === 'en') {
+          this.$locale.change('pt');
+        } else {
+          this.$locale.change('en');
+        }
+      }
+    }
+  };
 </script>
+
+
 
 <style lang="scss">
 
-  /*--------------------------------------*/
-  /* Lean Import for Components           */
-  /*--------------------------------------*/
+	/*-------------------------------------*/
+	/* HOME SERVICES Component Styles
+	/--------------------------------------*/
 
-  /*--------------------------------------*/
-  /* Main Component Styles                */
-  /*--------------------------------------*/
-  /*--------------------------------------*/
+
+	/*--------------------------------------*/
 
 </style>
