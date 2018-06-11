@@ -5,25 +5,44 @@
 
 
 <script>
+  export default{
+    name: 'MainFooter',
+    data: function(){
+      return{
 
-	export default {
-    name: 'MainFooter'
-	};
+      };
+    },
 
+    mounted: function(){
+      console.log('Element Mounted');
+    },
+
+    methods: {
+      loadImage(path){
+        return require('../../assets/images/' + path);
+      },
+      // Change Language METHOD
+      change () {
+        let current = this.$locale.current();
+        if (current === 'en') {
+          this.$locale.change('pt');
+        } else {
+          this.$locale.change('en');
+        }
+      }
+    }
+  };
 </script>
 
-<style lang="scss" scoped>
-
-  /*--------------------------------------*/
-  /* Lean Import for Components           */
-  /*--------------------------------------*/
-  @import '../../assets/styles/component-lean-main.scss';
-
-  /*--------------------------------------*/
-  /* Main Component Styles                */
-  /*--------------------------------------*/
 
 
-  /*--------------------------------------*/
+<style lang="scss">
+
+	/*-------------------------------------*/
+	/* MAIN FOOTER Component Styles
+	/--------------------------------------*/
+
+
+	/*--------------------------------------*/
 
 </style>
