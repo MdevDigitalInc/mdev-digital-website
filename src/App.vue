@@ -34,6 +34,9 @@ Global Main
 /*--------------------------------------*/
 /* Main Component Styles                */
 /*--------------------------------------*/
+body {
+  background-color: $color-brand-bkg;
+}
 
 .fade-enter-active,
 .fade-leave-active {

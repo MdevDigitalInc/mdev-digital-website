@@ -1,6 +1,5 @@
 <template>
   <section class="mdev-main-content">
-    <h1> HOME </h1>
     <hero-main></hero-main>
     <home-services></home-services>
     <home-casestudies></home-casestudies>
@@ -25,6 +24,7 @@
 
   export default{
     name: 'HomePage',
+
     components: {
       'hero-main'         : HeroMain,
       'home-about'        : HomeAbout,
@@ -32,6 +32,14 @@
       'home-testimonials' : HomeTestimonials,
       'main-footer'       : MainFooter,
       'home-casestudies'  : HomeCaseStudies
+    },
+
+    mounted: function(){
+      this.$nextTick(function () {
+        setTimeout(function(){
+          $('[data-main-hero]').addClass('--mask-active');
+        }, 1000);
+      });
     }
   };
 </script>
