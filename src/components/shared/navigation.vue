@@ -1,17 +1,14 @@
 <template>
-  <nav class="mdev-main-nav" aria-role="navigation" role="navigation">
+  <nav class="mdev-main-nav" aria-role="navigation" data-main-nav role="navigation">
     <div class="mdev-nav-wrapper flex flex-nowrap flex-hor-between flex-vert-center">
       <a :href="homeLink" :title="homeTitle" class="mdev-main-nav-branding">
         <img :src="loadImage(homeBrand)">
       </a>
-    <div class="mdev-nav-open" :class="{ open: navIsOpen }">
+    <button class="mdev-nav-open" :class="{ open: navIsOpen }" v-on:click="openMenu">
       <span></span>
       <span></span>
       <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    </button>
     </div>
     <!--
     <button @click="change()">CHANGE</button>
@@ -46,7 +43,7 @@
           }
         ],
 
-        homeLink: '#',
+        homeLink: '/',
         homeTitle: 'Home',
         homeBrand: 'MDEV-nav-logo.png',
         navIsOpen: false
@@ -65,6 +62,10 @@
         } else {
           this.$locale.change('en');
         }
+      },
+      // Flip Nav Flag
+      openMenu() {
+        this.navIsOpen = !this.navIsOpen;
       }
     }
   };
@@ -91,7 +92,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding: 35px 0;
+    padding: 2vw 0;
     z-index: 10;
     transition: all, .3s;
     background: rgba( 51, 51, 51, 0 );
@@ -101,12 +102,12 @@
     }
 
     .mdev-main-nav-branding {
-      max-width: 83px;
-      min-width: 73px;
+      max-width: 53px;
+      min-width: 43px;
       height: auto;
-      width: 10%;
-      opacity: 1;
-      transition: all, .3s;
+      width: 3%;
+      opacity: 0;
+      transition: all 1.8s;
 
       &:hover {
         cursor: pointer;
@@ -116,88 +117,85 @@
   }
 
   .mdev-nav-open {
-    width: 60px;
-    height: 45px;
+    width: 4%;
+    height: auto;
     position: relative;
-    transform: rotate3d( 1, 1, 1, 0deg );
-    transition: .5s ease-in-out;
-    cursor: pointer;
+    overflow: visible;
+    max-width: 53px;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    border: none;
+    background: transparent;
+    transition: .2s all;
 
     span {
       display: block;
-      position: absolute;
-      height: 9px;
-      width: 50%;
-      background: #d3531a;
-      opacity: 1;
-      transform: rotate3d( 1, 1, 1, 0deg );
-      transition: .25s ease-in-out;
+      position: relative;
+      width: 100%;
+      background: $color-brand-primary;
+      padding-top: 17%;
+      box-shadow: inset -2px 2px 2px rgba( 0, 0, 0, .0);
+      transition: all .5s, opacity .3s;
+      border-radius: 0;
+
+      &:first-child {
+        transform: translate3d( 0, -8px, 0 );
+        opacity: 1;
+      }
+
+      &:last-child {
+        transform: translate3d( 0, 8px, 0 );
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      span {
+        background: lighten( $color-brand-primary, 15%);
+        box-shadow: inset -2px 2px 2px rgba( 0, 0, 0, .8);
+      }
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  }
+
+  .open {
+    span {
+      background: lighten( $color-brand-primary, 15%);
+      border-radius: 5px;
+
+      &:first-child {
+        transform: translate3d( 0, -80px, 0);
+        opacity: 0;
+      }
+
+      &:last-child {
+        transform: rotate3d( 0, 0, 1, 45deg);
+        top: -8px;
+      }
 
       &:nth-child( even ) {
-        left: 50%;
-        border-radius: 0 9px 9px 0;
+        transform: rotate3d( 0, 0, 1, -45deg);
       }
-
-      &:nth-child( odd ) {
-        left: 0;
-        border-radius: 9px 0 0 9px;
-      }
-
-      &nth-child( 1 ),
-      &:nth-child( 2 ) {
-        top: 0;
-      }
-
-      &:nth-child( 3 ),
-      &:nth-child( 4 ) {
-        top: 18px;
-      }
-
-      &:nth-child( 5 ),
-      &:nth-child( 6 ) {
-        top: 36px;
+    }
+    &:hover {
+      span {
+        background: lighten( $color-brand-primary, 15%);
+        box-shadow: none;
       }
     }
   }
 
-  .mdev-nav-open.open span:nth-child( 1 ),
-  .mdev-nav-open.open span:nth-child( 6 ) {
-    transform: rotate3d( 0, 0, 1, 45deg );
-  }
-
-  .mdev-nav-open.open span:nth-child( 2 ),
-  .mdev-nav-open.open span:nth-child( 5 ) {
-    transform: rotate3d( 0, 0, 1, -45deg );
-  }
-
-  .mdev-nav-open.open span:nth-child( 1 ) {
-    left: 5px;
-    top: 7px;
-  }
-
-  .mdev-nav-open.open span:nth-child( 2 ) {
-    left: calc(50% - 5px);
-    top: 7px;
-  }
-
-  .mdev-nav-open.open span:nth-child( 3 ) {
-    left: -50%;
-    opacity: 0;
-  }
-
-  .mdev-nav-open.open span:nth-child( 4 ) {
-    left: 100%;
-    opacity: 0;
-  }
-
-  .mdev-nav-open.open span:nth-child( 5 ) {
-    left: 5px;
-    top: 29px;
-  }
-
-  .mdev-nav-open.open span:nth-child( 6 ) {
-    left: calc(50% - 5px);
-    top: 29px;
+  .--nav-active {
+    .mdev-main-nav-branding,
+    .mdev-nav-open {
+      opacity: 1;
+    }
   }
 
 /*--------------------------------------*/

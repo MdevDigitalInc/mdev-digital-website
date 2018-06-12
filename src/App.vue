@@ -19,6 +19,14 @@
 
     components: {
       'main-navigation' : MainNavigation
+    },
+
+    mounted: function(){
+      this.$nextTick(function () {
+        setTimeout(function(){
+          $('[data-main-nav]').addClass('--nav-active');
+        }, 1800);
+      });
     }
   };
 </script>
