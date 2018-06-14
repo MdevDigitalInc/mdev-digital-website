@@ -45,7 +45,7 @@
 
         homeLink: '/',
         homeTitle: 'Home',
-        homeBrand: 'MDEV-nav-logo.png',
+        homeBrand: 'svg/MDEV_RGB_Icon_Primary_Reverse.svg',
         navIsOpen: false
       };
     },
