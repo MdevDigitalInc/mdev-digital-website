@@ -1,0 +1,26 @@
+// Keyframe Animations for Hero Header
+
+$hero-polygon-start: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+$hero-polygon-end: polygon(50% 0%, 100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+@keyframes hero-animation {
+  0% {
+    clip-path: $hero-polygon-start;
+  }
+  100% {
+    clip-path: $hero-polygon-end;
+  }
+}
+
+@keyframes hero-gradient {
+  0% {
+    opacity: 0;
+    transform: translate3d( 0, -480px, 0);
+  }
+  40% {
+    opacity: 1;
+    transform: translate3d( 0, 280px, 0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
