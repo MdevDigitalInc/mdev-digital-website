@@ -25,8 +25,7 @@ module.exports = {
       'vue',
       'vue-i18n',
       'vue-resource',
-      'vue-router',
-      'vuex'
+      'vue-router'
     ]
   },
   // Output Files

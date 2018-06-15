@@ -13,7 +13,6 @@
     <!--
     <button @click="change()">CHANGE</button>
     -->
-
   </nav>
 </template>
 
@@ -135,7 +134,7 @@
       width: 100%;
       background: $color-brand-primary;
       padding-top: 17%;
-      box-shadow: inset -2px 2px 2px rgba( 0, 0, 0, .0);
+      box-shadow: inset -2px 2px 2px rgba( 0, 0, 0, 0);
       transition: all .5s, opacity .3s;
       border-radius: 0;
 

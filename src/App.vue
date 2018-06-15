@@ -11,24 +11,23 @@
 
 
 <script>
+//Local Component registration
+import MainNavigation from './components/shared/navigation.vue';
 
-  //Local Component registration
-  import MainNavigation from './components/shared/navigation.vue';
+export default{
 
-  export default{
+  components: {
+    'main-navigation' : MainNavigation
+  },
 
-    components: {
-      'main-navigation' : MainNavigation
-    },
-
-    mounted: function(){
-      this.$nextTick(function () {
-        setTimeout(function(){
-          $('[data-main-nav]').addClass('--nav-active');
-        }, 1800);
-      });
-    }
-  };
+  mounted: function(){
+    this.$nextTick(function () {
+      setTimeout(function(){
+        $('[data-main-nav]').addClass('--nav-active');
+      }, 1800);
+    });
+  }
+};
 </script>
 
 
