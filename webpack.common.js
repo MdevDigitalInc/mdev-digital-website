@@ -1,50 +1,19 @@
-// BlackMesa - Vue Base App
-// Webpack 2 Configuration file
+// MDEV Digital - Webpack Boilerplate[VueJS]
+// Webpack 4 Configuration file
 // -----------------------------------------
-// Lucas Moreira - l.moreira@live.ca
-// -----------------------------------------
-//
-// Require Imports
+// PRODUCTION ENVIRONMENT
+// ----------------------------------------
+
+// Required Imports
 const path = require('path')
 const webpack = require('webpack')
-const autoprefixer = require('autoprefixer')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require ('html-webpack-plugin')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const RobotstxtPlugin = require("robotstxt-webpack-plugin").default;
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const setPath = function(folderName) {
   return path.join(__dirname, folderName);
-}
-
-// Robots.TXT Configuration
-const robotOptions = {
-  policy: [
-    {
-      userAgent: "Googlebot",
-      allow: "/",
-      disallow: ["/search"],
-      crawlDelay: 2
-    },
-    {
-      userAgent: "OtherBot",
-      allow: ["/allow-for-all-bots", "/allow-only-for-other-bot"],
-      disallow: ["/admin", "/login"],
-      crawlDelay: 2
-    },
-    {
-      userAgent: "*",
-      allow: "/",
-      disallow: "/search",
-      crawlDelay: 10,
-      cleanParam: "ref /articles/"
-    }
-    ],
-    sitemap: "http://example.com/sitemap.xml",
-    host: "http://example.com"
 }
 
 // Module Exports
@@ -56,8 +25,7 @@ module.exports = {
       'vue',
       'vue-i18n',
       'vue-resource',
-      'vue-router',
-      'vuex'
+      'vue-router'
     ]
   },
   // Output Files
@@ -179,7 +147,6 @@ module.exports = {
   // Plugins & Post Processing
   plugins: [
     // Auto Prefix & Linting
-    new webpack.LoaderOptionsPlugin({ options: { postcss: [ autoprefixer ]  } }),
     new VueLoaderPlugin(),
     new StyleLintPlugin({
       syntax: 'scss',
@@ -196,67 +163,7 @@ module.exports = {
       'vue$': 'vue/dist/vue.common.js'
     }
   },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true
-  },
   performance: {
     hints: 'warning'
-  },
-  devtool: '#eval-source-map'
-}
-
-// PRODUCTION RULES
-if (process.env.NODE_ENV === 'production') {
-  // Require Compression Plugin for Gzip
-  const CompressionPlugin = require("compression-webpack-plugin");
-
-  module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    // Clean DIST Folder
-    new CleanWebpackPlugin('dist', {} ),
-    // Generate Robots.TXT
-    new RobotstxtPlugin(robotOptions),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    // Process and Inject Favicon
-    new FaviconsWebpackPlugin({
-      logo: './src/assets/images/favicon.png', // Source for Favicon file
-      prefix: 'icons-[hash]/', // File Prefix
-      emitStats: false,
-      statsFilename: 'iconstats-[hash].json',
-      persistentCache: true,
-      inject: true, // Inject Calls on index.html automatically
-      // CHANGE COLOR OF THEME
-      background: '#fff',
-      // CHANGE PROJECT TITLE
-      title: 'PROJECT TITLE',
-
-      // Icons to export
-      icons: {
-        android: true,
-        appleIcon: true,
-        appleStartup: true,
-        coast: false,
-        favicons: true,
-        firefox: true,
-        opengraph: false,
-        twitter: false,
-        yandex: false,
-        windows: false
-      }
-    }),
-    // Gzip Compression
-    new CompressionPlugin({
-      asset: "[path].gz[query]",
-      algorithm: "gzip",
-      test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
-      minRatio: 0.8
-    })
-  ])
+  }
 }

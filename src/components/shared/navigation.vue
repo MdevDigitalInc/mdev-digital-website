@@ -1,20 +1,14 @@
 <template>
-  <nav class="mdev-main-nav" aria-role="navigation" role="navigation">
-    <div class="mdev-main-wrapper flex flex-nowrap flex-hor-between flex-vert-end">
+  <nav class="mdev-main-nav" aria-role="navigation" data-main-nav role="navigation">
+    <div class="mdev-nav-wrapper flex flex-nowrap flex-hor-between flex-vert-center">
       <a :href="homeLink" :title="homeTitle" class="mdev-main-nav-branding">
         <img :src="loadImage(homeBrand)">
       </a>
-      <div class="mdev-main-nav-links u-uppercase">
-        <router-link
-          v-for="link in links"
-          :to="link.route"
-          active-class="--active"
-          :title="link.linkTitle"
-          aria-role="menuitem"
-          exact>
-            {{ link.linkName  }}
-       </router-link>
-      </div>
+    <button class="mdev-nav-open" :class="{ open: navIsOpen }" v-on:click="openMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     </div>
     <!--
     <button @click="change()">CHANGE</button>
@@ -48,50 +42,11 @@
           }
         ],
 
-        homeLink: '#',
+        homeLink: '/',
         homeTitle: 'Home',
-        homeBrand: 'main-logo.png'
+        homeBrand: 'svg/MDEV_RGB_Icon_Primary_Reverse.svg',
+        navIsOpen: false
       };
-    },
-
-    mounted: function(){
-        // Resize Timer
-        var resizeTimerNav = null;
-        // Show Hide Nav
-      $(document).scroll(function(event) {
-
-        // Distance Scrolled
-        var distanceTop = $(window).scrollTop();
-
-        if(distanceTop >= 250) {
-          $('.mdev-main-nav').addClass('mdev-main-nav-visibility');
-        }
-        else {
-          $('.mdev-main-nav').removeClass('mdev-main-nav-visibility');
-        }
-      });
-
-      // Give padding according to Nav Height IIFE
-      (function(){
-
-        // Desired Padding Value
-        var desiredPadding = 60;
-        // Adjust Padding of the site
-        function adjustPadding() {
-          var navHeight = $('.mdev-main-nav')[0].getBoundingClientRect().height;
-
-          $('#app').css({
-            "padding-top": desiredPadding + navHeight + 'px'
-          });
-        }
-        // Trigger with Debouce
-        $(window).resize(function(){
-          clearTimeout(resizeTimerNav);
-          resizeTimerNav = setTimeout(adjustPadding, 800);
-        });
-        // Adjust Padding on Load
-        adjustPadding();
-      })();
     },
 
     methods: {
@@ -106,6 +61,10 @@
         } else {
           this.$locale.change('en');
         }
+      },
+      // Flip Nav Flag
+      openMenu() {
+        this.navIsOpen = !this.navIsOpen;
       }
     }
   };
@@ -132,57 +91,112 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding: 35px 0;
+    padding: 2vw 0;
     z-index: 10;
     transition: all, .3s;
-    background: rgba(51,51,51,0);
+    background: rgba( 51, 51, 51, 0 );
 
-    img{
+    img {
       width: 100%;
     }
 
     .mdev-main-nav-branding {
-      max-width: 83px;
-      min-width: 73px;
+      max-width: 53px;
+      min-width: 43px;
       height: auto;
-      width: 10%;
-      opacity: 1;
-      transition: all, .3s;
+      width: 3%;
+      opacity: 0;
+      transition: all 1.8s;
 
       &:hover {
         cursor: pointer;
         opacity: .8;
       }
     }
+  }
 
-    .mdev-main-nav-links {
-      color: $color-brand-primary;
-    }
+  .mdev-nav-open {
+    width: 4%;
+    height: auto;
+    position: relative;
+    overflow: visible;
+    max-width: 53px;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    border: none;
+    background: transparent;
+    transition: .2s all;
 
-    .mdev-main-nav-links a {
-      margin: 0 10px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0);
-      transition: all, .3s;
+    span {
+      display: block;
+      position: relative;
+      width: 100%;
+      background: $color-brand-primary;
+      padding-top: 17%;
+      box-shadow: inset -2px 2px 2px rgba( 0, 0, 0, 0);
+      transition: all .5s, opacity .3s;
+      border-radius: 0;
 
-      &:hover {
-        text-shadow: 1px 1px 3px rgba(0,0,0,.6);
+      &:first-child {
+        transform: translate3d( 0, -8px, 0 );
+        opacity: 1;
       }
 
       &:last-child {
-        margin-right: 0;
+        transform: translate3d( 0, 8px, 0 );
       }
     }
 
-  }
-
-  .mdev-main-nav-visibility {
-    background: rgba(51,51,51,.6);
-
     &:hover {
-      background: rgba(51,51,51,.9);
+      cursor: pointer;
+
+      span {
+        background: lighten( $color-brand-primary, 15%);
+        box-shadow: inset -2px 2px 2px rgba( 0, 0, 0, .8);
+      }
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
     }
   }
 
-  /*--------------------------------------*/
+  .open {
+    span {
+      background: lighten( $color-brand-primary, 15%);
+      border-radius: 5px;
+
+      &:first-child {
+        transform: translate3d( 0, -80px, 0);
+        opacity: 0;
+      }
+
+      &:last-child {
+        transform: rotate3d( 0, 0, 1, 45deg);
+        top: -8px;
+      }
+
+      &:nth-child( even ) {
+        transform: rotate3d( 0, 0, 1, -45deg);
+      }
+    }
+    &:hover {
+      span {
+        background: lighten( $color-brand-primary, 15%);
+        box-shadow: none;
+      }
+    }
+  }
+
+  .--nav-active {
+    .mdev-main-nav-branding,
+    .mdev-nav-open {
+      opacity: 1;
+    }
+  }
+
+/*--------------------------------------*/
 
 </style>
