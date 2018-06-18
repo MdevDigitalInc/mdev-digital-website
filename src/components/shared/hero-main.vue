@@ -2,6 +2,9 @@
   <header class="mdev-main-header" >
     <div class="mdev-hero-mask" data-main-hero >
       <slot></slot>
+      <div class="mdev-page-title" data-main-title>
+        <h1>{{ pageTitle }}</h1>
+      </div>
     </div>
     <div class="mdev-header-arrow-mask" data-main-arrow >
       <div class="mdev-main-header-arrow"></div>
@@ -20,6 +23,9 @@ export default {
       return require('../../assets/images/' + path);
     }
   },
+
+  props: [ 'pageTitle' ],
+
   mounted: function(){
     // Resize timer to debounce scroll
     let resizeTimer;
@@ -28,6 +34,9 @@ export default {
       let height;
       height = $('[data-main-hero]').outerHeight(true);
       $('[data-main-arrow]').css({
+          'height': height + 'px'
+        });
+      $('[data-main-title]').css({
           'height': height + 'px'
         });
     }
@@ -92,6 +101,32 @@ export default {
   }
 }
 
+// Page Title
+.mdev-page-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  color: $white;
+  height: 100vh;
+  width: 4.5%;
+  border-right: 1px solid white;
+  opacity: 0;
+  min-width: 50px;
+  transition: all 3s, height .1s;
+
+  h1 {
+    font-size: 18px;
+    position: absolute;
+    transform: rotate( 90deg );
+    top: 65%;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    margin: 0;
+  }
+}
+
 // Animation Vars
 $mask-hero-anim-time: 1s;
 $mask-anim-delay: 1s;
@@ -137,6 +172,10 @@ $mask-arrow-anim-time: 3.2s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+
+  .mdev-page-title {
+    opacity: 1;
+  }
 }
 /*--------------------------------------*/
 

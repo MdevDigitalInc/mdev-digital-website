@@ -64,6 +64,10 @@
   }
 }
 
+
+.u-transparent {
+  opacity: 0 !important;
+}
 /* stylelint-enable */
 
 .u-hidden {
@@ -82,3 +86,4 @@
 .clear {
   @include clearfix();
 }
+
