@@ -80,7 +80,7 @@ export default {
 
 .mdev-header-arrow-mask {
   position: absolute;
-  top: 5px;
+  top: 3px;
   width: 100%;
   max-height: 97vh;
   clip-path: $hero-polygon-end; /*../styles/keyframes/hero-anim.scss */
@@ -88,14 +88,14 @@ export default {
   overflow: hidden;
 
   @media screen and ( orientation: portrait ) {
-    top: 4px;
+    top: 2px;
   }
 }
 
 // Animation Vars
 $mask-hero-anim-time: 1s;
-$mask-anim-delay: .8s;
-$mask-arrow-anim-time: 2.2s;
+$mask-anim-delay: 1s;
+$mask-arrow-anim-time: 3.2s;
 
 .mdev-main-header-arrow {
   position: absolute;
