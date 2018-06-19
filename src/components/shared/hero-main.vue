@@ -1,9 +1,9 @@
 <template>
-  <header class="mdev-main-header" >
+  <header class="mdev-main-header" data-main-header>
     <div class="mdev-hero-mask" data-main-hero >
       <slot></slot>
       <div class="mdev-page-title" data-main-title>
-        <h1>{{ pageTitle }}</h1>
+        <h1 data-page-title >{{ pageTitle }}</h1>
       </div>
     </div>
     <div class="mdev-header-arrow-mask" data-main-arrow >
@@ -29,6 +29,7 @@ export default {
   mounted: function(){
     // Resize timer to debounce scroll
     let resizeTimer;
+    let resizeTime = 10;
     // Adjust Arrow height
     function adjustArrow() {
       let height;
@@ -41,14 +42,14 @@ export default {
         });
     }
     // Run for first time on first tick
-    this.$nextTick(function () {
+    this.$nextTick( function () {
       adjustArrow();
     });
 
     // Adjust arrow size on resize
-    $(window).resize(function() {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(adjustArrow, 10);
+    $(window).resize( function() {
+      clearTimeout( resizeTimer );
+      resizeTimer = setTimeout( adjustArrow, resizeTime );
     });
   }
 };
@@ -61,6 +62,10 @@ export default {
 /* HERO MAIN Component Styles
 /--------------------------------------*/
 @import '../../assets/styles/keyframes/hero-anim.scss';
+
+body {
+  min-height: 4000px;
+}
 
 // Containers
 .mdev-main-header {
@@ -124,6 +129,7 @@ export default {
     width: 100%;
     white-space: nowrap;
     margin: 0;
+    transition: all .5s;
   }
 }
 
@@ -175,6 +181,16 @@ $mask-arrow-anim-time: 3.2s;
 
   .mdev-page-title {
     opacity: 1;
+  }
+}
+
+.--user-scroll {
+  .mdev-page-title h1 {
+    opacity: 0;
+  }
+
+  .mdev-header-arrow-mask {
+    opacity: 0;
   }
 }
 /*--------------------------------------*/

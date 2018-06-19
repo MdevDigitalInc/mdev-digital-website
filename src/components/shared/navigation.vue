@@ -16,7 +16,7 @@
     <button @click="change()">CHANGE</button>
     -->
     <div class="mdev-hidden-nav" :class="{ '--hid-nav-open': navIsOpen }">
-
+      <hidden-nav></hidden-nav>
     </div>
   </nav>
 </template>
@@ -24,6 +24,8 @@
 
 
 <script>
+  import HiddenNav from './hidden-nav.vue';
+
   export default{
     // <router-link> element is a custom element derived from vue-router. use :to - to bind.
     data: function(){
@@ -55,12 +57,42 @@
       };
     },
 
+    components: {
+      'hidden-nav' : HiddenNav
+    },
+
+    mounted: function() {
+      // Scroll timer to debounce
+      let scrollTimer;
+      let scrollDistance = $('[data-page-title]').offset().top;
+      let desiredOffset = 220;
+      let scrollTime = 20;
+
+      function userScroll( distance ) {
+        console.log( distance );
+        console.log( scrollDistance );
+        if ( distance >= (scrollDistance - desiredOffset) ) {
+          $('[data-main-header]').addClass('--user-scroll');
+        }
+        else {
+          $('[data-main-header]').removeClass('--user-scroll');
+        }
+      }
+
+      // Event Listener on scroll with debounce
+      $(window).scroll( function() {
+        let distanceTop = $(document).scrollTop();
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(userScroll(distanceTop),scrollTime);
+      });
+    },
+
     methods: {
       loadImage(path){
         return require('../../assets/images/' + path);
       },
       // Change Language METHOD
-      change () {
+      change() {
         let current = this.$locale.current();
         if (current === 'en') {
           this.$locale.change('pt');
@@ -72,6 +104,9 @@
       openMenu() {
         this.navIsOpen = !this.navIsOpen;
         $('body').toggleClass('u-freeze-scroll');
+        setTimeout(function(){
+          $('[data-nav-content]').toggleClass('--active-sidebar');
+        }, 400);
       }
     }
   };
@@ -209,6 +244,8 @@
     opacity: 0;
     transform: translate3d( -100%, 0, 0);
     transition: opacity .8s, transform .3s;
+    padding: 0;
+    margin: 0;
   }
 
   // Nav Open and Active

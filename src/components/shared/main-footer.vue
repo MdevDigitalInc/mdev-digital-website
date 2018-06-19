@@ -1,12 +1,12 @@
 <template>
-    <h1> Main Footer </h1>
+    <h1> MAIN FOOTER </h1>
 </template>
 
 
 
 <script>
   export default{
-    name: 'MainFooter',
+    name: 'mainFooter',
     data: function(){
       return{
 
