@@ -121,7 +121,7 @@ body {
   transition: all 3s, height .1s;
 
   h1 {
-    font-size: 18px;
+    font-size: 120%;
     position: absolute;
     transform: rotate( 90deg );
     top: 65%;

@@ -1,7 +1,60 @@
 <template>
   <div class="mdev-nav-content flex flex-hor-start flex-vert-start flex-nowrap" data-nav-content>
     <!-- Left Sidebar -->
-    <div class="mdev-nav-sidebar">
+    <div class="mdev-nav-sidebar flex flex-wrap flex-group-between">
+      <!-- Top Container -->
+      <div class="mdev-sidebar-container">
+        <a href="/" title="MDEV Digital Homepage">
+          <img :src="loadImage(mdevBrand)" alt="MDEV Digital Brand">
+        </a>
+
+        <div class="mdev-sidebar-cta">
+          {{ $t("navigation.sidebarCta") }}
+        </div>
+      </div>
+
+      <!-- Bottom Container -->
+      <div class="mdev-sidebar-container">
+        <span class="mdev-contact-title">
+          {{ $t("navigation.getInTouch") }}
+        </span>
+        <a href="tel:+15198604261" title="Call MDEV Digital">
+          519.860.4261
+        </a>
+        <a href="mailto:hello@mdev.digital" title="Email MDEV Digital">
+          hello@mdev.digital
+        </a>
+
+        <!-- Social Links -->
+        <div class="mdev-sidebar-social flex flex-hor-start flex-vert-center">
+          <!-- Facebook -->
+          <a href="FACEBOOK" title="Like Us on Facebook!">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <!-- Instagram -->
+          <a href="INSTAGRAM" title="Follow Us On Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <!-- Twitter -->
+          <a href="TWITTER" title="Follow Us On Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <!-- LinkedIn -->
+          <a href="LinkedIn" title="Follow Us On LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+
+        <!-- MDEV Address -->
+        <div class="mdev-sidebar-address">
+          <span class="address-region">
+            {{ $t("navigation.addressRegion") }}
+          </span>
+          <span class="address-street">
+            {{ $t("navigation.addressStreet") }}
+          </span>
+        </div>
+      </div>
 
     </div>
     <!-- Main Links -->
@@ -18,7 +71,7 @@
     name: 'MainFooter',
     data: function(){
       return{
-
+        mdevBrand: 'MDEV-Logo.svg'
       };
     },
 

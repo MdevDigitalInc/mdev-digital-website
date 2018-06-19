@@ -42,6 +42,13 @@ export default {
     }
   },
 
+  navigation: {
+    sidebarCta: "Let's start something new!",
+    getInTouch: "Get in touch!",
+    addressRegion: "London, Ontario",
+    addressStreet: "100 Kellogg Lane, N5W 0B4"
+  },
+
   servicepage: {
   },
 
