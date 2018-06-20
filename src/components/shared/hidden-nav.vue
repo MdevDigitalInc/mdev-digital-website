@@ -4,26 +4,28 @@
     <div class="mdev-nav-sidebar flex flex-wrap flex-group-between">
       <!-- Top Container -->
       <div class="mdev-sidebar-container">
-        <a href="/" title="MDEV Digital Homepage">
+        <a href="/" title="MDEV Digital Homepage" class="mdev-sidebar-brand">
           <img :src="loadImage(mdevBrand)" alt="MDEV Digital Brand">
         </a>
 
-        <div class="mdev-sidebar-cta">
+        <div class="mdev-sidebar-cta u-uppercase u-bold">
           {{ $t("navigation.sidebarCta") }}
         </div>
       </div>
 
       <!-- Bottom Container -->
       <div class="mdev-sidebar-container">
-        <span class="mdev-contact-title">
+        <h2 class="mdev-contact-title u-uppercase">
           {{ $t("navigation.getInTouch") }}
-        </span>
-        <a href="tel:+15198604261" title="Call MDEV Digital">
-          519.860.4261
-        </a>
-        <a href="mailto:hello@mdev.digital" title="Email MDEV Digital">
-          hello@mdev.digital
-        </a>
+        </h2>
+        <div class="mdev-sidebar-contact">
+          <a class="--tel" href="tel:+15198604261" title="Call MDEV Digital">
+            519.860.4261
+          </a>
+          <a href="mailto:hello@mdev.digital" title="Email MDEV Digital">
+            hello@mdev.digital
+          </a>
+        </div>
 
         <!-- Social Links -->
         <div class="mdev-sidebar-social flex flex-hor-start flex-vert-center">
@@ -118,6 +120,56 @@
   transform: translate3d( -110%, 0, 0 );
   opacity: 0;
   transition: opacity .8s, all 1s;
+}
+
+.mdev-sidebar-container {
+  padding: 3vw;
+  width: 100%;
+
+  .mdev-sidebar-brand {
+    width: 60%;
+    display: block;
+    margin-bottom: 3vw;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .mdev-sidebar-cta {
+    color: $white;
+    font-size: 230%;
+    line-height: 120%;
+  }
+
+  .mdev-contact-title {
+    color: $white;
+    display: block;
+    font-size: 220%;
+    line-height: 120%;
+  }
+
+  .mdev-sidebar-contact {
+    width: 100%;
+
+    a {
+      color: $color-brand-primary;
+      font-size: 200%;
+      line-height: 130%;
+      transition: all .9s;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $white;
+      }
+    }
+
+    .--tel {
+      font-size: 280%;
+    }
+  }
+
 }
 
 .mdev-nav-links {
