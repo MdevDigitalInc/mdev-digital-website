@@ -16,15 +16,27 @@
     <button @click="change()">CHANGE</button>
     -->
     <div class="mdev-hidden-nav" :class="{ '--hid-nav-open': navIsOpen }">
-      <hidden-nav></hidden-nav>
+      <!-- HiddenNav Component -->
+      <hidden-nav>
+        <template slot="sidebar">
+          <!-- Loads Sidebar on named slot -->
+          <hidden-nav-sidebar></hidden-nav-sidebar>
+        </template>
+        <template slot="main">
+          <!-- Loads Links on named slot -->
+          <hidden-nav-links :links="links" ></hidden-nav-links>
+        </template>
+      </hidden-nav>
     </div>
   </nav>
 </template>
 
 
-
 <script>
+  // Import Components for Nav
   import HiddenNav from './hidden-nav.vue';
+  import HiddenNavSidebar from './hidden-nav--sidebar.vue';
+  import HiddenNavLinks from './hidden-nav--links.vue';
 
   export default{
     // <router-link> element is a custom element derived from vue-router. use :to - to bind.
@@ -58,7 +70,9 @@
     },
 
     components: {
-      'hidden-nav' : HiddenNav
+      'hidden-nav' : HiddenNav,
+      'hidden-nav-sidebar' : HiddenNavSidebar,
+      'hidden-nav-links' : HiddenNavLinks
     },
 
     mounted: function() {

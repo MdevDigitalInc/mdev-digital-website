@@ -63,7 +63,7 @@
 
 <script>
   export default{
-    name: 'MainFooter',
+    name: 'HiddenNavSidebar',
     data: function(){
       return{
         mdevBrand: 'MDEV-Logo.svg'
@@ -94,16 +94,6 @@
 /*-------------------------------------*/
 /* MAIN FOOTER Component Styles
 /--------------------------------------*/
-
-.mdev-nav-content {
-  width: 100%;
-  position: relative;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  height: 100vh;
-  background: transparent;
-}
 
 .mdev-nav-sidebar {
   width: 25%;
@@ -163,12 +153,6 @@
     }
   }
 
-}
-
-.mdev-nav-links {
-  width: 75%;
-  background: transparent;
-  height: 100vh;
 }
 
 // Active Class
