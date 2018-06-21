@@ -26,28 +26,11 @@
       </div>
 
       <!-- Social Links -->
-      <div class="mdev-sidebar-social flex flex-hor-start flex-vert-center">
-        <!-- Facebook -->
-        <a href="FACEBOOK" title="Like Us on Facebook!">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <!-- Instagram -->
-        <a href="INSTAGRAM" title="Follow Us On Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <!-- Twitter -->
-        <a href="TWITTER" title="Follow Us On Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <!-- LinkedIn -->
-        <a href="LinkedIn" title="Follow Us On LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </div>
+      <slot></slot>
 
       <!-- MDEV Address -->
       <div class="mdev-sidebar-address">
-        <span class="address-region">
+        <span class="address-region u-bold u-uppercase">
           {{ $t("navigation.addressRegion") }}
         </span>
         <span class="address-street">
@@ -74,15 +57,6 @@
       loadImage(path){
         return require('../../assets/images/' + path);
       },
-      // Change Language METHOD
-      change () {
-        let current = this.$locale.current();
-        if (current === 'en') {
-          this.$locale.change('pt');
-        } else {
-          this.$locale.change('en');
-        }
-      }
     }
   };
 </script>
@@ -153,6 +127,42 @@
     }
   }
 
+  .mdev-social-links {
+    font-size: 260%;
+    margin: 60px 0;
+
+    a {
+      display: block;
+      margin: 0 1vw;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .mdev-sidebar-address {
+    width: 100%;
+    position: relative;
+
+    span {
+      display: block;
+    }
+
+    .address-region {
+      color: $white;
+      font-size: 200%;
+      line-height: 130%;
+    }
+
+    .address-street {
+      color: $color-brand-primary;
+      font-size: 180%;
+    }
+  }
 }
 
 // Active Class

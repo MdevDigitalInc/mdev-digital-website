@@ -20,7 +20,10 @@
       <hidden-nav>
         <template slot="sidebar">
           <!-- Loads Sidebar on named slot -->
-          <hidden-nav-sidebar></hidden-nav-sidebar>
+          <hidden-nav-sidebar>
+            <!-- Loads Social Links on Sidebar Slot -->
+            <social-links darkTheme="" ></social-links>
+          </hidden-nav-sidebar>
         </template>
         <template slot="main">
           <!-- Loads Links on named slot -->
@@ -37,42 +40,56 @@
   import HiddenNav from './hidden-nav.vue';
   import HiddenNavSidebar from './hidden-nav--sidebar.vue';
   import HiddenNavLinks from './hidden-nav--links.vue';
+  import SocialLinks from './social-links.vue';
 
   export default{
     // <router-link> element is a custom element derived from vue-router. use :to - to bind.
     data: function(){
       return{
         // Refer to routes.js file for available routes.
+        // Links are passed as object to hidden-nav-links
         links: [
           {
-            linkName: 'Link 1',
-            linkTitle: 'Link 1',
-            route: '/'
+            linkName: 'About',
+            linkTitle: 'About MDEV Digital',
+            route: '/about',
+            linkIndex: '01'
           },
           {
-            linkName: 'Link 2',
-            linkTitle: 'Link 2',
-            route: '/home1'
+            linkName: 'Work',
+            linkTitle: 'Our Work Case Studies',
+            route: '/casestudy',
+            linkIndex: '02'
           },
           {
-            linkName: 'Link 3',
-            linkTitle: 'Link 3',
-            route: '/home2'
+            linkName: 'Services',
+            linkTitle: 'Our Services',
+            route: '/services',
+            linkIndex: '03'
+          },
+          {
+            linkName: 'Contact',
+            linkTitle: 'Get In Touch With MDEV',
+            route: '/contact',
+            linkIndex: '04'
           }
         ],
 
+        // Main Home Link On sidebar
         homeLink: '/',
         homeTitle: 'Home',
         mdevBrandMid: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Bottom.svg',
         mdevBrandTop: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Top.svg',
+        // Flag for controlling the nav states
         navIsOpen: false
       };
     },
 
-    components: {
-      'hidden-nav' : HiddenNav,
-      'hidden-nav-sidebar' : HiddenNavSidebar,
-      'hidden-nav-links' : HiddenNavLinks
+    // Watch route change and toggle menu if user navigates away
+    watch: {
+      $route (to,from) {
+        this.openMenu();
+      }
     },
 
     mounted: function() {
@@ -83,8 +100,7 @@
       let scrollTime = 20;
 
       function userScroll( distance ) {
-        console.log( distance );
-        console.log( scrollDistance );
+        // If user scrolls past desired distance remove effects
         if ( distance >= (scrollDistance - desiredOffset) ) {
           $('[data-main-header]').addClass('--user-scroll');
         }
@@ -105,6 +121,7 @@
       loadImage(path){
         return require('../../assets/images/' + path);
       },
+
       // Change Language METHOD
       change() {
         let current = this.$locale.current();
@@ -114,14 +131,24 @@
           this.$locale.change('en');
         }
       },
-      // Flip Nav Flag
+
+      // Flip Nav flag & animate sidebar
       openMenu() {
         this.navIsOpen = !this.navIsOpen;
         $('body').toggleClass('u-freeze-scroll');
+        // Timeout is either 400 / 0 depending on if its opening or closing
         setTimeout(function(){
           $('[data-nav-content]').toggleClass('--active-sidebar');
-        }, 400);
+        }, ( this.navIsOpen ? 400 : 0) );
       }
+    },
+
+    // Components
+    components: {
+      'hidden-nav' : HiddenNav,
+      'hidden-nav-sidebar' : HiddenNavSidebar,
+      'hidden-nav-links' : HiddenNavLinks,
+      'social-links' : SocialLinks
     }
   };
 

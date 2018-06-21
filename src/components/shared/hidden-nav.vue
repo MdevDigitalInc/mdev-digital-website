@@ -33,11 +33,6 @@
   background: transparent;
 }
 
-.mdev-nav-links {
-  width: 75%;
-  background: transparent;
-  height: 100vh;
-}
 /*--------------------------------------*/
 
 </style>
