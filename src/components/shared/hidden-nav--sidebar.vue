@@ -95,14 +95,14 @@
 
   .mdev-sidebar-cta {
     color: $white;
-    font-size: 230%;
+    font-size: 1.9vw;
     line-height: 120%;
   }
 
   .mdev-contact-title {
     color: $white;
     display: block;
-    font-size: 220%;
+    font-size: 1.8vw;
     line-height: 120%;
   }
 
@@ -111,7 +111,7 @@
 
     a {
       color: $color-brand-primary;
-      font-size: 200%;
+      font-size: 1.66vw;
       line-height: 130%;
       transition: all .9s;
 
@@ -123,13 +123,13 @@
     }
 
     .--tel {
-      font-size: 280%;
+      font-size: 2.3vw;
     }
   }
 
   .mdev-social-links {
-    font-size: 260%;
-    margin: 60px 0;
+    font-size: 2.4vw;
+    margin: 2vw 0;
 
     a {
       display: block;
@@ -154,13 +154,13 @@
 
     .address-region {
       color: $white;
-      font-size: 200%;
+      font-size: 1.5vw;
       line-height: 130%;
     }
 
     .address-street {
       color: $color-brand-primary;
-      font-size: 180%;
+      font-size: 1.2vw;
     }
   }
 }

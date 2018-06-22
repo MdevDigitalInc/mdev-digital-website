@@ -27,7 +27,7 @@
         </template>
         <template slot="main">
           <!-- Loads Links on named slot -->
-          <hidden-nav-links :links="links" ></hidden-nav-links>
+          <hidden-nav-links :links="links" :showNav="navIsOpen" ></hidden-nav-links>
         </template>
       </hidden-nav>
     </div>
@@ -135,6 +135,7 @@
       // Flip Nav flag & animate sidebar
       openMenu() {
         this.navIsOpen = !this.navIsOpen;
+        $('[data-main-links]').removeClass('--showLinks');
         $('body').toggleClass('u-freeze-scroll');
         // Timeout is either 400 / 0 depending on if its opening or closing
         setTimeout(function(){
