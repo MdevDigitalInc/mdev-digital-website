@@ -1,7 +1,10 @@
 <template>
-  <header class="mdev-main-header" >
+  <header class="mdev-main-header" data-main-header>
     <div class="mdev-hero-mask" data-main-hero >
       <slot></slot>
+      <div class="mdev-page-title" data-main-title>
+        <h1 data-page-title >{{ pageTitle }}</h1>
+      </div>
     </div>
     <div class="mdev-header-arrow-mask" data-main-arrow >
       <div class="mdev-main-header-arrow"></div>
@@ -20,9 +23,13 @@ export default {
       return require('../../assets/images/' + path);
     }
   },
+
+  props: [ 'pageTitle' ],
+
   mounted: function(){
     // Resize timer to debounce scroll
     let resizeTimer;
+    let resizeTime = 10;
     // Adjust Arrow height
     function adjustArrow() {
       let height;
@@ -30,16 +37,19 @@ export default {
       $('[data-main-arrow]').css({
           'height': height + 'px'
         });
+      $('[data-main-title]').css({
+          'height': height + 'px'
+        });
     }
     // Run for first time on first tick
-    this.$nextTick(function () {
+    this.$nextTick( function () {
       adjustArrow();
     });
 
     // Adjust arrow size on resize
-    $(window).resize(function() {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(adjustArrow, 10);
+    $(window).resize( function() {
+      clearTimeout( resizeTimer );
+      resizeTimer = setTimeout( adjustArrow, resizeTime );
     });
   }
 };
@@ -52,6 +62,10 @@ export default {
 /* HERO MAIN Component Styles
 /--------------------------------------*/
 @import '../../assets/styles/keyframes/hero-anim.scss';
+
+body {
+  min-height: 4000px;
+}
 
 // Containers
 .mdev-main-header {
@@ -89,6 +103,33 @@ export default {
 
   @media screen and ( orientation: portrait ) {
     top: 2px;
+  }
+}
+
+// Page Title
+.mdev-page-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  color: $white;
+  height: 100vh;
+  width: 4.5%;
+  border-right: 1px solid white;
+  opacity: 0;
+  min-width: 50px;
+  transition: all 3s, height .1s;
+
+  h1 {
+    font-size: 120%;
+    position: absolute;
+    transform: rotate( 90deg );
+    top: 65%;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    margin: 0;
+    transition: all .5s;
   }
 }
 
@@ -137,6 +178,20 @@ $mask-arrow-anim-time: 3.2s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+
+  .mdev-page-title {
+    opacity: 1;
+  }
+}
+
+.--user-scroll {
+  .mdev-page-title h1 {
+    opacity: 0;
+  }
+
+  .mdev-header-arrow-mask {
+    opacity: 0;
+  }
 }
 /*--------------------------------------*/
 

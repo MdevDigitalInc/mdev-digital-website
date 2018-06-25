@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-main-content">
-    <hero-main>
+    <hero-main pageTitle="PAGE TITLE HERE">
       <!-- Header Slot -->
       <div class="mdev-main-hero" :style="heroStyles"></div>
     </hero-main>

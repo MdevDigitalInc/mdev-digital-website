@@ -43,6 +43,18 @@
 .u-bold {
   font-weight: 700;
 }
+
+.u-black {
+  font-weight: 900;
+}
+
+.u-ultralight {
+  font-weight: 100;
+}
+
+.u-light {
+  font-weight: 300;
+}
 /* Disabling because of !important */
 /* stylelint-disable */
 .u-hidden-phone {
@@ -64,6 +76,10 @@
   }
 }
 
+
+.u-transparent {
+  opacity: 0 !important;
+}
 /* stylelint-enable */
 
 .u-hidden {
@@ -82,3 +98,4 @@
 .clear {
   @include clearfix();
 }
+
