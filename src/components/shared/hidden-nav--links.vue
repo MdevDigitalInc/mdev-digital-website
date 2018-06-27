@@ -6,8 +6,9 @@
       active-class="--active"
       data-main-links
       :title="link.linkTitle"
+      :tabindex="(showLinks ? 0 : -1)"
       aria-role="menuitem" >
-        <span class="mdev-link-index u-ultralight">
+        <span class="mdev-link-index u-ultralight" aria-hidden="true">
           {{ link.linkIndex }}
         </span>
         <span class="mdev-link-name u-bold u-uppercase">
@@ -22,13 +23,13 @@
 <script>
   export default{
     name: 'HiddenNavLinks',
-
-    props: ['links','showNav'],
-
+    // Data passed in via Parent
+    props: ['links','showLinks'],
+    // Watch for changes in parent data
     watch: {
-      showNav: function() {
+      showLinks: function() {
         // Nav Flag True is opening, false is closing
-        let isNavOpening = this.showNav;
+        let isNavOpening = this.showLinks;
         // Show LInks function
         function showLinks(target, index) {
           // Timeout Interval is a function of Index

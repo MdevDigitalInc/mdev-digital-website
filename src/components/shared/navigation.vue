@@ -1,12 +1,21 @@
 <template>
   <nav class="mdev-main-nav" aria-role="navigation" data-main-nav role="navigation">
     <div class="mdev-nav-wrapper flex flex-nowrap flex-hor-between flex-vert-center">
-      <a :href="homeLink" :title="homeTitle" class="mdev-live-brand" :class="{ '--remove-brand': navIsOpen }">
+      <a :href="homeLink"
+        :title="homeTitle"
+        :tabindex="( navIsOpen ? -1 : '')"
+        class="mdev-live-brand"
+        :class="{ '--remove-brand': navIsOpen }">
         <img :src="loadImage(mdevBrandTop)" data-mdev-top>
         <img :src="loadImage(mdevBrandMid)" data-mdev-mid>
         <img :src="loadImage(mdevBrandMid)" data-mdev-bot>
       </a>
-    <button class="mdev-nav-open" :class="{ '--nav-open': navIsOpen }" v-on:click="openMenu">
+    <button
+      class="mdev-nav-open"
+      :class="{ '--nav-open': navIsOpen }"
+      title="Main Navigation Menu"
+      :aria-label="( navIsOpen ? labelClose : labelOpen )"
+      v-on:click="openMenu">
       <span></span>
       <span></span>
       <span></span>
@@ -15,19 +24,21 @@
     <!--
     <button @click="change()">CHANGE</button>
     -->
-    <div class="mdev-hidden-nav" :class="{ '--hid-nav-open': navIsOpen }">
+    <div class="mdev-hidden-nav"
+      :class="{ '--hid-nav-open': navIsOpen }"
+      :aria-hidden="!navIsOpen">
       <!-- HiddenNav Component -->
       <hidden-nav>
         <template slot="sidebar">
           <!-- Loads Sidebar on named slot -->
-          <hidden-nav-sidebar>
+          <hidden-nav-sidebar :showLinks="navIsOpen">
             <!-- Loads Social Links on Sidebar Slot -->
-            <social-links darkTheme="" ></social-links>
+            <social-links darkTheme="" :showLinks="navIsOpen" :linkContent="socialLinks"></social-links>
           </hidden-nav-sidebar>
         </template>
         <template slot="main">
           <!-- Loads Links on named slot -->
-          <hidden-nav-links :links="links" :showNav="navIsOpen" ></hidden-nav-links>
+          <hidden-nav-links :links="links" :showLinks="navIsOpen" ></hidden-nav-links>
         </template>
       </hidden-nav>
     </div>
@@ -74,6 +85,32 @@
             linkIndex: '04'
           }
         ],
+        socialLinks: [
+          {
+            linkClass: 'fa-facebook-f',
+            target: '_blank',
+            accessibility: 'Like us on Facebook',
+            linkUrl: 'https://www.facebook.com/MDEVDigital'
+          },
+          {
+            linkClass: 'fa-instagram',
+            target: '_blank',
+            accessibility: 'Follow us on Instagram',
+            linkUrl: 'https://www.instagram.com/mdev_digital/'
+          },
+          {
+            linkClass: 'fa-twitter',
+            target: '_blank',
+            accessibility: 'Follow us on Twitter',
+            linkUrl: 'https://twitter.com/MDEVdigital'
+          },
+          {
+            linkClass: 'fa-linkedin',
+            target: '_blank',
+            accessibility: 'Follow us on LinkedIn',
+            linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+          }
+        ],
 
         // Main Home Link On sidebar
         homeLink: '/',
@@ -81,7 +118,9 @@
         mdevBrandMid: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Bottom.svg',
         mdevBrandTop: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Top.svg',
         // Flag for controlling the nav states
-        navIsOpen: false
+        navIsOpen: false,
+        labelOpen: 'Open Main Navigation Menu',
+        labelClose: 'Close Main Navigation Menu'
       };
     },
 

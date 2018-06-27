@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-main-content">
-    <hero-main pageTitle="PAGE TITLE HERE">
+    <hero-main :pageTitle="pageTitle" :headerDsc="headerDsc">
       <!-- Header Slot -->
       <div class="mdev-main-hero" :style="heroStyles"></div>
     </hero-main>
@@ -24,13 +24,15 @@ import HomeTestimonials   from './home-testimonials.vue';
 export default{
   name: 'HomePage',
   data: function() {
-    return{
+    return {
       heroStyles: {
         backgroundColor: '#0f1617',
         backgroundImage: 'url(' + this.loadImage('MDEV-main-hero.png') + ')',
         backgroundSize: 'cover',
         backgroundPosition: 'top center'
       },
+      pageTitle: 'PAGE TITLE HERE',
+      headerDsc: 'DESCRIBE HEADER HERE'
     };
   },
   components: {

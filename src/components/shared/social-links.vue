@@ -1,20 +1,14 @@
 <template>
     <div class="mdev-social-links flex flex-hor-start flex-vert-center" :class="{'--dark-theme':darkTheme}">
-      <!-- Facebook -->
-      <a href="FACEBOOK" title="Like Us on Facebook!">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <!-- Instagram -->
-      <a href="INSTAGRAM" title="Follow Us On Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <!-- Twitter -->
-      <a href="TWITTER" title="Follow Us On Twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <!-- LinkedIn -->
-      <a href="LinkedIn" title="Follow Us On LinkedIn">
-        <i class="fab fa-linkedin"></i>
+      <!-- Social Link Loop -->
+      <a v-for="link in linkContent"
+        :href="link.linkUrl"
+        :aria-label="link.accessibility"
+        aria-haspopup="true"
+        :target="link.target"
+        :tabindex="(showLinks ? 1 : -1)"
+        :title="link.accessibility">
+        <i class="fab" :class="link.linkClass"></i>
       </a>
     </div>
 </template>
@@ -24,8 +18,8 @@
 <script>
   export default{
     name: 'Social Links',
-
-    props: ['darkTheme']
+    // Data passed in via Parent
+    props: ['darkTheme', 'showLinks', 'linkContent']
   };
 </script>
 

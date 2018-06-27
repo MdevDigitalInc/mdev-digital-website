@@ -1,5 +1,5 @@
 <template>
-  <header class="mdev-main-header" data-main-header>
+  <header class="mdev-main-header" data-main-header aria-describedby="headerDescription">
     <div class="mdev-hero-mask" data-main-hero >
       <slot></slot>
       <div class="mdev-page-title" data-main-title>
@@ -8,6 +8,10 @@
     </div>
     <div class="mdev-header-arrow-mask" data-main-arrow >
       <div class="mdev-main-header-arrow"></div>
+    </div>
+    <!-- Accessibility Image Description -->
+    <div class="u-screenreader" id="headerDescription">
+      {{ headerDsc }}
     </div>
   </header>
 </template>
@@ -24,7 +28,7 @@ export default {
     }
   },
 
-  props: [ 'pageTitle' ],
+  props: [ 'pageTitle', 'headerDsc' ],
 
   mounted: function(){
     // Resize timer to debounce scroll

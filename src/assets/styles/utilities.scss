@@ -76,6 +76,17 @@
   }
 }
 
+.u-screenreader {
+  width: 0!important;
+  height: 0!important;
+  transform: scaley(0);
+  opacity: 0!important;
+  position: absolute !important;
+  top: -9999px;
+  left: -9999px;
+  visibility: hidden!important;
+}
+
 
 .u-transparent {
   opacity: 0 !important;
