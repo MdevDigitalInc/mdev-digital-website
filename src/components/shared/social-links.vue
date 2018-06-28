@@ -17,7 +17,7 @@
 
 <script>
   export default{
-    name: 'Social Links',
+    name: 'SocialLinks',
     // Data passed in via Parent
     props: ['darkTheme', 'showLinks', 'linkContent']
   };

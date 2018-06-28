@@ -4,7 +4,7 @@
       <!-- Header Slot -->
       <div class="mdev-main-hero" :style="heroStyles"></div>
     </hero-main>
-    <home-services></home-services>
+    <home-services id="mainContent"></home-services>
     <home-casestudies></home-casestudies>
     <home-about></home-about>
     <home-testimonials></home-testimonials>

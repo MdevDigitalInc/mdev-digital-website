@@ -3,7 +3,7 @@
     <div class="mdev-nav-wrapper flex flex-nowrap flex-hor-between flex-vert-center">
       <a :href="homeLink"
         :title="homeTitle"
-        :tabindex="( navIsOpen ? -1 : '')"
+        :tabindex="( navIsOpen ? -1 : 0)"
         class="mdev-live-brand"
         :class="{ '--remove-brand': navIsOpen }">
         <img :src="loadImage(mdevBrandTop)" data-mdev-top>
@@ -14,11 +14,12 @@
       class="mdev-nav-open"
       :class="{ '--nav-open': navIsOpen }"
       title="Main Navigation Menu"
+      tabindex="0"
       :aria-label="( navIsOpen ? labelClose : labelOpen )"
-      v-on:click="openMenu">
-      <span></span>
-      <span></span>
-      <span></span>
+      v-on:click.self.stop="openMenu">
+      <span v-on:click.self.stop="openMenu"></span>
+      <span v-on:click.self.stop="openMenu"></span>
+      <span v-on:click.self.stop="openMenu"></span>
     </button>
     </div>
     <!--

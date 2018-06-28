@@ -94,7 +94,9 @@
       transition-timing-function: ease-in-out, ease-in-out;
     }
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       text-shadow: 0 0 20px rgba( 0, 0, 0, .2);
       &:before {
         opacity: 1;
@@ -106,10 +108,12 @@
   .mdev-link-index {
     font-size: 1.9vw;
   }
-
+  /* Disabling lint because of necessary !important; */
+  /* stylelint-disable */
   .--active {
-    opacity: .5!important;
+    opacity: .5 !important;
   }
+  /* stylelint-enable */
 
   .--showLinks {
     transform: translate3d( 0, 0, 0);
