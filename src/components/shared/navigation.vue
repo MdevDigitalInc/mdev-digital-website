@@ -137,7 +137,7 @@
     // Watch route change and toggle menu if user navigates away
     watch: {
       $route (to,from) {
-        this.openMenu();
+        this.closeMenu();
       }
     },
 
@@ -201,6 +201,15 @@
         setTimeout(function(){
           $('[data-nav-content]').toggleClass('--active-sidebar');
         }, ( this.navIsOpen ? 400 : 0) );
+      },
+
+      // Force close menu on route change
+      // avoids issues if user goes back on history
+      closeMenu() {
+        this.navIsOpen = false;
+        $('[data-main-links]').removeClass('--showLinks');
+        $('body').removeClass('u-freeze-scroll');
+        $('[data-nav-content]').toggleClass('--active-sidebar');
       }
     },
 
