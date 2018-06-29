@@ -9,6 +9,13 @@
         <img :src="loadImage(mdevBrandTop)" data-mdev-top>
         <img :src="loadImage(mdevBrandMid)" data-mdev-mid>
         <img :src="loadImage(mdevBrandMid)" data-mdev-bot>
+
+        <!--Hidden Brand Flyout -->
+        <div class="mdev-hidden-brand">
+          <img :src="loadImage(mdevWordTop)" data-mdev-wtop>
+          <img :src="loadImage(mdevWordBot)" data-mdev-wbot>
+
+        </div>
       </a>
     <button
       class="mdev-nav-open"
@@ -118,6 +125,8 @@
         homeTitle: 'Home',
         mdevBrandMid: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Bottom.svg',
         mdevBrandTop: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Top.svg',
+        mdevWordTop: 'svg/logo-pieces/MDEV_RGB_WM_Teal_Top.svg',
+        mdevWordBot: 'svg/logo-pieces/MDEV_RGB_WM_White_Bottom.svg',
         // Flag for controlling the nav states
         navIsOpen: false,
         labelOpen: 'Open Main Navigation Menu',
@@ -135,17 +144,28 @@
     mounted: function() {
       // Scroll timer to debounce
       let scrollTimer;
-      let scrollDistance = $('[data-page-title]').offset().top;
+      let scrollDistance;
       let desiredOffset = 220;
       let scrollTime = 20;
 
+      // Check to see that the page title is there
+      if ( $('[data-page-title]').length !== 0 ) {
+        scrollDistance = $('[data-page-title]').offset().top;
+      }
+      else {
+        scrollDistance = 600;
+      }
+
+      console.log(scrollDistance);
       function userScroll( distance ) {
         // If user scrolls past desired distance remove effects
         if ( distance >= (scrollDistance - desiredOffset) ) {
           $('[data-main-header]').addClass('--user-scroll');
+          $('[data-main-nav]').addClass('--user-scroll');
         }
         else {
-          $('[data-main-header]').removeClass('--user-scroll');
+          $('[data-main-header').removeClass('--user-scroll');
+          $('[data-main-nav').removeClass('--user-scroll');
         }
       }
 
@@ -243,6 +263,12 @@
     &:hover {
       cursor: pointer;
       opacity: .8;
+
+      .mdev-hidden-brand img {
+        transform: translate3d( 0, 0, 0);
+        opacity: 1;
+        transition: all .3s;
+      }
     }
 
     img {
@@ -266,6 +292,7 @@
     position: relative;
     overflow: visible;
     max-width: 42px;
+    min-width: 30px;
     padding: 0;
     z-index: 99;
     margin: 0;
@@ -311,6 +338,20 @@
       span {
         border: 1px solid rgba(13, 119, 113, 0);
       }
+    }
+  }
+
+  .mdev-hidden-brand {
+    width: 4.5%;
+    position: absolute;
+    top: 27%;
+    left: 3.2%;
+    z-index: -1;
+
+    img {
+      opacity: 0;
+      transition: all .3s;
+      transform: translate3d( -70%, 0, 0);
     }
   }
 
@@ -383,6 +424,22 @@
     opacity: 0;
     transform: translate3d( -300px, 0, 0);
   }
+
+  // Nav Active from Scroll
+
+  .mdev-main-nav.--user-scroll {
+    opacity: .3;
+    transition: opacity .5s, filter 1.2s;
+    filter: grayscale(1);
+
+
+    &:hover {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+  }
+
+
 /*--------------------------------------*/
 
 </style>

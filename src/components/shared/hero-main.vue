@@ -2,8 +2,8 @@
   <header class="mdev-main-header" data-main-header aria-describedby="headerDescription">
     <div class="mdev-hero-mask" data-main-hero >
       <slot></slot>
-      <div class="mdev-page-title" data-main-title>
-        <h1 data-page-title >{{ pageTitle }}</h1>
+      <div v-if="pageTitle" class="mdev-page-title" data-main-title>
+        <h1 data-page-title>{{ pageTitle }}</h1>
       </div>
     </div>
     <div class="mdev-header-arrow-mask" data-main-arrow >
@@ -31,6 +31,7 @@ export default {
   props: [ 'pageTitle', 'headerDsc' ],
 
   mounted: function(){
+    console.log(this.pageTitle);
     // Resize timer to debounce scroll
     let resizeTimer;
     let resizeTime = 10;
@@ -105,7 +106,7 @@ body {
   z-index: -1;
   overflow: hidden;
 
-  @media screen and ( orientation: portrait ) {
+  @media #{ $portrait } {
     top: 2px;
   }
 }
@@ -165,7 +166,7 @@ $mask-arrow-anim-time: 3.2s;
   animation-fill-mode: forwards;
   animation-delay: $mask-hero-anim-time + $mask-anim-delay;
 
-  @media screen and ( orientation: portrait ) {
+  @media #{ $portrait } {
     padding-top: 280%;
     animation: hero-gradient-prt infinite;
     animation-duration: $mask-arrow-anim-time;

@@ -45,6 +45,12 @@
       color: $color-brand-primary;
     }
   }
+
+  /* stylelint-disable */
+  @media #{ $portrait } {
+    justify-content: center !important;
+  }
+  /* stylelint-enable */
 }
 
 // Optional Dark Theme

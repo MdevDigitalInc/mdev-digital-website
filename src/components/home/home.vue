@@ -23,6 +23,7 @@ import HomeTestimonials   from './home-testimonials.vue';
 
 export default{
   name: 'HomePage',
+
   data: function() {
     return {
       heroStyles: {
@@ -31,10 +32,12 @@ export default{
         backgroundSize: 'cover',
         backgroundPosition: 'top center'
       },
-      pageTitle: 'PAGE TITLE HERE',
-      headerDsc: 'DESCRIBE HEADER HERE'
+      // Disables Page Title bar
+      pageTitle: false,
+      headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.'
     };
   },
+
   components: {
     'hero-main'         : HeroMain,
     'home-about'        : HomeAbout,

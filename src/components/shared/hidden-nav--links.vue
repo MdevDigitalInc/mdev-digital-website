@@ -63,7 +63,13 @@
   width: 75%;
   height: 100vh;
   background: transparent;
+  order: 2;
   padding: 11% 0;
+
+  @media #{ $portrait } {
+    width: 100%;
+    height: 45vh;
+  }
 
   a {
     display: block;
@@ -79,6 +85,13 @@
     text-shadow: 0 0 20px rgba( 0, 0, 0, 0);
     transform: translate3d( 0, -1000px, 0);
     transition-timing-function: ease-in-out;
+
+    @media #{ $portrait } {
+      margin: 0 auto;
+      padding-left: 34%;
+      font-size: 5.2vw;
+      min-width: 240px;
+    }
 
     &:before {
       @include pseudo();
@@ -107,6 +120,10 @@
 
   .mdev-link-index {
     font-size: 1.9vw;
+
+    @media #{ $portrait } {
+      font-size: 3.6vw;
+    }
   }
   /* Disabling lint because of necessary !important; */
   /* stylelint-disable */

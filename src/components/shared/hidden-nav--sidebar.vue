@@ -9,7 +9,7 @@
         <img :src="loadImage(mdevBrand)" alt="MDEV Digital Brand">
       </a>
 
-      <div class="mdev-sidebar-cta u-uppercase u-bold">
+      <div class="mdev-sidebar-cta u-light u-lowercase">
         {{ $t("navigation.sidebarCta") }}
       </div>
     </div>
@@ -95,7 +95,19 @@
   position: relative;
   transform: translate3d( -110%, 0, 0 );
   opacity: 0;
+  order: 2;
   transition: opacity .8s, all 1s;
+
+  @media #{ $portrait } {
+    height: 55vh;
+    padding-bottom: 40px;
+    padding-top: 90px;
+    order: 4;
+    width: 100%;
+    transform: translate3d( 0, 200%, 0 );
+    text-align: center;
+    clip-path: polygon( 50% 10%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0 );
+  }
 }
 
 .mdev-sidebar-container {
@@ -107,15 +119,25 @@
     display: block;
     margin-bottom: 3vw;
 
+    @media #{ $portrait } {
+      margin: 0 auto 25px auto;
+      width: 30%;
+    }
+
     img {
       width: 100%;
     }
   }
 
   .mdev-sidebar-cta {
-    color: $white;
-    font-size: 1.9vw;
+    color: $color-brand-primary;
+    font-size: 2.2vw;
     line-height: 120%;
+
+    @media #{ $portrait } {
+      font-size: 3.3vw;
+      letter-spacing: 2px;
+    }
   }
 
   .mdev-contact-title {
@@ -123,6 +145,11 @@
     display: block;
     font-size: 1.8vw;
     line-height: 120%;
+
+    @media #{ $portrait } {
+      font-size: 3.2vw;
+      letter-spacing: 2px;
+    }
   }
 
   .mdev-sidebar-contact {
@@ -134,6 +161,11 @@
       line-height: 130%;
       transition: all .9s;
 
+      @media #{ $portrait } {
+        display: block;
+        font-size: 3.1vw;
+      }
+
       &:hover,
       &:focus,
       &:active {
@@ -143,12 +175,21 @@
 
     .--tel {
       font-size: 2.3vw;
+
+      @media #{ $portrait } {
+        font-size: 4.3vw;
+      }
     }
   }
 
   .mdev-social-links {
     font-size: 2.4vw;
     margin: 2vw 0;
+
+    @media #{ $portrait } {
+      margin: 30px 0;
+      font-size: 4vw;
+    }
 
     a {
       display: block;
@@ -175,11 +216,19 @@
       color: $white;
       font-size: 1.5vw;
       line-height: 130%;
+
+      @media #{ $portrait } {
+        font-size: 2.1vw;
+      }
     }
 
     .address-street {
       color: $color-brand-primary;
       font-size: 1.2vw;
+
+      @media #{ $portrait } {
+        font-size: 1.8vw;
+      }
     }
   }
 }
