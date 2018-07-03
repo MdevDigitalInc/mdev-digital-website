@@ -2,11 +2,14 @@
   <div class="mdev-nav-sidebar flex flex-wrap flex-group-between">
     <!-- Top Container -->
     <div class="mdev-sidebar-container">
-      <a href="/" title="MDEV Digital Homepage" class="mdev-sidebar-brand">
+      <a href="/"
+        title="MDEV Digital Homepage"
+        :tabindex="(showLinks ? 1 : -1)"
+        class="mdev-sidebar-brand">
         <img :src="loadImage(mdevBrand)" alt="MDEV Digital Brand">
       </a>
 
-      <div class="mdev-sidebar-cta u-uppercase u-bold">
+      <div class="mdev-sidebar-cta u-light u-lowercase">
         {{ $t("navigation.sidebarCta") }}
       </div>
     </div>
@@ -17,10 +20,18 @@
         {{ $t("navigation.getInTouch") }}
       </h2>
       <div class="mdev-sidebar-contact">
-        <a class="--tel" href="tel:+15198604261" title="Call MDEV Digital">
+        <a class="--tel"
+          aria-label="Call us with your inquiry"
+          href="tel:1-519-860-4261"
+          :tabindex="(showLinks ? 1 : -1)"
+          title="MDEV Digital Direct Phone Line">
+
           519.860.4261
         </a>
-        <a href="mailto:hello@mdev.digital" title="Email MDEV Digital">
+        <a href="mailto:hello@mdev.digital"
+          aria-label="Email us with your inquiry"
+          :tabindex="(showLinks ? 1 : -1)"
+          title="Email MDEV Digital">
           hello@mdev.digital
         </a>
       </div>
@@ -30,9 +41,15 @@
 
       <!-- MDEV Address -->
       <div class="mdev-sidebar-address">
-        <span class="address-region u-bold u-uppercase">
+        <a href="http://bit.ly/2txL0Py"
+          target="_blank"
+          title="Get Directions To Our Offices!"
+          :tabindex="(showLinks ? 1 : -1)"
+          aria-haspopup="true"
+          aria-label="Get Directions To Our Offices."
+          class="address-region u-bold u-uppercase">
           {{ $t("navigation.addressRegion") }}
-        </span>
+        </a>
         <span class="address-street">
           {{ $t("navigation.addressStreet") }}
         </span>
@@ -52,6 +69,8 @@
         mdevBrand: 'MDEV-Logo.svg'
       };
     },
+
+    props:['showLinks'],
 
     methods: {
       loadImage(path){
@@ -76,7 +95,19 @@
   position: relative;
   transform: translate3d( -110%, 0, 0 );
   opacity: 0;
+  order: 2;
   transition: opacity .8s, all 1s;
+
+  @media #{ $portrait } {
+    height: 55vh;
+    padding-bottom: 40px;
+    padding-top: 90px;
+    order: 4;
+    width: 100%;
+    transform: translate3d( 0, 200%, 0 );
+    text-align: center;
+    clip-path: polygon( 50% 10%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0 );
+  }
 }
 
 .mdev-sidebar-container {
@@ -88,15 +119,25 @@
     display: block;
     margin-bottom: 3vw;
 
+    @media #{ $portrait } {
+      margin: 0 auto 25px auto;
+      width: 30%;
+    }
+
     img {
       width: 100%;
     }
   }
 
   .mdev-sidebar-cta {
-    color: $white;
-    font-size: 1.9vw;
+    color: $color-brand-primary;
+    font-size: 2.2vw;
     line-height: 120%;
+
+    @media #{ $portrait } {
+      font-size: 3.3vw;
+      letter-spacing: 2px;
+    }
   }
 
   .mdev-contact-title {
@@ -104,6 +145,11 @@
     display: block;
     font-size: 1.8vw;
     line-height: 120%;
+
+    @media #{ $portrait } {
+      font-size: 3.2vw;
+      letter-spacing: 2px;
+    }
   }
 
   .mdev-sidebar-contact {
@@ -115,6 +161,11 @@
       line-height: 130%;
       transition: all .9s;
 
+      @media #{ $portrait } {
+        display: block;
+        font-size: 3.1vw;
+      }
+
       &:hover,
       &:focus,
       &:active {
@@ -124,12 +175,21 @@
 
     .--tel {
       font-size: 2.3vw;
+
+      @media #{ $portrait } {
+        font-size: 4.3vw;
+      }
     }
   }
 
   .mdev-social-links {
     font-size: 2.4vw;
     margin: 2vw 0;
+
+    @media #{ $portrait } {
+      margin: 30px 0;
+      font-size: 4vw;
+    }
 
     a {
       display: block;
@@ -156,11 +216,19 @@
       color: $white;
       font-size: 1.5vw;
       line-height: 130%;
+
+      @media #{ $portrait } {
+        font-size: 2.1vw;
+      }
     }
 
     .address-street {
       color: $color-brand-primary;
       font-size: 1.2vw;
+
+      @media #{ $portrait } {
+        font-size: 1.8vw;
+      }
     }
   }
 }

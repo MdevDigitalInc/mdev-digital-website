@@ -1,10 +1,10 @@
 <template>
   <section class="mdev-main-content">
-    <hero-main pageTitle="PAGE TITLE HERE">
+    <hero-main :pageTitle="pageTitle" :headerDsc="headerDsc">
       <!-- Header Slot -->
       <div class="mdev-main-hero" :style="heroStyles"></div>
     </hero-main>
-    <home-services></home-services>
+    <home-services id="mainContent"></home-services>
     <home-casestudies></home-casestudies>
     <home-about></home-about>
     <home-testimonials></home-testimonials>
@@ -23,16 +23,21 @@ import HomeTestimonials   from './home-testimonials.vue';
 
 export default{
   name: 'HomePage',
+
   data: function() {
-    return{
+    return {
       heroStyles: {
         backgroundColor: '#0f1617',
         backgroundImage: 'url(' + this.loadImage('MDEV-main-hero.png') + ')',
         backgroundSize: 'cover',
         backgroundPosition: 'top center'
       },
+      // Disables Page Title bar
+      pageTitle: false,
+      headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.'
     };
   },
+
   components: {
     'hero-main'         : HeroMain,
     'home-about'        : HomeAbout,

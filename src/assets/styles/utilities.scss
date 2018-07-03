@@ -8,6 +8,10 @@
   text-transform: uppercase;
 }
 
+.u-lowercase {
+  text-transform: lowercase;
+}
+
 .u-capitalize {
   text-transform: capitalize;
 }
@@ -74,6 +78,17 @@
   @media #{$tablet-up} {
     display: none !important;
   }
+}
+
+.u-screenreader {
+  width: 0!important;
+  height: 0!important;
+  transform: scaley(0);
+  opacity: 0!important;
+  position: absolute !important;
+  top: -9999px;
+  left: -9999px;
+  visibility: hidden!important;
 }
 
 

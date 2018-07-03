@@ -6,8 +6,9 @@
       active-class="--active"
       data-main-links
       :title="link.linkTitle"
+      :tabindex="(showLinks ? 0 : -1)"
       aria-role="menuitem" >
-        <span class="mdev-link-index u-ultralight">
+        <span class="mdev-link-index u-ultralight" aria-hidden="true">
           {{ link.linkIndex }}
         </span>
         <span class="mdev-link-name u-bold u-uppercase">
@@ -22,13 +23,13 @@
 <script>
   export default{
     name: 'HiddenNavLinks',
-
-    props: ['links','showNav'],
-
+    // Data passed in via Parent
+    props: ['links','showLinks'],
+    // Watch for changes in parent data
     watch: {
-      showNav: function() {
+      showLinks: function() {
         // Nav Flag True is opening, false is closing
-        let isNavOpening = this.showNav;
+        let isNavOpening = this.showLinks;
         // Show LInks function
         function showLinks(target, index) {
           // Timeout Interval is a function of Index
@@ -62,7 +63,13 @@
   width: 75%;
   height: 100vh;
   background: transparent;
+  order: 2;
   padding: 11% 0;
+
+  @media #{ $portrait } {
+    width: 100%;
+    height: 45vh;
+  }
 
   a {
     display: block;
@@ -79,6 +86,13 @@
     transform: translate3d( 0, -1000px, 0);
     transition-timing-function: ease-in-out;
 
+    @media #{ $portrait } {
+      margin: 0 auto;
+      padding-left: 34%;
+      font-size: 5.2vw;
+      min-width: 240px;
+    }
+
     &:before {
       @include pseudo();
       width: 200%;
@@ -93,7 +107,9 @@
       transition-timing-function: ease-in-out, ease-in-out;
     }
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       text-shadow: 0 0 20px rgba( 0, 0, 0, .2);
       &:before {
         opacity: 1;
@@ -104,11 +120,17 @@
 
   .mdev-link-index {
     font-size: 1.9vw;
-  }
 
-  .--active {
-    opacity: .5!important;
+    @media #{ $portrait } {
+      font-size: 3.6vw;
+    }
   }
+  /* Disabling lint because of necessary !important; */
+  /* stylelint-disable */
+  .--active {
+    opacity: .5 !important;
+  }
+  /* stylelint-enable */
 
   .--showLinks {
     transform: translate3d( 0, 0, 0);

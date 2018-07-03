@@ -1,5 +1,5 @@
 <template>
-  <div class="mdev-nav-content flex flex-hor-start flex-vert-start flex-nowrap" data-nav-content>
+  <div class="mdev-nav-content flex flex-hor-start flex-vert-start" data-nav-content>
     <!-- Left Sidebar -->
     <slot name="sidebar"></slot>
     <!-- Main Links -->
@@ -31,6 +31,11 @@
   overflow: hidden;
   height: 100vh;
   background: transparent;
+  flex-wrap: nowrap;
+
+  @media #{ $portrait } {
+    flex-wrap: wrap;
+  }
 }
 
 /*--------------------------------------*/

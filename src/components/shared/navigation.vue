@@ -1,33 +1,52 @@
 <template>
   <nav class="mdev-main-nav" aria-role="navigation" data-main-nav role="navigation">
     <div class="mdev-nav-wrapper flex flex-nowrap flex-hor-between flex-vert-center">
-      <a :href="homeLink" :title="homeTitle" class="mdev-live-brand" :class="{ '--remove-brand': navIsOpen }">
+      <a :href="homeLink"
+        :title="homeTitle"
+        :tabindex="( navIsOpen ? -1 : 0)"
+        class="mdev-live-brand"
+        :class="{ '--remove-brand': navIsOpen }">
         <img :src="loadImage(mdevBrandTop)" data-mdev-top>
         <img :src="loadImage(mdevBrandMid)" data-mdev-mid>
         <img :src="loadImage(mdevBrandMid)" data-mdev-bot>
+
+        <!--Hidden Brand Flyout -->
+        <div class="mdev-hidden-brand">
+          <img :src="loadImage(mdevWordTop)" data-mdev-wtop>
+          <img :src="loadImage(mdevWordBot)" data-mdev-wbot>
+
+        </div>
       </a>
-    <button class="mdev-nav-open" :class="{ '--nav-open': navIsOpen }" v-on:click="openMenu">
-      <span></span>
-      <span></span>
-      <span></span>
+    <button
+      class="mdev-nav-open"
+      :class="{ '--nav-open': navIsOpen }"
+      title="Main Navigation Menu"
+      tabindex="0"
+      :aria-label="( navIsOpen ? labelClose : labelOpen )"
+      v-on:click.self.stop="openMenu">
+      <span v-on:click.self.stop="openMenu"></span>
+      <span v-on:click.self.stop="openMenu"></span>
+      <span v-on:click.self.stop="openMenu"></span>
     </button>
     </div>
     <!--
     <button @click="change()">CHANGE</button>
     -->
-    <div class="mdev-hidden-nav" :class="{ '--hid-nav-open': navIsOpen }">
+    <div class="mdev-hidden-nav"
+      :class="{ '--hid-nav-open': navIsOpen }"
+      :aria-hidden="!navIsOpen">
       <!-- HiddenNav Component -->
       <hidden-nav>
         <template slot="sidebar">
           <!-- Loads Sidebar on named slot -->
-          <hidden-nav-sidebar>
+          <hidden-nav-sidebar :showLinks="navIsOpen">
             <!-- Loads Social Links on Sidebar Slot -->
-            <social-links darkTheme="" ></social-links>
+            <social-links darkTheme="" :showLinks="navIsOpen" :linkContent="socialLinks"></social-links>
           </hidden-nav-sidebar>
         </template>
         <template slot="main">
           <!-- Loads Links on named slot -->
-          <hidden-nav-links :links="links" :showNav="navIsOpen" ></hidden-nav-links>
+          <hidden-nav-links :links="links" :showLinks="navIsOpen" ></hidden-nav-links>
         </template>
       </hidden-nav>
     </div>
@@ -74,38 +93,79 @@
             linkIndex: '04'
           }
         ],
+        socialLinks: [
+          {
+            linkClass: 'fa-facebook-f',
+            target: '_blank',
+            accessibility: 'Like us on Facebook',
+            linkUrl: 'https://www.facebook.com/MDEVDigital'
+          },
+          {
+            linkClass: 'fa-instagram',
+            target: '_blank',
+            accessibility: 'Follow us on Instagram',
+            linkUrl: 'https://www.instagram.com/mdev_digital/'
+          },
+          {
+            linkClass: 'fa-twitter',
+            target: '_blank',
+            accessibility: 'Follow us on Twitter',
+            linkUrl: 'https://twitter.com/MDEVdigital'
+          },
+          {
+            linkClass: 'fa-linkedin',
+            target: '_blank',
+            accessibility: 'Follow us on LinkedIn',
+            linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+          }
+        ],
 
         // Main Home Link On sidebar
         homeLink: '/',
         homeTitle: 'Home',
         mdevBrandMid: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Bottom.svg',
         mdevBrandTop: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Top.svg',
+        mdevWordTop: 'svg/logo-pieces/MDEV_RGB_WM_Teal_Top.svg',
+        mdevWordBot: 'svg/logo-pieces/MDEV_RGB_WM_White_Bottom.svg',
         // Flag for controlling the nav states
-        navIsOpen: false
+        navIsOpen: false,
+        labelOpen: 'Open Main Navigation Menu',
+        labelClose: 'Close Main Navigation Menu'
       };
     },
 
     // Watch route change and toggle menu if user navigates away
     watch: {
       $route (to,from) {
-        this.openMenu();
+        this.closeMenu();
       }
     },
 
     mounted: function() {
       // Scroll timer to debounce
       let scrollTimer;
-      let scrollDistance = $('[data-page-title]').offset().top;
+      let scrollDistance;
       let desiredOffset = 220;
       let scrollTime = 20;
 
+      // Check to see that the page title is there
+      if ( $('[data-page-title]').length !== 0 ) {
+        scrollDistance = $('[data-page-title]').offset().top;
+      }
+      else {
+        scrollDistance = 600;
+      }
+
+      console.log(scrollDistance);
       function userScroll( distance ) {
         // If user scrolls past desired distance remove effects
         if ( distance >= (scrollDistance - desiredOffset) ) {
           $('[data-main-header]').addClass('--user-scroll');
+          $('[data-main-nav]').addClass('--user-scroll');
         }
         else {
-          $('[data-main-header]').removeClass('--user-scroll');
+          $('[data-main-header').removeClass('--user-scroll');
+          $('[data-main-nav').removeClass('--user-scroll');
         }
       }
 
@@ -141,6 +201,15 @@
         setTimeout(function(){
           $('[data-nav-content]').toggleClass('--active-sidebar');
         }, ( this.navIsOpen ? 400 : 0) );
+      },
+
+      // Force close menu on route change
+      // avoids issues if user goes back on history
+      closeMenu() {
+        this.navIsOpen = false;
+        $('[data-main-links]').removeClass('--showLinks');
+        $('body').removeClass('u-freeze-scroll');
+        $('[data-nav-content]').toggleClass('--active-sidebar');
       }
     },
 
@@ -203,6 +272,12 @@
     &:hover {
       cursor: pointer;
       opacity: .8;
+
+      .mdev-hidden-brand img {
+        transform: translate3d( 0, 0, 0);
+        opacity: 1;
+        transition: all .3s;
+      }
     }
 
     img {
@@ -226,6 +301,7 @@
     position: relative;
     overflow: visible;
     max-width: 42px;
+    min-width: 30px;
     padding: 0;
     z-index: 99;
     margin: 0;
@@ -271,6 +347,20 @@
       span {
         border: 1px solid rgba(13, 119, 113, 0);
       }
+    }
+  }
+
+  .mdev-hidden-brand {
+    width: 4.5%;
+    position: absolute;
+    top: 27%;
+    left: 3.2%;
+    z-index: -1;
+
+    img {
+      opacity: 0;
+      transition: all .3s;
+      transform: translate3d( -70%, 0, 0);
     }
   }
 
@@ -343,6 +433,22 @@
     opacity: 0;
     transform: translate3d( -300px, 0, 0);
   }
+
+  // Nav Active from Scroll
+
+  .mdev-main-nav.--user-scroll {
+    opacity: .3;
+    transition: opacity .5s, filter 1.2s;
+    filter: grayscale(1);
+
+
+    &:hover {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+  }
+
+
 /*--------------------------------------*/
 
 </style>
