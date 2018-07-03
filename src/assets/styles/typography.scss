@@ -28,33 +28,28 @@ h6,.h6, {
 
 // Responsive Font Size Maps
 $p-font-sizes: (
-  null  : 14px,
-  $tablet-up : 16px,
-  $desktop-up: 19px
+  null  : 22px,
+  $portrait: 19px
 );
 
 $h1-font-sizes: (
-  null  : 25px,
-  $tablet-up : 28px,
-  $desktop-up: 70px
+  null  : 48px,
+  $portrait : 38px
 );
 
 $h2-font-sizes: (
-  null  : 30px,
-  $tablet-up : 32px,
-  $desktop-up: 35px
+  null  : 120px,
+  $portrait: 85px
 );
 
 $h3-font-sizes: (
-  null  : 20px,
-  $tablet-up : 22px,
-  $desktop-up: 25px
+  null  : 30px,
+  $portrait: 25px
 );
 
 $h4-font-sizes: (
-  null  : 60%,
-  $tablet-up : 90%,
-  $desktop-up: 18px
+  null  : 22px,
+  $portrait: 18px
 );
 
 $h5-font-sizes: (
@@ -143,3 +138,9 @@ a {
   }
 }
 
+.mdev-hero-text {
+  @include font-size($h1-font-sizes);
+  line-height: 120%;
+  color: $color-brand-primary;
+  font-weight: 700;
+}

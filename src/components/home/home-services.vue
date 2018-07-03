@@ -1,5 +1,17 @@
 <template>
-    <h1> Homepage SERVICES </h1>
+  <div class="mdev-main-wrapper --section-space">
+    <h3 class="u-uppercase u-c-white">{{ $t("homepage.intro.heading") }} </h3>
+    <p class="mdev-hero-text">
+      {{ $t("homepage.intro.content") }}
+    </p>
+    <router-link
+      title="View Our Services"
+      aria-label="View Our Services"
+      class="mdev-btn mdev-primary-btn --space-top-sm"
+      to="/services">
+      {{ $t("homepage.intro.action") }}
+    </router-link>
+  </div>
 </template>
 
 
@@ -35,12 +47,14 @@
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 	/*-------------------------------------*/
 	/* HOME SERVICES Component Styles
 	/--------------------------------------*/
-
+  .mdev-hero-text {
+    margin-top: 25px;
+  }
 
 	/*--------------------------------------*/
 

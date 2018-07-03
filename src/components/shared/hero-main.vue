@@ -1,5 +1,5 @@
 <template>
-  <header class="mdev-main-header" data-main-header aria-describedby="headerDescription">
+  <header class="mdev-main-header --section-space-btm" data-main-header aria-describedby="headerDescription">
     <div class="mdev-hero-mask" data-main-hero >
       <slot></slot>
       <div v-if="pageTitle" class="mdev-page-title" data-main-title>

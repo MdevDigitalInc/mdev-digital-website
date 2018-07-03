@@ -16,33 +16,26 @@
   }
 
   @media #{$laptop-up} {
-    max-width: 1400px;
+    max-width: 1300px;
   }
 
   @media #{$xl-up} {
-    max-width: 1600px;
+    max-width: 1500px;
   }
 }
 
 
+.--section-space {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
 
-// REMOVE WHEN DEVELOPMENT STARTS
-.test-class {
-  width: 100vw;
-  height: 100vh;
-  background: #333;
-  position: relative;
-  overflow: hidden;
+.--section-space-btm {
+  margin-bottom: 150px;
+}
 
-  .test-button {
-    display: inline-block;
-    width: auto;
-    margin: 2vw auto;
-    padding: 10px 20px;
-    color: $white;
-    text-transform: uppercase;
-    background: $color-brand-primary;
-    @include center(horizontal);
-  }
+// Spacing Modifiers
+.--space-top-sm {
+  margin-top: 50px;
 }
 
