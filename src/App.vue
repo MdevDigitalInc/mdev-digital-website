@@ -1,5 +1,6 @@
 <template>
   <main id="app">
+    <!-- Skip Navigatio Accessbility -->
     <button href="#mainContent"
       title="Skip to main content"
       aria-label="Skip to main content"
@@ -7,6 +8,7 @@
       class="mdev-skipnav" tabindex="0">
       Skip To Main Content
     </button>
+    <!-- Main Nav -->
     <main-navigation></main-navigation>
     <transition name="fade">
       <router-view></router-view>

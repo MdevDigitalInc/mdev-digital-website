@@ -22,7 +22,7 @@
       <div class="mdev-sidebar-contact">
         <a class="--tel"
           aria-label="Call us with your inquiry"
-          href="tel:+15198604261"
+          href="tel:1-519-860-4261"
           :tabindex="(showLinks ? 1 : -1)"
           title="MDEV Digital Direct Phone Line">
 
