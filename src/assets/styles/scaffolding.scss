@@ -24,7 +24,24 @@
   }
 }
 
+// Section Types
+.mdev-full-section {
+  width: 100%;
+  position: relative;
+  padding: 150px 0;
+}
 
+.mdev-split {
+  width: 100%;
+  position: relative;
+  flex-wrap: nowrap;
+
+  @media #{ $portrait } {
+    flex-wrap: wrap;
+  }
+}
+
+// Spacing Modifiers
 .--section-space {
   margin-top: 150px;
   margin-bottom: 150px;
@@ -34,8 +51,28 @@
   margin-bottom: 150px;
 }
 
-// Spacing Modifiers
 .--space-top-sm {
   margin-top: 50px;
 }
 
+.--triangle-bottom {
+  clip-path: $clip-triangle-bot;
+}
+
+.--triangle-bottom-r {
+  clip-path: $clip-triangle-bot-reverse;
+}
+
+.--triangle-top {
+  clip-path: $clip-triangle-top;
+}
+
+// Background Modifier
+
+.--primary-bkg {
+  background: $color-brand-primary;
+}
+
+.--accent-bkg {
+  background: $color-brand-accent;
+}

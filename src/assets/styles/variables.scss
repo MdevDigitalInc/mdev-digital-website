@@ -26,3 +26,9 @@ $nav-side-padding: 20px;
 
 // Radius Variables
 $standard-radius: 4px;
+
+//Clipping Paths
+
+$clip-triangle-bot: polygon( 50% 0%, 100% 0, 100% 100%, 50% 90%, 0 100%, 0 0 );
+$clip-triangle-top: polygon( 50% 10%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0 );
+$clip-triangle-bot-reverse: polygon(50% 0%, 100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);

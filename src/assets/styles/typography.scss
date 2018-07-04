@@ -24,6 +24,7 @@ h6,.h6, {
   font-family: $main-font;
   font-weight: 700;
   color: inherit;
+  margin-bottom: 25px;
 }
 
 // Responsive Font Size Maps
@@ -86,7 +87,7 @@ $link-font-sizes: (
 /* Generate Responsive Sizing */
 
 p {
-  line-height: 24px;
+  line-height: 150%;
   @include font-size($p-font-sizes);
 }
 

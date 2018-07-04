@@ -1,5 +1,9 @@
 <template>
-    <h1> Homepage ABOUT </h1>
+  <div class="mdev-full-section --primary-bkg --triangle-bottom-r">
+    <div class="mdev-main-wrapper">
+       TEST TEST TEST
+    </div>
+  </div>
 </template>
 
 

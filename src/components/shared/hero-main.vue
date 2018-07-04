@@ -68,10 +68,6 @@ export default {
 /--------------------------------------*/
 @import '../../assets/styles/keyframes/hero-anim.scss';
 
-body {
-  min-height: 4000px;
-}
-
 // Containers
 .mdev-main-header {
   width: 100%;

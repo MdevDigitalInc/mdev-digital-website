@@ -80,7 +80,7 @@
     line-height: 190%;
     padding-left: 15%;
     overflow: hidden;
-    transition: all .5s;
+    transition: all 0;
     opacity: 0;
     text-shadow: 0 0 20px rgba( 0, 0, 0, 0);
     transform: translate3d( 0, -1000px, 0);
@@ -133,6 +133,7 @@
   /* stylelint-enable */
 
   .--showLinks {
+    transition: all .5s;
     transform: translate3d( 0, 0, 0);
     opacity: 1;
   }

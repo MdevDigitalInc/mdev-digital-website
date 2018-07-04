@@ -106,7 +106,7 @@
     width: 100%;
     transform: translate3d( 0, 200%, 0 );
     text-align: center;
-    clip-path: polygon( 50% 10%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0 );
+    clip-path: $clip-triangle-top;
   }
 }
 

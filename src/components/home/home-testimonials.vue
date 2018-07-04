@@ -1,5 +1,9 @@
 <template>
-    <h1> Homepage TESTIMONIALS </h1>
+  <div class="mdev-full-section --accent-bkg">
+    <div class="mdev-main-wrapper">
+      TEST TEST TEST
+    </div>
+  </div>
 </template>
 
 
