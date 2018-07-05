@@ -36,9 +36,11 @@ export default {
     },
 
     about: {
-      heading: "Your internal team without the overhead",
-      subheading: "Find out how.",
-      action: "About"
+      action: "Find out how"
+    },
+
+    testimonials: {
+      heading: "Testimonials"
     }
   },
 

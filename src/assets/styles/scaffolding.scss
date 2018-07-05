@@ -55,6 +55,11 @@
   margin-top: 50px;
 }
 
+.--space-top-xs {
+  margin-top: 25px;
+}
+
+// Triangle Clip Path
 .--triangle-bottom {
   clip-path: $clip-triangle-bot;
 }
@@ -67,8 +72,15 @@
   clip-path: $clip-triangle-top;
 }
 
-// Background Modifier
+// Pull Up | Down
+.--pull-up-section {
+  padding-top: 350px;
+  margin-top: -200px;
+  z-index: 0;
+  position: relative;
 
+}
+// Background Modifier
 .--primary-bkg {
   background: $color-brand-primary;
 }

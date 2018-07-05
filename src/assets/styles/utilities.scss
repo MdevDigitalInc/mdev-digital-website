@@ -59,6 +59,10 @@
 .u-light {
   font-weight: 300;
 }
+
+.u-italic {
+  font-style: italic;
+}
 /* Disabling because of !important */
 /* stylelint-disable */
 .u-hidden-phone {
@@ -112,6 +116,11 @@
 
 .clear {
   @include clearfix();
+}
+
+// Color Utilities
+.u-c-black {
+  color: $color-brand-bkg;
 }
 
 .u-c-white {

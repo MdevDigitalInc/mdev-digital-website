@@ -30,12 +30,12 @@ import BtnPrimary   from '../shared/btn-primary.vue';
 import SplitSixty   from '../modules/sixty-forty.vue';
 import ServiceLinks from './home-services--links.vue';
 
-export default{
+export default {
   name: 'HomeServices',
 
-  data: function(){
+  data: function() {
 
-    return{
+    return {
 
       BtnData: {
         accessibility: 'View Our Services',
