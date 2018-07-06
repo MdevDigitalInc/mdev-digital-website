@@ -107,6 +107,7 @@
   width: auto;
   margin: 0 20px;
   cursor: pointer;
+  padding: 15px 0;
 
   &:hover,
   &:active,
@@ -120,16 +121,16 @@
 
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
-[data-line-one]{
+[ data-line-one ]{
   transform: rotate( 60deg ) translate3d( 0, -37vw, 0 );
 }
 // Line Two is not rotated and therefore X is X and Y is Y
-[data-line-two]{
+[ data-line-two ]{
   transform: rotate( 0 ) translate3d( 0, -50px, 0 );
 }
 
 // Because of rotation Y coordinate is actually X when translating
-[data-line-three]{
+[ data-line-three ]{
   transform: rotate( -60deg ) translate3d( 0, -37vw, 0 );
 }
 

@@ -44,6 +44,10 @@ export default {
     }
   },
 
+  general: {
+    slogan: "Your internal team without the overhead"
+  },
+
   navigation: {
     sidebarCta: "Let's start something new!",
     getInTouch: "Get in touch:",
