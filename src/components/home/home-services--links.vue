@@ -43,6 +43,10 @@
 .mdev-links-title {
   font-size: 1.25vw;
   display: block;
+
+  @media #{ $portrait } {
+    font-size: 4.25vw;
+  }
 }
 
 /*--------------------------------------*/

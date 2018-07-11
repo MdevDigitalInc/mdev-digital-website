@@ -13,6 +13,7 @@
 
   @media #{$tablet-only} {
     max-width: 800px;
+    width: 80%;
   }
 
   @media #{$laptop-up} {

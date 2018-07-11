@@ -41,10 +41,18 @@
 /* MAIN FOOTER Component Styles
 /--------------------------------------*/
 .mdev-main-footer {
-  padding: 100px 0;
+  padding: 70px 0;
   background: $color-brand-bkg;
   width: 100%;
   position: relative;
+
+  @media #{ $desktop-up } {
+    padding: 100px 0;
+  }
+
+  @media #{ $portrait } {
+    padding: 60px 0;
+  }
 }
 
 .mdev-footer-slogan {

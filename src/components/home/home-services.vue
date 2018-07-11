@@ -98,6 +98,10 @@ export default {
   width: 100%;
   position: relative;
 
+  @media #{ $portrait } {
+    padding: 60px 0;
+  }
+
   a {
     display: block;
     color: $white;
@@ -118,11 +122,23 @@ export default {
     border-bottom: 4px solid rgba( 255, 255, 255, 0 );
     display: inline-block;
     transition: all .6s;
+
+    @media #{ $xl-up } {
+      font-size: 1.5vw;
+    }
+
+    @media #{ $portrait } {
+      font-size: 4.6vw;
+    }
   }
 
   .mdev-link-index {
     font-size: 1.1vw;
     display: inline-block;
+
+    @media #{ $portrait } {
+      font-size: 4.1vw;
+    }
   }
 }
 
