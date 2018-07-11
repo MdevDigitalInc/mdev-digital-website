@@ -1,5 +1,5 @@
 <template>
-  <div class="mdev-full-section --accent-bkg --pull-up-section">
+  <div class="mdev-full-section --accent-bkg --pull-up-section --reduce-bottom">
     <div class="mdev-main-wrapper u-text-center">
       <h3 class="u-uppercase u-c-black u-bold">
         {{ $t("homepage.testimonials.heading") }}
@@ -60,14 +60,17 @@
 
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 /*-------------------------------------*/
 /* Home Testimonials Component Styles
 /--------------------------------------*/
+
+@import '../../assets/styles/keyframes/lines-anim.scss';
+@import '../../assets/styles/mixins.scss';
 // Overrides default padding but that is fine
 // because of scoped styles
-.mdev-full-section {
+.--reduce-bottom {
   padding-bottom: 75px;
 }
 
@@ -121,17 +124,24 @@
 
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
-[ data-line-one ]{
+[ data-line-one ] {
   transform: rotate( 60deg ) translate3d( 0, -37vw, 0 );
+  animation: line-one-anim;
+  @include arrow-anim-rules( 11s );
 }
+
 // Line Two is not rotated and therefore X is X and Y is Y
-[ data-line-two ]{
+[ data-line-two ] {
   transform: rotate( 0 ) translate3d( 0, -50px, 0 );
+  animation: line-two-anim;
+  @include arrow-anim-rules( 22s );
 }
 
 // Because of rotation Y coordinate is actually X when translating
-[ data-line-three ]{
+[ data-line-three ] {
   transform: rotate( -60deg ) translate3d( 0, -37vw, 0 );
+  animation: line-three-anim;
+  @include arrow-anim-rules( 17s );
 }
 
 /*--------------------------------------*/

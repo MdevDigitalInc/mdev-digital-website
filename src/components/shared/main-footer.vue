@@ -50,7 +50,7 @@
 .mdev-footer-slogan {
   font-weight: 700;
   letter-spacing: 2px;
-  font-size: .85w;
+  font-size: .85vw;
 }
 
 .mdev-footer-copyright {

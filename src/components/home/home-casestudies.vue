@@ -1,48 +1,65 @@
 <template>
-    <h1> Homepage Case Studies </h1>
+  <div class="mdev-full-section">
+    <!-- Case Study Heading -->
+    <div class="mdev-case-heading u-text-center">
+      <span class="mdev-top-subhead u-c-accent u-uppercase">
+        {{ $t("homepage.casestudies.subheading") }}
+      </span>
+      <h3 class="u-c-primary u-uppercase">
+        {{ $t("homepage.casestudies.heading") }}
+      </h3>
+    </div>
+    <!-- Case Study Carousel -->
+    <h1 class="u-c-white u-text-center"> TO BE DISCUSSED... </h1>
+    <!-- Case Action Heading -->
+    <div class="u-text-center">
+      <btn-primary :BtnData="BtnData">
+        {{ $t("homepage.casestudies.action") }}
+      </btn-primary>
+    </div>
+  </div>
 </template>
 
 
 
 <script>
-  export default{
-    name: 'HomeCaseStudies',
-    data: function(){
-      return{
+// Local Import
+import BtnPrimary           from '../shared/btn-primary.vue';
 
-      };
-    },
-
-    mounted: function(){
-      console.log('Element Mounted');
-    },
-
-    methods: {
-      loadImage(path){
-        return require('../../assets/images/' + path);
-      },
-      // Change Language METHOD
-      change () {
-        let current = this.$locale.current();
-        if (current === 'en') {
-          this.$locale.change('pt');
-        } else {
-          this.$locale.change('en');
-        }
+export default{
+  name: 'HomeCaseStudies',
+  data: function(){
+    return{
+      BtnData: {
+        accessibility: 'Learn more about our work!',
+        btnRoute: '/casestudies',
+        btnClass: 'mdev-primary-btn --space-top-sm'
       }
+    };
+  },
+
+  methods: {
+    loadImage(path){
+      return require('../../assets/images/' + path);
     }
-  };
+  },
+
+  components: {
+    'btn-primary'         : BtnPrimary
+  }
+};
 </script>
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 
-	/*-------------------------------------*/
-	/* HOME CASE STUDIES Component Styles
-	/--------------------------------------*/
-
-
-	/*--------------------------------------*/
+/*-------------------------------------*/
+/* HOME CASE STUDIES Component Styles
+/--------------------------------------*/
+.mdev-full-section {
+  padding-top: 50px;
+}
+/*--------------------------------------*/
 
 </style>

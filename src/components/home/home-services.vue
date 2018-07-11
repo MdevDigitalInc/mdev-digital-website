@@ -1,5 +1,5 @@
 <template>
-  <div class="mdev-full-section --section-space --primary-bkg --triangle-bottom">
+  <div class="mdev-full-section --section-space-top --primary-bkg --triangle-bottom">
     <div class="mdev-main-wrapper">
       <!-- Split Component -->
       <split-sixty>

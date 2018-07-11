@@ -1,7 +1,6 @@
 export default {
 
   homepage: {
-
     intro: {
       heading: "Process-driven UX + Innovative Application Development",
       content: "Our process is honed through experience and framed by the belief that quality matters. We craft innovative digital solutions with the future in mind.",
@@ -26,7 +25,7 @@ export default {
     casestudies: {
       heading: "Case Studies",
       subheading: "Featured",
-      seemore: "See all case studies",
+      action: "See all case studies",
 
       cases: {
         tfac: "The Factory",

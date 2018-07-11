@@ -120,7 +120,7 @@
     margin-bottom: 3vw;
 
     @media #{ $portrait } {
-      margin: 0 auto 25px auto;
+      margin: 0 auto 25px;
       width: 30%;
     }
 

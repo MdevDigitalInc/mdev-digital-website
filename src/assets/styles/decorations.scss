@@ -3,6 +3,8 @@
 .mdev-sexy-line {
   width: 100%;
   height: 1px;
+  position: absolute;
+  z-index: -1;
 }
 
 .--sexy-green {
