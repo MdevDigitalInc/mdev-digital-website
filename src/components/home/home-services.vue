@@ -131,6 +131,10 @@ export default {
     @media #{$portrait} {
       font-size: 4.6vw;
     }
+    @media #{$phone-only} {
+      font-size: 6vw;
+      line-height: 120%;
+    }
   }
 
   .mdev-link-index {
@@ -139,6 +143,10 @@ export default {
 
     @media #{$portrait} {
       font-size: 4.1vw;
+    }
+
+    @media #{$phone-only} {
+      font-size: 5.1vw;
     }
   }
 }

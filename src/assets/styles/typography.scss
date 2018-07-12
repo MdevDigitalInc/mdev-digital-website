@@ -34,8 +34,9 @@ $p-font-sizes: (
 );
 
 $h1-font-sizes: (
-  null  : 48px,
-  $portrait : 40px
+  null  : 2.5vw,
+  $portrait : 6.9vw,
+  $phone-only: 8vw
 );
 
 $h2-font-sizes: (
@@ -45,7 +46,8 @@ $h2-font-sizes: (
 
 $h3-font-sizes: (
   null  : 1.6vw,
-  $portrait: 5vw
+  $portrait: 5vw,
+  $phone-only: 6vw
 );
 
 $h4-font-sizes: (

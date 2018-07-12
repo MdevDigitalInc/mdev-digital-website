@@ -23,6 +23,10 @@
   @media #{$xl-up} {
     max-width: 1500px;
   }
+
+  @media #{$phone-only} {
+    width: 90%;
+  }
 }
 
 // Section Types

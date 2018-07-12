@@ -270,7 +270,7 @@
     height: auto;
     width: 2.5%;
     opacity: 0;
-    min-width: 30px;
+    min-width: 25px;
     transition: all 1.8s;
 
     &:hover {
@@ -305,7 +305,7 @@
     position: relative;
     overflow: visible;
     max-width: 42px;
-    min-width: 30px;
+    min-width: 25px;
     padding: 0;
     z-index: 99;
     margin: 0;

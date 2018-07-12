@@ -47,6 +47,9 @@
   @media #{$portrait} {
     font-size: 4.25vw;
   }
+  @media #{$phone-only} {
+    font-size: 8vw;
+  }
 }
 
 /*--------------------------------------*/

@@ -53,6 +53,10 @@
   @media #{$portrait} {
     padding: 60px 0;
   }
+
+  @media #{$phone-only} {
+    flex-wrap: wrap;
+  }
 }
 
 .mdev-footer-slogan {
@@ -62,6 +66,12 @@
 
   @media #{$portrait} {
     font-size: 1.2vw;
+  }
+
+  @media #{$phone-only} {
+    width: 100%;
+    text-align: center;
+    font-size: 3vw;
   }
 }
 
@@ -73,12 +83,24 @@
   @media #{$portrait} {
     font-size: 1.2vw;
   }
+
+  @media #{$phone-only} {
+    width: 100%;
+    text-align: center;
+    font-size: 3vw;
+    padding-top: 8px;
+  }
 }
 
 .mdev-footer-brand {
   width: 2%;
   min-width: 35px;
   margin: 0 40px;
+
+  @media #{$phone-only} {
+    order: -1;
+    margin-bottom: 20px;
+  }
 
   &:hover {
     img {
