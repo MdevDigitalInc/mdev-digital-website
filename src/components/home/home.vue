@@ -8,7 +8,7 @@
     <home-services></home-services>
     <home-casestudies></home-casestudies>
     <home-about></home-about>
-    <home-testimonials></home-testimonials>
+    <home-testimonials :testimonials="testimonials"></home-testimonials>
     <main-footer></main-footer>
   </section>
 </template>
@@ -36,7 +36,30 @@ export default{
       },
       // Disables Page Title bar
       pageTitle: 'TESTY TEST TEST',
-      headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.'
+      headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.',
+
+      testimonials: [
+        {
+          content: 'Dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
+          name: 'Aaron Finkenzeller, CTO Zucora Inc.'
+        },
+        {
+          content: 'House In The Thaw Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
+          name: 'Brad Geddes, CEO Zucora Inc.'
+        },
+        {
+          content: 'Dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
+          name: 'Albert Einstein, EMC Industries'
+        },
+        {
+          content: 'House In The Thaw Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
+          name: 'Bradd Pitt, CTO Zucora Inc.'
+        },
+        {
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
+          name: 'Edward Norton, CTO Zucora Inc.'
+        }
+      ]
     };
   },
 

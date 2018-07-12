@@ -4,29 +4,36 @@
       <h3 class="u-uppercase u-c-black u-bold">
         {{ $t("homepage.testimonials.heading") }}
       </h3>
-      <p class="mdev-testimonial u-c-black --space-top-xs u-light u-italic">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus
-        placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.
-
+      <p v-for="( testimonial, index ) in testimonials"
+        v-if=" index == desiredIndex "
+        class="mdev-testimonial u-c-black --space-top-xs u-light u-italic">
+          {{ testimonial.content }}
         <span class="testimonial-name">
-          - Aaron Finkenzeller, CTO Zucora Inc.
+          - {{ testimonial.name }}
         </span>
       </p>
       <!-- Carousel Controls -->
       <div class="mdev-testimonial-ctrl flex flex-hor-center flex-vert-center --space-top-sm">
         <!-- Arrow W/ embedded SVG -->
-        <div class="ctrl-arrow --left flex flex-vert-center" aria-role="button" aria-label="Click to view the previous Testimonial">
+        <div class="ctrl-arrow --left flex flex-vert-center"
+          v-on:click.stop=" nextSlide(-1) "
+          aria-role="button"
+          aria-label="Click to view the previous Testimonial">
           <svg xmlns="http://www.w3.org/2000/svg" width="52" height="9"><defs/><path id="arrow_right" data-name="arrow right" class="cls-1" d="M1096.35
         4885l7.65-4.5-7.65-4.51v3.55H1052v1.91h44.35v3.55z" transform="translate(-1052 -4876)"/></svg>
         </div>
         <!-- Position Marker -->
         <div class="ctrl-position u-light">
-          <span>01</span>
+          <span>0{{ desiredIndex + 1 }}</span>
           <span class="u-italic">of</span>
-          <span>04</span>
+          <span>0{{ testimonials.length }}</span>
         </div>
         <!-- Arrow W/ embedded SVG -->
-        <div class="ctrl-arrow --right flex flex-vert-center" aria-role="button" aria-label="Click to view the next Testimonial">
+        <div
+          class="ctrl-arrow --right flex flex-vert-center"
+          v-on:click.stop=" nextSlide(1) "
+          aria-role="button"
+          aria-label="Click to view the next Testimonial">
           <svg xmlns="http://www.w3.org/2000/svg" width="52" height="9"><defs/><path id="arrow_right" data-name="arrow right" class="cls-1" d="M1096.35
         4885l7.65-4.5-7.65-4.51v3.55H1052v1.91h44.35v3.55z" transform="translate(-1052 -4876)"/></svg>
         </div>
@@ -44,16 +51,35 @@
 <script>
   export default{
     name: 'HomeTestimonials',
+
+    props: [ 'testimonials' ],
+
     data: function(){
       return{
-        arrow: 'svg/arrows/arrow-black.svg'
+        arrow: 'svg/arrows/arrow-black.svg',
+        desiredIndex: 0
       };
     },
+
 
     methods: {
       loadImage(path){
         return require('../../assets/images/' + path);
+      },
+      nextSlide(direction) {
+        let arrayLen = this.testimonials.length - 1;
+
+        if ( direction + this.desiredIndex > arrayLen ) {
+          this.desiredIndex = 0;
+        }
+        else if ( direction + this.desiredIndex < 0 ) {
+          this.desiredIndex = arrayLen;
+        }
+        else {
+          this.desiredIndex += direction;
+        }
       }
+
     }
   };
 </script>
