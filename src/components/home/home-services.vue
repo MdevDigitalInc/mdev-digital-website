@@ -9,16 +9,17 @@
           <p class="u-c-white">
             {{ $t("homepage.services.content") }}
           </p>
-          <!-- Primary Button -->
-          <btn-primary :BtnData="BtnData">
-            {{ $t("homepage.services.action") }}
-          </btn-primary>
         </template>
         <!-- Right Split -->
         <template slot="rightSlot">
           <service-links :links="links" linksTitle="Services"></service-links>
         </template>
       </split-sixty>
+
+      <!-- Primary Button -->
+      <btn-primary :BtnData="BtnData">
+        {{ $t("homepage.services.action") }}
+      </btn-primary>
     </div>
   </div>
 </template>
@@ -40,7 +41,7 @@ export default {
       BtnData: {
         accessibility: 'View Our Services',
         btnRoute: '/services',
-        btnClass: 'mdev-primary-btn --space-top-sm'
+        btnClass: 'mdev-primary-btn --space-top-sm --tab'
       },
 
       links: [
@@ -99,7 +100,7 @@ export default {
   position: relative;
 
   @media #{ $portrait } {
-    padding: 60px 0;
+    padding: 60px 0 0;
   }
 
   a {
@@ -139,6 +140,12 @@ export default {
     @media #{ $portrait } {
       font-size: 4.1vw;
     }
+  }
+}
+
+.--tab {
+  @media #{ $portrait }{
+    margin-bottom: 60px;
   }
 }
 

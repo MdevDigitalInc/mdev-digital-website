@@ -116,10 +116,14 @@ export default {
   color: $white;
   height: 100vh;
   width: 4.5%;
-  border-right: 1px solid white;
+  border-right: 1px solid rgba( 255, 255, 255, .5 );
   opacity: 0;
   min-width: 50px;
   transition: all 3s, height .1s;
+
+  @media #{ $portrait } {
+    width: 9.5%;
+  }
 
   h1 {
     font-size: 120%;
@@ -131,6 +135,11 @@ export default {
     white-space: nowrap;
     margin: 0;
     transition: all .5s;
+
+    @media #{ $portrait } {
+      top: 50%;
+      font-size: 90%;
+    }
   }
 }
 

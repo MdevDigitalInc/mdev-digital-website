@@ -21,6 +21,7 @@ $body-weight: 300;
 
 // Spacing Variables
 $nav-padding: 8px 1%;
+$nav-padding-prt: 12px 3%;
 $nav-side-padding: 20px;
 // Button Variables
 
@@ -31,4 +32,7 @@ $standard-radius: 4px;
 
 $clip-triangle-bot: polygon( 50% 0%, 100% 0, 100% 100%, 50% 90%, 0 100%, 0 0 );
 $clip-triangle-top: polygon( 50% 10%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0 );
-$clip-triangle-bot-reverse: polygon(50% 0%, 100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+$clip-triangle-bot-reverse: polygon(50% 0%, 100% 0, 100% 90%, 50% 100%, 0 90%, 0 0 );
+$clip-triangle-bot-prt: polygon( 50% 0%, 100% 0, 100% 100%, 50% 96%, 0 100%, 0 0 );
+$clip-triangle-top-prt: polygon( 50% 10%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0 );
+$clip-triangle-bot-reverse-prt: polygon( 50% 0%, 100% 0, 100% 94%, 50% 100%, 0 94%, 0 0 );

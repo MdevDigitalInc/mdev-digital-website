@@ -13,7 +13,7 @@
 
   @media #{$tablet-only} {
     max-width: 800px;
-    width: 80%;
+    width: 76%;
   }
 
   @media #{$laptop-up} {
@@ -73,14 +73,26 @@
 // Triangle Clip Path
 .--triangle-bottom {
   clip-path: $clip-triangle-bot;
+
+  @media #{ $portrait } {
+    clip-path: $clip-triangle-bot-prt;
+  }
 }
 
 .--triangle-bottom-r {
   clip-path: $clip-triangle-bot-reverse;
+
+  @media #{ $portrait } {
+    clip-path: $clip-triangle-bot-reverse-prt;
+  }
 }
 
 .--triangle-top {
   clip-path: $clip-triangle-top;
+
+  @media #{ $portrait } {
+    clip-path: $clip-triangle-top-prt;
+  }
 }
 
 // Pull Up | Down

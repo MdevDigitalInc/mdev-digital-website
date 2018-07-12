@@ -89,6 +89,10 @@
 .mdev-testimonial-ctrl {
   font-size: 1.55vw;
 
+  @media #{ $portrait } {
+    font-size: 3.25vw;
+  }
+
   .u-italic {
     padding-right: 8px;
   }
@@ -111,6 +115,10 @@
   margin: 0 20px;
   cursor: pointer;
   padding: 15px 0;
+
+  @media #{ $portrait } {
+    margin: 0 40px;
+  }
 
   &:hover,
   &:active,

@@ -249,6 +249,10 @@
     transition: all, .3s;
     background: rgba( 51, 51, 51, 0 );
 
+    @media #{ $portrait } {
+      padding: $nav-padding-prt;
+    }
+
     img {
       width: 100%;
     }
@@ -310,6 +314,10 @@
     background: transparent;
     transition: .6s all;
 
+    @media #{ $portrait } {
+      width: 4.5%;
+    }
+
     span {
       display: block;
       position: relative;
@@ -319,6 +327,10 @@
       box-shadow: 0 0 3px rgba(201, 255, 252, 0);
       transition: all .5s, opacity .3s;
       border: 1px solid rgba(13, 119, 113, 0);
+
+      @media #{ $portrait } {
+        height: 5px;
+      }
 
       &:first-child {
         transform: translate3d( 0, -5px, 0 );
@@ -431,15 +443,15 @@
 
   .--remove-brand {
     opacity: 0;
-    transform: translate3d( -300px, 0, 0);
+    transform: translate3d( -300px, 0, 0 );
   }
 
   // Nav Active from Scroll
 
   .mdev-main-nav.--user-scroll {
-    opacity: .3;
+    opacity: .7;
     transition: opacity .5s, filter 1.2s;
-    filter: grayscale(1);
+    filter: grayscale( 1 );
 
 
     &:hover {

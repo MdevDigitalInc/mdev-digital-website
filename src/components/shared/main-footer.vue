@@ -59,12 +59,20 @@
   font-weight: 700;
   letter-spacing: 2px;
   font-size: .85vw;
+
+  @media #{ $portrait } {
+    font-size: 1.2vw;
+  }
 }
 
 .mdev-footer-copyright {
   font-weight: 400;
   letter-spacing: 3px;
-  font-size: .8vw;
+  font-size: .85vw;
+
+  @media #{ $portrait } {
+    font-size: 1.2vw;
+  }
 }
 
 .mdev-footer-brand {

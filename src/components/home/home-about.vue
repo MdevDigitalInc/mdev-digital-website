@@ -71,6 +71,10 @@ export default {
   overflow: hidden;
   margin-bottom: 40px;
 
+  @media #{ $portrait } {
+    width: 60%;
+  }
+
   &:after {
     @include pseudo();
     background: url('../../assets/images/about_bkg.png');
@@ -82,6 +86,10 @@ export default {
     background-position: center;
     z-index: -1;
     transform: scale( .99 );
+
+    @media #{ $portrait } {
+      transform: scale( .98 );
+    }
   }
 
   img {

@@ -35,7 +35,7 @@ export default{
         backgroundPosition: 'top center'
       },
       // Disables Page Title bar
-      pageTitle: false,
+      pageTitle: 'TESTY TEST TEST',
       headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.'
     };
   },
