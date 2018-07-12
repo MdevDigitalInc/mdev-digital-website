@@ -27,7 +27,7 @@
   width: 60%;
   padding-right: 1vw;
 
-  @media #{ $portrait } {
+  @media #{$portrait} {
     width: 100%;
     margin-bottom: 25px;
     padding-right: 0;
@@ -38,7 +38,7 @@
   width: 40%;
   padding-left: 1vw;
 
-  @media #{ $portrait } {
+  @media #{$portrait} {
     width: 100%;
     padding-left: 0;
   }

@@ -93,18 +93,18 @@
   height: 100vh;
   background: $color-brand-bkg;
   position: relative;
-  transform: translate3d( -110%, 0, 0 );
+  transform: translate3d(-110%, 0, 0);
   opacity: 0;
   order: 2;
   transition: opacity .8s, all 1s;
 
-  @media #{ $portrait } {
+  @media #{$portrait} {
     height: 55vh;
     padding-bottom: 40px;
     padding-top: 90px;
     order: 4;
     width: 100%;
-    transform: translate3d( 0, 200%, 0 );
+    transform: translate3d(0, 200%, 0);
     text-align: center;
     clip-path: $clip-triangle-top;
   }
@@ -119,7 +119,7 @@
     display: block;
     margin-bottom: 3vw;
 
-    @media #{ $portrait } {
+    @media #{$portrait} {
       margin: 0 auto 25px;
       width: 30%;
     }
@@ -134,7 +134,7 @@
     font-size: 2.2vw;
     line-height: 120%;
 
-    @media #{ $portrait } {
+    @media #{$portrait} {
       font-size: 3.3vw;
       letter-spacing: 2px;
     }
@@ -146,7 +146,7 @@
     font-size: 1.8vw;
     line-height: 120%;
 
-    @media #{ $portrait } {
+    @media #{$portrait} {
       font-size: 3.2vw;
       letter-spacing: 2px;
     }
@@ -161,7 +161,7 @@
       line-height: 130%;
       transition: all .9s;
 
-      @media #{ $portrait } {
+      @media #{$portrait} {
         display: block;
         font-size: 3.1vw;
       }
@@ -176,7 +176,7 @@
     .--tel {
       font-size: 2.3vw;
 
-      @media #{ $portrait } {
+      @media #{$portrait} {
         font-size: 4.3vw;
       }
     }
@@ -186,7 +186,7 @@
     font-size: 2.4vw;
     margin: 2vw 0;
 
-    @media #{ $portrait } {
+    @media #{$portrait} {
       margin: 30px 0;
       font-size: 4vw;
     }
@@ -226,7 +226,7 @@
       color: $color-brand-primary;
       font-size: 1.2vw;
 
-      @media #{ $portrait } {
+      @media #{$portrait} {
         font-size: 1.8vw;
       }
     }
@@ -237,7 +237,7 @@
 .--active-sidebar {
   .mdev-nav-sidebar {
     opacity: 1;
-    transform: translate3d( 0, 0, 0 );
+    transform: translate3d(0, 0, 0);
   }
 }
 /*--------------------------------------*/

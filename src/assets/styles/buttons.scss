@@ -17,7 +17,7 @@
   cursor: pointer;
   transition: all .4s;
 
-  @media #{ $portrait } {
+  @media #{$portrait} {
     padding: 2vw 2.3vw;
   }
 }
@@ -35,7 +35,7 @@
     background: $color-brand-accent;
   }
 
-  @media #{ $portrait } {
+  @media #{$portrait} {
     font-size: 2.9vw;
   }
 }

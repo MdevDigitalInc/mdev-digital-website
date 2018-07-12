@@ -3,7 +3,7 @@
     <div class="mdev-nav-wrapper flex flex-nowrap flex-hor-between flex-vert-center">
       <a :href="homeLink"
         :title="homeTitle"
-        :tabindex="( navIsOpen ? -1 : 0)"
+        :tabindex="(navIsOpen ? -1 : 0)"
         class="mdev-live-brand"
         :class="{ '--remove-brand': navIsOpen }">
         <img :src="loadImage(mdevBrandTop)" data-mdev-top>
@@ -247,9 +247,9 @@
     padding: $nav-padding;
     z-index: 10;
     transition: all, .3s;
-    background: rgba( 51, 51, 51, 0 );
+    background: rgba(51, 51, 51, 0);
 
-    @media #{ $portrait } {
+    @media #{$portrait} {
       padding: $nav-padding-prt;
     }
 
@@ -278,7 +278,7 @@
       opacity: .8;
 
       .mdev-hidden-brand img {
-        transform: translate3d( 0, 0, 0);
+        transform: translate3d(0, 0, 0);
         opacity: 1;
         transition: all .3s;
       }
@@ -291,11 +291,11 @@
     }
 
     img[ data-mdev-top ] {
-      transform: translate3d( 0, 53%, 0 );
+      transform: translate3d(0, 53%, 0);
     }
 
     img[ data-mdev-bot ] {
-      transform: translate3d( 0, -74%, 0 );
+      transform: translate3d(0, -74%, 0);
     }
   }
 
@@ -314,7 +314,7 @@
     background: transparent;
     transition: .6s all;
 
-    @media #{ $portrait } {
+    @media #{$portrait} {
       width: 4.5%;
     }
 
@@ -328,17 +328,17 @@
       transition: all .5s, opacity .3s;
       border: 1px solid rgba(13, 119, 113, 0);
 
-      @media #{ $portrait } {
+      @media #{$portrait} {
         height: 5px;
       }
 
       &:first-child {
-        transform: translate3d( 0, -5px, 0 );
+        transform: translate3d(0, -5px, 0 );
         opacity: 1;
       }
 
       &:last-child {
-        transform: translate3d( 0, 5px, 0 );
+        transform: translate3d(0, 5px, 0 );
       }
     }
 
@@ -372,7 +372,7 @@
     img {
       opacity: 0;
       transition: all .3s;
-      transform: translate3d( -70%, 0, 0);
+      transform: translate3d(-70%, 0, 0);
     }
   }
 
@@ -386,7 +386,7 @@
     background: $color-brand-primary;
     z-index: 2;
     opacity: 0;
-    transform: translate3d( -100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
     transition: opacity .8s, transform .3s;
     padding: 0;
     margin: 0;
@@ -395,7 +395,7 @@
   // Nav Open and Active
   .--hid-nav-open {
     opacity: 1;
-    transform: translate3d( 0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 
   .--nav-open {
@@ -403,22 +403,22 @@
       background: white;
 
       &:first-child {
-        transform: translate3d( 0, -80px, 0);
+        transform: translate3d(0, -80px, 0);
         opacity: 0;
       }
 
       &:last-child {
-        transform: rotate3d( 0, 0, 1, 45deg);
+        transform: rotate3d(0, 0, 1, 45deg);
         top: -8px;
       }
 
       &:nth-child( even ) {
-        transform: rotate3d( 0, 0, 1, -45deg);
+        transform: rotate3d(0, 0, 1, -45deg);
       }
     }
     &:hover {
       span {
-        background: darken( $color-brand-primary, 25%);
+        background: darken($color-brand-primary, 25%);
         box-shadow: 0 0 3px rgba(201, 255, 252, 0);
       }
     }
@@ -432,18 +432,18 @@
     }
     .mdev-live-brand {
       img[ data-mdev-top ] {
-        transform: translate3d( 0, 36%, 0 );
+        transform: translate3d(0, 36%, 0);
       }
 
       img[ data-mdev-bot ] {
-        transform: translate3d( 0, -50%, 0 );
+        transform: translate3d(0, -50%, 0);
       }
     }
   }
 
   .--remove-brand {
     opacity: 0;
-    transform: translate3d( -300px, 0, 0 );
+    transform: translate3d(-300px, 0, 0);
   }
 
   // Nav Active from Scroll
@@ -451,7 +451,7 @@
   .mdev-main-nav.--user-scroll {
     opacity: .7;
     transition: opacity .5s, filter 1.2s;
-    filter: grayscale( 1 );
+    filter: grayscale(1);
 
 
     &:hover {

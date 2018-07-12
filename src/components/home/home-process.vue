@@ -16,11 +16,11 @@
 // Local Import
 import BtnPrimary   from '../shared/btn-primary.vue';
 
-export default{
+export default {
   name: 'HomeProcess',
 
-  data: function(){
-    return{
+  data: function() {
+    return {
       BtnData: {
         accessibility: 'About Our Services',
         btnRoute: '/about',

@@ -28,8 +28,8 @@ import BtnPrimary           from '../shared/btn-primary.vue';
 
 export default{
   name: 'HomeCaseStudies',
-  data: function(){
-    return{
+  data: function() {
+    return {
       BtnData: {
         accessibility: 'Learn more about our work!',
         btnRoute: '/casestudies',
@@ -39,7 +39,7 @@ export default{
   },
 
   methods: {
-    loadImage(path){
+    loadImage(path) {
       return require('../../assets/images/' + path);
     }
   },

@@ -38,7 +38,7 @@
   position: relative;
   flex-wrap: nowrap;
 
-  @media #{ $portrait } {
+  @media #{$portrait} {
     flex-wrap: wrap;
   }
 }

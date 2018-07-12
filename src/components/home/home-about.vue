@@ -36,17 +36,8 @@ export default {
   },
 
   methods: {
-    loadImage(path){
+    loadImage(path) {
       return require('../../assets/images/' + path);
-    },
-    // Change Language METHOD
-    change () {
-      let current = this.$locale.current();
-      if (current === 'en') {
-        this.$locale.change('pt');
-      } else {
-        this.$locale.change('en');
-      }
     }
   },
 
@@ -85,17 +76,17 @@ export default {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    transform: scale( .99 );
+    transform: scale(.99);
 
     @media #{ $portrait } {
-      transform: scale( .98 );
+      transform: scale(.98);
     }
   }
 
   img {
     width: 100%;
     overflow: hidden;
-    transform: scale( 1.01 );
+    transform: scale(1.01);
   }
 }
 

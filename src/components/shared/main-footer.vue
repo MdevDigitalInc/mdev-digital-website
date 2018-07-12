@@ -46,11 +46,11 @@
   width: 100%;
   position: relative;
 
-  @media #{ $desktop-up } {
+  @media #{$desktop-up} {
     padding: 100px 0;
   }
 
-  @media #{ $portrait } {
+  @media #{$portrait} {
     padding: 60px 0;
   }
 }
@@ -60,7 +60,7 @@
   letter-spacing: 2px;
   font-size: .85vw;
 
-  @media #{ $portrait } {
+  @media #{$portrait} {
     font-size: 1.2vw;
   }
 }
@@ -70,7 +70,7 @@
   letter-spacing: 3px;
   font-size: .85vw;
 
-  @media #{ $portrait } {
+  @media #{$portrait} {
     font-size: 1.2vw;
   }
 }
@@ -83,7 +83,7 @@
   &:hover {
     img {
       transition: all .5s;
-      transform: scale( 1.08 );
+      transform: scale(1.08);
     }
   }
 

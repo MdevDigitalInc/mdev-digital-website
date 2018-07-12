@@ -10,8 +10,8 @@
 <script>
   export default{
     name: 'ServicesAll',
-    data: function(){
-      return{
+    data: function() {
+      return {
 
       };
     },

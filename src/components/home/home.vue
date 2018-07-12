@@ -4,11 +4,17 @@
       <!-- Header Slot -->
       <div class="mdev-main-hero" :style="heroStyles"></div>
     </hero-main>
+    <!-- Process -->
     <home-process id="mainContent"></home-process>
+    <!-- Services -->
     <home-services></home-services>
+    <!-- Case Studies -->
     <home-casestudies></home-casestudies>
+    <!-- About Us -->
     <home-about></home-about>
+    <!-- Testimonial -->
     <home-testimonials :testimonials="testimonials"></home-testimonials>
+    <!-- Footer -->
     <main-footer></main-footer>
   </section>
 </template>
@@ -92,11 +98,5 @@ export default{
 
 <style lang="scss">
 
-	/*-------------------------------------*/
-	/* HOME Component Styles
-	/--------------------------------------*/
-
-
-	/*--------------------------------------*/
 
 </style>

@@ -30,7 +30,7 @@ export default {
 
   props: [ 'pageTitle', 'headerDsc' ],
 
-  mounted: function(){
+  mounted: function() {
     console.log(this.pageTitle);
     // Resize timer to debounce scroll
     let resizeTimer;
@@ -79,7 +79,7 @@ export default {
   width: 100%;
   position: relative;
   overflow: hidden;
-  @include responsive-ratio( 1920, 1080 );
+  @include responsive-ratio(1920, 1080);
   max-height: 70vh;
   z-index: 1;
 }
@@ -116,7 +116,7 @@ export default {
   color: $white;
   height: 100vh;
   width: 4.5%;
-  border-right: 1px solid rgba( 255, 255, 255, .5 );
+  border-right: 1px solid rgba(255, 255, 255, .5);
   opacity: 0;
   min-width: 50px;
   transition: all 3s, height .1s;
@@ -128,7 +128,7 @@ export default {
   h1 {
     font-size: 120%;
     position: absolute;
-    transform: rotate( 90deg );
+    transform: rotate(90deg);
     top: 65%;
     text-align: center;
     width: 100%;
@@ -156,14 +156,14 @@ $mask-arrow-anim-time: 3.2s;
   padding-top: 80%;
   /* Background Gradient Expanded */
   background: linear-gradient(
-  to bottom, rgba( 194, 236, 47, 1 )
-  0%, rgba( 181, 221, 45, 1 )
-  7%, rgba( 71, 91, 30, 0 )
-  87%, rgba( 10, 19, 21, 0 ) 100%);
+  to bottom, rgba(194, 236, 47, 1)
+  0%, rgba(181, 221, 45, 1)
+  7%, rgba(71, 91, 30, 0)
+  87%, rgba(10, 19, 21, 0) 100%);
   /* -------------------------- */
   opacity: 0;
   background-position: 0% 25%;
-  transform: translate3d( 0, -480px, 0);
+  transform: translate3d(0, -480px, 0);
 
   animation: hero-gradient infinite;
   animation-duration: $mask-arrow-anim-time;
@@ -171,7 +171,7 @@ $mask-arrow-anim-time: 3.2s;
   animation-fill-mode: forwards;
   animation-delay: $mask-hero-anim-time + $mask-anim-delay;
 
-  @media #{ $portrait } {
+  @media #{$portrait} {
     padding-top: 280%;
     animation: hero-gradient-prt infinite;
     animation-duration: $mask-arrow-anim-time;

@@ -1,7 +1,7 @@
 <template>
   <div class="mdev-full-section --section-space-top --primary-bkg --triangle-bottom">
     <div class="mdev-main-wrapper">
-      <!-- Split Component -->
+      <!-- Split Component 60 / 40 -->
       <split-sixty>
         <!-- Left Split -->
         <template slot="leftSlot">
@@ -37,13 +37,13 @@ export default {
   data: function() {
 
     return {
-
+      // Button Data
       BtnData: {
         accessibility: 'View Our Services',
         btnRoute: '/services',
         btnClass: 'mdev-primary-btn --space-top-sm --tab'
       },
-
+      // Links Object Array
       links: [
         {
           linkName: 'Consulting',
@@ -99,7 +99,7 @@ export default {
   width: 100%;
   position: relative;
 
-  @media #{ $portrait } {
+  @media #{$portrait} {
     padding: 60px 0 0;
   }
 
@@ -113,22 +113,22 @@ export default {
     &:focus,
     &:active {
       .mdev-link-name {
-        border-bottom: 4px solid rgba( 255, 255, 255, 1 );
+        border-bottom: 4px solid rgba(255, 255, 255, 1);
       }
     }
   }
 
   .mdev-link-name {
     font-size: 1.6vw;
-    border-bottom: 4px solid rgba( 255, 255, 255, 0 );
+    border-bottom: 4px solid rgba(255, 255, 255, 0);
     display: inline-block;
     transition: all .6s;
 
-    @media #{ $xl-up } {
+    @media #{$xl-up} {
       font-size: 1.5vw;
     }
 
-    @media #{ $portrait } {
+    @media #{$portrait} {
       font-size: 4.6vw;
     }
   }
@@ -137,14 +137,14 @@ export default {
     font-size: 1.1vw;
     display: inline-block;
 
-    @media #{ $portrait } {
+    @media #{$portrait} {
       font-size: 4.1vw;
     }
   }
 }
 
 .--tab {
-  @media #{ $portrait }{
+  @media #{$portrait} {
     margin-bottom: 60px;
   }
 }
