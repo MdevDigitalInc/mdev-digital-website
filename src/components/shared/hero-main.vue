@@ -3,7 +3,11 @@
     <div class="mdev-hero-mask" data-main-hero >
       <slot></slot>
       <div v-if="pageTitle" class="mdev-page-title" data-main-title>
-        <h1 data-page-title>{{ pageTitle }}</h1>
+        <h1 data-page-title>
+          <svg xmlns="http://www.w3.org/2000/svg" width="52" height="9"><defs/><path id="arrow_right" data-name="arrow right" class="cls-1" d="M1096.35
+        4885l7.65-4.5-7.65-4.51v3.55H1052v1.91h44.35v3.55z" transform="translate(-1052 -4876)"/></svg>
+        {{ pageTitle }}
+        </h1>
       </div>
     </div>
     <div class="mdev-header-arrow-mask" data-main-arrow >
@@ -121,6 +125,17 @@ export default {
   min-width: 50px;
   transition: all 3s, height .1s;
 
+  svg {
+    /* ScaleX negative value flips image */
+    transform: scaleX(-1);
+    position: relative;
+    right: 15px;
+  }
+
+  .cls-1 {
+    fill: $white;
+  }
+
   @media #{ $portrait } {
     width: 9.5%;
   }
@@ -128,8 +143,8 @@ export default {
   h1 {
     font-size: 120%;
     position: absolute;
-    transform: rotate(90deg);
-    top: 65%;
+    transform: rotate(-90deg);
+    top: 70%;
     text-align: center;
     width: 100%;
     white-space: nowrap;
@@ -137,7 +152,7 @@ export default {
     transition: all .5s;
 
     @media #{ $portrait } {
-      top: 50%;
+      top: 60%;
       font-size: 90%;
     }
   }

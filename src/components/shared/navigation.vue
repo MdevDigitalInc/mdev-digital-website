@@ -323,22 +323,19 @@
       position: relative;
       width: 100%;
       background: $color-brand-primary;
-      height: 7px;
+      height: 5px;
       box-shadow: 0 0 3px rgba(201, 255, 252, 0);
       transition: all .5s, opacity .3s;
       border: 1px solid rgba(13, 119, 113, 0);
 
-      @media #{$portrait} {
-        height: 5px;
-      }
 
       &:first-child {
-        transform: translate3d(0, -5px, 0 );
+        transform: translate3d(0, -7px, 0 );
         opacity: 1;
       }
 
       &:last-child {
-        transform: translate3d(0, 5px, 0 );
+        transform: translate3d(0, 7px, 0 );
       }
     }
 
@@ -449,7 +446,7 @@
   // Nav Active from Scroll
 
   .mdev-main-nav.--user-scroll {
-    opacity: .7;
+    opacity: .95;
     transition: opacity .5s, filter 1.2s;
     filter: grayscale(1);
 
