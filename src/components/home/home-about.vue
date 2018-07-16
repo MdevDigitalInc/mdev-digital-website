@@ -78,7 +78,11 @@ export default {
     z-index: -1;
     transform: scale(.99);
 
-    @media #{ $portrait } {
+    @media #{$tablet-only} {
+      transform: scale(.96);
+    }
+
+    @media #{$portrait} {
       transform: scale(.98);
     }
   }

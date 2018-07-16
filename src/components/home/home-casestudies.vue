@@ -60,6 +60,10 @@ export default{
 .mdev-full-section {
   padding-top: 50px;
 }
+.mdev-top-subhead {
+  display: block;
+  margin-bottom: .8vw;
+}
 /*--------------------------------------*/
 
 </style>

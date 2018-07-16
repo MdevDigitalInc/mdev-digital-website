@@ -43,12 +43,14 @@
 .mdev-links-title {
   font-size: 1.25vw;
   display: block;
+  margin-bottom: .7vw;
 
   @media #{$portrait} {
     font-size: 4.25vw;
+    margin-bottom: 2vw;
   }
   @media #{$phone-only} {
-    font-size: 8vw;
+    font-size: 5.4vw;
   }
 }
 

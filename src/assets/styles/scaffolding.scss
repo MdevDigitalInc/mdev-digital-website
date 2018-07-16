@@ -11,12 +11,21 @@
   padding: 0;
   min-width: 320px;
 
-  @media #{$tablet-only} {
+  @media #{$tablet-prt-only} {
     max-width: 800px;
     width: 76%;
   }
 
-  @media #{$laptop-up} {
+  @media #{$tablet-lnd-only} {
+    max-width: 900px;
+    width: 76%;
+  }
+
+  @media #{$laptop-only} {
+    max-width: 1000px;
+  }
+
+  @media #{$desktop-only} {
     max-width: 1300px;
   }
 
@@ -35,6 +44,10 @@
   position: relative;
   padding: 150px 0;
   overflow: hidden;
+
+  @media #{$portrait} {
+    padding: 50px 0;
+  }
 }
 
 .mdev-split {
@@ -50,20 +63,38 @@
 // Spacing Modifiers
 .--section-space-top {
   margin-top: 150px;
+
+  @media #{$portrait} {
+    margin-top: 50px;
+  }
 }
 
 .--section-space {
   margin-top: 150px;
   margin-bottom: 150px;
+
+  @media #{$portrait} {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
 }
 
 .--section-pad {
   padding-top: 150px;
   padding-bottom: 150px;
+
+  @media #{$portrait} {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 
 .--section-space-btm {
   margin-bottom: 150px;
+
+  @media #{$portrait} {
+    margin-bottom: 50px;
+  }
 }
 
 .--space-top-sm {

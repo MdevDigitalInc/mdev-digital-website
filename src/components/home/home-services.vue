@@ -90,7 +90,7 @@ export default {
 
 
 
-<style lang="scss" >
+<style lang="scss">
 
 /*-------------------------------------*/
 /* HOME SERVICES Component Styles
@@ -140,6 +140,7 @@ export default {
   .mdev-link-index {
     font-size: 1.1vw;
     display: inline-block;
+    margin-right: .8vw;
 
     @media #{$portrait} {
       font-size: 4.1vw;
@@ -155,6 +156,10 @@ export default {
   @media #{$portrait} {
     margin-bottom: 60px;
   }
+}
+
+.mdev-split-6 {
+  padding-right: 3vw;
 }
 
 /*--------------------------------------*/

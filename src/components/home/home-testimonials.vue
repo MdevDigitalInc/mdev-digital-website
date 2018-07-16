@@ -109,6 +109,10 @@
   width: 80%;
   margin: 0 auto;
 
+  @media #{$phone-only} {
+    width: 100%;
+  }
+
   .testimonial-name {
     display: block;
     font-weight: 400;

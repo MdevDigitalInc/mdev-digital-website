@@ -145,7 +145,7 @@
       // Scroll timer to debounce
       let scrollTimer;
       let scrollDistance;
-      let desiredOffset = 220;
+      let desiredOffset = 420;
       let scrollTime = 20;
 
       // Check to see that the page title is there
@@ -156,12 +156,15 @@
         scrollDistance = 600;
       }
 
-      console.log(scrollDistance);
       function userScroll( distance ) {
         // If user scrolls past desired distance remove effects
         if ( distance >= (scrollDistance - desiredOffset) ) {
           $('[data-main-header]').addClass('--user-scroll');
           $('[data-main-nav]').addClass('--user-scroll');
+        }
+        else if (distance <= 0) {
+          $('[data-main-header').removeClass('--user-scroll');
+          $('[data-main-nav').removeClass('--user-scroll');
         }
         else {
           $('[data-main-header').removeClass('--user-scroll');
