@@ -38,7 +38,7 @@ export default {
     console.log(this.pageTitle);
     // Resize timer to debounce scroll
     let resizeTimer;
-    let resizeTime = 10;
+    let resizeTime = 50;
     // Adjust Arrow height
     function adjustArrow() {
       let height;

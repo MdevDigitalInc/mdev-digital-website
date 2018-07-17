@@ -5,7 +5,8 @@
         <img :src="loadImage(mdevLogoMask)" alt="MDEV Logo with images of the office showing through"/>
       </div>
       <div class="mdev-about-slogan">
-        <img :src="loadImage(mdevSlogan)" alt="Your internal team, without the overhead!"/>
+        <img class="--landscape" :src="loadImage(mdevSlogan)" alt="Your internal team, without the overhead!"/>
+        <img class="--portrait" :src="loadImage(mdevSloganMob)" alt="Your internal team, without the overhead!"/>
       </div>
 
       <btn-primary :BtnData="BtnData">
@@ -27,6 +28,7 @@ export default {
     return {
       mdevLogoMask: 'svg/about/MDEV-Cutout.svg',
       mdevSlogan: 'svg/about/MDEV-Slogan.svg',
+      mdevSloganMob: 'svg/about/MDEV-Slogan-mob.svg',
       BtnData: {
         accessibility: 'Learn more about MDEV Digital',
         btnRoute: '/about',

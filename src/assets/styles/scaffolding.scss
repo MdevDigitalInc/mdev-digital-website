@@ -146,3 +146,20 @@
 .--accent-bkg {
   background: $color-brand-accent;
 }
+
+// SHow Hide
+.--portrait {
+  display: none;
+
+  @media #{$portrait} {
+    display: block;
+  }
+}
+
+.--landscape {
+  display: none;
+
+  @media #{$landscape} {
+    display: block;
+  }
+}
