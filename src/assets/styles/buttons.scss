@@ -50,11 +50,12 @@
 /* Button Colors */
 
 .mdev-primary-btn {
+  opacity: 0;
   color: $white;
   background: transparent;
   //border: 2px solid $color-brand-accent ;
   font-size: 1.1vw;
-  transition: color .25s, background .25s;
+  transition: color .5s, background .5s, opacity .8s;
 
   &:hover {
     color: $color-brand-bkg;
@@ -78,7 +79,11 @@
 
 }
 
-.--active-btn {
+$border-time: 1.2s;
+// Utilizing the vue-in-viewport-directive Package
+.mdev-primary-btn.fully-in-viewport,
+.mdev-primary-btn.above-viewport {
+  opacity: 1;
 
   &:before,
   &:after {
@@ -89,12 +94,12 @@
   &:before {
     border-top-color: $color-brand-accent;
     border-right-color: $color-brand-accent;
-    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+    transition: width $border-time ease-out, height $border-time ease-out $border-time;
   }
 
   &:after {
     border-bottom-color: $color-brand-accent;
     border-left-color: $color-brand-accent;
-    transition:  width 0.25s ease-out, height 0.25s ease-out 0.25s;
+    transition: width $border-time ease-out, height $border-time ease-out $border-time;
   }
 }

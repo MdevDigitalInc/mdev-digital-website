@@ -17,7 +17,8 @@
     "clean-webpack-plugin": "^0.1.19",
     "s3-website": "^3.3.0",
     "sass-resources-loader": "^1.3.3",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vue-in-viewport-directive": "^1.1.4"
   },
   "devDependencies": {
     "@moreira-development/sass-boilerplate-lean": "^1.0.5",

@@ -1,5 +1,6 @@
 <template>
   <router-link
+    v-in-viewport
     title="BtnData.accessibility"
     aria-label="BtnData.accessibility"
     class="mdev-btn"
