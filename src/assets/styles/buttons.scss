@@ -26,7 +26,6 @@
     height: 100%;
   }
 
-
   &:before {
     top: 0;
     left: 0;
@@ -79,7 +78,7 @@
 
 }
 
-$border-time: 1.2s;
+$border-time: .4s;
 // Utilizing the vue-in-viewport-directive Package
 .mdev-primary-btn.fully-in-viewport,
 .mdev-primary-btn.above-viewport {
@@ -94,12 +93,15 @@ $border-time: 1.2s;
   &:before {
     border-top-color: $color-brand-accent;
     border-right-color: $color-brand-accent;
-    transition: width $border-time ease-out, height $border-time ease-out $border-time;
+    transition: width $border-time ease-out,
+                height $border-time ease-out $border-time;
   }
 
   &:after {
     border-bottom-color: $color-brand-accent;
     border-left-color: $color-brand-accent;
-    transition: width $border-time ease-out, height $border-time ease-out $border-time;
+    transition: border-color 0s ease-out ($border-time * 2),
+                width $border-time ease-out ($border-time * 2),
+                height $border-time ease-out ($border-time * 3);
   }
 }

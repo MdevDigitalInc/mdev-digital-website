@@ -99,7 +99,7 @@
   transition: opacity .8s, all 1s;
 
   @media #{$portrait} {
-    height: 55vh;
+    height: 60vh;
     padding-bottom: 40px;
     padding-top: 90px;
     order: 4;
@@ -145,6 +145,8 @@
     display: block;
     font-size: 1.8vw;
     line-height: 120%;
+    margin-bottom: 0;
+    letter-spacing: 2px;
 
     @media #{$portrait} {
       font-size: 3.2vw;
@@ -183,12 +185,16 @@
   }
 
   .mdev-social-links {
-    font-size: 2.4vw;
+    font-size: 1.9vw;
     margin: 2vw 0;
 
     @media #{$portrait} {
       margin: 30px 0;
       font-size: 4vw;
+    }
+
+    @media #{$phone-only} {
+      margin: 20px 0;
     }
 
     a {

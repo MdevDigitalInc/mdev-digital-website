@@ -68,7 +68,7 @@
 
   @media #{$portrait} {
     width: 100%;
-    height: 45vh;
+    height: 40vh;
   }
 
   a {
@@ -91,6 +91,11 @@
       padding-left: 34%;
       font-size: 5.2vw;
       min-width: 240px;
+    }
+
+    @media #{$phone-only} {
+      font-size: 7vw;
+      padding-left: 30%;
     }
 
     &:before {
@@ -123,6 +128,10 @@
 
     @media #{$portrait} {
       font-size: 3.6vw;
+    }
+
+    @media #{$phone-only} {
+      font-size: 6vw;
     }
   }
   /* Disabling lint because of necessary !important; */

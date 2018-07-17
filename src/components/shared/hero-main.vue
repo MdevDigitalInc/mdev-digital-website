@@ -125,6 +125,10 @@ export default {
   min-width: 50px;
   transition: all 3s, height .1s;
 
+  @media #{$phone-only} {
+    display: none;
+  }
+
   svg {
     /* ScaleX negative value flips image */
     transform: scaleX(-1);

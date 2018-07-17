@@ -30,8 +30,9 @@ h6,.h6, {
 // Responsive Font Size Maps
 $p-font-sizes: (
   null  : 20px,
-  $tablet-up  : 22px,
-  $portrait : 24px
+  $tablet-up  : 1.15vw,
+  $portrait : 4vw,
+  $phone-only : 6vw
 );
 
 $h1-font-sizes: (

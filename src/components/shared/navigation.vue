@@ -266,7 +266,7 @@
     margin: 0 auto;
     position: relative;
     padding: 0;
-    min-width: 320px;
+    min-width: 290px;
   }
 
   .mdev-live-brand {
@@ -409,7 +409,7 @@
 
       &:last-child {
         transform: rotate3d(0, 0, 1, 45deg);
-        top: -8px;
+        top: -5px;
       }
 
       &:nth-child( even ) {
