@@ -1,7 +1,7 @@
 <template>
   <div class="mdev-main-wrapper --section-space">
-    <h3 class="u-uppercase u-c-white">{{ $t("homepage.intro.heading") }} </h3>
-    <p class="mdev-hero-text">
+    <h3 class="u-uppercase u-c-white a-blur-in" v-in-viewport>{{ $t("homepage.intro.heading") }} </h3>
+    <p class="mdev-hero-text a-blur-in" v-in-viewport>
       {{ $t("homepage.intro.content") }}
     </p>
     <!-- Primary Button -->
@@ -22,7 +22,7 @@ export default {
   data: function() {
     return {
       BtnData: {
-        accessibility: 'About Our Services',
+        accessibility: 'About Our Process',
         btnRoute: '/about',
         btnClass: 'mdev-primary-btn --space-top-sm'
       }

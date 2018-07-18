@@ -1,9 +1,9 @@
 <template>
   <div class="mdev-split flex flex-hor-between flex-vert-center">
-    <div class="mdev-split-6">
+    <div class="mdev-split-6" :class="animClassLeft" v-in-viewport>
       <slot name="leftSlot"></slot>
     </div>
-    <div class="mdev-split-4">
+    <div class="mdev-split-4" :class="animClassRight" v-in-viewport>
       <slot name="rightSlot"></slot>
     </div>
   </div>
@@ -14,6 +14,7 @@
 <script>
 
 	export default {
+    props: ['animClassLeft', 'animClassRight']
 	};
 
 </script>

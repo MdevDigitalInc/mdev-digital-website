@@ -1,20 +1,23 @@
 <template>
   <div class="mdev-full-section --accent-bkg --pull-up-section --reduce-bottom">
     <div class="mdev-main-wrapper u-text-center">
-      <h3 class="u-uppercase u-c-black u-bold">
+      <h3 class="u-uppercase u-c-black u-bold a-flyin a-flyin-right" v-in-viewport>
         {{ $t("homepage.testimonials.heading") }}
       </h3>
       <!-- Testimonial Loop -->
       <p v-for="( testimonial, index ) in testimonials"
         v-if=" index == desiredIndex "
-        class="mdev-testimonial u-c-black --space-top-xs u-light u-italic">
+        v-in-viewport
+        class="mdev-testimonial u-c-black --space-top-xs u-light u-italic a-blur-in">
           {{ testimonial.content }}
         <span class="testimonial-name">
           - {{ testimonial.name }}
         </span>
       </p>
       <!-- Carousel Controls -->
-      <div class="mdev-testimonial-ctrl flex flex-hor-center flex-vert-center --space-top-sm">
+      <div
+        v-in-viewport
+        class="mdev-testimonial-ctrl flex flex-hor-center flex-vert-center --space-top-sm a-flyin a-flyin-left">
         <!-- Arrow W/ embedded SVG- Moves Array Backwards -->
         <div class="ctrl-arrow --left flex flex-vert-center"
           v-on:click.stop=" traverse(-1) "
