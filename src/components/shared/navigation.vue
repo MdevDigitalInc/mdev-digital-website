@@ -335,10 +335,18 @@
       &:first-child {
         transform: translate3d(0, -7px, 0 );
         opacity: 1;
+
+        @media #{$phone-only} {
+          transform: translate3d(0, -5px, 0 );
+        }
       }
 
       &:last-child {
         transform: translate3d(0, 7px, 0 );
+
+        @media #{$phone-only} {
+          transform: translate3d(0, 5px, 0 );
+        }
       }
     }
 
@@ -433,10 +441,18 @@
     .mdev-live-brand {
       img[ data-mdev-top ] {
         transform: translate3d(0, 36%, 0);
+
+        @media #{$phone-only} {
+          transform: translate3d(0, 44%, 0);
+        }
       }
 
       img[ data-mdev-bot ] {
         transform: translate3d(0, -50%, 0);
+
+        @media #{$phone-only} {
+          transform: translate3d(0, -60%, 0);
+        }
       }
     }
   }

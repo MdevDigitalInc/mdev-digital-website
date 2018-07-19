@@ -31,6 +31,8 @@ h6,.h6, {
 $p-font-sizes: (
   null  : 20px,
   $tablet-up  : 1.15vw,
+  $tablet-lnd-only : 1.4vw,
+  $laptop-only : 1.4vw,
   $portrait : 4vw,
   $phone-only : 6vw
 );
@@ -38,6 +40,7 @@ $p-font-sizes: (
 $h1-font-sizes: (
   null  : 2.5vw,
   $portrait : 5.3vw,
+  $laptop-only : 3vw,
   $phone-only: 8vw
 );
 
@@ -117,6 +120,10 @@ h3,
 
   @media #{$portrait} {
     line-height: 120%;
+  }
+
+  @media #{$tablet-lnd-only} {
+    letter-spacing: 2px;
   }
 }
 

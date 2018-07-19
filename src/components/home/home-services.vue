@@ -160,6 +160,10 @@ export default {
 
 .mdev-split-6 {
   padding-right: 3vw;
+
+  @media #{$tablet-lnd-only} {
+    padding-right: 5.7vw;
+  }
 }
 
 /*--------------------------------------*/

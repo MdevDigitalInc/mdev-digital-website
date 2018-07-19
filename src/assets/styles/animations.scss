@@ -1,0 +1,107 @@
+// Global Animations
+
+// Blur In Animation
+// -----------------------
+// Element starts out of focus and transparent
+// Element comes into focus when in view
+
+// Starting State
+.a-blur-in {
+  filter: blur(5px);
+  opacity: 0;
+  transition: filter 1s, opacity .6s;
+}
+
+// End State - Triggered by in-viewport directive
+.a-blur-in.fully-in-viewport,
+.a-blur-in.above-viewport {
+  opacity: 1;
+  filter: blur(0);
+}
+
+// Zoom Out Animation
+// -----------------------
+// Element Starts Large and out of focus
+// Element Comes down to normal size and in focus
+.a-zoom-out {
+  transition: opacity .9s ease-out, filter 1.4s ease-out, transform 1.5s ease-out;
+  transform: scale(2);
+  filter: blur(10px);
+  opacity: 0;
+}
+
+// Zoom In Animation
+// -----------------------
+// Element Starts Small and out of focus
+// Element Comes down to normal size and in focus
+.a-zoom-in {
+  transition: opacity .9s ease-out, filter 1.2s ease-out, transform 1.2s ease-out;
+  transform: scale(.5);
+  filter: blur(10px);
+  opacity: 0;
+}
+
+// End State - Triggered by in-viewport directive
+.a-zoom-out.fully-in-viewport,
+.a-zoom-out.above-viewport,
+.a-zoom-in.fully-in-viewport,
+.a-zoom-in.above-viewport {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+}
+
+// Fly-in From left
+// ---------------------
+// Element starts transparent and off view to the left
+// Element flies in from the left and becomes visible
+$flyin-opacity: .2s;
+$flyin-transform: .6s;
+
+.a-flyin {
+  opacity: 0;
+  transition: opacity $flyin-opacity ease-out, transform $flyin-transform ease-out;
+}
+
+.a-flyin-left {
+  transform: translate3d( -100%, 0, 0);
+}
+
+// Fly-in From right
+// ---------------------
+// Element starts transparent and off view to the right
+// Element flies in from the left and becomes visible
+
+.a-flyin-right {
+  transform: translate3d( 100%, 0, 0);
+}
+
+// Fly-in From Bottom
+// ---------------------
+// Element starts transparent and off view to the bottom
+// Element flies in from the left and becomes visible
+
+.a-flyin-bot {
+  transform: translate3d( 0, -100%, 0);
+}
+
+// Fly-in From Top
+// ---------------------
+// Element starts transparent and off view to the Top
+// Element flies in from the left and becomes visible
+
+.a-flyin-top {
+  transform: translate3d( 0, 100%, 0);
+}
+
+.a-flyin-left.fully-in-viewport,
+.a-flyin-left.above-viewport,
+.a-flyin-right.fully-in-viewport,
+.a-flyin-right.above-viewport,
+.a-flyin-bot.fully-in-viewport,
+.a-flyin-bot.above-viewport,
+.a-flyin-top.fully-in-viewport,
+.a-flyin-top.above-viewport {
+  opacity: 1;
+  transform: translate3d( 0, 0, 0);
+}
