@@ -1,6 +1,9 @@
 <template>
   <section class="mdev-main-content">
-    <h1> CONTACT </h1>
+    <hero-main :pageTitle="pageTitle" :headerDsc="headerDsc">
+      <!-- Header Slot -->
+      <div class="mdev-main-hero" :style="heroStyles"></div>
+    </hero-main>
   </section>
 </template>
 
@@ -8,33 +11,35 @@
 
 
 <script>
-  export default{
-    name: 'Contact',
-    data: function(){
-      return{
+//Local Component registration
+import HeroMain           from '../shared/hero-main.vue';
 
-      };
-    },
-
-    mounted: function(){
-      console.log('Element Mounted');
-    },
-
-    methods: {
-      loadImage(path){
-        return require('../../assets/images/' + path);
+export default {
+  name: 'Contact',
+  data: function(){
+    return{
+      heroStyles: {
+        backgroundColor: '#0f1617',
+        backgroundImage: 'url(' + this.loadImage('MDEV-main-hero.png') + ')',
+        backgroundSize: 'cover',
+        backgroundPosition: 'top center'
       },
-      // Change Language METHOD
-      change () {
-        let current = this.$locale.current();
-        if (current === 'en') {
-          this.$locale.change('pt');
-        } else {
-          this.$locale.change('en');
-        }
-      }
+      // Disables Page Title bar
+      pageTitle: 'TESTY TEST TEST',
+      headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.',
+    };
+  },
+
+  components: {
+    'hero-main'     : HeroMain
+  },
+
+  methods: {
+    loadImage(path){
+      return require('../../assets/images/' + path);
     }
-  };
+  }
+};
 </script>
 
 

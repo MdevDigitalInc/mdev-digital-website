@@ -25,8 +25,8 @@ import HeroMain           from '../shared/hero-main.vue';
 import HomeCaseStudies    from './home-casestudies.vue';
 import HomeAbout          from './home-about.vue';
 import HomeServices       from './home-services.vue';
-import HomeProcess       from './home-process.vue';
-import MainFooter   from '../shared/main-footer.vue';
+import HomeProcess        from './home-process.vue';
+import MainFooter         from '../shared/main-footer.vue';
 import HomeTestimonials   from './home-testimonials.vue';
 
 export default{
@@ -84,14 +84,6 @@ export default{
     loadImage(path){
       return require('../../assets/images/' + path);
     }
-  },
-
-  mounted: function(){
-    this.$nextTick(function () {
-      setTimeout(function(){
-        $('[data-main-hero]').addClass('--mask-active');
-      }, 1000);
-    });
   }
 };
 </script>
