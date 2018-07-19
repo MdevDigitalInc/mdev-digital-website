@@ -9,40 +9,157 @@
   margin: 0 auto;
   position: relative;
   padding: 0;
-  min-width: 320px;
+  min-width: 290px;
 
-  @media #{$tablet-only} {
+  @media #{$tablet-prt-only} {
     max-width: 800px;
+    width: 76%;
   }
 
-  @media #{$laptop-up} {
-    max-width: 1400px;
+  @media #{$tablet-lnd-only} {
+    max-width: 900px;
+    width: 76%;
+  }
+
+  @media #{$laptop-only} {
+    max-width: 1000px;
+  }
+
+  @media #{$desktop-only} {
+    max-width: 1300px;
   }
 
   @media #{$xl-up} {
-    max-width: 1600px;
+    max-width: 1500px;
+  }
+
+  @media #{$phone-only} {
+    width: 90%;
   }
 }
 
-
-
-// REMOVE WHEN DEVELOPMENT STARTS
-.test-class {
-  width: 100vw;
-  height: 100vh;
-  background: #333;
+// Section Types
+.mdev-full-section {
+  width: 100%;
   position: relative;
+  padding: 150px 0;
   overflow: hidden;
 
-  .test-button {
-    display: inline-block;
-    width: auto;
-    margin: 2vw auto;
-    padding: 10px 20px;
-    color: $white;
-    text-transform: uppercase;
-    background: $color-brand-primary;
-    @include center(horizontal);
+  @media #{$portrait} {
+    padding: 50px 0;
   }
 }
 
+.mdev-split {
+  width: 100%;
+  position: relative;
+  flex-wrap: nowrap;
+
+  @media #{$portrait} {
+    flex-wrap: wrap;
+  }
+}
+
+// Spacing Modifiers
+.--section-space-top {
+  margin-top: 150px;
+
+  @media #{$portrait} {
+    margin-top: 50px;
+  }
+}
+
+.--section-space {
+  margin-top: 150px;
+  margin-bottom: 150px;
+
+  @media #{$portrait} {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+.--section-pad {
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  @media #{$portrait} {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.--section-space-btm {
+  margin-bottom: 150px;
+
+  @media #{$portrait} {
+    margin-bottom: 50px;
+  }
+}
+
+.--space-top-sm {
+  margin-top: 50px;
+}
+
+.--space-top-xs {
+  margin-top: 25px;
+}
+
+// Triangle Clip Path
+.--triangle-bottom {
+  clip-path: $clip-triangle-bot;
+
+  @media #{ $portrait } {
+    clip-path: $clip-triangle-bot-prt;
+  }
+}
+
+.--triangle-bottom-r {
+  clip-path: $clip-triangle-bot-reverse;
+
+  @media #{ $portrait } {
+    clip-path: $clip-triangle-bot-reverse-prt;
+  }
+}
+
+.--triangle-top {
+  clip-path: $clip-triangle-top;
+
+  @media #{ $portrait } {
+    clip-path: $clip-triangle-top-prt;
+  }
+}
+
+// Pull Up | Down
+.--pull-up-section {
+  padding-top: 350px;
+  margin-top: -200px;
+  z-index: 0;
+  position: relative;
+
+}
+// Background Modifier
+.--primary-bkg {
+  background: $color-brand-primary;
+}
+
+.--accent-bkg {
+  background: $color-brand-accent;
+}
+
+// SHow Hide
+.--portrait {
+  display: none;
+
+  @media #{$portrait} {
+    display: block;
+  }
+}
+
+.--landscape {
+  display: none;
+
+  @media #{$landscape} {
+    display: block;
+  }
+}

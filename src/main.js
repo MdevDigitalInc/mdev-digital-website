@@ -12,6 +12,13 @@ import App from './App.vue';
 import { routes  } from './routes.js';
 import store from './store/store.js';
 
+// In Viewport Custom Directive
+// Adds classes to elements given the v-in-viewport directive
+// can be used to target animations.
+// To see an example, check buttons.css and the btn-primary.vue element
+import inViewportDirective from 'vue-in-viewport-directive';
+Vue.directive('in-viewport', inViewportDirective);
+
 // Import Auth Plugin
 // import Auth from './plugins/auth.js';
 

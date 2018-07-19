@@ -31,6 +31,11 @@
 @import './variables.scss';
 
 /*----
+  Mixins
+-----*/
+@import './mixins.scss';
+
+/*----
 	Global Typography
 -----*/
 @import './typography.scss';
@@ -54,6 +59,16 @@
   Buttons
 -----*/
 @import './buttons.scss';
+
+/*----
+  Decorations
+-----*/
+@import './decorations.scss';
+
+/*----
+  Animations
+-----*/
+@import './animations.scss';
 
 /*----
   Forms

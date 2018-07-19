@@ -1,7 +1,6 @@
 export default {
 
   homepage: {
-
     intro: {
       heading: "Process-driven UX + Innovative Application Development",
       content: "Our process is honed through experience and framed by the belief that quality matters. We craft innovative digital solutions with the future in mind.",
@@ -10,8 +9,8 @@ export default {
 
     services: {
       heading: "We are a hybrid digital agency",
-      content: "With capabilities extending far beyond those of a traditional full service agency, we dont stop at building websites or applications - we create powerful user experiences, combining integrated marketing and engaging digital solutions to maximize your return on investment",
-      action: "Services",
+      content: "We're a small but capable team with services extending far beyond those of a traditional full service agency. We don't stop at building websites or applications - we create powerful user experiences, combining integrated marketing and engaging digital solutions to maximize your return on investment.",
+      action: "See All Services",
 
       servicelist: {
         heading: "Services",
@@ -26,7 +25,7 @@ export default {
     casestudies: {
       heading: "Case Studies",
       subheading: "Featured",
-      seemore: "See all case studies",
+      action: "See all case studies",
 
       cases: {
         tfac: "The Factory",
@@ -36,10 +35,16 @@ export default {
     },
 
     about: {
-      heading: "Your internal team without the overhead",
-      subheading: "Find out how.",
-      action: "About"
+      action: "Find out how"
+    },
+
+    testimonials: {
+      heading: "Testimonials"
     }
+  },
+
+  general: {
+    slogan: "Your internal team without the overhead"
   },
 
   navigation: {

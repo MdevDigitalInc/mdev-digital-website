@@ -3,7 +3,7 @@
     <div class="mdev-nav-wrapper flex flex-nowrap flex-hor-between flex-vert-center">
       <a :href="homeLink"
         :title="homeTitle"
-        :tabindex="( navIsOpen ? -1 : 0)"
+        :tabindex="(navIsOpen ? -1 : 0)"
         class="mdev-live-brand"
         :class="{ '--remove-brand': navIsOpen }">
         <img :src="loadImage(mdevBrandTop)" data-mdev-top>
@@ -145,7 +145,7 @@
       // Scroll timer to debounce
       let scrollTimer;
       let scrollDistance;
-      let desiredOffset = 220;
+      let desiredOffset = 420;
       let scrollTime = 20;
 
       // Check to see that the page title is there
@@ -156,12 +156,15 @@
         scrollDistance = 600;
       }
 
-      console.log(scrollDistance);
       function userScroll( distance ) {
         // If user scrolls past desired distance remove effects
         if ( distance >= (scrollDistance - desiredOffset) ) {
           $('[data-main-header]').addClass('--user-scroll');
           $('[data-main-nav]').addClass('--user-scroll');
+        }
+        else if (distance <= 0) {
+          $('[data-main-header').removeClass('--user-scroll');
+          $('[data-main-nav').removeClass('--user-scroll');
         }
         else {
           $('[data-main-header').removeClass('--user-scroll');
@@ -247,7 +250,11 @@
     padding: $nav-padding;
     z-index: 10;
     transition: all, .3s;
-    background: rgba( 51, 51, 51, 0 );
+    background: rgba(51, 51, 51, 0);
+
+    @media #{$portrait} {
+      padding: $nav-padding-prt;
+    }
 
     img {
       width: 100%;
@@ -259,14 +266,14 @@
     margin: 0 auto;
     position: relative;
     padding: 0;
-    min-width: 320px;
+    min-width: 290px;
   }
 
   .mdev-live-brand {
     height: auto;
     width: 2.5%;
     opacity: 0;
-    min-width: 30px;
+    min-width: 25px;
     transition: all 1.8s;
 
     &:hover {
@@ -274,7 +281,7 @@
       opacity: .8;
 
       .mdev-hidden-brand img {
-        transform: translate3d( 0, 0, 0);
+        transform: translate3d(0, 0, 0);
         opacity: 1;
         transition: all .3s;
       }
@@ -287,11 +294,11 @@
     }
 
     img[ data-mdev-top ] {
-      transform: translate3d( 0, 53%, 0 );
+      transform: translate3d(0, 53%, 0);
     }
 
     img[ data-mdev-bot ] {
-      transform: translate3d( 0, -74%, 0 );
+      transform: translate3d(0, -74%, 0);
     }
   }
 
@@ -301,7 +308,7 @@
     position: relative;
     overflow: visible;
     max-width: 42px;
-    min-width: 30px;
+    min-width: 25px;
     padding: 0;
     z-index: 99;
     margin: 0;
@@ -310,23 +317,36 @@
     background: transparent;
     transition: .6s all;
 
+    @media #{$portrait} {
+      width: 4.5%;
+    }
+
     span {
       display: block;
       position: relative;
       width: 100%;
       background: $color-brand-primary;
-      height: 7px;
+      height: 5px;
       box-shadow: 0 0 3px rgba(201, 255, 252, 0);
       transition: all .5s, opacity .3s;
       border: 1px solid rgba(13, 119, 113, 0);
 
+
       &:first-child {
-        transform: translate3d( 0, -5px, 0 );
+        transform: translate3d(0, -7px, 0 );
         opacity: 1;
+
+        @media #{$phone-only} {
+          transform: translate3d(0, -5px, 0 );
+        }
       }
 
       &:last-child {
-        transform: translate3d( 0, 5px, 0 );
+        transform: translate3d(0, 7px, 0 );
+
+        @media #{$phone-only} {
+          transform: translate3d(0, 5px, 0 );
+        }
       }
     }
 
@@ -360,7 +380,7 @@
     img {
       opacity: 0;
       transition: all .3s;
-      transform: translate3d( -70%, 0, 0);
+      transform: translate3d(-70%, 0, 0);
     }
   }
 
@@ -374,7 +394,7 @@
     background: $color-brand-primary;
     z-index: 2;
     opacity: 0;
-    transform: translate3d( -100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
     transition: opacity .8s, transform .3s;
     padding: 0;
     margin: 0;
@@ -383,7 +403,7 @@
   // Nav Open and Active
   .--hid-nav-open {
     opacity: 1;
-    transform: translate3d( 0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 
   .--nav-open {
@@ -391,22 +411,22 @@
       background: white;
 
       &:first-child {
-        transform: translate3d( 0, -80px, 0);
+        transform: translate3d(0, -80px, 0);
         opacity: 0;
       }
 
       &:last-child {
-        transform: rotate3d( 0, 0, 1, 45deg);
-        top: -8px;
+        transform: rotate3d(0, 0, 1, 45deg);
+        top: -5px;
       }
 
       &:nth-child( even ) {
-        transform: rotate3d( 0, 0, 1, -45deg);
+        transform: rotate3d(0, 0, 1, -45deg);
       }
     }
     &:hover {
       span {
-        background: darken( $color-brand-primary, 25%);
+        background: darken($color-brand-primary, 25%);
         box-shadow: 0 0 3px rgba(201, 255, 252, 0);
       }
     }
@@ -420,24 +440,32 @@
     }
     .mdev-live-brand {
       img[ data-mdev-top ] {
-        transform: translate3d( 0, 36%, 0 );
+        transform: translate3d(0, 36%, 0);
+
+        @media #{$phone-only} {
+          transform: translate3d(0, 44%, 0);
+        }
       }
 
       img[ data-mdev-bot ] {
-        transform: translate3d( 0, -50%, 0 );
+        transform: translate3d(0, -50%, 0);
+
+        @media #{$phone-only} {
+          transform: translate3d(0, -60%, 0);
+        }
       }
     }
   }
 
   .--remove-brand {
     opacity: 0;
-    transform: translate3d( -300px, 0, 0);
+    transform: translate3d(-300px, 0, 0);
   }
 
   // Nav Active from Scroll
 
   .mdev-main-nav.--user-scroll {
-    opacity: .3;
+    opacity: .95;
     transition: opacity .5s, filter 1.2s;
     filter: grayscale(1);
 

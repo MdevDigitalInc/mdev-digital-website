@@ -33,7 +33,7 @@
   background: transparent;
   flex-wrap: nowrap;
 
-  @media #{ $portrait } {
+  @media #{$portrait} {
     flex-wrap: wrap;
   }
 }

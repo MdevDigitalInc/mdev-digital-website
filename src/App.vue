@@ -37,6 +37,12 @@ export default{
     });
   },
 
+  watch: {
+    $route (to,from) {
+      $('html,body').scrollTop(0);
+    }
+  },
+
   methods: {
     skipNav() {
       var anchor = $("#mainContent").offset().top;

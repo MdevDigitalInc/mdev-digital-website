@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1398" height="261" viewBox="0 0 1398 261">
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="9" viewBox="0 0 52 9">
   <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c140 79.160451, 2017/05/06-01:08:21        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -30,12 +30,10 @@
 <defs>
     <style>
       .cls-1 {
-        font-size: 90px;
         fill: #0a1315;
-        font-family: Roboto;
-        font-weight: 800;
+        fill-rule: evenodd;
       }
     </style>
   </defs>
-  <text id="HUMANIZE" class="cls-1" transform="translate(27.017 226.284) scale(2.942 2.942)">HUMANIZE</text>
+  <path id="arrow_right" data-name="arrow right" class="cls-1" d="M1096.35,4885l7.65-4.5-7.65-4.51v3.55H1052v1.91h44.35V4885Z" transform="translate(-1052 -4876)"/>
 </svg>
