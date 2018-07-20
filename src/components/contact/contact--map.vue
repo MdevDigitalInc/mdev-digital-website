@@ -7,7 +7,9 @@
 
       <!-- Contact Information -->
       <!-- Phone Number -->
-      <div class="mdev-map-info u-c-white u-text-right" data-map-tel >
+      <div
+        v-in-viewport
+        class="mdev-map-info u-c-white u-text-right a-flyin a-flyin-left" data-map-tel >
         <div class="map-info-content u-text-left">
           <!-- Symbol -->
           <span class="info-type u-c-primary">t. </span>
@@ -19,7 +21,9 @@
         </div>
       </div>
       <!-- Email -->
-      <div class="mdev-map-info u-c-white" data-map-mail >
+      <div
+        v-in-viewport
+        class="mdev-map-info u-c-white a-flyin a-flyin-right" data-map-mail >
         <div class="map-info-content u-text-left">
           <!-- Symbol -->
           <span class="info-type u-c-primary">e. </span>
@@ -31,7 +35,9 @@
         </div>
       </div>
       <!-- Address -->
-      <div class="mdev-map-info u-c-white u-text-right" data-map-address >
+      <div
+        v-in-viewport
+        class="mdev-map-info u-c-white u-text-right a-flyin a-flyin-left" data-map-address >
         <div class="map-info-content u-text-left">
           <!-- Symbol -->
           <span class="info-type u-c-primary">a. </span>
@@ -327,7 +333,7 @@ export default{
   bottom: 0;
   width: 100%;
   z-index: 1;
-  filter: grayscale(1) blur(5px);
+  filter: grayscale(.5) blur(5px);
   transition: filter 1.4s;
 
   &:after {
@@ -339,24 +345,6 @@ export default{
     box-shadow: inset 0 0 12vw 13vw rgba(0, 0, 0, .95);
     z-index: 2;
   }
-}
-
-.--map-loaded {
-  filter: grayscale(1) blur(0);
-}
-
-.mdev-box-dec {
-  width: 72vw;
-  height: 60vh;
-  right: 0;
-  bottom: 75px;
-}
-
-.mdev-frame-dec {
-  width: 40vw;
-  height: 30vh;
-  left: 10%;
-  top: 0;
 }
 
 .mdev-full-section {
@@ -389,8 +377,27 @@ export default{
   }
 }
 
-/*--------------------------------------*/
+// Active Classes
+.--map-loaded {
+  filter: grayscale(.5) blur(0);
+}
 
+// Decoration Overrides
+.mdev-box-dec {
+  width: 72vw;
+  height: 60vh;
+  right: 0;
+  bottom: 75px;
+}
+
+.mdev-frame-dec {
+  width: 40vw;
+  height: 10vh;
+  left: 10%;
+  top: 0;
+}
+
+// Position Element
 [ data-map-tel ] {
   left: 0;
   top: 10%;
@@ -409,4 +416,5 @@ export default{
   padding-left: 20%;
 }
 
+/*--------------------------------------*/
 </style>
