@@ -1,5 +1,6 @@
 <template>
-  <div class="mdev-split flex flex-hor-between flex-vert-center">
+  <div class="mdev-split flex flex-hor-between flex-vert-center"
+    :class="{'--reversed' : reverse}">
     <div class="mdev-split-6" :class="animClassLeft" v-in-viewport>
       <slot name="leftSlot"></slot>
     </div>
@@ -14,7 +15,7 @@
 <script>
 
 	export default {
-    props: ['animClassLeft', 'animClassRight']
+    props: ['animClassLeft', 'animClassRight', 'reverse']
 	};
 
 </script>
@@ -42,6 +43,13 @@
   @media #{$portrait} {
     width: 100%;
     padding-left: 0;
+  }
+}
+
+// If prop REVERSED is true, change order of elements
+.--reversed {
+  .mdev-split-6 {
+    order: 2;
   }
 }
 /*--------------------------------------*/

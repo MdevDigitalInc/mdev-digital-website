@@ -4,6 +4,11 @@
       <!-- Header Slot -->
       <div class="mdev-main-hero" :style="heroStyles"></div>
     </hero-main>
+
+    <!-- Map -->
+    <contact-map></contact-map>
+    <!-- Footer -->
+    <main-footer></main-footer>
   </section>
 </template>
 
@@ -13,6 +18,8 @@
 <script>
 //Local Component registration
 import HeroMain           from '../shared/hero-main.vue';
+import MainFooter         from '../shared/main-footer.vue';
+import ContactMap         from './contact--map.vue';
 
 export default {
   name: 'Contact',
@@ -31,7 +38,9 @@ export default {
   },
 
   components: {
-    'hero-main'     : HeroMain
+    'hero-main'     : HeroMain,
+    'main-footer'   : MainFooter,
+    'contact-map'   : ContactMap
   },
 
   methods: {

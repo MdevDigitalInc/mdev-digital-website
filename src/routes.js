@@ -1,6 +1,6 @@
 // Import Parent Compontents
 import About                from './components/about/about.vue';
-import Contact              from './components/parent-templates/contact.vue';
+import Contact              from './components/contact/contact.vue';
 import ErrorPage            from './components/parent-templates/error_404.vue';
 import Home                 from './components/home/home.vue';
 // Case Studies
