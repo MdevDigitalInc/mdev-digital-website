@@ -4,15 +4,14 @@
       <!-- Header Slot -->
       <div class="mdev-main-hero" :style="heroStyles"></div>
     </hero-main>
-
     <!-- Map -->
     <contact-map></contact-map>
+    <!-- form -->
+    <contact-form></contact-form>
     <!-- Footer -->
     <main-footer></main-footer>
   </section>
 </template>
-
-
 
 
 <script>
@@ -20,6 +19,7 @@
 import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
 import ContactMap         from './contact--map.vue';
+import ContactForm        from './contact--form.vue';
 
 export default {
   name: 'Contact',
@@ -40,7 +40,8 @@ export default {
   components: {
     'hero-main'     : HeroMain,
     'main-footer'   : MainFooter,
-    'contact-map'   : ContactMap
+    'contact-map'   : ContactMap,
+    'contact-form'  : ContactForm
   },
 
   methods: {

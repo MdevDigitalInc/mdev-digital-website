@@ -2,9 +2,11 @@
   <section class="mdev-full-section">
     <!-- Google Maps Container Mask -->
     <div class="mdev-map-location" v-in-viewport>
-      <!-- Map Container for Maps API -->
-      <div class="mdev-g-map" id="map"></div>
-
+      <!-- Maps Component -->
+      <google-map
+        :mapCenter="mapCenter"
+        :pinLocation="pinLocation"
+        :mapIcon="mapIcon" ></google-map>
       <!-- Contact Information -->
       <!-- Phone Number -->
       <div
@@ -61,12 +63,11 @@
   </section>
 </template>
 
-
-
-
 <script>
+import googleMap from '../shared/google-map.vue';
+
 export default{
-  name: 'ErrorPage',
+  name: 'ContactMap',
   data: function(){
     return{
       contact: {
@@ -79,233 +80,23 @@ export default{
         city: 'London, Ontario',
         address: '100 Kellogg Lane, N5W 0B4',
         addressUrl: 'http://google.ca',
-        addressTitle: 'Come visit our offices!'
-      }
+        addressTitle: 'Come visit our offices!',
+      },
+
+      pinLocation:  {lat: 42.991934, lng: -81.213673},
+      mapCenter: {lat: 42.992844, lng: -81.211459},
+      mapIcon: require('../../assets/images/map/location-ICON.png')
     };
-  },
-
-  mounted: function() {
-    var windowSize = $(window).width();
-    var kelloggs = {lat: 42.991934, lng: -81.213673};
-
-    var kelloggscenter = {lat: 42.992844, lng: -81.211459};
-    var zoom = 17.2;
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: zoom,
-      center: kelloggscenter,
-      mapTypeId: 'hybrid',
-      zoomControl: false,
-      mapTypeControl: false,
-      scaleControl: false,
-      streetViewControl: false,
-      rotateControl: false,
-      fullscreenControl: false,
-      scrollwheel: false,
-      navigationControl: false,
-      mapTypeControl: false,
-      scaleControl: false,
-      draggable: false,
-      disableDoubleClickZoom: true,
-      panControl: false,
-      streetViewControl: false,
-      keyboardShortcuts: false,
-
-      styles: [
-        {
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "color": "#f5f5f5"
-            }
-          ]
-        },
-        {
-          "elementType": "labels.icon",
-          "stylers": [
-            {
-              "visibility": "off"
-            }
-          ]
-        },
-        {
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-              "color": "#616161"
-            }
-          ]
-        },
-        {
-          "elementType": "labels.text.stroke",
-          "stylers": [
-            {
-              "color": "#f5f5f5"
-            }
-          ]
-        },
-        {
-          "featureType": "administrative.land_parcel",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-              "color": "#bdbdbd"
-            }
-          ]
-        },
-        {
-          "featureType": "landscape.man_made",
-          "elementType": "geometry.fill",
-          "stylers": [
-            {
-              "color": "#a0a0a0"
-            }
-          ]
-        },
-        {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [
-          {
-            "color": "#eeeeee"
-          }
-        ]
-        },
-        {
-        "featureType": "poi",
-        "elementType": "labels.text.fill",
-        "stylers": [
-          {
-            "color": "#757575"
-          }
-        ]
-        },
-        {
-        "featureType": "poi.park",
-        "elementType": "geometry",
-        "stylers": [
-          {
-            "color": "#e5e5e5"
-          }
-        ]
-        },
-        {
-        "featureType": "poi.park",
-        "elementType": "labels.text.fill",
-        "stylers": [
-          {
-          "color": "#9e9e9e"
-          }
-        ]
-        },
-        {
-        "featureType": "road",
-        "elementType": "geometry",
-        "stylers": [
-          {
-          "color": "#ffffff"
-          }
-        ]
-        },
-        {
-        "featureType": "road",
-        "elementType": "geometry.fill",
-        "stylers": [
-          {
-          "color": "#cdcdcd"
-          }
-        ]
-        },
-        {
-        "featureType": "road.arterial",
-        "elementType": "labels.text.fill",
-        "stylers": [
-          {
-          "color": "#757575"
-          }
-        ]
-        },
-        {
-        "featureType": "road.highway",
-        "elementType": "geometry",
-        "stylers": [
-          {
-          "color": "#dadada"
-          }
-        ]
-        },
-        {
-        "featureType": "road.highway",
-        "elementType": "labels.text.fill",
-        "stylers": [
-          {
-          "color": "#616161"
-          }
-        ]
-        },
-        {
-        "featureType": "road.local",
-        "elementType": "labels.text.fill",
-        "stylers": [
-          {
-          "color": "#9e9e9e"
-          }
-        ]
-        },
-        {
-        "featureType": "transit.line",
-        "elementType": "geometry",
-        "stylers": [
-          {
-          "color": "#e5e5e5"
-          }
-        ]
-        },
-        {
-        "featureType": "transit.station",
-        "elementType": "geometry",
-        "stylers": [
-          {
-          "color": "#eeeeee"
-          }
-        ]
-        },
-        {
-        "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [
-          {
-          "color": "#c9c9c9"
-          }
-        ]
-        },
-        {
-        "featureType": "water",
-        "elementType": "labels.text.fill",
-        "stylers": [
-          {
-          "color": "#9e9e9e"
-          }
-        ]
-        }
-        ]
-    });
-    var marker = new google.maps.Marker({
-      position: kelloggs,
-      map: map,
-      icon: require('../../assets/images/map/location-ICON.png')
-    });
-
-    // Wait for map to load and add active class
-    map.addListener('tilesloaded', function () {
-      $('.mdev-g-map').addClass('--map-loaded');
-    });
   },
 
   methods: {
     loadImage(path){
       return require('../../assets/images/' + path);
-    },
+    }
+  },
+
+  components: {
+    'google-map'  : googleMap
   }
 };
 </script>
