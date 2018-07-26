@@ -168,6 +168,10 @@
   }
 }
 
+.ctrl-position {
+  user-select: none;
+}
+
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {

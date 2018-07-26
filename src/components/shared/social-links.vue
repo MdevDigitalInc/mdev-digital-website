@@ -65,7 +65,7 @@
     &:focus,
     &:active {
       text-shadow: 0 0 30px rgba(0, 0, 0, .4);
-      color: $color-brand-primary;
+      color: $white;
     }
   }
 }

@@ -1,18 +1,27 @@
 <template>
-  <section class="mdev-full-section --section-space-top --accent-bkg --triangle-top">
-    <!-- Split Component 60 / 40 Reversed -->
-    <split-sixty
-      animClassLeft="a-flyin a-flyin-right"
-      animClassRight="a-flyin a-flyin-left" :reverse="true">
-      <!-- Right Split [reversed:true] -->
-      <template slot="leftSlot">
-        <base-form></base-form>
-      </template>
+  <section class="mdev-full-section --accent-bkg --triangle-top --form-padding">
+    <div class="mdev-main-form">
+      <!-- Split Component 60 / 40 Reversed -->
+      <split-sixty
+        animClassLeft="a-flyin a-flyin-right"
+        animClassRight="a-flyin a-flyin-left" :reverse="true" :top="true">
+        <!-- Right Split [reversed:true] -->
+        <template slot="leftSlot">
+          <base-form></base-form>
+        </template>
 
-      <template slot="rightSlot">
-        Stuff over on this side
-      </template>
-    </split-sixty>
+        <template slot="rightSlot">
+          <div class="form-subtitle u-uppercase">
+            {{ $t("contact.smallTitle") }}
+          </div>
+          <div class="form-title u-uppercase">
+            {{ $t("contact.largeTitle") }}
+          </div>
+          <!-- Loads Social Links -->
+          <social-links darkTheme="true" :linkContent="socialLinks"></social-links>
+        </template>
+      </split-sixty>
+    </div>
   </section>
 </template>
 
@@ -21,37 +30,51 @@
 // Imports
 import BaseForm from '../shared/base-form.vue';
 import SplitSixty from '../modules/sixty-forty.vue';
+import SocialLinks from '../shared/social-links.vue';
 
 export default{
   name: 'ContactForm',
-  data: function(){
+  data: function() {
     return{
-
+      socialLinks: [
+        {
+          linkClass: 'fa-facebook-f',
+          target: '_blank',
+          accessibility: 'Like us on Facebook',
+          linkUrl: 'https://www.facebook.com/MDEVDigital'
+        },
+        {
+          linkClass: 'fa-instagram',
+          target: '_blank',
+          accessibility: 'Follow us on Instagram',
+          linkUrl: 'https://www.instagram.com/mdev_digital/'
+        },
+        {
+          linkClass: 'fa-twitter',
+          target: '_blank',
+          accessibility: 'Follow us on Twitter',
+          linkUrl: 'https://twitter.com/MDEVdigital'
+        },
+        {
+          linkClass: 'fa-linkedin',
+          target: '_blank',
+          accessibility: 'Follow us on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+        }
+      ],
     };
-  },
-
-  mounted: function(){
-    console.log('Element Mounted');
   },
 
   methods: {
     loadImage(path){
       return require('../../assets/images/' + path);
-    },
-    // Change Language METHOD
-    change () {
-      let current = this.$locale.current();
-      if (current === 'en') {
-        this.$locale.change('pt');
-      } else {
-        this.$locale.change('en');
-      }
     }
   },
 
   components: {
-    'base-form' : BaseForm,
-    'split-sixty' : SplitSixty
+    'base-form'     : BaseForm,
+    'split-sixty'   : SplitSixty,
+    'social-links'  : SocialLinks
   }
 };
 </script>
@@ -60,11 +83,62 @@ export default{
 
 <style lang="scss">
 
-	/*-------------------------------------*/
-	/* 404 Component Styles
-	/--------------------------------------*/
+/*-------------------------------------*/
+/* 404 Component Styles
+/--------------------------------------*/
+.--form-padding {
+  padding: 250px 0 150px;
+}
+
+.form-title {
+  font-size: 900%;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.form-subtitle {
+  font-size: 220%;
+  font-weight: 300;
+}
 
 
-	/*--------------------------------------*/
+.mdev-main-form {
+  width: 100%;
+  padding: 0 10%;
+
+  color: $color-brand-bkg;
+  .mdev-social-links {
+    font-size: 380%;
+    margin: 2vw 0;
+
+    @media #{$portrait} {
+      margin: 30px 0;
+      font-size: 4vw;
+    }
+
+    @media #{$phone-only} {
+      margin: 20px 0;
+    }
+
+    a {
+      display: block;
+      margin: 0 4%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  form {
+    margin-left: 40px;
+  }
+}
+
+
+/*--------------------------------------*/
 
 </style>

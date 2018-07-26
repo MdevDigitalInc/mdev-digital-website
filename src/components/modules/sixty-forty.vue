@@ -1,6 +1,6 @@
 <template>
   <div class="mdev-split flex flex-hor-between flex-vert-center"
-    :class="{'--reversed' : reverse}">
+    :class="{'--reversed' : reverse , '--top' : top}">
     <div class="mdev-split-6" :class="animClassLeft" v-in-viewport>
       <slot name="leftSlot"></slot>
     </div>
@@ -15,7 +15,7 @@
 <script>
 
 	export default {
-    props: ['animClassLeft', 'animClassRight', 'reverse']
+    props: ['animClassLeft', 'animClassRight', 'reverse', 'top']
 	};
 
 </script>
@@ -51,6 +51,10 @@
   .mdev-split-6 {
     order: 2;
   }
+}
+
+.--top {
+  align-items: flex-start;
 }
 /*--------------------------------------*/
 /* Main Component Styles                */

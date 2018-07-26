@@ -21,7 +21,8 @@ Vue.directive('in-viewport', inViewportDirective);
 
 // Import Auth Plugin
 // import Auth from './plugins/auth.js';
-
+import Validate from './plugins/validate.js';
+Vue.use(Validate);
 // [ i18n - Internationalization ] ----------------------
 
 // Configure I18n Internationalization Locales
