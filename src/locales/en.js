@@ -78,7 +78,8 @@ export default {
       },
       submit: {
         label: "Send",
-        accessibility: " Send Your Message!"
+        accessibility: " Send Your Message!",
+        loading: 'One Moment...'
       }
     }
   },
@@ -87,7 +88,9 @@ export default {
     errors: {
       form: "Please ensure all required fields are filled.",
       email: "Please enter a valid e-mail address.",
-      phone: "Please enter a valid phone number"
+      phone: "Please enter a valid phone number.",
+      fail: "Sorry but we are unable to process your request. Please try again later",
+      spam: "Something is wrong with the form, please check your entry."
     }
   },
 

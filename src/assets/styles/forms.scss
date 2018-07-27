@@ -79,7 +79,7 @@ textarea {
 
   &.--filled {
     border-top: 4px solid $border-color-passive;
-      text-transform: none;
+    text-transform: none!important;
     border-bottom: 4px solid $border-color-active;
   }
 }

@@ -7,7 +7,10 @@
         animClassRight="a-flyin a-flyin-left" :reverse="true" :top="true">
         <!-- Right Split [reversed:true] -->
         <template slot="leftSlot">
-          <base-form></base-form>
+          <base-form v-on:submitted="swapForm" v-if="!formSubmitted" data-form></base-form>
+          <div class="mdev-acknowledge" v-if="formSubmitted" data-form-thankyou>
+            Thank you for submitting
+          </div>
         </template>
 
         <template slot="rightSlot">
@@ -62,12 +65,17 @@ export default{
           linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
         }
       ],
+      formSubmitted: false
     };
   },
 
   methods: {
     loadImage(path){
       return require('../../assets/images/' + path);
+    },
+    swapForm() {
+      console.log('swapped');
+      this.formSubmitted = true;
     }
   },
 
