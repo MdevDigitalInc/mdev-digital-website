@@ -3,13 +3,13 @@
     <div class="mdev-main-form">
       <!-- Split Component 60 / 40 Reversed -->
       <split-sixty
-        animClassLeft="a-flyin a-flyin-right"
-        animClassRight="a-flyin a-flyin-left" :reverse="true" :top="true">
+        animClassLeft=""
+        animClassRight="a-flyin a-flyin-left a-in-viewport" :reverse="true" :top="true">
         <!-- Right Split [reversed:true] -->
         <template slot="leftSlot">
           <base-form v-on:submitted="swapForm" v-if="!formSubmitted" data-form></base-form>
           <div class="mdev-acknowledge" v-if="formSubmitted" data-form-thankyou>
-            Thank you for submitting
+            <h1> Thank you for submitting </h1>
           </div>
         </template>
 
@@ -21,7 +21,12 @@
             {{ $t("contact.largeTitle") }}
           </div>
           <!-- Loads Social Links -->
-          <social-links darkTheme="true" :linkContent="socialLinks"></social-links>
+          <social-links
+            darkTheme="true"
+            v-in-viewport
+            class="a-flyin a-flyin-left"
+            :linkContent="socialLinks">
+          </social-links>
         </template>
       </split-sixty>
     </div>
@@ -65,6 +70,7 @@ export default{
           linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
         }
       ],
+      // Form submission flag for animations
       formSubmitted: false
     };
   },
@@ -74,8 +80,18 @@ export default{
       return require('../../assets/images/' + path);
     },
     swapForm() {
-      console.log('swapped');
-      this.formSubmitted = true;
+      let that = this;
+      let animInterval = 800; // Matches CSS
+      // Hide the form visually
+      $('[data-form]').addClass('--form-sent');
+      // Swap out the components via the flag
+      setTimeout(() => {
+        that.formSubmitted = true;
+      },animInterval);
+      // Reveal Thankyou
+      setTimeout(() => {
+        $('[data-form-thankyou]').addClass('--form-notify');
+      },animInterval + 100);
     }
   },
 
@@ -143,7 +159,23 @@ export default{
 
   form {
     margin-left: 40px;
+    transition: opacity .8s;
   }
+}
+
+.mdev-acknowledge {
+  opacity: 0;
+  width: 100%;
+  margin-left: 40px;
+  transition: opacity .8s;
+}
+
+.--form-sent {
+  opacity: 0;
+}
+
+.--form-notify {
+  opacity: 1;
 }
 
 

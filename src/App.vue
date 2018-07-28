@@ -2,6 +2,7 @@
   <main id="app">
     <!-- Skip Navigatio Accessbility -->
     <button href="#mainContent"
+      v-if="!isLoading"
       title="Skip to main content"
       aria-label="Skip to main content"
       v-on:click.stop.prevent="skipNav"
@@ -9,7 +10,7 @@
       Skip To Main Content
     </button>
     <!-- Main Nav -->
-    <main-navigation></main-navigation>
+    <main-navigation v-if="!isLoading"></main-navigation>
     <transition name="fade">
       <router-view></router-view>
     </transition>
@@ -24,6 +25,9 @@
 import MainNavigation from './components/shared/navigation.vue';
 
 export default{
+  data: function(){
+    isLoading: true
+  },
 
   components: {
     'main-navigation' : MainNavigation

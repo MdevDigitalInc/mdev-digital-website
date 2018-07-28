@@ -1,7 +1,8 @@
 <template>
   <form id="form">
     <input name="_caught" type="text" class="mdev-honeypot" v-model="honeypot">
-    <div class="flex flex-hor-between flex-vert-center mdev-input-split">
+    <div v-in-viewport
+      class="flex flex-hor-between flex-vert-center mdev-input-split a-flyin a-flyin-right">
       <!-- First Name -->
       <div class="mdev-input-group">
         <div class="mdev-input-name">
@@ -36,7 +37,7 @@
       </div>
     </div>
     <!-- Company Name -->
-    <div class="mdev-input-group">
+    <div class="mdev-input-group a-flyin a-flyin-right" v-in-viewport>
       <div class="mdev-input-name">
         {{ $t("contact.fields.company.label") }}*
       </div>
@@ -52,7 +53,7 @@
         :placeholder="$t('contact.fields.company.placeholder')">
     </div>
     <!-- Phone Number -->
-    <div class="mdev-input-group">
+    <div class="mdev-input-group a-flyin a-flyin-right" v-in-viewport>
       <div class="mdev-input-name">
         {{ $t("contact.fields.phone.label") }}*
       </div>
@@ -69,7 +70,7 @@
         :placeholder="$t('contact.fields.phone.placeholder')">
     </div>
     <!-- Email -->
-    <div class="mdev-input-group">
+    <div class="mdev-input-group a-flyin a-flyin-right" v-in-viewport>
       <div class="mdev-input-name">
         {{ $t("contact.fields.email.label") }}*
       </div>
@@ -86,7 +87,7 @@
         :placeholder="$t('contact.fields.email.placeholder')">
     </div>
     <!-- Message -->
-    <div class="mdev-input-group">
+    <div class="mdev-input-group a-flyin a-flyin-right" v-in-viewport>
       <div class="mdev-input-name">
         {{ $t("contact.fields.message.label") }}*
       </div>
@@ -109,7 +110,8 @@
     <button
       type="submit"
       v-on:click.prevent="submitForm"
-      class="mdev-btn mdev-form-btn"
+      class="mdev-btn mdev-form-btn a-flyin a-flyin-right"
+      v-in-viewport
       :aria-label="$t('contact.fields.submit.accessibility')">
         <span>
           {{ $t('contact.fields.submit.label') }}

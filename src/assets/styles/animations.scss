@@ -101,7 +101,8 @@ $flyin-transform: .6s;
 .a-flyin-bot.fully-in-viewport,
 .a-flyin-bot.above-viewport,
 .a-flyin-top.fully-in-viewport,
-.a-flyin-top.above-viewport {
+.a-flyin-top.above-viewport,
+.a-in-viewport.in-viewport {
   opacity: 1;
   transform: translate3d( 0, 0, 0);
 }
