@@ -104,6 +104,15 @@ body {
   opacity: 0;
 }
 
+.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-leave-active {
+  opacity: 0;
+  position: absolute;
+}
+
 .mdev-skipnav {
   display: block;
   position: absolute;
