@@ -7,7 +7,7 @@
     <!-- Map -->
     <contact-map></contact-map>
     <!-- form -->
-    <contact-form></contact-form>
+    <contact-form id="mainContent"></contact-form>
     <!-- Footer -->
     <main-footer></main-footer>
   </section>

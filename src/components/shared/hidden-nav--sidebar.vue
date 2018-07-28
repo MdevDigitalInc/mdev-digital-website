@@ -2,12 +2,12 @@
   <div class="mdev-nav-sidebar flex flex-wrap flex-group-between">
     <!-- Top Container -->
     <div class="mdev-sidebar-container">
-      <a href="/"
+      <router-link to="/"
         title="MDEV Digital Homepage"
         :tabindex="(showLinks ? 1 : -1)"
         class="mdev-sidebar-brand">
         <img :src="loadImage(mdevBrand)" alt="MDEV Digital Brand">
-      </a>
+      </router-link>
 
       <div class="mdev-sidebar-cta u-light u-lowercase">
         {{ $t("navigation.sidebarCta") }}

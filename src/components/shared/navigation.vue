@@ -1,7 +1,7 @@
 <template>
   <nav class="mdev-main-nav" aria-role="navigation" data-main-nav role="navigation">
     <div class="mdev-nav-wrapper flex flex-nowrap flex-hor-between flex-vert-center">
-      <a :href="homeLink"
+      <router-link :to="homeLink"
         :title="homeTitle"
         :tabindex="(navIsOpen ? -1 : 0)"
         class="mdev-live-brand"
@@ -14,20 +14,19 @@
         <div class="mdev-hidden-brand">
           <img :src="loadImage(mdevWordTop)" data-mdev-wtop>
           <img :src="loadImage(mdevWordBot)" data-mdev-wbot>
-
         </div>
-      </a>
-    <button
-      class="mdev-nav-open"
-      :class="{ '--nav-open': navIsOpen }"
-      title="Main Navigation Menu"
-      tabindex="0"
-      :aria-label="( navIsOpen ? labelClose : labelOpen )"
-      v-on:click.self.stop="openMenu">
-      <span v-on:click.self.stop="openMenu"></span>
-      <span v-on:click.self.stop="openMenu"></span>
-      <span v-on:click.self.stop="openMenu"></span>
-    </button>
+      </router-link>
+      <button
+        class="mdev-nav-open"
+        :class="{ '--nav-open': navIsOpen }"
+        title="Main Navigation Menu"
+        tabindex="0"
+        :aria-label="( navIsOpen ? labelClose : labelOpen )"
+        v-on:click.self.stop="openMenu">
+        <span v-on:click.self.stop="openMenu"></span>
+        <span v-on:click.self.stop="openMenu"></span>
+        <span v-on:click.self.stop="openMenu"></span>
+      </button>
     </div>
     <!--
     <button @click="change()">CHANGE</button>

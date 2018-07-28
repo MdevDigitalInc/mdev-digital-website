@@ -107,19 +107,21 @@
     Dont forget to prevent default and validate...
       your other form fields go here use form.submit();
     -->
-    <button
-      type="submit"
-      v-on:click.prevent="submitForm"
-      class="mdev-btn mdev-form-btn a-flyin a-flyin-right"
-      v-in-viewport
-      :aria-label="$t('contact.fields.submit.accessibility')">
-        <span>
-          {{ $t('contact.fields.submit.label') }}
-        </span>
-        <span v-if="loading">
-          <i class="fas fa-circle-notch fa-spin"></i>
-        </span>
-    </button>
+    <div class="mdev-input-group a-flyin a-flyin-right" v-in-viewport>
+      <button
+        type="submit"
+        v-on:click.prevent="submitForm"
+        class="mdev-btn mdev-form-btn"
+        v-in-viewport
+        :aria-label="$t('contact.fields.submit.accessibility')">
+          <span>
+            {{ $t('contact.fields.submit.label') }}
+          </span>
+          <span v-if="loading">
+            <i class="fas fa-circle-notch fa-spin"></i>
+          </span>
+      </button>
+    </div>
   </form>
 </template>
 

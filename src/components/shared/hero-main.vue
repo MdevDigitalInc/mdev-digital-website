@@ -52,12 +52,8 @@ export default {
     }
     // Run for first time on first tick
     this.$nextTick( function () {
+      $('[data-main-hero]').addClass('--mask-active');
       adjustArrow();
-
-      setTimeout(function(){
-        $('[data-main-hero]').addClass('--mask-active');
-      }, 1000);
-
     });
 
     // Adjust arrow size on resize

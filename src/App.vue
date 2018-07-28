@@ -11,9 +11,10 @@
     </button>
     <!-- Main Nav -->
     <main-navigation v-if="!isLoading"></main-navigation>
-    <transition name="fade">
+    <transition name="fade" v-if="!isLoading">
       <router-view></router-view>
     </transition>
+    <brand-animation v-if="isLoading"></brand-animation>
   </main>
 </template>
 
@@ -23,27 +24,49 @@
 <script>
 //Local Component registration
 import MainNavigation from './components/shared/navigation.vue';
+import BrandAnimation from './components/shared/brand-animation.vue';
 
 export default{
   data: function(){
-    isLoading: true
+    return {
+      isLoading: true,
+      isHome: true
+    };
   },
 
   components: {
-    'main-navigation' : MainNavigation
+    'main-navigation' : MainNavigation,
+    'brand-animation' : BrandAnimation
   },
 
   mounted: function(){
-    this.$nextTick(function () {
-      setTimeout(function(){
+    this.$nextTick(() => {
+      // Wait for animation to play
+      setTimeout(() => {
+        $('[data-load-anim]').addClass('--opacity-active');
+      }, 100);
+      setTimeout(() => {
+        $('[data-load-anim]').addClass('--transform-active');
+      }, 900);
+      setTimeout(() => {
+        $('[data-load-anim]').removeClass('--opacity-active');
+        $('[data-load-window]').addClass('--opacity');
+      }, 1900);
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 2500);
+      // Add Active Classes
+      setTimeout(() => {
+        $('[data-main-hero]').addClass('--mask-active');
         $('[data-main-nav]').addClass('--nav-active');
-      }, 1800);
+      }, 2550);
     });
   },
 
   watch: {
     $route (to,from) {
       $('html,body').scrollTop(0);
+      $('[data-main-hero]').removeClass('--mask-active');
     }
   },
 
@@ -73,7 +96,7 @@ body {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity .3s;
+  transition: opacity .8s;
 }
 
 .fade-enter,
