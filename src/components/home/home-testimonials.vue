@@ -94,7 +94,7 @@
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 /*-------------------------------------*/
 /* Home Testimonials Component Styles

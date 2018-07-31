@@ -50,6 +50,7 @@ export default {
   contact: {
     smallTitle: "Getting in touch is easy",
     largeTitle: "Don't wait, say hello!",
+    headerBtn: "Send a message",
 
     fields: {
       fname: {
