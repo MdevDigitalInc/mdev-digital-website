@@ -1,12 +1,9 @@
 <template>
   <section class="mdev-full-section">
     <!-- Google Maps Container Mask -->
-    <div class="mdev-map-location" v-in-viewport>
+    <div data-map-active class="mdev-map-location">
       <!-- Maps Component -->
-      <google-map
-        :mapCenter="mapCenter"
-        :pinLocation="pinLocation"
-        :mapIcon="mapIcon" ></google-map>
+      <google-map :mapData="mapData" ></google-map>
       <!-- Contact Information -->
       <!-- Phone Number -->
       <div
@@ -58,8 +55,8 @@
       </div>
     </div>
     <!-- Decorative Element -->
-    <div class="mdev-box-dec a-flyin a-flyin-right" v-in-viewport></div>
-    <div class="mdev-frame-dec a-blur-in" v-in-viewport></div>
+    <div data-map-active class="mdev-box-dec a-flyin a-flyin-right" v-in-viewport></div>
+    <div data-map-active class="mdev-frame-dec a-blur-in" v-in-viewport></div>
   </section>
 </template>
 
@@ -83,9 +80,18 @@ export default{
         addressTitle: 'Come visit our offices!',
       },
 
-      pinLocation:  {lat: 42.991934, lng: -81.213673},
-      mapCenter: {lat: 42.992844, lng: -81.211459},
-      mapIcon: require('../../assets/images/map/location-ICON.png')
+      mapData: {
+        pinLocation:  {lat: 42.991934, lng: -81.213673},
+        mapCenter: {lat: 42.992844, lng: -81.211459},
+        mapIcon: require('../../assets/images/map/location-ICON.png'),
+        mapStyle: 'hybrid',
+        zoom: false,
+        controls: false,
+        kbShortcuts: false,
+        scroll: false,
+        drag: false,
+        zoomLevel: 17.2
+      }
     };
   },
 
@@ -115,6 +121,12 @@ export default{
   overflow: hidden;
   height: 90vh;
   z-index: 3;
+  opacity: 0;
+  transition: opacity 1.4s;
+
+  @media #{$portrait} {
+    width: 100%;
+  }
 }
 
 .mdev-g-map {
@@ -125,7 +137,7 @@ export default{
   width: 100%;
   z-index: 1;
   filter: grayscale(.5) blur(5px);
-  transition: filter 1.4s;
+  transition: 1s filter 1.4s;
 
   &:after {
     @include pseudo();
@@ -141,6 +153,11 @@ export default{
 .mdev-full-section {
   padding-top: 70px;
   margin-top: -70px;
+
+  @media #{$portrait} {
+    margin-bottom: 30px;
+    margin-top: -30px;
+  }
 }
 
 // Map Info
@@ -152,6 +169,10 @@ export default{
   line-height: 130%;
   border-bottom: 8px solid $white;
   font-size: 1.8vw;
+
+  @media #{$portrait} {
+    font-size: 3.8vw;
+  }
 
   .map-info-content,
   a {
@@ -165,12 +186,11 @@ export default{
 
   .info-type {
     font-weight: 700;
-  }
-}
 
-// Active Classes
-.--map-loaded {
-  filter: grayscale(.5) blur(0);
+    @media #{$portrait} {
+      font-size: 3.8vw;
+    }
+  }
 }
 
 // Decoration Overrides
@@ -179,6 +199,12 @@ export default{
   height: 60vh;
   right: 0;
   bottom: 75px;
+  opacity: 0;
+  transition: opacity 1s;
+
+  @media #{$portrait} {
+    bottom: 30px;
+  }
 }
 
 .mdev-frame-dec {
@@ -186,6 +212,13 @@ export default{
   height: 10vh;
   left: 10%;
   top: 0;
+  opacity: 0;
+  transition: opacity 1s;
+
+  @media #{$portrait} {
+    width: 70vw;
+    top: 35px;
+  }
 }
 
 // Position Element
@@ -193,6 +226,10 @@ export default{
   left: 0;
   top: 10%;
   padding-left: 10%;
+
+  @media #{$portrait} {
+    font-size: 5.8vw;
+  }
 }
 
 [ data-map-mail ] {
@@ -206,6 +243,17 @@ export default{
   bottom: 10%;
   padding-left: 20%;
 }
+
+
+// Active Classes
+.--map-loaded {
+  opacity: 1;
+
+  .mdev-g-map {
+    filter: grayscale(.5) blur(0);
+  }
+}
+
 
 /*--------------------------------------*/
 </style>

@@ -40,23 +40,33 @@ export default{
   },
 
   mounted: function(){
+    // Wait for full load and next tic on VM
     this.$nextTick(() => {
-      // Wait for animation to play
+      // Logo & Loading screen
       setTimeout(() => {
+        // Make Logo appear...
         $('[data-load-anim]').addClass('--opacity-active');
       }, 100);
       setTimeout(() => {
+        // Make Logo Move...
         $('[data-load-anim]').addClass('--transform-active');
       }, 900);
       setTimeout(() => {
+        // Make Logo Disappear...
         $('[data-load-anim]').removeClass('--opacity-active');
+        // Make Content Disappear
         $('[data-load-window]').addClass('--opacity');
       }, 1900);
+
+      // Update Data
       setTimeout(() => {
+        // Flip Flag
         this.isLoading = false;
       }, 2500);
-      // Add Active Classes
+
+      // Update rest of the UI
       setTimeout(() => {
+        // Add active class for Hero & Nav
         $('[data-main-hero]').addClass('--mask-active');
         $('[data-main-nav]').addClass('--nav-active');
       }, 2550);
@@ -94,11 +104,13 @@ body {
   background-color: $color-brand-bkg;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .8s;
+.fade-enter {
+  transition: 1.4s opacity 1.8s;
 }
 
+.fade-leave-to {
+  transition: opacity 1.2s;
+}
 .fade-enter,
 .fade-leave-to {
   opacity: 0;

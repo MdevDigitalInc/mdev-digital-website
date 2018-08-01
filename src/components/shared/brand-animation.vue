@@ -55,6 +55,14 @@ export default{
     transition: opacity 1.2s;
     opacity: 0;
 
+    @media #{$portrait} {
+      width: 8%;
+    }
+
+    @media #{$phone-only} {
+      width: 13%;
+    }
+
     img {
       position: relative;
       transition: transform 1.8s;

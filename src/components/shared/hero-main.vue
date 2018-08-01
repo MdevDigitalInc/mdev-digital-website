@@ -35,12 +35,26 @@ export default {
   props: [ 'pageTitle', 'headerDsc' ],
 
   mounted: function() {
-    console.log(this.pageTitle);
     // Resize timer to debounce scroll
     let resizeTimer;
     let resizeTime = 50;
     // Adjust Arrow height
-    function adjustArrow() {
+
+    // Run for first time on first tick
+    this.$nextTick(() => {
+      this.adjustArrow();
+      $('[data-main-hero]').addClass('--mask-active');
+    });
+
+    // Adjust arrow size on resize
+    $(window).resize(() => {
+      clearTimeout( resizeTimer );
+      resizeTimer = setTimeout( this.adjustArrow, resizeTime );
+    });
+  },
+
+  methods: {
+    adjustArrow() {
       let height;
       height = $('[data-main-hero]').outerHeight(true);
       $('[data-main-arrow]').css({
@@ -50,17 +64,10 @@ export default {
           'height': height + 'px'
         });
     }
-    // Run for first time on first tick
-    this.$nextTick( function () {
-      $('[data-main-hero]').addClass('--mask-active');
-      adjustArrow();
-    });
+  },
 
-    // Adjust arrow size on resize
-    $(window).resize( function() {
-      clearTimeout( resizeTimer );
-      resizeTimer = setTimeout( adjustArrow, resizeTime );
-    });
+  beforeDestroy: function() {
+    $('[data-main-hero]').removeClass('--mask-active');
   }
 };
 
@@ -124,7 +131,7 @@ export default {
   border-right: 1px solid rgba(255, 255, 255, .5);
   opacity: 0;
   min-width: 50px;
-  transition: all 3s, height .1s;
+  transition: opacity 3s, height 0;
 
   @media #{$phone-only} {
     display: none;

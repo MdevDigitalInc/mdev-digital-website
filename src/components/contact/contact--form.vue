@@ -14,17 +14,17 @@
         </template>
 
         <template slot="rightSlot">
-          <div class="form-subtitle u-uppercase">
+          <div class="mdev-form-subtitle u-uppercase">
             {{ $t("contact.smallTitle") }}
           </div>
-          <div class="form-title u-uppercase">
+          <div class="mdev-form-title u-uppercase">
             {{ $t("contact.largeTitle") }}
           </div>
           <!-- Loads Social Links -->
           <social-links
             darkTheme="true"
             v-in-viewport
-            class="a-flyin a-flyin-left"
+            class="a-flyin a-flyin-left --portrait-left"
             :linkContent="socialLinks">
           </social-links>
         </template>
@@ -112,17 +112,29 @@ export default{
 /--------------------------------------*/
 .--form-padding {
   padding: 250px 0 150px;
+
+  @media #{$portrait} {
+    padding: 125px 0 75px;
+  }
 }
 
-.form-title {
-  font-size: 900%;
+.mdev-form-title {
+  font-size: 7.9vw;
   font-weight: 900;
   letter-spacing: 2px;
+
+  @media #{$portrait} {
+    font-size: 13.2vw;
+  }
 }
 
-.form-subtitle {
-  font-size: 220%;
+.mdev-form-subtitle {
+  font-size: 1.8vw;
   font-weight: 300;
+
+  @media #{$portrait} {
+    font-size: 3.2vw;
+  }
 }
 
 
@@ -138,6 +150,10 @@ export default{
     @media #{$portrait} {
       margin: 30px 0;
       font-size: 4vw;
+
+      @media #{$portrait} {
+        font-size: 7vw;
+      }
     }
 
     @media #{$phone-only} {
@@ -160,6 +176,11 @@ export default{
   form {
     margin-left: 40px;
     transition: opacity .8s;
+
+    @media #{$portrait} {
+      margin-left: 0;
+      margin-top: 40px;
+    }
   }
 }
 

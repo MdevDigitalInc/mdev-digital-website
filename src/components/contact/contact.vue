@@ -1,21 +1,27 @@
 <template>
   <section class="mdev-main-content">
+    <!-- Hero Component -->
     <hero-main :pageTitle="pageTitle" :headerDsc="headerDsc">
-      <div class="mdev-main-hero" :style="heroStyles">
+      <!-- Slot Content -->
+      <div class="mdev-main-hero --hero-vivus" :style="heroStyles">
+        <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-contact">
           <div class="mdev-center">
             <object class="--contact-connect" id="anim-connect" type="image/svg+xml" :data="loadImage(connectAnim)"></object>
-            <div class="flex flex-between flex-vert-start">
+            <!-- Bottom Container -->
+            <div class="flex flex-vert-start --portrait-wrap --phone-center">
               <object class="--contact-with" id="anim-with" type="image/svg+xml" :data="loadImage(withAnim)"></object>
               <object class="--contact-us" id="anim-us" type="image/svg+xml" :data="loadImage(usAnim)"></object>
+              <!-- CTA Text & Button -->
               <div data-header-intro class="--header-cta">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lectus erat, semper ut lectus a, dictum tempus orci. Cras varius lorem ac euismod bibendum. Nam aliquam ante quis magna porttitor, eu dapibus risus pulvinar. Integer sit amet leo id risus tempor fermentum. Aliquam erat volutpat.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lectus erat, semper ut lectus a, dictum tempus orci. Cras varius lorem ac euismod bibendum. Nam aliquam ante quis
+                  magna porttitor.
                 </p>
                  <a data-header-btn
                     href="#contactus"
                     title="Contact Us"
-                    class="mdev-btn mdev-primary-btn --space-top-sm">
+                    class="mdev-btn mdev-primary-btn">
                    {{ $t('contact.headerBtn') }}
                  </a>
               </div>
@@ -51,8 +57,7 @@ export default {
   data: function(){
     return{
       heroStyles: {
-        backgroundColor: '#0f1617',
-        paddingTop: '40%'
+        backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
       pageTitle: 'TESTY TEST TEST',
@@ -64,21 +69,23 @@ export default {
   },
 
   mounted: function() {
-    setTimeout(() => {
-      new Vivus('anim-connect', {duration: 300}, console.log('fired'));
-    }, 100);
-    setTimeout(() => {
-      $('#anim-with').addClass('--anim-visible');
-    }, 450);
-    setTimeout(() => {
-      new Vivus('anim-us', {duration: 200}, console.log('fired'));
-    }, 1700);
-    setTimeout(() => {
-      $('[data-header-intro]').addClass('--anim-visible');
-    }, 2200);
-    setTimeout(() => {
-      $('[data-header-btn]').addClass('fully-in-viewport');
-    }, 3400);
+    this.$nextTick(() => {
+      setTimeout(() => {
+        new Vivus('anim-connect', {duration: 150}, console.log('fired'));
+      }, 100);
+      setTimeout(() => {
+        $('#anim-with').addClass('--anim-visible');
+      }, 450);
+      setTimeout(() => {
+        new Vivus('anim-us', {duration: 180}, console.log('fired'));
+      }, 1700);
+      setTimeout(() => {
+        $('[data-header-intro]').addClass('--anim-visible');
+      }, 2200);
+      setTimeout(() => {
+        $('[data-header-btn]').addClass('fully-in-viewport');
+      }, 3400);
+    });
   },
 
   components: {
@@ -116,26 +123,55 @@ export default {
   padding: 0 5%;
 }
 
+.--hero-vivus {
+  padding-top: 40%;
+
+  @media #{$portrait} {
+    padding-top: 98%;
+  }
+
+  @media #{$phone-only} {
+    padding-top: 130%;
+  }
+}
+
 .--vivus-contact {
 
   .--contact-connect {
     width: 70%;
+
+    @media #{$portrait} {
+      width: 100%;
+    }
   }
 
   .--contact-with {
     width: 12%;
     opacity: 0;
     transition: 1.8s opacity 1.2s;
+
+    @media #{$portrait} {
+      width: 18%;
+    }
   }
 
   .--contact-us {
     width: 23%;
+
+    @media #{$portrait} {
+      width: 35%;
+    }
   }
 
   .--header-cta {
     opacity: 0;
     width: 50%;
     transition: opacity 1.2s;
+
+    @media #{$portrait} {
+      width: 100%;
+      text-align: left;
+    }
   }
 
   .--anim-visible {
@@ -145,11 +181,29 @@ export default {
 
   p {
     color: $white;
+    font-size: 120%;
+
+    @media #{$phone-only} {
+      font-size: 100%;
+    }
   }
 
   .mdev-center {
     @include center(both);
     width: 80%;
+
+    @media #{$portrait} {
+      text-align: center;
+      width: 75%;
+    }
+  }
+
+  .mdev-primary-btn {
+    margin-top: 25px;
+
+    @media #{$desktop-up} {
+      margin-top: 50px;
+    }
   }
 }
 
@@ -157,21 +211,18 @@ export default {
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {
-  transform: rotate(60deg) translate3d(0, -37vw, 0);
   animation: line-one-anim;
   @include arrow-anim-rules(11s);
 }
 
 // Line Two is not rotated and therefore X is X and Y is Y
 [ data-line-two ] {
-  transform: rotate(0) translate3d(0, -50px, 0);
-  animation: line-two-anim;
+  animation: line-two-anim-header;
   @include arrow-anim-rules(22s);
 }
 
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-three ] {
-  transform: rotate(-60deg) translate3d(0, -37vw, 0);
   animation: line-three-anim;
   @include arrow-anim-rules(17s);
 }

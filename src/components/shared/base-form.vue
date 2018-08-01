@@ -232,9 +232,13 @@ export default{
   position: relative;
   margin-bottom: 40px;
 
+  @media #{$phone-only} {
+    margin-bottom: 25px;
+  }
+
   .mdev-input-name {
     font-weight: 700;
-    font-size: 1.3vw;
+    font-size: 3.3vw;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
@@ -247,6 +251,10 @@ export default{
     text-transform: capitalize;
     font-weight: 300;
     letter-spacing: 1px;
+
+    @media #{$portrait} {
+      font-size: 2.7vw;
+    }
   }
 }
 

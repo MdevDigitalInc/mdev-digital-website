@@ -175,21 +175,18 @@
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {
-  transform: rotate(60deg) translate3d(0, -37vw, 0);
   animation: line-one-anim;
   @include arrow-anim-rules(11s);
 }
 
 // Line Two is not rotated and therefore X is X and Y is Y
 [ data-line-two ] {
-  transform: rotate(0) translate3d(0, -50px, 0);
   animation: line-two-anim;
   @include arrow-anim-rules(22s);
 }
 
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-three ] {
-  transform: rotate(-60deg) translate3d(0, -37vw, 0);
   animation: line-three-anim;
   @include arrow-anim-rules(17s);
 }

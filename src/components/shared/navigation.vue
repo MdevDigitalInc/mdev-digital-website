@@ -136,7 +136,10 @@
     // Watch route change and toggle menu if user navigates away
     watch: {
       $route (to,from) {
-        this.closeMenu();
+        // If Nav was open when route changes.. close it
+        if ( this.navIsOpen ) {
+          this.closeMenu();
+        }
       }
     },
 
@@ -196,6 +199,7 @@
 
       // Flip Nav flag & animate sidebar
       openMenu() {
+        console.log('Open Menu');
         this.navIsOpen = !this.navIsOpen;
         $('[data-main-links]').removeClass('--showLinks');
         $('body').toggleClass('u-freeze-scroll');
@@ -211,7 +215,7 @@
         this.navIsOpen = false;
         $('[data-main-links]').removeClass('--showLinks');
         $('body').removeClass('u-freeze-scroll');
-        $('[data-nav-content]').toggleClass('--active-sidebar');
+        $('[data-nav-content]').removeClass('--active-sidebar');
       }
     },
 
@@ -257,6 +261,14 @@
 
     img {
       width: 100%;
+    }
+
+    .mdev-social-links {
+      /* stylelint-disable */
+      @media #{$portrait} {
+        justify-content: center !important;
+      }
+      /* stylelint-enable */
     }
   }
 

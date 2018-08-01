@@ -105,6 +105,22 @@
   margin-top: 25px;
 }
 
+// Flex Modifiers
+
+.--portrait-wrap {
+  flex-wrap: nowrap;
+
+  @media #{$portrait} {
+    flex-wrap: wrap;
+  }
+}
+
+.--phone-center {
+  @media #{$phone-only} {
+    justify-content: center;
+  }
+}
+
 // Triangle Clip Path
 .--triangle-bottom {
   clip-path: $clip-triangle-bot;
