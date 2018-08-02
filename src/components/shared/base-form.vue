@@ -98,6 +98,7 @@
         name="Message"
         tab-index="0"
         aria-required="true"
+        v-on:keyup.shift.enter.stop
         :aria-label="$t('contact.fields.message.label')"
         type="text"
         :placeholder="$t('contact.fields.message.placeholder')">
