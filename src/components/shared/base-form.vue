@@ -1,5 +1,5 @@
 <template>
-  <form id="form">
+  <form id="form" v-on:keyup.enter="submitForm">
     <input name="_caught" type="text" class="mdev-honeypot" v-model="honeypot">
     <div v-in-viewport
       class="flex flex-hor-between flex-vert-center mdev-input-split a-flyin a-flyin-right">
