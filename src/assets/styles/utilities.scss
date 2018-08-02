@@ -118,6 +118,10 @@
   @include clearfix();
 }
 
+.u-no-select {
+  user-select: none;
+}
+
 // Color Utilities
 .u-c-black {
   color: $color-brand-bkg;

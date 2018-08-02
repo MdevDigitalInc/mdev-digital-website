@@ -1,5 +1,6 @@
 <template>
   <main id="app">
+    <img :src="loadImage('MDEV-main-hero.png')" class="u-screenreader" />
     <!-- Skip Navigatio Accessbility -->
     <button href="#mainContent"
       v-if="!isLoading"
@@ -84,6 +85,10 @@ export default{
     skipNav() {
       var anchor = $("#mainContent").offset().top;
       $('html,body').scrollTop(anchor);
+    },
+    // Get Compiled image Paths
+    loadImage(path){
+      return require('./assets/images/' + path);
     }
   }
 };

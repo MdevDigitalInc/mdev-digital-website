@@ -1,7 +1,7 @@
 <template>
   <div class="mdev-full-section --accent-bkg --pull-up-section --reduce-bottom">
     <div class="mdev-main-wrapper u-text-center">
-      <h3 class="u-uppercase u-c-black u-bold a-flyin a-flyin-right" v-in-viewport>
+      <h3 class="u-uppercase u-c-black u-bold a-flyin a-flyin-right u-no-select" v-in-viewport>
         {{ $t("homepage.testimonials.heading") }}
       </h3>
       <!-- Testimonial Loop -->
@@ -110,6 +110,7 @@
 
 .mdev-testimonial {
   width: 80%;
+  user-select: none;
   margin: 0 auto;
 
   @media #{$phone-only} {
