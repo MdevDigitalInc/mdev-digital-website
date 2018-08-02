@@ -4,12 +4,19 @@
       <!-- Split Component 60 / 40 Reversed -->
       <split-sixty
         animClassLeft=""
-        animClassRight="a-flyin a-flyin-left a-in-viewport" :reverse="true" :top="true">
+        animClassRight="a-flyin a-flyin-left a-in-viewport" :reverse="true" :top="!formSubmitted">
         <!-- Right Split [reversed:true] -->
         <template slot="leftSlot">
           <base-form v-on:submitted="swapForm" v-if="!formSubmitted" data-form></base-form>
-          <div class="mdev-acknowledge" v-if="formSubmitted" data-form-thankyou>
-            <h1> Thank you for submitting </h1>
+          <div class="mdev-acknowledge u-text-center" v-if="formSubmitted" data-form-thankyou>
+            <img :src="loadImage(thankyouIcon)" alt="Paper Airplane Flying">
+            <p>
+              {{ $t("contact.thankyouMsg") }}
+            </p>
+            <!-- Primary Button -->
+            <btn-primary :BtnData="BtnData">
+              {{ $t("contact.thankyouAction") }}
+            </btn-primary>
           </div>
         </template>
 
@@ -36,9 +43,10 @@
 
 <script>
 // Imports
-import BaseForm from '../shared/base-form.vue';
-import SplitSixty from '../modules/sixty-forty.vue';
-import SocialLinks from '../shared/social-links.vue';
+import BaseForm     from '../shared/base-form.vue';
+import SplitSixty   from '../modules/sixty-forty.vue';
+import SocialLinks  from '../shared/social-links.vue';
+import BtnPrimary   from '../shared/btn-primary.vue';
 
 export default{
   name: 'ContactForm',
@@ -70,6 +78,13 @@ export default{
           linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
         }
       ],
+      // Button Data
+      BtnData: {
+        accessibility: 'View Our Case Studies',
+        btnRoute: '/casestudies',
+        btnClass: 'mdev-btn mdev-form-btn --space-top-sm'
+      },
+      thankyouIcon: 'contact/MDEV_FORM_airplane.svg',
       // Form submission flag for animations
       formSubmitted: false
     };
@@ -98,7 +113,8 @@ export default{
   components: {
     'base-form'     : BaseForm,
     'split-sixty'   : SplitSixty,
-    'social-links'  : SocialLinks
+    'social-links'  : SocialLinks,
+    'btn-primary'   : BtnPrimary
   }
 };
 </script>
@@ -189,6 +205,16 @@ export default{
   width: 100%;
   margin-left: 40px;
   transition: opacity .8s;
+  padding: 2% 10%;
+
+  @media #{$portrait} {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+
+  p {
+    padding-top: 15px;
+  }
 }
 
 .--form-sent {

@@ -238,9 +238,13 @@ export default{
 
   .mdev-input-name {
     font-weight: 700;
-    font-size: 3.3vw;
+    font-size: 1.8vw;
     text-transform: uppercase;
     letter-spacing: 2px;
+
+    @media #{$portrait} {
+      font-size: 3.3vw;
+    }
   }
 
   input,
