@@ -56,7 +56,6 @@
   opacity: 0;
   color: $white;
   background: transparent;
-  //border: 2px solid $color-brand-accent ;
   font-size: 1.1vw;
   transition: color .5s, background .5s, opacity .8s;
 
@@ -83,7 +82,6 @@
     width: 0;
     height: 0;
   }
-
 }
 
 $border-time: .4s;
@@ -98,6 +96,7 @@ $border-time: .4s;
     height: 100%;
   }
 
+  // Draw in Top Right lines first
   &:before {
     border-top-color: $color-brand-accent;
     border-right-color: $color-brand-accent;
@@ -105,11 +104,46 @@ $border-time: .4s;
                 height $border-time ease-out $border-time;
   }
 
+  // Draw in Bottom Left lines after
+  // This is why border time is multiplied.
   &:after {
     border-bottom-color: $color-brand-accent;
     border-left-color: $color-brand-accent;
     transition: border-color 0s ease-out ($border-time * 2),
                 width $border-time ease-out ($border-time * 2),
                 height $border-time ease-out ($border-time * 3);
+  }
+}
+
+
+/* Form Button Styles */
+.mdev-form-btn {
+  color: $white;
+  background: $color-brand-bkg;
+  font-size: 1.1vw;
+  border: 4px solid rgba(15, 22, 24, 0);
+  transition: all .5s;
+  padding: .7vw 2.5vw;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-brand-bkg;
+    border: 4px solid rgba(15, 22, 24, 1);
+    background: transparent;
+  }
+
+  @media #{$portrait} {
+    font-size: 2.9vw;
+    width: 100%;
+    padding: 2vw 2.3vw;
+  }
+
+  @media #{$tablet-lnd-only} {
+    font-size: 2vw;
+  }
+
+  @media #{$phone-only} {
+    font-size: 4.3vw;
   }
 }

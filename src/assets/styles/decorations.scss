@@ -24,3 +24,16 @@
     opacity: .25;
   }
 }
+
+.mdev-box-dec {
+  position: absolute;
+  z-index: 1;
+  background: $color-brand-primary;
+}
+
+.mdev-frame-dec {
+  position: absolute;
+  z-index: 1;
+  background: transparent;
+  border: 4px solid $color-brand-accent;
+}

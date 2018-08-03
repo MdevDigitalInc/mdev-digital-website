@@ -1,0 +1,231 @@
+<template>
+  <section class="mdev-full-section --accent-bkg --triangle-top --form-padding">
+    <div class="mdev-main-form">
+      <!-- Split Component 60 / 40 Reversed -->
+      <split-sixty
+        animClassLeft=""
+        animClassRight="a-flyin a-flyin-left a-in-viewport" :reverse="true" :top="!formSubmitted">
+        <!-- Right Split [reversed:true] -->
+        <template slot="leftSlot">
+          <base-form v-on:submitted="swapForm" v-if="!formSubmitted" data-form></base-form>
+          <div class="mdev-acknowledge u-text-center" v-if="formSubmitted" data-form-thankyou>
+            <img :src="loadImage(thankyouIcon)" alt="Paper Airplane Flying">
+            <p>
+              {{ $t("contact.thankyouMsg") }}
+            </p>
+            <!-- Primary Button -->
+            <btn-primary :BtnData="BtnData">
+              {{ $t("contact.thankyouAction") }}
+            </btn-primary>
+          </div>
+        </template>
+
+        <template slot="rightSlot">
+          <div class="mdev-form-subtitle u-uppercase">
+            {{ $t("contact.smallTitle") }}
+          </div>
+          <div class="mdev-form-title u-uppercase">
+            {{ $t("contact.largeTitle") }}
+          </div>
+          <!-- Loads Social Links -->
+          <social-links
+            darkTheme="true"
+            v-in-viewport
+            class="a-flyin a-flyin-left --portrait-left"
+            :linkContent="socialLinks">
+          </social-links>
+        </template>
+      </split-sixty>
+    </div>
+  </section>
+</template>
+
+
+<script>
+// Imports
+import BaseForm     from '../shared/base-form.vue';
+import SplitSixty   from '../modules/sixty-forty.vue';
+import SocialLinks  from '../shared/social-links.vue';
+import BtnPrimary   from '../shared/btn-primary.vue';
+
+export default{
+  name: 'ContactForm',
+  data: function() {
+    return{
+      socialLinks: [
+        {
+          linkClass: 'fa-facebook-f',
+          target: '_blank',
+          accessibility: 'Like us on Facebook',
+          linkUrl: 'https://www.facebook.com/MDEVDigital'
+        },
+        {
+          linkClass: 'fa-instagram',
+          target: '_blank',
+          accessibility: 'Follow us on Instagram',
+          linkUrl: 'https://www.instagram.com/mdev_digital/'
+        },
+        {
+          linkClass: 'fa-twitter',
+          target: '_blank',
+          accessibility: 'Follow us on Twitter',
+          linkUrl: 'https://twitter.com/MDEVdigital'
+        },
+        {
+          linkClass: 'fa-linkedin',
+          target: '_blank',
+          accessibility: 'Follow us on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+        }
+      ],
+      // Button Data
+      BtnData: {
+        accessibility: 'View Our Case Studies',
+        btnRoute: '/casestudies',
+        btnClass: 'mdev-btn mdev-form-btn --space-top-sm'
+      },
+      thankyouIcon: 'contact/MDEV_FORM_airplane.svg',
+      // Form submission flag for animations
+      formSubmitted: false
+    };
+  },
+
+  methods: {
+    loadImage(path){
+      return require('../../assets/images/' + path);
+    },
+    swapForm() {
+      let that = this;
+      let animInterval = 800; // Matches CSS
+      // Hide the form visually
+      $('[data-form]').addClass('--form-sent');
+      // Swap out the components via the flag
+      setTimeout(() => {
+        that.formSubmitted = true;
+      },animInterval);
+      // Reveal Thankyou
+      setTimeout(() => {
+        $('[data-form-thankyou]').addClass('--form-notify');
+      },animInterval + 100);
+    }
+  },
+
+  components: {
+    'base-form'     : BaseForm,
+    'split-sixty'   : SplitSixty,
+    'social-links'  : SocialLinks,
+    'btn-primary'   : BtnPrimary
+  }
+};
+</script>
+
+
+
+<style lang="scss">
+
+/*-------------------------------------*/
+/* Contact Form Component Styles
+/--------------------------------------*/
+.--form-padding {
+  padding: 250px 0 150px;
+
+  @media #{$portrait} {
+    padding: 125px 0 75px;
+  }
+}
+
+.mdev-form-title {
+  font-size: 7.9vw;
+  font-weight: 900;
+  letter-spacing: 2px;
+
+  @media #{$portrait} {
+    font-size: 13.2vw;
+  }
+}
+
+.mdev-form-subtitle {
+  font-size: 1.8vw;
+  font-weight: 300;
+
+  @media #{$portrait} {
+    font-size: 3.2vw;
+  }
+}
+
+
+.mdev-main-form {
+  width: 100%;
+  padding: 0 10%;
+
+  color: $color-brand-bkg;
+  .mdev-social-links {
+    font-size: 380%;
+    margin: 2vw 0;
+
+    @media #{$portrait} {
+      margin: 30px 0;
+      font-size: 4vw;
+
+      @media #{$portrait} {
+        font-size: 7vw;
+      }
+    }
+
+    @media #{$phone-only} {
+      margin: 20px 0;
+    }
+
+    a {
+      display: block;
+      margin: 0 4%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  form {
+    margin-left: 40px;
+    transition: opacity .8s;
+
+    @media #{$portrait} {
+      margin-left: 0;
+      margin-top: 40px;
+    }
+  }
+}
+
+.mdev-acknowledge {
+  opacity: 0;
+  width: 100%;
+  margin-left: 40px;
+  transition: opacity .8s;
+  padding: 2% 10%;
+
+  @media #{$portrait} {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+
+  p {
+    padding-top: 15px;
+  }
+}
+
+.--form-sent {
+  opacity: 0;
+}
+
+.--form-notify {
+  opacity: 1;
+}
+
+
+/*--------------------------------------*/
+
+</style>

@@ -21,7 +21,8 @@ Vue.directive('in-viewport', inViewportDirective);
 
 // Import Auth Plugin
 // import Auth from './plugins/auth.js';
-
+import Validate from './plugins/validate.js';
+Vue.use(Validate);
 // [ i18n - Internationalization ] ----------------------
 
 // Configure I18n Internationalization Locales
@@ -99,6 +100,22 @@ const router = new VueRouter ({
   }
 });
 //--------------------------------------[ vue-router ]
+
+// Route Guard - Executes before each route change
+// In this case being used to dynamically change BKG color
+router.beforeEach(function( to, from, next){
+  let bodyWhite = "--body-white";
+
+  if ( to.path == "/contact" ) {
+    // Ternary operator adds class when body doesn't already have it
+    // prevents multiple classes being added to body
+    !$('body').hasClass(bodyWhite) ? $('body').addClass(bodyWhite) : '';
+  }
+  else {
+    $('body').removeClass('--body-white');
+  }
+  next();
+});
 
 // [ Main Vue Instance ] ----------------------------
 new Vue({

@@ -38,3 +38,20 @@
     transform: rotate(-60deg) translate3d(0, -37vw, 0);
   }
 }
+
+// Header Arrow Anims
+@keyframes line-two-anim-header {
+  0% {
+    transform: rotate(0) translate3d(0, -180px, 0);
+  }
+  25% {
+    transform: rotate(3deg) translate3d(0, -80px, 0);
+  }
+  75% {
+    transform: rotate(-4deg) translate3d(0, -120px, 0);
+  }
+  100% {
+    transform: rotate(0) translate3d(0, -180px, 0);
+  }
+}
+

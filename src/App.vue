@@ -1,7 +1,9 @@
 <template>
   <main id="app">
+    <img :src="loadImage('MDEV-main-hero.png')" class="u-screenreader" />
     <!-- Skip Navigatio Accessbility -->
     <button href="#mainContent"
+      v-if="!isLoading"
       title="Skip to main content"
       aria-label="Skip to main content"
       v-on:click.stop.prevent="skipNav"
@@ -9,10 +11,11 @@
       Skip To Main Content
     </button>
     <!-- Main Nav -->
-    <main-navigation></main-navigation>
-    <transition name="fade">
+    <main-navigation v-if="!isLoading"></main-navigation>
+    <transition name="fade" v-if="!isLoading">
       <router-view></router-view>
     </transition>
+    <brand-animation v-if="isLoading"></brand-animation>
   </main>
 </template>
 
@@ -22,24 +25,59 @@
 <script>
 //Local Component registration
 import MainNavigation from './components/shared/navigation.vue';
+import BrandAnimation from './components/shared/brand-animation.vue';
 
 export default{
+  data: function(){
+    return {
+      isLoading: true,
+      isHome: true
+    };
+  },
 
   components: {
-    'main-navigation' : MainNavigation
+    'main-navigation' : MainNavigation,
+    'brand-animation' : BrandAnimation
   },
 
   mounted: function(){
-    this.$nextTick(function () {
-      setTimeout(function(){
+    // Wait for full load and next tic on VM
+    this.$nextTick(() => {
+      // Logo & Loading screen
+      setTimeout(() => {
+        // Make Logo appear...
+        $('[data-load-anim]').addClass('--opacity-active');
+      }, 100);
+      setTimeout(() => {
+        // Make Logo Move...
+        $('[data-load-anim]').addClass('--transform-active');
+      }, 900);
+      setTimeout(() => {
+        // Make Logo Disappear...
+        $('[data-load-anim]').removeClass('--opacity-active');
+        // Make Content Disappear
+        $('[data-load-window]').addClass('--opacity');
+      }, 1900);
+
+      // Update Data
+      setTimeout(() => {
+        // Flip Flag
+        this.isLoading = false;
+      }, 2500);
+
+      // Update rest of the UI
+      setTimeout(() => {
+        // Add active class for Hero & Nav
+        $('[data-main-hero]').addClass('--mask-active');
         $('[data-main-nav]').addClass('--nav-active');
-      }, 1800);
+      }, 2550);
     });
   },
 
   watch: {
     $route (to,from) {
       $('html,body').scrollTop(0);
+      $('[data-main-hero]').removeClass('--mask-active');
     }
   },
 
@@ -47,6 +85,10 @@ export default{
     skipNav() {
       var anchor = $("#mainContent").offset().top;
       $('html,body').scrollTop(anchor);
+    },
+    // Get Compiled image Paths
+    loadImage(path){
+      return require('./assets/images/' + path);
     }
   }
 };
@@ -67,14 +109,25 @@ body {
   background-color: $color-brand-bkg;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .3s;
+.fade-enter {
+  transition: 1.4s opacity 1.8s;
 }
 
+.fade-leave-to {
+  transition: opacity 1.2s;
+}
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-leave-active {
+  opacity: 0;
+  position: absolute;
 }
 
 .mdev-skipnav {

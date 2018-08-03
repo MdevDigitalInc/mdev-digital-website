@@ -1,7 +1,7 @@
 <template>
   <nav class="mdev-main-nav" aria-role="navigation" data-main-nav role="navigation">
     <div class="mdev-nav-wrapper flex flex-nowrap flex-hor-between flex-vert-center">
-      <a :href="homeLink"
+      <router-link :to="homeLink"
         :title="homeTitle"
         :tabindex="(navIsOpen ? -1 : 0)"
         class="mdev-live-brand"
@@ -14,20 +14,19 @@
         <div class="mdev-hidden-brand">
           <img :src="loadImage(mdevWordTop)" data-mdev-wtop>
           <img :src="loadImage(mdevWordBot)" data-mdev-wbot>
-
         </div>
-      </a>
-    <button
-      class="mdev-nav-open"
-      :class="{ '--nav-open': navIsOpen }"
-      title="Main Navigation Menu"
-      tabindex="0"
-      :aria-label="( navIsOpen ? labelClose : labelOpen )"
-      v-on:click.self.stop="openMenu">
-      <span v-on:click.self.stop="openMenu"></span>
-      <span v-on:click.self.stop="openMenu"></span>
-      <span v-on:click.self.stop="openMenu"></span>
-    </button>
+      </router-link>
+      <button
+        class="mdev-nav-open"
+        :class="{ '--nav-open': navIsOpen }"
+        title="Main Navigation Menu"
+        tabindex="0"
+        :aria-label="( navIsOpen ? labelClose : labelOpen )"
+        v-on:click.self.stop="openMenu">
+        <span v-on:click.self.stop="openMenu"></span>
+        <span v-on:click.self.stop="openMenu"></span>
+        <span v-on:click.self.stop="openMenu"></span>
+      </button>
     </div>
     <!--
     <button @click="change()">CHANGE</button>
@@ -137,7 +136,10 @@
     // Watch route change and toggle menu if user navigates away
     watch: {
       $route (to,from) {
-        this.closeMenu();
+        // If Nav was open when route changes.. close it
+        if ( this.navIsOpen ) {
+          this.closeMenu();
+        }
       }
     },
 
@@ -197,6 +199,7 @@
 
       // Flip Nav flag & animate sidebar
       openMenu() {
+        console.log('Open Menu');
         this.navIsOpen = !this.navIsOpen;
         $('[data-main-links]').removeClass('--showLinks');
         $('body').toggleClass('u-freeze-scroll');
@@ -212,7 +215,7 @@
         this.navIsOpen = false;
         $('[data-main-links]').removeClass('--showLinks');
         $('body').removeClass('u-freeze-scroll');
-        $('[data-nav-content]').toggleClass('--active-sidebar');
+        $('[data-nav-content]').removeClass('--active-sidebar');
       }
     },
 
@@ -258,6 +261,14 @@
 
     img {
       width: 100%;
+    }
+
+    .mdev-social-links {
+      /* stylelint-disable */
+      @media #{$portrait} {
+        justify-content: center !important;
+      }
+      /* stylelint-enable */
     }
   }
 

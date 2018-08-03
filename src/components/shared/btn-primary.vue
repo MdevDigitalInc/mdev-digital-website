@@ -14,11 +14,11 @@
 
 
 <script>
-  export default{
-    name: 'PrimaryButton',
+export default{
+  name: 'PrimaryButton',
 
-    props: ['BtnData']
-  };
+  props: ['BtnData']
+};
 </script>
 
 

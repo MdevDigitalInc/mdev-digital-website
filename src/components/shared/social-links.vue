@@ -45,12 +45,6 @@
       color: $color-brand-primary;
     }
   }
-
-  /* stylelint-disable */
-  @media #{$portrait} {
-    justify-content: center !important;
-  }
-  /* stylelint-enable */
 }
 
 // Optional Dark Theme
@@ -65,7 +59,7 @@
     &:focus,
     &:active {
       text-shadow: 0 0 30px rgba(0, 0, 0, .4);
-      color: $color-brand-primary;
+      color: $white;
     }
   }
 }

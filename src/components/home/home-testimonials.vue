@@ -1,7 +1,7 @@
 <template>
   <div class="mdev-full-section --accent-bkg --pull-up-section --reduce-bottom">
     <div class="mdev-main-wrapper u-text-center">
-      <h3 class="u-uppercase u-c-black u-bold a-flyin a-flyin-right" v-in-viewport>
+      <h3 class="u-uppercase u-c-black u-bold a-flyin a-flyin-right u-no-select" v-in-viewport>
         {{ $t("homepage.testimonials.heading") }}
       </h3>
       <!-- Testimonial Loop -->
@@ -94,7 +94,7 @@
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 /*-------------------------------------*/
 /* Home Testimonials Component Styles
@@ -110,6 +110,7 @@
 
 .mdev-testimonial {
   width: 80%;
+  user-select: none;
   margin: 0 auto;
 
   @media #{$phone-only} {
@@ -168,24 +169,25 @@
   }
 }
 
+.ctrl-position {
+  user-select: none;
+}
+
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {
-  transform: rotate(60deg) translate3d(0, -37vw, 0);
   animation: line-one-anim;
   @include arrow-anim-rules(11s);
 }
 
 // Line Two is not rotated and therefore X is X and Y is Y
 [ data-line-two ] {
-  transform: rotate(0) translate3d(0, -50px, 0);
   animation: line-two-anim;
   @include arrow-anim-rules(22s);
 }
 
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-three ] {
-  transform: rotate(-60deg) translate3d(0, -37vw, 0);
   animation: line-three-anim;
   @include arrow-anim-rules(17s);
 }

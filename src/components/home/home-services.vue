@@ -2,7 +2,9 @@
   <div class="mdev-full-section --section-space-top --primary-bkg --triangle-bottom">
     <div class="mdev-main-wrapper">
       <!-- Split Component 60 / 40 -->
-      <split-sixty animClassLeft="a-flyin a-flyin-left" animClassRight="a-flyin a-flyin-right">
+      <split-sixty
+        animClassLeft="a-flyin a-flyin-left"
+        animClassRight="a-flyin a-flyin-right" :reverse="false">
         <!-- Left Split -->
         <template slot="leftSlot">
           <h3 class="u-uppercase u-c-white">{{ $t("homepage.services.heading") }} </h3>

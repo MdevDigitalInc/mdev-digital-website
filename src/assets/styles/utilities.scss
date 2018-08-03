@@ -118,6 +118,10 @@
   @include clearfix();
 }
 
+.u-no-select {
+  user-select: none;
+}
+
 // Color Utilities
 .u-c-black {
   color: $color-brand-bkg;
@@ -133,4 +137,9 @@
 
 .u-c-white {
   color: $white;
+}
+
+// Body Utilities
+.--body-white {
+  background: $white;
 }

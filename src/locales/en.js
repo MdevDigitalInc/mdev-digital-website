@@ -47,6 +47,56 @@ export default {
     slogan: "Your internal team without the overhead"
   },
 
+  contact: {
+    smallTitle: "Getting in touch is easy",
+    largeTitle: "Don't wait, say hello!",
+    headerBtn: "Send a message",
+    thankyouMsg: "Thanks for reaching out, we'll be in touch as soon as possible. While you wait, our case studies are a great place to learn about the value we've brought to our clients. If you've already seen them, we highly recommend creeping our social channels!",
+    thankyouAction: "See All Case Studies",
+
+    fields: {
+      fname: {
+        label: "First Name",
+        placeholder: "Your first name"
+      },
+      lname: {
+        label: "Last Name",
+        placeholder: "Your last name"
+      },
+      company: {
+        label: "Company",
+        placeholder: "Your company name"
+      },
+      phone: {
+        label: "Phone number",
+        placeholder: "000 000 000"
+      },
+      email: {
+        label: "Email Address",
+        placeholder: "Your email address"
+      },
+      message: {
+        label: "Message",
+        placeholder: "Your message to MDEV"
+      },
+      submit: {
+        label: "Send",
+        accessibility: " Send Your Message!",
+        loading: 'One Moment...'
+      }
+    }
+  },
+
+  validation: {
+    errors: {
+      form: "Please ensure all required fields are filled.",
+      email: "Please enter a valid e-mail address.",
+      phone: "Please enter a valid phone number.",
+      fail: "Sorry but we are unable to process your request. Please try again later",
+      spam: "Something is wrong with the form, please check your entry."
+    }
+  },
+
   navigation: {
     sidebarCta: "Let's start something new!",
     getInTouch: "Get in touch:",
