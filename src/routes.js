@@ -23,6 +23,13 @@ import BiosBecky            from './components/bios/bios--becky.vue';
 import BiosHaly             from './components/bios/bios--haly.vue';
 import BiosRichard          from './components/bios/bios--richard.vue';
 
+let legalNames = [
+  'lucas-moreira',
+  'becky-domenico',
+  'haly-hawkins',
+  'richard-goodine'
+];
+
 //import AuthComponent from './components/auth/Authentication.vue';
 //import LoginComponent from './components/auth/Login.vue';
 //import RegisterComponent from './components/auth/Register.vue';
@@ -51,26 +58,22 @@ export const routes = [
   {
     path: '/bios',
     component: Bios,
-    redirect: '/bios/lucas-moreira',
-    // Load case studies as child views
-    children: [
-      {
-        path: 'lucas-moreira',
-        component: BiosLucas,
-      },
-      {
-        path: 'becky-domenico',
-        component: BiosBecky
-      },
-      {
-        path: 'haly-hawkins',
-        component: BiosHaly
-      },
-      {
-        path: 'richard-goodine',
-        component: BiosRichard
+    redirect: '/bios/lucas-moreira'
+  },
+  {
+    path: '/bios/:teammember',
+    component: Bios,
+    props: true,
+    beforeEnter: (to, from, next) => {
+      // If route slug matches employees proceed..
+      if ( legalNames.includes(to.params.teammember) ) {
+        next();
       }
-    ]
+      // Otherwise redirect to approved route
+      else {
+        next({ path: '/bios/' + legalNames[0] });
+      }
+    }
   },  // Case Study Master Routes
   {
     path: '/casestudy',

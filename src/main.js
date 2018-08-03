@@ -103,16 +103,24 @@ const router = new VueRouter ({
 
 // Route Guard - Executes before each route change
 // In this case being used to dynamically change BKG color
+
+// Add regex for routes where you want white BKG
+let whiteBkgPaths = [
+  "contact",
+  "bios"
+]
+
 router.beforeEach(function( to, from, next){
   let bodyWhite = "--body-white";
+  var regEx = new RegExp(whiteBkgPaths.join("|"), "i");
 
-  if ( to.path == "/contact" ) {
+  if (  regEx.test(to.path) ) {
     // Ternary operator adds class when body doesn't already have it
     // prevents multiple classes being added to body
     !$('body').hasClass(bodyWhite) ? $('body').addClass(bodyWhite) : '';
   }
   else {
-    $('body').removeClass('--body-white');
+    $('body').hasClass(bodyWhite) ? $('body').removeClass(bodyWhite) : '';
   }
   next();
 });

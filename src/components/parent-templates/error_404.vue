@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-main-content">
-    <h1> Base Component</h1>
+    <h1> 404 Page Of Doom </h1>
   </section>
 </template>
 
