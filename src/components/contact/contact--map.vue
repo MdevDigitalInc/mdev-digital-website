@@ -112,7 +112,7 @@ export default{
 <style lang="scss" scoped>
 
 /*-------------------------------------*/
-/* 404 Component Styles
+/* Contact Map Component Styles
 /--------------------------------------*/
 .mdev-map-location {
   width: 90%;

@@ -124,7 +124,7 @@ export default{
 <style lang="scss">
 
 /*-------------------------------------*/
-/* 404 Component Styles
+/* Contact Form Component Styles
 /--------------------------------------*/
 .--form-padding {
   padding: 250px 0 150px;

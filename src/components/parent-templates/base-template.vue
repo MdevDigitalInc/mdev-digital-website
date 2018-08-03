@@ -42,7 +42,7 @@ export default{
 <style lang="scss">
 
 /*-------------------------------------*/
-/* 404 Component Styles
+/* BASE TEMPLATE Component Styles
 /--------------------------------------*/
 
 
