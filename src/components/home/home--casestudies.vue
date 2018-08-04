@@ -1,5 +1,5 @@
 <template>
-  <div class="mdev-full-section">
+  <section class="mdev-full-section">
     <!-- Case Study Heading -->
     <div class="mdev-case-heading u-text-center">
       <span class="mdev-top-subhead u-c-accent u-uppercase">
@@ -17,7 +17,7 @@
         {{ $t("homepage.casestudies.action") }}
       </btn-primary>
     </div>
-  </div>
+  </section>
 </template>
 
 

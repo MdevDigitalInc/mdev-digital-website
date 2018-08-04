@@ -18,10 +18,6 @@ import ServicesOverview     from './components/services/service--all.vue';
 import ServicesUx           from './components/services/service--ux.vue';
 // Bios
 import Bios                 from './components/bios/bios.vue';
-import BiosLucas            from './components/bios/bios--lucas.vue';
-import BiosBecky            from './components/bios/bios--becky.vue';
-import BiosHaly             from './components/bios/bios--haly.vue';
-import BiosRichard          from './components/bios/bios--richard.vue';
 
 let legalNames = [
   'lucas-moreira',

@@ -1,5 +1,5 @@
 <template>
-  <div class="mdev-full-section --primary-bkg --triangle-bottom-r --raise">
+  <section class="mdev-full-section --primary-bkg --triangle-bottom-r --raise">
     <div class="mdev-main-wrapper u-text-center">
       <div class="mdev-about-logo a-zoom-out" v-in-viewport>
         <img :src="loadImage(mdevLogoMask)" alt="MDEV Logo with images of the office showing through"/>
@@ -13,7 +13,7 @@
         {{ $t("homepage.about.action") }}
       </btn-primary>
     </div>
-  </div>
+  </section>
 </template>
 
 

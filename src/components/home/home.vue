@@ -1,5 +1,5 @@
 <template>
-  <section class="mdev-main-content">
+  <div class="mdev-main-content">
     <hero-main :pageTitle="pageTitle" :headerDsc="headerDsc">
       <!-- Header Slot -->
       <div class="mdev-main-hero" :style="heroStyles"></div>
@@ -16,7 +16,7 @@
     <home-testimonials :testimonials="testimonials"></home-testimonials>
     <!-- Footer -->
     <main-footer></main-footer>
-  </section>
+  </div>
 </template>
 
 <script>

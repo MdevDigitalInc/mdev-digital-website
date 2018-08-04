@@ -1,5 +1,5 @@
 <template>
-  <div class="mdev-main-wrapper --section-space">
+  <section class="mdev-main-wrapper --section-space">
     <h3 class="u-uppercase u-c-white a-blur-in" v-in-viewport>{{ $t("homepage.intro.heading") }} </h3>
     <p class="mdev-hero-text a-blur-in" v-in-viewport>
       {{ $t("homepage.intro.content") }}
@@ -8,7 +8,7 @@
     <btn-primary :BtnData="BtnData">
       {{ $t("homepage.intro.action") }}
     </btn-primary>
-  </div>
+  </section>
 </template>
 
 

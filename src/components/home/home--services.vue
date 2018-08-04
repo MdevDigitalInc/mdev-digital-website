@@ -1,5 +1,5 @@
 <template>
-  <div class="mdev-full-section --section-space-top --primary-bkg --triangle-bottom">
+  <section class="mdev-full-section --section-space-top --primary-bkg --triangle-bottom">
     <div class="mdev-main-wrapper">
       <!-- Split Component 60 / 40 -->
       <split-sixty
@@ -23,7 +23,7 @@
         {{ $t("homepage.services.action") }}
       </btn-primary>
     </div>
-  </div>
+  </section>
 </template>
 
 
