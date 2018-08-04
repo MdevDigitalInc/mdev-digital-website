@@ -257,7 +257,7 @@ export default {
         // Move as desired
         this.desiredIndex += direction;
         // Check limits on NextIndex so it doesn't go passed.
-        if ( this.nextIndex + direction == arrayLen ) {
+        if ( this.nextIndex + direction > arrayLen ) {
           this.nextIndex = 0;
         }
         else if ( this.nextIndex + direction < 0 ) {
@@ -286,6 +286,13 @@ export default {
   overflow: hidden;
   position: relative;
   z-index: 1;
+}
+
+.mdev-bios-content {
+  width: 80%;
+  margin: 0 auto;
+  z-index: 5;
+  position: relative;
 }
 
 </style>
