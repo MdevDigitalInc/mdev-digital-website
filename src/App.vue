@@ -11,7 +11,7 @@
       Skip To Main Content
     </button>
     <!-- Main Nav -->
-    <main-navigation v-if="!isLoading"></main-navigation>
+    <main-navigation v-if="!isLoading" :reverseBrand="brandReverse"></main-navigation>
     <transition name="fade" v-if="!isLoading">
       <router-view></router-view>
     </transition>
@@ -31,7 +31,8 @@ export default{
   data: function(){
     return {
       isLoading: true,
-      isHome: true
+      isHome: true,
+      brandReverse: false
     };
   },
 
@@ -72,6 +73,16 @@ export default{
         $('[data-main-nav]').addClass('--nav-active');
       }, 2550);
     });
+  },
+
+  beforeUpdate: function() {
+    console.log('updating');
+    if ( $('body').hasClass('--body-white') ) {
+      this.brandReverse = true;
+    }
+    else {
+      this.brandReverse = false;
+    }
   },
 
   watch: {

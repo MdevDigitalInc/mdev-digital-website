@@ -114,7 +114,7 @@ router.beforeEach(function( to, from, next){
   let bodyWhite = "--body-white";
   var regEx = new RegExp(whiteBkgPaths.join("|"), "i");
 
-  if (  regEx.test(to.path) ) {
+  if ( regEx.test(to.path) ) {
     // Ternary operator adds class when body doesn't already have it
     // prevents multiple classes being added to body
     !$('body').hasClass(bodyWhite) ? $('body').addClass(bodyWhite) : '';

@@ -1,14 +1,17 @@
 <template>
-  <nav class="mdev-main-nav" aria-role="navigation" data-main-nav role="navigation">
+  <nav
+    class="mdev-main-nav --nav-color"
+    aria-role="navigation"
+    data-main-nav role="navigation">
     <div class="mdev-nav-wrapper flex flex-nowrap flex-hor-between flex-vert-center">
       <router-link :to="homeLink"
         :title="homeTitle"
         :tabindex="(navIsOpen ? -1 : 0)"
         class="mdev-live-brand"
         :class="{ '--remove-brand': navIsOpen }">
-        <img :src="loadImage(mdevBrandTop)" data-mdev-top>
-        <img :src="loadImage(mdevBrandMid)" data-mdev-mid>
-        <img :src="loadImage(mdevBrandMid)" data-mdev-bot>
+        <svg data-mdev-top data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 70"><defs></defs><title>White_Top</title><polygon class="mdev-svg-1" points="0 25 0.5 25.3 1 25.6 45 1.1 45 0.6 45 0.6 45 0 0 25"/><polygon class="mdev-svg-1" points="0 25 0 45 45 70 45 50 0 25"/><polygon class="mdev-svg-2" points="90 25 89.5 25.3 89 25.6 45 1.1 45 0.6 45 0.6 45 0 90 25"/><polygon class="mdev-svg-2" points="90 25 90 45 45 70 45 50 90 25"/></svg>
+        <svg data-mdev-mid data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 50"><defs></defs><title>MDEV_RGB_Icon_TealWhite_Bottom</title><polygon class="mdev-svg-1" points="0 5 0 25 45 50 45 30 0 5"/><polygon class="mdev-svg-1" points="9 0 0 5 0.5 5.3 1 5.6 10 0.6 9 0"/><polygon class="mdev-svg-2" points="90 5 90 25 45 50 45 30 90 5"/><polygon class="mdev-svg-2" points="81 0 90 5 89.5 5.3 89 5.6 79.9 0.6 81 0"/></svg>
+        <svg data-mdev-bot data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 50"><defs></defs><title>MDEV_RGB_Icon_TealWhite_Bottom</title><polygon class="mdev-svg-1" points="0 5 0 25 45 50 45 30 0 5"/><polygon class="mdev-svg-1" points="9 0 0 5 0.5 5.3 1 5.6 10 0.6 9 0"/><polygon class="mdev-svg-2" points="90 5 90 25 45 50 45 30 90 5"/><polygon class="mdev-svg-2" points="81 0 90 5 89.5 5.3 89 5.6 79.9 0.6 81 0"/></svg>
 
         <!--Hidden Brand Flyout -->
         <div class="mdev-hidden-brand">
@@ -133,9 +136,12 @@
       };
     },
 
+    props: [ 'reverseBrand' ],
+
     // Watch route change and toggle menu if user navigates away
     watch: {
       $route (to,from) {
+        console.log($('.mdev-svg-1'));
         // If Nav was open when route changes.. close it
         if ( this.navIsOpen ) {
           this.closeMenu();
@@ -145,6 +151,7 @@
 
     mounted: function() {
       // Scroll timer to debounce
+        console.log($('.mdev-svg-1'));
       let scrollTimer;
       let scrollDistance;
       let desiredOffset = 420;
@@ -259,7 +266,7 @@
       padding: $nav-padding-prt;
     }
 
-    img {
+    svg {
       width: 100%;
     }
 
@@ -298,17 +305,17 @@
       }
     }
 
-    img {
+    svg {
       position: relative;
       width: 100%;
       transition: all 2.9s;
     }
 
-    img[ data-mdev-top ] {
+    svg[ data-mdev-top ] {
       transform: translate3d(0, 53%, 0);
     }
 
-    img[ data-mdev-bot ] {
+    svg[ data-mdev-bot ] {
       transform: translate3d(0, -74%, 0);
     }
   }
@@ -450,7 +457,7 @@
       opacity: 1;
     }
     .mdev-live-brand {
-      img[ data-mdev-top ] {
+      svg[ data-mdev-top ] {
         transform: translate3d(0, 36%, 0);
 
         @media #{$phone-only} {
@@ -458,7 +465,7 @@
         }
       }
 
-      img[ data-mdev-bot ] {
+      svg[ data-mdev-bot ] {
         transform: translate3d(0, -50%, 0);
 
         @media #{$phone-only} {
@@ -476,14 +483,37 @@
   // Nav Active from Scroll
 
   .mdev-main-nav.--user-scroll {
-    opacity: .95;
-    transition: opacity .5s, filter 1.2s;
-    filter: grayscale(1);
+    opacity: .8;
+    transition: opacity .5s;
 
 
     &:hover {
-      filter: grayscale(0);
       opacity: 1;
+    }
+  }
+
+  // Nav Color Overrides
+  .--nav-color {
+    .mdev-svg-1,
+    .mdev-svg-2 {
+      transition: fill, .8s;
+    }
+
+    .mdev-svg-1 {
+      fill: $color-brand-primary;
+    }
+    .mdev-svg-2 {
+      fill: $white;
+    }
+  }
+
+  .--teal-black {
+
+    .mdev-svg-1 {
+      fill: $color-brand-primary;
+    }
+    .mdev-svg-2 {
+      fill: $color-brand-bkg;
     }
   }
 
