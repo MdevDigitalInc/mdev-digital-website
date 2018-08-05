@@ -76,13 +76,18 @@ export default{
   },
 
   beforeUpdate: function() {
-    console.log('updating');
+    // Check if this is a reverse white page and add the class
     if ( $('body').hasClass('--body-white') ) {
       this.brandReverse = true;
     }
     else {
       this.brandReverse = false;
     }
+  },
+
+  updated: function () {
+    // Add the active class back since it gets stripped on update above
+    $('[data-main-nav]').addClass('--nav-active');
   },
 
   watch: {

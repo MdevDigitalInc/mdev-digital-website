@@ -1,6 +1,7 @@
 <template>
   <nav
     class="mdev-main-nav --nav-color"
+    :class="{ '--teal-black': reverseBrand }"
     aria-role="navigation"
     data-main-nav role="navigation">
     <div class="mdev-nav-wrapper flex flex-nowrap flex-hor-between flex-vert-center">
@@ -141,7 +142,6 @@
     // Watch route change and toggle menu if user navigates away
     watch: {
       $route (to,from) {
-        console.log($('.mdev-svg-1'));
         // If Nav was open when route changes.. close it
         if ( this.navIsOpen ) {
           this.closeMenu();
@@ -151,7 +151,6 @@
 
     mounted: function() {
       // Scroll timer to debounce
-        console.log($('.mdev-svg-1'));
       let scrollTimer;
       let scrollDistance;
       let desiredOffset = 420;
@@ -206,7 +205,6 @@
 
       // Flip Nav flag & animate sidebar
       openMenu() {
-        console.log('Open Menu');
         this.navIsOpen = !this.navIsOpen;
         $('[data-main-links]').removeClass('--showLinks');
         $('body').toggleClass('u-freeze-scroll');
