@@ -1,17 +1,17 @@
 <template>
   <div class="mdev-main-content">
-    <hero-main :pageTitle="pageTitle" :headerDsc="headerDsc">
+    <hero-main v-view="(e) => changeNavBrand(e, '--teal-white')" :pageTitle="pageTitle" :headerDsc="headerDsc">
       <!-- Header Slot -->
       <div class="mdev-main-hero" :style="heroStyles"></div>
     </hero-main>
     <!-- Process -->
-    <home-process id="mainContent"></home-process>
+    <home-process v-view="(e) => changeNavBrand(e, '--teal-white')" id="mainContent"></home-process>
     <!-- Services -->
-    <home-services></home-services>
+    <home-services v-view="(e) => changeNavBrand(e, '--white-black')"></home-services>
     <!-- Case Studies -->
-    <home-casestudies></home-casestudies>
+    <home-casestudies  v-view="(e) => changeNavBrand(e, '--teal-white')"></home-casestudies>
     <!-- About Us -->
-    <home-about></home-about>
+    <home-about   v-view="(e) => changeNavBrand(e, '--white-black')"></home-about>
     <!-- Testimonial -->
     <home-testimonials :testimonials="testimonials"></home-testimonials>
     <!-- Footer -->
@@ -83,6 +83,14 @@ export default{
     // Get Compiled image Paths
     loadImage(path){
       return require('../../assets/images/' + path);
+    },
+    changeNavBrand(e, brandClass){
+      if ( e.target.rect.y <= 0 ) {
+        $('[data-main-nav]').removeClass('--white-black');
+        $('[data-main-nav]').removeClass('--teal-black');
+        $('[data-main-nav]').removeClass('--teal-white');
+        $('[data-main-nav]').addClass(brandClass);
+      }
     }
   }
 };

@@ -19,6 +19,9 @@ import store from './store/store.js';
 import inViewportDirective from 'vue-in-viewport-directive';
 Vue.directive('in-viewport', inViewportDirective);
 
+// Check View Directive
+import checkView from 'vue-check-view';
+Vue.use(checkView);
 // Import Auth Plugin
 // import Auth from './plugins/auth.js';
 import Validate from './plugins/validate.js';

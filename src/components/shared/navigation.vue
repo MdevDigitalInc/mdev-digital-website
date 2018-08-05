@@ -10,14 +10,15 @@
         :tabindex="(navIsOpen ? -1 : 0)"
         class="mdev-live-brand"
         :class="{ '--remove-brand': navIsOpen }">
-        <svg data-mdev-top data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 70"><defs></defs><title>White_Top</title><polygon class="mdev-svg-1" points="0 25 0.5 25.3 1 25.6 45 1.1 45 0.6 45 0.6 45 0 0 25"/><polygon class="mdev-svg-1" points="0 25 0 45 45 70 45 50 0 25"/><polygon class="mdev-svg-2" points="90 25 89.5 25.3 89 25.6 45 1.1 45 0.6 45 0.6 45 0 90 25"/><polygon class="mdev-svg-2" points="90 25 90 45 45 70 45 50 90 25"/></svg>
-        <svg data-mdev-mid data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 50"><defs></defs><title>MDEV_RGB_Icon_TealWhite_Bottom</title><polygon class="mdev-svg-1" points="0 5 0 25 45 50 45 30 0 5"/><polygon class="mdev-svg-1" points="9 0 0 5 0.5 5.3 1 5.6 10 0.6 9 0"/><polygon class="mdev-svg-2" points="90 5 90 25 45 50 45 30 90 5"/><polygon class="mdev-svg-2" points="81 0 90 5 89.5 5.3 89 5.6 79.9 0.6 81 0"/></svg>
-        <svg data-mdev-bot data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 50"><defs></defs><title>MDEV_RGB_Icon_TealWhite_Bottom</title><polygon class="mdev-svg-1" points="0 5 0 25 45 50 45 30 0 5"/><polygon class="mdev-svg-1" points="9 0 0 5 0.5 5.3 1 5.6 10 0.6 9 0"/><polygon class="mdev-svg-2" points="90 5 90 25 45 50 45 30 90 5"/><polygon class="mdev-svg-2" points="81 0 90 5 89.5 5.3 89 5.6 79.9 0.6 81 0"/></svg>
+        <!-- Logo SVGs -->
+        <svg data-mdev-top xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 70"><polygon class="mdev-svg-1" points="0 25 0.5 25.3 1 25.6 45 1.1 45 0.6 45 0.6 45 0 0 25"/><polygon class="mdev-svg-1" points="0 25 0 45 45 70 45 50 0 25"/><polygon class="mdev-svg-2" points="90 25 89.5 25.3 89 25.6 45 1.1 45 0.6 45 0.6 45 0 90 25"/><polygon class="mdev-svg-2" points="90 25 90 45 45 70 45 50 90 25"/></svg>
+        <svg data-mdev-mid xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 50"><polygon class="mdev-svg-1" points="0 5 0 25 45 50 45 30 0 5"/><polygon class="mdev-svg-1" points="9 0 0 5 0.5 5.3 1 5.6 10 0.6 9 0"/><polygon class="mdev-svg-2" points="90 5 90 25 45 50 45 30 90 5"/><polygon class="mdev-svg-2" points="81 0 90 5 89.5 5.3 89 5.6 79.9 0.6 81 0"/></svg>
+        <svg data-mdev-bot xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 50"><polygon class="mdev-svg-1" points="0 5 0 25 45 50 45 30 0 5"/><polygon class="mdev-svg-1" points="9 0 0 5 0.5 5.3 1 5.6 10 0.6 9 0"/><polygon class="mdev-svg-2" points="90 5 90 25 45 50 45 30 90 5"/><polygon class="mdev-svg-2" points="81 0 90 5 89.5 5.3 89 5.6 79.9 0.6 81 0"/></svg>
 
         <!--Hidden Brand Flyout -->
         <div class="mdev-hidden-brand">
-          <img :src="loadImage(mdevWordTop)" data-mdev-wtop>
-          <img :src="loadImage(mdevWordBot)" data-mdev-wbot>
+          <svg data-mdev-wtop xmlns="http://www.w3.org/2000/svg" viewBox="0 0 161.5 42.7"><path class="mdev-svg-1" d="M57.5,48.7V6H71.2A20.4,20.4,0,0,1,81.4,8.6a18,18,0,0,1,7,7.2A21.5,21.5,0,0,1,91,26.3v2a21.4,21.4,0,0,1-2.5,10.5,17.4,17.4,0,0,1-7,7.2,19,19,0,0,1-10,2.7ZM67.8,14V40.8h3.5a8,8,0,0,0,6.8-3.2q2.4-3.1,2.4-9.3V26.4q0-6.1-2.4-9.3A8.1,8.1,0,0,0,71.2,14Z" transform="translate(-6.3 -6)"/><path class="mdev-svg-1" d="M121.2,30.6H105.1V40.8h19.1v7.9H94.8V6h29.4v8H105.1v9h16.1Z" transform="translate(-6.3 -6)"/><path class="mdev-svg-1" d="M147.8,37.1,156.3,6h11.5L153.4,48.7H142.1L127.9,6h11.4Z" transform="translate(-6.3 -6)"/><path class="mdev-svg-1" d="M19.8,6l9.5,29.7L38.8,6H52.3V48.7H42.9V18.3L32.7,48.7H25.9L15.5,18.3l.2,20.4v10H6.3V6Z" transform="translate(-6.3 -6)"/></svg>
+          <svg data-mdev-wbot xmlns="http://www.w3.org/2000/svg" viewBox="0 0 161.5 31.4"><path class="mdev-svg-2" d="M29.4,20.4c0,5.1-1.3,8.9-4,11.6s-6.6,3.9-11.8,3.9H6.3V5.4h8.2c4.9,0,8.6,1.3,11.1,3.8S29.4,15.5,29.4,20.4Zm-2.3,0c0-4.3-1.1-7.6-3.3-9.8S18.3,7.3,14,7.3H8.4V34h5.1C22.6,34,27.1,29.5,27.1,20.4Z" transform="translate(-6.3 -4.9)"/><path class="mdev-svg-2" d="M38.3,35.9V5.4h2.1V35.9Z" transform="translate(-6.3 -4.9)"/><path class="mdev-svg-2" d="M62.8,20.5H74V34.4a24,24,0,0,1-9.9,1.9c-4.8,0-8.5-1.4-11.1-4.1s-3.8-6.5-3.8-11.5a17.2,17.2,0,0,1,1.9-8.3,13.6,13.6,0,0,1,5.4-5.5,16.9,16.9,0,0,1,8.2-2,20.5,20.5,0,0,1,9,1.9l-.9,1.9a18.3,18.3,0,0,0-8.2-1.9A12.7,12.7,0,0,0,55,10.6c-2.3,2.4-3.5,5.8-3.5,10s1.1,8,3.3,10.4,5.6,3.4,9.9,3.4a19.4,19.4,0,0,0,7.2-1.2V22.5H62.8Z" transform="translate(-6.3 -4.9)"/><path class="mdev-svg-2" d="M83.6,35.9V5.4h2.2V35.9Z" transform="translate(-6.3 -4.9)"/><path class="mdev-svg-2" d="M107.4,35.9h-2.2V7.4H95.3v-2h22v2h-9.9Z" transform="translate(-6.3 -4.9)"/><path class="mdev-svg-2" d="M135.7,25.1H123.3l-4.2,10.8h-2.4L129,5.3h1.3l12,30.6h-2.4Zm-11.6-1.9H135l-4.2-11q-.5-1.2-1.2-3.6c-.4,1.4-.8,2.6-1.2,3.7Z" transform="translate(-6.3 -4.9)"/><path class="mdev-svg-2" d="M151.1,35.9V5.4h2.1V33.9h14.6v2Z" transform="translate(-6.3 -4.9)"/></svg>
         </div>
       </router-link>
       <button
@@ -296,10 +297,10 @@
       cursor: pointer;
       opacity: .8;
 
-      .mdev-hidden-brand img {
+      .mdev-hidden-brand svg {
         transform: translate3d(0, 0, 0);
         opacity: 1;
-        transition: all .3s;
+        transition: transform .3s, opacity .8s;
       }
     }
 
@@ -393,9 +394,9 @@
     left: 3.2%;
     z-index: -1;
 
-    img {
+    svg {
       opacity: 0;
-      transition: all .3s;
+      transition: transform .8s, opacity .4s;
       transform: translate3d(-70%, 0, 0);
     }
   }
@@ -494,7 +495,7 @@
   .--nav-color {
     .mdev-svg-1,
     .mdev-svg-2 {
-      transition: fill, .8s;
+      transition: fill, 1.2s;
     }
 
     .mdev-svg-1 {
@@ -509,6 +510,27 @@
 
     .mdev-svg-1 {
       fill: $color-brand-primary;
+    }
+    .mdev-svg-2 {
+      fill: $color-brand-bkg;
+    }
+  }
+
+  .--teal-white {
+
+    .mdev-svg-1 {
+      fill: $color-brand-primary;
+    }
+    .mdev-svg-2 {
+      fill: $white;
+    }
+  }
+
+
+  .--white-black {
+
+    .mdev-svg-1 {
+      fill: $white;
     }
     .mdev-svg-2 {
       fill: $color-brand-bkg;
