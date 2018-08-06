@@ -84,6 +84,7 @@ export default{
 
   @media #{$portrait} {
     z-index: 20;
+    position: relative;
   }
 
   .mded-bios-arrow-right {

@@ -330,14 +330,14 @@ export default {
 
 .mdev-bios-mask {
   width: 100%;
-  height: 100vh;
-  max-height: 100vh;
+  top: 0;
+  bottom: 0;
+  min-height: 100vh;
   overflow: hidden;
   position: relative;
   z-index: 1;
 
   @media #{$portrait} {
-    max-height: auto;
     overflow: visible;
   }
 }
