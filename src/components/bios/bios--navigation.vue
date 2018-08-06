@@ -82,6 +82,9 @@ export default{
   z-index: 2;
   user-select: none;
 
+  @media #{$portrait} {
+    z-index: 20;
+  }
 
   .mded-bios-arrow-right {
     margin-left: 20px;

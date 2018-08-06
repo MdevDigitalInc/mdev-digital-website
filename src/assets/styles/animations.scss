@@ -7,13 +7,14 @@
 
 // Starting State
 .a-blur-in {
-  filter: blur(5px);
+  filter: blur(3px);
   opacity: 0;
   transition: filter 1s, opacity .6s;
 }
 
 // End State - Triggered by in-viewport directive
 .a-blur-in.fully-in-viewport,
+.a-blur-in.in-viewport,
 .a-blur-in.above-viewport {
   opacity: 1;
   filter: blur(0);
