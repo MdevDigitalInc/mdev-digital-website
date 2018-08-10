@@ -18,13 +18,8 @@ import ServicesOverview     from './components/services/service--all.vue';
 import ServicesUx           from './components/services/service--ux.vue';
 // Bios
 import Bios                 from './components/bios/bios.vue';
-
-let legalNames = [
-  'lucas-moreira',
-  'becky-domenico',
-  'haly-hawkins',
-  'richard-goodine'
-];
+// Import Data From Flat File
+let mdevData = require('./mdev-data.js');
 
 //import AuthComponent from './components/auth/Authentication.vue';
 //import LoginComponent from './components/auth/Login.vue';
@@ -62,7 +57,8 @@ export const routes = [
     props: true,
     beforeEnter: (to, from, next) => {
       // If route slug matches employees proceed..
-      if ( legalNames.includes(to.params.teammember) ) {
+      // Employee list pulled from mdev-data.js
+      if ( mdevData.employeeRoutes.includes(to.params.teammember) ) {
         next();
       }
       // Otherwise redirect to approved route

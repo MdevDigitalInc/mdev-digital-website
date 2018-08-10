@@ -1,27 +1,28 @@
 <template>
-  <div class="mdev-bios-mask">
+  <div class="mdev-bios-mask" data-bio-mask>
     <!-- Bios Content -->
     <div v-for="(mdevBio, index) in mdevBios"
       v-if=" index == desiredIndex"
       class="mdev-bios-content">
       <!-- Employee Info -->
-      <div class="mdev-bios-info a-flyin a-flyin-right" v-in-viewport>
-        <span class="u-uppercase u-light --meet">
+      <div class="mdev-bios-info a-flyin-lnd a-flyin-lnd-right" v-in-viewport>
+        <div class="u-uppercase u-light --meet">
           MEET
-        </span>
+        </div>
         <!-- Employee Name -->
         <h1 class="u-uppercase mdev-bios-name">
           {{ mdevBio.employeeName }}
         </h1>
         <!-- Employee Title -->
-        <span class="u-italic u-light mdev-bios-title">
+        <div class="u-italic u-light mdev-bios-title">
           {{ mdevBio.employeeTitle }}
-        </span>
+        </div>
         <!-- Employee description -->
         <p class="mdev-bio-intro">
           {{ mdevBio.employeeIntro }}
         </p>
-        <p v-for="snippet in mdevBio.employeeStory" class="mdev-bio-paragraph">
+        <p v-for="snippet in mdevBio.employeeStory"
+          class="mdev-bio-paragraph">
           {{ snippet }}
         </p>
         <ul class="mdev-bio-list">
@@ -46,12 +47,12 @@
         </ul>
       </div>
       <!-- Employee Picture -->
-      <div class="mdev-bios-picture a-blur-in" v-in-viewport>
+      <div class="mdev-bios-picture a-blur-in-lnd" v-in-viewport>
         <!-- Social Links -->
         <social-links
           darkTheme="true"
           v-in-viewport
-          class="a-flyin a-flyin-left --portrait-left"
+          class="a-flyin-lnd a-flyin-lnd-left --portrait-left"
           :linkContent="mdevBio.socialLinks">
         </social-links>
         <!-- Team Member Picture -->
@@ -73,6 +74,8 @@
 
 import SocialLinks  from '../shared/social-links.vue';
 import BiosNavigation from './bios--navigation.vue';
+// Import Data From Flat File
+let mdevData = require('../../mdev-data.js');
 
 export default {
   name: "BiosView",
@@ -83,187 +86,14 @@ export default {
     return {
       desiredIndex: 0,
       nextIndex: 1,
-      mdevBios: [
-        {
-          employeeName: "Lucas Moreira",
-          employeeTitle: "CEO, Founder",
-          employeeRoute: "lucas-moreira",
-          employeeIntro: "TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-             innovative solutions to complex problems. Able to distill client goals into a cohesive \
-             creative vision that she communicates to the team for execution.",
-          employeeStory: [
-            "After years of leading creative and software projects, Becky has developed an uncanny \
-            ability to navigate complex timing and requirements to ensure succesful project completeion",
-            "Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-            committee and as a LTUX Committee Member for the #ldnont chapter."
-          ],
-          employeeOrigin: "Sao Paulo - Brazil",
-          employeeQuote: "Think like a man of action, act like a man of thought..",
-          employeeTrick: "Drone Enthusiast / Loose Transistor / DevOps",
-          employeeImage: "bios/MDEV_BIOS-becky.png",
-          socialLinks: [
-            {
-              linkClass: 'fa-facebook-f',
-              target: '_blank',
-              accessibility: 'Like us on Facebook',
-              linkUrl: 'https://www.facebook.com/MDEVDigital'
-            },
-            {
-              linkClass: 'fa-instagram',
-              target: '_blank',
-              accessibility: 'Follow us on Instagram',
-              linkUrl: 'https://www.instagram.com/mdev_digital/'
-            },
-            {
-              linkClass: 'fa-linkedin',
-              target: '_blank',
-              accessibility: 'Follow us on LinkedIn',
-              linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-            }
-          ]
-        },
-        {
-          employeeName: "Becky Domenico",
-          employeeTitle: "Creative Director, Founder",
-          employeeRoute: "becky-domenico",
-          employeeIntro: "TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-             innovative solutions to complex problems. Able to distill client goals into a cohesive \
-             creative vision that she communicates to the team for execution.",
-          employeeStory: [
-            "After years of leading creative and software projects, Becky has developed an uncanny \
-            ability to navigate complex timing and requirements to ensure succesful project completeion",
-            "Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-            committee and as a LTUX Committee Member for the #ldnont chapter."
-          ],
-          employeeOrigin: "Timmins, ON",
-          employeeQuote: "Fear is the mind killer.",
-          employeeTrick: "Coffee Fanatic / InDesign Wizard / Agility",
-          employeeImage: "bios/MDEV_BIOS-becky.png",
-          socialLinks: [
-            {
-              linkClass: 'fa-facebook-f',
-              target: '_blank',
-              accessibility: 'Like us on Facebook',
-              linkUrl: 'https://www.facebook.com/MDEVDigital'
-            },
-            {
-              linkClass: 'fa-instagram',
-              target: '_blank',
-              accessibility: 'Follow us on Instagram',
-              linkUrl: 'https://www.instagram.com/mdev_digital/'
-            },
-            {
-              linkClass: 'fa-twitter',
-              target: '_blank',
-              accessibility: 'Follow us on Twitter',
-              linkUrl: 'https://twitter.com/MDEVdigital'
-            },
-            {
-              linkClass: 'fa-linkedin',
-              target: '_blank',
-              accessibility: 'Follow us on LinkedIn',
-              linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-            }
-          ]
-        },
-        {
-          employeeName: "Haly Hawkins",
-          employeeTitle: "Graphic Designer",
-          employeeRoute: "haly-hawkins",
-          employeeIntro: "TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-             innovative solutions to complex problems. Able to distill client goals into a cohesive \
-             creative vision that she communicates to the team for execution.",
-          employeeStory: [
-            "After years of leading creative and software projects, Becky has developed an uncanny \
-            ability to navigate complex timing and requirements to ensure succesful project completeion",
-            "Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-            committee and as a LTUX Committee Member for the #ldnont chapter."
-          ],
-          employeeOrigin: "Sao Paulo - Brazil",
-          employeeQuote: "Think like a man of action, act like a man of thought..",
-          employeeTrick: "Drone Enthusiast / Loose Transistor / DevOps",
-          employeeImage: "bios/MDEV_BIOS-becky.png",
-          socialLinks: [
-            {
-              linkClass: 'fa-facebook-f',
-              target: '_blank',
-              accessibility: 'Like us on Facebook',
-              linkUrl: 'https://www.facebook.com/MDEVDigital'
-            },
-            {
-              linkClass: 'fa-instagram',
-              target: '_blank',
-              accessibility: 'Follow us on Instagram',
-              linkUrl: 'https://www.instagram.com/mdev_digital/'
-            },
-            {
-              linkClass: 'fa-linkedin',
-              target: '_blank',
-              accessibility: 'Follow us on LinkedIn',
-              linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-            }
-          ]
-        },
-        {
-          employeeName: "Richard Goodine",
-          employeeTitle: "Full Stack Developer",
-          employeeRoute: "richard-goodine",
-          employeeIntro: "TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-             innovative solutions to complex problems. Able to distill client goals into a cohesive \
-             creative vision that she communicates to the team for execution.",
-          employeeStory: [
-            "After years of leading creative and software projects, Becky has developed an uncanny \
-            ability to navigate complex timing and requirements to ensure succesful project completeion",
-            "Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-            committee and as a LTUX Committee Member for the #ldnont chapter."
-          ],
-          employeeOrigin: "Timmins, ON",
-          employeeQuote: "Fear is the mind killer.",
-          employeeTrick: "Coffee Fanatic / InDesign Wizard / Agility",
-          employeeImage: "bios/MDEV_BIOS-becky.png",
-          socialLinks: [
-            {
-              linkClass: 'fa-facebook-f',
-              target: '_blank',
-              accessibility: 'Like us on Facebook',
-              linkUrl: 'https://www.facebook.com/MDEVDigital'
-            },
-            {
-              linkClass: 'fa-instagram',
-              target: '_blank',
-              accessibility: 'Follow us on Instagram',
-              linkUrl: 'https://www.instagram.com/mdev_digital/'
-            },
-            {
-              linkClass: 'fa-twitter',
-              target: '_blank',
-              accessibility: 'Follow us on Twitter',
-              linkUrl: 'https://twitter.com/MDEVdigital'
-            },
-            {
-              linkClass: 'fa-linkedin',
-              target: '_blank',
-              accessibility: 'Follow us on LinkedIn',
-              linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-            }
-          ]
-        }
-      ],
+      // Data imported from mdev-data.js
+      mdevBios: mdevData.mdevEmployees
     };
   },
 
   methods: {
     loadImage(path){
       return require('../../assets/images/' + path);
-    },
-    // Change Language METHOD
-    change () {
-      let current = this.$locale.current();
-      if (current === 'en') {
-        this.$locale.change('pt');
-      } else {
-        this.$locale.change('en');
-      }
     },
     traverse(direction) {
       let arrayLen = this.mdevBios.length - 1;
@@ -295,7 +125,7 @@ export default {
       }
       // Update route to match current employee in view
       this.$router.push({
-        path: this.mdevBios[this.desiredIndex].employeeRoute
+        path: '/bios/' + this.mdevBios[this.desiredIndex].employeeRoute
       });
     }
   },
@@ -333,12 +163,13 @@ export default {
   top: 0;
   bottom: 0;
   min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
   position: relative;
   z-index: 1;
 
   @media #{$portrait} {
-    overflow: visible;
+    height: auto;
   }
 }
 

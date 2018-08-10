@@ -481,15 +481,6 @@
 
   // Nav Active from Scroll
 
-  .mdev-main-nav.--user-scroll {
-    opacity: .8;
-    transition: opacity .5s;
-
-
-    &:hover {
-      opacity: 1;
-    }
-  }
 
   // Nav Color Overrides
   .--nav-color {
