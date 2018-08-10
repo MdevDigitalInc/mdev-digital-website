@@ -25,13 +25,6 @@
 export default {
   name: 'MainHero',
 
-  methods:{
-    // Get Compiled image Paths
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    }
-  },
-
   props: [ 'pageTitle', 'headerDsc' ],
 
   mounted: function() {

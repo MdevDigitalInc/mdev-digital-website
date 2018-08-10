@@ -37,9 +37,6 @@ export default{
   },
 
   methods: {
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    },
     // Change Language METHOD
     change () {
       let current = this.$locale.current();

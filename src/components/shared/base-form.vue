@@ -147,9 +147,6 @@ export default{
   },
 
   methods: {
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    },
     // Validate and Submit form
     submitForm() {
       // Clear Errors First

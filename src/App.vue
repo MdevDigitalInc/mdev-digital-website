@@ -101,10 +101,6 @@ export default{
     skipNav() {
       var anchor = $("#mainContent").offset().top;
       $('html,body').scrollTop(anchor);
-    },
-    // Get Compiled image Paths
-    loadImage(path){
-      return require('./assets/images/' + path);
     }
   }
 };

@@ -38,12 +38,6 @@ export default{
     };
   },
 
-  methods: {
-    loadImage(path) {
-      return require('../../assets/images/' + path);
-    }
-  },
-
   components: {
     'btn-primary'         : BtnPrimary
   }

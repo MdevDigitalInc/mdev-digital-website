@@ -128,6 +128,24 @@ router.beforeEach(function( to, from, next){
   next();
 });
 
+// [ Global Mixins ] --------------------------------
+Vue.mixin({
+  methods: {
+    loadImage(path){
+      return require('./assets/images/' + path);
+    },
+    // Change Language METHOD
+    change () {
+      let current = this.$locale.current();
+      if (current === 'en') {
+        this.$locale.change('pt');
+      } else {
+        this.$locale.change('en');
+      }
+    }
+  }
+})
+
 // [ Main Vue Instance ] ----------------------------
 new Vue({
   el: '#app',

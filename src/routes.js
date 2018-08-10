@@ -19,7 +19,7 @@ import ServicesUx           from './components/services/service--ux.vue';
 // Bios
 import Bios                 from './components/bios/bios.vue';
 // Import Data From Flat File
-let mdevData = require('./mdev-data.js');
+import mdevData  from './mdev-data.js';
 
 //import AuthComponent from './components/auth/Authentication.vue';
 //import LoginComponent from './components/auth/Login.vue';
@@ -63,7 +63,7 @@ export const routes = [
       }
       // Otherwise redirect to approved route
       else {
-        next({ path: '/bios/' + legalNames[0] });
+        next({ path: '/bios/' + mdevData.employeeRoutes[0] });
       }
     }
   },  // Case Study Master Routes

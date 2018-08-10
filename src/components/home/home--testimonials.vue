@@ -66,9 +66,6 @@
     },
 
     methods: {
-      loadImage(path){
-        return require('../../assets/images/' + path);
-      },
       traverse(direction) {
         let arrayLen = this.testimonials.length - 1;
 

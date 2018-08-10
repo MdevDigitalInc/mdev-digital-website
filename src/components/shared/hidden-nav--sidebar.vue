@@ -70,13 +70,7 @@
       };
     },
 
-    props:['showLinks'],
-
-    methods: {
-      loadImage(path){
-        return require('../../assets/images/' + path);
-      },
-    }
+    props:['showLinks']
   };
 </script>
 

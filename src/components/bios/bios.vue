@@ -75,7 +75,7 @@
 import SocialLinks  from '../shared/social-links.vue';
 import BiosNavigation from './bios--navigation.vue';
 // Import Data From Flat File
-let mdevData = require('../../mdev-data.js');
+import mdevData from '../../mdev-data.js';
 
 export default {
   name: "BiosView",
@@ -92,9 +92,6 @@ export default {
   },
 
   methods: {
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    },
     traverse(direction) {
       let arrayLen = this.mdevBios.length - 1;
       // Are we going passed the end of the array?

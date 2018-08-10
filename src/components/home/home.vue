@@ -80,10 +80,6 @@ export default{
   },
 
   methods:{
-    // Get Compiled image Paths
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    },
     changeNavBrand(e, brandClass){
       if ( e.target.rect.y <= 0 ) {
         $('[data-main-nav]').removeClass('--white-black');

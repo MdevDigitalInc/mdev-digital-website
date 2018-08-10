@@ -91,9 +91,6 @@ export default{
   },
 
   methods: {
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    },
     swapForm() {
       let that = this;
       let animInterval = 800; // Matches CSS

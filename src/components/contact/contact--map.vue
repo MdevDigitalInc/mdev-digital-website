@@ -95,12 +95,6 @@ export default{
     };
   },
 
-  methods: {
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    }
-  },
-
   components: {
     'google-map'  : googleMap
   }

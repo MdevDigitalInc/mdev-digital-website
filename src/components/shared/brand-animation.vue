@@ -19,16 +19,6 @@ export default{
       mdevBrandMid: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Bottom.svg',
       mdevBrandTop: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Top.svg'
     };
-  },
-
-  mounted: function(){
-    console.log('Element Mounted');
-  },
-
-  methods: {
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    }
   }
 };
 </script>

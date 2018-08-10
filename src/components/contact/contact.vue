@@ -97,9 +97,6 @@ export default {
   },
 
   methods: {
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    },
     changeNavBrand(e, brandClass){
       if ( e.target.rect.y <= 0 ) {
         $('[data-main-nav]').removeClass('--teal-black');

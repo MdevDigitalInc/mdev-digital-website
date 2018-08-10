@@ -1,6 +1,5 @@
 // MDEV Data export
-
-var data = {
+export default  {
   mdevEmployees: [
     {
       employeeName: "Lucas Moreira",
@@ -175,5 +174,3 @@ var data = {
   ]
 };
 
-exports.mdevEmployees = data.mdevEmployees;
-exports.employeeRoutes = data.employeeRoutes;
