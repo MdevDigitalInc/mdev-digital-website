@@ -8,29 +8,25 @@
 
 
 <script>
-  export default{
-    name: 'People',
-    data: function(){
-      return{
+export default{
+  name: 'People',
+  data: function(){
+    return{
 
-      };
-    },
-
-    mounted: function(){
-      console.log('Element Mounted');
-    }
-  };
+    };
+  }
+};
 </script>
 
 
 
 <style lang="scss">
 
-	/*-------------------------------------*/
-	/* PEOPLE Component Styles
-	/--------------------------------------*/
+/*-------------------------------------*/
+/* PEOPLE Component Styles
+/--------------------------------------*/
 
 
-	/*--------------------------------------*/
+/*--------------------------------------*/
 
 </style>

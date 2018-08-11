@@ -79,7 +79,7 @@
 <style lang="scss">
 
 /*-------------------------------------*/
-/* MAIN FOOTER Component Styles
+/* HIDDEN-NAV--sidebar Component Styles
 /--------------------------------------*/
 
 .mdev-nav-sidebar {

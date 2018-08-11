@@ -92,7 +92,6 @@ export default{
 
   watch: {
     $route (to,from) {
-      $('html,body').scrollTop(0);
       $('[data-main-hero]').removeClass('--mask-active');
     }
   },
@@ -113,7 +112,7 @@ export default{
 /*-----/
 Global Main
 /-----*/
-//@import './assets/styles/global-main.scss';
+@import './assets/styles/global-main.scss';
 /*--------------------------------------*/
 /* Main Component Styles                */
 /*--------------------------------------*/

@@ -8,29 +8,25 @@
 
 
 <script>
-  export default{
-    name: 'CaseStudiesAll',
-    data: function(){
-      return{
+export default{
+  name: 'CaseStudiesAll',
+  data: function(){
+    return{
 
-      };
-    },
-
-    mounted: function(){
-      console.log('Element Mounted');
-    }
-  };
+    };
+  }
+};
 </script>
 
 
 
 <style lang="scss">
 
-	/*-------------------------------------*/
-	/* CASE STUDIES ALL Component Styles
-	/--------------------------------------*/
+/*-------------------------------------*/
+/* CASE STUDIES ALL Component Styles
+/--------------------------------------*/
 
 
-	/*--------------------------------------*/
+/*--------------------------------------*/
 
 </style>

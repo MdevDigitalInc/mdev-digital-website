@@ -94,11 +94,17 @@ const router = new VueRouter ({
   mode: 'history',
 
   //Control Scrolling Behavior
-  scrollBehavior( to, from, savedPOsition ){
+  scrollBehavior( to, from, savedPosition ){
     if (to.hash) {
       return {
         selector: to.hash
       };
+    }
+    else if (savedPosition) {
+      return savedPosition;
+    }
+    else {
+      return { x: 0, y: 0 }
     }
   }
 });
@@ -141,6 +147,14 @@ Vue.mixin({
         this.$locale.change('pt');
       } else {
         this.$locale.change('en');
+      }
+    },
+    changeNavBrand(e, brandClass){
+      if ( e.target.rect.y <= 0 ) {
+        $('[data-main-nav]').removeClass('--teal-black');
+        $('[data-main-nav]').removeClass('--white-black');
+        $('[data-main-nav]').removeClass('--teal-white');
+        $('[data-main-nav]').addClass(brandClass);
       }
     }
   }

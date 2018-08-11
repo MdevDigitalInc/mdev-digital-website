@@ -94,7 +94,7 @@
 <style lang="scss" scoped>
 
 /*-------------------------------------*/
-/* Home Testimonials Component Styles
+/* Home--testimonials Component Styles
 /--------------------------------------*/
 
 @import '../../assets/styles/keyframes/lines-anim.scss';

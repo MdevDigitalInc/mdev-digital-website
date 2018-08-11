@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-main-content">
-    <h1> 404Page </h1>
+    <h1> Base Template</h1>
   </section>
 </template>
 
@@ -9,7 +9,7 @@
 
 <script>
 export default{
-  name: 'ErrorPage',
+  name: 'BaseTemplate',
   data: function(){
     return{
 
@@ -17,7 +17,7 @@ export default{
   },
 
   mounted: function(){
-    console.log('Element Mounted');
+    console.log('COMPONENT NAME Mounted');
   }
 };
 </script>

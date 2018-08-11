@@ -7,29 +7,25 @@
 
 
 <script>
-  export default{
-    name: 'Zucora RSP',
-    data: function(){
-      return{
+export default{
+  name: 'Zucora RSP',
+  data: function(){
+    return{
 
-      };
-    },
-
-    mounted: function(){
-      console.log('Element Mounted');
-    }
-  };
+    };
+  }
+};
 </script>
 
 
 
 <style lang="scss">
 
-	/*-------------------------------------*/
-	/* ZUCORA RSP Component Styles
-	/--------------------------------------*/
+/*-------------------------------------*/
+/* ZUCORA RSP Component Styles
+/--------------------------------------*/
 
 
-	/*--------------------------------------*/
+/*--------------------------------------*/
 
 </style>

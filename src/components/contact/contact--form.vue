@@ -47,37 +47,15 @@ import BaseForm     from '../shared/base-form.vue';
 import SplitSixty   from '../modules/sixty-forty.vue';
 import SocialLinks  from '../shared/social-links.vue';
 import BtnPrimary   from '../shared/btn-primary.vue';
+// Import Flat File Data
+import MdevData     from '../../mdev-data.js';
 
 export default{
   name: 'ContactForm',
   data: function() {
     return{
-      socialLinks: [
-        {
-          linkClass: 'fa-facebook-f',
-          target: '_blank',
-          accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
-        },
-        {
-          linkClass: 'fa-instagram',
-          target: '_blank',
-          accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
-        },
-        {
-          linkClass: 'fa-twitter',
-          target: '_blank',
-          accessibility: 'Follow us on Twitter',
-          linkUrl: 'https://twitter.com/MDEVdigital'
-        },
-        {
-          linkClass: 'fa-linkedin',
-          target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-        }
-      ],
+      // Data from flat file
+      socialLinks: MdevData.socialLinks,
       // Button Data
       BtnData: {
         accessibility: 'View Our Case Studies',
@@ -92,13 +70,12 @@ export default{
 
   methods: {
     swapForm() {
-      let that = this;
       let animInterval = 800; // Matches CSS
       // Hide the form visually
       $('[data-form]').addClass('--form-sent');
       // Swap out the components via the flag
       setTimeout(() => {
-        that.formSubmitted = true;
+        this.formSubmitted = true;
       },animInterval);
       // Reveal Thankyou
       setTimeout(() => {
@@ -121,7 +98,7 @@ export default{
 <style lang="scss">
 
 /*-------------------------------------*/
-/* Contact Form Component Styles
+/* Contact--Form Component Styles
 /--------------------------------------*/
 .--form-padding {
   padding: 250px 0 150px;

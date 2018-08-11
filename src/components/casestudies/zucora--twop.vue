@@ -7,29 +7,24 @@
 
 
 <script>
-  export default{
-    name: 'ZucoraTwop',
-    data: function(){
-      return{
+export default{
+  name: 'ZucoraTwop',
+  data: function() {
+    return{
 
-      };
-    },
-
-    mounted: function(){
-      console.log('Element Mounted');
-    }
-  };
+    };
+  }
+};
 </script>
 
 
 
 <style lang="scss">
+/*-------------------------------------*/
+/* ZUCORA TWOP Component Styles
+/--------------------------------------*/
 
-	/*-------------------------------------*/
-	/* ZUCORA TWOP Component Styles
-	/--------------------------------------*/
 
-
-	/*--------------------------------------*/
+/*--------------------------------------*/
 
 </style>

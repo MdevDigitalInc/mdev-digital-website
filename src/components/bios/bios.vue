@@ -71,11 +71,10 @@
 
 <script>
 // Import
-
-import SocialLinks  from '../shared/social-links.vue';
+import SocialLinks    from '../shared/social-links.vue';
 import BiosNavigation from './bios--navigation.vue';
 // Import Data From Flat File
-import mdevData from '../../mdev-data.js';
+import MdevData       from '../../mdev-data.js';
 
 export default {
   name: "BiosView",
@@ -84,10 +83,11 @@ export default {
 
   data: function() {
     return {
+      // Indexing for navigation
       desiredIndex: 0,
       nextIndex: 1,
       // Data imported from mdev-data.js
-      mdevBios: mdevData.mdevEmployees
+      mdevBios: MdevData.mdevEmployees
     };
   },
 
@@ -154,6 +154,10 @@ export default {
 </script>
 
 <style lang="scss">
+
+/*-------------------------------------*/
+/* bios Component Styles
+/--------------------------------------*/
 
 .mdev-bios-mask {
   width: 100%;

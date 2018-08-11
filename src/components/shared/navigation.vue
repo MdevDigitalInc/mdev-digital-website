@@ -59,462 +59,402 @@
 
 
 <script>
-  // Import Components for Nav
-  import HiddenNav from './hidden-nav.vue';
-  import HiddenNavSidebar from './hidden-nav--sidebar.vue';
-  import HiddenNavLinks from './hidden-nav--links.vue';
-  import SocialLinks from './social-links.vue';
+// Import Components for Nav
+import HiddenNav        from './hidden-nav.vue';
+import HiddenNavSidebar from './hidden-nav--sidebar.vue';
+import HiddenNavLinks   from './hidden-nav--links.vue';
+import SocialLinks      from './social-links.vue';
+// Import Flat File Data
+import MdevData         from '../../mdev-data.js';
 
-  export default{
-    // <router-link> element is a custom element derived from vue-router. use :to - to bind.
-    data: function(){
-      return{
-        // Refer to routes.js file for available routes.
-        // Links are passed as object to hidden-nav-links
-        links: [
-          {
-            linkName: 'About',
-            linkTitle: 'About MDEV Digital',
-            route: '/about',
-            linkIndex: '01'
-          },
-          {
-            linkName: 'Work',
-            linkTitle: 'Our Work Case Studies',
-            route: '/casestudy',
-            linkIndex: '02'
-          },
-          {
-            linkName: 'Services',
-            linkTitle: 'Our Services',
-            route: '/services',
-            linkIndex: '03'
-          },
-          {
-            linkName: 'Contact',
-            linkTitle: 'Get In Touch With MDEV',
-            route: '/contact',
-            linkIndex: '04'
-          }
-        ],
-        socialLinks: [
-          {
-            linkClass: 'fa-facebook-f',
-            target: '_blank',
-            accessibility: 'Like us on Facebook',
-            linkUrl: 'https://www.facebook.com/MDEVDigital'
-          },
-          {
-            linkClass: 'fa-instagram',
-            target: '_blank',
-            accessibility: 'Follow us on Instagram',
-            linkUrl: 'https://www.instagram.com/mdev_digital/'
-          },
-          {
-            linkClass: 'fa-twitter',
-            target: '_blank',
-            accessibility: 'Follow us on Twitter',
-            linkUrl: 'https://twitter.com/MDEVdigital'
-          },
-          {
-            linkClass: 'fa-linkedin',
-            target: '_blank',
-            accessibility: 'Follow us on LinkedIn',
-            linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-          }
-        ],
+export default{
+  // <router-link> element is a custom element derived from vue-router. use :to - to bind.
+  data: function(){
+    return{
+      // Refer to routes.js file for available routes.
+      // Links are passed as object to hidden-nav-links
+      // Social links stored in flat file
+      socialLinks: MdevData.socialLinks,
+      // Links pulled from flat file
+      links: MdevData.links,
+      // Main Home Link On sidebar
+      homeLink: '/',
+      homeTitle: 'Home',
+      mdevBrandMid: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Bottom.svg',
+      mdevBrandTop: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Top.svg',
+      mdevWordTop: 'svg/logo-pieces/MDEV_RGB_WM_Teal_Top.svg',
+      mdevWordBot: 'svg/logo-pieces/MDEV_RGB_WM_White_Bottom.svg',
+      // Flag for controlling the nav states
+      navIsOpen: false,
+      labelOpen: 'Open Main Navigation Menu',
+      labelClose: 'Close Main Navigation Menu'
+    };
+  },
 
-        // Main Home Link On sidebar
-        homeLink: '/',
-        homeTitle: 'Home',
-        mdevBrandMid: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Bottom.svg',
-        mdevBrandTop: 'svg/logo-pieces/MDEV_RGB_Icon_TealWhite_Top.svg',
-        mdevWordTop: 'svg/logo-pieces/MDEV_RGB_WM_Teal_Top.svg',
-        mdevWordBot: 'svg/logo-pieces/MDEV_RGB_WM_White_Bottom.svg',
-        // Flag for controlling the nav states
-        navIsOpen: false,
-        labelOpen: 'Open Main Navigation Menu',
-        labelClose: 'Close Main Navigation Menu'
-      };
-    },
+  props: [ 'reverseBrand' ],
 
-    props: [ 'reverseBrand' ],
-
-    // Watch route change and toggle menu if user navigates away
-    watch: {
-      $route (to,from) {
-        // If Nav was open when route changes.. close it
-        if ( this.navIsOpen ) {
-          this.closeMenu();
-        }
+  // Watch route change and toggle menu if user navigates away
+  watch: {
+    $route (to,from) {
+      // If Nav was open when route changes.. close it
+      if ( this.navIsOpen ) {
+        this.closeMenu();
       }
-    },
+    }
+  },
 
-    mounted: function() {
-      // Scroll timer to debounce
-      let scrollTimer;
-      let scrollDistance;
-      let desiredOffset = 420;
-      let scrollTime = 20;
+  mounted: function() {
+    // Scroll timer to debounce
+    let scrollTimer;
+    let scrollDistance;
+    let desiredOffset = 420;
+    let scrollTime = 20;
 
-      // Check to see that the page title is there
-      if ( $('[data-page-title]').length !== 0 ) {
-        scrollDistance = $('[data-page-title]').offset().top;
+    // Check to see that the page title is there
+    if ( $('[data-page-title]').length !== 0 ) {
+      scrollDistance = $('[data-page-title]').offset().top;
+    }
+    else {
+      scrollDistance = 600;
+    }
+
+    function userScroll( distance ) {
+      // If user scrolls past desired distance remove effects
+      if ( distance >= (scrollDistance - desiredOffset) ) {
+        $('[data-main-header]').addClass('--user-scroll');
+        $('[data-main-nav]').addClass('--user-scroll');
+      }
+      else if (distance <= 0) {
+        $('[data-main-header').removeClass('--user-scroll');
+        $('[data-main-nav').removeClass('--user-scroll');
       }
       else {
-        scrollDistance = 600;
+        $('[data-main-header').removeClass('--user-scroll');
+        $('[data-main-nav').removeClass('--user-scroll');
       }
-
-      function userScroll( distance ) {
-        // If user scrolls past desired distance remove effects
-        if ( distance >= (scrollDistance - desiredOffset) ) {
-          $('[data-main-header]').addClass('--user-scroll');
-          $('[data-main-nav]').addClass('--user-scroll');
-        }
-        else if (distance <= 0) {
-          $('[data-main-header').removeClass('--user-scroll');
-          $('[data-main-nav').removeClass('--user-scroll');
-        }
-        else {
-          $('[data-main-header').removeClass('--user-scroll');
-          $('[data-main-nav').removeClass('--user-scroll');
-        }
-      }
-
-      // Event Listener on scroll with debounce
-      $(window).scroll( function() {
-        let distanceTop = $(document).scrollTop();
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(userScroll(distanceTop),scrollTime);
-      });
-    },
-
-    methods: {
-      // Flip Nav flag & animate sidebar
-      openMenu() {
-        this.navIsOpen = !this.navIsOpen;
-        $('[data-main-links]').removeClass('--showLinks');
-        $('body').toggleClass('u-freeze-scroll');
-        // Timeout is either 400 / 0 depending on if its opening or closing
-        setTimeout(function(){
-          $('[data-nav-content]').toggleClass('--active-sidebar');
-        }, ( this.navIsOpen ? 400 : 0) );
-      },
-
-      // Force close menu on route change
-      // avoids issues if user goes back on history
-      closeMenu() {
-        this.navIsOpen = false;
-        $('[data-main-links]').removeClass('--showLinks');
-        $('body').removeClass('u-freeze-scroll');
-        $('[data-nav-content]').removeClass('--active-sidebar');
-      }
-    },
-
-    // Components
-    components: {
-      'hidden-nav' : HiddenNav,
-      'hidden-nav-sidebar' : HiddenNavSidebar,
-      'hidden-nav-links' : HiddenNavLinks,
-      'social-links' : SocialLinks
     }
-  };
+
+    // Event Listener on scroll with debounce
+    $(window).scroll( function() {
+      let distanceTop = $(document).scrollTop();
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(userScroll(distanceTop),scrollTime);
+    });
+  },
+
+  methods: {
+    // Flip Nav flag & animate sidebar
+    openMenu() {
+      this.navIsOpen = !this.navIsOpen;
+      $('[data-main-links]').removeClass('--showLinks');
+      $('body').toggleClass('u-freeze-scroll');
+      // Timeout is either 400 / 0 depending on if its opening or closing
+      setTimeout(function(){
+        $('[data-nav-content]').toggleClass('--active-sidebar');
+      }, ( this.navIsOpen ? 400 : 0) );
+    },
+
+    // Force close menu on route change
+    // avoids issues if user goes back on history
+    closeMenu() {
+      this.navIsOpen = false;
+      $('[data-main-links]').removeClass('--showLinks');
+      $('body').removeClass('u-freeze-scroll');
+      $('[data-nav-content]').removeClass('--active-sidebar');
+    }
+  },
+
+  // Components
+  components: {
+    'hidden-nav' : HiddenNav,
+    'hidden-nav-sidebar' : HiddenNavSidebar,
+    'hidden-nav-links' : HiddenNavLinks,
+    'social-links' : SocialLinks
+  }
+};
 
 </script>
 
 
 
 <style lang="scss">
+/*--------------------------------------*/
+/* MAIN NAVIGATION Component Styles
+/*--------------------------------------*/
+.mdev-main-nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: $nav-padding;
+  z-index: 10;
+  transition: all, .3s;
+  background: rgba(51, 51, 51, 0);
 
-  /*--------------------------------------*/
-  /* Lean Import for Components           */
-  /*--------------------------------------*/
-  /* Disable because they are already linted */
-  /* stylelint-disable */
-  @import '../../assets/styles/global-main.scss';
-  /* stylelint-enable */
+  @media #{$portrait} {
+    padding: $nav-padding-prt;
+  }
 
-  /*--------------------------------------*/
-  /* Main Component Styles                */
-  /*--------------------------------------*/
-  .mdev-main-nav {
+  svg {
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: $nav-padding;
-    z-index: 10;
-    transition: all, .3s;
-    background: rgba(51, 51, 51, 0);
+  }
 
+  .mdev-social-links {
+    /* stylelint-disable */
     @media #{$portrait} {
-      padding: $nav-padding-prt;
+      justify-content: center !important;
     }
+    /* stylelint-enable */
+  }
+}
 
-    svg {
-      width: 100%;
-    }
+.mdev-nav-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  min-width: 290px;
+}
 
-    .mdev-social-links {
-      /* stylelint-disable */
-      @media #{$portrait} {
-        justify-content: center !important;
-      }
-      /* stylelint-enable */
+.mdev-live-brand {
+  height: auto;
+  width: 2.5%;
+  opacity: 0;
+  min-width: 25px;
+  transition: all 1.8s;
+
+  &:hover {
+    cursor: pointer;
+    opacity: .8;
+
+    .mdev-hidden-brand svg {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      transition: transform .3s, opacity .8s;
     }
   }
 
-  .mdev-nav-wrapper {
-    width: 100%;
-    margin: 0 auto;
+  svg {
     position: relative;
-    padding: 0;
-    min-width: 290px;
+    width: 100%;
+    transition: all 2.9s;
   }
 
-  .mdev-live-brand {
-    height: auto;
-    width: 2.5%;
-    opacity: 0;
-    min-width: 25px;
-    transition: all 1.8s;
+  svg[ data-mdev-top ] {
+    transform: translate3d(0, 53%, 0);
+  }
 
-    &:hover {
-      cursor: pointer;
-      opacity: .8;
+  svg[ data-mdev-bot ] {
+    transform: translate3d(0, -74%, 0);
+  }
+}
 
-      .mdev-hidden-brand svg {
-        transform: translate3d(0, 0, 0);
-        opacity: 1;
-        transition: transform .3s, opacity .8s;
+.mdev-nav-open {
+  width: 2.5%;
+  height: auto;
+  position: relative;
+  overflow: visible;
+  max-width: 42px;
+  min-width: 25px;
+  padding: 0;
+  z-index: 99;
+  margin: 0;
+  opacity: 0;
+  border: none;
+  background: transparent;
+  transition: .6s all;
+
+  @media #{$portrait} {
+    width: 4.5%;
+  }
+
+  span {
+    display: block;
+    position: relative;
+    width: 100%;
+    background: $color-brand-primary;
+    height: 5px;
+    box-shadow: 0 0 3px rgba(201, 255, 252, 0);
+    transition: all .5s, opacity .3s;
+    border: 1px solid rgba(13, 119, 113, 0);
+
+
+    &:first-child {
+      transform: translate3d(0, -7px, 0 );
+      opacity: 1;
+
+      @media #{$phone-only} {
+        transform: translate3d(0, -5px, 0 );
       }
     }
 
-    svg {
-      position: relative;
-      width: 100%;
-      transition: all 2.9s;
+    &:last-child {
+      transform: translate3d(0, 7px, 0 );
+
+      @media #{$phone-only} {
+        transform: translate3d(0, 5px, 0 );
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    span {
+      border: 1px solid rgba(13, 119, 113, 1);
+      background: lighten( $color-brand-primary, 18%);
+      box-shadow: 0 0 3px rgba(201, 255, 252, .5);
+    }
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+
+    span {
+      border: 1px solid rgba(13, 119, 113, 0);
+    }
+  }
+}
+
+.mdev-hidden-brand {
+  width: 4.5%;
+  position: absolute;
+  top: 27%;
+  left: 3.2%;
+  z-index: -1;
+
+  svg {
+    opacity: 0;
+    transition: transform .8s, opacity .4s;
+    transform: translate3d(-70%, 0, 0);
+  }
+}
+
+.mdev-hidden-nav {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  left: 0;
+  background: $color-brand-primary;
+  z-index: 2;
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+  transition: opacity .8s, transform .3s;
+  padding: 0;
+  margin: 0;
+}
+
+// Nav Open and Active
+.--hid-nav-open {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.--nav-open {
+  span {
+    background: white;
+
+    &:first-child {
+      transform: translate3d(0, -80px, 0);
+      opacity: 0;
     }
 
+    &:last-child {
+      transform: rotate3d(0, 0, 1, 45deg);
+      top: -5px;
+    }
+
+    &:nth-child( even ) {
+      transform: rotate3d(0, 0, 1, -45deg);
+    }
+  }
+  &:hover {
+    span {
+      background: darken($color-brand-primary, 25%);
+      box-shadow: 0 0 3px rgba(201, 255, 252, 0);
+    }
+  }
+}
+
+// Nav Active from page load
+.--nav-active {
+  .mdev-live-brand,
+  .mdev-nav-open {
+    opacity: 1;
+  }
+  .mdev-live-brand {
     svg[ data-mdev-top ] {
-      transform: translate3d(0, 53%, 0);
+      transform: translate3d(0, 36%, 0);
+
+      @media #{$phone-only} {
+        transform: translate3d(0, 44%, 0);
+      }
     }
 
     svg[ data-mdev-bot ] {
-      transform: translate3d(0, -74%, 0);
-    }
-  }
+      transform: translate3d(0, -50%, 0);
 
-  .mdev-nav-open {
-    width: 2.5%;
-    height: auto;
-    position: relative;
-    overflow: visible;
-    max-width: 42px;
-    min-width: 25px;
-    padding: 0;
-    z-index: 99;
-    margin: 0;
-    opacity: 0;
-    border: none;
-    background: transparent;
-    transition: .6s all;
-
-    @media #{$portrait} {
-      width: 4.5%;
-    }
-
-    span {
-      display: block;
-      position: relative;
-      width: 100%;
-      background: $color-brand-primary;
-      height: 5px;
-      box-shadow: 0 0 3px rgba(201, 255, 252, 0);
-      transition: all .5s, opacity .3s;
-      border: 1px solid rgba(13, 119, 113, 0);
-
-
-      &:first-child {
-        transform: translate3d(0, -7px, 0 );
-        opacity: 1;
-
-        @media #{$phone-only} {
-          transform: translate3d(0, -5px, 0 );
-        }
-      }
-
-      &:last-child {
-        transform: translate3d(0, 7px, 0 );
-
-        @media #{$phone-only} {
-          transform: translate3d(0, 5px, 0 );
-        }
-      }
-    }
-
-    &:hover {
-      cursor: pointer;
-
-      span {
-        border: 1px solid rgba(13, 119, 113, 1);
-        background: lighten( $color-brand-primary, 18%);
-        box-shadow: 0 0 3px rgba(201, 255, 252, .5);
-      }
-    }
-
-    &:focus,
-    &:active {
-      outline: none;
-
-      span {
-        border: 1px solid rgba(13, 119, 113, 0);
+      @media #{$phone-only} {
+        transform: translate3d(0, -60%, 0);
       }
     }
   }
+}
 
-  .mdev-hidden-brand {
-    width: 4.5%;
-    position: absolute;
-    top: 27%;
-    left: 3.2%;
-    z-index: -1;
+.--remove-brand {
+  opacity: 0;
+  transform: translate3d(-300px, 0, 0);
+}
 
-    svg {
-      opacity: 0;
-      transition: transform .8s, opacity .4s;
-      transform: translate3d(-70%, 0, 0);
-    }
+// Nav Active from Scroll
+
+
+// Nav Color Overrides
+.--nav-color {
+  .mdev-svg-1,
+  .mdev-svg-2 {
+    transition: fill, 1.2s;
   }
 
-  .mdev-hidden-nav {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-    height: 100vh;
-    left: 0;
-    background: $color-brand-primary;
-    z-index: 2;
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-    transition: opacity .8s, transform .3s;
-    padding: 0;
-    margin: 0;
+  .mdev-svg-1 {
+    fill: $color-brand-primary;
   }
-
-  // Nav Open and Active
-  .--hid-nav-open {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+  .mdev-svg-2 {
+    fill: $white;
   }
+}
 
-  .--nav-open {
-    span {
-      background: white;
+.--teal-black {
 
-      &:first-child {
-        transform: translate3d(0, -80px, 0);
-        opacity: 0;
-      }
-
-      &:last-child {
-        transform: rotate3d(0, 0, 1, 45deg);
-        top: -5px;
-      }
-
-      &:nth-child( even ) {
-        transform: rotate3d(0, 0, 1, -45deg);
-      }
-    }
-    &:hover {
-      span {
-        background: darken($color-brand-primary, 25%);
-        box-shadow: 0 0 3px rgba(201, 255, 252, 0);
-      }
-    }
+  .mdev-svg-1 {
+    fill: $color-brand-primary;
   }
-
-  // Nav Active from page load
-  .--nav-active {
-    .mdev-live-brand,
-    .mdev-nav-open {
-      opacity: 1;
-    }
-    .mdev-live-brand {
-      svg[ data-mdev-top ] {
-        transform: translate3d(0, 36%, 0);
-
-        @media #{$phone-only} {
-          transform: translate3d(0, 44%, 0);
-        }
-      }
-
-      svg[ data-mdev-bot ] {
-        transform: translate3d(0, -50%, 0);
-
-        @media #{$phone-only} {
-          transform: translate3d(0, -60%, 0);
-        }
-      }
-    }
+  .mdev-svg-2 {
+    fill: $color-brand-bkg;
   }
+}
 
-  .--remove-brand {
-    opacity: 0;
-    transform: translate3d(-300px, 0, 0);
+.--teal-white {
+
+  .mdev-svg-1 {
+    fill: $color-brand-primary;
   }
-
-  // Nav Active from Scroll
-
-
-  // Nav Color Overrides
-  .--nav-color {
-    .mdev-svg-1,
-    .mdev-svg-2 {
-      transition: fill, 1.2s;
-    }
-
-    .mdev-svg-1 {
-      fill: $color-brand-primary;
-    }
-    .mdev-svg-2 {
-      fill: $white;
-    }
+  .mdev-svg-2 {
+    fill: $white;
   }
+}
 
-  .--teal-black {
+.--white-black {
 
-    .mdev-svg-1 {
-      fill: $color-brand-primary;
-    }
-    .mdev-svg-2 {
-      fill: $color-brand-bkg;
-    }
+  .mdev-svg-1 {
+    fill: $white;
   }
-
-  .--teal-white {
-
-    .mdev-svg-1 {
-      fill: $color-brand-primary;
-    }
-    .mdev-svg-2 {
-      fill: $white;
-    }
+  .mdev-svg-2 {
+    fill: $color-brand-bkg;
   }
-
-
-  .--white-black {
-
-    .mdev-svg-1 {
-      fill: $white;
-    }
-    .mdev-svg-2 {
-      fill: $color-brand-bkg;
-    }
-  }
-
-
+}
 /*--------------------------------------*/
-
 </style>

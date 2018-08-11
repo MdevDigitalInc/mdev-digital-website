@@ -7,15 +7,11 @@
 
 <script>
 export default{
-  name: 'BaseComponent',
+  name: 'ErrorPage',
   data: function(){
     return{
 
     };
-  },
-
-  mounted: function(){
-    console.log('Element Mounted');
   }
 };
 </script>

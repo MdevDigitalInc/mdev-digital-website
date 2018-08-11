@@ -28,7 +28,7 @@ export default{
 <style lang="scss">
 
 /*-------------------------------------*/
-/* 404 Component Styles
+/* BRAND ANIMATION Component Styles
 /--------------------------------------*/
 .mdev-main-animation {
   position: absolute;

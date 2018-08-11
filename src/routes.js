@@ -19,7 +19,7 @@ import ServicesUx           from './components/services/service--ux.vue';
 // Bios
 import Bios                 from './components/bios/bios.vue';
 // Import Data From Flat File
-import mdevData  from './mdev-data.js';
+import MdevData             from './mdev-data.js';
 
 //import AuthComponent from './components/auth/Authentication.vue';
 //import LoginComponent from './components/auth/Login.vue';
@@ -58,12 +58,12 @@ export const routes = [
     beforeEnter: (to, from, next) => {
       // If route slug matches employees proceed..
       // Employee list pulled from mdev-data.js
-      if ( mdevData.employeeRoutes.includes(to.params.teammember) ) {
+      if ( MdevData.employeeRoutes.includes(to.params.teammember) ) {
         next();
       }
       // Otherwise redirect to approved route
       else {
-        next({ path: '/bios/' + mdevData.employeeRoutes[0] });
+        next({ path: '/bios/' + MdevData.employeeRoutes[0] });
       }
     }
   },  // Case Study Master Routes

@@ -14,10 +14,6 @@ export default{
     return {
 
     };
-  },
-
-  mounted: function(){
-    console.log('Element Mounted');
   }
 };
 </script>

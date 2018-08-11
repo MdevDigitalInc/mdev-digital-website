@@ -106,7 +106,7 @@ export default{
 <style lang="scss" scoped>
 
 /*-------------------------------------*/
-/* Contact Map Component Styles
+/* Contact--Map Component Styles
 /--------------------------------------*/
 .mdev-map-location {
   width: 90%;

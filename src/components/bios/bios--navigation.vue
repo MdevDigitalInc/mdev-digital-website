@@ -22,7 +22,7 @@
 
 <script>
 export default{
-  name: 'BioRichard',
+  name: 'BioNavigation',
 
   props: [ 'nextBioName', 'nextBioRoute' ],
 
@@ -32,27 +32,14 @@ export default{
     };
   },
 
-  mounted: function(){
-    console.log('Element Mounted');
-  },
-
   methods: {
-    // Change Language METHOD
-    change () {
-      let current = this.$locale.current();
-      if (current === 'en') {
-        this.$locale.change('pt');
-      } else {
-        this.$locale.change('en');
-      }
-    },
     nextBio(direction) {
-        if ( direction > 0 ) {
-          this.$emit('nextBio');
-        }
-        else {
-          this.$emit('previousBio');
-        }
+      if ( direction > 0 ) {
+        this.$emit('nextBio');
+      }
+      else {
+        this.$emit('previousBio');
+      }
     }
   }
 };
@@ -63,7 +50,7 @@ export default{
 <style lang="scss">
 
 /*-------------------------------------*/
-/* ZUCORA TWOP Component Styles
+/* bios--navigation Component Styles
 /--------------------------------------*/
 
 

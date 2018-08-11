@@ -94,17 +94,6 @@ export default {
     'main-footer'   : MainFooter,
     'contact-map'   : ContactMap,
     'contact-form'  : ContactForm
-  },
-
-  methods: {
-    changeNavBrand(e, brandClass){
-      if ( e.target.rect.y <= 0 ) {
-        $('[data-main-nav]').removeClass('--teal-black');
-        $('[data-main-nav]').removeClass('--white-black');
-        $('[data-main-nav]').removeClass('--teal-white');
-        $('[data-main-nav]').addClass(brandClass);
-      }
-    }
   }
 };
 </script>

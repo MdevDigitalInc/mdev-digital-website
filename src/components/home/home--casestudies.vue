@@ -49,7 +49,7 @@ export default{
 <style lang="scss" scoped>
 
 /*-------------------------------------*/
-/* HOME CASE STUDIES Component Styles
+/* HOME--CASESTUDIES Component Styles
 /--------------------------------------*/
 .mdev-full-section {
   padding-top: 50px;

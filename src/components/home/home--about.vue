@@ -48,7 +48,7 @@ export default {
 <style lang="scss">
 
 /*-------------------------------------*/
-/* HOME ABOUT Component Styles
+/* HOME--ABOUT Component Styles
 /--------------------------------------*/
 .mdev-about-logo {
   width: 35%;

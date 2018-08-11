@@ -14,10 +14,6 @@ export default{
     return{
 
     };
-  },
-
-  mounted: function(){
-    console.log('Element Mounted');
   }
 };
 </script>
@@ -27,7 +23,7 @@ export default{
 <style lang="scss">
 
 /*-------------------------------------*/
-/* UX Component Styles
+/* SERVICES--UX Component Styles
 /--------------------------------------*/
 
 

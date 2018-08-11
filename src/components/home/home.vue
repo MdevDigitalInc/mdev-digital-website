@@ -20,7 +20,7 @@
 </template>
 
 <script>
-//Local Component registration
+// Local Component registration
 import HeroMain           from '../shared/hero-main.vue';
 import HomeCaseStudies    from './home--casestudies.vue';
 import HomeAbout          from './home--about.vue';
@@ -28,6 +28,8 @@ import HomeServices       from './home--services.vue';
 import HomeProcess        from './home--process.vue';
 import MainFooter         from '../shared/main-footer.vue';
 import HomeTestimonials   from './home--testimonials.vue';
+// Flat Data File
+import MdevData           from '../../mdev-data.js';
 
 export default{
   name: 'HomePage',
@@ -43,29 +45,8 @@ export default{
       // Disables Page Title bar
       pageTitle: 'TESTY TEST TEST',
       headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.',
-
-      testimonials: [
-        {
-          content: 'Dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-          name: 'Aaron Finkenzeller, CTO Zucora Inc.'
-        },
-        {
-          content: 'House In The Thaw Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-          name: 'Brad Geddes, CEO Zucora Inc.'
-        },
-        {
-          content: 'Dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-          name: 'Albert Einstein, EMC Industries'
-        },
-        {
-          content: 'House In The Thaw Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-          name: 'Bradd Pitt, CTO Zucora Inc.'
-        },
-        {
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-          name: 'Edward Norton, CTO Zucora Inc.'
-        }
-      ]
+      // Testimonials loaded from flat file
+      testimonials: MdevData.testimonials
     };
   },
 
@@ -77,17 +58,6 @@ export default{
     'home-testimonials' : HomeTestimonials,
     'main-footer'       : MainFooter,
     'home-casestudies'  : HomeCaseStudies
-  },
-
-  methods:{
-    changeNavBrand(e, brandClass){
-      if ( e.target.rect.y <= 0 ) {
-        $('[data-main-nav]').removeClass('--white-black');
-        $('[data-main-nav]').removeClass('--teal-black');
-        $('[data-main-nav]').removeClass('--teal-white');
-        $('[data-main-nav]').addClass(brandClass);
-      }
-    }
   }
 };
 </script>

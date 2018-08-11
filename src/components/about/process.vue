@@ -8,29 +8,25 @@
 
 
 <script>
-  export default{
-    name: 'Process',
-    data: function(){
-      return{
+export default{
+  name: 'Process',
+  data: function(){
+    return{
 
-      };
-    },
-
-    mounted: function(){
-      console.log('Element Mounted');
-    }
-  };
+    };
+  }
+};
 </script>
 
 
 
 <style lang="scss">
 
-	/*-------------------------------------*/
-	/* PROCESS Component Styles
-	/--------------------------------------*/
+/*-------------------------------------*/
+/* PROCESS Component Styles
+/--------------------------------------*/
 
 
-	/*--------------------------------------*/
+/*--------------------------------------*/
 
 </style>

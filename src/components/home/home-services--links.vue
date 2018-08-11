@@ -37,7 +37,7 @@
 <style lang="scss">
 
 /*-------------------------------------*/
-/* MAIN FOOTER Component Styles
+/* HOME-SERVICES--LINKS Component Styles
 /--------------------------------------*/
 
 .mdev-links-title {
