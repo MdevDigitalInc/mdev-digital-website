@@ -1,7 +1,7 @@
 <template>
   <main id="app">
     <img :src="loadImage('MDEV-main-hero.png')" class="u-screenreader" />
-    <!-- Skip Navigatio Accessbility -->
+    <!-- Skip Navigation Accessbility -->
     <button href="#mainContent"
       v-if="!isLoading"
       title="Skip to main content"
