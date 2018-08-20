@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-main-content">
-    <h1> 404Page </h1>
+    <h1> Base Template</h1>
   </section>
 </template>
 
@@ -9,7 +9,7 @@
 
 <script>
 export default{
-  name: 'ErrorPage',
+  name: 'BaseTemplate',
   data: function(){
     return{
 
@@ -17,22 +17,7 @@ export default{
   },
 
   mounted: function(){
-    console.log('Element Mounted');
-  },
-
-  methods: {
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    },
-    // Change Language METHOD
-    change () {
-      let current = this.$locale.current();
-      if (current === 'en') {
-        this.$locale.change('pt');
-      } else {
-        this.$locale.change('en');
-      }
-    }
+    console.log('COMPONENT NAME Mounted');
   }
 };
 </script>

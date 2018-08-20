@@ -147,9 +147,6 @@ export default{
   },
 
   methods: {
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    },
     // Validate and Submit form
     submitForm() {
       // Clear Errors First
@@ -226,7 +223,7 @@ export default{
 <style lang="scss">
 
 /*-------------------------------------*/
-/* 404 Component Styles
+/* BASE FORM Component Styles
 /--------------------------------------*/
 .mdev-input-group {
   width: 100%;

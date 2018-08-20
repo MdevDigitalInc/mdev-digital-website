@@ -3,8 +3,8 @@
 /-------------------------------------*/
 
 // Main colors
-$color-brand-primary: #13b2a9;
-$color-brand-accent: #c2ec2f;
+$color-brand-primary: #16b1a9;
+$color-brand-accent: #c4ee1e;
 $color-brand-bkg: #0f1618;
 $bkg-light-grey: #fafafa;
 $black: #000;
@@ -23,13 +23,13 @@ $body-weight: 300;
 $nav-padding: 8px 1% 0 1%;
 $nav-padding-prt: 12px 3% 0 3%;
 $nav-side-padding: 20px;
+
 // Button Variables
 
 // Radius Variables
 $standard-radius: 4px;
 
 //Clipping Paths
-
 $clip-triangle-bot: polygon(50% 0%, 100% 0, 100% 100%, 50% 90%, 0 100%, 0 0);
 $clip-triangle-top: polygon(50% 10%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
 $clip-triangle-bot-reverse: polygon(50% 0%, 100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);

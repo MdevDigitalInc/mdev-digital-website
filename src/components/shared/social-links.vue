@@ -28,7 +28,7 @@
 <style lang="scss">
 
 /*-------------------------------------*/
-/* MAIN FOOTER Component Styles
+/* SOCIAL LINKS Component Styles
 /--------------------------------------*/
 .mdev-social-links {
   width: 100%;
@@ -63,10 +63,5 @@
     }
   }
 }
-
-
-
-
 /*--------------------------------------*/
-
 </style>

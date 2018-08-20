@@ -70,13 +70,7 @@
       };
     },
 
-    props:['showLinks'],
-
-    methods: {
-      loadImage(path){
-        return require('../../assets/images/' + path);
-      },
-    }
+    props:['showLinks']
   };
 </script>
 
@@ -85,7 +79,7 @@
 <style lang="scss">
 
 /*-------------------------------------*/
-/* MAIN FOOTER Component Styles
+/* HIDDEN-NAV--sidebar Component Styles
 /--------------------------------------*/
 
 .mdev-nav-sidebar {

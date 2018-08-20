@@ -25,13 +25,6 @@
 export default {
   name: 'MainHero',
 
-  methods:{
-    // Get Compiled image Paths
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    }
-  },
-
   props: [ 'pageTitle', 'headerDsc' ],
 
   mounted: function() {
@@ -59,10 +52,7 @@ export default {
       height = $('[data-main-hero]').outerHeight(true);
       $('[data-main-arrow]').css({
           'height': height + 'px'
-        });
-      $('[data-main-title]').css({
-          'height': height + 'px'
-        });
+      });
     }
   },
 
@@ -123,10 +113,10 @@ export default {
 .mdev-page-title {
   position: absolute;
   top: 0;
+  bottom: 0;
   left: 0;
   z-index: 6;
   color: $white;
-  height: 100vh;
   width: 4.5%;
   border-right: 1px solid rgba(255, 255, 255, .5);
   opacity: 0;

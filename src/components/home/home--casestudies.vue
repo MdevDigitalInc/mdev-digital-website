@@ -1,5 +1,5 @@
 <template>
-  <div class="mdev-full-section">
+  <section class="mdev-full-section">
     <!-- Case Study Heading -->
     <div class="mdev-case-heading u-text-center">
       <span class="mdev-top-subhead u-c-accent u-uppercase">
@@ -17,7 +17,7 @@
         {{ $t("homepage.casestudies.action") }}
       </btn-primary>
     </div>
-  </div>
+  </section>
 </template>
 
 
@@ -38,12 +38,6 @@ export default{
     };
   },
 
-  methods: {
-    loadImage(path) {
-      return require('../../assets/images/' + path);
-    }
-  },
-
   components: {
     'btn-primary'         : BtnPrimary
   }
@@ -55,7 +49,7 @@ export default{
 <style lang="scss" scoped>
 
 /*-------------------------------------*/
-/* HOME CASE STUDIES Component Styles
+/* HOME--CASESTUDIES Component Styles
 /--------------------------------------*/
 .mdev-full-section {
   padding-top: 50px;

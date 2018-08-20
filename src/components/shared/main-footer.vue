@@ -23,12 +23,6 @@
       return{
         mdevBrand: 'svg/MDEV_RGB_Icon_Primary_Reverse.svg'
       };
-    },
-
-    methods: {
-      loadImage(path){
-        return require('../../assets/images/' + path);
-      }
     }
   };
 </script>

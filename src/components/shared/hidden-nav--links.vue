@@ -55,7 +55,7 @@
 <style lang="scss">
 
 /*-------------------------------------*/
-/* MAIN FOOTER Component Styles
+/* HIDDEN-NAV--LINKS Component Styles
 /--------------------------------------*/
 .mdev-nav-links {
   position: relative;

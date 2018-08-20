@@ -95,12 +95,6 @@ export default{
     };
   },
 
-  methods: {
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    }
-  },
-
   components: {
     'google-map'  : googleMap
   }
@@ -112,7 +106,7 @@ export default{
 <style lang="scss" scoped>
 
 /*-------------------------------------*/
-/* Contact Map Component Styles
+/* Contact--Map Component Styles
 /--------------------------------------*/
 .mdev-map-location {
   width: 90%;

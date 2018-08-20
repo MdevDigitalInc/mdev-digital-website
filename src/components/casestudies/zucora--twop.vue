@@ -1,16 +1,15 @@
 <template>
   <section class="mdev-main-content">
-    <h1> People </h1>
+    <h1> Zucora TWOP </h1>
   </section>
 </template>
 
 
 
-
 <script>
 export default{
-  name: 'People',
-  data: function(){
+  name: 'ZucoraTwop',
+  data: function() {
     return{
 
     };
@@ -21,9 +20,8 @@ export default{
 
 
 <style lang="scss">
-
 /*-------------------------------------*/
-/* PEOPLE Component Styles
+/* ZUCORA TWOP Component Styles
 /--------------------------------------*/
 
 

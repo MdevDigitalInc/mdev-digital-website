@@ -4,8 +4,7 @@
 
 <script>
   export default {
-   name: "AuthComponent",
-   mounted: function() {console.log('Auth Here');}
+   name: "AuthComponent"
   };
 </script>
 

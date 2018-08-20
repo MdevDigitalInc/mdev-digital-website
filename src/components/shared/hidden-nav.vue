@@ -11,7 +11,7 @@
 
 <script>
   export default{
-    name: 'HiddenNav',
+    name: 'HiddenNav'
   };
 </script>
 
@@ -20,7 +20,7 @@
 <style lang="scss">
 
 /*-------------------------------------*/
-/* MAIN FOOTER Component Styles
+/* HIDDEN NAV Component Styles
 /--------------------------------------*/
 
 .mdev-nav-content {

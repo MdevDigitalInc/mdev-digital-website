@@ -19,6 +19,9 @@ import store from './store/store.js';
 import inViewportDirective from 'vue-in-viewport-directive';
 Vue.directive('in-viewport', inViewportDirective);
 
+// Check View Directive
+import checkView from 'vue-check-view';
+Vue.use(checkView);
 // Import Auth Plugin
 // import Auth from './plugins/auth.js';
 import Validate from './plugins/validate.js';
@@ -91,11 +94,17 @@ const router = new VueRouter ({
   mode: 'history',
 
   //Control Scrolling Behavior
-  scrollBehavior( to, from, savedPOsition ){
+  scrollBehavior( to, from, savedPosition ){
     if (to.hash) {
       return {
         selector: to.hash
       };
+    }
+    else if (savedPosition) {
+      return savedPosition;
+    }
+    else {
+      return { x: 0, y: 0 }
     }
   }
 });
@@ -103,19 +112,53 @@ const router = new VueRouter ({
 
 // Route Guard - Executes before each route change
 // In this case being used to dynamically change BKG color
+
+// Add regex for routes where you want white BKG
+let whiteBkgPaths = [
+  "contact",
+  "bios"
+]
+
 router.beforeEach(function( to, from, next){
   let bodyWhite = "--body-white";
+  var regEx = new RegExp(whiteBkgPaths.join("|"), "i");
 
-  if ( to.path == "/contact" ) {
+  if ( regEx.test(to.path) ) {
     // Ternary operator adds class when body doesn't already have it
     // prevents multiple classes being added to body
     !$('body').hasClass(bodyWhite) ? $('body').addClass(bodyWhite) : '';
   }
   else {
-    $('body').removeClass('--body-white');
+    $('body').hasClass(bodyWhite) ? $('body').removeClass(bodyWhite) : '';
   }
   next();
 });
+
+// [ Global Mixins ] --------------------------------
+Vue.mixin({
+  methods: {
+    loadImage(path){
+      return require('./assets/images/' + path);
+    },
+    // Change Language METHOD
+    change () {
+      let current = this.$locale.current();
+      if (current === 'en') {
+        this.$locale.change('pt');
+      } else {
+        this.$locale.change('en');
+      }
+    },
+    changeNavBrand(e, brandClass){
+      if ( e.target.rect.y <= 0 ) {
+        $('[data-main-nav]').removeClass('--teal-black');
+        $('[data-main-nav]').removeClass('--white-black');
+        $('[data-main-nav]').removeClass('--teal-white');
+        $('[data-main-nav]').addClass(brandClass);
+      }
+    }
+  }
+})
 
 // [ Main Vue Instance ] ----------------------------
 new Vue({

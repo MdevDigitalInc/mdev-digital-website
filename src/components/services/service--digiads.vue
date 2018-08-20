@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-main-content">
-    <h1> People </h1>
+    <h1> SERVICE Digital Marketing </h1>
   </section>
 </template>
 
@@ -9,7 +9,7 @@
 
 <script>
 export default{
-  name: 'People',
+  name: 'ServicesDigitalMarketing',
   data: function(){
     return{
 
@@ -23,7 +23,7 @@ export default{
 <style lang="scss">
 
 /*-------------------------------------*/
-/* PEOPLE Component Styles
+/* SERVICES--DIGIADS Component Styles
 /--------------------------------------*/
 
 

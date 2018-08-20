@@ -1,5 +1,5 @@
 <template>
-  <div class="mdev-full-section --accent-bkg --pull-up-section --reduce-bottom">
+  <section class="mdev-full-section --accent-bkg --pull-up-section --reduce-bottom">
     <div class="mdev-main-wrapper u-text-center">
       <h3 class="u-uppercase u-c-black u-bold a-flyin a-flyin-right u-no-select" v-in-viewport>
         {{ $t("homepage.testimonials.heading") }}
@@ -47,7 +47,7 @@
     <div class="mdev-sexy-line --sexy-green" data-line-one></div>
     <div class="mdev-sexy-line --sexy-green" data-line-two></div>
     <div class="mdev-sexy-line --sexy-green" data-line-three></div>
-  </div>
+  </section>
 </template>
 
 
@@ -66,9 +66,6 @@
     },
 
     methods: {
-      loadImage(path){
-        return require('../../assets/images/' + path);
-      },
       traverse(direction) {
         let arrayLen = this.testimonials.length - 1;
 
@@ -97,7 +94,7 @@
 <style lang="scss" scoped>
 
 /*-------------------------------------*/
-/* Home Testimonials Component Styles
+/* Home--testimonials Component Styles
 /--------------------------------------*/
 
 @import '../../assets/styles/keyframes/lines-anim.scss';

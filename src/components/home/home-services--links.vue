@@ -1,5 +1,5 @@
 <template>
-  <div class="mdev-section-links u-c-white">
+  <section class="mdev-section-links u-c-white">
     <span class="mdev-links-title u-ultralight u-uppercase">
       <span class="mdev-link-index u-transparent" aria-hidden="true">
         00
@@ -18,7 +18,7 @@
           {{ link.linkName }}
         </span>
       </router-link>
-  </div>
+  </section>
 </template>
 
 
@@ -37,7 +37,7 @@
 <style lang="scss">
 
 /*-------------------------------------*/
-/* MAIN FOOTER Component Styles
+/* HOME-SERVICES--LINKS Component Styles
 /--------------------------------------*/
 
 .mdev-links-title {

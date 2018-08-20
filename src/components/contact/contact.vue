@@ -1,7 +1,7 @@
 <template>
   <section class="mdev-main-content">
     <!-- Hero Component -->
-    <hero-main :pageTitle="pageTitle" :headerDsc="headerDsc">
+    <hero-main v-view="(e) => changeNavBrand(e, '--teal-white')" :pageTitle="pageTitle" :headerDsc="headerDsc">
       <!-- Slot Content -->
       <div class="mdev-main-hero --hero-vivus" :style="heroStyles">
         <!-- Vivus Namespace -->
@@ -36,9 +36,9 @@
       </div>
     </hero-main>
     <!-- Map -->
-    <contact-map></contact-map>
+    <contact-map v-view="(e) => changeNavBrand(e, '--teal-white')"></contact-map>
     <!-- form -->
-    <contact-form id="mainContent"></contact-form>
+    <contact-form  v-view="(e) => changeNavBrand(e, '--white-black')" id="mainContent"></contact-form>
     <!-- Footer -->
     <main-footer></main-footer>
   </section>
@@ -70,6 +70,7 @@ export default {
 
   mounted: function() {
     this.$nextTick(() => {
+        $('[data-main-nav]').addClass('--teal-white');
       setTimeout(() => {
         new Vivus('anim-connect', {duration: 150}, console.log('fired'));
       }, 100);
@@ -93,12 +94,6 @@ export default {
     'main-footer'   : MainFooter,
     'contact-map'   : ContactMap,
     'contact-form'  : ContactForm
-  },
-
-  methods: {
-    loadImage(path){
-      return require('../../assets/images/' + path);
-    }
   }
 };
 </script>
