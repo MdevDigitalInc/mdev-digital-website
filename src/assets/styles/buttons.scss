@@ -100,8 +100,11 @@ $border-time: .4s;
   &:before {
     border-top-color: $color-brand-accent;
     border-right-color: $color-brand-accent;
+    /*stylelint-disable*/
     transition: width $border-time ease-out,
                 height $border-time ease-out $border-time;
+
+    /*stylelint-enable*/
   }
 
   // Draw in Bottom Left lines after
@@ -109,9 +112,11 @@ $border-time: .4s;
   &:after {
     border-bottom-color: $color-brand-accent;
     border-left-color: $color-brand-accent;
+    /*stylelint-disable*/
     transition: border-color 0s ease-out ($border-time * 2),
                 width $border-time ease-out ($border-time * 2),
                 height $border-time ease-out ($border-time * 3);
+    /*stylelint-enable*/
   }
 }
 
