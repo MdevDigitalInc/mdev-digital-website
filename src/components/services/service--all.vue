@@ -20,7 +20,6 @@
                 class="mdev-btn mdev-primary-btn --space-top-sm">
                {{ $t('contact.headerBtn') }}
              </a>
-
           </div>
         </div>
 
@@ -30,6 +29,30 @@
         <div class="mdev-sexy-line --sexy-green" data-line-three></div>
       </div>
     </hero-main>
+    <service-tile v-for="(service, index) in services">
+      <template slot="mediaSlot">
+      </template>
+      <template slot="contentSlot">
+        <span class="mdev-service-index">
+          0{{ index + 1 }}
+        </span>
+        <h2>
+          {{ service.title }}
+        </h2>
+        <p>
+          {{ service.description }}
+        </p>
+        <ul>
+          <li v-for="topic in service.topics">
+            {{ topic }}
+          </li>
+        </ul>
+        <!-- Primary Button -->
+        <btn-primary :BtnData="service.BtnData" v-in-viewport>
+          {{ service.action }}
+        </btn-primary>
+      </template>
+    </service-tile>
   </section>
 </template>
 
@@ -40,6 +63,8 @@
 //Local Component registration
 import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
+import ServiceTile        from '../services/service--tile.vue';
+import BtnPrimary         from '../shared/btn-primary.vue';
 
 export default{
   name: 'ServicesAll',
@@ -53,7 +78,27 @@ export default{
       headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.',
       connectAnim: 'contact/MDEV_HEADER_connect_animated.svg',
       withAnim: 'contact/MDEV_HEADER_with.svg',
-      usAnim: 'contact/MDEV_HEADER_us_animated.svg'
+      usAnim: 'contact/MDEV_HEADER_us_animated.svg',
+
+      // Services listed
+      services: [
+        {
+          title: "Branding",
+          description: "A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.",
+          topics: [
+            "Corporate identities",
+            "Print & digital design",
+            "Packaging"
+          ],
+          action: "Learn More",
+          BtnData: {
+            accessibility: 'View Our Case Studies',
+            btnRoute: '/casestudies',
+            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+          },
+          media: "bios/MDEV_BIOS-becky.png"
+        },
+      ]
     };
   },
 
@@ -63,7 +108,9 @@ export default{
 
   components: {
     'hero-main'     : HeroMain,
-    'main-footer'   : MainFooter
+    'main-footer'   : MainFooter,
+    'btn-primary'   : BtnPrimary,
+    'service-tile'   : ServiceTile
   }
 };
 </script>
