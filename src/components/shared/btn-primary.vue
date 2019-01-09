@@ -5,7 +5,7 @@
     aria-label="BtnData.accessibility"
     class="mdev-btn"
     :class="BtnData.btnClass"
-    to="BtnData.btnRoute">
+    :to="BtnData.btnRoute">
     <!-- Button Text -->
     <slot></slot>
   </router-link>

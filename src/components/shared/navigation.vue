@@ -1,4 +1,4 @@
-<template>
+q<template>
   <nav
     class="mdev-main-nav --nav-color"
     :class="{ '--teal-black': reverseBrand }"
@@ -454,6 +454,10 @@ export default{
   }
   .mdev-svg-2 {
     fill: $color-brand-bkg;
+  }
+
+  .mdev-nav-open span {
+    background-color: black;
   }
 }
 /*--------------------------------------*/

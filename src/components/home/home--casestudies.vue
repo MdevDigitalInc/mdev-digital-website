@@ -32,7 +32,7 @@ export default{
     return {
       BtnData: {
         accessibility: 'Learn more about our work!',
-        btnRoute: '/casestudies',
+        btnRoute: '/casestudy',
         btnClass: 'mdev-primary-btn --space-top-sm'
       }
     };
