@@ -116,7 +116,8 @@ const router = new VueRouter ({
 // Add regex for routes where you want white BKG
 let whiteBkgPaths = [
   "contact",
-  "bios"
+  "bios",
+  "services"
 ]
 
 router.beforeEach(function( to, from, next){
