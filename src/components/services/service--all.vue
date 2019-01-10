@@ -30,9 +30,12 @@
       </div>
     </hero-main>
     <!-- Service Tile Loop  -->
-    <service-tile v-for="(service, index) in services" :serviceConfig="service.config">
+    <service-tile v-for="(service, index) in services"
+      :flip="((index + 1) % 2) == 0"
+      :lastChild="index < (services.length -1)"
+      :serviceConfig="service.config">
       <!-- Media Slot (Order can be flipped) -->
-      <template slot="mediaSlot">
+      <template v-if="index < (services.length - 1)" slot="mediaSlot">
         <img :src="loadImage(service.media)">
       </template>
       <!-- Content Slot (Order can be flipped) -->

@@ -60,7 +60,6 @@ export default  {
     }
   ],
 
-
   socialLinks: [
     {
       linkClass: 'fa-facebook-f',
@@ -229,8 +228,8 @@ export default  {
       ],
       action: "Learn More",
       BtnData: {
-        accessibility: 'View Our Case Studies',
-        btnRoute: '/casestudies',
+        accessibility: 'Explore our branding services.',
+        btnRoute: '/services/branding',
         btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
       },
       config: {
@@ -239,18 +238,41 @@ export default  {
       }
     },
     {
-      title: "Branding",
+      title: "web design",
       media: "bios/MDEV_BIOS-becky.png",
-      description: "A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.",
+      description: "We specialize in designing custom sites carefully crafted to showcase your unique offering. Our robust and forward- thinking web practices ensure site longevity and scalability. After a collaborative planning process, you can sit back while we put a laser-focus on all the details, large and small.",
       topics: [
-        "Corporate identities",
-        "Print & digital design",
-        "Packaging"
+        "Custom Website Design & Development",
+        "Ecommerce",
+        "Mobile-friendly Websites",
+        "Accessibility"
       ],
       action: "Learn More",
       BtnData: {
-        accessibility: 'View Our Case Studies',
-        btnRoute: '/casestudies',
+        accessibility: 'Explore our web design services.',
+        btnRoute: '/services/ui-ux',
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+      },
+      config: {
+        showDecoration: true,
+        reverse: false
+      }
+    },
+    {
+      title: "Application Development",
+      media: "bios/MDEV_BIOS-becky.png",
+      description: "Utilizing robust, scalable platforms, we build efficient, cost-effective software solutions. Our forward-thinking development practices and thorough documentation will ensure long-lasting quality and scalability, allowing your software capabilities to expand with your business.",
+      topics: [
+        "Guided Discovery",
+        "Agile Project Management",
+        "User Experience Design",
+        "User Interface Design",
+        "Workflow & Process automation"
+      ],
+      action: "Learn More",
+      BtnData: {
+        accessibility: 'Explore our App Development services.',
+        btnRoute: '/services/app-development',
         btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
       },
       config: {
@@ -259,58 +281,42 @@ export default  {
       }
     },
     {
-      title: "Branding",
+      title: "Digital Marketing",
       media: "bios/MDEV_BIOS-becky.png",
-      description: "A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.",
+      description: "Digital marketing is the art of being noticed online. With our help, carefully craft a digital marketing strategy that combines conversion-focused content with qualified lead generation to build brand awareness and drive traffic to your website.",
       topics: [
-        "Corporate identities",
-        "Print & digital design",
-        "Packaging"
+        "Search Engine Optimization",
+        "Search Engine Marketing",
+        "Social Media Marketing",
+        "Content Marketing"
       ],
       action: "Learn More",
       BtnData: {
-        accessibility: 'View Our Case Studies',
-        btnRoute: '/casestudies',
+        accessibility: 'Explore our Digital Marketing services.',
+        btnRoute: '/services/digital-marketing',
         btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
       },
       config: {
-        showDecoration: false,
-        reverse: false
+        showDecoration: true,
+        reverse: true
       }
     },
     {
-      title: "Branding",
+      title: "Support Services",
       media: "bios/MDEV_BIOS-becky.png",
-      description: "A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.",
+      description: "We offer consulting and support services to help your business run smoothly. This includes setting up your business infrastructure or identifying new ways to be efficient through process development, operational software deployments or custom application development, our ultimate goal is to help you reduce your internal costs.",
       topics: [
-        "Corporate identities",
-        "Print & digital design",
-        "Packaging"
+        "Consulting",
+        "Startup Support",
+        "Cloud Technologies",
+        "Domain Management",
+        "Domain Dispute Resolution",
+        "Gsuite Management"
       ],
       action: "Learn More",
       BtnData: {
-        accessibility: 'View Our Case Studies',
-        btnRoute: '/casestudies',
-        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
-      },
-      config: {
-        showDecoration: false,
-        reverse: false
-      }
-    },
-    {
-      title: "Branding",
-      media: "bios/MDEV_BIOS-becky.png",
-      description: "A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.",
-      topics: [
-        "Corporate identities",
-        "Print & digital design",
-        "Packaging"
-      ],
-      action: "Learn More",
-      BtnData: {
-        accessibility: 'View Our Case Studies',
-        btnRoute: '/casestudies',
+        accessibility: 'Explore our Business Support services.',
+        btnRoute: '/services/consulting',
         btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
       },
       config: {
