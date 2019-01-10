@@ -30,6 +30,7 @@
       </div>
     </hero-main>
     <!-- Service Tile Loop  -->
+    <!-- Flip checks for Odd/Even  -->
     <service-tile v-for="(service, index) in services"
       :flip="((index + 1) % 2) == 0"
       :lastChild="index < (services.length -1)"
@@ -71,7 +72,7 @@
 //Local Component registration
 import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
-import ServiceTile        from '../services/service--tile.vue';
+import FeaturedContent        from '../modules/featured-content.vue';
 import BtnPrimary         from '../shared/btn-primary.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
@@ -103,7 +104,7 @@ export default{
     'hero-main'     : HeroMain,
     'main-footer'   : MainFooter,
     'btn-primary'   : BtnPrimary,
-    'service-tile'   : ServiceTile
+    'service-tile'   : FeaturedContent
   }
 };
 </script>

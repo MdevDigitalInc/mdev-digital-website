@@ -12,6 +12,7 @@
       </div>
     </div>
     <!-- Optional decorations -->
+    <!-- flip changes based on config flag -->
     <div
       v-if="serviceConfig.showDecoration"
       class="d-divider flex flex-nowrap flex-vert-center"
