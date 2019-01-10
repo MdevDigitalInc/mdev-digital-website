@@ -208,50 +208,6 @@ export default  {
           linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
         }
       ]
-    },
-    {
-      employeeName: "Richard Goodine",
-      employeeTitle: "Full Stack Developer",
-      employeeRoute: "richard-goodine",
-      employeeIntro: "TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-         innovative solutions to complex problems. Able to distill client goals into a cohesive \
-         creative vision that she communicates to the team for execution.",
-      employeeStory: [
-        "After years of leading creative and software projects, Becky has developed an uncanny \
-        ability to navigate complex timing and requirements to ensure succesful project completeion",
-        "Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-        committee and as a LTUX Committee Member for the #ldnont chapter."
-      ],
-      employeeOrigin: "Timmins, ON",
-      employeeQuote: "Fear is the mind killer.",
-      employeeTrick: "Coffee Fanatic / InDesign Wizard / Agility",
-      employeeImage: "bios/MDEV_BIOS-becky.png",
-      socialLinks: [
-        {
-          linkClass: 'fa-facebook-f',
-          target: '_blank',
-          accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
-        },
-        {
-          linkClass: 'fa-instagram',
-          target: '_blank',
-          accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
-        },
-        {
-          linkClass: 'fa-twitter',
-          target: '_blank',
-          accessibility: 'Follow us on Twitter',
-          linkUrl: 'https://twitter.com/MDEVdigital'
-        },
-        {
-          linkClass: 'fa-linkedin',
-          target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-        }
-      ]
     }
   ],
 
@@ -259,7 +215,109 @@ export default  {
     'lucas-moreira',
     'becky-domenico',
     'haly-hawkins',
-    'richard-goodine'
+  ],
+
+  services: [
+    {
+      title: "Branding",
+      media: "bios/MDEV_BIOS-becky.png",
+      description: "A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.",
+      topics: [
+        "Corporate identities",
+        "Print & digital design",
+        "Packaging"
+      ],
+      action: "Learn More",
+      BtnData: {
+        accessibility: 'View Our Case Studies',
+        btnRoute: '/casestudies',
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+      },
+      config: {
+        showDecoration: false,
+        reverse: false
+      }
+    },
+    {
+      title: "Branding",
+      media: "bios/MDEV_BIOS-becky.png",
+      description: "A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.",
+      topics: [
+        "Corporate identities",
+        "Print & digital design",
+        "Packaging"
+      ],
+      action: "Learn More",
+      BtnData: {
+        accessibility: 'View Our Case Studies',
+        btnRoute: '/casestudies',
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+      },
+      config: {
+        showDecoration: false,
+        reverse: false
+      }
+    },
+    {
+      title: "Branding",
+      media: "bios/MDEV_BIOS-becky.png",
+      description: "A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.",
+      topics: [
+        "Corporate identities",
+        "Print & digital design",
+        "Packaging"
+      ],
+      action: "Learn More",
+      BtnData: {
+        accessibility: 'View Our Case Studies',
+        btnRoute: '/casestudies',
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+      },
+      config: {
+        showDecoration: false,
+        reverse: false
+      }
+    },
+    {
+      title: "Branding",
+      media: "bios/MDEV_BIOS-becky.png",
+      description: "A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.",
+      topics: [
+        "Corporate identities",
+        "Print & digital design",
+        "Packaging"
+      ],
+      action: "Learn More",
+      BtnData: {
+        accessibility: 'View Our Case Studies',
+        btnRoute: '/casestudies',
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+      },
+      config: {
+        showDecoration: false,
+        reverse: false
+      }
+    },
+    {
+      title: "Branding",
+      media: "bios/MDEV_BIOS-becky.png",
+      description: "A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.",
+      topics: [
+        "Corporate identities",
+        "Print & digital design",
+        "Packaging"
+      ],
+      action: "Learn More",
+      BtnData: {
+        accessibility: 'View Our Case Studies',
+        btnRoute: '/casestudies',
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+      },
+      config: {
+        showDecoration: false,
+        reverse: false
+      }
+    },
   ],
 
   testimonials: [

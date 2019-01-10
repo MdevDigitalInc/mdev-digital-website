@@ -51,8 +51,8 @@ border-spacing: 0;
 html {
   box-sizing: border-box;
 }
-  *, *:before, *:after {
-  box-sizing: inherit;
+*, *:before, *:after {
+  box-sizing: border-box;
 }
 
 /* stylelint-enable */

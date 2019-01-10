@@ -29,9 +29,13 @@
         <div class="mdev-sexy-line --sexy-green" data-line-three></div>
       </div>
     </hero-main>
-    <service-tile v-for="(service, index) in services">
+    <!-- Service Tile Loop  -->
+    <service-tile v-for="(service, index) in services" :serviceConfig="service.config">
+      <!-- Media Slot (Order can be flipped) -->
       <template slot="mediaSlot">
+        <img :src="loadImage(service.media)">
       </template>
+      <!-- Content Slot (Order can be flipped) -->
       <template slot="contentSlot">
         <span class="mdev-service-index">
           0{{ index + 1 }}
@@ -42,6 +46,7 @@
         <p>
           {{ service.description }}
         </p>
+        <!-- Topics Loop -->
         <ul>
           <li v-for="topic in service.topics">
             {{ topic }}
@@ -65,6 +70,8 @@ import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
 import ServiceTile        from '../services/service--tile.vue';
 import BtnPrimary         from '../shared/btn-primary.vue';
+// Import Data From Flat File
+import MdevData       from '../../mdev-data.js';
 
 export default{
   name: 'ServicesAll',
@@ -79,26 +86,9 @@ export default{
       connectAnim: 'contact/MDEV_HEADER_connect_animated.svg',
       withAnim: 'contact/MDEV_HEADER_with.svg',
       usAnim: 'contact/MDEV_HEADER_us_animated.svg',
+      // Services loaded from flat file
+      services: MdevData.services
 
-      // Services listed
-      services: [
-        {
-          title: "Branding",
-          description: "A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.",
-          topics: [
-            "Corporate identities",
-            "Print & digital design",
-            "Packaging"
-          ],
-          action: "Learn More",
-          BtnData: {
-            accessibility: 'View Our Case Studies',
-            btnRoute: '/casestudies',
-            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
-          },
-          media: "bios/MDEV_BIOS-becky.png"
-        },
-      ]
     };
   },
 
