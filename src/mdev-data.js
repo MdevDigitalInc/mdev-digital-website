@@ -230,7 +230,7 @@ export default  {
       BtnData: {
         accessibility: 'Explore our branding services.',
         btnRoute: '/services/branding',
-        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
       },
       config: {
         showDecoration: false,
@@ -251,7 +251,7 @@ export default  {
       BtnData: {
         accessibility: 'Explore our web design services.',
         btnRoute: '/services/ui-ux',
-        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
       },
       config: {
         showDecoration: true,
@@ -273,7 +273,7 @@ export default  {
       BtnData: {
         accessibility: 'Explore our App Development services.',
         btnRoute: '/services/app-development',
-        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
       },
       config: {
         showDecoration: false,
@@ -294,7 +294,7 @@ export default  {
       BtnData: {
         accessibility: 'Explore our Digital Marketing services.',
         btnRoute: '/services/digital-marketing',
-        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
       },
       config: {
         showDecoration: true,
@@ -303,7 +303,7 @@ export default  {
     },
     {
       title: "Support Services",
-      media: "bios/MDEV_BIOS-becky.png",
+      media: false,
       description: "We offer consulting and support services to help your business run smoothly. This includes setting up your business infrastructure or identifying new ways to be efficient through process development, operational software deployments or custom application development, our ultimate goal is to help you reduce your internal costs.",
       topics: [
         "Consulting",
@@ -317,7 +317,7 @@ export default  {
       BtnData: {
         accessibility: 'Explore our Business Support services.',
         btnRoute: '/services/consulting',
-        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
       },
       config: {
         showDecoration: false,

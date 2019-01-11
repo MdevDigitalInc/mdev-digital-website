@@ -17,7 +17,7 @@
              <a data-header-btn
                 href="#contactus"
                 title="Contact Us"
-                class="mdev-btn mdev-primary-btn --space-top-sm">
+                class="mdev-btn mdev-primary-btn --space-top-xs">
                {{ $t('contact.headerBtn') }}
              </a>
           </div>
@@ -32,11 +32,14 @@
     <!-- Service Tile Loop  -->
     <!-- Flip checks for Odd/Even  -->
     <service-tile v-for="(service, index) in services"
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 0"
-      :lastChild="index < (services.length -1)"
+      :media="service.media"
+      v-in-viewport
+      class="a-fade-in"
       :serviceConfig="service.config">
       <!-- Media Slot (Order can be flipped) -->
-      <template v-if="index < (services.length - 1)" slot="mediaSlot">
+      <template v-if="service.media" slot="mediaSlot">
         <img :src="loadImage(service.media)">
       </template>
       <!-- Content Slot (Order can be flipped) -->
@@ -44,14 +47,14 @@
         <span class="mdev-service-index">
           0{{ index + 1 }}
         </span>
-        <h2>
+        <h2 class="mdev-service-title">
           {{ service.title }}
         </h2>
-        <p>
+        <p class="mdev-service-desc">
           {{ service.description }}
         </p>
         <!-- Topics Loop -->
-        <ul>
+        <ul class="mdev-service-topics">
           <li v-for="topic in service.topics">
             {{ topic }}
           </li>
@@ -69,6 +72,24 @@
 
 
 <script>
+// [ Documentation ] - services-parent
+// -----------------------------------------
+//
+// [ Dependencies ]
+// hero-main - Main hero component with slots, content is passed from this component onto hero.
+// main-footer - Site wide main footer
+// featured-content - Simple scaffolding component designed for services page. Content comes from this component.
+// btn-primary - Site wide primary button
+//
+// [ Description ]
+// This is a versatile component designed primarily for the services page. It has great
+// flexibility in terms of presentation. The basics of this component are 2 slots, one
+// for media and one for content. As such this element is only concerned with scaffolding.
+// Meaning it will keep both slots separate at a 40/60 split with ability to swap between.
+//
+// These slots can be re-arranged based on the flags passed by the parent. By virtue of
+// having slots this element can easily take in different markup and presentation.
+
 //Local Component registration
 import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
