@@ -45,7 +45,8 @@
       :serviceConfig="service.config">
       <!-- Media Slot (Order can be flipped) -->
       <template v-if="service.media" slot="mediaSlot">
-        <img :src="loadImage(service.media.image)">
+        <img :alt="service.media.imageDesc" :src="loadImage(service.media.image)" class="u-desk-only">
+        <img :alt="service.media.imageDesc" :src="loadImage(service.media.imageMob)" class="u-phone-only">
       </template>
       <!-- Content Slot (Order can be flipped) -->
       <template slot="contentSlot">
@@ -72,6 +73,8 @@
         </btn-primary>
       </template>
     </service-tile>
+    <!-- Footer -->
+    <main-footer></main-footer>
   </section>
 </template>
 
@@ -171,7 +174,7 @@ export default{
 
 .mdev-center {
   width: 100%;
-  padding: 0 5%;
+  padding: 0 13%;
   @include center(both);
 
   @media #{$tablet-only} {
@@ -192,14 +195,15 @@ export default{
   }
 
   @media #{$phone-only} {
-    padding-top: 180%;
+    padding-top: 150%;
+    padding-bottom: 10%;
   }
 }
 
 .mdev-service {
   .mdev-service-index {
-    font-weight: 100;
     font-size: 40px;
+    line-height: 1.5;
   }
 
   .mdev-service-topics {
@@ -208,6 +212,10 @@ export default{
 
   .mdev-service-desc {
     width: 80%;
+
+    @media #{$portrait} {
+      width: 100%;
+    }
   }
 }
 

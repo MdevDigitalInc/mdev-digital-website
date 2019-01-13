@@ -68,21 +68,29 @@ export default{
   width: 100%;
   position: relative;
 
+  // Applies to all images
   img {
     width: 100%;
   }
 
+  // Feature wrapper to keep things centered
   .mdev-featured-wrapper {
     width: 80%;
     margin: 0 auto;
 
     @media #{$portrait} {
-      width: 95%;
+      width: 80%;
       flex-wrap: wrap;
+    }
+
+    @media #{$phone-only} {
+      width: 78%;
     }
   }
 
-  // Default Media to the left
+  // Media portion of the split
+  // Before pseudo element controls the background green lines
+  // They are merely decorative and get overriden often
   .mdev-service-media {
     width: 30%;
     order: 1;
@@ -91,10 +99,11 @@ export default{
     z-index: 2;
 
     @media #{$portrait} {
-      width: 80%;
-      margin: 0 auto;
+      width: 100%;
+      margin: 100px auto;
     }
 
+    // Green decorative background lines
     &:before {
       @include pseudo();
       top: 25%;
@@ -103,9 +112,16 @@ export default{
       bottom: -50px;
       z-index: -1;
       border: 4px solid $color-brand-accent;
+
+      @media #{$portrait} {
+        top: -50px;
+        left: -100px;
+        bottom: 50px;
+      }
     }
   }
 
+  // Content portion of the split
   .mdev-service-content {
     width: 60%;
     order: 2;
@@ -115,20 +131,8 @@ export default{
     }
   }
 
-  // Flips media to the right
-  .--flip-order {
-    .mdev-service-media {
-      margin-left: 5vw;
-      margin-right: 0;
-      order: 3;
-
-      &:before {
-        right: -50px;
-        left: 10%;
-      }
-    }
-  }
-
+  // Applies to blocks that have no image associated
+  // Overrides a series of internal pieces.
   .--nomedia {
     width: 95%;
     display: flex;
@@ -142,22 +146,66 @@ export default{
 
     .mdev-service-desc {
       width: 60%;
+
+      @media #{$portrait} {
+        width: 100%;
+      }
     }
 
     .mdev-service-topics {
       width: 30%;
       margin-top: 0;
+
+      @media #{$portrait} {
+        width: 100%;
+        margin-top: 25px;
+      }
     }
   }
 }
 
+// Flips media to the right
+// Every other block in this layout is flipped
+// Includes provisions to change the background lines
+.--flip-order .mdev-service-media {
+  margin-left: 5vw;
+  margin-right: 0;
+  order: 3;
+
+  @media #{$portrait} {
+    order: 1;
+    margin: 100px auto;
+  }
+
+  // Green decorative lines
+  &:before {
+    right: -50px;
+    left: 10%;
+    @media #{$portrait} {
+      top: -50px;
+      left: -100px;
+      bottom: 50px;
+      right: 15%;
+    }
+  }
+}
+
+// Square media -Refers to square images in Desktop presentation
+// They have different needs in terms of the backgbround lines
+// Since they are centered with the image
 .--square-media {
 
   .mdev-service-media,
   .mdev-service-content {
     width: 50%;
+
+    @media #{$portrait} {
+      width: 100%;
+    }
   }
 
+  // Overrides media presentation for default and flipped configrations
+  // Meaning, this will overrides all.
   .mdev-service-media,
   .--flip-order .mdev-service-media {
       &:before {
@@ -165,10 +213,16 @@ export default{
       bottom: -50px;
       left: 15%;
       right: 15%;
+
+      @media #{$portrait} {
+        left: 10%;
+        top: -50px;
+        bottom: -50px;
+        right: 10%;
+      }
     }
   }
 }
 
 /*--------------------------------------*/
-
 </style>

@@ -143,3 +143,19 @@
 .--body-white {
   background: $white;
 }
+
+.u-desk-only {
+  display: none;
+
+  @media #{$landscape} {
+    display: block;
+  }
+}
+
+.u-phone-only {
+  display: none;
+
+  @media #{$portrait} {
+    display: block;
+  }
+}

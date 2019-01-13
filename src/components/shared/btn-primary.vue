@@ -1,8 +1,8 @@
 <template>
   <router-link
     v-in-viewport
-    title="BtnData.accessibility"
-    aria-label="BtnData.accessibility"
+    :title="BtnData.accessibility"
+    :aria-label="BtnData.accessibility"
     class="mdev-btn"
     :class="BtnData.btnClass"
     :to="BtnData.btnRoute">
