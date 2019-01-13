@@ -219,7 +219,12 @@ export default  {
   services: [
     {
       title: "Branding",
-      media: "bios/MDEV_BIOS-becky.png",
+      media: {
+        background: {
+          backgroundImage: "services/service-webdesign.jpeg"
+        },
+        squareImg: false
+      },
       description: "A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.",
       topics: [
         "Corporate identities",
@@ -239,7 +244,12 @@ export default  {
     },
     {
       title: "web design",
-      media: "bios/MDEV_BIOS-becky.png",
+      media: {
+        background: {
+          backgroundImage: "services/service-webdesign.jpeg"
+        },
+        squareImg: true,
+      },
       description: "We specialize in designing custom sites carefully crafted to showcase your unique offering. Our robust and forward- thinking web practices ensure site longevity and scalability. After a collaborative planning process, you can sit back while we put a laser-focus on all the details, large and small.",
       topics: [
         "Custom Website Design & Development",
@@ -259,8 +269,13 @@ export default  {
       }
     },
     {
-      title: "Application Development",
-      media: "bios/MDEV_BIOS-becky.png",
+      title: "Apps & Software",
+      media: {
+        background: {
+          backgroundImage: "services/service-webdesign.jpeg"
+        },
+        squareImg: true
+      },
       description: "Utilizing robust, scalable platforms, we build efficient, cost-effective software solutions. Our forward-thinking development practices and thorough documentation will ensure long-lasting quality and scalability, allowing your software capabilities to expand with your business.",
       topics: [
         "Guided Discovery",
@@ -282,7 +297,12 @@ export default  {
     },
     {
       title: "Digital Marketing",
-      media: "bios/MDEV_BIOS-becky.png",
+      media: {
+        background: {
+          backgroundImage: "services/service-branding.jpeg"
+        },
+        squareImg: false
+      },
       description: "Digital marketing is the art of being noticed online. With our help, carefully craft a digital marketing strategy that combines conversion-focused content with qualified lead generation to build brand awareness and drive traffic to your website.",
       topics: [
         "Search Engine Optimization",

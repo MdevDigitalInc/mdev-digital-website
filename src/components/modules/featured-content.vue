@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-featured-content --section-space">
-    <div class="mdev-featured-wrapper flex flex-vert-center flext-hor-center"
+    <div class="mdev-featured-wrapper flex flex-vert-start flex-hor-center"
       :class="{ '--flip-order' : flip }">
       <!-- Media slot for image -->
       <div v-if="media" class="mdev-service-media">
@@ -75,28 +75,65 @@ export default{
   .mdev-featured-wrapper {
     width: 80%;
     margin: 0 auto;
+
+    @media #{$portrait} {
+      width: 95%;
+      flex-wrap: wrap;
+    }
   }
 
+  // Default Media to the left
   .mdev-service-media {
-    width: 40%;
+    width: 30%;
     order: 1;
+    margin-right: 5vw;
+    position: relative;
+    z-index: 2;
+
+    @media #{$portrait} {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    &:before {
+      @include pseudo();
+      top: 25%;
+      left: -50px;
+      right: 10%;
+      bottom: -50px;
+      z-index: -1;
+      border: 4px solid $color-brand-accent;
+    }
   }
 
   .mdev-service-content {
     width: 60%;
     order: 2;
+
+    @media #{$portrait} {
+      width: 100%;
+    }
   }
 
+  // Flips media to the right
   .--flip-order {
     .mdev-service-media {
+      margin-left: 5vw;
+      margin-right: 0;
       order: 3;
+
+      &:before {
+        right: -50px;
+        left: 10%;
+      }
     }
   }
 
   .--nomedia {
-    width: 100%;
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     .mdev-service-index,
     .mdev-service-title {
@@ -108,11 +145,29 @@ export default{
     }
 
     .mdev-service-topics {
-      width: 40%;
+      width: 30%;
+      margin-top: 0;
     }
   }
 }
 
+.--square-media {
+
+  .mdev-service-media,
+  .mdev-service-content {
+    width: 50%;
+  }
+
+  .mdev-service-media,
+  .--flip-order .mdev-service-media {
+      &:before {
+      top: -50px;
+      bottom: -50px;
+      left: 15%;
+      right: 15%;
+    }
+  }
+}
 
 /*--------------------------------------*/
 

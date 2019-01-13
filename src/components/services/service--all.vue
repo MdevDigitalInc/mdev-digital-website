@@ -7,10 +7,14 @@
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header">
           <div class="mdev-center">
-            <h1 class="u-c-primary">
+            <h1
+              data-intro-heading
+              class="u-c-primary a-blur-in">
               {{ $t('servicepage.intro.heading') }}
             </h1>
-            <p class="u-c-white">
+            <p
+              data-intro-subhead
+              class="u-c-white a-blur-in">
               {{ $t('servicepage.intro.subHeading') }}
             </p>
 
@@ -36,26 +40,29 @@
       :flip="((index + 1) % 2) == 0"
       :media="service.media"
       v-in-viewport
-      class="a-fade-in"
+      class="a-fade-in mdev-service"
+      :class="{ '--square-media' : service.media.squareImg }"
       :serviceConfig="service.config">
       <!-- Media Slot (Order can be flipped) -->
       <template v-if="service.media" slot="mediaSlot">
-        <img :src="loadImage(service.media)">
+        <div class="mdev-service-img" :style="service.media.background"
       </template>
       <!-- Content Slot (Order can be flipped) -->
       <template slot="contentSlot">
-        <span class="mdev-service-index">
+        <span class="mdev-service-index a-fade-in" v-in-viewport>
           0{{ index + 1 }}
         </span>
-        <h2 class="mdev-service-title">
+        <h2 class="mdev-service-title u-uppercase a-fade-in" v-in-viewport>
           {{ service.title }}
         </h2>
-        <p class="mdev-service-desc">
+        <p class="mdev-service-desc a-fade-in" v-in-viewport>
           {{ service.description }}
         </p>
         <!-- Topics Loop -->
-        <ul class="mdev-service-topics">
-          <li v-for="topic in service.topics">
+        <ul class="mdev-service-topics --space-top-xs a-fade-in" v-in-viewport>
+          <li
+            class="u-uppercase u-bold"
+            v-for="topic in service.topics">
             {{ topic }}
           </li>
         </ul>
@@ -118,7 +125,15 @@ export default{
   },
 
   mounted: function() {
-    $('[data-header-btn]').addClass('fully-in-viewport');
+    setTimeout(() => {
+      $('[data-intro-heading]').addClass('fully-in-viewport');
+    }, 300);
+    setTimeout(() => {
+      $('[data-intro-subhead]').addClass('fully-in-viewport');
+    }, 900);
+    setTimeout(() => {
+      $('[data-header-btn]').addClass('fully-in-viewport');
+    }, 1500);
   },
 
   components: {
@@ -178,6 +193,21 @@ export default{
 
   @media #{$phone-only} {
     padding-top: 180%;
+  }
+}
+
+.mdev-service {
+  .mdev-service-index {
+    font-weight: 100;
+    font-size: 40px;
+  }
+
+  .mdev-service-topics {
+    line-height: 1.82;
+  }
+
+  .mdev-service-desc {
+    width: 80%;
   }
 }
 
