@@ -45,7 +45,7 @@
       :serviceConfig="service.config">
       <!-- Media Slot (Order can be flipped) -->
       <template v-if="service.media" slot="mediaSlot">
-        <div class="mdev-service-img" :style="service.media.background"
+        <img :src="loadImage(service.media.image)">
       </template>
       <!-- Content Slot (Order can be flipped) -->
       <template slot="contentSlot">

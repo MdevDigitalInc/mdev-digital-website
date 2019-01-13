@@ -220,9 +220,7 @@ export default  {
     {
       title: "Branding",
       media: {
-        background: {
-          backgroundImage: "services/service-webdesign.jpeg"
-        },
+        image: "services/service-branding.jpeg",
         squareImg: false
       },
       description: "A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.",
@@ -240,14 +238,12 @@ export default  {
       config: {
         showDecoration: false,
         reverse: false
-      }
+    }
     },
     {
       title: "web design",
       media: {
-        background: {
-          backgroundImage: "services/service-webdesign.jpeg"
-        },
+        image: "services/service-webdesign.jpeg",
         squareImg: true,
       },
       description: "We specialize in designing custom sites carefully crafted to showcase your unique offering. Our robust and forward- thinking web practices ensure site longevity and scalability. After a collaborative planning process, you can sit back while we put a laser-focus on all the details, large and small.",
@@ -271,9 +267,7 @@ export default  {
     {
       title: "Apps & Software",
       media: {
-        background: {
-          backgroundImage: "services/service-webdesign.jpeg"
-        },
+        image: "services/service-webdesign.jpeg",
         squareImg: true
       },
       description: "Utilizing robust, scalable platforms, we build efficient, cost-effective software solutions. Our forward-thinking development practices and thorough documentation will ensure long-lasting quality and scalability, allowing your software capabilities to expand with your business.",
@@ -298,9 +292,7 @@ export default  {
     {
       title: "Digital Marketing",
       media: {
-        background: {
-          backgroundImage: "services/service-branding.jpeg"
-        },
+        image: "services/service-branding.jpeg",
         squareImg: false
       },
       description: "Digital marketing is the art of being noticed online. With our help, carefully craft a digital marketing strategy that combines conversion-focused content with qualified lead generation to build brand awareness and drive traffic to your website.",
