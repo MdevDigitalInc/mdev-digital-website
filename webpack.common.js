@@ -8,8 +8,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require ('html-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const setPath = function(folderName) {
@@ -39,6 +39,15 @@ module.exports = {
     runtimeChunk: false,
     splitChunks: {
       chunks: "all", //Taken from https://gist.github.com/sokra/1522d586b8e5c0f5072d7565c2bee693
+      // Cache groups to separate SCSS
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.(sa|sc|c)ss$/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
     }
   },
   // Find Node Modules
@@ -65,52 +74,40 @@ module.exports = {
           }
         }
       },
+      {
+        test: /\.pug$/,
+        loader: 'pug-plain-loader'
+      },
       // JS Processing & Transpiling
       {
         test: /\.js$/,
           exclude: /(node_modules)/,
           use: [{
             loader: "babel-loader",
-            options: { presets: ['es2015'] }
+            options: { presets: ['env'] }
           }]
       },
-      // CSS Processing
+      // CSS & SCSS Processing
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-        fallback: "style-loader",
-          use: ["css-loader"]
-        })
-      },
-      // SASS Processing
-      {
-        test: /\.scss$/,
-        use:
-        ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 2 // 0 => no loaders (default); 1 => postcss-loader; 2 => postcss-loader, sass-loader
-              }
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              // Load common SCSS [ Vars & Mixins ]
+              resources: './src/assets/styles/component-lean-main.scss',
             },
-            'postcss-loader',
-            'sass-loader',
-            {
-              loader: 'sass-resources-loader',
-              // Import Global Stylesheets
-              options: {
-                resources: './src/assets/styles/component-lean-main.scss' // Contains Mixins / Variables only
-              }
-            }
-          ]
-        }),
+          }
+        ],
       },
       // Image Processing
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
-        loaders: [ 'file-loader?context=src/images&name=images/[path][name].[ext]', {
+        loaders: [ 'file-loader?context=src/assets/images&name=assets/images/[path][name].[ext]', {
           loader: 'image-webpack-loader',
           query: {
             // JPEG Processing
@@ -152,11 +149,13 @@ module.exports = {
       syntax: 'scss',
       files: ['**/*.vue']
     }),
-    // Text Extraction & Chunking
-    new ExtractTextPlugin("assets/styles/styles[hash].css"),
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
+    // CSS Output
+    new MiniCssExtractPlugin({
+      filename: "assets/styles/styles-[hash].css"
+    })
   ],
   resolve: {
     alias: {
