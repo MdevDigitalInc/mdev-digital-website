@@ -111,7 +111,7 @@ export const routes = [
         component: ServicesConsulting
       },
       {
-        path: 'digital-advertising',
+        path: 'digital-marketing',
         component: ServicesDigiAds
       },
       {

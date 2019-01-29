@@ -105,6 +105,11 @@ export default {
   },
 
   servicepage: {
+    intro: {
+      heading: "We create with the future in mind; longevity and scalability are of key importance as we develop brands, websites and products.",
+      subHeading: "Our process of guided discovery and collaboration allows us to gain a deep understanding of your business and technology landscape to ensure we are delivering an end result that is the right fit for you.",
+      action: "Our Process"
+    }
   },
 
   aboutpage: {

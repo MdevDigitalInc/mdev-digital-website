@@ -84,6 +84,10 @@
   }
 }
 
+.mdev-btn-dark-text {
+  color: $black;
+}
+
 $border-time: .4s;
 // Utilizing the vue-in-viewport-directive Package
 .mdev-primary-btn.fully-in-viewport,

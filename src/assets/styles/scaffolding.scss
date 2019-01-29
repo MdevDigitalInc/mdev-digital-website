@@ -99,10 +99,18 @@
 
 .--space-top-sm {
   margin-top: 50px;
+
+  @media #{$phone-only} {
+    margin-top: 25px;
+  }
 }
 
 .--space-top-xs {
   margin-top: 25px;
+
+  @media #{$phone-only} {
+    margin-top: 15px;
+  }
 }
 
 // Flex Modifiers

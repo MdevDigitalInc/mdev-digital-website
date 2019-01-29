@@ -7,7 +7,7 @@
         <img :src="loadImage(mdevBrand)" alt="MDEV Digital Logo" />
       </a>
       <div class="mdev-footer-copyright">
-          &copy; MDEV Digital Inc. 2018
+          &copy; MDEV Digital Inc. {{year}}
           <span class="--divider"> | </span>
           <a href="#" title="View our Sitemap">Sitemap</a>
       </div>
@@ -21,8 +21,13 @@
     name: 'mainFooter',
     data: function(){
       return{
-        mdevBrand: 'svg/MDEV_RGB_Icon_Primary_Reverse.svg'
+        mdevBrand: 'svg/MDEV_RGB_Icon_Primary_Reverse.svg',
+        year: null
       };
+    },
+
+    created: function() {
+      this.year = (new Date()).getFullYear();
     }
   };
 </script>

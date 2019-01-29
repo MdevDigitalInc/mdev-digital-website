@@ -7,6 +7,23 @@
 $blur-anim-props: filter 1s, opacity .6s;
 
 // Starting State
+.a-fade-in {
+  opacity: 0;
+  transition: $blur-anim-props;
+}
+
+// End State - Triggered by in-viewport directive
+.a-fade-in.fully-in-viewport,
+.a-fade-in.in-viewport,
+.a-fade-in.above-viewport,
+.a-fade-in-lnd.fully-in-viewport,
+.a-fade-in-lnd.in-viewport,
+.a-fade-in-lnd.above-viewport {
+  opacity: 1;
+}
+
+
+// Starting State
 .a-blur-in {
   filter: blur(3px);
   opacity: 0;
