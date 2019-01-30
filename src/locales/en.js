@@ -112,6 +112,10 @@ export default {
     }
   },
 
+  brandingpage: {
+    intro: "Every business has a unique story - what’s yours? Whether you’re launching a startup, releasing a new product or service, or overhauling your current brand, we can help you discover your voice and your style."
+  },
+
   aboutpage: {
   },
 

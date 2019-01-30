@@ -61,7 +61,7 @@ export default {
       },
       // Disables Page Title bar
       pageTitle: 'TESTY TEST TEST',
-      headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.',
+      headerDsc: 'TODO',
       connectAnim: 'contact/MDEV_HEADER_connect_animated.svg',
       withAnim: 'contact/MDEV_HEADER_with.svg',
       usAnim: 'contact/MDEV_HEADER_us_animated.svg'
