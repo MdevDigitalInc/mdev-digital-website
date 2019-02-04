@@ -26,8 +26,9 @@ const robotOptions = {
   policy: [
     {
       userAgent: "Googlebot",
-      allow: "/",
-      disallow: ["/search"],
+      //allow: "/",
+      //disallow: ["/search"],
+      disallow: ["/"],
       crawlDelay: 2
     },
     {
@@ -38,8 +39,9 @@ const robotOptions = {
     },
     {
       userAgent: "*",
-      allow: "/",
-      disallow: "/search",
+      //allow: "/",
+      disallow: "/",
+      //disallow: "/search",
       crawlDelay: 10,
       cleanParam: "ref /articles/"
     }
