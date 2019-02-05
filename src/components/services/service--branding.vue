@@ -5,12 +5,12 @@
       <!-- Slot Content -->
       <div class="mdev-main-hero --hero-padding" :style="heroStyles">
         <!-- Vivus Namespace -->
-        <div class="mdev-vivus-header --vivus-contact">
+        <div class="mdev-vivus-header --vivus-branding">
           <div class="mdev-center">
             <object class="--branding-tell" id="anim-tell" type="image/svg+xml" :data="loadImage(tellAnim)"></object>
             <object class="--branding-your" id="anim-your" type="image/svg+xml" :data="loadImage(yourAnim)"></object>
             <!-- Bottom Container -->
-            <div class="flex flex-vert-start --portrait-wrap --phone-center">
+            <div class="flex flex-vert-start --portrait-wrap">
               <object class="--branding-story" id="anim-story" type="image/svg+xml" :data="loadImage(storyAnim)"></object>
               <!-- CTA Text & Button -->
               <div data-header-intro class="--header-cta">
@@ -28,6 +28,19 @@
         <div class="mdev-sexy-line --sexy-green" data-line-three></div>
       </div>
     </hero-main>
+    <!-- Chapter Heading -->
+    <chapter-heading
+      :chapterIndex="chapter.index"
+      :chapterTitle="chapter.title"></chapter-heading>
+    <!-- Chapter Content -->
+
+
+    <!-- Chapter Link -->
+    <chapter-link
+      :chapterIndex="chapter.next.index"
+      :chapterLink="chapter.next.link"
+      :a11y="chapter.next.a11y"
+      :chapterTitle="chapter.next.title"></chapter-link>
   </section>
 </template>
 
@@ -38,9 +51,24 @@
 // Local Component Registration
 import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
+import ChapterHeading     from '../shared/chapter-heading.vue';
+import ChapterLink        from '../shared/chapter-link.vue';
 
 export default{
   name: 'ServicesBranding',
+  // TODO - Edit meta Title
+  // SEE - https://github.com/ktquez/vue-head
+  head: {
+    title: {
+      inner: 'Branding Services',
+      complement: 'MDEV Digital - London, Ontario'
+    },
+    meta: [
+      { property: 'og:title', content: 'Branding Services | MDEV Digital - London, Ontario ' },
+      { name: 'twitter:title', content: 'Branding Services | MDEV Digital - London, Ontario ' }
+
+    ]
+  },
   data: function(){
     return{
       heroStyles: {
@@ -51,7 +79,18 @@ export default{
       headerDsc: 'Tell Your Story',
       tellAnim: 'services/branding/MDEV_HEADER_tell_animated.svg',
       yourAnim: 'services/branding/MDEV_HEADER_your_animated.svg',
-      storyAnim: 'services/branding/MDEV_HEADER_story_animated.svg'
+      storyAnim: 'services/branding/MDEV_HEADER_story_animated.svg',
+
+      chapter: {
+        title: 'Branding',
+        index: '01',
+        next: {
+          title: 'Web Design Services',
+          index: '02',
+          link: '/services/ui-ux',
+          a11y: 'See our web design services'
+        }
+      }
     };
   },
 
@@ -78,8 +117,10 @@ export default{
   },
 
   components: {
-    'hero-main'     : HeroMain,
-    'main-footer'   : MainFooter
+    'hero-main'      : HeroMain,
+    'main-footer'    : MainFooter,
+    'chapter-heading': ChapterHeading,
+    'chapter-link'   : ChapterLink
   }
 };
 </script>
@@ -94,6 +135,8 @@ export default{
 /*-------------------------------------*/
 /* CONTACT Component Styles
 /--------------------------------------*/
+$heading-top-padding: 50px;
+$heading-top-padding-mob: 10px;
 
 .mdev-vivus-header {
   width: 100%;
@@ -116,35 +159,44 @@ export default{
   }
 }
 
-.--vivus-contact {
+.--vivus-branding {
 
   .--branding-tell {
-    width: 45%;
+    width: 40%;
+    margin-bottom: $heading-top-padding;
 
     @media #{$portrait} {
-      width: 100%;
+      width: 44%;
+      margin-bottom: $heading-top-padding-mob;
     }
   }
 
   .--branding-your {
-    width: 52%;
+    width: 47%;
+    margin-bottom: $heading-top-padding;
+    transform: translatey(5px);
 
     @media #{$portrait} {
-      width: 100%;
+      width: 52%;
+      transform: translatey(0);
+      margin-bottom: $heading-top-padding-mob;
     }
   }
 
   .--branding-story {
-    width: 60%;
+    width: 55%;
+    margin-right: 30px;
 
     @media #{$portrait} {
-      width: 100%;
+      width: 70%;
+      margin-bottom: $heading-top-padding-mob;
+      margin-right: 0;
     }
   }
 
   .--header-cta {
     opacity: 0;
-    width: 30%;
+    width: 40%;
     transition: opacity 1.2s;
 
     @media #{$portrait} {
@@ -169,10 +221,15 @@ export default{
 
   .mdev-center {
     @include center(both);
-    width: 80%;
+    width: 70%;
 
     @media #{$portrait} {
-      text-align: center;
+      text-align: left;
+      width: 80%;
+      padding: 0;
+    }
+
+    @media #{$tablet-prt-only} {
       width: 75%;
     }
   }
