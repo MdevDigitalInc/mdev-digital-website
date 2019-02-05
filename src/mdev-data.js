@@ -346,6 +346,47 @@ export default  {
     },
   ],
 
+  branding: {
+    chapter: {
+      title: 'Branding',
+      index: '01',
+      next: {
+        title: 'Web Design Services',
+        index: '02',
+        link: '/services/ui-ux',
+        a11y: 'See our web design services'
+      }
+    },
+    services: [
+      {
+        preTitle: false,
+        title: 'Think before you brand',
+        subTitle: 'Corporate identity systems',
+        description: 'Systems Creating a brand with impact is crucial for any product or company to be noticed. We can help you develop a new brands, refresh an exist logo, or work with you to consolidate your existing brands into a cohesive corporate identity system.',
+        topics: [
+          'Logo design',
+          'Corporate Identity Systems',
+          'Brand &amp; style guidelines',
+          'Business card &amp; stationery packages'
+        ],
+        caseStudy: {
+          action: 'View case study',
+          hook: 'NEED TEXT HERE TODO',
+          BtnData: {
+            accessibility: 'View our Branding case study',
+            btnRoute: '/casestudy',
+            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
+          },
+          reverse: false
+        },
+        media: {
+          image: 'services/branding/branding-corporated-id.jpeg',
+          imageDesc: 'Description here TODO'
+        }
+      }
+    ]
+  },
+
   testimonials: [
     {
       content: 'Dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',

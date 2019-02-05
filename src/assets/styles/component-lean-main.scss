@@ -15,6 +15,12 @@
 @import '~@moreira-development/sass-boilerplate-lean/styles/global-main.scss';
 
 /*----
+	Mixins
+-----*/
+@import './mixins.scss';
+@import './keyframes/lines-anim.scss';
+
+/*----
 	Global Variables
 -----*/
 @import './variables.scss';

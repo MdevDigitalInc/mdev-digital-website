@@ -115,9 +115,6 @@ export default {
 
 <style lang="scss" scoped>
 
-@import '../../assets/styles/keyframes/lines-anim.scss';
-@import '../../assets/styles/mixins.scss';
-
 /*-------------------------------------*/
 /* CONTACT Component Styles
 /--------------------------------------*/

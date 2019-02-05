@@ -33,7 +33,39 @@
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
     <!-- Chapter Content -->
-
+    <service-tile v-for="(service, index) in services"
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
+      :flip="((index + 1) % 2) == 0"
+      v-in-viewport
+      class="a-fade-in mdev-service">
+      <!-- Media -->
+      <template slot="mediaSlot">
+        <img :alt="service.media.imageDesc" :src="loadImage(service.media.image)">
+      </template>
+      <!-- Content -->
+      <template slot="contentSlot">
+        <span class="--pre-title" v-if="service.preTitle">
+          {{ service.preTitle }}
+        </span>
+        <h2 class="mdev-service-title u-uppercase a-fade-in" v-in-viewport>
+          {{ service.title }}
+        </h2>
+        <h3>
+          {{ service.subTitle }}
+        </h3>
+        <p class="mdev-service-desc a-fade-in" v-in-viewport>
+          {{ service.description }}
+        </p>
+        <!-- Topics Loop -->
+        <ul class="mdev-service-topics --space-top-xs a-fade-in" v-in-viewport>
+          <li
+            v-html="topic"
+            class="u-uppercase u-bold"
+            v-for="topic in service.topics">
+          </li>
+        </ul>
+      </template>
+    </service-tile>
 
     <!-- Chapter Link -->
     <chapter-link
@@ -51,8 +83,11 @@
 // Local Component Registration
 import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
+import FeaturedServices   from '../modules/featured-services.vue';
 import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
+// Import Data From Flat File
+import MdevData       from '../../mdev-data.js';
 
 export default{
   name: 'ServicesBranding',
@@ -80,17 +115,10 @@ export default{
       tellAnim: 'services/branding/MDEV_HEADER_tell_animated.svg',
       yourAnim: 'services/branding/MDEV_HEADER_your_animated.svg',
       storyAnim: 'services/branding/MDEV_HEADER_story_animated.svg',
-
-      chapter: {
-        title: 'Branding',
-        index: '01',
-        next: {
-          title: 'Web Design Services',
-          index: '02',
-          link: '/services/ui-ux',
-          a11y: 'See our web design services'
-        }
-      }
+      // Chapter Info
+      chapter: MdevData.branding.chapter,
+      // Services Data
+      services: MdevData.branding.services
     };
   },
 
@@ -120,7 +148,8 @@ export default{
     'hero-main'      : HeroMain,
     'main-footer'    : MainFooter,
     'chapter-heading': ChapterHeading,
-    'chapter-link'   : ChapterLink
+    'chapter-link'   : ChapterLink,
+    'service-tile'   : FeaturedServices
   }
 };
 </script>
@@ -129,8 +158,6 @@ export default{
 
 <style lang="scss" scoped>
 
-@import '../../assets/styles/keyframes/lines-anim.scss';
-@import '../../assets/styles/mixins.scss';
 
 /*-------------------------------------*/
 /* CONTACT Component Styles
