@@ -11,6 +11,11 @@
         <slot name="mediaSlot"></slot>
       </div>
     </div>
+
+    <!-- Circle Link -->
+    <circle-link
+      v-if="linkData"
+      :linkData="linkData"></circle-link>
   </section>
 </template>
 
@@ -19,9 +24,14 @@
 
 <script>
 // TODO - ADD CIRCLE LINK AND LINK THAT SHIT ALL UP
+import CircleLink       from '../shared/circle-bar-link.vue';
+
 export default {
   name: 'ServicesFeatured',
-  props: ['flip']
+  props: ['flip', 'linkData'],
+  components: {
+    'circle-link' : CircleLink
+  }
 };
 </script>
 

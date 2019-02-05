@@ -1,15 +1,15 @@
 <template>
   <div
     class="d-divider flex flex-nowrap flex-vert-center --section-space"
-    :class="{'--flip' : reverse}">
+    :class="{'--flip' : linkData.reverse}">
     <span class="--circle"></span>
     <span class="--bar">
       <span class="--hook">
-        {{ hook }}
+        {{ linkData.hook }}
       </span>
       <!-- Primary Button -->
-      <btn-primary :BtnData="BtnData" v-in-viewport>
-        {{ action }}
+      <btn-primary :BtnData="linkData.BtnData" v-in-viewport>
+        {{ linkData.action }}
       </btn-primary>
     </span>
   </div>
@@ -32,7 +32,7 @@ import BtnPrimary         from '../shared/btn-primary.vue';
 
 export default{
   name: 'CircleBarLink',
-  props: ['reverse', 'action', 'hook', 'BtnData'],
+  props: ['linkData'],
   components: {
     'btn-primary'   : BtnPrimary
   }
@@ -69,6 +69,19 @@ export default{
     min-width: 250px;
     height: 8px;
     background: $black;
+    position: relative;
+
+    .mdev-btn {
+      position: absolute;
+      top: 22px;
+      left: 0;
+    }
+
+    .--hook {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+    }
   }
 
   // Flips direction & order
@@ -77,6 +90,16 @@ export default{
 
     .--circle {
       order: 3;
+    }
+
+    .--bar .mdev-btn {
+      left: auto;
+      right: 0;
+    }
+
+    .--bar .--hook {
+      left: auto;
+      right: 0;
     }
   }
 }

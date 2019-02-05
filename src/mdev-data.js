@@ -375,10 +375,46 @@ export default  {
           BtnData: {
             accessibility: 'View our Branding case study',
             btnRoute: '/casestudy',
-            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
+            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
           },
           reverse: false
         },
+        media: {
+          image: 'services/branding/branding-corporated-id.jpeg',
+          imageDesc: 'Description here TODO'
+        }
+      },
+      {
+        preTitle: false,
+        title: 'Cross- channel creative',
+        subTitle: 'Print & Digital Design',
+        description: 'A brand needs more than a logo and a website to succeed. Our creative services span traditional print and digital media to ensure that the look and feel of your brand matches across all mediums.',
+        topics: [
+          'Print &amp; Digital Design',
+          'Marketing Materials',
+          'Publication Layout',
+          'Banners &amp; Tradeshow Graphics',
+          'Retail Signage'
+        ],
+        caseStudy: false,
+        media: {
+          image: 'services/branding/branding-corporated-id.jpeg',
+          imageDesc: 'Description here TODO'
+        }
+      },
+      {
+        preTitle: 'The',
+        title: 'Road to retail readiness',
+        subTitle: 'Packaging',
+        description: 'We create vibrant and informative packaging that leaps off store shelves. We can also help you handle barcode creation, compliance with labelling regulations, and French translation requirements if the product is to be sold in Canada.',
+        topics: [
+          'Print &amp; Digital Design',
+          'Marketing Materials',
+          'Publication Layout',
+          'Banners &amp; Tradeshow Graphics',
+          'Retail Signage'
+        ],
+        caseStudy: false,
         media: {
           image: 'services/branding/branding-corporated-id.jpeg',
           imageDesc: 'Description here TODO'
