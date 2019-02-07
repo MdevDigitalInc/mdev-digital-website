@@ -48,6 +48,7 @@ export default{
   margin: 30px 0;
 
   .mdev-link-content {
+    transition: all .3s;
     width: 30%;
 
     @media #{$laptop-only} {
@@ -80,6 +81,7 @@ export default{
       width: 100%;
       height: 4px;
       background: $black;
+      transition: all .3s;
 
       @media #{$tablet-up} {
         height: 8px;
@@ -88,6 +90,8 @@ export default{
 
     svg {
       margin-left: 10px;
+      transition: all .3s;
+      transform-origin: left;
     }
   }
 
@@ -96,13 +100,36 @@ export default{
     font-size: 35px;
     font-weight: 300;
     line-height: .7;
+    position: relative;
+    top: -5px;
 
     @media #{$tablet-up} {
       font-size: 78px;
     }
   }
-}
 
+  // Hover
+  &:hover,
+  &:active,
+  &:focus {
+
+    .--bar {
+      background: $color-brand-primary;
+    }
+
+    .mdev-link-content {
+      color: $color-brand-primary;
+    }
+
+    svg {
+      transform: scalex(1.3);
+    }
+
+    .cls-1 {
+      fill: $color-brand-primary;
+    }
+  }
+}
 
 
 /*--------------------------------------*/
