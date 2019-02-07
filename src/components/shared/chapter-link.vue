@@ -45,7 +45,7 @@ export default{
 /--------------------------------------*/
 .mdev-chapter-link {
   width: 100%;
-  margin: 30px 0;
+  margin: 30px 0 150px;
 
   .mdev-link-content {
     transition: all .3s;

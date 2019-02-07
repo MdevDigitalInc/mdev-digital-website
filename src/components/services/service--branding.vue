@@ -48,7 +48,7 @@
         <span class="--pre-title" v-if="service.preTitle">
           {{ service.preTitle }}
         </span>
-        <h2 class="mdev-service-title u-uppercase a-fade-in" v-in-viewport>
+        <h2 class="mdev-service-title u-uppercase a-fade-in --green-box" v-in-viewport>
           {{ service.title }}
         </h2>
         <h3>
@@ -74,6 +74,8 @@
       :chapterLink="chapter.next.link"
       :a11y="chapter.next.a11y"
       :chapterTitle="chapter.next.title"></chapter-link>
+    <!-- Footer -->
+    <main-footer></main-footer>
   </section>
 </template>
 

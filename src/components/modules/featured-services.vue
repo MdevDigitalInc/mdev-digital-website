@@ -1,7 +1,9 @@
 <template>
   <section class="mdev-featured-services --section-space">
-    <div class="mdev-featured-wrapper flex flex-vert-center flex-hor-end"
-      :class="{ '--flip-order' : flip }">
+    <div class="mdev-featured-wrapper flex flex-vert-center"
+      :class="{ '--flip-order' : flip,
+        'flex-hor-start' : flip,
+        'flex-hor-end' : !flip }">
       <!-- Content slot for text -->
       <div class="mdev-service-content">
         <slot name="contentSlot"></slot>
@@ -45,6 +47,11 @@ export default {
 .mdev-featured-services {
   width: 100%;
   position: relative;
+  overflow: hidden;
+
+  @media #{$portrait} {
+    margin: 100px 0;
+  }
 
   // Applies to all images
   img {
@@ -53,58 +60,97 @@ export default {
 
   // Feature wrapper to keep things centered
   .mdev-featured-wrapper {
-    width: 90%;
-    margin: 0 0 0 10%;
-
-    @media #{$portrait} {
-      width: 80%;
-      flex-wrap: wrap;
-    }
-
-    @media #{$phone-only} {
-      width: 78%;
-    }
-  }
-
-  // Media portion of the split
-  // Before pseudo element controls the background green lines
-  // They are merely decorative and get overriden often
-  .mdev-service-media {
-    width: 30%;
-    order: 2;
-    position: relative;
-    z-index: 2;
+    width: 85%;
+    margin: 0 0 0 15%;
 
     @media #{$portrait} {
       width: 100%;
-      margin: 100px auto;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+
+    @media #{$phone-only} {
+      width: 100%;
+    }
+  }
+
+  .mdev-service-media {
+    width: 45%;
+    order: 2;
+    position: relative;
+    z-index: 2;
+    margin-left: 5vw;
+
+    @media #{$portrait} {
+      width: 100%;
+      margin: 0 auto 100px;
     }
   }
 
   // Content portion of the split
   .mdev-service-content {
-    width: 60%;
+    width: 55%;
     order: 1;
+    padding-right: 10%;
 
     @media #{$portrait} {
       width: 100%;
+      order: 4;
+      padding: 0 10%;
     }
+  }
+
+  // Decoration
+  .--green-box {
+    position: relative;
+
+    &:before {
+      @include pseudo();
+      top: 15%;
+      left: -3000px;
+      right: 30%;
+      bottom: 15%;
+      z-index: -1;
+      border: 4px solid $color-brand-accent;
+    }
+  }
+}
+
+.mdev-featured-services .mdev-featured-wrapper.--flip-order {
+  margin: 0 10% 0 0;
+
+  @media #{$portrait} {
+    margin: 0 auto;
+  }
+
+  .mdev-service-content {
+    order: 4;
+    padding-right: 0;
+    padding-left: 10%;
+
+    @media #{$portrait} {
+      margin: 100px auto;
+    }
+  }
+
+  .mdev-service-media {
+    margin-right: 5vw;
+    margin-left: 0;
+
+    @media #{$portrait} {
+      margin: 0;
+    }
+  }
+
+  // Override decorationn direction
+  .--green-box:before {
+    right: -3000px;
+    left: 20%;
   }
 }
 
 // Flips media to the right
 // Every other block in this layout is flipped
 // Includes provisions to change the background lines
-.--flip-order .mdev-service-content {
-  margin-left: 5vw;
-  margin-right: 0;
-  order: 4;
-
-  @media #{$portrait} {
-    order: 1;
-    margin: 100px auto;
-  }
-}
-
 /*--------------------------------------*/
 </style>

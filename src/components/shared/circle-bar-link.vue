@@ -49,27 +49,16 @@ export default{
 /--------------------------------------*/
 
 .d-divider {
-  width: 100%;
-  position: relative;
-  justify-content: flex-end;
-
-  .--circle {
-    order: 1;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border-radius: 100%;
-    border: 8px solid $black;
-    margin: 0 15px;
+  @media #{$portrait} {
+    margin: 100px 0 150px;
   }
 
   .--bar {
-    order: 2;
-    width: 50%;
-    min-width: 250px;
-    height: 8px;
-    background: $black;
     position: relative;
+
+    @media #{$portrait} {
+      width: 80%;
+    }
 
     .mdev-btn {
       position: absolute;
