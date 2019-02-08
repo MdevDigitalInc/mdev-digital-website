@@ -74,6 +74,12 @@
       :chapterLink="chapter.next.link"
       :a11y="chapter.next.a11y"
       :chapterTitle="chapter.next.title"></chapter-link>
+    <!-- Pre-Footer -->
+    <pre-footer
+      :heading="prefooter.heading"
+      :subheading="prefooter.subheading"
+      :BtnData="prefooter.BtnData"
+      :links="prefooter.links"></pre-footer>
     <!-- Footer -->
     <main-footer></main-footer>
   </section>
@@ -86,6 +92,7 @@
 // Local Component Registration
 import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
+import PreFooter          from '../shared/pre-footer.vue';
 import FeaturedServices   from '../modules/featured-services.vue';
 import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
@@ -121,7 +128,8 @@ export default{
       // Chapter Info
       chapter: MdevData.branding.chapter,
       // Services Data
-      services: MdevData.branding.services
+      services: MdevData.branding.services,
+      prefooter: MdevData.prefooter
     };
   },
 
@@ -150,6 +158,7 @@ export default{
   components: {
     'hero-main'      : HeroMain,
     'main-footer'    : MainFooter,
+    'pre-footer'     : PreFooter,
     'chapter-heading': ChapterHeading,
     'chapter-link'   : ChapterLink,
     'service-tile'   : FeaturedServices

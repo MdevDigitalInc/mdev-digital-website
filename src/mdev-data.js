@@ -423,6 +423,169 @@ export default  {
     ]
   },
 
+  prefooter: {
+    heading: 'More services we offer',
+    subheading: 'Ready to get started?',
+    BtnData: {
+      accessibility: 'Get in touch today!',
+      btnRoute: '/contact',
+      btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
+    },
+
+    links: [
+      {
+        serviceFlag: 1,
+        heading: 'Branding',
+        list: [
+          {
+            linkName: 'Logos',
+            linkRoute: '/services/branding',
+            a11y: 'Custom Logo Designs'
+          },
+          {
+            linkName: 'Corporate Identity Systems',
+            linkRoute: '/services/branding',
+            a11y: 'Corporate Identity Systems'
+          },
+          {
+            linkName: 'Print & Digital design',
+            linkRoute: '/services/branding',
+            a11y: 'Pring & Digital Design'
+          },
+          {
+            linkName: 'Packaging',
+            linkRoute: '/services/branding',
+            a11y: 'Custom Packaging'
+          }
+        ]
+      },
+      {
+        serviceFlag: 2,
+        heading: 'Web Design',
+        list: [
+          {
+            linkName: 'Custom Design & Development',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Custom Web Design'
+          },
+          {
+            linkName: 'Ecommerce',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Custom Ecommerce'
+          },
+          {
+            linkName: 'Mobile-friendly Websites',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Mobile-friendly websites'
+          },
+          {
+            linkName: 'Accessibility',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Accessibility'
+          }
+        ]
+      },
+      {
+        serviceFlag: 3,
+        heading: 'Apps & Software',
+        list: [
+          {
+            linkName: 'Guided discovery',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Guided discovery & Requirements Gathering'
+          },
+          {
+            linkName: 'Agile Project Management',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Flexibility and Scalability'
+          },
+          {
+            linkName: 'User Experience Design',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Humanize the web'
+          },
+          {
+            linkName: 'User Interface Design',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Custom Interfaces'
+          },
+          {
+            linkName: 'Application Development',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Custom app development'
+          }
+        ]
+      },
+      {
+        serviceFlag: 4,
+        heading: 'Digital Marketing',
+        list: [
+          {
+            linkName: 'Search Engine Optimization',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Raise your profile'
+          },
+          {
+            linkName: 'Search Engine Marketing',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Targeting the right customers'
+          },
+          {
+            linkName: 'Social Media Marketing',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Social Media strategy & Executioin'
+          },
+          {
+            linkName: 'Content Marketing',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Content Marketing services'
+          },
+          {
+            linkName: 'Launch Campaigns',
+            linkRoute: '/services/ui-ux',
+            a11y: 'We help you make a splash!'
+          }
+        ]
+      },
+      {
+        serviceFlag: 5,
+        heading: 'Support',
+        list: [
+          {
+            linkName: 'Consulting',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Solutions & Consulting services'
+          },
+          {
+            linkName: 'Startup Support',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Startup launch services'
+          },
+          {
+            linkName: 'Cloud Technologies',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Setup & Configuration services'
+          },
+          {
+            linkName: 'Domain Management',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Keep your domain secure'
+          },
+          {
+            linkName: 'Domain dispute Resolution',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Domain retrieval'
+          },
+          {
+            linkName: 'Gsuite Management',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Gsuite setup & management'
+          }
+        ]
+      },
+    ]
+  },
+
   testimonials: [
     {
       content: 'Dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',

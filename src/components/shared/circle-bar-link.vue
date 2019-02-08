@@ -28,7 +28,7 @@
 //
 // [ Description ]
 // Simple decorative element comprised of a circle and a bar centered vertically.
-import BtnPrimary         from '../shared/btn-primary.vue';
+import BtnPrimary         from './btn-primary.vue';
 
 export default{
   name: 'CircleBarLink',
