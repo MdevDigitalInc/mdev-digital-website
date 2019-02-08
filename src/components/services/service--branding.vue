@@ -79,6 +79,7 @@
       :heading="prefooter.heading"
       :subheading="prefooter.subheading"
       :BtnData="prefooter.BtnData"
+      :serviceFlag="serviceFlag"
       :links="prefooter.links"></pre-footer>
     <!-- Footer -->
     <main-footer></main-footer>
@@ -129,7 +130,8 @@ export default{
       chapter: MdevData.branding.chapter,
       // Services Data
       services: MdevData.branding.services,
-      prefooter: MdevData.prefooter
+      prefooter: MdevData.prefooter,
+      serviceFlag: MdevData.branding.serviceFlag
     };
   },
 

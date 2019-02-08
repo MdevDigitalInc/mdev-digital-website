@@ -17,7 +17,19 @@
       </div>
       <!-- Links -->
       <div class="mdev-prefooter-nav">
-
+        <!-- Link - Looped -->
+        <div class="mdev-prefooter-links"
+          v-for="(link, index) in links"
+          v-if="link.serviceFlag != serviceFlag">
+          <!-- Column Heading -->
+          <span class="--heading">
+            {{ link.heading }}
+          </span>
+          <router-link to="item.linkRoute"
+            v-for="(item, index) in link.list" title="item.a11y">
+            {{ item.linkName }}
+          </router-link>
+        </div>
       </div>
     </div>
   </section>
@@ -32,7 +44,7 @@ import BtnPrimary         from './btn-primary.vue';
 export default{
   name: 'preFooter',
 
-  props: ['heading', 'subheading', 'BtnData', 'links' ],
+  props: ['heading', 'subheading', 'BtnData', 'links', 'serviceFlag' ],
 
   components: {
     'btn-primary' : BtnPrimary

@@ -347,6 +347,7 @@ export default  {
   ],
 
   branding: {
+    serviceFlag: 1,
     chapter: {
       title: 'Branding',
       index: '01',
@@ -491,27 +492,27 @@ export default  {
         list: [
           {
             linkName: 'Guided discovery',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/app-development',
             a11y: 'Guided discovery & Requirements Gathering'
           },
           {
             linkName: 'Agile Project Management',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/app-development',
             a11y: 'Flexibility and Scalability'
           },
           {
             linkName: 'User Experience Design',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/app-development',
             a11y: 'Humanize the web'
           },
           {
             linkName: 'User Interface Design',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/app-development',
             a11y: 'Custom Interfaces'
           },
           {
             linkName: 'Application Development',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/app-development',
             a11y: 'Custom app development'
           }
         ]
@@ -522,27 +523,27 @@ export default  {
         list: [
           {
             linkName: 'Search Engine Optimization',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/digital-marketing',
             a11y: 'Raise your profile'
           },
           {
             linkName: 'Search Engine Marketing',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/digital-marketing',
             a11y: 'Targeting the right customers'
           },
           {
             linkName: 'Social Media Marketing',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/digital-marketing',
             a11y: 'Social Media strategy & Executioin'
           },
           {
             linkName: 'Content Marketing',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/digital-marketing',
             a11y: 'Content Marketing services'
           },
           {
             linkName: 'Launch Campaigns',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/digital-marketing',
             a11y: 'We help you make a splash!'
           }
         ]
@@ -553,32 +554,32 @@ export default  {
         list: [
           {
             linkName: 'Consulting',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/consulting',
             a11y: 'Solutions & Consulting services'
           },
           {
             linkName: 'Startup Support',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/consulting',
             a11y: 'Startup launch services'
           },
           {
             linkName: 'Cloud Technologies',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/consulting',
             a11y: 'Setup & Configuration services'
           },
           {
             linkName: 'Domain Management',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/consulting',
             a11y: 'Keep your domain secure'
           },
           {
             linkName: 'Domain dispute Resolution',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/consulting',
             a11y: 'Domain retrieval'
           },
           {
             linkName: 'Gsuite Management',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/consulting',
             a11y: 'Gsuite setup & management'
           }
         ]
