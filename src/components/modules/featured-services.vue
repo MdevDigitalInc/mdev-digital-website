@@ -1,9 +1,7 @@
 <template>
   <section class="mdev-featured-services --section-space">
     <div class="mdev-featured-wrapper flex flex-vert-center"
-      :class="{ '--flip-order' : flip,
-        'flex-hor-start' : flip,
-        'flex-hor-end' : !flip }">
+      :class="{ '--flip-order' : flip, 'flex-hor-start' : flip, 'flex-hor-end' : !flip }">
       <!-- Content slot for text -->
       <div class="mdev-service-content">
         <slot name="contentSlot"></slot>
