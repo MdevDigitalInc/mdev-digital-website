@@ -39,7 +39,7 @@ export default {
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 /*-------------------------------------*/
 /* Featured-Content Component Styles
@@ -98,11 +98,26 @@ export default {
       order: 4;
       padding: 0 10%;
     }
+
+    @media #{$xl-up} {
+      width: 42%;
+    }
+
+    .--pre-title {
+      text-transform: uppercase;
+      font-weight: 100;
+      font-size: 30px;
+      position: relative;
+      left: 5px;
+    }
   }
 
-  // Decoration
-  .--green-box {
+  .mdev-service-title {
     position: relative;
+
+    @media #{$tablet-only} {
+      width: 80%;
+    }
 
     &:before {
       @include pseudo();
@@ -113,6 +128,14 @@ export default {
       z-index: -1;
       border: 4px solid $color-brand-accent;
     }
+  }
+
+  .mdev-service-subtitle {
+    margin-bottom: 10px;
+  }
+
+  .mdev-service-desc {
+    width: 85%;
   }
 }
 
@@ -143,7 +166,7 @@ export default {
   }
 
   // Override decorationn direction
-  .--green-box:before {
+  .mdev-service-title:before {
     right: -3000px;
     left: 20%;
   }

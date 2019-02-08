@@ -48,10 +48,10 @@
         <span class="--pre-title" v-if="service.preTitle">
           {{ service.preTitle }}
         </span>
-        <h2 class="mdev-service-title u-uppercase a-fade-in --green-box" v-in-viewport>
+        <h2 class="mdev-service-title u-uppercase a-fade-in" v-in-viewport>
           {{ service.title }}
         </h2>
-        <h3>
+        <h3 class="mdev-service-subtitle">
           {{ service.subTitle }}
         </h3>
         <p class="mdev-service-desc a-fade-in" v-in-viewport>

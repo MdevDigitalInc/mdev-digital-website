@@ -46,11 +46,7 @@
   position: relative;
 
   @media #{$desktop-up} {
-    padding: 100px 0;
-  }
-
-  @media #{$portrait} {
-    padding: 60px 0;
+    padding: 30px 0;
   }
 
   @media #{$phone-only} {
