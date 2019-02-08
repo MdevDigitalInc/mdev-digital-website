@@ -430,7 +430,7 @@ export default  {
     BtnData: {
       accessibility: 'Get in touch today!',
       btnRoute: '/contact',
-      btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
+      btnClass: 'mdev-btn mdev-primary-btn --space-top-xs'
     },
 
     links: [

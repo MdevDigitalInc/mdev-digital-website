@@ -11,7 +11,7 @@
     "lintvue": "stylelint '**/*.vue' --syntax scss",
     "prerender": "node prerender-build.js",
     "prod": "webpack --config webpack.prod.js",
-    "build": "npm run lintcss && npm run prod && npm run prerender",
+    "build": "npm run lintcss && npm run lintvue && npm run prod && npm run prerender",
     "clean": "rm -r dist/",
     "build-deploy": "npm run build && s3-website deploy",
     "deploy": "s3-website deploy"
