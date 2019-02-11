@@ -49,8 +49,7 @@
         <span class="--pre-title" v-if="service.preTitle">
           {{ service.preTitle }}
         </span>
-        <h2 v-html="service.title" class="mdev-service-title u-uppercase a-fade-in" v-in-viewport>
-        </h2>
+        <h2 v-html="service.title" class="mdev-service-title u-uppercase a-fade-in" v-in-viewport></h2>
         <h3 class="mdev-service-subtitle">
           {{ service.subTitle }}
         </h3>
@@ -67,8 +66,13 @@
         </ul>
       </template>
     </service-tile>
-
-
+    <!-- No Media -->
+    <service-nomedia
+      v-for="(service, index) in nomedia"
+      :preTitle="service.preTitle"
+      :title="service.title"
+      :content="service.content"
+      ></service-nomedia>
     <!-- Chapter Link -->
     <chapter-link
       :chapterIndex="chapter.next.index"
@@ -96,6 +100,7 @@ import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
 import PreFooter          from '../shared/pre-footer.vue';
 import FeaturedServices   from '../modules/featured-services.vue';
+import FeaturedNomedia    from '../modules/featured-nomedia.vue';
 import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
 // Import Data From Flat File
@@ -132,7 +137,8 @@ export default{
       // Services Data
       services: MdevData.webdev.services,
       prefooter: MdevData.prefooter,
-      serviceFlag: MdevData.webdev.serviceFlag
+      serviceFlag: MdevData.webdev.serviceFlag,
+      nomedia: MdevData.webdev.servicesNomedia
     };
   },
 
@@ -164,7 +170,8 @@ export default{
     'pre-footer'     : PreFooter,
     'chapter-heading': ChapterHeading,
     'chapter-link'   : ChapterLink,
-    'service-tile'   : FeaturedServices
+    'service-tile'   : FeaturedServices,
+    'service-nomedia': FeaturedNomedia
   }
 };
 </script>

@@ -489,6 +489,33 @@ export default  {
           imageDesc: 'Description here TODO'
         }
       }
+    ],
+    servicesNomedia: [
+      {
+        preTitle: 'It\'s the right thing to do',
+        title: 'Remove Digital Barriers',
+        content: [
+          {
+            title: 'Mobile Friendly Sites',
+            description: 'it is no longer acceptable to have a website that doesn\'t function across multiple devices and browsers. Mobile-friendly design is part of every web project we handle. Prior to any launch, we perform extensive testing to insure optimum performance in all environments.',
+            topics: [
+              'Cross-device testing',
+              'Multi-browser testing',
+              'Mobile First Design'
+            ]
+          },
+          {
+            title: 'Online Accessibility',
+            description: 'Accessibility is just as important online as it is in the physical world. As part of our mission to humanize the web, we want to remove digital barriers. If you need higher-than-average accessibility standards, let us know so we can craft the appropriate solution based on user needs and organizational structure.',
+            topics: [
+              'Accessibility Design',
+              'Accessibility Testing',
+              'AODA Compliance',
+              'WCAG 2.0 (LEVEL A, LEVEL AA, LEVEL AAA'
+            ]
+          }
+        ]
+      }
     ]
   },
 

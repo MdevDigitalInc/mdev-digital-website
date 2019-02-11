@@ -37,7 +37,7 @@ export default {
 
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 /*-------------------------------------*/
 /* Featured-Content Component Styles
