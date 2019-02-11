@@ -7,11 +7,11 @@
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-branding">
           <div class="mdev-center">
-            <object class="--branding-tell" id="anim-tell" type="image/svg+xml" :data="loadImage(tellAnim)"></object>
-            <object class="--branding-your" id="anim-your" type="image/svg+xml" :data="loadImage(yourAnim)"></object>
+            <object class="--web-humanize" id="anim-humanize" type="image/svg+xml" :data="loadImage(humanizeAnim)"></object>
             <!-- Bottom Container -->
             <div class="flex flex-vert-start --portrait-wrap">
-              <object class="--branding-story" id="anim-story" type="image/svg+xml" :data="loadImage(storyAnim)"></object>
+              <object class="--web-the" id="anim-the" type="image/svg+xml" :data="loadImage(theAnim)"></object>
+              <object class="--web-web" id="anim-web" type="image/svg+xml" :data="loadImage(webAnim)"></object>
               <!-- CTA Text & Button -->
               <div data-header-intro class="--header-cta">
                 <p>
@@ -129,9 +129,9 @@ export default{
       // Disables Page Title bar
       pageTitle: 'TESTY TEST TEST',
       headerDsc: 'Tell Your Story',
-      tellAnim: 'services/branding/MDEV_HEADER_tell_animated.svg',
-      yourAnim: 'services/branding/MDEV_HEADER_your_animated.svg',
-      storyAnim: 'services/branding/MDEV_HEADER_story_animated.svg',
+      humanizeAnim: 'services/webdev/MDEV_HEADER_humanize_animated.svg',
+      theAnim: 'services/webdev/MDEV_HEADER_the.svg',
+      webAnim: 'services/webdev/MDEV_HEADER_web_animated.svg',
       // Chapter Info
       chapter: MdevData.webdev.chapter,
       // Services Data
@@ -146,21 +146,17 @@ export default{
     this.$nextTick(() => {
         $('[data-main-nav]').addClass('--teal-white');
       setTimeout(() => {
-        new Vivus('anim-tell', {duration: 150}, console.log('fired'));
+        new Vivus('anim-humanize', {duration: 150}, console.log('fired'));
       }, 100);
       setTimeout(() => {
-        new Vivus('anim-your', {duration: 180}, console.log('fired'));
-        $('#anim-your').addClass('--anim-visible');
+        $('#anim-the').addClass('--anim-visible');
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-story', {duration: 180}, console.log('fired'));
-      }, 1700);
+        new Vivus('anim-web', {duration: 150}, console.log('fired'));
+      }, 800);
       setTimeout(() => {
         $('[data-header-intro]').addClass('--anim-visible');
-      }, 2200);
-      setTimeout(() => {
-        $('[data-header-btn]').addClass('fully-in-viewport');
-      }, 3400);
+      }, 1200);
     });
   },
 
@@ -208,7 +204,7 @@ $heading-top-padding-mob: 10px;
 
 .--vivus-branding {
 
-  .--branding-tell {
+  .--web-humanize {
     width: 40%;
     margin-bottom: $heading-top-padding;
 
@@ -230,15 +226,21 @@ $heading-top-padding-mob: 10px;
     }
   }
 
-  .--branding-story {
+  .--web-the {
     width: 55%;
     margin-right: 30px;
+    opacity: 0;
+    transition: all .6s;
 
     @media #{$portrait} {
       width: 70%;
       margin-bottom: $heading-top-padding-mob;
       margin-right: 0;
     }
+  }
+
+  .--web-web {
+    width: 50%;
   }
 
   .--header-cta {
