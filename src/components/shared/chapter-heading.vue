@@ -1,6 +1,6 @@
 <template>
   <div class="mdev-chapter-heading">
-    <div class="mdev-chapter-content flex flex-hor-start flex-vert-end">
+    <div class="mdev-chapter-content flex flex-hor-start flex-vert-end a-flyin a-flyin-left" v-in-viewport>
       <div class="mdev-chapter-title">
         <span class="u-uppercase u-bold">
           {{ chapterTitle }}
@@ -40,7 +40,7 @@ export default{
 /--------------------------------------*/
 .mdev-chapter-heading {
   width: 100%;
-  margin: 30px 0;
+  padding: 30px 0;
 
   .mdev-chapter-content {
     width: 30%;

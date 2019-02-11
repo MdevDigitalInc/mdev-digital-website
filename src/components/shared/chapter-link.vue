@@ -1,7 +1,7 @@
 <template>
   <div class="mdev-chapter-link flex flex-hor-end">
     <router-link :to="chapterLink" :title="a11y"
-      class="mdev-link-content flex flex-hor-start">
+      class="mdev-link-content flex flex-hor-start a-flyin a-flyin-right" v-in-viewport>
       <div class="mdev-link-index">
         {{ chapterIndex }}
       </div>
@@ -45,7 +45,9 @@ export default{
 /--------------------------------------*/
 .mdev-chapter-link {
   width: 100%;
-  margin: 30px 0 150px;
+  padding: 30px 0 150px;
+  overflow-x: hidden;
+  overflow-y: visible;
 
   .mdev-link-content {
     transition: all .3s;

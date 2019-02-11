@@ -439,30 +439,56 @@ export default  {
     services: [
       {
         preTitle: false,
-        title: 'Think before you brand',
-        subTitle: 'Corporate identity systems',
-        description: 'Systems Creating a brand with impact is crucial for any product or company to be noticed. We can help you develop a new brands, refresh an exist logo, or work with you to consolidate your existing brands into a cohesive corporate identity system.',
+        title: 'The web has gotten crowded',
+        subTitle: 'Custom Design & Development',
+        description: 'Stand out in the digital realm with powerful, feature rich websites, built to be fully accessible and mobile-responsive from the very beginning. Utilizing the latest technologies, modern design techniques and methodical coding practices, we deliver quality digital solutions tailored to fit.',
         topics: [
-          'Logo design',
-          'Corporate Identity Systems',
-          'Brand &amp; style guidelines',
-          'Business card &amp; stationery packages'
+          'Custom Web Design & Development',
+          'User Interface Design',
+          'Responsive Web Design',
+          'Custom Wordpress Development'
         ],
         caseStudy: {
           action: 'View case study',
-          hook: 'NEED TEXT HERE TODO',
+          hook: 'See how we worked with The Factory to create an Adventure booking system.',
           BtnData: {
-            accessibility: 'View our Branding case study',
+            accessibility: 'View The Factory case study',
+            btnRoute: '/casestudy',
+            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
+          },
+          reverse: true
+        },
+        media: {
+          image: 'services/webdev/the-factory-webdev.jpeg',
+          imageDesc: 'Description here TODO'
+        }
+      },
+      {
+        preTitle: false,
+        title: 'Set</br>Up</br>Shop',
+        subTitle: 'Ecommerce',
+        description: 'If you have a product or service to sell, our team can help you choose the best software for your store, provide advice on how to organize your products and how best to position your offerings. We can also help you with integrated cross-channel marketing campaigns to grow your new empire.',
+        topics: [
+          'Custom ecommerce development',
+          'Shopify',
+          'Woocommerce',
+          'Digital Marketing',
+        ],
+        caseStudy: {
+          action: 'View case study',
+          hook: 'Find out how we created a shoe empire from an overstock colletion.',
+          BtnData: {
+            accessibility: 'View Aster Shoes case study',
             btnRoute: '/casestudy',
             btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
           },
           reverse: false
         },
         media: {
-          image: 'services/branding/branding-corporated-id.jpeg',
+          image: 'services/webdev/the-factory-webdev.jpeg',
           imageDesc: 'Description here TODO'
         }
-      },
+      }
     ]
   },
 
