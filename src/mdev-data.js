@@ -424,6 +424,48 @@ export default  {
     ]
   },
 
+  webdev: {
+    serviceFlag: 2,
+    chapter: {
+      title: 'web design services',
+      index: '02',
+      next: {
+        title: 'APPs & software services',
+        index: '03',
+        link: '/services/app-development',
+        a11y: 'See our custom development services'
+      }
+    },
+    services: [
+      {
+        preTitle: false,
+        title: 'Think before you brand',
+        subTitle: 'Corporate identity systems',
+        description: 'Systems Creating a brand with impact is crucial for any product or company to be noticed. We can help you develop a new brands, refresh an exist logo, or work with you to consolidate your existing brands into a cohesive corporate identity system.',
+        topics: [
+          'Logo design',
+          'Corporate Identity Systems',
+          'Brand &amp; style guidelines',
+          'Business card &amp; stationery packages'
+        ],
+        caseStudy: {
+          action: 'View case study',
+          hook: 'NEED TEXT HERE TODO',
+          BtnData: {
+            accessibility: 'View our Branding case study',
+            btnRoute: '/casestudy',
+            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
+          },
+          reverse: false
+        },
+        media: {
+          image: 'services/branding/branding-corporated-id.jpeg',
+          imageDesc: 'Description here TODO'
+        }
+      },
+    ]
+  },
+
   prefooter: {
     heading: 'More services we offer',
     subheading: 'Ready to get started?',
