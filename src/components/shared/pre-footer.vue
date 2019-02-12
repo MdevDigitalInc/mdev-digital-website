@@ -13,7 +13,7 @@
         </span>
 
         <btn-primary :BtnData="BtnData" v-in-viewport>
-          {{ $t('brandingpage.prefooter.action') }}
+          {{ $t('prefooter.action') }}
         </btn-primary>
       </div>
       <!-- Links -->

@@ -15,7 +15,7 @@
               <!-- CTA Text & Button -->
               <div data-header-intro class="--header-cta">
                 <p>
-                  {{ $t('brandingpage.intro') }}
+                  {{ $t('webdevpage.intro') }}
                 </p>
               </div>
             </div>
@@ -179,7 +179,7 @@ export default{
 /* UI-UX Component Styles
 /--------------------------------------*/
 $heading-top-padding: 50px;
-$heading-top-padding-mob: 10px;
+$heading-top-padding-mob: 15px;
 
 .mdev-vivus-header {
   width: 100%;
@@ -205,18 +205,25 @@ $heading-top-padding-mob: 10px;
 .--vivus-branding {
 
   .--web-humanize {
-    width: 85%;
+    width: 90%;
     margin-bottom: $heading-top-padding;
+
+    @media #{$portrait} {
+      width: 100%;
+      margin-bottom: $heading-top-padding-mob;
+    }
   }
 
   .--web-the {
-    width: 13%;
+    width: 12%;
+    margin-left: 2%;
     opacity: 0;
     transition: all .6s;
   }
 
   .--web-web {
-    width: 50%;
+    width: 40%;
+    margin: 0 2%;
   }
 
   .--header-cta {
@@ -227,6 +234,7 @@ $heading-top-padding-mob: 10px;
     @media #{$portrait} {
       width: 100%;
       text-align: left;
+      margin-top: $heading-top-padding-mob + 10;
     }
   }
 
@@ -240,6 +248,10 @@ $heading-top-padding-mob: 10px;
     font-size: 120%;
 
     @media #{$phone-only} {
+      font-size: 100%;
+    }
+
+    @media #{$laptop-only} {
       font-size: 100%;
     }
   }
@@ -256,6 +268,10 @@ $heading-top-padding-mob: 10px;
 
     @media #{$tablet-prt-only} {
       width: 75%;
+    }
+
+    @media #{$xl-up} {
+      top: 40%;
     }
   }
 

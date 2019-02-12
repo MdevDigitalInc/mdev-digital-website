@@ -60,6 +60,25 @@ export default{
     @media #{$portrait} {
       width: 85%;
     }
+
+    // Hover
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-brand-primary;
+
+      .--bar {
+        background: $color-brand-primary;
+      }
+
+      svg {
+        transform: scalex(1.3);
+      }
+
+      .cls-1 {
+        fill: $color-brand-primary;
+      }
+    }
   }
 
 
@@ -107,28 +126,6 @@ export default{
 
     @media #{$tablet-up} {
       font-size: 78px;
-    }
-  }
-
-  // Hover
-  &:hover,
-  &:active,
-  &:focus {
-
-    .--bar {
-      background: $color-brand-primary;
-    }
-
-    .mdev-link-content {
-      color: $color-brand-primary;
-    }
-
-    svg {
-      transform: scalex(1.3);
-    }
-
-    .cls-1 {
-      fill: $color-brand-primary;
     }
   }
 }

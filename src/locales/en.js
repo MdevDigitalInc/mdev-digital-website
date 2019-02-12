@@ -113,10 +113,15 @@ export default {
   },
 
   brandingpage: {
-    intro: "Every business has a unique story - what’s yours? Whether you’re launching a startup, releasing a new product or service, or overhauling your current brand, we can help you discover your voice and your style.",
-    prefooter: {
-      action: 'Contact Us'
-    }
+    intro: "Every business has a unique story - what’s yours? Whether you’re launching a startup, releasing a new product or service, or overhauling your current brand, we can help you discover your voice and your style."
+  },
+
+  prefooter: {
+    action: 'Contact Us'
+  },
+
+  webdevpage: {
+    intro: "We believe in humanizing the web. We accomplish this mission through carefully planned site architecture and a focus on mobile-friendliness, accessibility and approachable web design. The end result is of this consistently user-friendly sites that delight our clients and visitors."
   },
 
   aboutpage: {
