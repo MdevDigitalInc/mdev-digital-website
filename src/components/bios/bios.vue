@@ -78,6 +78,18 @@ import MdevData       from '../../mdev-data.js';
 
 export default {
   name: "BiosView",
+  // TODO - Edit meta Title
+  // SEE - https://github.com/ktquez/vue-head
+  head: {
+    title: {
+      inner: 'Our Team',
+      complement: 'MDEV Digital - London, Ontario'
+    },
+    meta: [
+      { property: 'og:title', content: 'Our Team | MDEV Digital - London, Ontario' },
+      { name: 'twitter:title', content: 'Our Team | MDEV Digital - London, Ontario' }
+    ]
+  },
 
   props: [ 'teammember' ],
 

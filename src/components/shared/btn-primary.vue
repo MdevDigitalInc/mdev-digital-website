@@ -11,8 +11,6 @@
   </router-link>
 </template>
 
-
-
 <script>
 export default{
   name: 'PrimaryButton',
@@ -20,9 +18,3 @@ export default{
   props: ['BtnData']
 };
 </script>
-
-
-
-<style lang="scss">
-
-</style>

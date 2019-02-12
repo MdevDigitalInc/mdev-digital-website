@@ -54,6 +54,19 @@ import ContactForm        from './contact--form.vue';
 
 export default {
   name: 'Contact',
+  // TODO - Edit meta Title
+  // SEE - https://github.com/ktquez/vue-head
+  head: {
+    title: {
+      inner: 'Get In Touch',
+      complement: 'MDEV Digital - London, Ontario'
+    },
+    meta: [
+      { property: 'og:title', content: 'Get In Touch | MDEV Digital - London, Ontario' },
+      { name: 'twitter:title', content: 'Get In Touch | MDEV Digital - London, Ontario' }
+    ]
+  },
+
   data: function(){
     return{
       heroStyles: {
@@ -61,7 +74,7 @@ export default {
       },
       // Disables Page Title bar
       pageTitle: 'TESTY TEST TEST',
-      headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.',
+      headerDsc: 'TODO',
       connectAnim: 'contact/MDEV_HEADER_connect_animated.svg',
       withAnim: 'contact/MDEV_HEADER_with.svg',
       usAnim: 'contact/MDEV_HEADER_us_animated.svg'
@@ -101,9 +114,6 @@ export default {
 
 
 <style lang="scss" scoped>
-
-@import '../../assets/styles/keyframes/lines-anim.scss';
-@import '../../assets/styles/mixins.scss';
 
 /*-------------------------------------*/
 /* CONTACT Component Styles

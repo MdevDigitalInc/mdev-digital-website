@@ -62,9 +62,9 @@
         <!-- Topics Loop -->
         <ul class="mdev-service-topics --space-top-xs a-fade-in" v-in-viewport>
           <li
+            v-html="topic"
             class="u-uppercase u-bold"
             v-for="topic in service.topics">
-            {{ topic }}
           </li>
         </ul>
         <!-- Primary Button -->
@@ -110,6 +110,19 @@ import MdevData       from '../../mdev-data.js';
 
 export default{
   name: 'ServicesAll',
+  // TODO - Edit meta Title
+  // SEE - https://github.com/ktquez/vue-head
+  head: {
+    title: {
+      inner: 'Our Services',
+      complement: 'MDEV Digital - London, Ontario'
+    },
+    meta: [
+      { property: 'og:title', content: 'Our Services | MDEV Digital - London, Ontario ' },
+      { name: 'twitter:title', content: 'Our Services | MDEV Digital - London, Ontario ' }
+
+    ]
+  },
   data: function() {
     return {
       heroStyles: {
@@ -155,9 +168,6 @@ export default{
 /*-------------------------------------*/
 /* SERVICES ALL Component Styles
 /--------------------------------------*/
-
-@import '../../assets/styles/keyframes/lines-anim.scss';
-@import '../../assets/styles/mixins.scss';
 
 /*-------------------------------------*/
 /* CONTACT Component Styles

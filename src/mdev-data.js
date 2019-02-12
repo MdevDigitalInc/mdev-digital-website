@@ -346,6 +346,247 @@ export default  {
     },
   ],
 
+  branding: {
+    serviceFlag: 1,
+    chapter: {
+      title: 'Branding',
+      index: '01',
+      next: {
+        title: 'Web Design Services',
+        index: '02',
+        link: '/services/ui-ux',
+        a11y: 'See our web design services'
+      }
+    },
+    services: [
+      {
+        preTitle: false,
+        title: 'Think before you brand',
+        subTitle: 'Corporate identity systems',
+        description: 'Systems Creating a brand with impact is crucial for any product or company to be noticed. We can help you develop a new brands, refresh an exist logo, or work with you to consolidate your existing brands into a cohesive corporate identity system.',
+        topics: [
+          'Logo design',
+          'Corporate Identity Systems',
+          'Brand &amp; style guidelines',
+          'Business card &amp; stationery packages'
+        ],
+        caseStudy: {
+          action: 'View case study',
+          hook: 'NEED TEXT HERE TODO',
+          BtnData: {
+            accessibility: 'View our Branding case study',
+            btnRoute: '/casestudy',
+            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
+          },
+          reverse: false
+        },
+        media: {
+          image: 'services/branding/branding-corporated-id.jpeg',
+          imageDesc: 'Description here TODO'
+        }
+      },
+      {
+        preTitle: false,
+        title: 'Cross- channel creative',
+        subTitle: 'Print & Digital Design',
+        description: 'A brand needs more than a logo and a website to succeed. Our creative services span traditional print and digital media to ensure that the look and feel of your brand matches across all mediums.',
+        topics: [
+          'Print &amp; Digital Design',
+          'Marketing Materials',
+          'Publication Layout',
+          'Banners &amp; Tradeshow Graphics',
+          'Retail Signage'
+        ],
+        caseStudy: false,
+        media: {
+          image: 'services/branding/branding-corporated-id.jpeg',
+          imageDesc: 'Description here TODO'
+        }
+      },
+      {
+        preTitle: 'The',
+        title: 'Road to retail readiness',
+        subTitle: 'Packaging',
+        description: 'We create vibrant and informative packaging that leaps off store shelves. We can also help you handle barcode creation, compliance with labelling regulations, and French translation requirements if the product is to be sold in Canada.',
+        topics: [
+          'Print &amp; Digital Design',
+          'Marketing Materials',
+          'Publication Layout',
+          'Banners &amp; Tradeshow Graphics',
+          'Retail Signage'
+        ],
+        caseStudy: false,
+        media: {
+          image: 'services/branding/branding-corporated-id.jpeg',
+          imageDesc: 'Description here TODO'
+        }
+      }
+    ]
+  },
+
+  prefooter: {
+    heading: 'More services we offer',
+    subheading: 'Ready to get started?',
+    BtnData: {
+      accessibility: 'Get in touch today!',
+      btnRoute: '/contact',
+      btnClass: 'mdev-btn mdev-primary-btn --space-top-xs'
+    },
+
+    links: [
+      {
+        serviceFlag: 1,
+        heading: 'Branding',
+        list: [
+          {
+            linkName: 'Logos',
+            linkRoute: '/services/branding',
+            a11y: 'Custom Logo Designs'
+          },
+          {
+            linkName: 'Corporate Identity Systems',
+            linkRoute: '/services/branding',
+            a11y: 'Corporate Identity Systems'
+          },
+          {
+            linkName: 'Print & Digital design',
+            linkRoute: '/services/branding',
+            a11y: 'Pring & Digital Design'
+          },
+          {
+            linkName: 'Packaging',
+            linkRoute: '/services/branding',
+            a11y: 'Custom Packaging'
+          }
+        ]
+      },
+      {
+        serviceFlag: 2,
+        heading: 'Web Design',
+        list: [
+          {
+            linkName: 'Custom Design & Development',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Custom Web Design'
+          },
+          {
+            linkName: 'Ecommerce',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Custom Ecommerce'
+          },
+          {
+            linkName: 'Mobile-friendly Websites',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Mobile-friendly websites'
+          },
+          {
+            linkName: 'Accessibility',
+            linkRoute: '/services/ui-ux',
+            a11y: 'Accessibility'
+          }
+        ]
+      },
+      {
+        serviceFlag: 3,
+        heading: 'Apps & Software',
+        list: [
+          {
+            linkName: 'Guided discovery',
+            linkRoute: '/services/app-development',
+            a11y: 'Guided discovery & Requirements Gathering'
+          },
+          {
+            linkName: 'Agile Project Management',
+            linkRoute: '/services/app-development',
+            a11y: 'Flexibility and Scalability'
+          },
+          {
+            linkName: 'User Experience Design',
+            linkRoute: '/services/app-development',
+            a11y: 'Humanize the web'
+          },
+          {
+            linkName: 'User Interface Design',
+            linkRoute: '/services/app-development',
+            a11y: 'Custom Interfaces'
+          },
+          {
+            linkName: 'Application Development',
+            linkRoute: '/services/app-development',
+            a11y: 'Custom app development'
+          }
+        ]
+      },
+      {
+        serviceFlag: 4,
+        heading: 'Digital Marketing',
+        list: [
+          {
+            linkName: 'Search Engine Optimization',
+            linkRoute: '/services/digital-marketing',
+            a11y: 'Raise your profile'
+          },
+          {
+            linkName: 'Search Engine Marketing',
+            linkRoute: '/services/digital-marketing',
+            a11y: 'Targeting the right customers'
+          },
+          {
+            linkName: 'Social Media Marketing',
+            linkRoute: '/services/digital-marketing',
+            a11y: 'Social Media strategy & Executioin'
+          },
+          {
+            linkName: 'Content Marketing',
+            linkRoute: '/services/digital-marketing',
+            a11y: 'Content Marketing services'
+          },
+          {
+            linkName: 'Launch Campaigns',
+            linkRoute: '/services/digital-marketing',
+            a11y: 'We help you make a splash!'
+          }
+        ]
+      },
+      {
+        serviceFlag: 5,
+        heading: 'Support',
+        list: [
+          {
+            linkName: 'Consulting',
+            linkRoute: '/services/consulting',
+            a11y: 'Solutions & Consulting services'
+          },
+          {
+            linkName: 'Startup Support',
+            linkRoute: '/services/consulting',
+            a11y: 'Startup launch services'
+          },
+          {
+            linkName: 'Cloud Technologies',
+            linkRoute: '/services/consulting',
+            a11y: 'Setup & Configuration services'
+          },
+          {
+            linkName: 'Domain Management',
+            linkRoute: '/services/consulting',
+            a11y: 'Keep your domain secure'
+          },
+          {
+            linkName: 'Domain dispute Resolution',
+            linkRoute: '/services/consulting',
+            a11y: 'Domain retrieval'
+          },
+          {
+            linkName: 'Gsuite Management',
+            linkRoute: '/services/consulting',
+            a11y: 'Gsuite setup & management'
+          }
+        ]
+      },
+    ]
+  },
+
   testimonials: [
     {
       content: 'Dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',

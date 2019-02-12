@@ -33,7 +33,18 @@ import MdevData           from '../../mdev-data.js';
 
 export default{
   name: 'HomePage',
-
+  // TODO - Edit meta Title
+  // SEE - https://github.com/ktquez/vue-head
+  head: {
+    title: {
+      inner: 'MDEV Digital',
+      complement: 'Process Driven UI/UX and Development - London, Ontario '
+    },
+    meta: [
+      { property: 'og:title', content: 'MDEV Digital | Process Driven UI/UX and Development - London, Ontario' },
+      { name: 'twitter:title', content: 'MDEV Digital | Process Driven UI/UX and Development - London, Ontario' }
+    ]
+  },
   data: function() {
     return {
       heroStyles: {

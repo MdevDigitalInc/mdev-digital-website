@@ -29,12 +29,11 @@ export default{
 
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 /*-------------------------------------*/
 /* Circle Bar Decoration
 /--------------------------------------*/
-
 .d-divider {
   width: 100%;
   position: relative;
@@ -67,7 +66,6 @@ export default{
     }
   }
 }
-
 
 /*--------------------------------------*/
 
