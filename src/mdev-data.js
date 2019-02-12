@@ -424,6 +424,101 @@ export default  {
     ]
   },
 
+  webdev: {
+    serviceFlag: 2,
+    chapter: {
+      title: 'web design services',
+      index: '02',
+      next: {
+        title: 'APPs & software services',
+        index: '03',
+        link: '/services/app-development',
+        a11y: 'See our custom development services'
+      }
+    },
+    services: [
+      {
+        preTitle: false,
+        title: 'The web has gotten crowded',
+        subTitle: 'Custom Design & Development',
+        description: 'Stand out in the digital realm with powerful, feature rich websites, built to be fully accessible and mobile-responsive from the very beginning. Utilizing the latest technologies, modern design techniques and methodical coding practices, we deliver quality digital solutions tailored to fit.',
+        topics: [
+          'Custom Web Design & Development',
+          'User Interface Design',
+          'Responsive Web Design',
+          'Custom Wordpress Development'
+        ],
+        caseStudy: {
+          action: 'View case study',
+          hook: 'See how we worked with The Factory to create an Adventure booking system.',
+          BtnData: {
+            accessibility: 'View The Factory case study',
+            btnRoute: '/casestudy',
+            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
+          },
+          reverse: true
+        },
+        media: {
+          image: 'services/webdev/the-factory-webdev.jpeg',
+          imageDesc: 'Description here TODO'
+        }
+      },
+      {
+        preTitle: false,
+        title: 'Set</br>Up</br>Shop',
+        subTitle: 'Ecommerce',
+        description: 'If you have a product or service to sell, our team can help you choose the best software for your store, provide advice on how to organize your products and how best to position your offerings. We can also help you with integrated cross-channel marketing campaigns to grow your new empire.',
+        topics: [
+          'Custom ecommerce development',
+          'Shopify',
+          'Woocommerce',
+          'Digital Marketing',
+        ],
+        caseStudy: {
+          action: 'View case study',
+          hook: 'Find out how we created a shoe empire from an overstock colletion.',
+          BtnData: {
+            accessibility: 'View Aster Shoes case study',
+            btnRoute: '/casestudy',
+            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
+          },
+          reverse: false
+        },
+        media: {
+          image: 'services/webdev/the-factory-webdev.jpeg',
+          imageDesc: 'Description here TODO'
+        }
+      }
+    ],
+    servicesNomedia: [
+      {
+        preTitle: 'It\'s the right thing to do',
+        title: 'Remove Digital Barriers',
+        content: [
+          {
+            title: 'Mobile Friendly Sites',
+            description: 'it is no longer acceptable to have a website that doesn\'t function across multiple devices and browsers. Mobile-friendly design is part of every web project we handle. Prior to any launch, we perform extensive testing to insure optimum performance in all environments.',
+            topics: [
+              'Cross-device testing',
+              'Multi-browser testing',
+              'Mobile First Design'
+            ]
+          },
+          {
+            title: 'Online Accessibility',
+            description: 'Accessibility is just as important online as it is in the physical world. As part of our mission to humanize the web, we want to remove digital barriers. If you need higher-than-average accessibility standards, let us know so we can craft the appropriate solution based on user needs and organizational structure.',
+            topics: [
+              'Accessibility Design',
+              'Accessibility Testing',
+              'AODA Compliance',
+              'WCAG 2.0 (LEVEL A, LEVEL AA, LEVEL AAA)'
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
   prefooter: {
     heading: 'More services we offer',
     subheading: 'Ready to get started?',
