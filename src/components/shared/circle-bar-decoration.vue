@@ -51,7 +51,7 @@ export default{
 
   .--bar {
     order: 2;
-    width: 50%;
+    width: 40%;
     min-width: 250px;
     height: 8px;
     background: $black;

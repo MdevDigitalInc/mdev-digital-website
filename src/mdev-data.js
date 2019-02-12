@@ -511,7 +511,7 @@ export default  {
               'Accessibility Design',
               'Accessibility Testing',
               'AODA Compliance',
-              'WCAG 2.0 (LEVEL A, LEVEL AA, LEVEL AAA'
+              'WCAG 2.0 (LEVEL A, LEVEL AA, LEVEL AAA)'
             ]
           }
         ]

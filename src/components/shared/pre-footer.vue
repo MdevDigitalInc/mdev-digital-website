@@ -67,8 +67,13 @@ export default{
   position: relative;
   padding: 180px 0 120px;
 
+  .mdev-main-wrapper {
+    max-width: 1900px;
+    width: 85%;
+  }
+
   .mdev-prefooter-title {
-    font-size: 80px;
+    font-size: 100px;
     display: block;
     font-weight: 700;
   }

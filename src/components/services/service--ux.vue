@@ -205,38 +205,14 @@ $heading-top-padding-mob: 10px;
 .--vivus-branding {
 
   .--web-humanize {
-    width: 40%;
+    width: 85%;
     margin-bottom: $heading-top-padding;
-
-    @media #{$portrait} {
-      width: 44%;
-      margin-bottom: $heading-top-padding-mob;
-    }
-  }
-
-  .--branding-your {
-    width: 47%;
-    margin-bottom: $heading-top-padding;
-    transform: translatey(5px);
-
-    @media #{$portrait} {
-      width: 52%;
-      transform: translatey(0);
-      margin-bottom: $heading-top-padding-mob;
-    }
   }
 
   .--web-the {
-    width: 55%;
-    margin-right: 30px;
+    width: 13%;
     opacity: 0;
     transition: all .6s;
-
-    @media #{$portrait} {
-      width: 70%;
-      margin-bottom: $heading-top-padding-mob;
-      margin-right: 0;
-    }
   }
 
   .--web-web {
@@ -245,7 +221,7 @@ $heading-top-padding-mob: 10px;
 
   .--header-cta {
     opacity: 0;
-    width: 40%;
+    width: 47%;
     transition: opacity 1.2s;
 
     @media #{$portrait} {

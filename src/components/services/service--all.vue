@@ -218,6 +218,7 @@ export default{
 
   .mdev-service-topics {
     line-height: 1.82;
+    font-size: 20px;
   }
 
   .mdev-service-desc {

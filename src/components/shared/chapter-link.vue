@@ -45,7 +45,7 @@ export default{
 /--------------------------------------*/
 .mdev-chapter-link {
   width: 100%;
-  padding: 30px 0 150px;
+  padding: 30px 0 120px;
   overflow-x: hidden;
   overflow-y: visible;
 
