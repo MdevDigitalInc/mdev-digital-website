@@ -75,7 +75,7 @@ export default{
 
   // Feature wrapper to keep things centered
   .mdev-featured-wrapper {
-    width: 91%;
+    width: 85%;
     margin: 0 auto;
 
     @media #{$portrait} {
