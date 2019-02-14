@@ -13,6 +13,8 @@
               <object class="--app-with" id="anim-with" type="image/svg+xml" :data="loadImage(withAnim)"></object>
               <object class="--app-passion" id="anim-passion" type="image/svg+xml" :data="loadImage(passionAnim)"></object>
               <!-- CTA Text & Button -->
+            </div>
+            <div class="flex flex-hor-end">
               <div data-header-intro class="--header-cta">
                 <p>
                   {{ $t('appdevpage.intro') }}
@@ -33,6 +35,7 @@
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
     <!-- Chapter Content -->
+    <page-intro :pageIntro="serviceIntro"></page-intro>
     <!-- No Media -->
     <service-nomedia
       v-for="(service, index) in nomedia"
@@ -40,6 +43,7 @@
       :title="service.title"
       :content="service.content"
       ></service-nomedia>
+    <!-- Service Tile W/ Media -->
     <service-tile v-for="(service, index) in services"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 1"
@@ -103,6 +107,7 @@ import FeaturedServices   from '../modules/featured-services.vue';
 import FeaturedNomedia    from '../modules/featured-nomedia.vue';
 import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
+import PageIntro          from '../shared/page-intro.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
 
@@ -138,7 +143,8 @@ export default{
       services: MdevData.appdev.services,
       prefooter: MdevData.prefooter,
       serviceFlag: MdevData.appdev.serviceFlag,
-      nomedia: MdevData.appdev.servicesNomedia
+      nomedia: MdevData.appdev.servicesNomedia,
+      serviceIntro: MdevData.appdev.serviceIntro
     };
   },
 
@@ -167,6 +173,7 @@ export default{
     'chapter-heading': ChapterHeading,
     'chapter-link'   : ChapterLink,
     'service-tile'   : FeaturedServices,
+    'page-intro'     : PageIntro,
     'service-nomedia': FeaturedNomedia
   }};
 </script>
@@ -215,21 +222,22 @@ $heading-top-padding-mob: 15px;
   }
 
   .--app-with {
-    width: 12%;
-    margin-left: 2%;
+    width: 15%;
     opacity: 0;
     transition: all .6s;
   }
 
   .--app-passion {
-    width: 40%;
-    margin: 0 2%;
+    width: 83%;
+    margin: 0 0 0 2%;
   }
 
   .--header-cta {
     opacity: 0;
     width: 47%;
     transition: opacity 1.2s;
+    position: relative;
+    right: 0;
 
     @media #{$portrait} {
       width: 100%;
