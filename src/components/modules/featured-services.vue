@@ -151,6 +151,7 @@ export default {
 
     @media #{$portrait} {
       margin: 100px auto;
+      padding: 0 10%;
     }
   }
 

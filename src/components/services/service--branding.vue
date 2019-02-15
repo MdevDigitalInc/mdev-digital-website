@@ -266,7 +266,7 @@ $heading-top-padding-mob: 10px;
 
     @media #{$portrait} {
       text-align: left;
-      width: 80%;
+      width: 76%;
       padding: 0;
     }
 

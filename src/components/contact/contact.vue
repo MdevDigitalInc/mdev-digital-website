@@ -199,7 +199,7 @@ export default {
 
     @media #{$portrait} {
       text-align: center;
-      width: 75%;
+      width: 76%;
     }
   }
 

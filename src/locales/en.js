@@ -124,6 +124,10 @@ export default {
     intro: "We believe in humanizing the web. We accomplish this mission through carefully planned site architecture and a focus on mobile-friendliness, accessibility and approachable web design. The end result is of this consistently user-friendly sites that delight our clients and visitors."
   },
 
+  appdevpage: {
+    intro: "We provide cutting-edge, innovative development services to bring your ideas to life. Using Agile development practices, modern UX/UI principles and secure, cloud-based technologies, we turn dreams into quality applications that users love."
+  },
+
   aboutpage: {
   },
 
