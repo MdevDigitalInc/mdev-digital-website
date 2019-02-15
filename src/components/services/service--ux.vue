@@ -174,7 +174,7 @@ export default{
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 /*-------------------------------------*/
 /* UI-UX Component Styles
 /--------------------------------------*/
@@ -262,7 +262,7 @@ $heading-top-padding-mob: 15px;
 
     @media #{$portrait} {
       text-align: left;
-      width: 80%;
+      width: 76%;
       padding: 0;
     }
 

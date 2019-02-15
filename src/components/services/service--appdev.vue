@@ -32,6 +32,7 @@
     </hero-main>
     <!-- Chapter Heading -->
     <chapter-heading
+       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
     <!-- Chapter Content -->
@@ -180,7 +181,7 @@ export default{
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 /*-------------------------------------*/
 /* SERVCICES--APPDEV Component Styles
@@ -237,6 +238,7 @@ $heading-top-padding-mob: 15px;
     width: 47%;
     transition: opacity 1.2s;
     position: relative;
+    margin-top: 20px;
     right: 0;
 
     @media #{$portrait} {
@@ -270,7 +272,7 @@ $heading-top-padding-mob: 15px;
 
     @media #{$portrait} {
       text-align: left;
-      width: 80%;
+      width: 76%;
       padding: 0;
     }
 

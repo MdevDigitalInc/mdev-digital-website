@@ -2,7 +2,7 @@
   <section class="mdev-featured-services --section-space mdev-service">
     <!-- Title -->
     <div class="mdev-service-title">
-      <span class="--pre-title u-uppercase">
+      <span v-if="preTitle" class="--pre-title u-uppercase">
         {{ preTitle }}
       </span>
       <h2 v-html="title" class="--title u-bold u-uppercase"></h2>
@@ -51,19 +51,20 @@ export default{
 /*--------------------------------------*/
 
 .mdev-featured-services {
-  overflow: visible;
+  padding-top: 50px;
+  margin-top: 100px;
 
   .mdev-featured-column {
     width: 44%;
 
     @media #{$portrait} {
       width: 100%;
-      margin: 60px 0;
+      margin: 20px 0;
     }
   }
 
   .mdev-featured-wrapper {
-    width: 70%;
+    width: 76%;
     margin: 0 auto;
   }
 

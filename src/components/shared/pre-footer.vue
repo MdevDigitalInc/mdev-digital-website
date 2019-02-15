@@ -76,6 +76,10 @@ export default{
     font-size: 100px;
     display: block;
     font-weight: 700;
+
+    @media #{$portrait} {
+      font-size: 30px;
+    }
   }
 
   .mdev-prefooter-subtitle {
