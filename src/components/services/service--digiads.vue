@@ -36,7 +36,49 @@
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
     <!-- Chapter Content -->
-
+    <service-tile v-for="(service, index) in services"
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
+      :flip="((index + 1) % 2) == 0"
+      :linkData="service.caseStudy"
+      v-in-viewport
+      class="a-fade-in mdev-service"
+      :class="{ '--no-image' : !service.media }">
+      <!-- Media -->
+      <template slot="mediaSlot">
+        <img v-if="service.media"
+          :alt="service.media.imageDesc"
+          :src="loadImage(service.media.image)">
+        <!-- Title Only appears here if no image -->
+        <h2 v-if="!service.media"
+          v-html="service.title"
+          class="mdev-service-title u-uppercase a-fade-in"
+          v-in-viewport></h2>
+      </template>
+      <!-- Content -->
+      <template slot="contentSlot">
+        <span class="--pre-title" v-if="service.preTitle">
+          {{ service.preTitle }}
+        </span>
+        <h2 v-if="service.media"
+          v-html="service.title"
+          class="mdev-service-title u-uppercase a-fade-in"
+          v-in-viewport></h2>
+        <h3 class="mdev-service-subtitle">
+          {{ service.subTitle }}
+        </h3>
+        <p class="mdev-service-desc a-fade-in" v-in-viewport>
+          {{ service.description }}
+        </p>
+        <!-- Topics Loop -->
+        <ul v-if="service.topics" class="mdev-service-topics --space-top-xs a-fade-in" v-in-viewport>
+          <li
+            v-html="topic"
+            class="u-uppercase u-bold"
+            v-for="topic in service.topics">
+          </li>
+        </ul>
+      </template>
+    </service-tile>
     <!-- Chapter Link -->
     <chapter-link
       :chapterIndex="chapter.next.index"
@@ -63,6 +105,7 @@
 import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
 import PreFooter          from '../shared/pre-footer.vue';
+import FeaturedServices   from '../modules/featured-services.vue';
 import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
 // Import Data From Flat File
@@ -125,6 +168,7 @@ export default{
     'hero-main'      : HeroMain,
     'main-footer'    : MainFooter,
     'pre-footer'     : PreFooter,
+    'service-tile'   : FeaturedServices,
     'chapter-heading': ChapterHeading,
     'chapter-link'   : ChapterLink
   }

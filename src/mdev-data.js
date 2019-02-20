@@ -627,50 +627,74 @@ export default  {
     services: [
       {
         preTitle: false,
-        title: 'Place Holder Text',
-        subTitle: 'Application Development',
-        description: 'You can expect regular feature releases as we work to build a product you can quickly take to market. Once released, we’ll help you analyze post-launch feature-set priorities to continue application growth as you discover more about your users needs. We focus on security, scalability and longevity to ensure that your investment in technology can scale with your business.',
+        title: 'Share your narrative',
+        subTitle: 'Content Marketing',
+        description: 'We can help you write compelling, up-to-date content that will give users a reason to return to your site and social media channels. We can also help you with clear, strong wording about products and services that will give users quick and tactile reasons to purchase your product or interact with your service.',
         topics: [
-          'Custom software development',
-          'vue.js, node, react, mongo, postgres',
-          'Workflow & Process Automation',
-          'API Integrations',
-          'Embedded Systems'
+          'Blogging',
+          'Website Copy',
+          'Ad Copy',
+          'Proofreading & Editing',
+          'Email Marketing'
+        ],
+        caseStudy: false,
+        media: false
+      },
+      {
+        preTitle: false,
+        title: 'Connect with your audience',
+        subTitle: 'Social Media Marketing',
+        description: 'Social media has become the central hub of communication for many businesses. We can help you develop and execute a social media strategy to promote your products and services to the world.',
+        topics: [
+          'Social Media Strategy',
+          'Social Media Campaigns',
+          'Social Media Advertising',
+          'Graphical & Video Asset Creation'
         ],
         caseStudy: false,
         media: {
-          image: 'services/appdev/the-cat-appdev.jpeg',
+          image: 'services/digiads/digiads-placeholder.jpeg',
           imageDesc: 'Description here TODO'
         }
-      }
-    ],
-    servicesNomedia: [
+      },
       {
         preTitle: false,
-        title: 'Engage your audience',
-        content: [
-          {
-            title: 'User Experience',
-            description: 'We combine well-defined workflows, detailed user personas and comprehensive product roadmaps with prototyping and wireframing to lay a solid foundation for your application. The goal is to provide a positive customer experience from first impression to the completion of your desired result.',
-            topics: [
-              'User Personas',
-              'Prototyping & Wireframing',
-              'User Experience Strategies'
-            ]
-          },
-          {
-            title: 'User Interface',
-            description: 'Watch your application come to life as we create the user interface that your users will be interacting with. From dashboards and list views to complex reporting screens, our clean application design is user-friendly and provides clear guidance on how to perform new or complex functions.',
-            topics: [
-              'Dashboards',
-              'List Views',
-              'Reporting',
-              'CSS Animations',
-              'User Engagement Strategies'
-            ]
-          }
-        ]
-      }
+        title: 'Algorithm Not Alchemy',
+        subTitle: 'Search Engine Optimization',
+        description: 'Reaching a new audience for your products and services through proper search engine optimization is a great way to increase your market share. We’ll collaborate with you to understand your goals to create a strong SEO backbone for your site. Sit back and let our expert team worry about keeping on top of the latest search engine and social media algorithms to keep you ahead of the competition.',
+        topics: false,
+        caseStudy: false,
+        media: false
+      },
+      {
+        preTitle: false,
+        title: 'Demystify Online Marketing',
+        subTitle: 'Search Engine Marketing',
+        description: 'Social media has become the central hub of communication for many businesses. We can help you develop and execute a social media strategy to promote your products and services to the world.',
+        topics: false,
+        caseStudy: false,
+        media: {
+          image: 'services/digiads/digiads-placeholder.jpeg',
+          imageDesc: 'Description here TODO'
+        }
+      },
+      {
+        preTitle: false,
+        title: 'Set the wheels in motion',
+        subTitle: 'Launch Campaigns',
+        description: 'We know that you are eager to get the word out about your new product or service quickly. We can help you structure a cross-channel launch campaign tailored specifically to your audience including social media, print design, and trade show setups. Our launch campaigns often include a landing page that can supply teaser content while we help you build up to the big announcement.',
+        topics: [
+          'Landing Pages',
+          'Event Promotion',
+          'Brand Launches',
+          'Photography & Video'
+        ],
+        caseStudy: false,
+        media: {
+          image: 'services/digiads/digiads-placeholder.jpeg',
+          imageDesc: 'Description here TODO'
+        }
+      },
     ]
   },
 

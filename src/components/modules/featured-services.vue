@@ -171,6 +171,22 @@ export default {
   }
 }
 
+.mdev-featured-services.--no-image .mdev-featured-wrapper {
+  margin: 0 9%;
+  width: auto;
+
+  .mdev-service-title {
+    margin: 10% 0;
+
+    &:before {
+      left: 20%;
+      right: -300px;
+      top: -15%;
+      bottom: -15%;
+    }
+  }
+}
+
 // Flips media to the right
 // Every other block in this layout is flipped
 // Includes provisions to change the background lines
