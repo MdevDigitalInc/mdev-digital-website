@@ -41,7 +41,7 @@
     <!-- Chapter Content -->
     <service-tile v-for="(service, index) in services"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
-      :flip="((index + 1) % 2) == 0"
+      :flip="((index + 1) % 2) == 1"
       :linkData="service.caseStudy"
       v-in-viewport
       class="a-fade-in mdev-service"
