@@ -5,9 +5,12 @@
       <!-- Slot Content -->
       <div class="mdev-main-hero --hero-padding" :style="heroStyles">
         <!-- Vivus Namespace -->
-        <div class="mdev-vivus-header --vivus-branding">
+        <div class="mdev-vivus-header --vivus-digiads">
           <div class="mdev-center">
-            <object class="--digi-once" id="anim-once" type="image/svg+xml" :data="loadImage(onceAnim)"></object>
+            <div class="flex flex-vert-start --portrait-wrap">
+              <object class="--digi-once" id="anim-once" type="image/svg+xml" :data="loadImage(onceAnim)"></object>
+              <object class="--digi-you" id="anim-you" type="image/svg+xml" :data="loadImage(youAnim)"></object>
+            </div>
             <!-- Bottom Container -->
             <div class="flex flex-vert-start --portrait-wrap">
               <object class="--digi-go" id="anim-go" type="image/svg+xml" :data="loadImage(goAnim)"></object>
@@ -134,9 +137,10 @@ export default{
       // Disables Page Title bar
       pageTitle: 'TESTY TEST TEST',
       headerDsc: 'Innovate With Passion',
-      onceAnim: 'services/appdev/MDEV_HEADER_innovate_animated.svg',
-      goAnim: 'services/appdev/MDEV_HEADER_with.svg',
-      digitalAnim: 'services/appdev/MDEV_HEADER_passion_animated.svg',
+      onceAnim: 'services/digiads/MDEV_HEADER_once_animated.svg',
+      youAnim: 'services/digiads/MDEV_HEADER_you_animated.svg',
+      goAnim: 'services/digiads/MDEV_HEADER_go_animated.svg',
+      digitalAnim: 'services/digiads/MDEV_HEADER_digital_animated.svg',
       // Chapter Info
       chapter: MdevData.digiads.chapter,
       // Services Data
@@ -153,14 +157,17 @@ export default{
         new Vivus('anim-once', {duration: 150}, console.log('fired'));
       }, 100);
       setTimeout(() => {
-        $('#anim-go').addClass('--anim-visible');
+        new Vivus('anim-you', {duration: 150}, console.log('fired'));
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-digital', {duration: 150}, console.log('fired'));
+        new Vivus('anim-go', {duration: 150}, console.log('fired'));
       }, 800);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
+        new Vivus('anim-digital', {duration: 150}, console.log('fired'));
       }, 1200);
+      setTimeout(() => {
+        $('[data-header-intro]').addClass('--anim-visible');
+      }, 1400);
     });
   },
 
@@ -206,32 +213,32 @@ $heading-top-padding-mob: 15px;
   }
 }
 
-.--vivus-branding {
+.--vivus-digiads {
 
-  .--digi-once {
-    width: 90%;
-    margin-bottom: $heading-top-padding;
+  .--digi-once,
+  .--digi-you,
+  .--digi-go,
+  .--digi-digital {
+    height: 10vw;
+  }
+
+  .--digi-you,
+  .--digi-digital {
+    margin-left: 3vw;
 
     @media #{$portrait} {
-      width: 100%;
-      margin-bottom: $heading-top-padding-mob;
+      margin-left: 3.5vw;
     }
   }
 
-  .--digi-go {
-    width: 15%;
-    opacity: 0;
-    transition: all .6s;
-  }
-
-  .--digi-digital {
-    width: 83%;
-    margin: 0 0 0 2%;
+  .--digi-once,
+  .--digi-you {
+    margin-bottom: 20px;
   }
 
   .--header-cta {
     opacity: 0;
-    width: 47%;
+    width: 60%;
     transition: opacity 1.2s;
     position: relative;
     margin-top: 20px;
