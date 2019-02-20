@@ -185,6 +185,13 @@ export default {
       bottom: -15%;
     }
   }
+
+  &.--flip-order {
+    .mdev-service-title:before {
+      right: 20%;
+      left: -300px;
+    }
+  }
 }
 
 // Flips media to the right
