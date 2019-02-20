@@ -176,7 +176,8 @@ export default{
     'service-tile'   : FeaturedServices,
     'page-intro'     : PageIntro,
     'service-nomedia': FeaturedNomedia
-  }};
+  }
+};
 </script>
 
 
@@ -294,7 +295,6 @@ $heading-top-padding-mob: 15px;
   }
 }
 
-
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {
@@ -313,12 +313,5 @@ $heading-top-padding-mob: 15px;
   animation: line-three-anim;
   @include arrow-anim-rules(17s);
 }
-
-
 /*--------------------------------------*/
-
-
-
-/*--------------------------------------*/
-
 </style>

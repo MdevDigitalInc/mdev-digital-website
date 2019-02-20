@@ -128,6 +128,10 @@ export default {
     intro: "We provide cutting-edge, innovative development services to bring your ideas to life. Using Agile development practices, modern UX/UI principles and secure, cloud-based technologies, we turn dreams into quality applications that users love."
   },
 
+  digiadspage: {
+    intro: "Online marketing has become a universal requirement for brands and services looking to connect with their audiences. We can help you reinforce your online brand with cross-channel digital marketing campaigns that audiences will notice."
+  },
+
   aboutpage: {
   },
 

@@ -33,7 +33,6 @@
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
     <!-- Chapter Content -->
-    <!-- Chapter Content -->
     <service-tile v-for="(service, index) in services"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 1"

@@ -23,7 +23,6 @@
 
 
 <script>
-// TODO - ADD CIRCLE LINK AND LINK THAT SHIT ALL UP
 import CircleLink       from '../shared/circle-bar-link.vue';
 
 export default {
@@ -137,6 +136,11 @@ export default {
   }
 }
 
+// [ Flip Order override ]
+// .--flip-order class gets applied automatically by the parent
+// based on wether it is an ODD or EVEN child in the array.
+// These CSS styles are needed to flip the presentation order of
+// MEDIA and CONTENT div.
 .mdev-featured-services .mdev-featured-wrapper.--flip-order {
   margin: 0 10% 0 0;
 
@@ -144,6 +148,8 @@ export default {
     margin: 0 auto;
   }
 
+  // Move content to last
+  // Adjust padding accordingly
   .mdev-service-content {
     order: 4;
     padding-right: 0;
@@ -155,6 +161,7 @@ export default {
     }
   }
 
+  // Adjust padding
   .mdev-service-media {
     margin-right: 5vw;
     margin-left: 0;
@@ -171,8 +178,56 @@ export default {
   }
 }
 
-// Flips media to the right
-// Every other block in this layout is flipped
-// Includes provisions to change the background lines
+// [ No Image Override ]
+// When there is no image to be displayed in this module, it will default
+// To having the TITLE replace the MEDIA and have it start with the media
+// On the right. This is OPPOSITE to the default where media is always on
+// the left first.
+.mdev-featured-services.--no-image .mdev-featured-wrapper {
+  margin: 0 9%;
+  width: auto;
+
+  // Override title margin
+  .mdev-service-title {
+    margin: 10% 0;
+
+    // Override decoration direction
+    &:before {
+      right: 20%;
+      left: -300px;
+      top: -15%;
+      bottom: -15%;
+    }
+  }
+
+  // Default media to the RIGHT
+  .mdev-service-media {
+    order: 1;
+  }
+
+  // Default content LEFT
+  .mdev-service-content {
+    order: 2;
+    padding-right: 0;
+    padding-left: 10%;
+  }
+
+  // Flip Order
+  &.--flip-order {
+    .mdev-service-media {
+      order: 2;
+    }
+
+    .mdev-service-content {
+      order: 1;
+    }
+
+    .mdev-service-title:before {
+      left: 20%;
+      right: -300px;
+    }
+  }
+}
+
 /*--------------------------------------*/
 </style>
