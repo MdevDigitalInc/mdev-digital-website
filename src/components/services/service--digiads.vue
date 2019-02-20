@@ -7,17 +7,17 @@
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-branding">
           <div class="mdev-center">
-            <object class="--app-innovate" id="anim-innovate" type="image/svg+xml" :data="loadImage(innovateAnim)"></object>
+            <object class="--digi-once" id="anim-once" type="image/svg+xml" :data="loadImage(onceAnim)"></object>
             <!-- Bottom Container -->
             <div class="flex flex-vert-start --portrait-wrap">
-              <object class="--app-with" id="anim-with" type="image/svg+xml" :data="loadImage(withAnim)"></object>
-              <object class="--app-passion" id="anim-passion" type="image/svg+xml" :data="loadImage(passionAnim)"></object>
+              <object class="--digi-go" id="anim-go" type="image/svg+xml" :data="loadImage(goAnim)"></object>
+              <object class="--digi-digital" id="anim-digital" type="image/svg+xml" :data="loadImage(digitalAnim)"></object>
               <!-- CTA Text & Button -->
             </div>
             <div class="flex flex-hor-end">
               <div data-header-intro class="--header-cta">
                 <p>
-                  {{ $t('appdevpage.intro') }}
+                  {{ $t('digiadspage.intro') }}
                 </p>
               </div>
             </div>
@@ -134,9 +134,9 @@ export default{
       // Disables Page Title bar
       pageTitle: 'TESTY TEST TEST',
       headerDsc: 'Innovate With Passion',
-      innovateAnim: 'services/appdev/MDEV_HEADER_innovate_animated.svg',
-      withAnim: 'services/appdev/MDEV_HEADER_with.svg',
-      passionAnim: 'services/appdev/MDEV_HEADER_passion_animated.svg',
+      onceAnim: 'services/appdev/MDEV_HEADER_innovate_animated.svg',
+      goAnim: 'services/appdev/MDEV_HEADER_with.svg',
+      digitalAnim: 'services/appdev/MDEV_HEADER_passion_animated.svg',
       // Chapter Info
       chapter: MdevData.digiads.chapter,
       // Services Data
@@ -150,13 +150,13 @@ export default{
     this.$nextTick(() => {
         $('[data-main-nav]').addClass('--teal-white');
       setTimeout(() => {
-        new Vivus('anim-innovate', {duration: 150}, console.log('fired'));
+        new Vivus('anim-once', {duration: 150}, console.log('fired'));
       }, 100);
       setTimeout(() => {
-        $('#anim-with').addClass('--anim-visible');
+        $('#anim-go').addClass('--anim-visible');
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-passion', {duration: 150}, console.log('fired'));
+        new Vivus('anim-digital', {duration: 150}, console.log('fired'));
       }, 800);
       setTimeout(() => {
         $('[data-header-intro]').addClass('--anim-visible');
@@ -208,7 +208,7 @@ $heading-top-padding-mob: 15px;
 
 .--vivus-branding {
 
-  .--app-innovate {
+  .--digi-once {
     width: 90%;
     margin-bottom: $heading-top-padding;
 
@@ -218,13 +218,13 @@ $heading-top-padding-mob: 15px;
     }
   }
 
-  .--app-with {
+  .--digi-go {
     width: 15%;
     opacity: 0;
     transition: all .6s;
   }
 
-  .--app-passion {
+  .--digi-digital {
     width: 83%;
     margin: 0 0 0 2%;
   }
