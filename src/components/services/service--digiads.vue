@@ -95,13 +95,11 @@ export default{
       withAnim: 'services/appdev/MDEV_HEADER_with.svg',
       passionAnim: 'services/appdev/MDEV_HEADER_passion_animated.svg',
       // Chapter Info
-      chapter: MdevData.appdev.chapter,
+      chapter: MdevData.digiads.chapter,
       // Services Data
-      services: MdevData.appdev.services,
+      services: MdevData.digiads.services,
       prefooter: MdevData.prefooter,
-      serviceFlag: MdevData.appdev.serviceFlag,
-      nomedia: MdevData.appdev.servicesNomedia,
-      serviceIntro: MdevData.appdev.serviceIntro
+      serviceFlag: MdevData.digiads.serviceFlag
     };
   },
 
