@@ -132,8 +132,9 @@ export default {
     intro: "Online marketing has become a universal requirement for brands and services looking to connect with their audiences. We can help you reinforce your online brand with cross-channel digital marketing campaigns that audiences will notice."
   },
 
-  consulting: {
-    btnAction: "Connect With Us"
+  consultingpage: {
+    btnAction: "Connect With Us",
+    intro: "Our support services are all about making your life easier. We already know how to configure email, set up domains and create the infrastructure your business will run on, you have bigger fish to fry, leave the details to us."
   },
 
   aboutpage: {

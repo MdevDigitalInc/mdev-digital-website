@@ -7,23 +7,28 @@
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-digiads">
           <div class="mdev-center">
-            <div class="flex flex-vert-start --portrait-wrap">
-              <object class="--digi-once" id="anim-once" type="image/svg+xml" :data="loadImage(onceAnim)"></object>
-              <object class="--digi-you" id="anim-you" type="image/svg+xml" :data="loadImage(youAnim)"></object>
+            <div class="flex flex-vert-start  flex-hor-between --portrait-wrap">
+              <object class="--con-keep" id="anim-keep" type="image/svg+xml" :data="loadImage(keepAnim)"></object>
+              <div data-header-intro class="--header-cta u-desk-only ">
+                 <p>
+                   {{ $t('consultingpage.intro') }}
+                 </p>
+              </div>
             </div>
             <!-- Bottom Container -->
             <div class="flex flex-vert-start --portrait-wrap">
-              <object class="--digi-go" id="anim-go" type="image/svg+xml" :data="loadImage(goAnim)"></object>
-              <object class="--digi-digital" id="anim-digital" type="image/svg+xml" :data="loadImage(digitalAnim)"></object>
+              <object class="--con-the" id="anim-the" type="image/svg+xml" :data="loadImage(theAnim)"></object>
+              <object class="--con-wheels" id="anim-wheels" type="image/svg+xml" :data="loadImage(wheelsAnim)"></object>
               <!-- CTA Text & Button -->
             </div>
             <div class="flex flex-hor-end">
-              <div data-header-intro class="--header-cta">
-                <p>
-                  {{ $t('digiadspage.intro') }}
-                </p>
-              </div>
+              <object class="--con-turning" id="anim-turning" type="image/svg+xml" :data="loadImage(turningAnim)"></object>
             </div>
+              <div data-header-intro class="--header-cta u-phone-only ">
+                 <p>
+                   {{ $t('consultingpage.intro') }}
+                 </p>
+              </div>
           </div>
         </div>
 
@@ -199,10 +204,10 @@ export default{
       // Disables Page Title bar
       pageTitle: 'TESTY TEST TEST',
       headerDsc: 'Innovate With Passion',
-      onceAnim: 'services/digiads/MDEV_HEADER_once_animated.svg',
-      youAnim: 'services/digiads/MDEV_HEADER_you_animated.svg',
-      goAnim: 'services/digiads/MDEV_HEADER_go_animated.svg',
-      digitalAnim: 'services/digiads/MDEV_HEADER_digital_animated.svg',
+      keepAnim: 'services/support/MDEV_HEADER_keep_animated.svg',
+      turningAnim: 'services/support/MDEV_HEADER_turning_animated.svg',
+      theAnim: 'services/support/MDEV_HEADER_the.svg',
+      wheelsAnim: 'services/support/MDEV_HEADER_wheels_animated.svg',
       // Chapter Info
       chapter: MdevData.consulting.chapter,
       // Services Data
@@ -218,20 +223,20 @@ export default{
     this.$nextTick(() => {
         $('[data-main-nav]').addClass('--teal-white');
       setTimeout(() => {
-        new Vivus('anim-once', {duration: 150}, console.log('fired'));
+        new Vivus('anim-keep', {duration: 150}, console.log('fired'));
       }, 100);
       setTimeout(() => {
-        new Vivus('anim-you', {duration: 150}, console.log('fired'));
+        $('#anim-the').addClass('--anim-visible');
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-go', {duration: 150}, console.log('fired'));
+        new Vivus('anim-wheels', {duration: 150}, console.log('fired'));
       }, 800);
       setTimeout(() => {
-        new Vivus('anim-digital', {duration: 150}, console.log('fired'));
+        new Vivus('anim-turning', {duration: 150}, console.log('fired'));
       }, 1200);
       setTimeout(() => {
         $('[data-header-intro]').addClass('--anim-visible');
-      }, 1400);
+      }, 1700);
     });
   },
 
@@ -282,33 +287,35 @@ $heading-top-padding-mob: 15px;
 
 .--vivus-digiads {
 
-  .--digi-once,
-  .--digi-you,
-  .--digi-go,
-  .--digi-digital {
+  .--con-keep {
+    width: 48%;
+  }
+
+  .--con-turning {
     height: 10vw;
   }
 
-  .--digi-you,
-  .--digi-digital {
-    margin-left: 3vw;
-
-    @media #{$portrait} {
-      margin-left: 3.5vw;
-    }
+  .--con-the {
+    opacity: 0;
+    transition: opacity 1.2s;
+    height: 7vw;
   }
 
-  .--digi-once,
-  .--digi-you {
-    margin-bottom: 20px;
+  .--con-the,
+  .--con-wheels {
+    margin: 20px 0;
   }
+
+  .--con-wheels {
+    height: 10vw;
+  }
+
 
   .--header-cta {
     opacity: 0;
-    width: 60%;
+    width: 48%;
     transition: opacity 1.2s;
     position: relative;
-    margin-top: 20px;
     right: 0;
 
     @media #{$portrait} {
