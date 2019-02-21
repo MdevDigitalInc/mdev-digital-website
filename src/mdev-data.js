@@ -763,7 +763,12 @@ export default  {
         description: 'We know the joy and growing pains that come along with starting a new business, in fact, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding, all the way to setting up your internal operations software, we know what it takes to get you up and running.We know the joy and growing pains that come along with starting a new business, in fact, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding, all the way to setting up your internal operations software, we know what it takes to get you up and running.',
         topics: false,
         caseStudy: false,
-        media: false
+        media: false,
+        BtnData: {
+          accessibility: 'Get in touch to start something new!',
+          btnRoute: '/contact',
+          btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+        }
       },
       {
         preTitle: false,
@@ -779,7 +784,8 @@ export default  {
           'CRM integrations'
         ],
         caseStudy: false,
-        media: false
+        media: false,
+        BtnData: false
       },
       {
         preTitle: false,
@@ -788,7 +794,12 @@ export default  {
         description: 'With our guidance, learn how to innovate effectively within your own business. We can help you reduce your overhead costs and increase productivity by turning your trickiest challenges into growth opportunities. Get in touch to find out how.',
         topics: false,
         caseStudy: false,
-        media: false
+        media: false,
+        BtnData: {
+          accessibility: 'Get in touch to start something new!',
+          btnRoute: '/contact',
+          btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+        }
       }
     ]
   },

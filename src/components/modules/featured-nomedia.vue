@@ -69,7 +69,6 @@ export default{
   }
 
   .--pre-title {
-    position: relative;
     left: 15px;
   }
 }

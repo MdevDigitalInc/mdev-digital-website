@@ -126,6 +126,10 @@
         <p class="mdev-service-desc a-fade-in" v-in-viewport>
           {{ service.description }}
         </p>
+        <!-- Primary Button -->
+        <btn-primary v-if="service.BtnData" :BtnData="service.BtnData">
+          {{ $t("consulting.btnAction") }}
+        </btn-primary>
         <!-- Topics Loop -->
         <ul v-if="service.topics" class="mdev-service-topics --space-top-xs a-fade-in" v-in-viewport>
           <li
@@ -164,12 +168,13 @@
 import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
 import PreFooter          from '../shared/pre-footer.vue';
+import BtnPrimary         from '../shared/btn-primary.vue';
 import FeaturedServices   from '../modules/featured-services.vue';
 import FeaturedNomedia    from '../modules/featured-nomedia.vue';
 import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
 // Import Data From Flat File
-import MdevData       from '../../mdev-data.js';
+import MdevData           from '../../mdev-data.js';
 
 export default{
   name: 'ServicesConsulting',
@@ -237,7 +242,8 @@ export default{
     'service-tile'   : FeaturedServices,
     'chapter-heading': ChapterHeading,
     'chapter-link'   : ChapterLink,
-    'service-nomedia': FeaturedNomedia
+    'service-nomedia': FeaturedNomedia,
+    'btn-primary'   : BtnPrimary
   }
 };
 </script>
