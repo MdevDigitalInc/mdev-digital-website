@@ -212,6 +212,10 @@ export default {
     order: 2;
     padding-right: 0;
     padding-left: 10%;
+
+    @media #{$portrait} {
+      padding: 0;
+    }
   }
 
   // Flip Order
@@ -222,6 +226,10 @@ export default {
 
     .mdev-service-content {
       order: 1;
+
+      @media #{$portrait} {
+        order: 3;
+      }
     }
 
     .mdev-service-title:before {

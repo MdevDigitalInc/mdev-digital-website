@@ -80,7 +80,7 @@ export default{
 
   &:before {
     right: 70%;
-    top: -15%;
+    top: -50px;
     bottom: 20%;
   }
 }
