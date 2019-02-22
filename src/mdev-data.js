@@ -381,7 +381,7 @@ export default  {
           reverse: false
         },
         media: {
-          image: 'services/branding/branding-corporated-id.jpeg',
+          image: 'services/branding/logo-design.png',
           imageDesc: 'Description here TODO'
         }
       },
@@ -399,7 +399,7 @@ export default  {
         ],
         caseStudy: false,
         media: {
-          image: 'services/branding/branding-corporated-id.jpeg',
+          image: 'services/branding/print-agcap-brochure.png',
           imageDesc: 'Description here TODO'
         }
       },
@@ -417,7 +417,7 @@ export default  {
         ],
         caseStudy: false,
         media: {
-          image: 'services/branding/branding-corporated-id.jpeg',
+          image: 'services/branding/packaging-zuc-purecare.png',
           imageDesc: 'Description here TODO'
         }
       }
@@ -459,7 +459,7 @@ export default  {
           reverse: true
         },
         media: {
-          image: 'services/webdev/the-factory-webdev.jpeg',
+          image: 'services/webdev/web-design-tfac.png',
           imageDesc: 'Description here TODO'
         }
       },
@@ -485,7 +485,7 @@ export default  {
           reverse: false
         },
         media: {
-          image: 'services/webdev/the-factory-webdev.jpeg',
+          image: 'services/webdev/ecom-keto.png',
           imageDesc: 'Description here TODO'
         }
       }
@@ -527,7 +527,7 @@ export default  {
       next: {
         title: 'digital marketing services',
         index: '04',
-        link: '/services/app-development',
+        link: '/services/digital-marketing',
         a11y: 'See our custom development services'
       }
     },
@@ -652,7 +652,7 @@ export default  {
         ],
         caseStudy: false,
         media: {
-          image: 'services/digiads/digiads-placeholder.jpeg',
+          image: 'services/digiads/social-phone-instagram.png',
           imageDesc: 'Description here TODO'
         }
       },
@@ -673,7 +673,7 @@ export default  {
         topics: false,
         caseStudy: false,
         media: {
-          image: 'services/digiads/digiads-placeholder.jpeg',
+          image: 'services/digiads/sem-keto-pintrest.png',
           imageDesc: 'Description here TODO'
         }
       },
@@ -690,7 +690,7 @@ export default  {
         ],
         caseStudy: false,
         media: {
-          image: 'services/digiads/digiads-placeholder.jpeg',
+          image: 'services/digiads/launch-tfac-landing-page.png',
           imageDesc: 'Description here TODO'
         }
       },
