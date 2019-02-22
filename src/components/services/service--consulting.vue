@@ -1,6 +1,167 @@
 <template>
   <section class="mdev-main-content">
-    <h1> SERVICE CONSULTING </h1>
+    <!-- Hero Component -->
+    <hero-main v-view="(e) => changeNavBrand(e, '--teal-white')" :pageTitle="pageTitle" :headerDsc="headerDsc">
+      <!-- Slot Content -->
+      <div class="mdev-main-hero --hero-padding" :style="heroStyles">
+        <!-- Vivus Namespace -->
+        <div class="mdev-vivus-header --vivus-digiads">
+          <div class="mdev-center">
+            <div class="flex flex-vert-start  flex-hor-between --portrait-wrap">
+              <object class="--con-keep" id="anim-keep" type="image/svg+xml" :data="loadImage(keepAnim)"></object>
+              <div data-header-intro class="--header-cta u-desk-only ">
+                 <p>
+                   {{ $t('consultingpage.intro') }}
+                 </p>
+              </div>
+            </div>
+            <!-- Bottom Container -->
+            <div class="flex flex-vert-start --portrait-wrap">
+              <object class="--con-the" id="anim-the" type="image/svg+xml" :data="loadImage(theAnim)"></object>
+              <object class="--con-wheels" id="anim-wheels" type="image/svg+xml" :data="loadImage(wheelsAnim)"></object>
+              <!-- CTA Text & Button -->
+            </div>
+            <div class="flex flex-hor-end">
+              <object class="--con-turning" id="anim-turning" type="image/svg+xml" :data="loadImage(turningAnim)"></object>
+            </div>
+              <div data-header-intro class="--header-cta u-phone-only ">
+                 <p>
+                   {{ $t('consultingpage.intro') }}
+                 </p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Sexy Lines -->
+        <div class="mdev-sexy-line --sexy-green" data-line-one></div>
+        <div class="mdev-sexy-line --sexy-green" data-line-two></div>
+        <div class="mdev-sexy-line --sexy-green" data-line-three></div>
+      </div>
+    </hero-main>
+    <!-- Chapter Heading -->
+    <chapter-heading
+       v-view="(e) => changeNavBrand(e, '--teal-black')"
+      :chapterIndex="chapter.index"
+      :chapterTitle="chapter.title"></chapter-heading>
+    <!-- Chapter Content -->
+    <!-- Service Solo -->
+    <service-tile v-for="(service, index) in serviceSolo"
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
+      :flip="((index + 1) % 2) == 1"
+      :linkData="service.caseStudy"
+      v-in-viewport
+      class="a-fade-in mdev-service"
+      :class="{ '--no-image' : !service.media }">
+      <!-- Media -->
+      <template slot="mediaSlot">
+        <img v-if="service.media"
+          :alt="service.media.imageDesc"
+          :src="loadImage(service.media.image)">
+        <!-- Title Only appears here if no image -->
+        <h2 v-if="!service.media"
+          v-html="service.title"
+          class="mdev-service-title u-uppercase a-fade-in"
+          v-in-viewport></h2>
+      </template>
+      <!-- Content -->
+      <template slot="contentSlot">
+        <span class="--pre-title" v-if="service.preTitle">
+          {{ service.preTitle }}
+        </span>
+        <h2 v-if="service.media"
+          v-html="service.title"
+          class="mdev-service-title u-uppercase a-fade-in"
+          v-in-viewport></h2>
+        <h3 class="mdev-service-subtitle">
+          {{ service.subTitle }}
+        </h3>
+        <p class="mdev-service-desc a-fade-in" v-in-viewport>
+          {{ service.description }}
+        </p>
+        <!-- Topics Loop -->
+        <ul v-if="service.topics" class="mdev-service-topics --space-top-xs a-fade-in" v-in-viewport>
+          <li
+            v-html="topic"
+            class="u-uppercase u-bold"
+            v-for="topic in service.topics">
+          </li>
+        </ul>
+      </template>
+    </service-tile>
+
+    <!-- Service Nomedia -->
+    <service-nomedia
+      v-for="(service, index) in nomedia"
+      :preTitle="service.preTitle"
+      :title="service.title"
+      :content="service.content"
+      ></service-nomedia>
+
+    <!-- Services All -->
+    <service-tile v-for="(service, index) in services"
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
+      :flip="((index + 1) % 2) == 1"
+      :linkData="service.caseStudy"
+      v-in-viewport
+      class="a-fade-in mdev-service"
+      :class="{ '--no-image' : !service.media }">
+      <!-- Media -->
+      <template slot="mediaSlot">
+        <img v-if="service.media"
+          :alt="service.media.imageDesc"
+          :src="loadImage(service.media.image)">
+        <!-- Title Only appears here if no image -->
+        <span class="--pre-title" v-if="service.preTitle">
+          {{ service.preTitle }}
+        </span>
+        <h2 v-if="!service.media"
+          v-html="service.title"
+          class="mdev-service-title u-uppercase a-fade-in"
+          v-in-viewport></h2>
+      </template>
+      <!-- Content -->
+      <template slot="contentSlot">
+        <h2 v-if="service.media"
+          v-html="service.title"
+          class="mdev-service-title u-uppercase a-fade-in"
+          v-in-viewport></h2>
+        <h3 class="mdev-service-subtitle">
+          {{ service.subTitle }}
+        </h3>
+        <p class="mdev-service-desc a-fade-in" v-in-viewport>
+          {{ service.description }}
+        </p>
+        <!-- Primary Button -->
+        <btn-primary v-if="service.BtnData" :BtnData="service.BtnData">
+          {{ $t("consulting.btnAction") }}
+        </btn-primary>
+        <!-- Topics Loop -->
+        <ul v-if="service.topics" class="mdev-service-topics --space-top-xs a-fade-in" v-in-viewport>
+          <li
+            v-html="topic"
+            class="u-uppercase u-bold"
+            v-for="topic in service.topics">
+          </li>
+        </ul>
+      </template>
+    </service-tile>
+
+
+    <!-- Chapter Link -->
+    <chapter-link
+      :chapterIndex="chapter.next.index"
+      :chapterLink="chapter.next.link"
+      :a11y="chapter.next.a11y"
+      :chapterTitle="chapter.next.title"></chapter-link>
+    <!-- Pre-Footer -->
+    <pre-footer
+      :heading="prefooter.heading"
+      :subheading="prefooter.subheading"
+      :BtnData="prefooter.BtnData"
+      :serviceFlag="serviceFlag"
+      :links="prefooter.links"></pre-footer>
+    <!-- Footer -->
+    <main-footer></main-footer>
   </section>
 </template>
 
@@ -8,23 +169,229 @@
 
 
 <script>
+// Local Component Registration
+import HeroMain           from '../shared/hero-main.vue';
+import MainFooter         from '../shared/main-footer.vue';
+import PreFooter          from '../shared/pre-footer.vue';
+import BtnPrimary         from '../shared/btn-primary.vue';
+import FeaturedServices   from '../modules/featured-services.vue';
+import FeaturedNomedia    from '../modules/featured-nomedia.vue';
+import ChapterHeading     from '../shared/chapter-heading.vue';
+import ChapterLink        from '../shared/chapter-link.vue';
+// Import Data From Flat File
+import MdevData           from '../../mdev-data.js';
+
 export default{
   name: 'ServicesConsulting',
+
+  head: {
+    title: {
+      inner: 'Digital Marketing',
+      complement: 'MDEV Digital - London, Ontario'
+    },
+    meta: [
+      { property: 'og:title', content: 'Digital Marketing | MDEV Digital - London, Ontario ' },
+      { name: 'twitter:title', content: 'Digital Marketing | MDEV Digital - London, Ontario ' }
+
+    ]
+  },
+
   data: function(){
     return{
-
+      heroStyles: {
+        backgroundColor: '#0f1617'
+      },
+      // Disables Page Title bar
+      pageTitle: 'TESTY TEST TEST',
+      headerDsc: 'Innovate With Passion',
+      keepAnim: 'services/support/MDEV_HEADER_keep_animated.svg',
+      turningAnim: 'services/support/MDEV_HEADER_turning_animated.svg',
+      theAnim: 'services/support/MDEV_HEADER_the.svg',
+      wheelsAnim: 'services/support/MDEV_HEADER_wheels_animated.svg',
+      // Chapter Info
+      chapter: MdevData.consulting.chapter,
+      // Services Data
+      serviceSolo: MdevData.consulting.serviceSolo,
+      nomedia: MdevData.consulting.servicesNomedia,
+      services: MdevData.consulting.services,
+      prefooter: MdevData.prefooter,
+      serviceFlag: MdevData.consulting.serviceFlag
     };
+  },
+
+  mounted: function() {
+    this.$nextTick(() => {
+        $('[data-main-nav]').addClass('--teal-white');
+      setTimeout(() => {
+        new Vivus('anim-keep', {duration: 150}, console.log('fired'));
+      }, 100);
+      setTimeout(() => {
+        $('#anim-the').addClass('--anim-visible');
+      }, 450);
+      setTimeout(() => {
+        new Vivus('anim-wheels', {duration: 150}, console.log('fired'));
+      }, 800);
+      setTimeout(() => {
+        new Vivus('anim-turning', {duration: 150}, console.log('fired'));
+      }, 1200);
+      setTimeout(() => {
+        $('[data-header-intro]').addClass('--anim-visible');
+      }, 1700);
+    });
+  },
+
+  components: {
+    'hero-main'      : HeroMain,
+    'main-footer'    : MainFooter,
+    'pre-footer'     : PreFooter,
+    'service-tile'   : FeaturedServices,
+    'chapter-heading': ChapterHeading,
+    'chapter-link'   : ChapterLink,
+    'service-nomedia': FeaturedNomedia,
+    'btn-primary'   : BtnPrimary
   }
 };
 </script>
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 /*-------------------------------------*/
 /* SERVICES--CONSULTING Component Styles
 /--------------------------------------*/
+
+$heading-top-padding: 50px;
+$heading-top-padding-mob: 15px;
+
+.mdev-vivus-header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0 5%;
+}
+
+.--hero-padding {
+  padding-top: 50%;
+
+  @media #{$portrait} {
+    padding-top: 98%;
+  }
+
+  @media #{$phone-only} {
+    padding-top: 130%;
+  }
+}
+
+.--vivus-digiads {
+
+  .--con-keep {
+    width: 48%;
+  }
+
+  .--con-turning {
+    height: 10vw;
+  }
+
+  .--con-the {
+    opacity: 0;
+    transition: opacity 1.2s;
+    height: 7vw;
+  }
+
+  .--con-the,
+  .--con-wheels {
+    margin: 20px 0;
+  }
+
+  .--con-wheels {
+    height: 10vw;
+  }
+
+
+  .--header-cta {
+    opacity: 0;
+    width: 48%;
+    transition: opacity 1.2s;
+    position: relative;
+    right: 0;
+
+    @media #{$portrait} {
+      width: 100%;
+      text-align: left;
+      margin-top: $heading-top-padding-mob + 10;
+    }
+  }
+
+  .--anim-visible {
+    opacity: 1;
+  }
+
+
+  p {
+    color: $white;
+    font-size: 120%;
+
+    @media #{$phone-only} {
+      font-size: 100%;
+    }
+
+    @media #{$laptop-only} {
+      font-size: 100%;
+    }
+  }
+
+  .mdev-center {
+    @include center(both);
+    width: 70%;
+
+    @media #{$portrait} {
+      text-align: left;
+      width: 76%;
+      padding: 0;
+    }
+
+    @media #{$tablet-prt-only} {
+      width: 75%;
+    }
+
+    @media #{$xl-up} {
+      top: 40%;
+    }
+  }
+
+  .mdev-primary-btn {
+    margin-top: 25px;
+
+    @media #{$desktop-up} {
+      margin-top: 50px;
+    }
+  }
+}
+
+
+// Line Starting Positions
+// Because of rotation Y coordinate is actually X when translating
+[ data-line-one ] {
+  animation: line-one-anim;
+  @include arrow-anim-rules(11s);
+}
+
+// Line Two is not rotated and therefore X is X and Y is Y
+[ data-line-two ] {
+  animation: line-two-anim-header;
+  @include arrow-anim-rules(22s);
+}
+
+// Because of rotation Y coordinate is actually X when translating
+[ data-line-three ] {
+  animation: line-three-anim;
+  @include arrow-anim-rules(17s);
+}
+
+
 
 
 /*--------------------------------------*/

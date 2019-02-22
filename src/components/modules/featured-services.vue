@@ -101,10 +101,6 @@ export default {
     }
 
     .--pre-title {
-      text-transform: uppercase;
-      font-weight: 100;
-      font-size: 30px;
-      position: relative;
       left: 5px;
     }
   }
@@ -189,14 +185,14 @@ export default {
 
   // Override title margin
   .mdev-service-title {
-    margin: 10% 0;
+    margin: 50px 0;
 
     // Override decoration direction
     &:before {
-      right: 20%;
+      right: 30%;
       left: -300px;
-      top: -15%;
-      bottom: -15%;
+      top: -50px;
+      bottom: -50px;
     }
   }
 
@@ -205,11 +201,21 @@ export default {
     order: 1;
   }
 
+  .--pre-title {
+    left: 5px;
+    bottom: -50px;
+  }
+
+
   // Default content LEFT
   .mdev-service-content {
     order: 2;
     padding-right: 0;
     padding-left: 10%;
+
+    @media #{$portrait} {
+      padding: 0;
+    }
   }
 
   // Flip Order
@@ -220,10 +226,14 @@ export default {
 
     .mdev-service-content {
       order: 1;
+
+      @media #{$portrait} {
+        order: 3;
+      }
     }
 
     .mdev-service-title:before {
-      left: 20%;
+      left: 30%;
       right: -300px;
     }
   }

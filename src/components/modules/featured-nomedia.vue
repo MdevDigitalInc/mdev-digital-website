@@ -69,7 +69,6 @@ export default{
   }
 
   .--pre-title {
-    position: relative;
     left: 15px;
   }
 }
@@ -81,7 +80,7 @@ export default{
 
   &:before {
     right: 70%;
-    top: -15%;
+    top: -50px;
     bottom: 20%;
   }
 }

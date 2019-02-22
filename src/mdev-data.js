@@ -611,7 +611,6 @@ export default  {
     ]
   },
 
-
   digiads: {
     serviceFlag: 4,
     chapter: {
@@ -695,6 +694,113 @@ export default  {
           imageDesc: 'Description here TODO'
         }
       },
+    ]
+  },
+
+  consulting: {
+    serviceFlag: 5,
+    chapter: {
+      title: 'Support Services',
+      index: '05',
+      next: {
+        title: 'Branding Services',
+        index: '01',
+        link: '/services/branding',
+        a11y: 'See our Branding services'
+      }
+    },
+
+    serviceSolo: [
+      {
+        preTitle: false,
+        title: 'Email in style',
+        subTitle: 'G Suite Management',
+        description: 'As part our our overarching branding services, we want to make sure you look good when communicating about your business. It’s the little things that count, like using a professional email URL and having a sweet, branded signature.',
+        topics: [
+          'G Suite Deployments',
+          'Email Migrations',
+          'Branded Email Signatures'
+        ],
+        caseStudy: false,
+        media: false
+      }
+    ],
+
+    servicesNomedia: [
+      {
+        preTitle: 'It\'s not the wild west anymore',
+        title: 'Stake your digital claim',
+        content: [
+          {
+            title: 'Domain Management',
+            description: 'Domain management can be complex, time consuming, and damaging to your business if handled poorly. We provide worry-free hosting, migration and configuration services, to ensure that your hosting can handle your volume of traffic and serve the performance and capabilities your website needs.',
+            topics: [
+              'Domain & Hosting Migration',
+              'Domain configuration & set up',
+              'Website & Application Hosting'
+            ]
+          },
+          {
+            title: 'Dispute Resolution',
+            description: 'When things get a little more complicated than the average domain procurement, we can assist by digging into legacy domain structures and convoluted paths of ownership. We have successfully negotiated complex domain ownership disputes and can help you stake your digital claim.When things get a little more complicated than the average domain procurement, we can assist by digging into legacy domain structures and convoluted paths of ownership. We have successfully negotiated complex domain ownership disputes and can help you stake your digital claim.',
+            topics: [
+              'Domain Dispute Resolution',
+              'Domain Ownership Assessment',
+              'Negotiation Assistance',
+              'Registrar Representation',
+              'Litigation Support'
+            ]
+          }
+        ]
+      }
+    ],
+
+    services: [
+      {
+        preTitle: 'Find out how we can help',
+        title: 'Jump start your business',
+        subTitle: 'Startup Support',
+        description: 'We know the joy and growing pains that come along with starting a new business, in fact, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding, all the way to setting up your internal operations software, we know what it takes to get you up and running.We know the joy and growing pains that come along with starting a new business, in fact, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding, all the way to setting up your internal operations software, we know what it takes to get you up and running.',
+        topics: false,
+        caseStudy: false,
+        media: false,
+        BtnData: {
+          accessibility: 'Get in touch to start something new!',
+          btnRoute: '/contact',
+          btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+        }
+      },
+      {
+        preTitle: false,
+        title: 'Get your head out of the clouds',
+        subTitle: 'Cloud Technologies',
+        description: 'Cloud technologies give you flexibility to create secure, optimized solutions that streamline internal processes. Based on your business requirements, we can help identify which technologies best suit your needs, then provide all of the assistance necessary to install and configure your chosen software.',
+        topics: [
+          'Cloud Storage',
+          'Cloud Computing',
+          'Saas/IaaS/PaaS',
+          'Cloud Application Security',
+          'AWS, Digital Ocean, Google Cloud',
+          'CRM integrations'
+        ],
+        caseStudy: false,
+        media: false,
+        BtnData: false
+      },
+      {
+        preTitle: false,
+        title: 'Enhance Efficiency',
+        subTitle: 'Consulting',
+        description: 'With our guidance, learn how to innovate effectively within your own business. We can help you reduce your overhead costs and increase productivity by turning your trickiest challenges into growth opportunities. Get in touch to find out how.',
+        topics: false,
+        caseStudy: false,
+        media: false,
+        BtnData: {
+          accessibility: 'Get in touch to start something new!',
+          btnRoute: '/contact',
+          btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-sm'
+        }
+      }
     ]
   },
 
