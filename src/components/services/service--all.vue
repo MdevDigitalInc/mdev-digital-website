@@ -45,8 +45,7 @@
       :serviceConfig="service.config">
       <!-- Media Slot (Order can be flipped) -->
       <template v-if="service.media" slot="mediaSlot">
-        <img :alt="service.media.imageDesc" :src="loadImage(service.media.image)" class="u-desk-only">
-        <img :alt="service.media.imageDesc" :src="loadImage(service.media.imageMob)" class="u-phone-only">
+        <img :alt="service.media.imageDesc" :src="loadImage(service.media.image)">
       </template>
       <!-- Content Slot (Order can be flipped) -->
       <template slot="contentSlot">

@@ -220,8 +220,7 @@ export default  {
     {
       title: 'Branding',
       media: {
-        image: 'services/service-branding.jpeg',
-        imageMob: 'services/service-webdesign.jpeg',
+        image: 'services/01-branding.png',
         imageDesc: 'Description here TODO',
         squareImg: false
       },
@@ -245,8 +244,7 @@ export default  {
     {
       title: 'web design',
       media: {
-        image: 'services/service-webdesign.jpeg',
-        imageMob: 'services/service-webdesign.jpeg',
+        image: 'services/02-web-design.png',
         imageDesc: 'Description here TODO',
         squareImg: true,
       },
@@ -271,8 +269,7 @@ export default  {
     {
       title: 'Apps & Software',
       media: {
-        image: 'services/service-webdesign.jpeg',
-        imageMob: 'services/service-webdesign.jpeg',
+        image: 'services/03-apps-software.png',
         imageDesc: 'Description here TODO',
         squareImg: true
       },
@@ -298,8 +295,7 @@ export default  {
     {
       title: 'Digital Marketing',
       media: {
-        image: 'services/service-branding.jpeg',
-        imageMob: 'services/service-webdesign.jpeg',
+        image: 'services/04-digital-marketing.png',
         imageDesc: 'Description here TODO',
         squareImg: false
       },
