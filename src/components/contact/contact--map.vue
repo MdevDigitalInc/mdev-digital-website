@@ -139,7 +139,7 @@ export default{
     top: 0;
     bottom: 0;
     width: 100%;
-    box-shadow: inset 0 0 12vw 13vw rgba(0, 0, 0, .95);
+    box-shadow: inset 0 0 150px 10vw rgba(0, 0, 0, .80);
     z-index: 2;
   }
 }
