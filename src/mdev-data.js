@@ -962,6 +962,69 @@ export default  {
     ]
   },
 
+  homeCasestudy: [
+    {
+      longImg: {
+        src: 'home/case-study-ORA.png',
+        a11y: 'Off-Road Addiction | Digital Marketing',
+        route: '/about',
+        title: 'View Off-Road Addiction Case Study'
+      },
+      leftImg: {
+        src: 'home/case-study-NXL.png',
+        a11y: 'The Next Level VR | Web Design & Development',
+        route: '/about',
+        title: 'View The Next level VR Case Study'
+      },
+      rightImg: {
+        src: 'home/case-study-GLEN.png',
+        a11y: 'Arbour Glen Daycare | Web Design & Development',
+        route: '/about',
+        title: 'View Arbout Glen Case Study'
+      },
+    },
+    {
+      longImg: {
+        src: 'home/case-study-TFAC.png',
+        a11y: 'The Factory London | User Experience & Development',
+        route: '/about',
+        title: 'View The Factory London Case Study'
+      },
+      leftImg: {
+        src: 'home/case-study-KETO.png',
+        a11y: 'Ketolibriyum | Branding & Ecommerce Development',
+        route: '/about',
+        title: 'View Ketolibriyum Case Study'
+      },
+      rightImg: {
+        src: 'home/case-study-ASTER.png',
+        a11y: 'Aster Shoes | Branding & Ecommerce Development',
+        route: '/about',
+        title: 'View Aster Shoes Case Study'
+      },
+    },
+    {
+      longImg: {
+        src: 'home/case-study-ZUC.png',
+        a11y: 'Zucora Home | User Experience & Ecommerce Development',
+        route: '/about',
+        title: 'View Zucora Home Case Study'
+      },
+      leftImg: {
+        src: 'home/case-study-PWH.png',
+        a11y: 'Powerhouse Brewery | Web Design & Development',
+        route: '/about',
+        title: 'View Powerhouse Brewery Case Study'
+      },
+      rightImg: {
+        src: 'home/case-study-AGCAP.png',
+        a11y: 'Ag Capital Canada | Web Design & Development',
+        route: '/about',
+        title: 'View Ag Capital Canada Case Study'
+      },
+    }
+  ],
+
   testimonials: [
     {
       content: 'Dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
