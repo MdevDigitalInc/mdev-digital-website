@@ -41,7 +41,22 @@
       class="a-fade-in mdev-service">
       <!-- Media -->
       <template slot="mediaSlot">
-        <img :alt="service.media.imageDesc" :src="loadImage(service.media.image)">
+        <!-- Image Loop -->
+        <img
+          v-for="(images, index) in service.media"
+          :class="{ '--active' : (index == 0)}"
+          :data-slider="(service.media.length > 1)"
+          :alt="images.imageDesc" :src="loadImage(images.image)
+          ">
+        <!-- Optional Controls -->
+        <div class="mdev-media-controls flex flex-hor-between flex-vert-center" v-if="service.media.length > 1">
+          <button class="mdev-media-back" v-on:click.stop="traverse(-1)">
+            BACK
+          </button>
+          <button class="mdev-media-forward" v-on:click.stop="traverse(-1)">
+            FORWARD
+          </button>
+        </div>
       </template>
       <!-- Content -->
       <template slot="contentSlot">

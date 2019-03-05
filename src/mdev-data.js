@@ -376,10 +376,12 @@ export default  {
           },
           reverse: false
         },
-        media: {
-          image: 'services/branding/logo-design.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/branding/logo-design.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       },
       {
         preTitle: false,
@@ -394,10 +396,16 @@ export default  {
           'Retail Signage'
         ],
         caseStudy: false,
-        media: {
-          image: 'services/branding/print-agcap-brochure.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/branding/print-agcap-brochure.png',
+            imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/branding/logo-design.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       },
       {
         preTitle: 'The',
@@ -412,10 +420,12 @@ export default  {
           'Retail Signage'
         ],
         caseStudy: false,
-        media: {
-          image: 'services/branding/packaging-zuc-purecare.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/branding/packaging-zuc-purecare.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       }
     ]
   },

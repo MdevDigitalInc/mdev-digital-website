@@ -82,6 +82,18 @@ export default {
       width: 100%;
       margin: 0 auto 100px;
     }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+
+    img.--active {
+      position: relative;
+      opacity: 1;
+    }
   }
 
   // Content portion of the split
