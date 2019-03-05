@@ -987,19 +987,19 @@ export default  {
       longImg: {
         src: 'home/case-study-TFAC.png',
         a11y: 'The Factory London | User Experience & Development',
-        route: '/about',
+        route: '/services',
         title: 'View The Factory London Case Study'
       },
       leftImg: {
         src: 'home/case-study-KETO.png',
         a11y: 'Ketolibriyum | Branding & Ecommerce Development',
-        route: '/about',
+        route: '/services',
         title: 'View Ketolibriyum Case Study'
       },
       rightImg: {
         src: 'home/case-study-ASTER.png',
         a11y: 'Aster Shoes | Branding & Ecommerce Development',
-        route: '/about',
+        route: '/services',
         title: 'View Aster Shoes Case Study'
       },
     },
@@ -1007,19 +1007,19 @@ export default  {
       longImg: {
         src: 'home/case-study-ZUC.png',
         a11y: 'Zucora Home | User Experience & Ecommerce Development',
-        route: '/about',
+        route: '/services',
         title: 'View Zucora Home Case Study'
       },
       leftImg: {
         src: 'home/case-study-PWH.png',
         a11y: 'Powerhouse Brewery | Web Design & Development',
-        route: '/about',
+        route: '/services',
         title: 'View Powerhouse Brewery Case Study'
       },
       rightImg: {
         src: 'home/case-study-AGCAP.png',
         a11y: 'Ag Capital Canada | Web Design & Development',
-        route: '/about',
+        route: '/services',
         title: 'View Ag Capital Canada Case Study'
       },
     }

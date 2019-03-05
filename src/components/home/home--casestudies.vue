@@ -10,14 +10,14 @@
       </h3>
     </div>
     <!-- Case Study Carousel -->
-    <div class="mdev-casestudy-mosaic flex">
-      <link-mosaic
+    <div class="mdev-casestudy-mosaic flex flex-wrap">
+      <mosaic-link
         v-for="(link, index) in casestudies"
         :longImg="link.longImg"
         :leftImg="link.leftImg"
         :rightImg="link.rightImg"
         >
-      </link-mosaic>
+      </mosaic-link>
     </div>
     <!-- Case Action Heading -->
     <div class="u-text-center">
@@ -33,7 +33,7 @@
 <script>
 // Local Import
 import BtnPrimary           from '../shared/btn-primary.vue';
-import MosaicLink           from '../modules/link-mosaic.vue';
+import MosaicLink           from '../modules/mosaic-link.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
 
@@ -52,7 +52,7 @@ export default{
 
   components: {
     'btn-primary'         : BtnPrimary,
-    'link-mosaic'         : LinkMosaic
+    'mosaic-link'         : MosaicLink
   }
 };
 </script>
