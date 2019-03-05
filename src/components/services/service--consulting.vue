@@ -186,12 +186,12 @@ export default{
 
   head: {
     title: {
-      inner: 'Digital Marketing',
+      inner: 'Consulting & Support',
       complement: 'MDEV Digital - London, Ontario'
     },
     meta: [
-      { property: 'og:title', content: 'Digital Marketing | MDEV Digital - London, Ontario ' },
-      { name: 'twitter:title', content: 'Digital Marketing | MDEV Digital - London, Ontario ' }
+      { property: 'og:title', content: 'Consulting & Support | MDEV Digital - London, Ontario ' },
+      { name: 'twitter:title', content: 'Consulting & Support | MDEV Digital - London, Ontario ' }
 
     ]
   },

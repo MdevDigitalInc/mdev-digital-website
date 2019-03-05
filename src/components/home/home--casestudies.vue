@@ -10,7 +10,15 @@
       </h3>
     </div>
     <!-- Case Study Carousel -->
-    <h1 class="u-c-white u-text-center"> TO BE DISCUSSED... </h1>
+    <div class="mdev-casestudy-mosaic flex flex-wrap">
+      <mosaic-link
+        v-for="(link, index) in casestudies"
+        :longImg="link.longImg"
+        :leftImg="link.leftImg"
+        :rightImg="link.rightImg"
+        >
+      </mosaic-link>
+    </div>
     <!-- Case Action Heading -->
     <div class="u-text-center">
       <btn-primary :BtnData="BtnData">
@@ -25,6 +33,9 @@
 <script>
 // Local Import
 import BtnPrimary           from '../shared/btn-primary.vue';
+import MosaicLink           from '../modules/mosaic-link.vue';
+// Import Data From Flat File
+import MdevData       from '../../mdev-data.js';
 
 export default{
   name: 'HomeCaseStudies',
@@ -34,12 +45,14 @@ export default{
         accessibility: 'Learn more about our work!',
         btnRoute: '/casestudy',
         btnClass: 'mdev-primary-btn --space-top-sm'
-      }
+      },
+      casestudies: MdevData.homeCasestudy
     };
   },
 
   components: {
-    'btn-primary'         : BtnPrimary
+    'btn-primary'         : BtnPrimary,
+    'mosaic-link'         : MosaicLink
   }
 };
 </script>

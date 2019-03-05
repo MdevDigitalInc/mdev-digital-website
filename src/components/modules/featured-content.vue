@@ -47,14 +47,14 @@
 // having slots this element can easily take in different markup and presentation.
 
 import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
-export default{
-  name: 'ServicesTile',
-  props: ['serviceConfig', 'media', 'flip'],
+  export default{
+    name: 'ServicesTile',
+    props: ['serviceConfig', 'media', 'flip'],
 
-  components: {
-    'circle-bar' :CircleBarDecoration
-  }
-};
+    components: {
+      'circle-bar' :CircleBarDecoration
+    }
+  };
 </script>
 
 
@@ -181,6 +181,7 @@ export default{
   &:before {
     right: -50px;
     left: 10%;
+
     @media #{$portrait} {
       top: -50px;
       left: -100px;
@@ -194,7 +195,6 @@ export default{
 // They have different needs in terms of the backgbround lines
 // Since they are centered with the image
 .--square-media {
-
   .mdev-service-media,
   .mdev-service-content {
     width: 50%;
@@ -208,7 +208,7 @@ export default{
   // Meaning, this will overrides all.
   .mdev-service-media,
   .--flip-order .mdev-service-media {
-      &:before {
+    &:before {
       top: -50px;
       bottom: -50px;
       left: 15%;

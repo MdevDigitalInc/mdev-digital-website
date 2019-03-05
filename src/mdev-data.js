@@ -220,8 +220,7 @@ export default  {
     {
       title: 'Branding',
       media: {
-        image: 'services/service-branding.jpeg',
-        imageMob: 'services/service-webdesign.jpeg',
+        image: 'services/01-branding.png',
         imageDesc: 'Description here TODO',
         squareImg: false
       },
@@ -245,8 +244,7 @@ export default  {
     {
       title: 'web design',
       media: {
-        image: 'services/service-webdesign.jpeg',
-        imageMob: 'services/service-webdesign.jpeg',
+        image: 'services/02-web-design.png',
         imageDesc: 'Description here TODO',
         squareImg: true,
       },
@@ -271,8 +269,7 @@ export default  {
     {
       title: 'Apps & Software',
       media: {
-        image: 'services/service-webdesign.jpeg',
-        imageMob: 'services/service-webdesign.jpeg',
+        image: 'services/03-apps-software.png',
         imageDesc: 'Description here TODO',
         squareImg: true
       },
@@ -298,8 +295,7 @@ export default  {
     {
       title: 'Digital Marketing',
       media: {
-        image: 'services/service-branding.jpeg',
-        imageMob: 'services/service-webdesign.jpeg',
+        image: 'services/04-digital-marketing.png',
         imageDesc: 'Description here TODO',
         squareImg: false
       },
@@ -381,7 +377,7 @@ export default  {
           reverse: false
         },
         media: {
-          image: 'services/branding/branding-corporated-id.jpeg',
+          image: 'services/branding/logo-design.png',
           imageDesc: 'Description here TODO'
         }
       },
@@ -399,7 +395,7 @@ export default  {
         ],
         caseStudy: false,
         media: {
-          image: 'services/branding/branding-corporated-id.jpeg',
+          image: 'services/branding/print-agcap-brochure.png',
           imageDesc: 'Description here TODO'
         }
       },
@@ -417,7 +413,7 @@ export default  {
         ],
         caseStudy: false,
         media: {
-          image: 'services/branding/branding-corporated-id.jpeg',
+          image: 'services/branding/packaging-zuc-purecare.png',
           imageDesc: 'Description here TODO'
         }
       }
@@ -459,7 +455,7 @@ export default  {
           reverse: true
         },
         media: {
-          image: 'services/webdev/the-factory-webdev.jpeg',
+          image: 'services/webdev/web-design-tfac.png',
           imageDesc: 'Description here TODO'
         }
       },
@@ -485,7 +481,7 @@ export default  {
           reverse: false
         },
         media: {
-          image: 'services/webdev/the-factory-webdev.jpeg',
+          image: 'services/webdev/ecom-keto.png',
           imageDesc: 'Description here TODO'
         }
       }
@@ -527,7 +523,7 @@ export default  {
       next: {
         title: 'digital marketing services',
         index: '04',
-        link: '/services/app-development',
+        link: '/services/digital-marketing',
         a11y: 'See our custom development services'
       }
     },
@@ -652,7 +648,7 @@ export default  {
         ],
         caseStudy: false,
         media: {
-          image: 'services/digiads/digiads-placeholder.jpeg',
+          image: 'services/digiads/social-phone-instagram.png',
           imageDesc: 'Description here TODO'
         }
       },
@@ -673,7 +669,7 @@ export default  {
         topics: false,
         caseStudy: false,
         media: {
-          image: 'services/digiads/digiads-placeholder.jpeg',
+          image: 'services/digiads/sem-keto-pintrest.png',
           imageDesc: 'Description here TODO'
         }
       },
@@ -690,7 +686,7 @@ export default  {
         ],
         caseStudy: false,
         media: {
-          image: 'services/digiads/digiads-placeholder.jpeg',
+          image: 'services/digiads/launch-tfac-landing-page.png',
           imageDesc: 'Description here TODO'
         }
       },
@@ -965,6 +961,69 @@ export default  {
       },
     ]
   },
+
+  homeCasestudy: [
+    {
+      longImg: {
+        src: 'home/case-study-ORA.png',
+        a11y: 'Off-Road Addiction | Digital Marketing',
+        route: '/about',
+        title: 'View Off-Road Addiction Case Study'
+      },
+      leftImg: {
+        src: 'home/case-study-NXL.png',
+        a11y: 'The Next Level VR | Web Design & Development',
+        route: '/about',
+        title: 'View The Next level VR Case Study'
+      },
+      rightImg: {
+        src: 'home/case-study-GLEN.png',
+        a11y: 'Arbour Glen Daycare | Web Design & Development',
+        route: '/about',
+        title: 'View Arbout Glen Case Study'
+      },
+    },
+    {
+      longImg: {
+        src: 'home/case-study-TFAC.png',
+        a11y: 'The Factory London | User Experience & Development',
+        route: '/services',
+        title: 'View The Factory London Case Study'
+      },
+      leftImg: {
+        src: 'home/case-study-KETO.png',
+        a11y: 'Ketolibriyum | Branding & Ecommerce Development',
+        route: '/services',
+        title: 'View Ketolibriyum Case Study'
+      },
+      rightImg: {
+        src: 'home/case-study-ASTER.png',
+        a11y: 'Aster Shoes | Branding & Ecommerce Development',
+        route: '/services',
+        title: 'View Aster Shoes Case Study'
+      },
+    },
+    {
+      longImg: {
+        src: 'home/case-study-ZUC.png',
+        a11y: 'Zucora Home | User Experience & Ecommerce Development',
+        route: '/services',
+        title: 'View Zucora Home Case Study'
+      },
+      leftImg: {
+        src: 'home/case-study-PWH.png',
+        a11y: 'Powerhouse Brewery | Web Design & Development',
+        route: '/services',
+        title: 'View Powerhouse Brewery Case Study'
+      },
+      rightImg: {
+        src: 'home/case-study-AGCAP.png',
+        a11y: 'Ag Capital Canada | Web Design & Development',
+        route: '/services',
+        title: 'View Ag Capital Canada Case Study'
+      },
+    }
+  ],
 
   testimonials: [
     {

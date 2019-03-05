@@ -7,16 +7,18 @@
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-contact">
           <div class="mdev-center">
-            <object class="--contact-connect" id="anim-connect" type="image/svg+xml" :data="loadImage(connectAnim)"></object>
+            <div class="flex flex-vert-start">
+              <object class="--contact-lets" id="anim-lets" type="image/svg+xml" :data="loadImage(letsAnim)"></object>
+              <object class="--contact-start" id="anim-start" type="image/svg+xml" :data="loadImage(startAnim)"></object>
+            </div>
             <!-- Bottom Container -->
-            <div class="flex flex-vert-start --portrait-wrap --phone-center">
-              <object class="--contact-with" id="anim-with" type="image/svg+xml" :data="loadImage(withAnim)"></object>
-              <object class="--contact-us" id="anim-us" type="image/svg+xml" :data="loadImage(usAnim)"></object>
+            <div class="flex flex-vert-start --portrait-wrap">
+              <object class="--contact-something" id="anim-something" type="image/svg+xml" :data="loadImage(somethingAnim)"></object>
+              <object class="--contact-new" id="anim-new" type="image/svg+xml" :data="loadImage(newAnim)"></object>
               <!-- CTA Text & Button -->
               <div data-header-intro class="--header-cta">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lectus erat, semper ut lectus a, dictum tempus orci. Cras varius lorem ac euismod bibendum. Nam aliquam ante quis
-                  magna porttitor.
+                  {{ $t('contact.description') }}
                 </p>
                  <a data-header-btn
                     href="#contactus"
@@ -75,9 +77,10 @@ export default {
       // Disables Page Title bar
       pageTitle: 'TESTY TEST TEST',
       headerDsc: 'TODO',
-      connectAnim: 'contact/MDEV_HEADER_connect_animated.svg',
-      withAnim: 'contact/MDEV_HEADER_with.svg',
-      usAnim: 'contact/MDEV_HEADER_us_animated.svg'
+      letsAnim: 'contact/MDEV_HEADER_lets_animated.svg',
+      startAnim: 'contact/MDEV_HEADER_start_animated.svg',
+      somethingAnim: 'contact/MDEV_HEADER_something.svg',
+      newAnim: 'contact/MDEV_HEADER_new_animated.svg'
     };
   },
 
@@ -85,17 +88,20 @@ export default {
     this.$nextTick(() => {
         $('[data-main-nav]').addClass('--teal-white');
       setTimeout(() => {
-        new Vivus('anim-connect', {duration: 150}, console.log('fired'));
+        new Vivus('anim-lets', {duration: 150}, console.log('fired'));
       }, 100);
       setTimeout(() => {
-        $('#anim-with').addClass('--anim-visible');
-      }, 450);
+        new Vivus('anim-start', {duration: 150}, console.log('fired'));
+      }, 400);
       setTimeout(() => {
-        new Vivus('anim-us', {duration: 180}, console.log('fired'));
-      }, 1700);
+        $('#anim-something').addClass('--anim-visible');
+      }, 650);
+      setTimeout(() => {
+        new Vivus('anim-new', {duration: 180}, console.log('fired'));
+      }, 2700);
       setTimeout(() => {
         $('[data-header-intro]').addClass('--anim-visible');
-      }, 2200);
+      }, 3200);
       setTimeout(() => {
         $('[data-header-btn]').addClass('fully-in-viewport');
       }, 3400);
@@ -132,50 +138,72 @@ export default {
   padding-top: 40%;
 
   @media #{$portrait} {
-    padding-top: 98%;
+    padding-top: 68%;
   }
 
   @media #{$phone-only} {
-    padding-top: 130%;
+    padding-top: 100%;
   }
 }
 
 .--vivus-contact {
 
-  .--contact-connect {
-    width: 70%;
+  .--contact-lets,
+  .--contact-start {
+    height: 10vw;
+    margin-bottom: 20px;
 
     @media #{$portrait} {
-      width: 100%;
+      height: 9vw;
     }
   }
 
-  .--contact-with {
-    width: 12%;
+  .--contact-lets {
+    margin-right: 40px;
+
+    @media #{$portrait} {
+      margin-right: 20px;
+    }
+  }
+
+
+  .--contact-something {
+    width: 25%;
     opacity: 0;
     transition: 1.8s opacity 1.2s;
 
     @media #{$portrait} {
-      width: 18%;
+      width: 30%;
+    }
+
+    @media #{$phone-only} {
+      width: 40%;
     }
   }
 
-  .--contact-us {
-    width: 23%;
+  .--contact-new {
+    height: 10vw;
+    margin: 0 40px;
 
     @media #{$portrait} {
-      width: 35%;
+      height: 9vw;
+      margin: 0 20px;
     }
   }
 
   .--header-cta {
     opacity: 0;
-    width: 50%;
+    width: 20%;
     transition: opacity 1.2s;
+
+    @media #{$laptop-only} {
+      width: 30%;
+    }
 
     @media #{$portrait} {
       width: 100%;
       text-align: left;
+      margin-top: 20px;
     }
   }
 
@@ -199,7 +227,7 @@ export default {
 
     @media #{$portrait} {
       text-align: center;
-      width: 76%;
+      width: 100%;
     }
   }
 
