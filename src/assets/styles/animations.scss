@@ -95,13 +95,13 @@ $zoom-in-anim-props: opacity .9s ease-out, filter 1.2s ease-out, transform 1.2s 
 }
 
 // End State - Triggered by in-viewport directive
-.a-zoom-out-lnd.fully-in-viewport,
+.a-zoom-out-lnd.in-viewport,
 .a-zoom-out-lnd.above-viewport,
-.a-zoom-out.fully-in-viewport,
+.a-zoom-out.in-viewport,
 .a-zoom-out.above-viewport,
-.a-zoom-in-lnd.fully-in-viewport,
+.a-zoom-in-lnd.in-viewport,
 .a-zoom-in-lnd.above-viewport ,
-.a-zoom-in.fully-in-viewport,
+.a-zoom-in.in-viewport,
 .a-zoom-in.above-viewport {
   opacity: 1;
   filter: blur(0);

@@ -581,7 +581,7 @@ export default  {
         caseStudy: false,
         media: [
           {
-            image: 'services/appdev/the-cat-appdev.jpeg',
+            image: 'services/appdev/ZUC_SoftwareAnimation_laptop.gif',
             imageDesc: 'Description here TODO'
           }
         ]
