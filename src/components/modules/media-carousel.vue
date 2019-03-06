@@ -5,12 +5,11 @@
       :aria-hidden="(media.length > 1 && index != desiredIndex)"
       v-for="(images, index) in media"
       :class="{ '--active' : (index == desiredIndex)}"
-      :alt="images.imageDesc" :src="loadImage(images.image)
-      ">
+      :alt="images.imageDesc" :src="loadImage(images.image)">
     <!-- Optional Controls -->
-    <div
-      class="mdev-media-controls flex flex-hor-end flex-vert-center"
-      v-if="media.length > 1">
+    <div v-if="media.length > 1"
+      :class="{'flex-hor-end' : flip, 'flex-hor-start' : !flip}"
+      class="mdev-media-controls flex flex-vert-center">
       <button
         aria-label="View Previous Image"
         class="mdev-media-skip" v-on:click.stop="traverse(-1)">
@@ -27,10 +26,28 @@
 
 <script>
 export default{
+  // [ Media Carousel Component ]
+  // --------------------------------------------------------------
+  // This component is used to intelligently load images for the
+  // Service Pages of the site. It includes basic logic to display either
+  // a single image or a carousel with navigation based on the number
+  // of media objects passed from the parent.
+  //
+  // [ Expected Data Structure ]
+  // media: [
+  //   {
+  //    image: 'relative/path/to/image',
+  //    imageDesc: 'a11y description of image'
+  //   }
+  // [
+  //
   name: 'MediaCarousel',
 
-  props: [ 'media' ],
+  props: [ 'media', 'flip' ],
 
+  // [ Data ]
+  // desiredIndex - Is used to track the current image
+  // beind displayed.
   data: function(){
     return{
       desiredIndex: 0
@@ -38,9 +55,14 @@ export default{
   },
 
   methods: {
+    // [ Traverse Function ] - Switches current active image by
+    // incrementing or decrementing the desiredIndex. This in turn
+    // flips the '.--active' class on the image with corresponding
+    // index.
     traverse(direction) {
+      // Needs array length to know the bounds of the array
+      // We don't want it to try to load images that do not exist
       let arrayLen = this.media.length - 1;
-
       // Are we going passed the end of the array?
       if (direction + this.desiredIndex > arrayLen) {
         // Reset to start
@@ -61,7 +83,6 @@ export default{
 </script>
 
 <style lang="scss">
-
 /*-------------------------------------*/
 /* BASE TEMPLATE Component Styles
 /--------------------------------------*/
@@ -70,6 +91,7 @@ $buttonSize: 10px;
 .mdev-media-carousel {
   position: relative;
   width: 100%;
+  z-index: 1;
 
   img {
     position: absolute;
@@ -84,8 +106,11 @@ $buttonSize: 10px;
     opacity: 1;
   }
 
-  .mdev-media-ontrols {
+  .mdev-media-controls {
+    margin-top: 15px;
     width: 100%;
+    position: relative;
+    z-index: 2;
   }
 
   .mdev-media-skip {
@@ -112,8 +137,6 @@ $buttonSize: 10px;
     }
   }
 }
-
-
 /*--------------------------------------*/
 
 </style>

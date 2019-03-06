@@ -402,7 +402,7 @@ export default  {
             imageDesc: 'Description here TODO'
           },
           {
-            image: 'services/branding/logo-design.png',
+            image: 'services/branding/print-zucora-printbook.png',
             imageDesc: 'Description here TODO'
           }
         ]
@@ -423,6 +423,10 @@ export default  {
         media: [
           {
             image: 'services/branding/packaging-zuc-purecare.png',
+            imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/branding/packaging-pwh-homecoming.png',
             imageDesc: 'Description here TODO'
           }
         ]
@@ -468,6 +472,14 @@ export default  {
           {
             image: 'services/webdev/web-design-tfac.png',
             imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/webdev/web-design-glen.png',
+            imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/webdev/web-design-zuc.png',
+            imageDesc: 'Description here TODO'
           }
         ]
       },
@@ -495,6 +507,14 @@ export default  {
         media: [
           {
             image: 'services/webdev/ecom-keto.png',
+            imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/webdev/ecom-zucora.png',
+            imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/webdev/ecom-aster.png',
             imageDesc: 'Description here TODO'
           }
         ]
@@ -708,6 +728,10 @@ export default  {
         media: [
           {
             image: 'services/digiads/launch-tfac-landing-page.png',
+            imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/digiads/launch-ora-landing-page.png',
             imageDesc: 'Description here TODO'
           }
         ]

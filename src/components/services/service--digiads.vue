@@ -49,7 +49,10 @@
       <!-- Media -->
       <template slot="mediaSlot">
         <!-- Media Carousel -->
-        <media-carousel v-if="service.media" :media="service.media"></media-carousel>
+        <media-carousel
+          :flip="((index + 1) % 2) == 1"
+          v-if="service.media"
+          :media="service.media"></media-carousel>
         <!-- Title Only appears here if no image -->
         <h2 v-if="!service.media"
           v-html="service.title"

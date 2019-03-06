@@ -42,7 +42,9 @@
       <!-- Media -->
       <template slot="mediaSlot">
         <!-- Image Carousel -->
-        <media-carousel :media="service.media"></media-carousel>
+        <media-carousel
+         :flip="((index + 1) % 2) == 0"
+         :media="service.media"></media-carousel>
       </template>
       <!-- Content -->
       <template slot="contentSlot">
