@@ -53,40 +53,40 @@
 
 
 <script>
-  export default{
-    name: 'HomeTestimonials',
+export default{
+  name: 'HomeTestimonials',
 
-    props: [ 'testimonials' ],
+  props: [ 'testimonials' ],
 
-    data: function(){
-      return{
-        arrow: 'svg/arrows/arrow-black.svg',
-        desiredIndex: 0
-      };
-    },
+  data: function(){
+    return{
+      arrow: 'svg/arrows/arrow-black.svg',
+      desiredIndex: 0
+    };
+  },
 
-    methods: {
-      traverse(direction) {
-        let arrayLen = this.testimonials.length - 1;
+  methods: {
+    traverse(direction) {
+      let arrayLen = this.testimonials.length - 1;
 
-        // Are we going passed the end of the array?
-        if (direction + this.desiredIndex > arrayLen) {
-          // Reset to start
-          this.desiredIndex = 0;
-        }
-        // Are we going passed the start of the array?
-        else if (direction + this.desiredIndex < 0) {
-          // Reset to the end
-          this.desiredIndex = arrayLen;
-        }
-        else {
-          // Move as desired
-          this.desiredIndex += direction;
-        }
+      // Are we going passed the end of the array?
+      if (direction + this.desiredIndex > arrayLen) {
+        // Reset to start
+        this.desiredIndex = 0;
       }
-
+      // Are we going passed the start of the array?
+      else if (direction + this.desiredIndex < 0) {
+        // Reset to the end
+        this.desiredIndex = arrayLen;
+      }
+      else {
+        // Move as desired
+        this.desiredIndex += direction;
+      }
     }
-  };
+
+  }
+};
 </script>
 
 

@@ -464,10 +464,12 @@ export default  {
           },
           reverse: true
         },
-        media: {
-          image: 'services/webdev/web-design-tfac.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/webdev/web-design-tfac.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       },
       {
         preTitle: false,
@@ -490,10 +492,12 @@ export default  {
           },
           reverse: false
         },
-        media: {
-          image: 'services/webdev/ecom-keto.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/webdev/ecom-keto.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       }
     ],
     servicesNomedia: [
@@ -555,10 +559,12 @@ export default  {
           'Embedded Systems'
         ],
         caseStudy: false,
-        media: {
-          image: 'services/appdev/the-cat-appdev.jpeg',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/appdev/the-cat-appdev.jpeg',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       }
     ],
     servicesNomedia: [
@@ -657,10 +663,12 @@ export default  {
           'Graphical & Video Asset Creation'
         ],
         caseStudy: false,
-        media: {
-          image: 'services/digiads/social-phone-instagram.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/digiads/social-phone-instagram.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       },
       {
         preTitle: false,
@@ -678,10 +686,12 @@ export default  {
         description: 'Social media has become the central hub of communication for many businesses. We can help you develop and execute a social media strategy to promote your products and services to the world.',
         topics: false,
         caseStudy: false,
-        media: {
-          image: 'services/digiads/sem-keto-pintrest.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/digiads/sem-keto-pintrest.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       },
       {
         preTitle: false,
@@ -695,10 +705,12 @@ export default  {
           'Photography & Video'
         ],
         caseStudy: false,
-        media: {
-          image: 'services/digiads/launch-tfac-landing-page.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/digiads/launch-tfac-landing-page.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       },
     ]
   },

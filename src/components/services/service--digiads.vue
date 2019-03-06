@@ -48,9 +48,8 @@
       :class="{ '--no-image' : !service.media }">
       <!-- Media -->
       <template slot="mediaSlot">
-        <img v-if="service.media"
-          :alt="service.media.imageDesc"
-          :src="loadImage(service.media.image)">
+        <!-- Media Carousel -->
+        <media-carousel v-if="service.media" :media="service.media"></media-carousel>
         <!-- Title Only appears here if no image -->
         <h2 v-if="!service.media"
           v-html="service.title"
@@ -108,6 +107,7 @@
 import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
 import PreFooter          from '../shared/pre-footer.vue';
+import MediaCarousel      from '../modules/media-carousel.vue';
 import FeaturedServices   from '../modules/featured-services.vue';
 import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
@@ -175,6 +175,7 @@ export default{
     'hero-main'      : HeroMain,
     'main-footer'    : MainFooter,
     'pre-footer'     : PreFooter,
+    'media-carousel' : MediaCarousel,
     'service-tile'   : FeaturedServices,
     'chapter-heading': ChapterHeading,
     'chapter-link'   : ChapterLink

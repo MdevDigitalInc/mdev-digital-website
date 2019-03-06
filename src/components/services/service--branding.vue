@@ -41,22 +41,8 @@
       class="a-fade-in mdev-service">
       <!-- Media -->
       <template slot="mediaSlot">
-        <!-- Image Loop -->
-        <img
-          v-for="(images, index) in service.media"
-          :class="{ '--active' : (index == 0)}"
-          :data-slider="(service.media.length > 1)"
-          :alt="images.imageDesc" :src="loadImage(images.image)
-          ">
-        <!-- Optional Controls -->
-        <div class="mdev-media-controls flex flex-hor-between flex-vert-center" v-if="service.media.length > 1">
-          <button class="mdev-media-back" v-on:click.stop="traverse(-1)">
-            BACK
-          </button>
-          <button class="mdev-media-forward" v-on:click.stop="traverse(-1)">
-            FORWARD
-          </button>
-        </div>
+        <!-- Image Carousel -->
+        <media-carousel :media="service.media"></media-carousel>
       </template>
       <!-- Content -->
       <template slot="contentSlot">
@@ -110,6 +96,7 @@ import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
 import PreFooter          from '../shared/pre-footer.vue';
 import FeaturedServices   from '../modules/featured-services.vue';
+import MediaCarousel      from '../modules/media-carousel.vue';
 import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
 // Import Data From Flat File
@@ -177,6 +164,7 @@ export default{
     'main-footer'    : MainFooter,
     'pre-footer'     : PreFooter,
     'chapter-heading': ChapterHeading,
+    'media-carousel' : MediaCarousel,
     'chapter-link'   : ChapterLink,
     'service-tile'   : FeaturedServices
   }
