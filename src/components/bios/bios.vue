@@ -32,7 +32,7 @@
             </span>
               {{ mdevBio.employeeOrigin }}
           </li>
-          <li>
+          <li v-if="mdevBio.employeeQuote">
             <span class="mdev-bio-key u-bold">
               Favorite Quote:
             </span>

@@ -210,7 +210,7 @@ export default  {
     },
     {
       employeeName: 'Luis Guerriero',
-      employeeTitle: 'Graphic Designer',
+      employeeTitle: 'Graphic Designer TEST',
       employeeRoute: 'luis-guerriero',
       employeeIntro: 'An award-winning digital marketer with a vast amount of experience ranging from sales to department director, Luis has developed a knack for making the digital space a little more human. His experience in working with companies and major social media influencers from all parts of the world allows him to bring unique and refreshing ideas to the marketing table.',
       employeeStory: [
@@ -218,7 +218,7 @@ export default  {
         'He’s naturally passionate person with a love for music and dance (he teaches salsa and bachata), and a lover of sports.'
       ],
       employeeOrigin: 'Guatemala City, Guatemala',
-      employeeQuote: '',
+      employeeQuote: false,
       employeeTrick: 'Hips Don’t Lie - Salsa and Bachata Instructor',
       employeeImage: 'bios/MDEV_BIOS-becky.png',
       socialLinks: [
@@ -252,7 +252,7 @@ export default  {
       ],
       employeeOrigin: 'Guelph, ON',
       employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
-      employeeTrick: 'Tea Drinker/Human Mop/Technologic Swiss Army Knife',
+      employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
       employeeImage: 'bios/MDEV_BIOS-becky.png',
       socialLinks: [
         {
