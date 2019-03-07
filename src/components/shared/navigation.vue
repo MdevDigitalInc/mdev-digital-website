@@ -278,7 +278,6 @@ export default{
     transition: all .5s, opacity .3s;
     border: 1px solid rgba(13, 119, 113, 0);
 
-
     &:first-child {
       transform: translate3d(0, -7px, 0 );
       opacity: 1;
@@ -375,6 +374,10 @@ export default{
     span {
       background: darken($color-brand-primary, 25%);
       box-shadow: 0 0 3px rgba(201, 255, 252, 0);
+
+      @media #{$portrait} {
+        background: $color-brand-primary;
+      }
     }
   }
 }

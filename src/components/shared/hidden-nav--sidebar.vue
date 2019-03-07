@@ -8,10 +8,6 @@
         class="mdev-sidebar-brand">
         <img :src="loadImage(mdevBrand)" alt="MDEV Digital Brand">
       </router-link>
-
-      <div class="mdev-sidebar-cta u-light u-lowercase">
-        {{ $t("navigation.sidebarCta") }}
-      </div>
     </div>
 
     <!-- Bottom Container -->
@@ -47,7 +43,7 @@
           :tabindex="(showLinks ? 1 : -1)"
           aria-haspopup="true"
           aria-label="Get Directions To Our Offices."
-          class="address-region u-bold u-uppercase">
+          class="address-region u-uppercase">
           {{ $t("navigation.addressRegion") }}
         </a>
         <span class="address-street">
@@ -93,20 +89,23 @@
   transition: opacity .8s, all 1s;
 
   @media #{$portrait} {
-    height: 60vh;
-    padding-bottom: 40px;
-    padding-top: 90px;
-    order: 4;
+    height: 50vh;
+    padding-bottom: 90px;
+    padding-top: 40px;
     width: 100%;
-    transform: translate3d(0, 200%, 0);
+    transform: translate3d(0, -200%, 0);
     text-align: center;
-    clip-path: $clip-triangle-top;
+    clip-path: $clip-triangle-bot-reverse;
   }
 }
 
 .mdev-sidebar-container {
-  padding: 3vw;
+  padding: 4vw;
   width: 100%;
+
+  @media  #{$portrait} {
+    padding: 2vw 4vw;
+  }
 
   .mdev-sidebar-brand {
     width: 60%;
@@ -114,7 +113,7 @@
     margin-bottom: 3vw;
 
     @media #{$portrait} {
-      margin: 0 auto 25px;
+      margin: 0 auto;
       width: 30%;
     }
 
@@ -137,13 +136,13 @@
   .mdev-contact-title {
     color: $white;
     display: block;
-    font-size: 1.8vw;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
     line-height: 120%;
     margin-bottom: 0;
-    letter-spacing: 2px;
 
     @media #{$portrait} {
-      font-size: 3.2vw;
       letter-spacing: 2px;
     }
   }
@@ -152,7 +151,7 @@
     width: 100%;
 
     a {
-      color: $color-brand-primary;
+      color: $white;
       font-size: 1.66vw;
       line-height: 130%;
       transition: all .9s;
@@ -180,7 +179,7 @@
 
   .mdev-social-links {
     font-size: 1.9vw;
-    margin: 2vw 0;
+    margin: 1vw 0 4vw;
 
     @media #{$portrait} {
       margin: 30px 0;
@@ -207,6 +206,11 @@
   .mdev-sidebar-address {
     width: 100%;
     position: relative;
+    font-size: 24px;
+
+    @media #{$portrait} {
+      font-size: 15px;
+    }
 
     span {
       display: block;
@@ -214,21 +218,11 @@
 
     .address-region {
       color: $white;
-      font-size: 1.5vw;
       line-height: 130%;
-
-      @media #{ $portrait } {
-        font-size: 2.1vw;
-      }
     }
 
     .address-street {
       color: $color-brand-primary;
-      font-size: 1.2vw;
-
-      @media #{$portrait} {
-        font-size: 1.8vw;
-      }
     }
   }
 }

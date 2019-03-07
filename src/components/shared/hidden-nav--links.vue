@@ -68,7 +68,8 @@
 
   @media #{$portrait} {
     width: 100%;
-    height: 40vh;
+    padding: 5% 0;
+    height: 50vh;
   }
 
   a {
@@ -89,7 +90,8 @@
     @media #{$portrait} {
       margin: 0 auto;
       padding-left: 34%;
-      font-size: 5.2vw;
+      transform: translate3d( 0, 1000px, 0);
+      font-size: 6.2vw;
       min-width: 240px;
     }
 
