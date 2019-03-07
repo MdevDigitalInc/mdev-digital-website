@@ -101,7 +101,8 @@ export default {
   navigation: {
     getInTouch: "Contact Us:",
     addressRegion: "London, Ontario",
-    addressStreet: "100 Kellogg Lane, N5W 0B4"
+    addressStreet: "100 Kellogg Lane, N5W 0B4",
+    deepLinks: "Dive Deeper:"
   },
 
   servicepage: {

@@ -27,6 +27,24 @@ export default  {
     }
   ],
 
+  deepLinks: [
+    {
+      linkName: 'Philosophy',
+      linkTitle: 'Our Philosophy',
+      route: '/about'
+    },
+    {
+      linkName: 'Our Process',
+      linkTitle: 'Learn about our process',
+      route: '/about'
+    },
+    {
+      linkName: 'Team',
+      linkTitle: 'Our Team',
+      route: '/about'
+    }
+  ],
+
   serviceLinks: [
     {
       linkName: 'Consulting',

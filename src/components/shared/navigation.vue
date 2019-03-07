@@ -50,7 +50,10 @@ q<template>
         </template>
         <template slot="main">
           <!-- Loads Links on named slot -->
-          <hidden-nav-links :links="links" :showLinks="navIsOpen" ></hidden-nav-links>
+          <hidden-nav-links
+            :deepLinks="deepLinks"
+            :links="links"
+            :showLinks="navIsOpen" ></hidden-nav-links>
         </template>
       </hidden-nav>
     </div>
@@ -77,6 +80,7 @@ export default{
       socialLinks: MdevData.socialLinks,
       // Links pulled from flat file
       links: MdevData.links,
+      deepLinks: MdevData.deepLinks,
       // Main Home Link On sidebar
       homeLink: '/',
       homeTitle: 'Home',
@@ -152,6 +156,10 @@ export default{
       setTimeout(function(){
         $('[data-nav-content]').toggleClass('--active-sidebar');
       }, ( this.navIsOpen ? 400 : 0) );
+      // Turn on Dive Deep
+      setTimeout(function(){
+        $('[data-main-deep]').toggleClass('--active-deep');
+      }, ( this.navIsOpen ? 800 : 0) );
     },
 
     // Force close menu on route change
@@ -161,6 +169,7 @@ export default{
       $('[data-main-links]').removeClass('--showLinks');
       $('body').removeClass('u-freeze-scroll');
       $('[data-nav-content]').removeClass('--active-sidebar');
+      $('[data-main-deep]').removeClass('--active-deep');
     }
   },
 

@@ -5,6 +5,7 @@
       :to="link.route"
       active-class="--active"
       data-main-links
+      class="mdev-nav-link"
       :title="link.linkTitle"
       :tabindex="(showLinks ? 0 : -1)"
       aria-role="menuitem" >
@@ -15,16 +16,30 @@
           {{ link.linkName }}
         </span>
       </router-link>
+
+      <div
+        data-main-deep
+        v-if="deepLinks"
+        class="mdev-deep-links flex flex-vert-center u-uppercase">
+        <span class="mdev-deep-title u-bold">
+          {{ $t('navigation.deepLinks') }}
+        </span>
+        <router-link
+          v-for="link in deepLinks"
+          class="mdev-deep-link"
+          :to="link.route"
+          :title="link.linkTitle">
+          {{ link.linkName }}
+        </router-link>
+      </div>
   </div>
 </template>
-
-
 
 <script>
   export default{
     name: 'HiddenNavLinks',
     // Data passed in via Parent
-    props: ['links','showLinks'],
+    props: ['links','showLinks', 'deepLinks'],
     // Watch for changes in parent data
     watch: {
       showLinks: function() {
@@ -34,7 +49,7 @@
         function showLinks(target, index) {
           // Timeout Interval is a function of Index
           setTimeout(function(){
-            $(target).toggleClass('--showLinks');
+            $(target).addClass('--showLinks');
           }, (isNavOpening ? (200 * index) : 0 ));
         }
         // Wait for nav to open..
@@ -49,8 +64,6 @@
     }
   };
 </script>
-
-
 
 <style lang="scss">
 
@@ -72,7 +85,7 @@
     height: 50vh;
   }
 
-  a {
+  .mdev-nav-link {
     display: block;
     position: relative;
     width: 100%;
@@ -92,6 +105,7 @@
       padding-left: 34%;
       transform: translate3d( 0, 1000px, 0);
       font-size: 6.2vw;
+      line-height: 150%;
       min-width: 240px;
     }
 
@@ -146,6 +160,39 @@
   .--showLinks {
     transition: all .5s;
     transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.mdev-deep-links {
+  position: absolute;
+  font-size: 20px;
+  right: 0;
+  opacity: 0;
+  bottom: 40px;
+  padding: 20px;
+  border: 4px solid $color-brand-accent;
+  border-right: none;
+  transition: all .4s;
+  transform: translate3d(65%, 0, 0);
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .mdev-deep-title {
+    font-size: 28px;
+    margin-right: 60px;
+  }
+
+  .mdev-deep-link {
+    margin-right: 30px;
+    transition: all .4s;
+  }
+
+  &.--active-deep {
     opacity: 1;
   }
 }
