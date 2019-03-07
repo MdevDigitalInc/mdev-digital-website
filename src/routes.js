@@ -47,12 +47,12 @@ export const routes = [
   },
   // Bios Nested Routes
   {
-    path: '/bios',
+    path: '/team',
     component: Bios,
-    redirect: '/bios/lucas-moreira'
+    redirect: '/team/lucas-moreira'
   },
   {
-    path: '/bios/:teammember',
+    path: '/team/:teammember',
     component: Bios,
     props: true,
     beforeEnter: (to, from, next) => {
@@ -63,7 +63,7 @@ export const routes = [
       }
       // Otherwise redirect to approved route
       else {
-        next({ path: '/bios/' + MdevData.employeeRoutes[0] });
+        next({ path: '/team/' + MdevData.employeeRoutes[0] });
       }
     }
   },  // Case Study Master Routes

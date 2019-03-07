@@ -5,12 +5,12 @@
       4885l7.65-4.5-7.65-4.51v3.55H1052v1.91h44.35v3.55z" transform="translate(-1052 -4876)"/></svg>
     </div>
 
-    <div class="mdev-next-bio flex flex-vert-center">
-      <span class="u-light">MEET</span>
-      <span class="mdev-bios-name u-uppercase u-bold">
+    <div class="mdev-next-bio flex flex-vert-center" v-on:click="nextBio(1)">
+      <div class="u-light">MEET</div>
+      <div class="mdev-bios-name u-pointer u-uppercase u-bold">
         {{ nextBioName }}
-      </span>
-      <div class="mdev-bios-arrow mded-bios-arrow-right" v-on:click="nextBio(1)">
+      </div>
+      <div class="mdev-bios-arrow mded-bios-arrow-right">
         <svg xmlns="http://www.w3.org/2000/svg" width="52" height="9"><defs/><path id="arrow_right" data-name="arrow right" class="cls-1" d="M1096.35
       4885l7.65-4.5-7.65-4.51v3.55H1052v1.91h44.35v3.55z" transform="translate(-1052 -4876)"/></svg>
       </div>
@@ -61,13 +61,13 @@ export default{
   left: 0;
   width: 100%;
   color: $white;
-  background: $color-brand-bkg;
   padding: 10px;
-  z-index: 2;
+  z-index: 10;
   user-select: none;
 
   @media #{$portrait} {
     z-index: 20;
+    background: $color-brand-bkg;
     position: relative;
   }
 
@@ -83,6 +83,21 @@ export default{
     margin-left: 5px;
   }
 }
+
+.mdev-bios-nav-bkg {
+  background: $color-brand-bkg;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+
+  @media #{$portrait} {
+    display: none;
+  }
+}
+
 .mdev-bios-arrow {
   padding: 10px 0;
   cursor: pointer;

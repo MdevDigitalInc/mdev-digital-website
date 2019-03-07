@@ -110,52 +110,38 @@ export default  {
       employeeName: 'Lucas Moreira',
       employeeTitle: 'CEO, Founder',
       employeeRoute: 'lucas-moreira',
-      employeeIntro: 'TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-         innovative solutions to complex problems. Able to distill client goals into a cohesive \
-         creative vision that she communicates to the team for execution.',
+      employeeIntro: 'With over 10 years of experience working on large-scale, high-demand web applications, Lucas has a wealth of expertise in creating web applications to serve a variety of needs.',
       employeeStory: [
-        'After years of leading creative and software projects, Becky has developed an uncanny \
-        ability to navigate complex timing and requirements to ensure succesful project completeion',
-        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-        committee and as a LTUX Committee Member for the #ldnont chapter.'
+        'Lending his insights on technology, marketing, media relations and efficient development practices to every project he touches, Lucas ensures that MDEV’s clients can expect an extremely high level of quality.',
+        'Lucas is a board member of the MACC in London, ON, serves on the London Chamber of Commerce Marketing Committee and is also known for his expertise in FPV Drones and 3D printing on his Loose Transistor YouTube channel.'
       ],
       employeeOrigin: 'Sao Paulo - Brazil',
-      employeeQuote: 'Think like a man of action, act like a man of thought..',
-      employeeTrick: 'Drone Enthusiast / Loose Transistor / DevOps',
+      employeeQuote: 'Think like a man of action, act like a man of thought.',
+      employeeTrick: 'Drone Guru / Media Maven / Eagle Eye',
       employeeImage: 'bios/MDEV_BIOS-becky.png',
       socialLinks: [
         {
-          linkClass: 'fa-facebook-f',
-          target: '_blank',
-          accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
-        },
-        {
           linkClass: 'fa-instagram',
           target: '_blank',
-          accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
+          accessibility: 'Follow Lucas on Instagram',
+          linkUrl: 'https://www.instagram.com/loose_transistor/'
         },
         {
           linkClass: 'fa-linkedin',
           target: '_blank',
           accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+          linkUrl: 'https://www.linkedin.com/in/moreiradevelopment/'
         }
       ]
     },
     {
       employeeName: 'Becky Domenico',
-      employeeTitle: 'Creative Director, Founder',
+      employeeTitle: 'CCO, Founder',
       employeeRoute: 'becky-domenico',
-      employeeIntro: 'TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-         innovative solutions to complex problems. Able to distill client goals into a cohesive \
-         creative vision that she communicates to the team for execution.',
+      employeeIntro: 'A disruptive thinker and creative visionary, Becky is constantly digging deeper to find innovative solutions to complex problems. Able to distill client goals into a cohesive creative vision that she communicates to the team for execution.',
       employeeStory: [
-        'After years of leading creative and software projects, Becky has developed an uncanny \
-        ability to navigate complex timing and requirements to ensure succesful project completeion',
-        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-        committee and as a LTUX Committee Member for the #ldnont chapter.'
+        'After years of leading creative and software projects, Becky has developed an uncanny ability to navigate complex timing and requirements to ensure successful project completion.',
+        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory committee and as a LTUX Committee Member for the #ldnont chapter.'
       ],
       employeeOrigin: 'Timmins, ON',
       employeeQuote: 'Fear is the mind killer.',
@@ -165,26 +151,26 @@ export default  {
         {
           linkClass: 'fa-facebook-f',
           target: '_blank',
-          accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
+          accessibility: 'Like Becky on Facebook',
+          linkUrl: 'https://www.facebook.com/becky.domenico'
         },
         {
           linkClass: 'fa-instagram',
           target: '_blank',
-          accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
+          accessibility: 'Follow Becky on Instagram',
+          linkUrl: 'https://www.instagram.com/tbex852/'
         },
         {
           linkClass: 'fa-twitter',
           target: '_blank',
-          accessibility: 'Follow us on Twitter',
-          linkUrl: 'https://twitter.com/MDEVdigital'
+          accessibility: 'Follow Becky on Twitter',
+          linkUrl: 'https://twitter.com/BECKYDOMENICO'
         },
         {
           linkClass: 'fa-linkedin',
           target: '_blank',
           accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+          linkUrl: 'https://www.linkedin.com/in/beckydomenico/'
         }
       ]
     },
@@ -225,6 +211,120 @@ export default  {
           linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
         }
       ]
+    },
+    {
+      employeeName: 'Luis Guerriero',
+      employeeTitle: 'Graphic Designer',
+      employeeRoute: 'luis-guerriero',
+      employeeIntro: 'TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
+         innovative solutions to complex problems. Able to distill client goals into a cohesive \
+         creative vision that she communicates to the team for execution.',
+      employeeStory: [
+        'After years of leading creative and software projects, Becky has developed an uncanny \
+        ability to navigate complex timing and requirements to ensure succesful project completeion',
+        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
+        committee and as a LTUX Committee Member for the #ldnont chapter.'
+      ],
+      employeeOrigin: 'Sao Paulo - Brazil',
+      employeeQuote: 'Think like a man of action, act like a man of thought..',
+      employeeTrick: 'Drone Enthusiast / Loose Transistor / DevOps',
+      employeeImage: 'bios/MDEV_BIOS-becky.png',
+      socialLinks: [
+        {
+          linkClass: 'fa-facebook-f',
+          target: '_blank',
+          accessibility: 'Like us on Facebook',
+          linkUrl: 'https://www.facebook.com/MDEVDigital'
+        },
+        {
+          linkClass: 'fa-instagram',
+          target: '_blank',
+          accessibility: 'Follow us on Instagram',
+          linkUrl: 'https://www.instagram.com/mdev_digital/'
+        },
+        {
+          linkClass: 'fa-linkedin',
+          target: '_blank',
+          accessibility: 'Follow us on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+        }
+      ]
+    },
+    {
+      employeeName: 'Graham Coutts',
+      employeeTitle: 'Graphic Designer',
+      employeeRoute: 'graham-coutts',
+      employeeIntro: 'TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
+         innovative solutions to complex problems. Able to distill client goals into a cohesive \
+         creative vision that she communicates to the team for execution.',
+      employeeStory: [
+        'After years of leading creative and software projects, Becky has developed an uncanny \
+        ability to navigate complex timing and requirements to ensure succesful project completeion',
+        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
+        committee and as a LTUX Committee Member for the #ldnont chapter.'
+      ],
+      employeeOrigin: 'Sao Paulo - Brazil',
+      employeeQuote: 'Think like a man of action, act like a man of thought..',
+      employeeTrick: 'Drone Enthusiast / Loose Transistor / DevOps',
+      employeeImage: 'bios/MDEV_BIOS-becky.png',
+      socialLinks: [
+        {
+          linkClass: 'fa-facebook-f',
+          target: '_blank',
+          accessibility: 'Like us on Facebook',
+          linkUrl: 'https://www.facebook.com/MDEVDigital'
+        },
+        {
+          linkClass: 'fa-instagram',
+          target: '_blank',
+          accessibility: 'Follow us on Instagram',
+          linkUrl: 'https://www.instagram.com/mdev_digital/'
+        },
+        {
+          linkClass: 'fa-linkedin',
+          target: '_blank',
+          accessibility: 'Follow us on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+        }
+      ]
+    },
+    {
+      employeeName: 'Dorian Hall',
+      employeeTitle: 'Graphic Designer',
+      employeeRoute: 'dorian-hall',
+      employeeIntro: 'TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
+         innovative solutions to complex problems. Able to distill client goals into a cohesive \
+         creative vision that she communicates to the team for execution.',
+      employeeStory: [
+        'After years of leading creative and software projects, Becky has developed an uncanny \
+        ability to navigate complex timing and requirements to ensure succesful project completeion',
+        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
+        committee and as a LTUX Committee Member for the #ldnont chapter.'
+      ],
+      employeeOrigin: 'Sao Paulo - Brazil',
+      employeeQuote: 'Think like a man of action, act like a man of thought..',
+      employeeTrick: 'Drone Enthusiast / Loose Transistor / DevOps',
+      employeeImage: 'bios/MDEV_BIOS-becky.png',
+      socialLinks: [
+        {
+          linkClass: 'fa-facebook-f',
+          target: '_blank',
+          accessibility: 'Like us on Facebook',
+          linkUrl: 'https://www.facebook.com/MDEVDigital'
+        },
+        {
+          linkClass: 'fa-instagram',
+          target: '_blank',
+          accessibility: 'Follow us on Instagram',
+          linkUrl: 'https://www.instagram.com/mdev_digital/'
+        },
+        {
+          linkClass: 'fa-linkedin',
+          target: '_blank',
+          accessibility: 'Follow us on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+        }
+      ]
     }
   ],
 
@@ -232,6 +332,9 @@ export default  {
     'lucas-moreira',
     'becky-domenico',
     'haly-hawkins',
+    'luis-guerriero',
+    'graham-coutts',
+    'dorian-hall'
   ],
 
   services: [

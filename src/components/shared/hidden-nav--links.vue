@@ -16,14 +16,16 @@
           {{ link.linkName }}
         </span>
       </router-link>
-
+      <!-- Deep Links -->
       <div
         data-main-deep
         v-if="deepLinks"
         class="mdev-deep-links flex flex-vert-center u-uppercase">
+        <!-- Title -->
         <span class="mdev-deep-title u-bold">
           {{ $t('navigation.deepLinks') }}
         </span>
+        <!-- Link Loop -->
         <router-link
           v-for="link in deepLinks"
           class="mdev-deep-link"
@@ -198,5 +200,4 @@
 }
 
 /*--------------------------------------*/
-
 </style>
