@@ -53,7 +53,10 @@
       class="a-fade-in mdev-service">
       <!-- Media -->
       <template slot="mediaSlot">
-        <img :alt="service.media.imageDesc" :src="loadImage(service.media.image)">
+        <!-- Image Carousel -->
+        <media-carousel
+         :flip="((index + 1) % 2) == 1"
+         :media="service.media"></media-carousel>
       </template>
       <!-- Content -->
       <template slot="contentSlot">
@@ -106,6 +109,7 @@ import MainFooter         from '../shared/main-footer.vue';
 import PreFooter          from '../shared/pre-footer.vue';
 import FeaturedServices   from '../modules/featured-services.vue';
 import FeaturedNomedia    from '../modules/featured-nomedia.vue';
+import MediaCarousel      from '../modules/media-carousel.vue';
 import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
 import PageIntro          from '../shared/page-intro.vue';
@@ -172,6 +176,7 @@ export default{
     'main-footer'    : MainFooter,
     'pre-footer'     : PreFooter,
     'chapter-heading': ChapterHeading,
+    'media-carousel' : MediaCarousel,
     'chapter-link'   : ChapterLink,
     'service-tile'   : FeaturedServices,
     'page-intro'     : PageIntro,

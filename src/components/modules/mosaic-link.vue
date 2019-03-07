@@ -95,7 +95,7 @@ export default{
     &:focus {
       z-index: 2;
       transform: scale(1.05);
-      box-shadow: 0 0 70px rgba(0, 0, 0, .8);
+      box-shadow: 0 0 90px rgba(0, 0, 0, .9);
     }
   }
 

@@ -376,10 +376,12 @@ export default  {
           },
           reverse: false
         },
-        media: {
-          image: 'services/branding/logo-design.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/branding/logo-design.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       },
       {
         preTitle: false,
@@ -394,10 +396,16 @@ export default  {
           'Retail Signage'
         ],
         caseStudy: false,
-        media: {
-          image: 'services/branding/print-agcap-brochure.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/branding/print-agcap-brochure.png',
+            imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/branding/print-zucora-printbook.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       },
       {
         preTitle: 'The',
@@ -412,10 +420,16 @@ export default  {
           'Retail Signage'
         ],
         caseStudy: false,
-        media: {
-          image: 'services/branding/packaging-zuc-purecare.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/branding/packaging-zuc-purecare.png',
+            imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/branding/packaging-pwh-homecoming.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       }
     ]
   },
@@ -454,10 +468,20 @@ export default  {
           },
           reverse: true
         },
-        media: {
-          image: 'services/webdev/web-design-tfac.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/webdev/web-design-tfac.png',
+            imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/webdev/web-design-glen.png',
+            imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/webdev/web-design-zuc.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       },
       {
         preTitle: false,
@@ -480,10 +504,20 @@ export default  {
           },
           reverse: false
         },
-        media: {
-          image: 'services/webdev/ecom-keto.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/webdev/ecom-keto.png',
+            imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/webdev/ecom-zucora.png',
+            imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/webdev/ecom-aster.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       }
     ],
     servicesNomedia: [
@@ -545,10 +579,12 @@ export default  {
           'Embedded Systems'
         ],
         caseStudy: false,
-        media: {
-          image: 'services/appdev/the-cat-appdev.jpeg',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/appdev/ZUC_SoftwareAnimation_laptop.gif',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       }
     ],
     servicesNomedia: [
@@ -647,10 +683,12 @@ export default  {
           'Graphical & Video Asset Creation'
         ],
         caseStudy: false,
-        media: {
-          image: 'services/digiads/social-phone-instagram.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/digiads/social-phone-instagram.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       },
       {
         preTitle: false,
@@ -668,10 +706,12 @@ export default  {
         description: 'Social media has become the central hub of communication for many businesses. We can help you develop and execute a social media strategy to promote your products and services to the world.',
         topics: false,
         caseStudy: false,
-        media: {
-          image: 'services/digiads/sem-keto-pintrest.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/digiads/sem-keto-pintrest.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       },
       {
         preTitle: false,
@@ -685,10 +725,16 @@ export default  {
           'Photography & Video'
         ],
         caseStudy: false,
-        media: {
-          image: 'services/digiads/launch-tfac-landing-page.png',
-          imageDesc: 'Description here TODO'
-        }
+        media: [
+          {
+            image: 'services/digiads/launch-tfac-landing-page.png',
+            imageDesc: 'Description here TODO'
+          },
+          {
+            image: 'services/digiads/launch-ora-landing-page.png',
+            imageDesc: 'Description here TODO'
+          }
+        ]
       },
     ]
   },
