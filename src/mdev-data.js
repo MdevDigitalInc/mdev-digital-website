@@ -178,18 +178,14 @@ export default  {
       employeeName: 'Haly Hawkins',
       employeeTitle: 'Graphic Designer',
       employeeRoute: 'haly-hawkins',
-      employeeIntro: 'TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-         innovative solutions to complex problems. Able to distill client goals into a cohesive \
-         creative vision that she communicates to the team for execution.',
+      employeeIntro: 'Haly gained an abundance of experience from her 3 years at Fanshawe College, graduating from the Graphic Design Advanced Diploma program, being a student-employee in the Fanshawe Athletics Department as the PR Publications Assistant, and the captain of the Women’s Varsity Basketball team.',
       employeeStory: [
-        'After years of leading creative and software projects, Becky has developed an uncanny \
-        ability to navigate complex timing and requirements to ensure succesful project completeion',
-        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-        committee and as a LTUX Committee Member for the #ldnont chapter.'
+        'As an organized team player Haly took on many roles at Fanshawe. From national scholar, leadership, and athletic awards being a student-employee and student-athlete has proven her wonders.',
+        'Haly has recently embarked on a month long marine conservation volunteer trip in Thailand to research, protect and restore coral reefs'
       ],
-      employeeOrigin: 'Sao Paulo - Brazil',
-      employeeQuote: 'Think like a man of action, act like a man of thought..',
-      employeeTrick: 'Drone Enthusiast / Loose Transistor / DevOps',
+      employeeOrigin: 'London, ON',
+      employeeQuote: 'Work smarter, not harder.',
+      employeeTrick: 'Ruler of yard games',
       employeeImage: 'bios/MDEV_BIOS-becky.png',
       socialLinks: [
         {
@@ -216,18 +212,14 @@ export default  {
       employeeName: 'Luis Guerriero',
       employeeTitle: 'Graphic Designer',
       employeeRoute: 'luis-guerriero',
-      employeeIntro: 'TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-         innovative solutions to complex problems. Able to distill client goals into a cohesive \
-         creative vision that she communicates to the team for execution.',
+      employeeIntro: 'An award-winning digital marketer with a vast amount of experience ranging from sales to department director, Luis has developed a knack for making the digital space a little more human. His experience in working with companies and major social media influencers from all parts of the world allows him to bring unique and refreshing ideas to the marketing table.',
       employeeStory: [
-        'After years of leading creative and software projects, Becky has developed an uncanny \
-        ability to navigate complex timing and requirements to ensure succesful project completeion',
-        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-        committee and as a LTUX Committee Member for the #ldnont chapter.'
+        'Winning the Americas division, and placing top five globally in the 2014 Google Online Marketing Challenge jump started Luis’ career in internet and social media marketing.',
+        'He’s naturally passionate person with a love for music and dance (he teaches salsa and bachata), and a lover of sports.'
       ],
-      employeeOrigin: 'Sao Paulo - Brazil',
-      employeeQuote: 'Think like a man of action, act like a man of thought..',
-      employeeTrick: 'Drone Enthusiast / Loose Transistor / DevOps',
+      employeeOrigin: 'Guatemala City, Guatemala',
+      employeeQuote: '',
+      employeeTrick: 'Hips Don’t Lie - Salsa and Bachata Instructor',
       employeeImage: 'bios/MDEV_BIOS-becky.png',
       socialLinks: [
         {
@@ -254,56 +246,13 @@ export default  {
       employeeName: 'Graham Coutts',
       employeeTitle: 'Graphic Designer',
       employeeRoute: 'graham-coutts',
-      employeeIntro: 'TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-         innovative solutions to complex problems. Able to distill client goals into a cohesive \
-         creative vision that she communicates to the team for execution.',
+      employeeIntro: 'Whether he\'s improving the efficiency and processing capabilities of antiquated systems for large companies, or working on integrating numerous emerging web technologies, Graham always plays key role in designing and developing effective systems for any situation.',
       employeeStory: [
-        'After years of leading creative and software projects, Becky has developed an uncanny \
-        ability to navigate complex timing and requirements to ensure succesful project completeion',
-        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-        committee and as a LTUX Committee Member for the #ldnont chapter.'
+        'Graham also occasionally teaches programming classes as a part-time instructor at Fanshawe College as a part of the Advanced Programming Game development program.'
       ],
-      employeeOrigin: 'Sao Paulo - Brazil',
-      employeeQuote: 'Think like a man of action, act like a man of thought..',
-      employeeTrick: 'Drone Enthusiast / Loose Transistor / DevOps',
-      employeeImage: 'bios/MDEV_BIOS-becky.png',
-      socialLinks: [
-        {
-          linkClass: 'fa-facebook-f',
-          target: '_blank',
-          accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
-        },
-        {
-          linkClass: 'fa-instagram',
-          target: '_blank',
-          accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
-        },
-        {
-          linkClass: 'fa-linkedin',
-          target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-        }
-      ]
-    },
-    {
-      employeeName: 'Dorian Hall',
-      employeeTitle: 'Graphic Designer',
-      employeeRoute: 'dorian-hall',
-      employeeIntro: 'TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-         innovative solutions to complex problems. Able to distill client goals into a cohesive \
-         creative vision that she communicates to the team for execution.',
-      employeeStory: [
-        'After years of leading creative and software projects, Becky has developed an uncanny \
-        ability to navigate complex timing and requirements to ensure succesful project completeion',
-        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-        committee and as a LTUX Committee Member for the #ldnont chapter.'
-      ],
-      employeeOrigin: 'Sao Paulo - Brazil',
-      employeeQuote: 'Think like a man of action, act like a man of thought..',
-      employeeTrick: 'Drone Enthusiast / Loose Transistor / DevOps',
+      employeeOrigin: 'Guelph, ON',
+      employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
+      employeeTrick: 'Tea Drinker/Human Mop/Technologic Swiss Army Knife',
       employeeImage: 'bios/MDEV_BIOS-becky.png',
       socialLinks: [
         {
@@ -333,8 +282,7 @@ export default  {
     'becky-domenico',
     'haly-hawkins',
     'luis-guerriero',
-    'graham-coutts',
-    'dorian-hall'
+    'graham-coutts'
   ],
 
   services: [
