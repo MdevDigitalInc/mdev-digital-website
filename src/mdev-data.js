@@ -210,7 +210,7 @@ export default  {
     },
     {
       employeeName: 'Luis Guerriero',
-      employeeTitle: 'Graphic Designer TEST',
+      employeeTitle: 'Digital Marketing Manager',
       employeeRoute: 'luis-guerriero',
       employeeIntro: 'An award-winning digital marketer with a vast amount of experience ranging from sales to department director, Luis has developed a knack for making the digital space a little more human. His experience in working with companies and major social media influencers from all parts of the world allows him to bring unique and refreshing ideas to the marketing table.',
       employeeStory: [
@@ -244,8 +244,41 @@ export default  {
     },
     {
       employeeName: 'Graham Coutts',
-      employeeTitle: 'Graphic Designer',
+      employeeTitle: 'Full-stack Developer',
       employeeRoute: 'graham-coutts',
+      employeeIntro: 'Whether he\'s improving the efficiency and processing capabilities of antiquated systems for large companies, or working on integrating numerous emerging web technologies, Graham always plays key role in designing and developing effective systems for any situation.',
+      employeeStory: [
+        'Graham also occasionally teaches programming classes as a part-time instructor at Fanshawe College as a part of the Advanced Programming Game development program.'
+      ],
+      employeeOrigin: 'Guelph, ON',
+      employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
+      employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
+      employeeImage: 'bios/MDEV_BIOS-becky.png',
+      socialLinks: [
+        {
+          linkClass: 'fa-facebook-f',
+          target: '_blank',
+          accessibility: 'Like us on Facebook',
+          linkUrl: 'https://www.facebook.com/MDEVDigital'
+        },
+        {
+          linkClass: 'fa-instagram',
+          target: '_blank',
+          accessibility: 'Follow us on Instagram',
+          linkUrl: 'https://www.instagram.com/mdev_digital/'
+        },
+        {
+          linkClass: 'fa-linkedin',
+          target: '_blank',
+          accessibility: 'Follow us on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+        }
+      ]
+    },
+    {
+      employeeName: 'Dorian Hall',
+      employeeTitle: 'Front-end Developer',
+      employeeRoute: 'dorian-hall',
       employeeIntro: 'Whether he\'s improving the efficiency and processing capabilities of antiquated systems for large companies, or working on integrating numerous emerging web technologies, Graham always plays key role in designing and developing effective systems for any situation.',
       employeeStory: [
         'Graham also occasionally teaches programming classes as a part-time instructor at Fanshawe College as a part of the Advanced Programming Game development program.'
@@ -282,7 +315,8 @@ export default  {
     'becky-domenico',
     'haly-hawkins',
     'luis-guerriero',
-    'graham-coutts'
+    'graham-coutts',
+    'dorian-hall'
   ],
 
   services: [
