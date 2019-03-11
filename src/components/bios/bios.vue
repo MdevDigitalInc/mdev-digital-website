@@ -32,7 +32,7 @@
             </span>
               {{ mdevBio.employeeOrigin }}
           </li>
-          <li>
+          <li v-if="mdevBio.employeeQuote">
             <span class="mdev-bio-key u-bold">
               Favorite Quote:
             </span>
@@ -66,6 +66,7 @@
       v-on:nextBio="traverse(1)"
       v-on:previousBio="traverse(-1)"
       :nextBioName="mdevBios[nextIndex].employeeName"></bios-navigation>
+    <div class="mdev-bios-nav-bkg"></div>
   </div>
 </template>
 
@@ -134,7 +135,7 @@ export default {
       }
       // Update route to match current employee in view
       this.$router.push({
-        path: '/bios/' + this.mdevBios[this.desiredIndex].employeeRoute
+        path: '/team/' + this.mdevBios[this.desiredIndex].employeeRoute
       });
     }
   },

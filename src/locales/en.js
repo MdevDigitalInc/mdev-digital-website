@@ -99,10 +99,10 @@ export default {
   },
 
   navigation: {
-    sidebarCta: "Let's start something new!",
-    getInTouch: "Get in touch:",
+    getInTouch: "Contact Us:",
     addressRegion: "London, Ontario",
-    addressStreet: "100 Kellogg Lane, N5W 0B4"
+    addressStreet: "100 Kellogg Lane, N5W 0B4",
+    deepLinks: "Dive Deeper:"
   },
 
   servicepage: {

@@ -133,7 +133,7 @@
         </p>
         <!-- Primary Button -->
         <btn-primary v-if="service.BtnData" :BtnData="service.BtnData">
-          {{ $t("consulting.btnAction") }}
+          {{ $t("consultingpage.btnAction") }}
         </btn-primary>
         <!-- Topics Loop -->
         <ul v-if="service.topics" class="mdev-service-topics --space-top-xs a-fade-in" v-in-viewport>

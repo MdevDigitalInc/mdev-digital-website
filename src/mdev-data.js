@@ -27,6 +27,24 @@ export default  {
     }
   ],
 
+  deepLinks: [
+    {
+      linkName: 'Philosophy',
+      linkTitle: 'Our Philosophy',
+      route: '/about'
+    },
+    {
+      linkName: 'Our Process',
+      linkTitle: 'Learn about our process',
+      route: '/about'
+    },
+    {
+      linkName: 'Team',
+      linkTitle: 'Our Team',
+      route: '/about'
+    }
+  ],
+
   serviceLinks: [
     {
       linkName: 'Consulting',
@@ -92,52 +110,38 @@ export default  {
       employeeName: 'Lucas Moreira',
       employeeTitle: 'CEO, Founder',
       employeeRoute: 'lucas-moreira',
-      employeeIntro: 'TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-         innovative solutions to complex problems. Able to distill client goals into a cohesive \
-         creative vision that she communicates to the team for execution.',
+      employeeIntro: 'With over 10 years of experience working on large-scale, high-demand web applications, Lucas has a wealth of expertise in creating web applications to serve a variety of needs.',
       employeeStory: [
-        'After years of leading creative and software projects, Becky has developed an uncanny \
-        ability to navigate complex timing and requirements to ensure succesful project completeion',
-        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-        committee and as a LTUX Committee Member for the #ldnont chapter.'
+        'Lending his insights on technology, marketing, media relations and efficient development practices to every project he touches, Lucas ensures that MDEV’s clients can expect an extremely high level of quality.',
+        'Lucas is a board member of the MACC in London, ON, serves on the London Chamber of Commerce Marketing Committee and is also known for his expertise in FPV Drones and 3D printing on his Loose Transistor YouTube channel.'
       ],
       employeeOrigin: 'Sao Paulo - Brazil',
-      employeeQuote: 'Think like a man of action, act like a man of thought..',
-      employeeTrick: 'Drone Enthusiast / Loose Transistor / DevOps',
+      employeeQuote: 'Think like a man of action, act like a man of thought.',
+      employeeTrick: 'Drone Guru / Media Maven / Eagle Eye',
       employeeImage: 'bios/MDEV_BIOS-becky.png',
       socialLinks: [
         {
-          linkClass: 'fa-facebook-f',
-          target: '_blank',
-          accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
-        },
-        {
           linkClass: 'fa-instagram',
           target: '_blank',
-          accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
+          accessibility: 'Follow Lucas on Instagram',
+          linkUrl: 'https://www.instagram.com/loose_transistor/'
         },
         {
           linkClass: 'fa-linkedin',
           target: '_blank',
           accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+          linkUrl: 'https://www.linkedin.com/in/moreiradevelopment/'
         }
       ]
     },
     {
       employeeName: 'Becky Domenico',
-      employeeTitle: 'Creative Director, Founder',
+      employeeTitle: 'CCO, Founder',
       employeeRoute: 'becky-domenico',
-      employeeIntro: 'TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-         innovative solutions to complex problems. Able to distill client goals into a cohesive \
-         creative vision that she communicates to the team for execution.',
+      employeeIntro: 'A disruptive thinker and creative visionary, Becky is constantly digging deeper to find innovative solutions to complex problems. Able to distill client goals into a cohesive creative vision that she communicates to the team for execution.',
       employeeStory: [
-        'After years of leading creative and software projects, Becky has developed an uncanny \
-        ability to navigate complex timing and requirements to ensure succesful project completeion',
-        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-        committee and as a LTUX Committee Member for the #ldnont chapter.'
+        'After years of leading creative and software projects, Becky has developed an uncanny ability to navigate complex timing and requirements to ensure successful project completion.',
+        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory committee and as a LTUX Committee Member for the #ldnont chapter.'
       ],
       employeeOrigin: 'Timmins, ON',
       employeeQuote: 'Fear is the mind killer.',
@@ -147,6 +151,46 @@ export default  {
         {
           linkClass: 'fa-facebook-f',
           target: '_blank',
+          accessibility: 'Like Becky on Facebook',
+          linkUrl: 'https://www.facebook.com/becky.domenico'
+        },
+        {
+          linkClass: 'fa-instagram',
+          target: '_blank',
+          accessibility: 'Follow Becky on Instagram',
+          linkUrl: 'https://www.instagram.com/tbex852/'
+        },
+        {
+          linkClass: 'fa-twitter',
+          target: '_blank',
+          accessibility: 'Follow Becky on Twitter',
+          linkUrl: 'https://twitter.com/BECKYDOMENICO'
+        },
+        {
+          linkClass: 'fa-linkedin',
+          target: '_blank',
+          accessibility: 'Follow us on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/in/beckydomenico/'
+        }
+      ]
+    },
+    {
+      employeeName: 'Haly Hawkins',
+      employeeTitle: 'Graphic Designer',
+      employeeRoute: 'haly-hawkins',
+      employeeIntro: 'Haly gained an abundance of experience from her 3 years at Fanshawe College, graduating from the Graphic Design Advanced Diploma program, being a student-employee in the Fanshawe Athletics Department as the PR Publications Assistant, and the captain of the Women’s Varsity Basketball team.',
+      employeeStory: [
+        'As an organized team player Haly took on many roles at Fanshawe. From national scholar, leadership, and athletic awards being a student-employee and student-athlete has proven her wonders.',
+        'Haly has recently embarked on a month long marine conservation volunteer trip in Thailand to research, protect and restore coral reefs'
+      ],
+      employeeOrigin: 'London, ON',
+      employeeQuote: 'Work smarter, not harder.',
+      employeeTrick: 'Ruler of yard games',
+      employeeImage: 'bios/MDEV_BIOS-becky.png',
+      socialLinks: [
+        {
+          linkClass: 'fa-facebook-f',
+          target: '_blank',
           accessibility: 'Like us on Facebook',
           linkUrl: 'https://www.facebook.com/MDEVDigital'
         },
@@ -157,10 +201,38 @@ export default  {
           linkUrl: 'https://www.instagram.com/mdev_digital/'
         },
         {
-          linkClass: 'fa-twitter',
+          linkClass: 'fa-linkedin',
           target: '_blank',
-          accessibility: 'Follow us on Twitter',
-          linkUrl: 'https://twitter.com/MDEVdigital'
+          accessibility: 'Follow us on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+        }
+      ]
+    },
+    {
+      employeeName: 'Luis Guerriero',
+      employeeTitle: 'Digital Marketing Manager',
+      employeeRoute: 'luis-guerriero',
+      employeeIntro: 'An award-winning digital marketer with a vast amount of experience ranging from sales to department director, Luis has developed a knack for making the digital space a little more human. His experience in working with companies and major social media influencers from all parts of the world allows him to bring unique and refreshing ideas to the marketing table.',
+      employeeStory: [
+        'Winning the Americas division, and placing top five globally in the 2014 Google Online Marketing Challenge jump started Luis’ career in internet and social media marketing.',
+        'He’s naturally passionate person with a love for music and dance (he teaches salsa and bachata), and a lover of sports.'
+      ],
+      employeeOrigin: 'Guatemala City, Guatemala',
+      employeeQuote: false,
+      employeeTrick: 'Hips Don’t Lie - Salsa and Bachata Instructor',
+      employeeImage: 'bios/MDEV_BIOS-becky.png',
+      socialLinks: [
+        {
+          linkClass: 'fa-facebook-f',
+          target: '_blank',
+          accessibility: 'Like us on Facebook',
+          linkUrl: 'https://www.facebook.com/MDEVDigital'
+        },
+        {
+          linkClass: 'fa-instagram',
+          target: '_blank',
+          accessibility: 'Follow us on Instagram',
+          linkUrl: 'https://www.instagram.com/mdev_digital/'
         },
         {
           linkClass: 'fa-linkedin',
@@ -171,21 +243,49 @@ export default  {
       ]
     },
     {
-      employeeName: 'Haly Hawkins',
-      employeeTitle: 'Graphic Designer',
-      employeeRoute: 'haly-hawkins',
-      employeeIntro: 'TESDT A disruptive thinker and creative visionary, Becky is constantly digging deeper to find\
-         innovative solutions to complex problems. Able to distill client goals into a cohesive \
-         creative vision that she communicates to the team for execution.',
+      employeeName: 'Graham Coutts',
+      employeeTitle: 'Full-stack Developer',
+      employeeRoute: 'graham-coutts',
+      employeeIntro: 'Whether he\'s improving the efficiency and processing capabilities of antiquated systems for large companies, or working on integrating numerous emerging web technologies, Graham always plays key role in designing and developing effective systems for any situation.',
       employeeStory: [
-        'After years of leading creative and software projects, Becky has developed an uncanny \
-        ability to navigate complex timing and requirements to ensure succesful project completeion',
-        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory \
-        committee and as a LTUX Committee Member for the #ldnont chapter.'
+        'Graham also occasionally teaches programming classes as a part-time instructor at Fanshawe College as a part of the Advanced Programming Game development program.'
       ],
-      employeeOrigin: 'Sao Paulo - Brazil',
-      employeeQuote: 'Think like a man of action, act like a man of thought..',
-      employeeTrick: 'Drone Enthusiast / Loose Transistor / DevOps',
+      employeeOrigin: 'Guelph, ON',
+      employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
+      employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
+      employeeImage: 'bios/MDEV_BIOS-becky.png',
+      socialLinks: [
+        {
+          linkClass: 'fa-facebook-f',
+          target: '_blank',
+          accessibility: 'Like us on Facebook',
+          linkUrl: 'https://www.facebook.com/MDEVDigital'
+        },
+        {
+          linkClass: 'fa-instagram',
+          target: '_blank',
+          accessibility: 'Follow us on Instagram',
+          linkUrl: 'https://www.instagram.com/mdev_digital/'
+        },
+        {
+          linkClass: 'fa-linkedin',
+          target: '_blank',
+          accessibility: 'Follow us on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+        }
+      ]
+    },
+    {
+      employeeName: 'Dorian Hall',
+      employeeTitle: 'Front-end Developer',
+      employeeRoute: 'dorian-hall',
+      employeeIntro: 'Whether he\'s improving the efficiency and processing capabilities of antiquated systems for large companies, or working on integrating numerous emerging web technologies, Graham always plays key role in designing and developing effective systems for any situation.',
+      employeeStory: [
+        'Graham also occasionally teaches programming classes as a part-time instructor at Fanshawe College as a part of the Advanced Programming Game development program.'
+      ],
+      employeeOrigin: 'Guelph, ON',
+      employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
+      employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
       employeeImage: 'bios/MDEV_BIOS-becky.png',
       socialLinks: [
         {
@@ -214,6 +314,9 @@ export default  {
     'lucas-moreira',
     'becky-domenico',
     'haly-hawkins',
+    'luis-guerriero',
+    'graham-coutts',
+    'dorian-hall'
   ],
 
   services: [
