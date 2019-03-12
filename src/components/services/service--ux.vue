@@ -36,6 +36,7 @@
     <service-tile v-for="(service, index) in services"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 1"
+      :key="index"
       :linkData="service.caseStudy"
       v-in-viewport
       class="a-fade-in mdev-service">
@@ -63,7 +64,8 @@
           <li
             v-html="topic"
             class="u-uppercase u-bold"
-            v-for="topic in service.topics">
+            :key="index"
+            v-for="(topic, index) in service.topics">
           </li>
         </ul>
       </template>
@@ -71,6 +73,7 @@
     <!-- No Media -->
     <service-nomedia
       v-for="(service, index) in nomedia"
+      :key="index"
       :preTitle="service.preTitle"
       :title="service.title"
       :content="service.content"

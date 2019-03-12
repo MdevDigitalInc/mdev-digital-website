@@ -7,6 +7,7 @@
       <!-- Testimonial Loop -->
       <p v-for="( testimonial, index ) in testimonials"
         v-if=" index == desiredIndex "
+        :key="index"
         v-in-viewport
         class="mdev-testimonial u-c-black --space-top-xs u-light u-italic a-blur-in">
           {{ testimonial.content }}

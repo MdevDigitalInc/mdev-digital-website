@@ -1,8 +1,9 @@
 <template>
   <div class="mdev-nav-links">
     <router-link
-      v-for="link in links"
+      v-for="(link, index) in links"
       :to="link.route"
+      :key="index"
       active-class="--active"
       data-main-links
       class="mdev-nav-link"
@@ -27,8 +28,9 @@
         </span>
         <!-- Link Loop -->
         <router-link
-          v-for="link in deepLinks"
+          v-for="(link, index) in deepLinks"
           class="mdev-deep-link"
+          :key="index"
           :to="link.route"
           :title="link.linkTitle">
           {{ link.linkName }}

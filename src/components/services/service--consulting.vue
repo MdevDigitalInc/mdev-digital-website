@@ -49,6 +49,7 @@
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 1"
       :linkData="service.caseStudy"
+      :key="index"
       v-in-viewport
       class="a-fade-in mdev-service"
       :class="{ '--no-image' : !service.media }">
@@ -92,6 +93,7 @@
     <!-- Service Nomedia -->
     <service-nomedia
       v-for="(service, index) in nomedia"
+      :key="index"
       :preTitle="service.preTitle"
       :title="service.title"
       :content="service.content"
@@ -101,6 +103,7 @@
     <service-tile v-for="(service, index) in services"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 1"
+      :key="index"
       :linkData="service.caseStudy"
       v-in-viewport
       class="a-fade-in mdev-service"

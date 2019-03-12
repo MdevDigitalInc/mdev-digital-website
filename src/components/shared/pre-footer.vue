@@ -21,6 +21,7 @@
         <!-- Link - Looped -->
         <div class="mdev-prefooter-links u-c-white"
           v-for="(link, index) in links"
+          :key="index"
           v-if="link.serviceFlag != serviceFlag">
           <!-- Column Heading -->
           <span class="--heading u-uppercase u-bold">
@@ -28,6 +29,7 @@
           </span>
           <router-link :to="item.linkRoute"
             class="mdev-footer-link u-uppercase"
+            :key="index"
             v-for="(item, index) in link.list" :title="item.a11y">
             {{ item.linkName }}
           </router-link>

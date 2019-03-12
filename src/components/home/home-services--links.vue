@@ -7,7 +7,8 @@
       {{ linksTitle }}
     </span>
     <router-link
-      v-for="link in links"
+      v-for="(link, index) in links"
+      :key="index"
       :to="link.route"
       :title="link.linkTitle"
       aria-role="menuitem" >
