@@ -58,7 +58,7 @@ export default {
 
   beforeDestroy: function() {
     $('[data-main-hero]').removeClass('--mask-active');
-  }
+  },
 };
 
 </script>

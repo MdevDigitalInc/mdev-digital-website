@@ -20,7 +20,7 @@
 
 
 <script>
-// Show Animation
+// Brand Animation
 import BrandAnimation from '../shared/brand-animation.vue';
 
 export default{
@@ -43,7 +43,9 @@ export default{
       // Flag for activating the coming soon message
       isActive: false,
       // Time until user is redirected
-      time: 10
+      time: 10,
+      // Redirect timer container
+      redirectTimer: null
     };
   },
 
@@ -81,21 +83,23 @@ export default{
 
   methods: {
     countdown() {
-      // Redirect timer container
-      var redirectTimer = null;
       // Run every 1 Sec..
-      redirectTimer = setInterval(()=> {
+      this.redirectTimer = setInterval(()=> {
         // If time is not zero, subtract 1
         if (this.time > 0) {
           this.time --;
         }
         // Once it gets to zero, clear timer and redirect
         else {
-          clearInterval(redirectTimer);
+          clearInterval(this.redirectTimer);
           this.$router.go(-1);
         }
       }, 1000);
     }
+  },
+
+  beforeDestroy: function() {
+    clearInterval(this.redirectTimer);
   },
 
   components: {
