@@ -1,15 +1,17 @@
 <template>
   <section class="mdev-main-content">
     <brand-animation v-if="isLoading"></brand-animation>
-    <div v-if="!isLoading" class="mdev-coming-soon u-text-center u-c-white">
+    <div v-if="!isLoading" class="mdev-coming-soon u-text-center u-c-white" :class="{ '--active' : isActive }">
       <h2 class="u-uppercase">
         Coming Soon
       </h2>
-      <h3 class="u-uppercase u-light">Oops, looks like we are still working on this. check back soon for updates!</h3>
+      <h3 class="u-uppercase u-light">Oops, looks like we are still working on this. </br> check back soon for updates!</h3>
       <p>
         We will redirect you back to where you came from in...
-        {{ time }}
       </p>
+      <h3>
+        {{ time }}
+      </h3>
     </div>
   </section>
 </template>
@@ -36,8 +38,12 @@ export default{
 
   data: function(){
     return{
+      // Flag for the loading anim..
       isLoading: true,
-      time: 7
+      // Flag for activating the coming soon message
+      isActive: false,
+      // Time until user is redirected
+      time: 10
     };
   },
 
@@ -63,18 +69,27 @@ export default{
       setTimeout(() => {
         // Flip Flag
         this.isLoading = false;
+        // Start countdown function
         this.countdown();
       }, 2500);
+      // Reveal hidden text
+      setTimeout(() => {
+        this.isActive = true;
+      }, 2800);
     });
   },
 
   methods: {
     countdown() {
+      // Redirect timer container
       var redirectTimer = null;
+      // Run every 1 Sec..
       redirectTimer = setInterval(()=> {
+        // If time is not zero, subtract 1
         if (this.time > 0) {
           this.time --;
         }
+        // Once it gets to zero, clear timer and redirect
         else {
           clearInterval(redirectTimer);
           this.$router.go(-1);
@@ -94,12 +109,25 @@ export default{
 <style lang="scss" scoped>
 
 /*-------------------------------------*/
-/* BASE TEMPLATE Component Styles
+/* Coming Soon Component Styles
 /--------------------------------------*/
 .mdev-coming-soon {
+  width: 90%;
   @include center(both);
+
+  opacity: 0;
+  transition: opacity 4s;
+
+  &.--active {
+    opacity: 1;
+  }
 }
 
+.mdev-main-content {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
 
 /*--------------------------------------*/
 

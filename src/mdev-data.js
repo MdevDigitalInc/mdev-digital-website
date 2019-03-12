@@ -3,14 +3,14 @@ export default  {
   links: [
     {
       linkName: 'About',
-      linkTitle: 'About MDEV Digital',
-      route: '/about',
+      linkTitle: 'Coming Soon!',
+      route: '/comingsoon',
       linkIndex: '01'
     },
     {
       linkName: 'Work',
-      linkTitle: 'Our Work Case Studies',
-      route: '/casestudy',
+      linkTitle: 'Coming Soon!',
+      route: '/comingsoon',
       linkIndex: '02'
     },
     {
@@ -41,7 +41,7 @@ export default  {
     {
       linkName: 'Team',
       linkTitle: 'Our Team',
-      route: '/comingsoon'
+      route: '/team'
     }
   ],
 
