@@ -139,8 +139,8 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'TESTY TEST TEST',
-      headerDsc: 'Innovate With Passion',
+      pageTitle: 'Be heard',
+      headerDsc: 'Once you go digital...',
       onceAnim: 'services/digiads/MDEV_HEADER_once_animated.svg',
       youAnim: 'services/digiads/MDEV_HEADER_you_animated.svg',
       goAnim: 'services/digiads/MDEV_HEADER_go_animated.svg',
@@ -158,16 +158,16 @@ export default{
     this.$nextTick(() => {
         $('[data-main-nav]').addClass('--teal-white');
       setTimeout(() => {
-        new Vivus('anim-once', {duration: 150}, console.log('fired'));
+        new Vivus('anim-once', {duration: 150});
       }, 100);
       setTimeout(() => {
-        new Vivus('anim-you', {duration: 150}, console.log('fired'));
+        new Vivus('anim-you', {duration: 150});
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-go', {duration: 150}, console.log('fired'));
+        new Vivus('anim-go', {duration: 150});
       }, 800);
       setTimeout(() => {
-        new Vivus('anim-digital', {duration: 150}, console.log('fired'));
+        new Vivus('anim-digital', {duration: 150});
       }, 1200);
       setTimeout(() => {
         $('[data-header-intro]').addClass('--anim-visible');

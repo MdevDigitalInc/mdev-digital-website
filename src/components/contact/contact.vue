@@ -56,7 +56,6 @@ import ContactForm        from './contact--form.vue';
 
 export default {
   name: 'Contact',
-  // TODO - Edit meta Title
   // SEE - https://github.com/ktquez/vue-head
   head: {
     title: {
@@ -75,8 +74,8 @@ export default {
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'TESTY TEST TEST',
-      headerDsc: 'TODO',
+      pageTitle: 'Let\'s Talk!',
+      headerDsc: 'An animated segment invites the user to Start something new by getting in touch with MDEV Digital',
       letsAnim: 'contact/MDEV_HEADER_lets_animated.svg',
       startAnim: 'contact/MDEV_HEADER_start_animated.svg',
       somethingAnim: 'contact/MDEV_HEADER_something.svg',
@@ -88,16 +87,16 @@ export default {
     this.$nextTick(() => {
         $('[data-main-nav]').addClass('--teal-white');
       setTimeout(() => {
-        new Vivus('anim-lets', {duration: 150}, console.log('fired'));
+        new Vivus('anim-lets', {duration: 150});
       }, 100);
       setTimeout(() => {
-        new Vivus('anim-start', {duration: 150}, console.log('fired'));
+        new Vivus('anim-start', {duration: 150});
       }, 400);
       setTimeout(() => {
         $('#anim-something').addClass('--anim-visible');
       }, 650);
       setTimeout(() => {
-        new Vivus('anim-new', {duration: 180}, console.log('fired'));
+        new Vivus('anim-new', {duration: 180});
       }, 2700);
       setTimeout(() => {
         $('[data-header-intro]').addClass('--anim-visible');

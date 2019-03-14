@@ -110,7 +110,6 @@ import MdevData       from '../../mdev-data.js';
 
 export default{
   name: 'ServicesAll',
-  // TODO - Edit meta Title
   // SEE - https://github.com/ktquez/vue-head
   head: {
     title: {
@@ -123,14 +122,15 @@ export default{
 
     ]
   },
+
   data: function() {
     return {
       heroStyles: {
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'TESTY TEST TEST',
-      headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.',
+      pageTitle: 'Our Skillset',
+      headerDsc: 'A simple animation enticing users to explore all of MDEV digital various services.',
       connectAnim: 'contact/MDEV_HEADER_connect_animated.svg',
       withAnim: 'contact/MDEV_HEADER_with.svg',
       usAnim: 'contact/MDEV_HEADER_us_animated.svg',

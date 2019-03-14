@@ -205,7 +205,7 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'TESTY TEST TEST',
+      pageTitle: 'We can help!',
       headerDsc: 'Innovate With Passion',
       keepAnim: 'services/support/MDEV_HEADER_keep_animated.svg',
       turningAnim: 'services/support/MDEV_HEADER_turning_animated.svg',
@@ -226,16 +226,16 @@ export default{
     this.$nextTick(() => {
         $('[data-main-nav]').addClass('--teal-white');
       setTimeout(() => {
-        new Vivus('anim-keep', {duration: 150}, console.log('fired'));
+        new Vivus('anim-keep', {duration: 150});
       }, 100);
       setTimeout(() => {
         $('#anim-the').addClass('--anim-visible');
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-wheels', {duration: 150}, console.log('fired'));
+        new Vivus('anim-wheels', {duration: 150});
       }, 800);
       setTimeout(() => {
-        new Vivus('anim-turning', {duration: 150}, console.log('fired'));
+        new Vivus('anim-turning', {duration: 150});
       }, 1200);
       setTimeout(() => {
         $('[data-header-intro]').addClass('--anim-visible');

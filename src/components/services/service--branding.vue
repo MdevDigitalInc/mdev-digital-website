@@ -126,7 +126,7 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'TESTY TEST TEST',
+      pageTitle: 'Make your  mark',
       headerDsc: 'Tell Your Story',
       tellAnim: 'services/branding/MDEV_HEADER_tell_animated.svg',
       yourAnim: 'services/branding/MDEV_HEADER_your_animated.svg',
@@ -144,14 +144,14 @@ export default{
     this.$nextTick(() => {
         $('[data-main-nav]').addClass('--teal-white');
       setTimeout(() => {
-        new Vivus('anim-tell', {duration: 150}, console.log('fired'));
+        new Vivus('anim-tell', {duration: 150});
       }, 100);
       setTimeout(() => {
-        new Vivus('anim-your', {duration: 180}, console.log('fired'));
+        new Vivus('anim-your', {duration: 180});
         $('#anim-your').addClass('--anim-visible');
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-story', {duration: 180}, console.log('fired'));
+        new Vivus('anim-story', {duration: 180});
       }, 1700);
       setTimeout(() => {
         $('[data-header-intro]').addClass('--anim-visible');

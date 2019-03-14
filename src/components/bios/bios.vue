@@ -79,7 +79,6 @@ import MdevData       from '../../mdev-data.js';
 
 export default {
   name: "BiosView",
-  // TODO - Edit meta Title
   // SEE - https://github.com/ktquez/vue-head
   head: {
     title: {

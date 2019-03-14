@@ -133,8 +133,8 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'TESTY TEST TEST',
-      headerDsc: 'Tell Your Story',
+      pageTitle: 'User Experience Design',
+      headerDsc: 'Humanize The Web',
       humanizeAnim: 'services/webdev/MDEV_HEADER_humanize_animated.svg',
       theAnim: 'services/webdev/MDEV_HEADER_the.svg',
       webAnim: 'services/webdev/MDEV_HEADER_web_animated.svg',

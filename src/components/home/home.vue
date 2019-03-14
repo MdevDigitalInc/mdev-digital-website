@@ -33,7 +33,6 @@ import MdevData           from '../../mdev-data.js';
 
 export default{
   name: 'HomePage',
-  // TODO - Edit meta Title
   // SEE - https://github.com/ktquez/vue-head
   head: {
     title: {
@@ -55,7 +54,7 @@ export default{
         backgroundPosition: 'top center'
       },
       // Disables Page Title bar
-      pageTitle: 'TESTY TEST TEST',
+      pageTitle: 'Humanize The Web',
       headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.',
       // Testimonials loaded from flat file
       testimonials: MdevData.testimonials

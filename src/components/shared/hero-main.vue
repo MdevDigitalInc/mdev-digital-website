@@ -135,6 +135,7 @@ export default {
   opacity: 0;
   min-width: 50px;
   transition: opacity 3s, height 0;
+  text-transform: uppercase;
 
   @media #{$phone-only} {
     display: none;
