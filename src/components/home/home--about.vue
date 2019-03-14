@@ -64,7 +64,7 @@ export default {
 
   &:after {
     @include pseudo();
-    background: url('../../assets/images/about_bkg.png');
+    background: url('../../assets/images/home/office-banner-3.png');
     width: 100%;
     top: 0;
     bottom: 0;
