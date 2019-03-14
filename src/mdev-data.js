@@ -286,7 +286,7 @@ export default  {
       employeeOrigin: 'Guelph, ON',
       employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
       employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
-      employeeImage: 'bios/bio-becky.png',
+      employeeImage: 'bios/bio-dorian.png',
       socialLinks: [
         {
           linkClass: 'fa-facebook-f',

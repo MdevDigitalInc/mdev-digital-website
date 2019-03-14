@@ -143,6 +143,7 @@ export default{
   mounted: function() {
     setTimeout(() => {
       $('[data-intro-heading]').addClass('fully-in-viewport');
+      // Adjust Arrow
     }, 300);
     setTimeout(() => {
       $('[data-intro-subhead]').addClass('fully-in-viewport');
