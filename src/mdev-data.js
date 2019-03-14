@@ -342,7 +342,7 @@ export default  {
       config: {
         showDecoration: false,
         reverse: false
-    }
+      }
     },
     {
       title: 'web design',

@@ -43,7 +43,7 @@ export default{
       // Flag for activating the coming soon message
       isActive: false,
       // Time until user is redirected
-      time: 10,
+      time: 7,
       // Redirect timer container
       redirectTimer: null
     };
