@@ -56,7 +56,7 @@
           :linkContent="mdevBio.socialLinks">
         </social-links>
         <!-- Team Member Picture -->
-        <div class="mdev-bios-image">
+        <div class="mdev-bios-image u-text-center">
           <img :src="loadImage(mdevBio.employeeImage)" :alt="mdevBio.employeeName"/>
         </div>
       </div>
@@ -316,14 +316,15 @@ export default {
     bottom: -10px;
   }
 
-  img {
-    width: 100%;
-  }
-
   .mdev-bios-image {
     position: relative;
-    width: 100%;
+    width: 90%;
     z-index: 5;
+
+    @media #{$portrait} {
+      width: 100%;
+      margin-top: 150px;
+    }
 
     &:before {
       @include pseudo();
@@ -331,15 +332,22 @@ export default {
       width: 70%;
       border: 4px solid $color-brand-accent;
       left: 45%;
+      border-bottom: 0;
       top: 100px;
       bottom: 0;
       z-index: -1;
 
-      @media #{$phone-only} {
+      @media #{$portrait} {
         width: 80%;
         top: 20px;
         left: 50%;
       }
+    }
+
+    img {
+      width: 70%;
+      position: relative;
+      bottom: -5px;
     }
   }
 

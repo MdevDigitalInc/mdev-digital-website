@@ -27,6 +27,12 @@ export default {
 
   props: [ 'pageTitle', 'headerDsc' ],
 
+  data: function() {
+    return {
+      arrowTimer: null
+    };
+  },
+
   mounted: function() {
     // Resize timer to debounce scroll
     let resizeTimer;
@@ -35,12 +41,17 @@ export default {
 
     // Run for first time on first tick
     this.$nextTick(() => {
+      // Adjust background arrow size
       this.adjustArrow();
       $('[data-main-hero]').addClass('--mask-active');
     });
 
+    // Start repeating interval to set arrow size
+    this.arrowTimer = setInterval( this.adjustArrow, 1000);
+
     // Adjust arrow size on resize
     $(window).resize(() => {
+      // Clear Timer
       clearTimeout( resizeTimer );
       resizeTimer = setTimeout( this.adjustArrow, resizeTime );
     });
@@ -57,8 +68,10 @@ export default {
   },
 
   beforeDestroy: function() {
+    // Clear repeating inverval to adjust arrow
+    clearInterval( this.arrowTimer );
     $('[data-main-hero]').removeClass('--mask-active');
-  }
+  },
 };
 
 </script>

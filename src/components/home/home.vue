@@ -45,6 +45,7 @@ export default{
       { name: 'twitter:title', content: 'MDEV Digital | Process Driven UI/UX and Development - London, Ontario' }
     ]
   },
+
   data: function() {
     return {
       heroStyles: {

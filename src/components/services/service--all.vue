@@ -38,6 +38,7 @@
     <service-tile v-for="(service, index) in services"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 0"
+      :key="index"
       :media="service.media"
       v-in-viewport
       class="a-fade-in mdev-service"
@@ -142,6 +143,7 @@ export default{
   mounted: function() {
     setTimeout(() => {
       $('[data-intro-heading]').addClass('fully-in-viewport');
+      // Adjust Arrow
     }, 300);
     setTimeout(() => {
       $('[data-intro-subhead]').addClass('fully-in-viewport');

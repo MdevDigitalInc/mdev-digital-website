@@ -18,6 +18,8 @@ import ServicesOverview     from './components/services/service--all.vue';
 import ServicesUx           from './components/services/service--ux.vue';
 // Bios
 import Bios                 from './components/bios/bios.vue';
+// Coming Soon
+import ComingSoon           from './components/comingsoon/comingsoon.vue';
 // Import Data From Flat File
 import MdevData             from './mdev-data.js';
 
@@ -40,6 +42,10 @@ export const routes = [
   {
     path: '/about',
     component: About
+  },
+  {
+    path: '/comingsoon',
+    component: ComingSoon
   },
   {
     path: '/contact',

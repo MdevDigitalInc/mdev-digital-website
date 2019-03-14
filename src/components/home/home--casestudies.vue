@@ -12,6 +12,7 @@
     <!-- Case Study Carousel -->
     <div class="mdev-casestudy-mosaic flex flex-wrap">
       <mosaic-link
+        :key="index"
         v-for="(link, index) in casestudies"
         :longImg="link.longImg"
         :leftImg="link.leftImg"

@@ -3,14 +3,14 @@ export default  {
   links: [
     {
       linkName: 'About',
-      linkTitle: 'About MDEV Digital',
-      route: '/about',
+      linkTitle: 'Coming Soon!',
+      route: '/comingsoon',
       linkIndex: '01'
     },
     {
       linkName: 'Work',
-      linkTitle: 'Our Work Case Studies',
-      route: '/casestudy',
+      linkTitle: 'Coming Soon!',
+      route: '/comingsoon',
       linkIndex: '02'
     },
     {
@@ -31,17 +31,17 @@ export default  {
     {
       linkName: 'Philosophy',
       linkTitle: 'Our Philosophy',
-      route: '/about'
+      route: '/comingsoon'
     },
     {
       linkName: 'Our Process',
       linkTitle: 'Learn about our process',
-      route: '/about'
+      route: '/comingsoon'
     },
     {
       linkName: 'Team',
       linkTitle: 'Our Team',
-      route: '/about'
+      route: '/team'
     }
   ],
 
@@ -118,7 +118,7 @@ export default  {
       employeeOrigin: 'Sao Paulo - Brazil',
       employeeQuote: 'Think like a man of action, act like a man of thought.',
       employeeTrick: 'Drone Guru / Media Maven / Eagle Eye',
-      employeeImage: 'bios/MDEV_BIOS-becky.png',
+      employeeImage: 'bios/bio-lucas.png',
       socialLinks: [
         {
           linkClass: 'fa-instagram',
@@ -146,7 +146,7 @@ export default  {
       employeeOrigin: 'Timmins, ON',
       employeeQuote: 'Fear is the mind killer.',
       employeeTrick: 'Coffee Fanatic / InDesign Wizard / Agility',
-      employeeImage: 'bios/MDEV_BIOS-becky.png',
+      employeeImage: 'bios/bio-becky.png',
       socialLinks: [
         {
           linkClass: 'fa-facebook-f',
@@ -186,7 +186,7 @@ export default  {
       employeeOrigin: 'London, ON',
       employeeQuote: 'Work smarter, not harder.',
       employeeTrick: 'Ruler of yard games',
-      employeeImage: 'bios/MDEV_BIOS-becky.png',
+      employeeImage: 'bios/bio-haly.png',
       socialLinks: [
         {
           linkClass: 'fa-facebook-f',
@@ -220,7 +220,7 @@ export default  {
       employeeOrigin: 'Guatemala City, Guatemala',
       employeeQuote: false,
       employeeTrick: 'Hips Don’t Lie - Salsa and Bachata Instructor',
-      employeeImage: 'bios/MDEV_BIOS-becky.png',
+      employeeImage: 'bios/bio-luis.png',
       socialLinks: [
         {
           linkClass: 'fa-facebook-f',
@@ -253,7 +253,7 @@ export default  {
       employeeOrigin: 'Guelph, ON',
       employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
       employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
-      employeeImage: 'bios/MDEV_BIOS-becky.png',
+      employeeImage: 'bios/bio-graham.png',
       socialLinks: [
         {
           linkClass: 'fa-facebook-f',
@@ -286,7 +286,7 @@ export default  {
       employeeOrigin: 'Guelph, ON',
       employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
       employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
-      employeeImage: 'bios/MDEV_BIOS-becky.png',
+      employeeImage: 'bios/bio-dorian.png',
       socialLinks: [
         {
           linkClass: 'fa-facebook-f',
@@ -342,7 +342,7 @@ export default  {
       config: {
         showDecoration: false,
         reverse: false
-    }
+      }
     },
     {
       title: 'web design',
