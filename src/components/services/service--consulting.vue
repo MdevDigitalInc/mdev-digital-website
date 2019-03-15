@@ -149,7 +149,6 @@
       </template>
     </service-tile>
 
-
     <!-- Chapter Link -->
     <chapter-link
       :chapterIndex="chapter.next.index"
@@ -167,9 +166,6 @@
     <main-footer></main-footer>
   </section>
 </template>
-
-
-
 
 <script>
 // Local Component Registration
@@ -256,10 +252,7 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss" scoped>
-
 /*-------------------------------------*/
 /* SERVICES--CONSULTING Component Styles
 /--------------------------------------*/
@@ -374,7 +367,6 @@ $heading-top-padding-mob: 15px;
   }
 }
 
-
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {
@@ -394,9 +386,5 @@ $heading-top-padding-mob: 15px;
   @include arrow-anim-rules(17s);
 }
 
-
-
-
 /*--------------------------------------*/
-
 </style>

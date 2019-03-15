@@ -90,9 +90,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 // Local Component Registration
 import HeroMain           from '../shared/hero-main.vue';
@@ -172,16 +169,14 @@ export default{
     'service-tile'   : FeaturedServices
   }
 };
+
 </script>
 
-
-
 <style lang="scss" scoped>
-
-
 /*-------------------------------------*/
 /* CONTACT Component Styles
 /--------------------------------------*/
+
 $heading-top-padding: 50px;
 $heading-top-padding-mob: 10px;
 
@@ -290,7 +285,6 @@ $heading-top-padding-mob: 10px;
   }
 }
 
-
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {
@@ -310,7 +304,5 @@ $heading-top-padding-mob: 10px;
   @include arrow-anim-rules(17s);
 }
 
-
 /*--------------------------------------*/
-
 </style>

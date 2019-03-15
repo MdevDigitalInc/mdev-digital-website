@@ -20,9 +20,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 // serviceConfig contains instructions for decorative elements
 // lastChild will only flip true for the final service that has no image
@@ -57,13 +54,11 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
   };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* Featured-Content Component Styles
 /--------------------------------------*/
+
 .mdev-featured-content {
   width: 100%;
   position: relative;
@@ -223,6 +218,6 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     }
   }
 }
-
 /*--------------------------------------*/
+
 </style>

@@ -11,7 +11,6 @@
   </section>
 </template>
 
-
 <script>
 // Local Import
 import BtnPrimary   from '../shared/btn-primary.vue';
@@ -34,15 +33,3 @@ export default {
   }
 };
 </script>
-
-
-
-<style lang="scss" scoped>
-
-/*-------------------------------------*/
-/* HOME--PROCESSES Component Styles
-/--------------------------------------*/
-
-/*--------------------------------------*/
-
-</style>

@@ -4,9 +4,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 export default{
   name: 'BaseTemplate',
@@ -34,8 +31,6 @@ export default{
   }
 };
 </script>
-
-
 
 <style lang="scss">
 

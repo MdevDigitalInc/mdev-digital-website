@@ -21,7 +21,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'MainHero',
 
@@ -77,10 +76,10 @@ export default {
 </script>
 
 <style lang="scss">
-
 /*-------------------------------------*/
 /* HERO MAIN Component Styles
 /--------------------------------------*/
+
 @import '../../assets/styles/keyframes/hero-anim.scss';
 
 // Containers
@@ -234,6 +233,6 @@ $mask-arrow-anim-time: 3.2s;
     opacity: 0;
   }
 }
-/*--------------------------------------*/
 
+/*--------------------------------------*/
 </style>

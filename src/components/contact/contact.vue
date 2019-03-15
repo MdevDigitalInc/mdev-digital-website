@@ -21,7 +21,8 @@
                   {{ $t('contact.description') }}
                 </p>
                  <a data-header-btn
-                    href="#contactus"
+                    href="javascript:void(0)"
+                    v-on:click.prevent.stop="scrollToHash('#contactus', 50)"
                     title="Contact Us"
                     class="mdev-btn mdev-primary-btn">
                    {{ $t('contact.headerBtn') }}
@@ -30,7 +31,6 @@
             </div>
           </div>
         </div>
-
         <!-- Sexy Lines -->
         <div class="mdev-sexy-line --sexy-green" data-line-one></div>
         <div class="mdev-sexy-line --sexy-green" data-line-two></div>
@@ -116,10 +116,7 @@ export default {
 };
 </script>
 
-
-
 <style lang="scss" scoped>
-
 /*-------------------------------------*/
 /* CONTACT Component Styles
 /--------------------------------------*/
@@ -239,7 +236,6 @@ export default {
   }
 }
 
-
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {
@@ -259,7 +255,5 @@ export default {
   @include arrow-anim-rules(17s);
 }
 
-
 /*--------------------------------------*/
-
 </style>

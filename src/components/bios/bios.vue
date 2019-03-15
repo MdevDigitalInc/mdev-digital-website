@@ -7,7 +7,7 @@
       <!-- Employee Info -->
       <div class="mdev-bios-info a-flyin-lnd a-flyin-lnd-right" v-in-viewport>
         <div class="u-uppercase u-light --meet">
-          MEET
+          {{ $t('teampage.meet') }}
         </div>
         <!-- Employee Name -->
         <h1 class="u-uppercase mdev-bios-name">
@@ -28,19 +28,19 @@
         <ul class="mdev-bio-list">
           <li>
             <span class="mdev-bio-key u-bold">
-              Point of Origin:
+              {{ $t('teampage.origin') }}
             </span>
               {{ mdevBio.employeeOrigin }}
           </li>
           <li v-if="mdevBio.employeeQuote">
             <span class="mdev-bio-key u-bold">
-              Favorite Quote:
+              {{ $t('teampage.quote') }}
             </span>
               {{ mdevBio.employeeQuote }}
           </li>
           <li>
             <span class="mdev-bio-key u-bold">
-              Bag of Tricks:
+              {{ $t('teampage.tricks') }}
             </span>
               {{ mdevBio.employeeTrick }}
           </li>
@@ -96,6 +96,8 @@ export default {
   data: function() {
     return {
       // Indexing for navigation
+      // Desired index selects which employee to view
+      // See v-if on mdev-bios-content
       desiredIndex: 0,
       nextIndex: 1,
       // Data imported from mdev-data.js
@@ -143,9 +145,9 @@ export default {
     // Pull in all the bios
     let team = this.mdevBios;
     let member = this.teammember;
-    // Setup length
+    // Find total number of employee records
     let teamLength = this.mdevBios.length -1;
-    // Setup for loop
+    // Reserve for loop
     let i;
 
     //Match Route to array via prop.
@@ -379,5 +381,4 @@ export default {
     }
   }
 }
-
 </style>

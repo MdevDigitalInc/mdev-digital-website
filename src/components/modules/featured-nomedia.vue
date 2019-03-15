@@ -30,9 +30,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 export default{
   name: 'FeatureNomedia',
@@ -42,10 +39,7 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss" scoped>
-
 /*-------------------------------------*/
 /* Featured-nomedia Component Styles
 /*--------------------------------------*/

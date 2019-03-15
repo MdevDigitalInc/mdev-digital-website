@@ -51,8 +51,6 @@
   </section>
 </template>
 
-
-
 <script>
 export default{
   name: 'HomeTestimonials',
@@ -90,10 +88,7 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss" scoped>
-
 /*-------------------------------------*/
 /* Home--testimonials Component Styles
 /--------------------------------------*/
@@ -146,7 +141,6 @@ export default{
   }
 }
 
-
 .ctrl-arrow {
   width: auto;
   margin: 0 20px;
@@ -191,5 +185,4 @@ export default{
 }
 
 /*--------------------------------------*/
-
 </style>

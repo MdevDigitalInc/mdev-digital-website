@@ -25,7 +25,7 @@
 </template>
 
 <script>
-export default{
+export default {
   // [ Media Carousel Component ]
   // --------------------------------------------------------------
   // This component is used to intelligently load images for the
@@ -137,10 +137,6 @@ $buttonSize: 10px;
     }
   }
 }
-/*--------------------------------------*/
-
-</style>
 
 /*--------------------------------------*/
-
 </style>

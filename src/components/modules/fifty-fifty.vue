@@ -9,21 +9,17 @@
   </div>
 </template>
 
-
-
 <script>
-
 	export default {
     props: ['animClassLeft', 'animClassRight']
 	};
-
 </script>
 
 <style lang="scss" scoped>
-
 /*--------------------------------------*/
 /* FIFTY FIFTY Component
 /*--------------------------------------*/
+
 .mdev-split-5 {
   width: 50%;
   padding-right: 1vw;

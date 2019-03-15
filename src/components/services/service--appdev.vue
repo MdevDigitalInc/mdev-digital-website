@@ -101,9 +101,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 // Local Component Registration
 import HeroMain           from '../shared/hero-main.vue';
@@ -187,10 +184,7 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss" scoped>
-
 /*-------------------------------------*/
 /* SERVCICES--APPDEV Component Styles
 /--------------------------------------*/

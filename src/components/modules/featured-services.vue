@@ -19,9 +19,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 import CircleLink       from '../shared/circle-bar-link.vue';
 
@@ -34,13 +31,11 @@ export default {
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* Featured-Content Component Styles
 /--------------------------------------*/
+
 .mdev-featured-services {
   width: 100%;
   position: relative;
@@ -238,6 +233,6 @@ export default {
     }
   }
 }
-
 /*--------------------------------------*/
+
 </style>

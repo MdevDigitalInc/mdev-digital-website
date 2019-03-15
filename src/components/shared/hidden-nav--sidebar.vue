@@ -55,8 +55,6 @@
   </div>
 </template>
 
-
-
 <script>
   export default{
     name: 'HiddenNavSidebar',
@@ -70,10 +68,7 @@
   };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* HIDDEN-NAV--sidebar Component Styles
 /--------------------------------------*/
@@ -234,6 +229,6 @@
     transform: translate3d(0, 0, 0);
   }
 }
-/*--------------------------------------*/
 
+/*--------------------------------------*/
 </style>

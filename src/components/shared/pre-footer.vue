@@ -39,9 +39,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 import BtnPrimary         from './btn-primary.vue';
 
@@ -56,13 +53,11 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* Pre Footer Component Styles
 /--------------------------------------*/
+
 .mdev-prefooter {
   background: $color-brand-primary;
   width: 100%;
@@ -151,7 +146,5 @@ export default{
   }
 }
 
-
 /*--------------------------------------*/
-
 </style>

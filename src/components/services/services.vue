@@ -7,7 +7,3 @@ export default {
   name: "ServicesView"
 };
 </script>
-
-<style lang="scss">
-
-</style>

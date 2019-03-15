@@ -60,7 +60,6 @@ q<template>
   </nav>
 </template>
 
-
 <script>
 // Import Components for Nav
 import HiddenNav        from './hidden-nav.vue';
@@ -181,15 +180,13 @@ export default{
     'social-links' : SocialLinks
   }
 };
-
 </script>
-
-
 
 <style lang="scss">
 /*--------------------------------------*/
 /* MAIN NAVIGATION Component Styles
 /*--------------------------------------*/
+
 .mdev-main-nav {
   width: 100%;
   position: fixed;

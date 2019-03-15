@@ -104,10 +104,10 @@ export default{
 
 
 <style lang="scss" scoped>
-
 /*-------------------------------------*/
 /* Contact--Map Component Styles
 /--------------------------------------*/
+
 .mdev-map-location {
   width: 90%;
   position: relative;
@@ -193,8 +193,6 @@ export default{
   height: 60vh;
   right: 0;
   bottom: 75px;
-  opacity: 0;
-  transition: opacity 1s;
 
   @media #{$portrait} {
     bottom: 30px;
@@ -247,7 +245,6 @@ export default{
     filter: grayscale(.5) blur(0);
   }
 }
-
 
 /*--------------------------------------*/
 </style>

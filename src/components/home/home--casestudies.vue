@@ -29,8 +29,6 @@
   </section>
 </template>
 
-
-
 <script>
 // Local Import
 import BtnPrimary           from '../shared/btn-primary.vue';
@@ -58,13 +56,11 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss" scoped>
-
 /*-------------------------------------*/
 /* HOME--CASESTUDIES Component Styles
 /--------------------------------------*/
+
 .mdev-full-section {
   padding-top: 50px;
 }
@@ -72,6 +68,6 @@ export default{
   display: block;
   margin-bottom: .8vw;
 }
-/*--------------------------------------*/
 
+/*--------------------------------------*/
 </style>

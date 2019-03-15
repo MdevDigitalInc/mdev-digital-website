@@ -14,9 +14,6 @@
   </div>
 </template>
 
-
-
-
 <script>
 export default{
   name: 'ChapterHeading',
@@ -31,13 +28,11 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* Chapter Headinng Component Styles
 /--------------------------------------*/
+
 .mdev-chapter-heading {
   width: 100%;
   padding: 30px 0;
@@ -93,7 +88,5 @@ export default{
   }
 }
 
-
 /*--------------------------------------*/
-
 </style>

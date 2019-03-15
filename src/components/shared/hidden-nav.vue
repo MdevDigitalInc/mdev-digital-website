@@ -7,18 +7,13 @@
   </div>
 </template>
 
-
-
 <script>
   export default{
     name: 'HiddenNav'
   };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* HIDDEN NAV Component Styles
 /--------------------------------------*/
@@ -39,5 +34,4 @@
 }
 
 /*--------------------------------------*/
-
 </style>

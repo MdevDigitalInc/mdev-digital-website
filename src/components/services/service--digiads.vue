@@ -103,9 +103,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 // Local Component Registration
 import HeroMain           from '../shared/hero-main.vue';
@@ -187,13 +184,11 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss" scoped>
-
 /*-------------------------------------*/
 /* SERVICES--DIGIADS Component Styles
 /--------------------------------------*/
+
 $heading-top-padding: 50px;
 $heading-top-padding-mob: 15px;
 
@@ -302,7 +297,6 @@ $heading-top-padding-mob: 15px;
   }
 }
 
-
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {
@@ -322,8 +316,5 @@ $heading-top-padding-mob: 15px;
   @include arrow-anim-rules(17s);
 }
 
-
-
 /*--------------------------------------*/
-
 </style>

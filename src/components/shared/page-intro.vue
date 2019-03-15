@@ -7,9 +7,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 export default{
   name: 'pageIntro',
@@ -17,16 +14,3 @@ export default{
   props: ['pageIntro']
 };
 </script>
-
-
-
-<style lang="scss">
-
-/*-------------------------------------*/
-/* BASE TEMPLATE Component Styles
-/--------------------------------------*/
-
-
-/*--------------------------------------*/
-
-</style>

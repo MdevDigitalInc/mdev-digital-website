@@ -18,12 +18,11 @@
               {{ $t('servicepage.intro.subHeading') }}
             </p>
 
-             <a data-header-btn
-                href="#contactus"
-                title="Contact Us"
+             <router-link to="/contact#contactus"
+                data-header-btn
                 class="mdev-btn mdev-primary-btn --space-top-xs">
                {{ $t('contact.headerBtn') }}
-             </a>
+             </router-link>
           </div>
         </div>
 
@@ -77,9 +76,6 @@
     <main-footer></main-footer>
   </section>
 </template>
-
-
-
 
 <script>
 // [ Documentation ] - services-parent
@@ -162,16 +158,9 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* SERVICES ALL Component Styles
-/--------------------------------------*/
-
-/*-------------------------------------*/
-/* CONTACT Component Styles
 /--------------------------------------*/
 
 .mdev-vivus-header {
@@ -231,8 +220,6 @@ export default{
   }
 }
 
-
-
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {
@@ -252,8 +239,5 @@ export default{
   @include arrow-anim-rules(17s);
 }
 
-
-
 /*--------------------------------------*/
-
 </style>

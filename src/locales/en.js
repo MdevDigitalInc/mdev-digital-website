@@ -142,5 +142,9 @@ export default {
   },
 
   teampage: {
+    meet: 'Meet',
+    origin: 'Point of Origin:',
+    quote: 'Favorite Quote:',
+    tricks: 'Bag of Tricks:'
   }
 };
