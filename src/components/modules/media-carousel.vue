@@ -125,6 +125,7 @@ $buttonSize: 10px;
     margin: 0 10px;
     transition: all .4s;
     cursor: pointer;
+    outline: none;
 
     &:hover,
     &:focus,
