@@ -8,17 +8,20 @@
         <div class="mdev-vivus-header --vivus-digiads">
           <div class="mdev-center">
             <div class="flex flex-vert-start --portrait-wrap">
-              <object class="--digi-once" id="anim-once" type="image/svg+xml" :data="loadImage(onceAnim)"></object>
-              <object class="--digi-you" id="anim-you" type="image/svg+xml" :data="loadImage(youAnim)"></object>
+              <object class="--digi-demystify" id="anim-demystify" type="image/svg+xml" :data="loadImage(demistifyAnim)"></object>
             </div>
             <!-- Bottom Container -->
-            <div class="flex flex-vert-start --portrait-wrap">
-              <object class="--digi-go" id="anim-go" type="image/svg+xml" :data="loadImage(goAnim)"></object>
-              <object class="--digi-digital" id="anim-digital" type="image/svg+xml" :data="loadImage(digitalAnim)"></object>
-              <!-- CTA Text & Button -->
+            <div class="flex flex-hor-start flex-vert-center --portrait-wrap">
+              <object class="--digi-online" id="anim-online" type="image/svg+xml" :data="loadImage(onlineAnim)"></object>
+              <div data-header-intro class="--header-cta u-hidden-portrait">
+                <p>
+                  {{ $t('digiadspage.intro') }}
+                </p>
+              </div>
             </div>
-            <div class="flex flex-hor-end">
-              <div data-header-intro class="--header-cta">
+            <div class="flex flex-hor-start flex-wrap">
+              <object class="--digi-marketing" id="anim-marketing" type="image/svg+xml" :data="loadImage(marketingAnim)"></object>
+              <div data-header-intro class="--header-cta u-hidden-landscape">
                 <p>
                   {{ $t('digiadspage.intro') }}
                 </p>
@@ -138,10 +141,9 @@ export default{
       // Disables Page Title bar
       pageTitle: 'Be heard',
       headerDsc: 'Once you go digital...',
-      onceAnim: 'services/digiads/MDEV_HEADER_once_animated.svg',
-      youAnim: 'services/digiads/MDEV_HEADER_you_animated.svg',
-      goAnim: 'services/digiads/MDEV_HEADER_go_animated.svg',
-      digitalAnim: 'services/digiads/MDEV_HEADER_digital_animated.svg',
+      demistifyAnim: 'services/digiads/MDEV_HEADER_demystify_animated.svg',
+      onlineAnim: 'services/digiads/MDEV_HEADER_online_animated.svg',
+      marketingAnim: 'services/digiads/MDEV_HEADER_marketing_animated.svg',
       // Chapter Info
       chapter: MdevData.digiads.chapter,
       // Services Data
@@ -155,13 +157,13 @@ export default{
     this.$nextTick(() => {
         $('[data-main-nav]').addClass('--teal-white');
       setTimeout(() => {
-        new Vivus('anim-once', {duration: 150});
+        new Vivus('anim-demystify', {duration: 150});
       }, 100);
       setTimeout(() => {
-        new Vivus('anim-you', {duration: 150});
+        new Vivus('anim-online', {duration: 150});
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-go', {duration: 150});
+        new Vivus('anim-marketing', {duration: 150});
       }, 800);
       setTimeout(() => {
         new Vivus('anim-digital', {duration: 150});
@@ -215,25 +217,26 @@ $heading-top-padding-mob: 15px;
 
 .--vivus-digiads {
 
-  .--digi-once,
-  .--digi-you,
-  .--digi-go,
-  .--digi-digital {
-    height: 10vw;
+  .--digi-demystify,
+  .--digi-online,
+  .--digi-marketing {
+    height: 9vw;
   }
 
-  .--digi-you,
-  .--digi-digital {
-    margin-left: 3vw;
+  .--digi-online {
+    margin-right: 3vw;
 
     @media #{$portrait} {
-      margin-left: 3.5vw;
+      margin-right: 3.5vw;
     }
   }
 
-  .--digi-once,
-  .--digi-you {
+  .--digi-demystify {
     margin-bottom: 20px;
+  }
+
+  .--digi-marketing {
+    margin-top: 20px;
   }
 
   .--header-cta {
@@ -241,13 +244,12 @@ $heading-top-padding-mob: 15px;
     width: 60%;
     transition: opacity 1.2s;
     position: relative;
-    margin-top: 20px;
     right: 0;
 
     @media #{$portrait} {
       width: 100%;
       text-align: left;
-      margin-top: $heading-top-padding-mob + 10;
+      margin-top: 30px;
     }
   }
 

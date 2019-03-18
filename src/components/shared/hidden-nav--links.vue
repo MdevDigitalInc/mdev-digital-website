@@ -98,7 +98,7 @@ export default{
     line-height: 190%;
     padding-left: 15%;
     overflow: hidden;
-    transition: all 0;
+    transition: all .4s;
     opacity: 0;
     text-shadow: 0 0 20px rgba(0, 0, 0, 0);
     transform: translate3d( 0, -1000px, 0);
