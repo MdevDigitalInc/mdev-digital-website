@@ -8,9 +8,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 export default{
   name: 'brandAnimation',
@@ -23,13 +20,11 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* BRAND ANIMATION Component Styles
 /--------------------------------------*/
+
 .mdev-main-animation {
   position: absolute;
   top: 0;
@@ -87,8 +82,5 @@ export default{
   opacity: 0;
 }
 
-
-
 /*--------------------------------------*/
-
 </style>

@@ -19,9 +19,6 @@
   </div>
 </template>
 
-
-
-
 <script>
 export default{
   name: 'ChapterLink',
@@ -36,13 +33,11 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* Chapter Link Component Styles
 /--------------------------------------*/
+
 .mdev-chapter-link {
   width: 100%;
   padding: 30px 0 120px;
@@ -80,7 +75,6 @@ export default{
       }
     }
   }
-
 
   .mdev-link-title {
     width: 100%;
@@ -130,7 +124,5 @@ export default{
   }
 }
 
-
 /*--------------------------------------*/
-
 </style>

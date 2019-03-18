@@ -18,12 +18,11 @@
               {{ $t('servicepage.intro.subHeading') }}
             </p>
 
-             <a data-header-btn
-                href="#contactus"
-                title="Contact Us"
+             <router-link to="/contact#contactus"
+                data-header-btn
                 class="mdev-btn mdev-primary-btn --space-top-xs">
                {{ $t('contact.headerBtn') }}
-             </a>
+             </router-link>
           </div>
         </div>
 
@@ -78,9 +77,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 // [ Documentation ] - services-parent
 // -----------------------------------------
@@ -110,7 +106,6 @@ import MdevData       from '../../mdev-data.js';
 
 export default{
   name: 'ServicesAll',
-  // TODO - Edit meta Title
   // SEE - https://github.com/ktquez/vue-head
   head: {
     title: {
@@ -123,14 +118,15 @@ export default{
 
     ]
   },
+
   data: function() {
     return {
       heroStyles: {
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'TESTY TEST TEST',
-      headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.',
+      pageTitle: 'Our Skillset',
+      headerDsc: 'A simple animation enticing users to explore all of MDEV digital various services.',
       connectAnim: 'contact/MDEV_HEADER_connect_animated.svg',
       withAnim: 'contact/MDEV_HEADER_with.svg',
       usAnim: 'contact/MDEV_HEADER_us_animated.svg',
@@ -162,16 +158,9 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* SERVICES ALL Component Styles
-/--------------------------------------*/
-
-/*-------------------------------------*/
-/* CONTACT Component Styles
 /--------------------------------------*/
 
 .mdev-vivus-header {
@@ -231,8 +220,6 @@ export default{
   }
 }
 
-
-
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {
@@ -252,8 +239,5 @@ export default{
   @include arrow-anim-rules(17s);
 }
 
-
-
 /*--------------------------------------*/
-
 </style>

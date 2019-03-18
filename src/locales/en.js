@@ -130,7 +130,7 @@ export default {
   },
 
   digiadspage: {
-    intro: "Online marketing has become a universal requirement for brands and services looking to connect with their audiences. We can help you reinforce your online brand with cross-channel digital marketing campaigns that audiences will notice."
+    intro: "We combine the art of marketing backed by the science of data. We're experts at amalgamating compelling marketing strategies and tactics with understandable and measurable results."
   },
 
   consultingpage: {
@@ -142,5 +142,9 @@ export default {
   },
 
   teampage: {
+    meet: 'Meet',
+    origin: 'Point of Origin:',
+    quote: 'Favorite Quote:',
+    tricks: 'Bag of Tricks:'
   }
 };

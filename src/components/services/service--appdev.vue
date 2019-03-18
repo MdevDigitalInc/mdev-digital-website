@@ -101,9 +101,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 // Local Component Registration
 import HeroMain           from '../shared/hero-main.vue';
@@ -123,7 +120,7 @@ export default{
 
   head: {
     title: {
-      inner: 'App\'s & UX Software',
+      inner: 'App\'s & Software',
       complement: 'MDEV Digital - London, Ontario'
     },
     meta: [
@@ -139,8 +136,8 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'TESTY TEST TEST',
-      headerDsc: 'Innovate With Passion',
+      pageTitle: 'App\'s & Software',
+      headerDsc: 'Innovate With Passion.',
       innovateAnim: 'services/appdev/MDEV_HEADER_innovate_animated.svg',
       withAnim: 'services/appdev/MDEV_HEADER_with.svg',
       passionAnim: 'services/appdev/MDEV_HEADER_passion_animated.svg',
@@ -159,13 +156,13 @@ export default{
     this.$nextTick(() => {
         $('[data-main-nav]').addClass('--teal-white');
       setTimeout(() => {
-        new Vivus('anim-innovate', {duration: 150}, console.log('fired'));
+        new Vivus('anim-innovate', {duration: 150});
       }, 100);
       setTimeout(() => {
         $('#anim-with').addClass('--anim-visible');
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-passion', {duration: 150}, console.log('fired'));
+        new Vivus('anim-passion', {duration: 150});
       }, 800);
       setTimeout(() => {
         $('[data-header-intro]').addClass('--anim-visible');
@@ -187,10 +184,7 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss" scoped>
-
 /*-------------------------------------*/
 /* SERVCICES--APPDEV Component Styles
 /--------------------------------------*/

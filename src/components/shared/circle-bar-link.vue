@@ -15,9 +15,6 @@
   </div>
 </template>
 
-
-
-
 <script>
 // [ Documentation ] - circle-bar-decoration
 // -----------------------------------------
@@ -40,10 +37,7 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss" scoped>
-
 /*-------------------------------------*/
 /* Circle Bar Decoration
 /--------------------------------------*/
@@ -93,7 +87,5 @@ export default{
   }
 }
 
-
 /*--------------------------------------*/
-
 </style>

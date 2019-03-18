@@ -96,9 +96,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 // Local Component Registration
 import HeroMain           from '../shared/hero-main.vue';
@@ -133,8 +130,8 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'TESTY TEST TEST',
-      headerDsc: 'Tell Your Story',
+      pageTitle: 'User Experience Design',
+      headerDsc: 'Humanize The Web',
       humanizeAnim: 'services/webdev/MDEV_HEADER_humanize_animated.svg',
       theAnim: 'services/webdev/MDEV_HEADER_the.svg',
       webAnim: 'services/webdev/MDEV_HEADER_web_animated.svg',
@@ -178,8 +175,6 @@ export default{
   }
 };
 </script>
-
-
 
 <style lang="scss" scoped>
 /*-------------------------------------*/
@@ -291,7 +286,6 @@ $heading-top-padding-mob: 15px;
   }
 }
 
-
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {
@@ -311,7 +305,5 @@ $heading-top-padding-mob: 15px;
   @include arrow-anim-rules(17s);
 }
 
-
 /*--------------------------------------*/
-
 </style>

@@ -33,9 +33,6 @@
   </div>
 </template>
 
-
-
-
 <script>
 export default{
   name: 'LinkMosaic',
@@ -52,13 +49,11 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* BASE TEMPLATE Component Styles
 /--------------------------------------*/
+
 // Mosaic Link -----------------
 
 // First Child Is the default, Long image on top,
@@ -139,5 +134,4 @@ export default{
 }
 
 /*--------------------------------------*/
-
 </style>

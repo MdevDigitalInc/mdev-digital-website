@@ -40,7 +40,6 @@ const locales = {
 Vue.use(VueI18n);
 Vue.use(VueResource);
 // Vue Head Configuration
-// TODO - Edit Title Separator
 // SEE - https://github.com/ktquez/vue-head
 Vue.use(VueHead, {
   separator: ' | '
@@ -88,7 +87,6 @@ Object.keys(locales).forEach(function (lang) {
 
 //--------------------------------------[ vue-resource ]
 
-
 // [ Vue-Router ] ------------------------------------
 // --------------------------------
 // Server must be set to AWLAYWAS return
@@ -96,7 +94,7 @@ Object.keys(locales).forEach(function (lang) {
 //
 // History mode in vue-router permits forgoing
 // the ugly "#" hash syntax on Url's.
-//
+
 const router = new VueRouter ({
   routes: routes,
   mode: 'history',
@@ -165,6 +163,11 @@ Vue.mixin({
         $('[data-main-nav]').removeClass('--teal-white');
         $('[data-main-nav]').addClass(brandClass);
       }
+    },
+    scrollToHash(hashRef, offset) {
+      var element = $(hashRef);
+      var top = element.offset().top;
+      window.scrollTo(0, (top - offset));
     }
   }
 })
@@ -182,6 +185,5 @@ const _vue = new Vue({
   store,
   render: h => h(App)
 });
-
-
+// Prerenderer call
 window._vuePrerender = _vue;

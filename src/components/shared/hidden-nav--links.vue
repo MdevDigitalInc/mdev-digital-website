@@ -40,33 +40,33 @@
 </template>
 
 <script>
-  export default{
-    name: 'HiddenNavLinks',
-    // Data passed in via Parent
-    props: ['links','showLinks', 'deepLinks'],
-    // Watch for changes in parent data
-    watch: {
-      showLinks: function() {
-        // Nav Flag True is opening, false is closing
-        let isNavOpening = this.showLinks;
-        // Show LInks function
-        function showLinks(target, index) {
-          // Timeout Interval is a function of Index
-          setTimeout(function(){
-            $(target).addClass('--showLinks');
-          }, (isNavOpening ? (200 * index) : 0 ));
-        }
-        // Wait for nav to open..
-        setTimeout( function() {
-          // Loop through all links and call function
-          $('[data-main-links]').each( function(index){
-            // Passes the button object and the index
-            new showLinks(this,index);
-          });
-        }, (isNavOpening ? 1000 : 0));
+export default{
+  name: 'HiddenNavLinks',
+  // Data passed in via Parent
+  props: ['links','showLinks', 'deepLinks'],
+  // Watch for changes in parent data
+  watch: {
+    showLinks: function() {
+      // Nav Flag True is opening, false is closing
+      let isNavOpening = this.showLinks;
+      // Show LInks function
+      function showLinks(target, index) {
+        // Timeout Interval is a function of Index
+        setTimeout(function(){
+          $(target).addClass('--showLinks');
+        }, (isNavOpening ? (200 * index) : 0 ));
       }
+      // Wait for nav to open..
+      setTimeout( function() {
+        // Loop through all links and call function
+        $('[data-main-links]').each( function(index){
+          // Passes the button object and the index
+          new showLinks(this,index);
+        });
+      }, (isNavOpening ? 1000 : 0));
     }
-  };
+  }
+};
 </script>
 
 <style lang="scss">
@@ -98,7 +98,7 @@
     line-height: 190%;
     padding-left: 15%;
     overflow: hidden;
-    transition: all 0;
+    transition: all .4s;
     opacity: 0;
     text-shadow: 0 0 20px rgba(0, 0, 0, 0);
     transform: translate3d( 0, -1000px, 0);

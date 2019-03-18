@@ -13,8 +13,6 @@
     </div>
 </template>
 
-
-
 <script>
   export default{
     name: 'SocialLinks',
@@ -23,13 +21,11 @@
   };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* SOCIAL LINKS Component Styles
 /--------------------------------------*/
+
 .mdev-social-links {
   width: 100%;
 
@@ -63,5 +59,6 @@
     }
   }
 }
+
 /*--------------------------------------*/
 </style>

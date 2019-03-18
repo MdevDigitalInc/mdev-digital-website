@@ -4,7 +4,6 @@
   </section>
 </template>
 
-
 <script>
 export default{
   name: 'ErrorPage',
@@ -23,7 +22,6 @@ export default{
   }
 };
 </script>
-
 
 <style lang="scss">
 

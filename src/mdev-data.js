@@ -324,7 +324,7 @@ export default  {
       title: 'Branding',
       media: {
         image: 'services/01-branding.png',
-        imageDesc: 'Description here TODO',
+        imageDesc: 'Samples of our Branding Work.',
         squareImg: false
       },
       description: 'A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.',
@@ -348,7 +348,7 @@ export default  {
       title: 'web design',
       media: {
         image: 'services/02-web-design.png',
-        imageDesc: 'Description here TODO',
+        imageDesc: 'Samples of our Web Design Work.',
         squareImg: true,
       },
       description: 'We specialize in designing custom sites carefully crafted to showcase your unique offering. Our robust and forward- thinking web practices ensure site longevity and scalability. After a collaborative planning process, you can sit back while we put a laser-focus on all the details, large and small.',
@@ -373,7 +373,7 @@ export default  {
       title: 'Apps & Software',
       media: {
         image: 'services/03-apps-software.png',
-        imageDesc: 'Description here TODO',
+        imageDesc: 'Samples of our Software Development Work.',
         squareImg: true
       },
       description: 'Utilizing robust, scalable platforms, we build efficient, cost-effective software solutions. Our forward-thinking development practices and thorough documentation will ensure long-lasting quality and scalability, allowing your software capabilities to expand with your business.',
@@ -399,7 +399,7 @@ export default  {
       title: 'Digital Marketing',
       media: {
         image: 'services/04-digital-marketing.png',
-        imageDesc: 'Description here TODO',
+        imageDesc: 'Samples of our Digital Marketing Work.',
         squareImg: false
       },
       description: 'Digital marketing is the art of being noticed online. With our help, carefully craft a digital marketing strategy that combines conversion-focused content with qualified lead generation to build brand awareness and drive traffic to your website.',
@@ -471,10 +471,10 @@ export default  {
         ],
         caseStudy: {
           action: 'View case study',
-          hook: 'NEED TEXT HERE TODO',
+          hook: 'View our Ketolibriyum Case Study',
           BtnData: {
             accessibility: 'View our Branding case study',
-            btnRoute: '/casestudy',
+            btnRoute: '/Coming Soon',
             btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
           },
           reverse: false
@@ -482,7 +482,7 @@ export default  {
         media: [
           {
             image: 'services/branding/logo-design.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'Branding Samples for Ketolibriyum'
           }
         ]
       },
@@ -502,11 +502,11 @@ export default  {
         media: [
           {
             image: 'services/branding/print-agcap-brochure.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'AgCapital Canada Print Brochure.'
           },
           {
             image: 'services/branding/print-zucora-printbook.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'Zucora Home Print Booklet.'
           }
         ]
       },
@@ -526,11 +526,11 @@ export default  {
         media: [
           {
             image: 'services/branding/packaging-zuc-purecare.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'Zucora Purecare Packaging.'
           },
           {
             image: 'services/branding/packaging-pwh-homecoming.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'Powerhouse Brewery Homecoming Beer Label.'
           }
         ]
       }
@@ -574,15 +574,15 @@ export default  {
         media: [
           {
             image: 'services/webdev/web-design-tfac.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'The Factory London Website Design.'
           },
           {
             image: 'services/webdev/web-design-glen.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'Arbour Glen Website Design.'
           },
           {
             image: 'services/webdev/web-design-zuc.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'Zucora Home Website Design.'
           }
         ]
       },
@@ -610,15 +610,15 @@ export default  {
         media: [
           {
             image: 'services/webdev/ecom-keto.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'Ketolibriyum ecommerce Website.'
           },
           {
             image: 'services/webdev/ecom-zucora.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'Zucora Home ecommerce Website.'
           },
           {
             image: 'services/webdev/ecom-aster.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'Aster Shoes ecommerce Website.'
           }
         ]
       }
@@ -685,7 +685,7 @@ export default  {
         media: [
           {
             image: 'services/appdev/ZUC_SoftwareAnimation_laptop.gif',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'Zucora Home Technician Portal Custom Software'
           }
         ]
       }
@@ -789,7 +789,7 @@ export default  {
         media: [
           {
             image: 'services/digiads/social-phone-instagram.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'Organic Social Media.'
           }
         ]
       },
@@ -812,7 +812,7 @@ export default  {
         media: [
           {
             image: 'services/digiads/sem-keto-pintrest.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'Ketolibriyum Pinterest Templates.'
           }
         ]
       },
@@ -831,11 +831,11 @@ export default  {
         media: [
           {
             image: 'services/digiads/launch-tfac-landing-page.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'The Factory London Landing Page.'
           },
           {
             image: 'services/digiads/launch-ora-landing-page.png',
-            imageDesc: 'Description here TODO'
+            imageDesc: 'Offroad Addiction Landing Page.'
           }
         ]
       },
@@ -1197,4 +1197,3 @@ export default  {
     }
   ]
 };
-

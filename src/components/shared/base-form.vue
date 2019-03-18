@@ -104,10 +104,6 @@
         :placeholder="$t('contact.fields.message.placeholder')">
         </textarea>
     </div>
-    <!--
-    Dont forget to prevent default and validate...
-      your other form fields go here use form.submit();
-    -->
     <div class="mdev-input-group a-flyin a-flyin-right" v-in-viewport>
       <button
         type="submit"
@@ -218,13 +214,11 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* BASE FORM Component Styles
 /--------------------------------------*/
+
 .mdev-input-group {
   width: 100%;
   position: relative;
@@ -269,6 +263,6 @@ export default{
 .mdev-honeypot {
   display: none;
 }
-/*--------------------------------------*/
 
+/*--------------------------------------*/
 </style>

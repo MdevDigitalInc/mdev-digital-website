@@ -10,21 +10,17 @@
   </div>
 </template>
 
-
-
 <script>
-
 	export default {
     props: ['animClassLeft', 'animClassRight', 'reverse', 'top']
 	};
-
 </script>
 
 <style lang="scss">
-
 /*--------------------------------------*/
 /* SIXTY FORTY Component
 /*--------------------------------------*/
+
 .mdev-split-6 {
   width: 60%;
   padding-right: 1vw;
@@ -56,4 +52,5 @@
 .--top {
   align-items: flex-start;
 }
+
 </style>

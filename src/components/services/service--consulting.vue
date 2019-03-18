@@ -149,7 +149,6 @@
       </template>
     </service-tile>
 
-
     <!-- Chapter Link -->
     <chapter-link
       :chapterIndex="chapter.next.index"
@@ -167,9 +166,6 @@
     <main-footer></main-footer>
   </section>
 </template>
-
-
-
 
 <script>
 // Local Component Registration
@@ -205,7 +201,7 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'TESTY TEST TEST',
+      pageTitle: 'We can help!',
       headerDsc: 'Innovate With Passion',
       keepAnim: 'services/support/MDEV_HEADER_keep_animated.svg',
       turningAnim: 'services/support/MDEV_HEADER_turning_animated.svg',
@@ -226,16 +222,16 @@ export default{
     this.$nextTick(() => {
         $('[data-main-nav]').addClass('--teal-white');
       setTimeout(() => {
-        new Vivus('anim-keep', {duration: 150}, console.log('fired'));
+        new Vivus('anim-keep', {duration: 150});
       }, 100);
       setTimeout(() => {
         $('#anim-the').addClass('--anim-visible');
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-wheels', {duration: 150}, console.log('fired'));
+        new Vivus('anim-wheels', {duration: 150});
       }, 800);
       setTimeout(() => {
-        new Vivus('anim-turning', {duration: 150}, console.log('fired'));
+        new Vivus('anim-turning', {duration: 150});
       }, 1200);
       setTimeout(() => {
         $('[data-header-intro]').addClass('--anim-visible');
@@ -256,10 +252,7 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss" scoped>
-
 /*-------------------------------------*/
 /* SERVICES--CONSULTING Component Styles
 /--------------------------------------*/
@@ -374,7 +367,6 @@ $heading-top-padding-mob: 15px;
   }
 }
 
-
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {
@@ -394,9 +386,5 @@ $heading-top-padding-mob: 15px;
   @include arrow-anim-rules(17s);
 }
 
-
-
-
 /*--------------------------------------*/
-
 </style>

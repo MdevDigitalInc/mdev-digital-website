@@ -16,9 +16,6 @@
   </section>
 </template>
 
-
-
-
 <script>
 // Brand Animation
 import BrandAnimation from '../shared/brand-animation.vue';
@@ -108,13 +105,11 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss" scoped>
-
 /*-------------------------------------*/
 /* Coming Soon Component Styles
 /--------------------------------------*/
+
 .mdev-coming-soon {
   width: 90%;
   @include center(both);
@@ -134,5 +129,4 @@ export default{
 }
 
 /*--------------------------------------*/
-
 </style>

@@ -26,7 +26,6 @@
   </section>
 </template>
 
-
 <script>
 // Local Import
 import BtnPrimary   from '../shared/btn-primary.vue';
@@ -61,13 +60,11 @@ export default {
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* HOME--SERVICES Component Styles
 /--------------------------------------*/
+
 .mdev-section-links {
   width: 100%;
   position: relative;
@@ -140,5 +137,4 @@ export default {
 }
 
 /*--------------------------------------*/
-
 </style>

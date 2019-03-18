@@ -6,7 +6,9 @@
     </div>
 
     <div class="mdev-next-bio flex flex-vert-center" v-on:click="nextBio(1)">
-      <div class="u-light">MEET</div>
+      <div class="u-light u-uppercase">
+        {{ $t('teampage.meet') }}
+      </div>
       <div class="mdev-bios-name u-pointer u-uppercase u-bold">
         {{ nextBioName }}
       </div>
@@ -17,8 +19,6 @@
     </div>
   </nav>
 </template>
-
-
 
 <script>
 export default{
@@ -35,9 +35,11 @@ export default{
   methods: {
     nextBio(direction) {
       if ( direction > 0 ) {
+        // Emits event to parent and loads next record
         this.$emit('nextBio');
       }
       else {
+        // Emits event to parent and loads prev record
         this.$emit('previousBio');
       }
     }
@@ -45,14 +47,10 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* bios--navigation Component Styles
 /--------------------------------------*/
-
 
 // Navigation for Bios
 .mdev-bios-navigation {
@@ -114,5 +112,4 @@ export default{
   }
 }
 /*--------------------------------------*/
-
 </style>

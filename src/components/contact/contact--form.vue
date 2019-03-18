@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-full-section --accent-bkg --triangle-top --form-padding">
-    <div class="mdev-main-form">
+    <div class="mdev-main-form" id="contactus">
       <!-- Split Component 60 / 40 Reversed -->
       <split-sixty
         animClassLeft=""
@@ -39,7 +39,6 @@
     </div>
   </section>
 </template>
-
 
 <script>
 // Imports
@@ -93,13 +92,11 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* Contact--Form Component Styles
 /--------------------------------------*/
+
 .--form-padding {
   padding: 250px 0 150px;
 
@@ -126,7 +123,6 @@ export default{
     font-size: 3.2vw;
   }
 }
-
 
 .mdev-main-form {
   width: 100%;
@@ -199,7 +195,5 @@ export default{
   opacity: 1;
 }
 
-
 /*--------------------------------------*/
-
 </style>

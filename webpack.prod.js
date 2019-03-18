@@ -45,9 +45,9 @@ const robotOptions = {
       crawlDelay: 10,
       cleanParam: "ref /articles/"
     }
-    ],
-    sitemap: "http://example.com/sitemap.xml",
-    host: "http://example.com"
+  ],
+  sitemap: "http://example.com/sitemap.xml",
+  host: "http://example.com"
 }
 
 // Module Exports

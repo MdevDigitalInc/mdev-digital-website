@@ -7,9 +7,6 @@
   </div>
 </template>
 
-
-
-
 <script>
 // [ Documentation ] - circle-bar-decoration
 // -----------------------------------------
@@ -27,13 +24,11 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* Circle Bar Decoration
 /--------------------------------------*/
+
 .d-divider {
   width: 100%;
   position: relative;
@@ -68,5 +63,4 @@ export default{
 }
 
 /*--------------------------------------*/
-
 </style>

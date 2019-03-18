@@ -14,8 +14,6 @@
   </footer>
 </template>
 
-
-
 <script>
   export default{
     name: 'mainFooter',
@@ -32,13 +30,11 @@
   };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* MAIN FOOTER Component Styles
 /--------------------------------------*/
+
 .mdev-main-footer {
   padding: 70px 0;
   background: $color-brand-bkg;
@@ -113,6 +109,6 @@
 .--divider {
   margin: 0 10px;
 }
-/*--------------------------------------*/
 
+/*--------------------------------------*/
 </style>

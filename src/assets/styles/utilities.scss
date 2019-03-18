@@ -71,6 +71,18 @@
   }
 }
 
+.u-hidden-portrait {
+  @media #{$portrait} {
+    display: none !important;
+  }
+}
+
+.u-hidden-landscape {
+  @media #{$landscape} {
+    display: none !important;
+  }
+}
+
 .u-hidden-tablet {
   @media #{$tablet-only} {
     display: none !important;
@@ -78,7 +90,6 @@
 }
 
 .u-hidden-desktop {
-
   @media #{$tablet-up} {
     display: none !important;
   }

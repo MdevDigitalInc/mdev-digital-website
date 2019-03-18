@@ -22,8 +22,6 @@
   </section>
 </template>
 
-
-
 <script>
   export default{
     name: 'ServiceLinks',
@@ -33,10 +31,7 @@
   };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* HOME-SERVICES--LINKS Component Styles
 /--------------------------------------*/
@@ -56,5 +51,4 @@
 }
 
 /*--------------------------------------*/
-
 </style>

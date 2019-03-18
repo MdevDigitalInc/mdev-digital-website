@@ -16,8 +16,6 @@
   </section>
 </template>
 
-
-
 <script>
 // Local Import
 import BtnPrimary   from '../shared/btn-primary.vue';
@@ -43,13 +41,11 @@ export default {
 };
 </script>
 
-
-
 <style lang="scss">
-
 /*-------------------------------------*/
 /* HOME--ABOUT Component Styles
 /--------------------------------------*/
+
 .mdev-about-logo {
   width: 35%;
   position: relative;
@@ -90,6 +86,6 @@ export default {
 .--raise {
   z-index: 2;
 }
-/*--------------------------------------*/
 
+/*--------------------------------------*/
 </style>
