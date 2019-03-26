@@ -44,7 +44,7 @@ export default {
       BtnData: {
         accessibility: 'View Our Services',
         btnRoute: '/services',
-        btnClass: 'mdev-primary-btn --space-top-sm --tab'
+        btnClass: 'mdev-primary-btn --space-top-xs --tab'
       },
       // Links pulled from Flat File
       links: MdevData.serviceLinks
@@ -93,6 +93,7 @@ export default {
     border-bottom: 4px solid rgba(255, 255, 255, 0);
     display: inline-block;
     transition: all .6s;
+    letter-spacing: 2px;
 
     @media #{$xl-up} {
       font-size: 1.3vw;
@@ -129,7 +130,7 @@ export default {
 }
 
 .mdev-split-6 {
-  padding-right: 3vw;
+  padding-right: 5vw;
 
   @media #{$tablet-lnd-only} {
     padding-right: 5.7vw;

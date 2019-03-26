@@ -47,33 +47,33 @@ export default  {
 
   serviceLinks: [
     {
-      linkName: 'Consulting',
-      linkTitle: 'View our consulting services',
-      route: '/services/consulting',
+      linkName: 'Branding',
+      linkTitle: 'View our Branding & Print Design services',
+      route: '/services/branding',
       linkIndex: '01'
     },
     {
-      linkName: 'Branding & Print',
-      linkTitle: 'View our Branding & Print Design services',
-      route: '/services/branding',
+      linkName: 'Web Design',
+      linkTitle: 'View our UX & Web Design services',
+      route: '/services/ui-ux',
       linkIndex: '02'
     },
     {
-      linkName: 'UX & Web Design',
-      linkTitle: 'View our UX & Web Design services',
-      route: '/services/ui-ux',
-      linkIndex: '03'
-    },
-    {
-      linkName: 'Application Development',
+      linkName: 'Apps & Software',
       linkTitle: 'View our custom app development services',
       route: '/services/app-development',
-      linkIndex: '04'
+      linkIndex: '03'
     },
     {
       linkName: 'Digital Marketing',
       linkTitle: 'View our Digital Marketing services',
       route: '/services/digital-advertisign',
+      linkIndex: '04'
+    },
+    {
+      linkName: 'Support Services',
+      linkTitle: 'View our consulting services',
+      route: '/services/consulting',
       linkIndex: '05'
     }
   ],
@@ -1134,19 +1134,19 @@ export default  {
       longImg: {
         src: 'home/case-study-ORA.png',
         a11y: 'Off-Road Addiction | Digital Marketing',
-        route: '/about',
+        route: '/comingsoon',
         title: 'View Off-Road Addiction Case Study'
       },
       leftImg: {
         src: 'home/case-study-NXL.png',
         a11y: 'The Next Level VR | Web Design & Development',
-        route: '/about',
+        route: '/comingsoon',
         title: 'View The Next level VR Case Study'
       },
       rightImg: {
         src: 'home/case-study-GLEN.png',
         a11y: 'Arbour Glen Daycare | Web Design & Development',
-        route: '/about',
+        route: '/comingsoon',
         title: 'View Arbout Glen Case Study'
       },
     },
@@ -1154,19 +1154,19 @@ export default  {
       longImg: {
         src: 'home/case-study-TFAC.png',
         a11y: 'The Factory London | User Experience & Development',
-        route: '/services',
+        route: '/comingsoon',
         title: 'View The Factory London Case Study'
       },
       leftImg: {
         src: 'home/case-study-KETO.png',
         a11y: 'Ketolibriyum | Branding & Ecommerce Development',
-        route: '/services',
+        route: '/comingsoon',
         title: 'View Ketolibriyum Case Study'
       },
       rightImg: {
         src: 'home/case-study-ASTER.png',
         a11y: 'Aster Shoes | Branding & Ecommerce Development',
-        route: '/services',
+        route: '/comingsoon',
         title: 'View Aster Shoes Case Study'
       },
     },
@@ -1174,19 +1174,19 @@ export default  {
       longImg: {
         src: 'home/case-study-ZUC.png',
         a11y: 'Zucora Home | User Experience & Ecommerce Development',
-        route: '/services',
+        route: '/comingsoon',
         title: 'View Zucora Home Case Study'
       },
       leftImg: {
         src: 'home/case-study-PWH.png',
         a11y: 'Powerhouse Brewery | Web Design & Development',
-        route: '/services',
+        route: '/comingsoon',
         title: 'View Powerhouse Brewery Case Study'
       },
       rightImg: {
         src: 'home/case-study-AGCAP.png',
         a11y: 'Ag Capital Canada | Web Design & Development',
-        route: '/services',
+        route: '/comingsoon',
         title: 'View Ag Capital Canada Case Study'
       },
     }

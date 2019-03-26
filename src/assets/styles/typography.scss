@@ -117,14 +117,10 @@ h2,
 h3,
 .h3 {
   @include font-size($h3-font-sizes);
-  letter-spacing: 5px;
+  letter-spacing: 2px;
 
   @media #{$portrait} {
     line-height: 120%;
-  }
-
-  @media #{$tablet-lnd-only} {
-    letter-spacing: 2px;
   }
 }
 

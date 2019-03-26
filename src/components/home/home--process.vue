@@ -33,3 +33,11 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.mdev-main-wrapper {
+  @media #{$desktop-up} {
+    padding: 0 4%;
+  }
+}
+</style>

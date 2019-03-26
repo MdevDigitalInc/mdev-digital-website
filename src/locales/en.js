@@ -23,9 +23,9 @@ export default {
     },
 
     casestudies: {
-      heading: "Case Studies",
+      heading: "Client Stories",
       subheading: "Featured",
-      action: "See all case studies",
+      action: "Coming Soon",
 
       cases: {
         tfac: "The Factory",
@@ -44,7 +44,7 @@ export default {
   },
 
   general: {
-    slogan: "Your internal team without the overhead"
+    slogan: "process-driven ux + application development"
   },
 
   contact: {
