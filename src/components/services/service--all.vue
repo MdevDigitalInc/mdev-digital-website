@@ -130,7 +130,7 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'Our Skillset',
+      pageTitle: 'Services',
       headerDsc: 'A simple animation enticing users to explore all of MDEV digital various services.',
       connectAnim: 'contact/MDEV_HEADER_connect_animated.svg',
       withAnim: 'contact/MDEV_HEADER_with.svg',

@@ -339,7 +339,8 @@ export default  {
       ],
       description: 'A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.',
       topics: [
-        'Corporate identities',
+        'Logos',
+        'Corporate identity systems',
         'Print & digital design',
         'Packaging'
       ],
@@ -377,7 +378,7 @@ export default  {
         btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
       },
       config: {
-        showDecoration: true,
+        showDecoration: false,
         reverse: false
       }
     },
@@ -423,7 +424,8 @@ export default  {
         'Search Engine Optimization',
         'Search Engine Marketing',
         'Social Media Marketing',
-        'Content Marketing'
+        'Content Marketing',
+        'Launch Campaigns'
       ],
       action: 'Learn More',
       BtnData: {
@@ -432,7 +434,7 @@ export default  {
         btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
       },
       config: {
-        showDecoration: true,
+        showDecoration: false,
         reverse: true
       }
     },
@@ -452,7 +454,7 @@ export default  {
       BtnData: {
         accessibility: 'Explore our Business Support services.',
         btnRoute: '/services/consulting',
-        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
       },
       config: {
         showDecoration: false,
