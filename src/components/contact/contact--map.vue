@@ -161,7 +161,7 @@ export default{
   z-index: 3;
   padding: 10px 0;
   line-height: 130%;
-  border-bottom: 8px solid $white;
+  border-bottom: 4px solid $white;
   font-size: 1.8vw;
 
   @media #{$portrait} {

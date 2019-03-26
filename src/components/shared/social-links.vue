@@ -32,14 +32,16 @@
   a {
     color: $white;
     transition: color .5s, text-shadow .8s;
-    text-shadow: 0 0 30px rgba(187, 251, 236, 0);
 
     &:hover,
     &:focus,
     &:active {
-      text-shadow: 0 0 30px rgba(187, 251, 236, .4);
       color: $color-brand-primary;
     }
+  }
+
+  .fa-facebook-f {
+    font-size: 88%;
   }
 }
 
@@ -49,13 +51,11 @@
   a {
     color: $color-brand-bkg;
     transition: color .5s, text-shadow .8s;
-    text-shadow: 0 0 30px rgba(0, 0, 0, 0);
 
     &:hover,
     &:focus,
     &:active {
-      text-shadow: 0 0 30px rgba(0, 0, 0, .4);
-      color: $color-brand-primary;
+      color: $white;
     }
   }
 }
