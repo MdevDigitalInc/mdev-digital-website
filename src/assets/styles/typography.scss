@@ -22,7 +22,7 @@ h4,.h4,
 h5,.h5,
 h6,.h6, {
   font-family: $main-font;
-  font-weight: 700;
+  font-weight: 800;
   color: inherit;
   margin-bottom: 25px;
 }
@@ -105,6 +105,7 @@ p {
 
 h1,
 .h1 {
+  line-height: 140%;
   @include font-size($h1-font-sizes);
 }
 

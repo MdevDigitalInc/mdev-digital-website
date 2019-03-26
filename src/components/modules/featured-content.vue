@@ -87,10 +87,11 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
   // Before pseudo element controls the background green lines
   // They are merely decorative and get overriden often
   .mdev-service-media {
-    width: 30%;
+    width: 50%;
     order: 1;
     margin-right: 5vw;
     position: relative;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
     z-index: 2;
 
     @media #{$portrait} {
@@ -101,10 +102,10 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     // Green decorative background lines
     &:before {
       @include pseudo();
-      top: 25%;
+      bottom: 25%;
       left: -50px;
       right: 10%;
-      bottom: -50px;
+      top: -50px;
       z-index: -1;
       border: 4px solid $color-brand-accent;
 
@@ -118,7 +119,7 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
 
   // Content portion of the split
   .mdev-service-content {
-    width: 60%;
+    width: 50%;
     order: 2;
 
     @media #{$portrait} {
@@ -175,12 +176,12 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
   // Green decorative lines
   &:before {
     right: -50px;
+    bottom: -50px;
+    top: 50px;
     left: 10%;
 
     @media #{$portrait} {
-      top: -50px;
       left: -100px;
-      bottom: 50px;
       right: 15%;
     }
   }

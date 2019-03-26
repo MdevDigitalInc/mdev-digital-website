@@ -96,6 +96,10 @@ export default {
   @include responsive-ratio(1920, 1080);
   max-height: 70vh;
   z-index: 1;
+
+  h1 {
+    font-weight: 500;
+  }
 }
 
 // Masks

@@ -18,11 +18,12 @@
               {{ $t('servicepage.intro.subHeading') }}
             </p>
 
-             <router-link to="/contact#contactus"
-                data-header-btn
-                class="mdev-btn mdev-primary-btn --space-top-xs">
-               {{ $t('contact.headerBtn') }}
-             </router-link>
+            <router-link to="/comingsoon"
+              data-header-btn
+              title="Coming Soon"
+              class="mdev-btn mdev-primary-btn --space-top-xs">
+              {{ $t('servicepage.intro.action') }}
+            </router-link>
           </div>
         </div>
 
@@ -41,11 +42,14 @@
       :media="service.media"
       v-in-viewport
       class="a-fade-in mdev-service"
-      :class="{ '--square-media' : service.media.squareImg }"
+      :class="{ '--square-media' : service.squareImg }"
       :serviceConfig="service.config">
       <!-- Media Slot (Order can be flipped) -->
       <template v-if="service.media" slot="mediaSlot">
-        <img :alt="service.media.imageDesc" :src="loadImage(service.media.image)">
+        <!-- Image Carousel -->
+        <media-carousel
+         :flip="((index + 1) % 2) == 1"
+         :media="service.media"></media-carousel>
       </template>
       <!-- Content Slot (Order can be flipped) -->
       <template slot="contentSlot">
@@ -99,6 +103,7 @@
 //Local Component registration
 import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
+import MediaCarousel      from '../modules/media-carousel.vue';
 import FeaturedContent        from '../modules/featured-content.vue';
 import BtnPrimary         from '../shared/btn-primary.vue';
 // Import Data From Flat File
@@ -152,6 +157,7 @@ export default{
   components: {
     'hero-main'     : HeroMain,
     'main-footer'   : MainFooter,
+    'media-carousel' : MediaCarousel,
     'btn-primary'   : BtnPrimary,
     'service-tile'   : FeaturedContent
   }
