@@ -36,7 +36,7 @@ export default{
   data: function(){
     return{
       // Flag for the loading anim..
-      isLoading: true,
+      isLoading: false,
       // Flag for activating the coming soon message
       isActive: false,
       // Time until user is redirected
@@ -66,15 +66,13 @@ export default{
       }, 1900);
       // Update Data
       setTimeout(() => {
-        // Flip Flag
-        this.isLoading = false;
         // Start countdown function
         this.countdown();
-      }, 2500);
+      }, 150);
       // Reveal hidden text
       setTimeout(() => {
         this.isActive = true;
-      }, 2800);
+      }, 100);
     });
   },
 
