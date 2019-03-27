@@ -30,13 +30,17 @@
         <div class="mdev-sexy-line --sexy-green" data-line-three></div>
       </div>
     </hero-main>
-    <!-- Chapter Heading -->
+    <!-- Chapter Heading
+    [ TEMPORARILY COMMENTED OUT ]
     <chapter-heading
        v-view="(e) => changeNavBrand(e, '--teal-black')"
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
+    -->
     <!-- Chapter Content -->
-    <page-intro :pageIntro="serviceIntro"></page-intro>
+    <page-intro
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
+      :pageIntro="serviceIntro"></page-intro>
     <!-- No Media -->
     <service-nomedia
       v-for="(service, index) in nomedia"

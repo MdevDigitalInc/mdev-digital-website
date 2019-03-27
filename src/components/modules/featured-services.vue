@@ -120,6 +120,7 @@ export default {
 
   .mdev-service-subtitle {
     margin-bottom: 10px;
+    text-transform: capitalize;
   }
 
   .mdev-service-desc {

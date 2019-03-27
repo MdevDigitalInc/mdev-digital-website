@@ -28,10 +28,12 @@
         <div class="mdev-sexy-line --sexy-green" data-line-three></div>
       </div>
     </hero-main>
-    <!-- Chapter Heading -->
+    <!-- Chapter Heading
+    [ TEMPORARILY COMMENTED OUT ]
     <chapter-heading
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
+    -->
     <!-- Chapter Content -->
     <service-tile v-for="(service, index) in services"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
@@ -52,9 +54,8 @@
         <span class="--pre-title" v-if="service.preTitle">
           {{ service.preTitle }}
         </span>
-        <h2 class="mdev-service-title u-uppercase a-fade-in" v-in-viewport>
-          {{ service.title }}
-        </h2>
+        <h2 class="mdev-service-title u-uppercase a-fade-in"
+          v-html="service.title" v-in-viewport></h2>
         <h3 class="mdev-service-subtitle">
           {{ service.subTitle }}
         </h3>
@@ -123,7 +124,7 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'Make your  mark',
+      pageTitle: 'Branding Services',
       headerDsc: 'Tell Your Story',
       tellAnim: 'services/branding/MDEV_HEADER_tell_animated.svg',
       yourAnim: 'services/branding/MDEV_HEADER_your_animated.svg',

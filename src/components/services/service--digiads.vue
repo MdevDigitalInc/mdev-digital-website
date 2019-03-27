@@ -36,11 +36,13 @@
         <div class="mdev-sexy-line --sexy-green" data-line-three></div>
       </div>
     </hero-main>
-    <!-- Chapter Heading -->
+    <!-- Chapter Heading
+    [ TEMPORARILY COMMENTED OUT ]
     <chapter-heading
        v-view="(e) => changeNavBrand(e, '--teal-black')"
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
+    <--
     <!-- Chapter Content -->
     <service-tile v-for="(service, index) in services"
       v-view="(e) => changeNavBrand(e, '--teal-black')"

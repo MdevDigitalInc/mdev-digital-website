@@ -37,6 +37,8 @@
 
 .mdev-main-footer {
   padding: 70px 0;
+  // Negative margin needed to close 1px gap
+  margin-top: -1px;
   background: $color-brand-bkg;
   width: 100%;
   position: relative;

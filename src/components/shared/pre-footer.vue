@@ -24,7 +24,7 @@
           :key="index"
           v-if="link.serviceFlag != serviceFlag">
           <!-- Column Heading -->
-          <span class="--heading u-uppercase u-bold">
+          <span class="--heading u-uppercase">
             {{ link.heading }}
           </span>
           <router-link :to="item.linkRoute"
@@ -81,7 +81,7 @@ export default{
 
   .mdev-prefooter-subtitle {
     display: block;
-    font-size: 203%;
+    font-size: 250%;
   }
 
   .mdev-prefooter-cta {
@@ -117,6 +117,7 @@ export default{
       display: block;
       width: 100%;
       font-size: 25px;
+      font-weight: 500;
       letter-spacing: 1.3px;
       line-height: 1;
       margin-bottom: 5px;

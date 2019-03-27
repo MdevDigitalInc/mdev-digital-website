@@ -1,4 +1,15 @@
 // MDEV Data export
+// Case Study Structure Saved
+//        caseStudy: {
+//          action: 'View case study',
+//          hook: 'See how we worked with The Factory to create an Adventure booking system.',
+//          BtnData: {
+//            accessibility: 'View The Factory case study',
+//            btnRoute: '/casestudy',
+//            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
+//          },
+//          reverse: true
+//        },
 export default  {
   links: [
     {
@@ -487,16 +498,7 @@ export default  {
           'Brand &amp; style guidelines',
           'Business card &amp; stationery packages'
         ],
-        caseStudy: {
-          action: 'View case study',
-          hook: 'View our Ketolibriyum Case Study',
-          BtnData: {
-            accessibility: 'View our Branding case study',
-            btnRoute: '/Coming Soon',
-            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
-          },
-          reverse: false
-        },
+        caseStudy: false,
         media: [
           {
             image: 'services/branding/logo-design.png',
@@ -529,16 +531,15 @@ export default  {
         ]
       },
       {
-        preTitle: 'The',
+        preTitle: false,
         title: 'Road to retail readiness',
         subTitle: 'Packaging',
         description: 'We create vibrant and informative packaging that leaps off store shelves. We can also help you handle barcode creation, compliance with labelling regulations, and French translation requirements if the product is to be sold in Canada.',
         topics: [
-          'Print &amp; Digital Design',
-          'Marketing Materials',
-          'Publication Layout',
-          'Banners &amp; Tradeshow Graphics',
-          'Retail Signage'
+          'Packaging Design Service',
+          'Translate Existing Packaging',
+          'Vendor & Print Facilitation',
+          'Retail & Regulation Compliance'
         ],
         caseStudy: false,
         media: [
@@ -579,16 +580,7 @@ export default  {
           'Responsive Web Design',
           'Custom Wordpress Development'
         ],
-        caseStudy: {
-          action: 'View case study',
-          hook: 'See how we worked with The Factory to create an Adventure booking system.',
-          BtnData: {
-            accessibility: 'View The Factory case study',
-            btnRoute: '/casestudy',
-            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
-          },
-          reverse: true
-        },
+        caseStudy: false,
         media: [
           {
             image: 'services/webdev/web-design-tfac.png',
@@ -615,16 +607,7 @@ export default  {
           'Woocommerce',
           'Digital Marketing',
         ],
-        caseStudy: {
-          action: 'View case study',
-          hook: 'Find out how we created a shoe empire from an overstock colletion.',
-          BtnData: {
-            accessibility: 'View Aster Shoes case study',
-            btnRoute: '/casestudy',
-            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
-          },
-          reverse: false
-        },
+        caseStudy: false,
         media: [
           {
             image: 'services/webdev/ecom-keto.png',

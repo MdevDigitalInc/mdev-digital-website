@@ -2,7 +2,7 @@ export default {
 
   homepage: {
     intro: {
-      heading: "Process-driven UX + Innovative Application Development",
+      heading: "Process-driven UX + Application Development",
       content: "Our process is honed through experience and framed by the belief that quality matters. We craft innovative digital solutions with the future in mind.",
       action: "Our Process"
     },
