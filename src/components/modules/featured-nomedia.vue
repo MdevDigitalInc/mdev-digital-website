@@ -11,7 +11,7 @@
     <div class="mdev-featured-wrapper flex flex-vert-start flex-hor-between flex-wrap">
       <div v-for="(block, index) in content"
         class="mdev-featured-column">
-          <h3 class="u-uppercase">
+          <h3 class="u-capitalize">
             {{ block.title }}
           </h3>
           <p>
