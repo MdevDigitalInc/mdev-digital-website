@@ -69,6 +69,16 @@
   }
 }
 
+.--featured-space {
+  margin-top: 250px;
+  margin-bottom: 250px;
+
+  @media #{$portrait} {
+    margin-top: 150px;
+    margin-bottom: 150px;
+  }
+}
+
 .--section-space {
   margin-top: 150px;
   margin-bottom: 150px;

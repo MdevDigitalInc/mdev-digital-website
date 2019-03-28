@@ -130,7 +130,7 @@ export default{
   bottom: 0;
   width: 100%;
   z-index: 1;
-  filter: grayscale(.5) blur(5px);
+  filter: grayscale(.2) blur(5px);
   transition: 1s filter 1.4s;
 
   &:after {
@@ -242,7 +242,7 @@ export default{
   opacity: 1;
 
   .mdev-g-map {
-    filter: grayscale(.5) blur(0);
+    filter: grayscale(1) blur(0);
   }
 }
 

@@ -107,7 +107,7 @@ $buttonSize: 10px;
   }
 
   .mdev-media-controls {
-    margin-top: 15px;
+    margin-top: 35px;
     width: 100%;
     position: absolute;
     z-index: 2;

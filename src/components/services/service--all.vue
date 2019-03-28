@@ -104,7 +104,7 @@
 import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
 import MediaCarousel      from '../modules/media-carousel.vue';
-import FeaturedContent        from '../modules/featured-content.vue';
+import FeaturedContent    from '../modules/featured-content.vue';
 import BtnPrimary         from '../shared/btn-primary.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';

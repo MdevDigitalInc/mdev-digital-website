@@ -1,7 +1,7 @@
 <template>
   <section class="mdev-featured-content --section-space">
-    <div class="mdev-featured-wrapper flex flex-vert-start flex-hor-center"
-      :class="{ '--flip-order' : flip }">
+    <div class="mdev-featured-wrapper flex flex-vert-start"
+      :class="{ '--flip-order' : flip, 'flex-hor-center' : media, 'flex-hor-start' : !media }">
       <!-- Media slot for image -->
       <div v-if="media" class="mdev-service-media">
         <slot name="mediaSlot"></slot>
