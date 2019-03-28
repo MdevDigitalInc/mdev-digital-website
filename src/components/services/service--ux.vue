@@ -128,7 +128,7 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'User Experience Design',
+      pageTitle: 'Web Design Services',
       headerDsc: 'Humanize The Web',
       humanizeAnim: 'services/webdev/MDEV_HEADER_humanize_animated.svg',
       theAnim: 'services/webdev/MDEV_HEADER_the.svg',
