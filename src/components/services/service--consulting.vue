@@ -68,9 +68,6 @@
       </template>
       <!-- Content -->
       <template slot="contentSlot">
-        <span class="--pre-title" v-if="service.preTitle">
-          {{ service.preTitle }}
-        </span>
         <h2 v-if="service.media"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"
@@ -96,7 +93,6 @@
     <service-nomedia
       v-for="(service, index) in nomedia"
       :key="index"
-      :preTitle="service.preTitle"
       :title="service.title"
       :content="service.content"
       ></service-nomedia>
@@ -116,9 +112,6 @@
           :alt="service.media.imageDesc"
           :src="loadImage(service.media.image)">
         <!-- Title Only appears here if no image -->
-        <span class="--pre-title" v-if="service.preTitle">
-          {{ service.preTitle }}
-        </span>
         <h2 v-if="!service.media"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"

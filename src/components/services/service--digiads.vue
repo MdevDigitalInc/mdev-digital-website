@@ -67,9 +67,6 @@
       </template>
       <!-- Content -->
       <template slot="contentSlot">
-        <span class="--pre-title" v-if="service.preTitle">
-          {{ service.preTitle }}
-        </span>
         <h2 v-if="service.media"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"

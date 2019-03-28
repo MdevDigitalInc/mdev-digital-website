@@ -51,9 +51,6 @@
       </template>
       <!-- Content -->
       <template slot="contentSlot">
-        <span class="--pre-title" v-if="service.preTitle">
-          {{ service.preTitle }}
-        </span>
         <h2 v-html="service.title" class="mdev-service-title u-uppercase a-fade-in" v-in-viewport></h2>
         <h3 class="mdev-service-subtitle">
           {{ service.subTitle }}
@@ -76,7 +73,6 @@
     <service-nomedia
       v-for="(service, index) in nomedia"
       :key="index"
-      :preTitle="service.preTitle"
       :title="service.title"
       :content="service.content"
       ></service-nomedia>

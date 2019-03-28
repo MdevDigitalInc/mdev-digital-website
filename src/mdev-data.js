@@ -488,7 +488,6 @@ export default  {
     },
     services: [
       {
-        preTitle: false,
         title: 'Think before you brand',
         subTitle: 'Corporate identity systems',
         description: 'Systems Creating a brand with impact is crucial for any product or company to be noticed. We can help you develop a new brands, refresh an exist logo, or work with you to consolidate your existing brands into a cohesive corporate identity system.',
@@ -507,7 +506,6 @@ export default  {
         ]
       },
       {
-        preTitle: false,
         title: 'Cross- channel creative',
         subTitle: 'Print & Digital Design',
         description: 'A brand needs more than a logo and a website to succeed. Our creative services span traditional print and digital media to ensure that the look and feel of your brand matches across all mediums.',
@@ -531,7 +529,6 @@ export default  {
         ]
       },
       {
-        preTitle: false,
         title: 'Road to retail readiness',
         subTitle: 'Packaging',
         description: 'We create vibrant and informative packaging that leaps off store shelves. We can also help you handle barcode creation, compliance with labelling regulations, and French translation requirements if the product is to be sold in Canada.',
@@ -570,7 +567,6 @@ export default  {
     },
     services: [
       {
-        preTitle: false,
         title: 'The web has gotten crowded',
         subTitle: 'Custom Design & Development',
         description: 'Stand out in the digital realm with powerful, feature rich websites, built to be fully accessible and mobile-responsive from the very beginning. Utilizing the latest technologies, modern design techniques and methodical coding practices, we deliver quality digital solutions tailored to fit.',
@@ -597,7 +593,6 @@ export default  {
         ]
       },
       {
-        preTitle: false,
         title: 'Set</br>Up</br>Shop',
         subTitle: 'Ecommerce',
         description: 'If you have a product or service to sell, our team can help you choose the best software for your store, provide advice on how to organize your products and how best to position your offerings. We can also help you with integrated cross-channel marketing campaigns to grow your new empire.',
@@ -626,7 +621,6 @@ export default  {
     ],
     servicesNomedia: [
       {
-        preTitle: 'It\'s the right thing to do',
         title: 'Remove Digital Barriers',
         content: [
           {
@@ -671,7 +665,6 @@ export default  {
     },
     services: [
       {
-        preTitle: false,
         title: 'Build Your Empire',
         subTitle: 'Application Development',
         description: 'You can expect regular feature releases as we work to build a product you can quickly take to market. Once released, we’ll help you analyze post-launch feature-set priorities to continue application growth as you discover more about your users needs. We focus on security, scalability and longevity to ensure that your investment in technology can scale with your business.',
@@ -693,7 +686,6 @@ export default  {
     ],
     servicesNomedia: [
       {
-        preTitle: false,
         title: 'Simplicity in planning',
         content: [
           {
@@ -719,7 +711,6 @@ export default  {
         ]
       },
       {
-        preTitle: false,
         title: 'Engage your audience',
         content: [
           {
@@ -761,7 +752,6 @@ export default  {
     },
     services: [
       {
-        preTitle: false,
         title: 'Share your narrative',
         subTitle: 'Content Marketing',
         description: 'We can help you write compelling, up-to-date content that will give users a reason to return to your site and social media channels. We can also help you with clear, strong wording about products and services that will give users quick and tactile reasons to purchase your product or interact with your service.',
@@ -776,7 +766,6 @@ export default  {
         media: false
       },
       {
-        preTitle: false,
         title: 'Connect with your audience',
         subTitle: 'Social Media Marketing',
         description: 'Social media has become the central hub of communication for many businesses. We can help you develop and execute a social media strategy to promote your products and services to the world.',
@@ -795,7 +784,6 @@ export default  {
         ]
       },
       {
-        preTitle: false,
         title: 'Algorithm Not Alchemy',
         subTitle: 'Search Engine Optimization',
         description: 'Reaching a new audience for your products and services through proper search engine optimization is a great way to increase your market share. We’ll collaborate with you to understand your goals to create a strong SEO backbone for your site. Sit back and let our expert team worry about keeping on top of the latest search engine and social media algorithms to keep you ahead of the competition.',
@@ -804,7 +792,6 @@ export default  {
         media: false
       },
       {
-        preTitle: false,
         title: 'Demystify Online Marketing',
         subTitle: 'Search Engine Marketing',
         description: 'Social media has become the central hub of communication for many businesses. We can help you develop and execute a social media strategy to promote your products and services to the world.',
@@ -818,7 +805,6 @@ export default  {
         ]
       },
       {
-        preTitle: false,
         title: 'Set the wheels in motion',
         subTitle: 'Launch Campaigns',
         description: 'We know that you are eager to get the word out about your new product or service quickly. We can help you structure a cross-channel launch campaign tailored specifically to your audience including social media, print design, and trade show setups. Our launch campaigns often include a landing page that can supply teaser content while we help you build up to the big announcement.',
@@ -858,7 +844,6 @@ export default  {
 
     serviceSolo: [
       {
-        preTitle: false,
         title: 'Email in style',
         subTitle: 'G Suite Management',
         description: 'As part our our overarching branding services, we want to make sure you look good when communicating about your business. It’s the little things that count, like using a professional email URL and having a sweet, branded signature.',
@@ -874,12 +859,11 @@ export default  {
 
     servicesNomedia: [
       {
-        preTitle: 'It\'s not the wild west anymore',
         title: 'Stake your digital claim',
         content: [
           {
             title: 'Domain Management',
-            description: 'Domain management can be complex, time consuming, and damaging to your business if handled poorly. We provide worry-free hosting, migration and configuration services, to ensure that your hosting can handle your volume of traffic and serve the performance and capabilities your website needs.',
+            description: 'Domain management can be complex, time consuming, and damaging to your business if handled poorly. We provide worry-free hosting, migration and configuration services, to ensure that your hosting can handle your volume of traffic and serve the performance and capabilities your website needs',
             topics: [
               'Domain & Hosting Migration',
               'Domain configuration & set up',
@@ -903,10 +887,9 @@ export default  {
 
     services: [
       {
-        preTitle: 'Find out how we can help',
         title: 'Jump start your business',
         subTitle: 'Startup Support',
-        description: 'We know the joy and growing pains that come along with starting a new business, in fact, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding, all the way to setting up your internal operations software, we know what it takes to get you up and running.We know the joy and growing pains that come along with starting a new business, in fact, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding, all the way to setting up your internal operations software, we know what it takes to get you up and running.',
+        description: 'We know the joy and growing pains that come along with starting a new business, in fact, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding, all the way to setting up your internal operations software, we know what it takes to get you up and running. ',
         topics: false,
         caseStudy: false,
         media: false,
@@ -917,7 +900,6 @@ export default  {
         }
       },
       {
-        preTitle: false,
         title: 'Get your head out of the clouds',
         subTitle: 'Cloud Technologies',
         description: 'Cloud technologies give you flexibility to create secure, optimized solutions that streamline internal processes. Based on your business requirements, we can help identify which technologies best suit your needs, then provide all of the assistance necessary to install and configure your chosen software.',
@@ -934,7 +916,6 @@ export default  {
         BtnData: false
       },
       {
-        preTitle: false,
         title: 'Enhance Efficiency',
         subTitle: 'Consulting',
         description: 'With our guidance, learn how to innovate effectively within your own business. We can help you reduce your overhead costs and increase productivity by turning your trickiest challenges into growth opportunities. Get in touch to find out how.',

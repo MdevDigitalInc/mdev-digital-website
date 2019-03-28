@@ -145,7 +145,7 @@ export default {
   .mdev-service-content {
     order: 4;
     padding-right: 0;
-    padding-left: 10%;
+    padding-left: 5%;
 
     @media #{$portrait} {
       margin: 100px auto;
@@ -176,7 +176,7 @@ export default {
 // On the right. This is OPPOSITE to the default where media is always on
 // the left first.
 .mdev-featured-services.--no-image .mdev-featured-wrapper {
-  margin: 0 9%;
+  margin: 0 7%;
   width: auto;
 
   // Override title margin
@@ -207,7 +207,7 @@ export default {
   .mdev-service-content {
     order: 2;
     padding-right: 0;
-    padding-left: 10%;
+    padding-left: 5%;
 
     @media #{$portrait} {
       padding: 0;

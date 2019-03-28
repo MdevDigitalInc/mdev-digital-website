@@ -2,9 +2,6 @@
   <section class="mdev-featured-services --section-space mdev-service">
     <!-- Title -->
     <div class="mdev-service-title">
-      <span v-if="preTitle" class="--pre-title u-uppercase">
-        {{ preTitle }}
-      </span>
       <h2 v-html="title" class="--title u-bold u-uppercase"></h2>
     </div>
     <!-- Content -->
@@ -34,7 +31,7 @@
 export default{
   name: 'FeatureNomedia',
 
-  props: [ 'preTitle', 'title', 'content'],
+  props: [ 'title', 'content'],
 
 };
 </script>
@@ -49,7 +46,7 @@ export default{
   margin-top: 100px;
 
   .mdev-featured-column {
-    width: 44%;
+    width: 40%;
 
     @media #{$portrait} {
       width: 100%;
