@@ -52,7 +52,8 @@
         <social-links
           darkTheme="true"
           v-in-viewport
-          class="a-flyin-lnd a-flyin-lnd-left --portrait-left"
+          v-if="mdevBio.socialLinks"
+          class="a-flyin-lnd a-flyin-lnd-left --portrait-left --teal-hover"
           :linkContent="mdevBio.socialLinks">
         </social-links>
         <!-- Team Member Picture -->
@@ -199,6 +200,10 @@ export default {
   @media #{$portrait} {
     height: auto;
   }
+
+  p {
+    line-height: 160%;
+  }
 }
 
 .mdev-bios-info {
@@ -231,7 +236,7 @@ export default {
 
   .mdev-bios-name {
     font-size: 3.9vw;
-    margin-bottom: 10px;
+    margin-bottom: -10px;
 
     @media #{$portrait} {
       font-size: 6vw;
@@ -240,6 +245,7 @@ export default {
 
   .--meet {
     font-size: 1.5vw;
+    margin-bottom: -10px;
 
     @media #{$portrait} {
       font-size: 5vw;
@@ -346,7 +352,7 @@ export default {
     }
 
     img {
-      width: 70%;
+      width: 80%;
       position: relative;
       bottom: -5px;
     }

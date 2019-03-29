@@ -119,7 +119,7 @@ export default  {
   mdevEmployees: [
     {
       employeeName: 'Lucas Moreira',
-      employeeTitle: 'CEO, Founder',
+      employeeTitle: 'Chief Executive Officer, Founder',
       employeeRoute: 'lucas-moreira',
       employeeIntro: 'With over 10 years of experience working on large-scale, high-demand web applications, Lucas has a wealth of expertise in creating web applications to serve a variety of needs.',
       employeeStory: [
@@ -132,22 +132,28 @@ export default  {
       employeeImage: 'bios/bio-lucas.png',
       socialLinks: [
         {
+          linkClass: 'fa-linkedin',
+          target: '_blank',
+          accessibility: 'Follow us on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/in/moreiradevelopment/'
+        },
+        {
           linkClass: 'fa-instagram',
           target: '_blank',
           accessibility: 'Follow Lucas on Instagram',
           linkUrl: 'https://www.instagram.com/loose_transistor/'
         },
         {
-          linkClass: 'fa-linkedin',
+          linkClass: 'fa-youtube',
           target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/in/moreiradevelopment/'
+          accessibility: 'Subscribe on Youtube',
+          linkUrl: 'https://www.youtube.com/c/LooseTransistorFPV'
         }
       ]
     },
     {
       employeeName: 'Becky Domenico',
-      employeeTitle: 'CCO, Founder',
+      employeeTitle: 'Chief Creative Officer, Founder',
       employeeRoute: 'becky-domenico',
       employeeIntro: 'A disruptive thinker and creative visionary, Becky is constantly digging deeper to find innovative solutions to complex problems. Able to distill client goals into a cohesive creative vision that she communicates to the team for execution.',
       employeeStory: [
@@ -160,10 +166,10 @@ export default  {
       employeeImage: 'bios/bio-becky.png',
       socialLinks: [
         {
-          linkClass: 'fa-facebook-f',
+          linkClass: 'fa-linkedin',
           target: '_blank',
-          accessibility: 'Like Becky on Facebook',
-          linkUrl: 'https://www.facebook.com/becky.domenico'
+          accessibility: 'Follow us on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/in/beckydomenico/'
         },
         {
           linkClass: 'fa-instagram',
@@ -178,11 +184,45 @@ export default  {
           linkUrl: 'https://twitter.com/BECKYDOMENICO'
         },
         {
+          linkClass: 'fa-pinterest',
+          target: '_blank',
+          accessibility: 'Follow Becky on Pinterest',
+          linkUrl: 'https://www.pinterest.ca/beckydomenico/'
+        }
+      ]
+    },
+    {
+      employeeName: 'Luis Guerrero',
+      employeeTitle: 'Digital Marketing Manager',
+      employeeRoute: 'luis-guerriero',
+      employeeIntro: 'An award-winning digital marketer with a vast amount of experience ranging from sales to department director, Luis has developed a knack for making the digital space a little more human. His experience in working with companies and major social media influencers from all parts of the world allows him to bring unique and refreshing ideas to the marketing table.',
+      employeeStory: [
+        'Winning the Americas division, and placing top five globally in the 2014 Google Online Marketing Challenge jump started Luis’ career in internet and social media marketing.',
+        'He’s naturally passionate person with a love for music and dance (he teaches salsa and bachata), and a lover of sports.'
+      ],
+      employeeOrigin: 'Guatemala',
+      employeeQuote: false,
+      employeeTrick: 'Salsa and Bachata Instructor',
+      employeeImage: 'bios/bio-luis.png',
+      socialLinks: [
+        {
           linkClass: 'fa-linkedin',
           target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/in/beckydomenico/'
-        }
+          accessibility: 'Follow Luis on LinkedIn',
+          linkUrl: 'https://www.instagram.com/halyhawkinsdesigns/'
+        },
+        {
+          linkClass: 'fa-facebook-f',
+          target: '_blank',
+          accessibility: 'Like Luis on Facebook',
+          linkUrl: 'https://www.facebook.com/JLuisG12'
+        },
+        {
+          linkClass: 'fas fa-globe',
+          target: '_blank',
+          accessibility: 'Personal Website',
+          linkUrl: 'https://luisguerrero.ca/'
+        },
       ]
     },
     {
@@ -200,62 +240,28 @@ export default  {
       employeeImage: 'bios/bio-haly.png',
       socialLinks: [
         {
-          linkClass: 'fa-facebook-f',
+          linkClass: 'fa-linkedin',
           target: '_blank',
-          accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
+          accessibility: 'Follow Haly on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/in/haly-hawkins/'
         },
         {
           linkClass: 'fa-instagram',
           target: '_blank',
           accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
+          linkUrl: 'https://www.instagram.com/halyhawkinsdesigns/'
         },
-        {
-          linkClass: 'fa-linkedin',
-          target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-        }
-      ]
-    },
-    {
-      employeeName: 'Luis Guerriero',
-      employeeTitle: 'Digital Marketing Manager',
-      employeeRoute: 'luis-guerriero',
-      employeeIntro: 'An award-winning digital marketer with a vast amount of experience ranging from sales to department director, Luis has developed a knack for making the digital space a little more human. His experience in working with companies and major social media influencers from all parts of the world allows him to bring unique and refreshing ideas to the marketing table.',
-      employeeStory: [
-        'Winning the Americas division, and placing top five globally in the 2014 Google Online Marketing Challenge jump started Luis’ career in internet and social media marketing.',
-        'He’s naturally passionate person with a love for music and dance (he teaches salsa and bachata), and a lover of sports.'
-      ],
-      employeeOrigin: 'Guatemala City, Guatemala',
-      employeeQuote: false,
-      employeeTrick: 'Hips Don’t Lie - Salsa and Bachata Instructor',
-      employeeImage: 'bios/bio-luis.png',
-      socialLinks: [
         {
           linkClass: 'fa-facebook-f',
           target: '_blank',
           accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
-        },
-        {
-          linkClass: 'fa-instagram',
-          target: '_blank',
-          accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
-        },
-        {
-          linkClass: 'fa-linkedin',
-          target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+          linkUrl: 'https://www.facebook.com/Haly-Hawkins-Designs-758389274364073/'
         }
       ]
     },
     {
       employeeName: 'Graham Coutts',
-      employeeTitle: 'Full-stack Developer',
+      employeeTitle: 'Full-Stack Developer',
       employeeRoute: 'graham-coutts',
       employeeIntro: 'Whether he\'s improving the efficiency and processing capabilities of antiquated systems for large companies, or working on integrating numerous emerging web technologies, Graham always plays key role in designing and developing effective systems for any situation.',
       employeeStory: [
@@ -265,30 +271,11 @@ export default  {
       employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
       employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
       employeeImage: 'bios/bio-graham.png',
-      socialLinks: [
-        {
-          linkClass: 'fa-facebook-f',
-          target: '_blank',
-          accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
-        },
-        {
-          linkClass: 'fa-instagram',
-          target: '_blank',
-          accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
-        },
-        {
-          linkClass: 'fa-linkedin',
-          target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-        }
-      ]
+      socialLinks: false
     },
     {
       employeeName: 'Dorian Hall',
-      employeeTitle: 'Front-end Developer',
+      employeeTitle: 'Front-End Developer',
       employeeRoute: 'dorian-hall',
       employeeIntro: 'Whether he\'s improving the efficiency and processing capabilities of antiquated systems for large companies, or working on integrating numerous emerging web technologies, Graham always plays key role in designing and developing effective systems for any situation.',
       employeeStory: [
@@ -298,34 +285,15 @@ export default  {
       employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
       employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
       employeeImage: 'bios/bio-dorian.png',
-      socialLinks: [
-        {
-          linkClass: 'fa-facebook-f',
-          target: '_blank',
-          accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
-        },
-        {
-          linkClass: 'fa-instagram',
-          target: '_blank',
-          accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
-        },
-        {
-          linkClass: 'fa-linkedin',
-          target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-        }
-      ]
+      socialLinks: false
     }
   ],
 
   employeeRoutes: [
     'lucas-moreira',
     'becky-domenico',
-    'haly-hawkins',
     'luis-guerriero',
+    'haly-hawkins',
     'graham-coutts',
     'dorian-hall'
   ],

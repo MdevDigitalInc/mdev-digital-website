@@ -59,6 +59,16 @@
     }
   }
 }
+.--teal-hover {
 
+  a {
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-brand-primary;
+    }
+  }
+}
 /*--------------------------------------*/
 </style>
