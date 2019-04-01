@@ -36,13 +36,12 @@
        v-view="(e) => changeNavBrand(e, '--teal-black')"
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
-    -->
-    <!-- Chapter Content -->
     <page-intro
-      v-view="(e) => changeNavBrand(e, '--teal-black')"
       :pageIntro="serviceIntro"></page-intro>
+    -->
     <!-- No Media -->
     <service-nomedia
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
       v-for="(service, index) in nomedia"
       :key="index"
       :preTitle="service.preTitle"
@@ -121,12 +120,12 @@ export default{
 
   head: {
     title: {
-      inner: 'App\'s & Software',
+      inner: 'Apps & Software',
       complement: 'MDEV Digital - London, Ontario'
     },
     meta: [
-      { property: 'og:title', content: 'App\'s & UX Software | MDEV Digital - London, Ontario ' },
-      { name: 'twitter:title', content: 'App\'s & UX Software | MDEV Digital - London, Ontario ' }
+      { property: 'og:title', content: 'Apps & UX Software | MDEV Digital - London, Ontario ' },
+      { name: 'twitter:title', content: 'Apps & UX Software | MDEV Digital - London, Ontario ' }
 
     ]
   },
@@ -137,7 +136,7 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'App\'s & Software',
+      pageTitle: 'Apps & Software',
       headerDsc: 'Innovate With Passion.',
       innovateAnim: 'services/appdev/MDEV_HEADER_innovate_animated.svg',
       withAnim: 'services/appdev/MDEV_HEADER_with.svg',
