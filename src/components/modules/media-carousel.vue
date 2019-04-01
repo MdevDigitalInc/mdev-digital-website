@@ -112,6 +112,10 @@ $buttonSize: 10px;
     width: 100%;
     position: absolute;
     z-index: 2;
+
+    @media #{$portrait} {
+      margin-top: 0;
+    }
   }
 
   .mdev-media-skip {
