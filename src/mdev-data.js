@@ -268,7 +268,7 @@ export default  {
         'Graham also occasionally teaches programming classes as a part-time instructor at Fanshawe College as a part of the Advanced Programming Game development program.'
       ],
       employeeOrigin: 'Guelph, ON',
-      employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
+      employeeQuote: 'So much time and so little to do! Strike that. Reverse it.',
       employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
       employeeImage: 'bios/bio-graham.png',
       socialLinks: false
@@ -282,7 +282,7 @@ export default  {
         'Graham also occasionally teaches programming classes as a part-time instructor at Fanshawe College as a part of the Advanced Programming Game development program.'
       ],
       employeeOrigin: 'Guelph, ON',
-      employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
+      employeeQuote: 'Quote Here',
       employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
       employeeImage: 'bios/bio-dorian.png',
       socialLinks: false

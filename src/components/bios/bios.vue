@@ -1,5 +1,5 @@
 <template>
-  <div class="mdev-bios-mask" data-bio-mask>
+  <div class="mdev-bios-mask"  v-view="(e) => changeNavBrand(e, '--teal-black')" data-bio-mask>
     <!-- Bios Content -->
     <div v-for="(mdevBio, index) in mdevBios"
       v-if=" index == desiredIndex"
