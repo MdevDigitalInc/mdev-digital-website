@@ -7,7 +7,7 @@
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-digiads">
           <div class="mdev-center">
-            <div class="flex flex-vert-start  flex-hor-between --portrait-wrap">
+            <div class="flex flex-vert-start  flex-hor-start --portrait-wrap">
               <object class="--con-keep" id="anim-keep" type="image/svg+xml" :data="loadImage(keepAnim)"></object>
               <div data-header-intro class="--header-cta u-desk-only ">
                  <p>
@@ -196,7 +196,7 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'We can help!',
+      pageTitle: 'Support Services',
       headerDsc: 'Innovate With Passion',
       keepAnim: 'services/support/MDEV_HEADER_keep_animated.svg',
       turningAnim: 'services/support/MDEV_HEADER_turning_animated.svg',
@@ -304,13 +304,15 @@ $heading-top-padding-mob: 15px;
 
   .--header-cta {
     opacity: 0;
-    width: 48%;
+    width: 40%;
     transition: opacity 1.2s;
+    margin-left: 20px;
     position: relative;
     right: 0;
 
     @media #{$portrait} {
       width: 100%;
+      margin-left: 0;
       text-align: left;
       margin-top: $heading-top-padding-mob + 10;
     }

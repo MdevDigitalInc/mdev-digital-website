@@ -236,7 +236,7 @@ $heading-top-padding-mob: 10px;
 
   .--header-cta {
     opacity: 0;
-    width: 40%;
+    width: 38%;
     transition: opacity 1.2s;
 
     @media #{$portrait} {

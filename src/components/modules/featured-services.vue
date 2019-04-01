@@ -70,6 +70,7 @@ export default {
     width: 45%;
     order: 2;
     position: relative;
+    overflow: visible;
     z-index: 2;
     margin-left: 5vw;
 
@@ -81,9 +82,9 @@ export default {
 
   // Content portion of the split
   .mdev-service-content {
-    width: 55%;
+    width: 56%;
     order: 1;
-    padding-right: 10%;
+    padding-right: 9%;
 
     @media #{$portrait} {
       width: 100%;

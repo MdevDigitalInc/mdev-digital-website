@@ -90,6 +90,7 @@ $buttonSize: 10px;
 
 .mdev-media-carousel {
   position: relative;
+  overflow: visible;
   width: 100%;
   z-index: 1;
 
