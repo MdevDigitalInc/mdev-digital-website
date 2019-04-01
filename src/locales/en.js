@@ -52,7 +52,7 @@ export default {
     largeTitle: "Don't wait, say hello!",
     description: "Get in touch to learn more about our services. We’ll start with a discovery session to explore how we can help you reach your goals.",
     headerBtn: "Send a message",
-    thankyouMsg: "Thanks for reaching out, we'll be in touch as soon as possible. While you wait, our case studies are a great place to learn about the value we've brought to our clients. If you've already seen them, we highly recommend creeping our social channels!",
+    thankyouMsg: "Thanks for reaching out, we'll be in touch as soon as possible. While you wait, we highly recommend creeping our social channels!",
     thankyouAction: "See All Case Studies",
 
     fields: {

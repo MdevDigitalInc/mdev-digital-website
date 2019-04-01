@@ -7,16 +7,20 @@
         animClassRight="a-flyin a-flyin-left a-in-viewport" :reverse="true" :top="!formSubmitted">
         <!-- Right Split [reversed:true] -->
         <template slot="leftSlot">
-          <base-form v-on:submitted="swapForm" v-if="!formSubmitted" data-form></base-form>
+          <base-form
+            v-on:submitted="swapForm"
+            v-if="!formSubmitted" data-form></base-form>
           <div class="mdev-acknowledge u-text-center" v-if="formSubmitted" data-form-thankyou>
             <img :src="loadImage(thankyouIcon)" alt="Paper Airplane Flying">
             <p>
               {{ $t("contact.thankyouMsg") }}
             </p>
             <!-- Primary Button -->
+            <!--
             <btn-primary :BtnData="BtnData">
               {{ $t("contact.thankyouAction") }}
             </btn-primary>
+            -->
           </div>
         </template>
 
