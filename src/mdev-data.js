@@ -458,7 +458,7 @@ export default  {
       {
         title: 'Think before you brand',
         subTitle: 'Corporate identity systems',
-        description: 'Systems Creating a brand with impact is crucial for any product or company to be noticed. We can help you develop a new brands, refresh an exist logo, or work with you to consolidate your existing brands into a cohesive corporate identity system.',
+        description: 'Creating a brand with impact is crucial for any product or company to be noticed. We can help you develop a new brands, refresh an existing logo, or work with you to consolidate your existing brands into a cohesive corporate identity system.',
         topics: [
           'Logo design',
           'Corporate Identity Systems',

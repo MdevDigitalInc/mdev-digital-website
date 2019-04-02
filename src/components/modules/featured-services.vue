@@ -39,7 +39,8 @@ export default {
 .mdev-featured-services {
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
 
   @media #{$portrait} {
     margin: 100px 0;
