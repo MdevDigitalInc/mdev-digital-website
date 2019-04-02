@@ -122,7 +122,7 @@ export default {
   },
 
   webdevpage: {
-    intro: "We believe in humanizing the web. We accomplish this mission through carefully planned site architecture and a focus on mobile-friendliness, accessibility and approachable web design. The end result is of this consistently user-friendly sites that delight our clients and visitors."
+    intro: "Our process of guided discovery and collaboration allows us to gain a deep understanding of your business and technology landscape to ensure we are delivering an end result that is the right fit for you and your clients."
   },
 
   appdevpage: {

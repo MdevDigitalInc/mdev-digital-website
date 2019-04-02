@@ -1,5 +1,5 @@
 <template>
-  <section class="mdev-featured-content --section-space">
+  <section class="mdev-featured-content">
     <div class="mdev-featured-wrapper flex flex-vert-start"
       :class="{ '--flip-order' : flip, 'flex-hor-center' : media, 'flex-hor-start' : !media }">
       <!-- Media slot for image -->

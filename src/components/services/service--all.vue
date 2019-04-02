@@ -41,7 +41,7 @@
       :key="index"
       :media="service.media"
       v-in-viewport
-      class="a-fade-in mdev-service"
+      class="a-fade-in mdev-service --featured-space"
       :class="{ '--square-media' : service.squareImg }"
       :serviceConfig="service.config">
       <!-- Media Slot (Order can be flipped) -->

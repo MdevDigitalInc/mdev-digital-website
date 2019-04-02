@@ -343,12 +343,12 @@ export default  {
           imageDesc: 'Samples of our Web Design Work.',
         }
       ],
-      description: 'We specialize in designing custom sites carefully crafted to showcase your unique offering. Our robust and forward- thinking web practices ensure site longevity and scalability. After a collaborative planning process, you can sit back while we put a laser-focus on all the details, large and small.',
+      description: 'We specialize in designing carefully crafted custom sites to showcase your unique offerings. Our digital team keeps on top of the latest web trends and coding practices to produce clear user journeys and enjoyable web experiences. After a collaborative planning process, you can sit back while we put a laser-focus on all the details, large and small.',
       topics: [
         'Custom Website Design & Development',
         'Ecommerce',
         'Mobile-friendly Websites',
-        'Accessibility'
+        'WCAG 2.0 Accessibility'
       ],
       action: 'Learn More',
       BtnData: {
@@ -370,7 +370,7 @@ export default  {
           imageDesc: 'Samples of our Software Development Work.',
         }
       ],
-      description: 'Utilizing robust, scalable platforms, we build efficient, cost-effective software solutions. Our forward-thinking development practices and thorough documentation will ensure long-lasting quality and scalability, allowing your software capabilities to expand with your business.',
+      description: 'Utilizing reliable platforms and technology, we build efficient, cost-effective software solutions. Our forward-thinking development practices and thorough documentation will ensure long-lasting quality and scalability, allowing your software capabilities to expand with your business.',
       topics: [
         'Guided Discovery',
         'Agile Project Management',
@@ -398,7 +398,7 @@ export default  {
           imageDesc: 'Samples of our Digital Marketing Work.',
         }
       ],
-      description: 'Digital marketing is the art of being noticed online. With our help, carefully craft a digital marketing strategy that combines conversion-focused content with qualified lead generation to build brand awareness and drive traffic to your website.',
+      description: 'Digital marketing is the art of being noticed online. Let\'s collaborate on buidling a digital marketing strategy that combines conversion-focused content with qualified lead generation to build brand awareness and drive traffic to your website.',
       topics: [
         'Search Engine Optimization',
         'Search Engine Marketing',
