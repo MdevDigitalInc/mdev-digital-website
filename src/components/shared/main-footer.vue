@@ -6,31 +6,43 @@
       <a href="/" class="mdev-footer-brand" title="MDEV Digital Home Page">
         <img :src="loadImage(mdevBrand)" alt="MDEV Digital Logo" />
       </a>
-      <div class="mdev-footer-copyright">
+      <div class="mdev-footer-copyright flex flex-nowrap">
+        <span>
           &copy; MDEV Digital Inc. {{year}}
-          <span class="--divider"> | </span>
-          <a href="#" title="View our Sitemap">Sitemap</a>
+        </span>
+        <span class="--divider"> | </span>
+        <social-links darkTheme="" :showLinks="navIsOpen" :linkContent="socialLinks"></social-links>
       </div>
   </footer>
 </template>
 
 <script>
-  export default{
-    name: 'mainFooter',
-    data: function(){
-      return{
-        mdevBrand: 'svg/MDEV_RGB_Icon_Primary_Reverse.svg',
-        year: null
-      };
-    },
+import SocialLinks      from './social-links.vue';
+// Import Flat File Data
+import MdevData         from '../../mdev-data.js';
 
-    created: function() {
-      this.year = (new Date()).getFullYear();
-    }
-  };
+export default{
+  name: 'mainFooter',
+  data: function(){
+    return{
+      socialLinks: MdevData.socialLinks,
+      mdevBrand: 'svg/MDEV_RGB_Icon_Primary_Reverse.svg',
+      year: null
+    };
+  },
+
+  // Components
+  components: {
+    'social-links' : SocialLinks
+  },
+
+  created: function() {
+    this.year = (new Date()).getFullYear();
+  }
+};
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 /*-------------------------------------*/
 /* MAIN FOOTER Component Styles
 /--------------------------------------*/
@@ -55,6 +67,7 @@
 .mdev-footer-slogan {
   font-weight: 700;
   letter-spacing: 2px;
+  width: auto;
   font-size: .85vw;
 
   @media #{$portrait} {
@@ -83,6 +96,10 @@
     font-size: 3vw;
     padding-top: 8px;
   }
+
+  span {
+    white-space: nowrap;
+  }
 }
 
 .mdev-footer-brand {
@@ -109,7 +126,12 @@
 }
 
 .--divider {
-  margin: 0 10px;
+  margin: 0 15px;
+}
+
+.mdev-social-links {
+  width: 100px;
+  justify-content: space-between;
 }
 
 /*--------------------------------------*/
