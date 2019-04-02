@@ -911,8 +911,8 @@ export default  {
   },
 
   prefooter: {
-    heading: 'More services we offer',
-    subheading: 'Ready to get started?',
+    heading: 'Let\'s See how we can help',
+    subheading: 'Start something new',
     BtnData: {
       accessibility: 'Get in touch today!',
       btnRoute: '/contact',
