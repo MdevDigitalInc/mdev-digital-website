@@ -722,7 +722,7 @@ export default  {
       {
         title: 'Share your narrative',
         subTitle: 'Content Marketing',
-        description: 'We can help you write compelling, up-to-date content that will give users a reason to return to your site and social media channels. We can also help you with clear, strong wording about products and services that will give users quick and tactile reasons to purchase your product or interact with your service.',
+        description: 'We understand the well-known adage that "Content is King". Up-to-date, relevant content is essential to growth and retention. We will help you develop engaging messaging that gives users genuine reasons to love and follow your site and social media channels.',
         topics: [
           'Blogging',
           'Website Copy',
@@ -736,11 +736,11 @@ export default  {
       {
         title: 'Connect with your audience',
         subTitle: 'Social Media Marketing',
-        description: 'Social media has become the central hub of communication for many businesses. We can help you develop and execute a social media strategy to promote your products and services to the world.',
+        description: 'Our content and strategies will help give your followers immediate and tactile reasons to engage with your page, purchase your product or interact with your service. We will make your brand stand out in a world dominated by hashtags and emojis.',
         topics: [
-          'Social Media Strategy',
-          'Social Media Campaigns',
-          'Social Media Advertising',
+          'Social Media content & posting strategies',
+          'social media advertising campaigns',
+          'social media best practices & reporting',
           'Graphical & Video Asset Creation'
         ],
         caseStudy: false,
@@ -752,18 +752,29 @@ export default  {
         ]
       },
       {
-        title: 'Algorithm Not Alchemy',
+        title: 'Algorithms Not Alchemy',
         subTitle: 'Search Engine Optimization',
-        description: 'Reaching a new audience for your products and services through proper search engine optimization is a great way to increase your market share. We’ll collaborate with you to understand your goals to create a strong SEO backbone for your site. Sit back and let our expert team worry about keeping on top of the latest search engine and social media algorithms to keep you ahead of the competition.',
-        topics: false,
+        description: 'Google and Bing search results are typically the first point of contact with your brand in the digital world. Providing valuable answers to search queries is key to reaching new audiences and retaining existing customers. Sit back and let our expert team worry about keeping on top of the latest search engine and social media algorithms to keep you ahead of the competition.',
+        topics: [
+          'Seo Audits',
+          'UX Assessments',
+          'Content Ideation',
+          'Competitive Analysis',
+          'Keyword & Ranking Analysis'
+        ],
         caseStudy: false,
         media: false
       },
       {
-        title: 'Demystify Online Marketing',
+        title: 'Generate Qualified Leads',
         subTitle: 'Search Engine Marketing',
-        description: 'Social media has become the central hub of communication for many businesses. We can help you develop and execute a social media strategy to promote your products and services to the world.',
-        topics: false,
+        description: 'Search engine marketing, also known as pay-per-click advertising, yields immediate results. Whether it&apos;s awareness, leads or sales, we will help you develop paid strategies designed to convert highly qualified leads into loyal clients.',
+        topics: [
+          'Paid Digital Ad Strategy',
+          'Account Set Up & Optimization',
+          'Search & Remarketing Campaigns',
+          'Conversion Rate Optimization'
+        ],
         caseStudy: false,
         media: [
           {
@@ -774,8 +785,8 @@ export default  {
       },
       {
         title: 'Set the wheels in motion',
-        subTitle: 'Launch Campaigns',
-        description: 'We know that you are eager to get the word out about your new product or service quickly. We can help you structure a cross-channel launch campaign tailored specifically to your audience including social media, print design, and trade show setups. Our launch campaigns often include a landing page that can supply teaser content while we help you build up to the big announcement.',
+        subTitle: 'Launch Your Campaign',
+        description: 'We know that you are eager to get the word out about your product or service quickly. We will help you structure a omni-channel launch campaign tailored specifically to your audience including social media, print design, and trade show setups. Our launch campaigns often include a landing page that can supply teaser content while we help you build up to the big announcement.',
         topics: [
           'Landing Pages',
           'Event Promotion',

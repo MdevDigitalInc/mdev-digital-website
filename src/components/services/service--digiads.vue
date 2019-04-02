@@ -138,7 +138,7 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'Be heard',
+      pageTitle: 'Digital Marketing Services',
       headerDsc: 'Once you go digital...',
       demistifyAnim: 'services/digiads/MDEV_HEADER_demystify_animated.svg',
       onlineAnim: 'services/digiads/MDEV_HEADER_online_animated.svg',
