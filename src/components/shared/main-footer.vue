@@ -130,8 +130,12 @@ export default{
 }
 
 .mdev-social-links {
-  width: 100px;
+  width: 5vw;
   justify-content: space-between;
+
+  @media #{$portrait} {
+    width: 7vw;
+  }
 }
 
 /*--------------------------------------*/
