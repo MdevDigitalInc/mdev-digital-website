@@ -86,6 +86,7 @@
     <!-- Chapter Link -->
     <chapter-link
       :chapterIndex="chapter.next.index"
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
       :chapterLink="chapter.next.link"
       :a11y="chapter.next.a11y"
       :chapterTitle="chapter.next.title"></chapter-link>

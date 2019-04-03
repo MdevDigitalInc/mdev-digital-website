@@ -70,18 +70,30 @@ export default{
   }
 
   .mdev-prefooter-title {
-    font-size: 100px;
+    font-size: 5.79vw;
     display: block;
     font-weight: 700;
 
     @media #{$portrait} {
-      font-size: 30px;
+      font-size: 90px;
+    }
+
+    @media #{$phone-only} {
+      font-size: 50px;
     }
   }
 
   .mdev-prefooter-subtitle {
     display: block;
-    font-size: 250%;
+    font-size: 2.4vw;
+
+    @media #{$portrait} {
+      font-size: 40px;
+    }
+
+    @media #{$phone-only} {
+      font-size: 20px;
+    }
   }
 
   .mdev-prefooter-cta {
@@ -121,6 +133,10 @@ export default{
       letter-spacing: 1.3px;
       line-height: 1;
       margin-bottom: 5px;
+
+      @media #{$laptop-only} {
+        font-size: 20px;
+      }
     }
 
     .mdev-footer-link {
@@ -132,6 +148,10 @@ export default{
       font-weight: 400;
       font-size: 18px;
       letter-spacing: .2px;
+
+      @media #{$laptop-only} {
+        font-size: 14px;
+      }
 
       &:hover,
       &:focus,

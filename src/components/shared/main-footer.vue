@@ -48,16 +48,12 @@ export default{
 /--------------------------------------*/
 
 .mdev-main-footer {
-  padding: 70px 0;
+  padding: 30px 0;
   // Negative margin needed to close 1px gap
   margin-top: -1px;
   background: $color-brand-bkg;
   width: 100%;
   position: relative;
-
-  @media #{$desktop-up} {
-    padding: 30px 0;
-  }
 
   @media #{$phone-only} {
     flex-wrap: wrap;
@@ -94,9 +90,10 @@ export default{
 
   @media #{$phone-only} {
     width: 100%;
-    text-align: center;
     font-size: 3vw;
     padding-top: 8px;
+    display: flex;
+    justify-content: center;
   }
 
   span {
@@ -137,6 +134,10 @@ export default{
 
   @media #{$portrait} {
     width: 7vw;
+  }
+
+  @media #{$phone-only} {
+    width: 20vw;
   }
 }
 
