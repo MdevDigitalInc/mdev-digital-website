@@ -67,7 +67,8 @@ export default{
 .mdev-footer-slogan {
   font-weight: 700;
   letter-spacing: 2px;
-  width: auto;
+  width: 50%;
+  text-align: right;
   font-size: .85vw;
 
   @media #{$portrait} {
@@ -85,6 +86,7 @@ export default{
   font-weight: 400;
   letter-spacing: 3px;
   font-size: .85vw;
+  width: 50%;
 
   @media #{$portrait} {
     font-size: 1.2vw;
