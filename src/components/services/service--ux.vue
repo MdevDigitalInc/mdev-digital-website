@@ -201,6 +201,10 @@ $heading-top-padding-mob: 15px;
   @media #{$phone-only} {
     padding-top: 130%;
   }
+
+  @media #{$tablet-lnd-only} {
+    padding-top: 60%;
+  }
 }
 
 .--vivus-branding {
@@ -273,6 +277,10 @@ $heading-top-padding-mob: 15px;
 
     @media #{$xl-up} {
       top: 40%;
+    }
+
+    @media #{$tablet-lnd-only} {
+      width: 100%;
     }
   }
 

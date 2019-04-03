@@ -211,6 +211,10 @@ $heading-top-padding-mob: 15px;
   @media #{$phone-only} {
     padding-top: 130%;
   }
+
+  @media #{$tablet-lnd-only} {
+    padding-top: 70%;
+  }
 }
 
 .--vivus-branding {
@@ -249,6 +253,10 @@ $heading-top-padding-mob: 15px;
       text-align: left;
       margin-top: $heading-top-padding-mob + 10;
     }
+
+    @media #{$tablet-lnd-only} {
+      width: 60%;
+    }
   }
 
   .--anim-visible {
@@ -281,6 +289,10 @@ $heading-top-padding-mob: 15px;
 
     @media #{$tablet-prt-only} {
       width: 75%;
+    }
+
+    @media #{$tablet-lnd-only} {
+      width: 100%;
     }
 
     @media #{$xl-up} {

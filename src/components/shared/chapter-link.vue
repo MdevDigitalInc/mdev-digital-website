@@ -56,6 +56,10 @@ export default{
       width: 85%;
     }
 
+    @media #{$tablet-lnd-only} {
+      width: 50%;
+    }
+
     // Hover
     &:hover,
     &:active,

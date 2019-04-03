@@ -137,6 +137,10 @@ export default{
       @media #{$laptop-only} {
         font-size: 20px;
       }
+
+      @media #{$tablet-lnd-only} {
+        font-size: 18px;
+      }
     }
 
     .mdev-footer-link {
@@ -151,6 +155,10 @@ export default{
 
       @media #{$laptop-only} {
         font-size: 14px;
+      }
+
+      @media #{$tablet-lnd-only} {
+        font-size: 13px;
       }
 
       &:hover,

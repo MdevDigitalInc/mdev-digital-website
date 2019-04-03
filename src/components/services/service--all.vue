@@ -204,6 +204,10 @@ export default{
     padding-top: 150%;
     padding-bottom: 10%;
   }
+
+  @media #{$tablet-lnd-only} {
+    padding-top: 45%;
+  }
 }
 
 .mdev-service {

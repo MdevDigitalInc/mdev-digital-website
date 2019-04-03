@@ -140,6 +140,10 @@ export default {
   @media #{$phone-only} {
     padding-top: 100%;
   }
+
+  @media #{$tablet-lnd-only} {
+    padding-top: 60%;
+  }
 }
 
 .--vivus-contact {
@@ -201,6 +205,10 @@ export default {
       text-align: left;
       margin-top: 20px;
     }
+
+    @media #{$tablet-lnd-only} {
+      width: 40%;
+    }
   }
 
   .--anim-visible {
@@ -223,6 +231,10 @@ export default {
 
     @media #{$portrait} {
       text-align: center;
+      width: 100%;
+    }
+
+    @media #{$tablet-lnd-only} {
       width: 100%;
     }
   }

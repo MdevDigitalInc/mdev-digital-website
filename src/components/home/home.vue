@@ -11,9 +11,9 @@
     <!-- Case Studies -->
     <home-casestudies  v-view="(e) => changeNavBrand(e, '--teal-white')"></home-casestudies>
     <!-- About Us -->
-    <home-about   v-view="(e) => changeNavBrand(e, '--white-black')"></home-about>
+    <home-about v-view="(e) => changeNavBrand(e, '--white-black')"></home-about>
     <!-- Testimonial -->
-    <home-testimonials :testimonials="testimonials"></home-testimonials>
+    <home-testimonials v-view="(e) => changeNavBrand(e, '--teal-black')" :testimonials="testimonials"></home-testimonials>
     <!-- Footer -->
     <main-footer></main-footer>
   </div>

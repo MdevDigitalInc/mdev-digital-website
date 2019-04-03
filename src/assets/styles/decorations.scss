@@ -14,6 +14,10 @@
     width: 900%;
     left: -400%;
   }
+  @media #{$tablet-lnd-only} {
+    width: 300%;
+    left: -100%;
+  }
 }
 
 .--sexy-green {

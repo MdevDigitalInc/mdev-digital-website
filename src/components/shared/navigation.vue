@@ -127,7 +127,7 @@ export default{
         $('[data-main-header]').addClass('--user-scroll');
         $('[data-main-nav]').addClass('--user-scroll');
       }
-      else if (distance <= 0) {
+      else if (distance <= 10) {
         $('[data-main-header').removeClass('--user-scroll');
         $('[data-main-nav').removeClass('--user-scroll');
       }

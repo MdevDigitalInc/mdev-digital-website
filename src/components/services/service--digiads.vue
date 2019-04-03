@@ -213,6 +213,10 @@ $heading-top-padding-mob: 15px;
   @media #{$phone-only} {
     padding-top: 130%;
   }
+
+  @media #{$tablet-lnd-only} {
+    padding-top: 60%;
+  }
 }
 
 .--vivus-digiads {
@@ -251,6 +255,11 @@ $heading-top-padding-mob: 15px;
       text-align: left;
       margin-top: 30px;
     }
+
+    @media #{$tablet-lnd-only} {
+      width: 80%;
+      font-size: 14px;
+    }
   }
 
   .--anim-visible {
@@ -283,6 +292,10 @@ $heading-top-padding-mob: 15px;
 
     @media #{$tablet-prt-only} {
       width: 75%;
+    }
+
+    @media #{$tablet-lnd-only} {
+      width: 100%;
     }
 
     @media #{$xl-up} {
