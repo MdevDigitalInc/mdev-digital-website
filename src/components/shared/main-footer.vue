@@ -133,7 +133,7 @@ export default{
   justify-content: space-between;
 
   @media #{$portrait} {
-    width: 7vw;
+    width: 10vw;
   }
 
   @media #{$phone-only} {

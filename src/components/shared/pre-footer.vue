@@ -62,7 +62,19 @@ export default{
   background: $color-brand-primary;
   width: 100%;
   position: relative;
-  padding: 180px 0 120px;
+  padding: 180px 0 100px;
+
+  @media #{$laptop-only} {
+    padding-bottom: 80px;
+  }
+
+  @media #{$portrait} {
+    padding-bottom: 70px;
+  }
+
+  @media #{$phone-only} {
+    padding: 150px 0 50px;
+  }
 
   .mdev-main-wrapper {
     max-width: 1900px;
@@ -79,7 +91,7 @@ export default{
     }
 
     @media #{$phone-only} {
-      font-size: 50px;
+      font-size: 60px;
     }
   }
 
@@ -123,6 +135,10 @@ export default{
 
     @media #{$portrait} {
       width: 100%;
+
+      &:first-child {
+        margin-top: 25px;
+      }
     }
 
     .--heading {

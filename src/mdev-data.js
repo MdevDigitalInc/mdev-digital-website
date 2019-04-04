@@ -929,9 +929,9 @@ export default  {
             a11y: 'Custom Logo Designs'
           },
           {
-            linkName: 'Corporate Identity Systems',
+            linkName: 'Corporate Identities',
             linkRoute: '/services/branding',
-            a11y: 'Corporate Identity Systems'
+            a11y: 'Corporate Identities'
           },
           {
             linkName: 'Print & Digital design',
@@ -965,7 +965,7 @@ export default  {
             a11y: 'Mobile-friendly websites'
           },
           {
-            linkName: 'Accessibility',
+            linkName: 'Online Accessibility',
             linkRoute: '/services/ui-ux',
             a11y: 'Accessibility'
           }
@@ -1038,7 +1038,7 @@ export default  {
         heading: 'Support',
         list: [
           {
-            linkName: 'Consulting',
+            linkName: 'IT Consulting',
             linkRoute: '/services/consulting',
             a11y: 'Solutions & Consulting services'
           },
@@ -1048,7 +1048,7 @@ export default  {
             a11y: 'Startup launch services'
           },
           {
-            linkName: 'Cloud Technologies',
+            linkName: 'IT Consulting',
             linkRoute: '/services/consulting',
             a11y: 'Setup & Configuration services'
           },
@@ -1063,7 +1063,7 @@ export default  {
             a11y: 'Domain retrieval'
           },
           {
-            linkName: 'Gsuite Management',
+            linkName: 'G Suite Management',
             linkRoute: '/services/consulting',
             a11y: 'Gsuite setup & management'
           }
