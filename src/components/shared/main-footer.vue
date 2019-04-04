@@ -11,7 +11,7 @@
           &copy; MDEV Digital Inc. {{year}}
         </span>
         <span class="--divider"> | </span>
-        <social-links darkTheme="" :showLinks="navIsOpen" :linkContent="socialLinks"></social-links>
+        <social-links darkTheme="" :linkContent="socialLinks"></social-links>
       </div>
   </footer>
 </template>

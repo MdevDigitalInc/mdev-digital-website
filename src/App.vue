@@ -43,13 +43,23 @@ export default{
     return {
       isLoading: true,
       isHome: true,
-      brandReverse: false
+      brandReverse: false,
+      keys: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+      current: 0
     };
   },
 
   components: {
     'main-navigation' : MainNavigation,
     'brand-animation' : BrandAnimation
+  },
+
+  created: function(){
+    window.addEventListener("keyup", this.konami);
+  },
+
+  beforeDestroy: function() {
+    window.removeEcentListener("keyup", this.konami);
   },
 
   mounted: function(){
@@ -111,6 +121,21 @@ export default{
     skipNav() {
       var anchor = $("#mainContent").offset().top;
       $('html,body').scrollTop(anchor);
+    },
+
+    konami(e) {
+      const key = e.which || e.keyCode || e.detail;
+      if (this.keys.includes(key)) {
+        if (key === this.keys[this.current]) {
+          this.current += 1;
+          if (this.current === this.keys.length) {
+            alert("Konami In Yo Face!");
+            this.current = 0;
+          }
+        } else {
+          this.current = 0;
+        }
+      }
     }
   }
 };
