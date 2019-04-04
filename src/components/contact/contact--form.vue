@@ -107,6 +107,10 @@ export default{
   @media #{$portrait} {
     padding: 125px 0 75px;
   }
+
+  @media #{$phone-only} {
+    padding: 125px 0 50px;
+  }
 }
 
 .mdev-form-title {
@@ -116,6 +120,10 @@ export default{
 
   @media #{$portrait} {
     font-size: 13.2vw;
+  }
+
+  @media #{$phone-only} {
+    font-size: 17.2vw;
   }
 }
 
@@ -131,23 +139,23 @@ export default{
 .mdev-main-form {
   width: 100%;
   padding: 0 10%;
-
   color: $color-brand-bkg;
+
   .mdev-social-links {
     font-size: 380%;
     margin: 2vw 0;
 
     @media #{$portrait} {
       margin: 30px 0;
-      font-size: 4vw;
-
-      @media #{$portrait} {
-        font-size: 7vw;
-      }
+      font-size: 7vw;
     }
 
     @media #{$phone-only} {
       margin: 20px 0;
+    }
+
+    @media #{$laptop-only} {
+      font-size: 3vw;
     }
 
     a {
@@ -188,6 +196,10 @@ export default{
 
   p {
     padding-top: 15px;
+  }
+
+  img {
+    width: 100%;
   }
 }
 

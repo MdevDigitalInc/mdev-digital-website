@@ -155,6 +155,7 @@ export default {
 
     @media #{$portrait} {
       height: 9vw;
+      margin-bottom: 10px;
     }
   }
 
@@ -193,12 +194,8 @@ export default {
 
   .--header-cta {
     opacity: 0;
-    width: 20%;
+    width: 30%;
     transition: opacity 1.2s;
-
-    @media #{$laptop-only} {
-      width: 30%;
-    }
 
     @media #{$portrait} {
       width: 100%;
@@ -243,7 +240,7 @@ export default {
     margin-top: 25px;
 
     @media #{$desktop-up} {
-      margin-top: 50px;
+      margin-top: 30px;
     }
   }
 }

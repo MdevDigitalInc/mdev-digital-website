@@ -70,7 +70,7 @@ export default {
       },
       phone: {
         label: "Phone number",
-        placeholder: "000 000 000"
+        placeholder: "Your preferred phone number"
       },
       email: {
         label: "Email Address",

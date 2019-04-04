@@ -228,6 +228,10 @@ export default{
     margin-bottom: 25px;
   }
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   .mdev-input-name {
     font-weight: 700;
     font-size: 1.8vw;
@@ -255,8 +259,16 @@ export default{
 }
 
 .mdev-input-split {
+  @media #{$phone-only} {
+    flex-wrap: wrap;
+  }
+
   .mdev-input-group {
     width: 48%;
+
+    @media #{$phone-only} {
+      width: 100%;
+    }
   }
 }
 
