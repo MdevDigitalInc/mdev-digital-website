@@ -55,8 +55,14 @@ export default {
     };
   },
 
+  // Add automatic interval on mount
   mounted: function() {
     this.intervalTimer = window.setInterval( this.playback, 2300);
+  },
+
+  // Remove automatic interval on dismount
+  beforeDestroy: function() {
+    clearInterval(this.intervalTimer);
   },
 
   methods: {
@@ -65,6 +71,7 @@ export default {
     // flips the '.--active' class on the image with corresponding
     // index.
     traverse(direction, e) {
+      // IF event is fired by the user, stop the timer.
       if ( e ) {
         clearInterval(this.intervalTimer);
       }
@@ -87,6 +94,7 @@ export default {
       }
     },
 
+    // Simple callback function
     playback() {
       this.traverse(1);
     }
