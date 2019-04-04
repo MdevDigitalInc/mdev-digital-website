@@ -12,12 +12,12 @@
       class="mdev-media-controls flex flex-vert-center">
       <button
         aria-label="View Previous Image"
-        class="mdev-media-skip" v-on:click.stop="traverse(-1)">
+        class="mdev-media-skip" v-on:click.stop="traverse(-1, $event)">
         <span class="u-screenreader"> Previous </span>
       </button>
       <button
         aria-label="View Next Image"
-        class="mdev-media-skip" v-on:click.stop="traverse(1)">
+        class="mdev-media-skip" v-on:click.stop="traverse(1, $event)">
         <span class="u-screenreader"> Next </span>
       </button>
     </div>
@@ -50,8 +50,13 @@ export default {
   // beind displayed.
   data: function(){
     return{
-      desiredIndex: 0
+      desiredIndex: 0,
+      intervalTimer: null
     };
+  },
+
+  mounted: function() {
+    this.intervalTimer = window.setInterval( this.playback, 2300);
   },
 
   methods: {
@@ -59,7 +64,10 @@ export default {
     // incrementing or decrementing the desiredIndex. This in turn
     // flips the '.--active' class on the image with corresponding
     // index.
-    traverse(direction) {
+    traverse(direction, e) {
+      if ( e ) {
+        clearInterval(this.intervalTimer);
+      }
       // Needs array length to know the bounds of the array
       // We don't want it to try to load images that do not exist
       let arrayLen = this.media.length - 1;
@@ -77,6 +85,10 @@ export default {
         // Move as desired
         this.desiredIndex += direction;
       }
+    },
+
+    playback() {
+      this.traverse(1);
     }
   }
 };
@@ -99,7 +111,7 @@ $buttonSize: 10px;
     left: 0;
     top: 0;
     opacity: 0;
-    transition: opacity .4s;
+    transition: opacity .7s;
   }
 
   img.--active {
