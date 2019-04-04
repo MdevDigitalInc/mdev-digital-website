@@ -13,7 +13,7 @@
 export default  {
   links: [
     {
-      linkName: 'About',
+      linkName: 'Company',
       linkTitle: 'Coming Soon!',
       route: '/comingsoon',
       linkIndex: '01'

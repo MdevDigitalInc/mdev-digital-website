@@ -22,7 +22,7 @@ export default {
     return {
       BtnData: {
         accessibility: 'About Our Process',
-        btnRoute: '/about',
+        btnRoute: '/company',
         btnClass: 'mdev-primary-btn --space-top-sm'
       }
     };

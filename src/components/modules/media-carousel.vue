@@ -110,7 +110,7 @@ $buttonSize: 10px;
   .mdev-media-controls {
     margin-top: 35px;
     width: 100%;
-    position: absolute;
+    position: relative;
     z-index: 2;
 
     @media #{$portrait} {

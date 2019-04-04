@@ -91,7 +91,6 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     order: 1;
     margin-right: 5vw;
     position: relative;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
     z-index: 2;
 
     @media #{$portrait} {
@@ -114,6 +113,10 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
         left: -100px;
         bottom: 50px;
       }
+    }
+
+    img {
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
     }
   }
 

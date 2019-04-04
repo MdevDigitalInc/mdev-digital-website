@@ -35,7 +35,7 @@ export const routes = [
     component: ErrorPage
   },
   {
-    path: '/about',
+    path: '/company',
     component: About
   },
   {
