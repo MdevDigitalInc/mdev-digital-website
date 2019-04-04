@@ -458,12 +458,12 @@ export default  {
       {
         title: 'Think before you brand',
         subTitle: 'Corporate identity systems',
-        description: 'Creating a brand with impact is crucial for any product or company to be noticed. We can help you develop a new brands, refresh an existing logo, or work with you to consolidate your existing brands into a cohesive corporate identity system.',
+        description: 'Creating a brand with impact is crucial for any product or company to succeed. We can help you distill your unique corporate personality into a new identity, refresh an existing logo, or consolidate existing sub-brands into a cohesive corporate identity system.',
         topics: [
           'Logo design',
           'Corporate Identity Systems',
           'Brand &amp; style guidelines',
-          'Business card &amp; stationery packages'
+          'Business cards &amp; stationery packages'
         ],
         caseStudy: false,
         media: [
@@ -476,13 +476,12 @@ export default  {
       {
         title: 'Cross- channel creative',
         subTitle: 'Print & Digital Design',
-        description: 'A brand needs more than a logo and a website to succeed. Our creative services span traditional print and digital media to ensure that the look and feel of your brand matches across all mediums.',
+        description: 'Your brand is going to need more than a logo and a website to succeed. Our creative services span print and digital media to ensure that the look and feel of your materials is consistent.',
         topics: [
-          'Print &amp; Digital Design',
-          'Marketing Materials',
+          'Brochure Design',
           'Publication Layout',
           'Banners &amp; Tradeshow Graphics',
-          'Retail Signage'
+          'Retail Signage &amp; Point of Purchase Displays'
         ],
         caseStudy: false,
         media: [
@@ -536,10 +535,10 @@ export default  {
     services: [
       {
         title: 'The web has gotten crowded',
-        subTitle: 'Custom Design & Development',
-        description: 'Stand out in the digital realm with powerful, feature rich websites, built to be fully accessible and mobile-responsive from the very beginning. Utilizing the latest technologies, modern design techniques and methodical coding practices, we deliver quality digital solutions tailored to fit.',
+        subTitle: 'Design & Development',
+        description: 'Stand out in the digital realm with a powerful, feature-rich custom website, built to be fully accessible and mobile-friendly from the very beginning. Our design and development team stays on top of the latest user experience design trends and coding practices to produce lightning-fast, mobile-friendly websites.',
         topics: [
-          'Custom Web Design & Development',
+          'Custom Design & Development',
           'User Interface Design',
           'Responsive Web Design',
           'Custom Wordpress Development'
@@ -563,12 +562,13 @@ export default  {
       {
         title: 'Set</br>Up</br>Shop',
         subTitle: 'Ecommerce',
-        description: 'If you have a product or service to sell, our team can help you choose the best software for your store, provide advice on how to organize your products and how best to position your offerings. We can also help you with integrated cross-channel marketing campaigns to grow your new empire.',
+        description: 'If you build it, they will come. But will they know what to do when they get there? Guide your users from start to cart with custom ecommerce sites built around your unique user journey. We\'ll help you choose the best platform for your online store, provide advice on how to organize your products and prepare your site for integrated marketing strategies right from launch.',
         topics: [
           'Custom ecommerce development',
           'Shopify',
           'Woocommerce',
           'Digital Marketing',
+          'Email Marketing &amp; Email Templates'
         ],
         caseStudy: false,
         media: [
@@ -592,8 +592,8 @@ export default  {
         title: 'Remove Digital Barriers',
         content: [
           {
-            title: 'Mobile Friendly Sites',
-            description: 'it is no longer acceptable to have a website that doesn\'t function across multiple devices and browsers. Mobile-friendly design is part of every web project we handle. Prior to any launch, we perform extensive testing to insure optimum performance in all environments.',
+            title: 'Mobile-friendly sites',
+            description: 'It is no longer acceptable to have a website that doesn\'t function across multiple devices and browsers. Mobile-friendly design is part of every web project we handle. Prior to any launch, we perform extensive testing to insure optimum performance in all environments.',
             topics: [
               'Cross-device testing',
               'Multi-browser testing',
@@ -722,7 +722,7 @@ export default  {
       {
         title: 'Share your narrative',
         subTitle: 'Content Marketing',
-        description: 'We understand the well-known adage that "Content is King". Up-to-date, relevant content is essential to growth and retention. We will help you develop engaging messaging that gives users genuine reasons to love and follow your site and social media channels.',
+        description: 'Authentic, up-to-date content is essential to growth and retention. We will help you develop an engaging narrative that gives people genuine reasons to love and follow your site and social media channels.',
         topics: [
           'Blogging',
           'Website Copy',
@@ -736,7 +736,7 @@ export default  {
       {
         title: 'Connect with your audience',
         subTitle: 'Social Media Marketing',
-        description: 'Our content and strategies will help give your followers immediate and tactile reasons to engage with your page, purchase your product or interact with your service. We will make your brand stand out in a world dominated by hashtags and emojis.',
+        description: 'Strategic, impactful content will help give your followers immediate and tactile reasons to engage with your page, purchase your product or interact with your service. We know how to make your brand stand out in a world dominated by hashtags and emojis.',
         topics: [
           'Social Media content & posting strategies',
           'social media advertising campaigns',
@@ -754,7 +754,7 @@ export default  {
       {
         title: 'Algorithms Not Alchemy',
         subTitle: 'Search Engine Optimization',
-        description: 'Google and Bing search results are typically the first point of contact with your brand in the digital world. Providing valuable answers to search queries is key to reaching new audiences and retaining existing customers. Sit back and let our expert team worry about keeping on top of the latest search engine and social media algorithms to keep you ahead of the competition.',
+        description: 'Google search results are often the first point of contact with your brand in the digital world. Providing valuable answers to search queries is key to reaching new audiences and retaining existing customers. Let our expert team worry about keeping on top of the latest search engine and social media algorithms to keep you ahead of the competition.',
         topics: [
           'Seo Audits',
           'UX Assessments',
@@ -768,7 +768,7 @@ export default  {
       {
         title: 'Generate Qualified Leads',
         subTitle: 'Search Engine Marketing',
-        description: 'Search engine marketing, also known as pay-per-click advertising, yields immediate results. Whether it&apos;s awareness, leads or sales, we will help you develop paid strategies designed to convert highly qualified leads into loyal clients.',
+        description: 'Search engine marketing, also known as pay-per-click advertising, yields immediate results. Whether it\'s awareness, leads or sales, we will help you develop paid strategies designed to convert highly qualified leads into loyal clients.',
         topics: [
           'Paid Digital Ad Strategy',
           'Account Set Up & Optimization',

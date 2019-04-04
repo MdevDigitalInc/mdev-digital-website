@@ -114,7 +114,7 @@ export default {
   },
 
   brandingpage: {
-    intro: "Every business has a unique story - what’s yours? Whether you’re launching a startup, releasing a new product or service, or overhauling your current brand, we can help you discover and share your voice and your style."
+    intro: "Every brand has a unique story - what’s yours? Whether you’re launching a startup, releasing a new product or service, or overhauling your current brand, we can help you develop an authentic identity and tell your story through engaging creative materials."
   },
 
   prefooter: {
@@ -122,7 +122,7 @@ export default {
   },
 
   webdevpage: {
-    intro: "Our process of guided discovery and collaboration allows us to gain a deep understanding of your business and technology landscape to ensure we are delivering an end result that is the right fit for you and your clients."
+    intro: "We believe in making the web a nicer place to be. We accomplish this mission through carefully planned site architecture and approachable web design. We keep the end user in mind, providing clear user journeys and personalized experiences."
   },
 
   appdevpage: {
@@ -130,7 +130,7 @@ export default {
   },
 
   digiadspage: {
-    intro: "We combine the art of marketing backed by the science of data. We're experts at amalgamating compelling marketing strategies and tactics with understandable and measurable results."
+    intro: "Dive into the digital space with confidence. We back the art of marketing with the science of data. We're experts at integrating compelling marketing strategies with strong branding to provide understandable and measureable results."
   },
 
   consultingpage: {
