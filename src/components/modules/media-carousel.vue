@@ -51,13 +51,16 @@ export default {
   data: function(){
     return{
       desiredIndex: 0,
-      intervalTimer: null
+      intervalTimer: null,
+      // Randomize interval so they don't all switch at the same time
+      // Sets min / max time in miliseconds
+      interval: (Math.random() * (2600 - 2100) + 2100 )
     };
   },
 
   // Add automatic interval on mount
   mounted: function() {
-    this.intervalTimer = window.setInterval( this.playback, 2300);
+    this.intervalTimer = window.setInterval( this.playback, this.interval);
   },
 
   // Remove automatic interval on dismount
