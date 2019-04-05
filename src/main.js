@@ -144,10 +144,11 @@ router.beforeEach(function( to, from, next){
 // [ Global Mixins ] --------------------------------
 Vue.mixin({
   methods: {
+    // Load images with require
     loadImage(path){
       return require('./assets/images/' + path);
     },
-    // Change Language METHOD
+    // Change Application Language
     change () {
       let current = this.$locale.current();
       if (current === 'en') {
@@ -156,7 +157,8 @@ Vue.mixin({
         this.$locale.change('en');
       }
     },
-    changeNavBrand(e, brandClass){
+    // Change Navigation Logo Colors
+    changeNavBrand(e, brandClass) {
       if ( e.target.rect.y <= 0 ) {
         $('[data-main-nav]').removeClass('--teal-black');
         $('[data-main-nav]').removeClass('--white-black');
@@ -164,10 +166,26 @@ Vue.mixin({
         $('[data-main-nav]').addClass(brandClass);
       }
     },
+    // Scroll to specific anchor link
     scrollToHash(hashRef, offset) {
       var element = $(hashRef);
       var top = element.offset().top;
       window.scrollTo(0, (top - offset));
+    },
+    // Checks Visibility of Element (vue-check-view npm)
+    // Takes in event, amount of overlap and Array Length
+    checkVisibility(event, overlap) {
+      if (event.percentInView >= overlap) {
+        if (event.type == 'exit') {
+          return false;
+        }
+        else {
+          return true;
+        }
+      }
+      else {
+        return false;
+      }
     }
   }
 })
