@@ -123,7 +123,8 @@ const router = new VueRouter ({
 let whiteBkgPaths = [
   "contact",
   "team",
-  "services"
+  "services",
+  "company"
 ]
 
 router.beforeEach(function( to, from, next){

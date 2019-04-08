@@ -87,6 +87,7 @@ export default {
   width: 100%;
   position: relative;
   overflow: visible;
+  z-index: 1;
 }
 
 .mdev-main-hero {

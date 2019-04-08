@@ -139,6 +139,10 @@ export default {
   },
 
   aboutpage: {
+    intro: {
+      heading: "Hi there! We’re mdev digital,",
+      subheading: "We’re a hybrid digital agency offering services tailored to our client’s unique needs. We offer branding, custom web design, user experience design, application development and digital marketing (and we never forget the SEO)."
+    }
   },
 
   teampage: {
