@@ -1209,6 +1209,56 @@ export default  {
         src: 'about/MDEV-est-badge.svg',
         a11y: 'MDEV Digital, Established in 2017'
       }
+    },
+    founders: {
+      subheading: 'Meet the',
+      heading: 'Founders',
+      text: 'Founded in 2017 by husband and wife team Lucas Moreira and Becky Domenico, MDEV Digital is not your average agency! Fueled by coffee, tattoos and a shared passion for working on great products, Lucas and Becky envisioned a quality-first, process-driven tech agency intent on creating websites and applications that humanize the web.',
+      chiefs: [
+        {
+          name: 'Lucas Moreira',
+          title: 'Chief Executive Officer',
+          image: 'bios/bio-lucas.png',
+          a11y: 'Our CEO Lucas Moreira'
+        },
+        {
+          name: 'Becky Domenico',
+          title: 'Chief Creative Officer',
+          image: 'bios/bio-becky.png',
+          a11y: 'Our CCO Becky Domenico'
+        }
+      ]
+    },
+    team: {
+      subheading: 'Meet',
+      heading: 'Our team',
+      text: 'Our rockstar team of web development and user experience professionals are passionate learners and kick ass problem solvers determined to do things the right way.',
+      members: [
+        {
+          name: 'Haly Hawkins',
+          title: 'Lead Designer',
+          image: 'bios/bio-haly.png',
+          a11y: 'Our lead designer Haly'
+        },
+        {
+          name: 'Luis Guerrero',
+          title: 'Digital Marketing Manager',
+          image: 'bios/bio-luis.png',
+          a11y: 'Our Digital Marketing Manager Luis'
+        },
+        {
+          name: 'Graham Coutts',
+          title: 'Full Stack Developer',
+          image: 'bios/bio-graham.png',
+          a11y: 'Our Full Stack Developer Graham'
+        },
+        {
+          name: 'Dorian Hall',
+          title: 'Front End Developer',
+          image: 'bios/bio-dorian.png',
+          a11y: 'Our Front End Developer Dorian'
+        }
+      ]
     }
   },
 

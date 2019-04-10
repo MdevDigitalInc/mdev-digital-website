@@ -25,7 +25,7 @@ export default{
 
 <style lang="scss">
 /*-------------------------------------*/
-/* BASE TEMPLATE Component Styles
+/* Process section Component Styles
 /--------------------------------------*/
 .mdev-process {
   background: $color-brand-primary;

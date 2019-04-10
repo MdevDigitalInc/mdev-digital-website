@@ -45,7 +45,11 @@
       :a11y="company.established.a11y"
       :image="company.established.image"></established-section>
     <!-- Founder -->
-    <founder-section></founder-section>
+    <founder-section
+      :heading="company.founders.heading"
+      :subheading="company.founders.subheading"
+      :text="company.founders.text"
+      :founders="company.founders.chiefs"></founder-section>
   </section>
 </template>
 

@@ -44,7 +44,7 @@ export default{
 <style lang="scss" scoped>
 
 /*-------------------------------------*/
-/* BASE TEMPLATE Component Styles
+/* Philosophy Section Component Styles
 /--------------------------------------*/
 .mdev-philosophies {
   padding: 150px 0 100px;

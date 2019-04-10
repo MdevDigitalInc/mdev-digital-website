@@ -21,7 +21,7 @@ export default{
 <style lang="scss">
 
 /*-------------------------------------*/
-/* BASE TEMPLATE Component Styles
+/* Established Section Component Styles
 /--------------------------------------*/
 
 .mdev-established {
