@@ -1154,13 +1154,62 @@ export default  {
         src: 'icons/icon-launch-white.svg'
       },
     ],
-    philosophy: [
-      {
-        icon: 'icons/icon-quality.svg',
-        subheading: 'Bang for your buck',
-        text: 'Quality means that we care about our work. We believe in creating brands and technology that we want to use.'
+    philosophy: {
+      title: 'Our Philosophy',
+      subtitle: 'Values',
+      icons: [
+        {
+          icon: 'icons/icon-quality.svg',
+          a11y: 'Quality Guarantee Icon',
+          heading: 'Quality',
+          subheading: 'Bang for your buck',
+          text: 'Quality means that we care about our work. We believe in creating brands and technology that we want to use.'
+        },
+        {
+          icon: 'icons/icon-integrity.svg',
+          a11y: 'Integrity Guarantee Icon',
+          heading: 'Integrity',
+          subheading: 'No hidden agenda',
+          text: 'Integrity guides our approach in all matters. We believe that trust and honesty are the fundamentals that form lasting relationships.'
+        },
+        {
+          icon: 'icons/icon-tenacity.svg',
+          a11y: 'Tenacity Icon',
+          heading: 'Tenacity',
+          subheading: 'Stick to it!',
+          text: 'Tenacity is our strength of purpose. We believe in taking a persistent approach to solving complex problems.'
+        },
+        {
+          icon: 'icons/icon-curiosity.svg',
+          a11y: 'Curiosity Icon',
+          heading: 'Curiosity',
+          subheading: 'Push the envelope',
+          text: 'Curiosity is our relentless drive to do better. We believe that asking tough questions brings better end results.'
+        },
+        {
+          icon: 'icons/icon-innovation.svg',
+          a11y: 'Innovation Guarantee Icon',
+          heading: 'Innovation',
+          subheading: 'Sky\'s the limit',
+          text: 'Innovation is key to growth. We believe in pushing ourselves to explore new solutions and more efficient workflows.'
+        },
+        {
+          icon: 'icons/icon-adaptability.svg',
+          a11y: 'Adaptability Icon',
+          heading: 'Adaptability',
+          subheading: 'Be Flexible',
+          text: 'Adaptability reminds us that there are many paths to success. We believe that flexibility is an advantage in our ever-changing industry.'
+        }
+      ]
+    },
+    established: {
+      image: 'about/office-banner.png',
+      a11y: 'Our lovely office!',
+      badge: {
+        src: 'about/MDEV-est-badge.svg',
+        a11y: 'MDEV Digital, Established in 2017'
       }
-    ]
+    }
   },
 
   testimonials: [

@@ -35,7 +35,17 @@
       </template>
     </process-section>
     <!-- Philosophy Section -->
-    <philosophy-section></philosophy-section>
+    <philosophy-section
+      :title="company.philosophy.title"
+      :subtitle="company.philosophy.subtitle"
+      :icons="company.philosophy.icons"></philosophy-section>
+    <!-- Established -->
+    <established-section
+      :badge="company.established.badge"
+      :a11y="company.established.a11y"
+      :image="company.established.image"></established-section>
+    <!-- Founder -->
+    <founder-section></founder-section>
   </section>
 </template>
 
@@ -46,6 +56,8 @@ import BtnPrimary         from '../shared/btn-primary.vue';
 import MainFooter         from '../shared/main-footer.vue';
 import ProcessSection     from './about--process.vue';
 import PhilosophySection  from './about--philosophy.vue';
+import EstablishedSection from './about--established.vue';
+import FounderSection     from './about--founders.vue';
 // Flat Data File
 import MdevData           from '../../mdev-data.js';
 
@@ -64,8 +76,8 @@ export default{
     ]
   },
 
-  data: function(){
-    return{
+  data: function() {
+    return {
       heroStyles: {
         backgroundColor: '#0f1617'
       },
@@ -77,12 +89,11 @@ export default{
       // Disables Page Title bar
       pageTitle: 'About MDEV Digital',
       headerDsc: 'About MDEV Digital',
-      company: MdevData.aboutPage
+      company: MdevData.aboutPage,
     };
   },
 
   mounted: function() {
-    console.log(this.company.icons);
     setTimeout(() => {
       $('[data-intro-heading]').addClass('fully-in-viewport');
       // Adjust Arrow
@@ -93,11 +104,13 @@ export default{
   },
 
   components: {
-    'btn-primary'       : BtnPrimary,
-    'hero-main'         : HeroMain,
-    'main-footer'       : MainFooter,
-    'process-section'   : ProcessSection,
-    'philosophy-section': PhilosophySection
+    'btn-primary'         : BtnPrimary,
+    'hero-main'           : HeroMain,
+    'main-footer'         : MainFooter,
+    'process-section'     : ProcessSection,
+    'philosophy-section'  : PhilosophySection,
+    'established-section' : EstablishedSection,
+    'founder-section'     : FounderSection
   }
 };
 </script>

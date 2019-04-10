@@ -55,4 +55,12 @@ html {
   box-sizing: border-box;
 }
 
+img {
+  border-style: none;
+  vertical-align: bottom;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* stylelint-enable */
