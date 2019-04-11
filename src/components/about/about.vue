@@ -56,6 +56,10 @@
       :subheading="company.team.subheading"
       :text="company.team.text"
       :members="company.team.members"></team-section>
+    <!-- Pre-Footer -->
+    <about-prefooter></about-prefooter>
+    <!-- Footer -->
+    <main-footer></main-footer>
   </section>
 </template>
 
@@ -69,6 +73,7 @@ import PhilosophySection  from './about--philosophy.vue';
 import EstablishedSection from './about--established.vue';
 import FounderSection     from './about--founders.vue';
 import TeamSection        from './about--team.vue';
+import AboutPrefooter     from './about--prefooter.vue';
 // Flat Data File
 import MdevData           from '../../mdev-data.js';
 
@@ -124,7 +129,8 @@ export default{
     'philosophy-section'  : PhilosophySection,
     'established-section' : EstablishedSection,
     'founder-section'     : FounderSection,
-    'team-section'        : TeamSection
+    'team-section'        : TeamSection,
+    'about-prefooter'     : AboutPrefooter
   }
 };
 </script>

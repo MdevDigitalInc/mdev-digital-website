@@ -85,6 +85,9 @@ export default {
       .mdev-link-name {
         border-bottom: 4px solid rgba(255, 255, 255, 1);
       }
+      .--dark {
+        border-bottom: 4px solid rgba(0, 0, 0, 1);
+      }
     }
   }
 
@@ -106,6 +109,10 @@ export default {
       font-size: 6vw;
       line-height: 120%;
     }
+  }
+
+  .--dark {
+    border-bottom: 4px solid rgba(0, 0, 0, 0);
   }
 
   .mdev-link-index {

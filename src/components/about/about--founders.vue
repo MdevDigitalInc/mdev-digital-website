@@ -49,6 +49,7 @@ export default{
 .mdev-founders-section {
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .mdev-founders {

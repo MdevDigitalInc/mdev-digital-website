@@ -14,8 +14,9 @@ $blur-anim-props: filter 1s, opacity .6s;
 }
 
 // End State - Triggered by in-viewport directive
-.a-fade-in.fully-in-viewport,
 .a-fade-in-full.fully-in-viewport,
+.a-fade-in-full.above-viewport,
+.a-fade-in.fully-in-viewport,
 .a-fade-in.in-viewport,
 .a-fade-in.above-viewport,
 .a-fade-in-lnd.fully-in-viewport,

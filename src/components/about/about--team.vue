@@ -51,6 +51,7 @@ export default{
 .mdev-team-section {
   width: 100%;
   position: relative;
+  overflow: hidden;
 
   .--subheading {
     font-size: 40px;
@@ -65,6 +66,10 @@ export default{
   @media #{$portrait} {
     width: 100%;
   }
+}
+
+.mdev-team-title {
+  white-space: nowrap;
 }
 
 .mdev-member {

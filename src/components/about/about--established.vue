@@ -28,6 +28,7 @@ export default{
   width: 100%;
   padding: 60px 0;
   position: relative;
+  overflow: hidden;
 
   &:before,
   &:after {
