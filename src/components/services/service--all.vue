@@ -142,16 +142,18 @@ export default{
   },
 
   mounted: function() {
-    setTimeout(() => {
-      $('[data-intro-heading]').addClass('fully-in-viewport');
-      // Adjust Arrow
-    }, 300);
-    setTimeout(() => {
-      $('[data-intro-subhead]').addClass('fully-in-viewport');
-    }, 900);
-    setTimeout(() => {
-      $('[data-header-btn]').addClass('fully-in-viewport');
-    }, 1500);
+    this.$nextTick(() => {
+      setTimeout(() => {
+        $('[data-intro-heading]').addClass('fully-in-viewport');
+        // Adjust Arrow
+      }, 300);
+      setTimeout(() => {
+        $('[data-intro-subhead]').addClass('fully-in-viewport');
+      }, 900);
+      setTimeout(() => {
+        $('[data-header-btn]').addClass('fully-in-viewport');
+      }, 1500);
+    });
   },
 
   components: {

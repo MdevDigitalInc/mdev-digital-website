@@ -50,6 +50,12 @@
       :subheading="company.founders.subheading"
       :text="company.founders.text"
       :founders="company.founders.chiefs"></founder-section>
+    <!-- Team -->
+    <team-section
+      :heading="company.team.heading"
+      :subheading="company.team.subheading"
+      :text="company.team.text"
+      :members="company.team.members"></team-section>
   </section>
 </template>
 
@@ -62,6 +68,7 @@ import ProcessSection     from './about--process.vue';
 import PhilosophySection  from './about--philosophy.vue';
 import EstablishedSection from './about--established.vue';
 import FounderSection     from './about--founders.vue';
+import TeamSection        from './about--team.vue';
 // Flat Data File
 import MdevData           from '../../mdev-data.js';
 
@@ -98,13 +105,15 @@ export default{
   },
 
   mounted: function() {
-    setTimeout(() => {
-      $('[data-intro-heading]').addClass('fully-in-viewport');
-      // Adjust Arrow
-    }, 300);
-    setTimeout(() => {
-      $('[data-intro-subhead]').addClass('fully-in-viewport');
-    }, 900);
+    this.$nextTick(() => {
+      setTimeout(() => {
+        $('[data-intro-heading]').addClass('fully-in-viewport');
+        // Adjust Arrow
+      }, 300);
+      setTimeout(() => {
+        $('[data-intro-subhead]').addClass('fully-in-viewport');
+      }, 900);
+    });
   },
 
   components: {
@@ -114,7 +123,8 @@ export default{
     'process-section'     : ProcessSection,
     'philosophy-section'  : PhilosophySection,
     'established-section' : EstablishedSection,
-    'founder-section'     : FounderSection
+    'founder-section'     : FounderSection,
+    'team-section'        : TeamSection
   }
 };
 </script>

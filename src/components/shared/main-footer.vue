@@ -48,7 +48,7 @@ export default{
 /--------------------------------------*/
 
 .mdev-main-footer {
-  padding: 30px 0;
+  padding: 70px 0;
   // Negative margin needed to close 1px gap
   margin-top: -1px;
   background: $color-brand-bkg;

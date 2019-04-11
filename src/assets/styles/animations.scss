@@ -7,13 +7,15 @@
 $blur-anim-props: filter 1s, opacity .6s;
 
 // Starting State
-.a-fade-in {
+.a-fade-in,
+.a-fade-in-full {
   opacity: 0;
   transition: $blur-anim-props;
 }
 
 // End State - Triggered by in-viewport directive
 .a-fade-in.fully-in-viewport,
+.a-fade-in-full.fully-in-viewport,
 .a-fade-in.in-viewport,
 .a-fade-in.above-viewport,
 .a-fade-in-lnd.fully-in-viewport,
@@ -208,3 +210,34 @@ $flyin-anim-props: opacity .2s ease-out, transform .6s ease-out;
   opacity: 1;
   transform: translate3d( 0, 0, 0);
 }
+
+
+// 3D Rotates
+$rotate-anim-props: transform 1s, opacity .6s;
+// Starting State
+.a-rotate-x {
+  opacity: 0;
+  transform-origin: bottom;
+  transform: rotate3d( 1, 0, 1, 90deg);
+  transition: $rotate-anim-props;
+}
+
+.a-rotate-x-r {
+  opacity: 0;
+  transform-origin: bottom;
+  transform: rotate3d( 1, 0, 1, -90deg);
+  transition: $rotate-anim-props;
+}
+
+// End State - Triggered by in-viewport directive
+.a-rotate-x.fully-in-viewport,
+.a-rotate-x.in-viewport,
+.a-rotate-x.above-viewport,
+.a-rotate-x-r.fully-in-viewport,
+.a-rotate-x-r.in-viewport,
+.a-rotate-x-r.above-viewport {
+  opacity: 1;
+  transform: rotate3d( 1, 0, 1, 0);
+}
+
+

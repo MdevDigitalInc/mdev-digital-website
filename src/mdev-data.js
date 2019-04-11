@@ -194,7 +194,7 @@ export default  {
     {
       employeeName: 'Luis Guerrero',
       employeeTitle: 'Digital Marketing Manager',
-      employeeRoute: 'luis-guerriero',
+      employeeRoute: 'luis-guerrero',
       employeeIntro: 'An award-winning digital marketer with a vast amount of experience ranging from sales to department director, Luis has developed a knack for making the digital space a little more human. His experience in working with companies and major social media influencers from all parts of the world allows him to bring unique and refreshing ideas to the marketing table.',
       employeeStory: [
         'Winning the Americas division, and placing top five globally in the 2014 Google Online Marketing Challenge jump started Luis’ career in internet and social media marketing.',
@@ -292,7 +292,7 @@ export default  {
   employeeRoutes: [
     'lucas-moreira',
     'becky-domenico',
-    'luis-guerriero',
+    'luis-guerrero',
     'haly-hawkins',
     'graham-coutts',
     'dorian-hall'
@@ -1219,12 +1219,16 @@ export default  {
           name: 'Lucas Moreira',
           title: 'Chief Executive Officer',
           image: 'bios/bio-lucas.png',
+          route: '/team/lucas-moreira',
+          linka11y: 'Visit Lucas\' Profile!',
           a11y: 'Our CEO Lucas Moreira'
         },
         {
           name: 'Becky Domenico',
           title: 'Chief Creative Officer',
           image: 'bios/bio-becky.png',
+          route: '/team/becky-domenico',
+          linka11y: 'Visit Becky\'s Profile!',
           a11y: 'Our CCO Becky Domenico'
         }
       ]
@@ -1238,25 +1242,37 @@ export default  {
           name: 'Haly Hawkins',
           title: 'Lead Designer',
           image: 'bios/bio-haly.png',
-          a11y: 'Our lead designer Haly'
+          a11y: 'Our lead designer Haly',
+          route: '/team/haly-hawkins',
+          linka11y: 'Visit Haly\'s Profile!',
+          class: '--haly'
         },
         {
           name: 'Luis Guerrero',
           title: 'Digital Marketing Manager',
           image: 'bios/bio-luis.png',
-          a11y: 'Our Digital Marketing Manager Luis'
+          a11y: 'Our Digital Marketing Manager Luis',
+          route: '/team/luis-guerrero',
+          linka11y: 'Visit Luis\' Profile!',
+          class: '--luis'
         },
         {
           name: 'Graham Coutts',
           title: 'Full Stack Developer',
           image: 'bios/bio-graham.png',
-          a11y: 'Our Full Stack Developer Graham'
+          a11y: 'Our Full Stack Developer Graham',
+          route: '/team/graham-coutts',
+          linka11y: 'Visit Graham\'s Profile!',
+          class: '--graham'
         },
         {
           name: 'Dorian Hall',
           title: 'Front End Developer',
           image: 'bios/bio-dorian.png',
-          a11y: 'Our Front End Developer Dorian'
+          a11y: 'Our Front End Developer Dorian',
+          route: '/team/dorian-hall',
+          linka11y: 'Visit Dorian\'s Profile!',
+          class: '--dorian'
         }
       ]
     }

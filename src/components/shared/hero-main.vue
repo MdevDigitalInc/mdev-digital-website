@@ -10,9 +10,11 @@
         </h1>
       </div>
     </div>
+    <!--
     <div class="mdev-header-arrow-mask" data-main-arrow >
       <div class="mdev-main-header-arrow"></div>
     </div>
+    -->
     <!-- Accessibility Image Description -->
     <div class="u-screenreader" id="headerDescription">
       {{ headerDsc }}
@@ -26,49 +28,54 @@ export default {
 
   props: [ 'pageTitle', 'headerDsc' ],
 
-  data: function() {
-    return {
-      arrowTimer: null
-    };
-  },
+  //data: function() {
+    //return {
+      //arrowTimer: null
+    //};
+  //},
 
   mounted: function() {
     // Resize timer to debounce scroll
-    let resizeTimer;
-    let resizeTime = 50;
+
+    //let resizeTimer;
+    //let resizeTime = 50;
+
     // Adjust Arrow height
 
     // Run for first time on first tick
     this.$nextTick(() => {
       // Adjust background arrow size
-      this.adjustArrow();
+      //this.adjustArrow();
+      // Activate Header
       $('[data-main-hero]').addClass('--mask-active');
     });
 
     // Start repeating interval to set arrow size
-    this.arrowTimer = setInterval( this.adjustArrow, 1000);
+
+    // this.arrowTimer = setInterval( this.adjustArrow, 1000);
 
     // Adjust arrow size on resize
-    $(window).resize(() => {
+
+    //$(window).resize(() => {
       // Clear Timer
-      clearTimeout( resizeTimer );
-      resizeTimer = setTimeout( this.adjustArrow, resizeTime );
-    });
+      //clearTimeout( resizeTimer );
+      //resizeTimer = setTimeout( this.adjustArrow, resizeTime );
+    //});
   },
 
-  methods: {
-    adjustArrow() {
-      let height;
-      height = $('[data-main-hero]').outerHeight(true);
-      $('[data-main-arrow]').css({
-          'height': height + 'px'
-      });
-    }
-  },
+  //methods: {
+    //adjustArrow() {
+      //let height;
+      //height = $('[data-main-hero]').outerHeight(true);
+      //$('[data-main-arrow]').css({
+          //'height': height + 'px'
+      //});
+    //}
+  //},
 
   beforeDestroy: function() {
     // Clear repeating inverval to adjust arrow
-    clearInterval( this.arrowTimer );
+    //clearInterval( this.arrowTimer );
     $('[data-main-hero]').removeClass('--mask-active');
   },
 };
@@ -79,7 +86,6 @@ export default {
 /*-------------------------------------*/
 /* HERO MAIN Component Styles
 /--------------------------------------*/
-
 @import '../../assets/styles/keyframes/hero-anim.scss';
 
 // Containers
@@ -114,6 +120,7 @@ export default {
 
 .mdev-header-arrow-mask {
   position: absolute;
+  display: none;
   top: 3px;
   width: 100%;
   max-height: 97vh;
@@ -161,10 +168,10 @@ export default {
   }
 
   h1 {
-    font-size: 120%;
+    font-size: 80%;
     position: absolute;
     transform: rotate(-90deg);
-    top: 70%;
+    bottom: 20%;
     text-align: center;
     width: 100%;
     white-space: nowrap;
@@ -172,7 +179,6 @@ export default {
     transition: all .5s;
 
     @media #{ $portrait } {
-      top: 60%;
       font-size: 90%;
     }
   }
@@ -183,19 +189,20 @@ $mask-hero-anim-time: 1s;
 $mask-anim-delay: 1s;
 $mask-arrow-anim-time: 3.2s;
 
+/*
 .mdev-main-header-arrow {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   padding-top: 80%;
-  /* Background Gradient Expanded */
+
   background: linear-gradient(
   to bottom, rgba(194, 236, 47, 1)
   0%, rgba(181, 221, 45, 1)
   7%, rgba(71, 91, 30, 0)
   87%, rgba(10, 19, 21, 0) 100%);
-  /* -------------------------- */
+
   opacity: 0;
   background-position: 0% 25%;
   transform: translate3d(0, -480px, 0);
@@ -215,6 +222,7 @@ $mask-arrow-anim-time: 3.2s;
     animation-delay: $mask-hero-anim-time + $mask-anim-delay;
   }
 }
+*/
 
 .--mask-active {
   opacity: 1;
