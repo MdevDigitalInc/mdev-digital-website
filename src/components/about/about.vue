@@ -69,7 +69,7 @@
       :heading="company.hood.heading"
       :text="company.hood.text"
       :decoration="company.hood.decoration"
-      v-view="(e) => changeNavBrand(e, '--teal-white')"></about-hood>
+      v-view="(e) => changeNavBrand(e, '--teal-black')"></about-hood>
     <!-- Pre-Footer -->
     <about-prefooter v-view="(e) => changeNavBrand(e, '--white-black')"></about-prefooter>
     <!-- Footer -->
