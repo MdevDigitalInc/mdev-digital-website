@@ -1,10 +1,10 @@
 <template>
   <section class="mdev-the-hood --pos-reference">
     <div class="mdev-hood-content">
-      <h2 class="u-uppercase u-c-white u-bold">
+      <h2 v-in-viewport class="u-uppercase u-c-white u-bold a-fade-in">
         {{ heading }}
       </h2>
-      <p class="u-c-white">
+      <p v-in-viewport class="u-c-white a-blur-in">
         {{ text }}
       </p>
     </div>
