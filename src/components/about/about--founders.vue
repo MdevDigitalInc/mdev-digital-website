@@ -50,16 +50,34 @@ export default{
   width: 100%;
   position: relative;
   overflow: hidden;
+
+  &.--section-space {
+    @media #{$portrait} {
+      margin: 100px 0 50px;
+    }
+  }
 }
 
 .mdev-founders {
   width: 85%;
   margin: 0 auto;
   max-width: 1800px;
+
+  @media #{$portrait} {
+    flex-wrap: wrap;
+  }
 }
 
 .mdev-founder-content {
   width: 40%;
+
+  @media #{$portrait} {
+    width: 100%;
+    padding: 0 60px;
+  }
+  @media #{$phone-only} {
+    padding: 0 20px;
+  }
 
   .--subheading {
     font-size: 40px;
@@ -69,13 +87,38 @@ export default{
 .mdev-founder-media {
   width: 60%;
   padding: 30px;
+
+  @media #{$portrait} {
+    width: 100%;
+    padding: 0;
+    margin-top: 20px;
+  }
+  @media #{$phone-only} {
+    flex-wrap: wrap;
+  }
 }
 
 .mdev-founder {
-  width: 45%;
-  padding: 20px;
+  width: 100%;
   position: relative;
   z-index: 1;
+
+  &:first-child {
+    @media #{$phone-only} {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media #{$portrait} {
+    padding: 0;
+  }
+  @media #{$tablet-up} {
+    padding: 20px;
+    width: 45%;
+  }
+  @media #{$phone-only} {
+    padding: 20px;
+  }
 
   &:hover,
   &:active,

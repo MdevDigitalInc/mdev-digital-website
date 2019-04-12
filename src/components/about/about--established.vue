@@ -28,9 +28,13 @@ $est-padding: 60px;
   // Hoist to fix small gap
   margin-top: -1px;
   width: 100%;
-  padding: $est-padding 0;
+  padding: ($est-padding + 30) 0 $est-padding ;
   position: relative;
   overflow: hidden;
+
+  @media #{$portrait} {
+    display: none;
+  }
 
   &:before,
   &:after {
@@ -39,7 +43,7 @@ $est-padding: 60px;
   }
 
   &:before {
-    top: 0;
+    top: ($est-padding / 2);
     right: 0;
     left: 30%;
     bottom: 80%;
@@ -64,7 +68,7 @@ $est-padding: 60px;
   .--parallelogram {
     position: absolute;
     z-index: 3;
-    top: -30px;
+    top: 0;
     bottom: 30px;
     left: -10px;
     right: -10px;

@@ -10,11 +10,7 @@
   padding: 0;
   min-width: 290px;
 
-  @media #{$tablet-only} {
-    width: 76%;
-  }
-
-  @media #{$laptop-up} {
+  @media #{$desktop-up} {
     width: 80%;
   }
 }
@@ -210,11 +206,35 @@ $md: 75px;
     font-size: 28px;
     margin: 20px 0 10px;
     letter-spacing: .56px;
+
+    @media #{$laptop-only} {
+      font-size: 20px;
+    }
+
+    @media #{$tablet-lnd-only} {
+      font-size: 15px;
+    }
+
+    @media #{$tablet-prt-only} {
+      font-size: 22px;
+    }
   }
 
   .--title {
     font-size: 20px;
     letter-spacing: .4px;
+
+    @media #{$laptop-only} {
+      font-size: 15px;
+    }
+
+    @media #{$tablet-lnd-only} {
+      font-size: 12px;
+    }
+
+    @media #{$tablet-prt-only} {
+      font-size: 18px;
+    }
   }
 }
 

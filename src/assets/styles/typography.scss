@@ -30,6 +30,7 @@ h6,.h6, {
 // Responsive Font Size Maps
 $p-font-sizes: (
   null  : 22px,
+  $tablet-lnd-only: 18px,
   $phone-only : 15px
 );
 
@@ -44,7 +45,7 @@ $h2-font-sizes: (
   null : 55px,
   $desktop-up  : 120px,
   $laptop-only: 6.6vw,
-  $tablet-lnd-only: 80px,
+  $tablet-lnd-only: 60px,
   $portrait: 85px,
   $phone-only: 55px
 );
@@ -94,12 +95,12 @@ $link-font-sizes: (
 /* Generate Responsive Sizing */
 
 p {
-  line-height: 180%;
+  line-height: 150%;
   font-weight: 400;
   @include font-size($p-font-sizes);
 
-  @media #{$phone-only} {
-    line-height: 150%;
+  @media #{$desktop-up} {
+    line-height: 180%;
   }
 }
 
@@ -179,4 +180,14 @@ a {
   font-size: 125px;
   font-weight: 700;
   text-transform: uppercase;
+
+  @media #{$laptop-only} {
+    font-size: 90px;
+  }
+  @media #{$tablet-lnd-only} {
+    font-size: 80px;
+  }
+  @media #{$phone-only} {
+    font-size: 85px;
+  }
 }

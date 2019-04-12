@@ -1,7 +1,7 @@
 <template>
   <section class="mdev-team-section --section-space">
     <!-- Team Intro -->
-    <div class="mdev-main-wrapper flex flex-hor-center flex-vert-center">
+    <div class="mdev-main-wrapper flex flex-hor-center flex-vert-center flex-wrap">
       <!-- Main Title -->
       <div class="mdev-team-title">
         <span v-in-viewport class="--subheading u-light u-uppercase a-fade-in-full">
@@ -17,7 +17,7 @@
       </p>
     </div>
     <!-- Team Photos -->
-    <div class="mdev-main-wrapper flex flex-hor-between flex-vert-end">
+    <div class="mdev-team mdev-main-wrapper flex flex-hor-between flex-vert-end">
       <router-link v-for="(member, index) in members"
         :title="member.linka11y"
         :to="member.route"
@@ -58,6 +58,13 @@ export default{
   }
 }
 
+.mdev-team {
+  @media #{$portrait} {
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+}
+
 .mdev-team-title,
 .mdev-team-text {
   width: 50%;
@@ -65,6 +72,11 @@ export default{
 
   @media #{$portrait} {
     width: 100%;
+    padding: 0 60px;
+  }
+
+  @media #{$phone-only} {
+    padding: 0 20px;
   }
 }
 
@@ -77,16 +89,26 @@ export default{
   position: relative;
 
   @media #{$portrait} {
-    width: 100%;
+    width: 80%;
+    margin: 0 10%;
   }
-
   @media #{$tablet-prt-only} {
     width: 50%;
+  }
+  @media #{$phone-only} {
+    margin-bottom: 20px;
   }
 
   .--title {
     font-size: 18px;
     white-space: nowrap;
+
+    @media #{$laptop-only} {
+      font-size: 14px;
+    }
+    @media #{$tablet-lnd-only} {
+      font-size: 11px;
+    }
   }
 
   &:hover,

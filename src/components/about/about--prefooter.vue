@@ -10,7 +10,7 @@
           <div class="--huge-title u-uppercase">
             {{ $t("contact.largeTitle") }}
           </div>
-          <div class="flex flex-hor-start flex-vert-center">
+          <div class="flex flex-hor-start">
             <!-- Loads Social Links -->
             <social-links
               darkTheme="true"
@@ -26,7 +26,7 @@
         </template>
         <!-- Right Split -->
         <template slot="rightSlot">
-          <div class="flex flex-hor-center">
+          <div class="flex mdev-about-service">
             <service-links darkMode="true" :links="links" linksTitle="Services"></service-links>
           </div>
         </template>
@@ -77,6 +77,7 @@ export default{
 /--------------------------------------*/
 .mdev-about-prefooter {
   background: $color-brand-accent;
+  overflow: hidden;
 
   .--huge-title {
     margin-bottom: 50px;
@@ -94,6 +95,18 @@ export default{
     justify-content: space-between;
     width: 40%;
     font-size: 3vw;
+
+    @media #{$portrait} {
+      font-size: 6vw;
+    }
+  }
+
+  .mdev-about-service {
+    justify-content: center;
+
+    @media #{$portrait} {
+      justify-content: flex-start;
+    }
   }
 }
 

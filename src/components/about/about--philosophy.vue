@@ -53,16 +53,35 @@ export default{
   position: relative;
   background: $color-brand-bkg;
   z-index: -1;
+  overflow: hidden;
 }
 
 .mdev-philosophy {
   width: 33.33%;
   padding: 45px;
 
+  @media #{$tablet-lnd-only} {
+    padding: 30px;
+  }
+
+  @media #{$portrait} {
+    width: 100%;
+    padding: 20px;
+  }
+
+  @media #{$tablet-prt-only} {
+    width: 50%;
+    padding: 25px;
+  }
+
   .mdev-philosophy-icon {
     height: 7vw;
     width: auto;
     margin-bottom: 15px;
+
+    @media #{$portrait} {
+      height: 20vw;
+    }
   }
 
   .mdev-icon-subhead {

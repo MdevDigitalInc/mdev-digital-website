@@ -30,8 +30,17 @@ export default{
 .mdev-process {
   background: $color-brand-primary;
   padding: 230px 0;
+  overflow: hidden;
   margin-top: -250px;
   z-index: -1;
+
+  @media #{$portrait} {
+    padding: 320px 0 210px;
+
+    &.--triangle-bottom {
+      clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 92%, 0 100%, 0 0);
+    }
+  }
 }
 
 .mdev-process-wrapper {
@@ -50,6 +59,10 @@ export default{
   object {
     width: 10%;
     margin: 0 20px;
+
+    @media #{$portrait} {
+      width: 20%;
+    }
 
     &:first-child {
       margin-left: 0;

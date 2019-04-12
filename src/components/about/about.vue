@@ -24,6 +24,7 @@
     </hero-main>
     <!-- Process Section -->
     <process-section
+      v-view="(e) => changeNavBrand(e, '--white-black')"
       :icons="company.icons"
       :body="company.process.text"
       :title="company.process.title">
@@ -36,28 +37,34 @@
     </process-section>
     <!-- Philosophy Section -->
     <philosophy-section
+      v-view="(e) => changeNavBrand(e, '--teal-white')"
       :title="company.philosophy.title"
       :subtitle="company.philosophy.subtitle"
       :icons="company.philosophy.icons"></philosophy-section>
     <!-- Established -->
     <established-section
+      v-view="(e) => changeNavBrand(e, '--teal-white')"
       :badge="company.established.badge"
       :a11y="company.established.a11y"
       :image="company.established.image"></established-section>
     <!-- Founder -->
     <founder-section
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
       :heading="company.founders.heading"
       :subheading="company.founders.subheading"
       :text="company.founders.text"
       :founders="company.founders.chiefs"></founder-section>
     <!-- Team -->
     <team-section
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
       :heading="company.team.heading"
       :subheading="company.team.subheading"
       :text="company.team.text"
       :members="company.team.members"></team-section>
+    <!-- Our Neighbourhood -->
+    <about-hood v-view="(e) => changeNavBrand(e, '--teal-white')"></about-hood>
     <!-- Pre-Footer -->
-    <about-prefooter></about-prefooter>
+    <about-prefooter v-view="(e) => changeNavBrand(e, '--white-black')"></about-prefooter>
     <!-- Footer -->
     <main-footer></main-footer>
   </section>
@@ -74,6 +81,7 @@ import EstablishedSection from './about--established.vue';
 import FounderSection     from './about--founders.vue';
 import TeamSection        from './about--team.vue';
 import AboutPrefooter     from './about--prefooter.vue';
+import AboutHood          from './about--hood.vue';
 // Flat Data File
 import MdevData           from '../../mdev-data.js';
 
@@ -130,7 +138,8 @@ export default{
     'established-section' : EstablishedSection,
     'founder-section'     : FounderSection,
     'team-section'        : TeamSection,
-    'about-prefooter'     : AboutPrefooter
+    'about-prefooter'     : AboutPrefooter,
+    'about-hood'          : AboutHood
   }
 };
 </script>
@@ -161,7 +170,12 @@ export default{
     padding: 0 12%;
   }
 
-  @media #{$laptop-up} {
+  @media #{$laptop-only} {
+    width: 80%;
+    padding: 0;
+  }
+
+  @media #{$desktop-up} {
     width: 60%;
     padding: 0;
   }
@@ -169,6 +183,10 @@ export default{
   h3 {
     font-size: 36px;
     line-height: 134%;
+
+    @media #{$portrait} {
+      font-size: 20px;
+    }
   }
 }
 
@@ -188,7 +206,6 @@ export default{
     padding-top: 45%;
   }
 }
-
 
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
