@@ -62,7 +62,14 @@
       :text="company.team.text"
       :members="company.team.members"></team-section>
     <!-- Our Neighbourhood -->
-    <about-hood v-view="(e) => changeNavBrand(e, '--teal-white')"></about-hood>
+    <about-hood
+      :background="company.hood.background"
+      :foreground="company.hood.foreground"
+      :a11y="company.hood.a11y"
+      :heading="company.hood.heading"
+      :text="company.hood.text"
+      :decoration="company.hood.decoration"
+      v-view="(e) => changeNavBrand(e, '--teal-white')"></about-hood>
     <!-- Pre-Footer -->
     <about-prefooter v-view="(e) => changeNavBrand(e, '--white-black')"></about-prefooter>
     <!-- Footer -->
@@ -187,6 +194,16 @@ export default{
     @media #{$portrait} {
       font-size: 20px;
     }
+
+    @media #{$tablet-prt-only} {
+      font-size: 30px;
+    }
+  }
+
+  h1 {
+    @media #{$tablet-prt-only} {
+      font-size: 60px;
+    }
   }
 }
 
@@ -226,8 +243,5 @@ export default{
   @include arrow-anim-rules(17s);
 }
 
-
-
 /*--------------------------------------*/
-
 </style>

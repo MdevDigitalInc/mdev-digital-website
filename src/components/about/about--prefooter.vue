@@ -10,7 +10,7 @@
           <div class="--huge-title u-uppercase">
             {{ $t("contact.largeTitle") }}
           </div>
-          <div class="flex flex-hor-start">
+          <div class="flex flex-vert-center flex-hor-start">
             <!-- Loads Social Links -->
             <social-links
               darkTheme="true"

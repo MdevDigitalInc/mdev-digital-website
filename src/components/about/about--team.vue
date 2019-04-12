@@ -93,7 +93,8 @@ export default{
     margin: 0 10%;
   }
   @media #{$tablet-prt-only} {
-    width: 50%;
+    width: 45%;
+    margin: 2%;
   }
   @media #{$phone-only} {
     margin-bottom: 20px;

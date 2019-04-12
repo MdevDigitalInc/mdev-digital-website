@@ -31,8 +31,10 @@ $standard-radius: 4px;
 
 //Clipping Paths
 $clip-triangle-bot: polygon(50% 0%, 100% 0, 100% 100%, 50% 90%, 0 100%, 0 0);
+$clip-triangle-top-reverse: polygon(50% 0%, 100% 10%, 100% 100%, 50% 100%, 0 100%, 0 10%);
 $clip-triangle-top: polygon(50% 10%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
 $clip-triangle-bot-reverse: polygon(50% 0%, 100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
 $clip-triangle-bot-prt: polygon(50% 0%, 100% 0, 100% 100%, 50% 96%, 0 100%, 0 0);
 $clip-triangle-top-prt: polygon(50% 4%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+$clip-triangle-top-reverse-prt: polygon(50% 0%, 100% 5%, 100% 100%, 50% 100%, 0 100%, 0 5%);
 $clip-triangle-bot-reverse-prt: polygon(50% 0%, 100% 0, 100% 94%, 50% 100%, 0 94%, 0 0);

@@ -1,12 +1,34 @@
 <template>
-  <section class="mdev-main-content">
-    <h1> Base Template</h1>
+  <section class="mdev-the-hood --pos-reference">
+    <div class="mdev-hood-content">
+      <h2 class="u-uppercase u-c-white u-bold">
+        {{ heading }}
+      </h2>
+      <p class="u-c-white">
+        {{ text }}
+      </p>
+    </div>
+    <div class="mdev-100-kell" :class="{'--decoration' : decoration}">
+      <img :src="loadImage(foreground)" :alt="a11y"/>
+    </div>
+    <div class="mdev-hood-mask --triangle-top-r">
+      <img :src="loadImage(background)" class="--rotate-hood"/>
+    </div>
   </section>
 </template>
 
 <script>
 export default{
   name: 'BaseTemplate',
+
+  props: [
+    'background',
+    'foreground',
+    'a11y',
+    'heading',
+    'text',
+    'decoration'
+  ]
 
 };
 </script>
@@ -16,8 +38,159 @@ export default{
 /*-------------------------------------*/
 /* BASE TEMPLATE Component Styles
 /--------------------------------------*/
+.mdev-hood-mask {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
 
+.--rotate-hood {
+  animation: rotate-anim infinite;
+  animation-duration: 320s;
+  animation-timing-function: linear;
+  z-index: 1;
 
+  @media #{$portrait} {
+    animation: rotate-anim-prt infinite;
+    animation-duration: 320s;
+    animation-timing-function: linear;
+  }
+
+  @media #{$phone-only} {
+    animation: rotate-anim-mob infinite;
+    animation-duration: 320s;
+    animation-timing-function: linear;
+  }
+
+  @media #{$xl-up} {
+    animation: rotate-anim-xl infinite;
+    animation-duration: 320s;
+    animation-timing-function: linear;
+  }
+}
+
+.mdev-100-kell {
+  z-index: 2;
+  margin-top: 50px;
+  position: relative;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  @media #{$portrait} {
+    margin-top: 400px;
+  }
+
+  @media #{$phone-only} {
+    margin-top: 320px;
+  }
+
+  &:before {
+    @include pseudo();
+    top: 15%;
+    left: 60%;
+    right: 20%;
+    bottom: 30%;
+    border: 4px solid $color-brand-accent;
+    z-index: -1;
+  }
+}
+
+.mdev-hood-content {
+  width: 40vw;
+  position: absolute;
+  z-index: 3;
+  top: 230px;
+  left: 10%;
+
+  @media #{$portrait} {
+    top: 120px;
+    width: 70%;
+    @include center(horizontal);
+  }
+
+  @media #{$laptop-only} {
+    left: 7%;
+  }
+
+  @media #{$tablet-lnd-only} {
+    left: 5%;
+    top: 150px;
+    margin: 0;
+    width: 40vw;
+  }
+
+  @media #{$phone-only} {
+    width: 80%;
+    top: 80px;
+  }
+
+  @media #{$xl-up} {
+    top: 350px;
+  }
+
+  p {
+    margin-right: 25%;
+
+    @media #{$portrait} {
+      margin-right: 10%;
+    }
+  }
+}
+
+// Keyframe Animations for Lines
+@keyframes rotate-anim {
+  0% {
+    transform: rotate(0) scale(1.5);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.9);
+  }
+  100% {
+    transform: rotate(0) scale(1.5);
+  }
+}
+
+@keyframes rotate-anim-xl {
+  0% {
+    transform: rotate(0) scale(3.5);
+  }
+  50% {
+    transform: rotate(180deg) scale(4.9);
+  }
+  100% {
+    transform: rotate(0) scale(3.5);
+  }
+}
+
+@keyframes rotate-anim-prt {
+  0% {
+    transform: rotate(0) scale(2.5);
+  }
+  50% {
+    transform: rotate(180deg) scale(3.9);
+  }
+  100% {
+    transform: rotate(0) scale(2.5);
+  }
+}
+
+@keyframes rotate-anim-mob {
+  0% {
+    transform: rotate(0) scale(4.5);
+  }
+  50% {
+    transform: rotate(180deg) scale(6.9);
+  }
+  100% {
+    transform: rotate(0) scale(4.5);
+  }
+}
 /*--------------------------------------*/
 
 </style>
