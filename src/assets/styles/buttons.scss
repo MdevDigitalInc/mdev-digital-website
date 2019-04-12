@@ -52,7 +52,8 @@
 
 /* Button Colors */
 
-.mdev-primary-btn {
+.mdev-primary-btn,
+.mdev-dark-btn {
   opacity: 0;
   color: $white;
   background: transparent;
@@ -94,7 +95,9 @@
 $border-time: .4s;
 // Utilizing the vue-in-viewport-directive Package
 .mdev-primary-btn.fully-in-viewport,
-.mdev-primary-btn.above-viewport {
+.mdev-primary-btn.above-viewport ,
+.mdev-dark-btn.fully-in-viewport,
+.mdev-dark-btn.above-viewport {
   opacity: 1;
 
   &:before,
@@ -127,6 +130,29 @@ $border-time: .4s;
   }
 }
 
+// Override for Dark BTN
+.mdev-dark-btn {
+  color: $color-brand-bkg;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    background: $color-brand-bkg;
+  }
+}
+// Override animation for Dark BTN
+.mdev-dark-btn.fully-in-viewport,
+.mdev-dark-btn.above-viewport {
+  &:before {
+    border-top-color: $color-brand-bkg;
+    border-right-color: $color-brand-bkg;
+  }
+  &:after {
+    border-bottom-color: $color-brand-bkg;
+    border-left-color: $color-brand-bkg;
+  }
+}
 
 /* Form Button Styles */
 .mdev-form-btn {

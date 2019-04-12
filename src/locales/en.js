@@ -99,6 +99,7 @@ export default {
   },
 
   navigation: {
+    contact: "Contact Us",
     getInTouch: "Contact Us:",
     addressRegion: "London, Ontario",
     addressStreet: "100 Kellogg Lane, N5W 0B4",

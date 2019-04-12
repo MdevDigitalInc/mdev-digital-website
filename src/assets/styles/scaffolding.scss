@@ -4,36 +4,18 @@
 
 // Wrapper Classes
 .mdev-main-wrapper {
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
   position: relative;
   padding: 0;
   min-width: 290px;
 
-  @media #{$tablet-prt-only} {
-    max-width: 800px;
+  @media #{$tablet-only} {
     width: 76%;
   }
 
-  @media #{$tablet-lnd-only} {
-    max-width: 900px;
-    width: 76%;
-  }
-
-  @media #{$laptop-only} {
-    max-width: 1000px;
-  }
-
-  @media #{$desktop-only} {
-    max-width: 1300px;
-  }
-
-  @media #{$xl-up} {
-    max-width: 1500px;
-  }
-
-  @media #{$phone-only} {
-    width: 90%;
+  @media #{$laptop-up} {
+    width: 80%;
   }
 }
 
@@ -106,20 +88,42 @@
   }
 }
 
+// Spacing Units
+$uxs: 15px;
+$xs: 25px;
+$sm: 50px;
+$md: 75px;
+
 .--space-top-sm {
-  margin-top: 50px;
+  margin-top: $sm;
 
   @media #{$phone-only} {
-    margin-top: 25px;
+    margin-top: $xs;
   }
 }
 
 .--space-top-xs {
-  margin-top: 25px;
+  margin-top: $xs;
 
   @media #{$phone-only} {
-    margin-top: 15px;
+    margin-top: $uxs;
   }
+}
+
+.--space-left-xs {
+  margin-left: $xs;
+}
+
+.--space-right-xs {
+  margin-right: $xs;
+}
+
+.--space-left-sm {
+  margin-left: $sm;
+}
+
+.--space-right-sm {
+  margin-right: $sm;
 }
 
 // Flex Modifiers

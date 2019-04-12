@@ -23,10 +23,12 @@ export default{
 /*-------------------------------------*/
 /* Established Section Component Styles
 /--------------------------------------*/
-
+$est-padding: 60px;
 .mdev-established {
+  // Hoist to fix small gap
+  margin-top: -1px;
   width: 100%;
-  padding: 60px 0;
+  padding: $est-padding 0;
   position: relative;
   overflow: hidden;
 
@@ -52,8 +54,8 @@ export default{
 
   .--bkg-extend {
     width: 100%;
-    top: 0;
-    bottom: 50%;
+    top: -2px;
+    bottom: $est-padding;
     background: $color-brand-bkg;
     position: absolute;
     z-index: -1;
