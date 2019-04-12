@@ -103,17 +103,18 @@ import MdevData       from '../../mdev-data.js';
 
 export default{
   name: 'ServicesBranding',
-  // TODO - Edit meta Title
   // SEE - https://github.com/ktquez/vue-head
   head: {
     title: {
-      inner: 'Branding Services',
-      complement: 'MDEV Digital - London, Ontario'
+      inner: 'Branding & Corporate Identity Services | MDEV Digital ',
+      complement: ' London, Toronto, Montreal'
     },
     meta: [
-      { property: 'og:title', content: 'Branding Services | MDEV Digital - London, Ontario ' },
-      { name: 'twitter:title', content: 'Branding Services | MDEV Digital - London, Ontario ' }
-
+      { property: 'og:title', content: 'Branding & Corporate Identity Services | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'twitter:title', content: 'Branding & Corporate Identity Services | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'description', content: 'We will help you discover and share your brand. We can start from scratch or help you enhance your existing brand(s) into a cohesive corporate identity system.', id:'desc'},
+      { name: 'twitter:description', content: 'We will help you discover and share your brand. We can start from scratch or help you enhance your existing brand(s) into a cohesive corporate identity system.'},
+      { property: 'og:description', content: 'We will help you discover and share your brand. We can start from scratch or help you enhance your existing brand(s) into a cohesive corporate identity system.'}
     ]
   },
   data: function(){

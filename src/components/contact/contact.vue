@@ -59,12 +59,15 @@ export default {
   // SEE - https://github.com/ktquez/vue-head
   head: {
     title: {
-      inner: 'Get In Touch',
-      complement: 'MDEV Digital - London, Ontario'
+      inner: 'Contact Us | MDEV Digital ',
+      complement: ' London, Toronto, Montreal'
     },
     meta: [
-      { property: 'og:title', content: 'Get In Touch | MDEV Digital - London, Ontario' },
-      { name: 'twitter:title', content: 'Get In Touch | MDEV Digital - London, Ontario' }
+      { property: 'og:title', content: 'Contact Us | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'twitter:title', content: 'Contact Us | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'description', content: 'Get in touch to learn more about our services. Let\'s start something new.', id:'desc'},
+      { name: 'twitter:description', content: 'Get in touch to learn more about our services. Let\'s start something new.'},
+      { property: 'og:description', content: 'Get in touch to learn more about our services. Let\'s start something new.'}
     ]
   },
 

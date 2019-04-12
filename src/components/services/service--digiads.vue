@@ -123,13 +123,15 @@ export default{
 
   head: {
     title: {
-      inner: 'Digital Marketing',
-      complement: 'MDEV Digital - London, Ontario'
+      inner: 'Digital Marketing Services | MDEV Digital ',
+      complement: ' London, Toronto, Montreal'
     },
     meta: [
-      { property: 'og:title', content: 'Digital Marketing | MDEV Digital - London, Ontario ' },
-      { name: 'twitter:title', content: 'Digital Marketing | MDEV Digital - London, Ontario ' }
-
+      { property: 'og:title', content: 'Digital Marketing Services | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'twitter:title', content: 'Digital Marketing Services | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'description', content: 'We\'re experts at integrating compelling marketing strategies and tactics with understandable and measuarable results. It\'s data science mixed with marketing art.', id:'desc'},
+      { name: 'twitter:description', content: 'We\'re experts at integrating compelling marketing strategies and tactics with understandable and measuarable results. It\'s data science mixed with marketing art.'},
+      { property: 'og:description', content: 'We\'re experts at integrating compelling marketing strategies and tactics with understandable and measuarable results. It\'s data science mixed with marketing art.'}
     ]
   },
 

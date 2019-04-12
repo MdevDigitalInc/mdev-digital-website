@@ -36,12 +36,15 @@ export default{
   // SEE - https://github.com/ktquez/vue-head
   head: {
     title: {
-      inner: 'MDEV Digital',
-      complement: 'Process Driven UI/UX and Development - London, Ontario '
+      inner: 'Process-Driven Development | MDEV Digital ',
+      complement: ' London, Toronto, Montreal'
     },
     meta: [
-      { property: 'og:title', content: 'MDEV Digital | Process Driven UI/UX and Development - London, Ontario' },
-      { name: 'twitter:title', content: 'MDEV Digital | Process Driven UI/UX and Development - London, Ontario' }
+      { property: 'og:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'twitter:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions', id:'desc'},
+      { name: 'twitter:description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'},
+      { property: 'og:description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'}
     ]
   },
 

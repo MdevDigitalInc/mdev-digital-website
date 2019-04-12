@@ -113,13 +113,15 @@ export default{
 
   head: {
     title: {
-      inner: 'Webdesign & UX Services',
-      complement: 'MDEV Digital - London, Ontario'
+      inner: 'Web Design Services | MDEV Digital ',
+      complement: ' London, Toronto, Montreal'
     },
     meta: [
-      { property: 'og:title', content: 'Webdesign & UX Services | MDEV Digital - London, Ontario ' },
-      { name: 'twitter:title', content: 'Webdesign & UX Services | MDEV Digital - London, Ontario ' }
-
+      { property: 'og:title', content: 'Web Design Services | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'twitter:title', content: 'Web Design Services | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'description', content: 'We\'ll help you with custom web design & development, user interface design, responsive web design, and custom wordpress development.', id:'desc'},
+      { name: 'twitter:description', content: 'We\'ll help you with custom web design & development, user interface design, responsive web design, and custom wordpress development.'},
+      { property: 'og:description', content: 'We\'ll help you with custom web design & development, user interface design, responsive web design, and custom wordpress development.'}
     ]
   },
 

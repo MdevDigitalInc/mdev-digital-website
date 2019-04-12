@@ -114,13 +114,15 @@ export default{
   // SEE - https://github.com/ktquez/vue-head
   head: {
     title: {
-      inner: 'Our Services',
-      complement: 'MDEV Digital - London, Ontario'
+      inner: 'Web & Application Development Services | MDEV Digital ',
+      complement: ' London, Toronto, Montreal'
     },
     meta: [
-      { property: 'og:title', content: 'Our Services | MDEV Digital - London, Ontario ' },
-      { name: 'twitter:title', content: 'Our Services | MDEV Digital - London, Ontario ' }
-
+      { property: 'og:title', content: 'Web & Application Development Services | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'twitter:title', content: 'Web & Application Development Services | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'description', content: 'We provide highly customized software and websites that suit your business needs. From e-commerce to custom apps, we\'ll help you stand out in the digital realm.', id:'desc'},
+      { name: 'twitter:description', content: 'We provide highly customized software and websites that suit your business needs. From e-commerce to custom apps, we\'ll help you stand out in the digital realm.'},
+      { property: 'og:description', content: 'We provide highly customized software and websites that suit your business needs. From e-commerce to custom apps, we\'ll help you stand out in the digital realm.'}
     ]
   },
 

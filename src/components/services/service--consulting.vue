@@ -181,13 +181,15 @@ export default{
 
   head: {
     title: {
-      inner: 'Consulting & Support',
-      complement: 'MDEV Digital - London, Ontario'
+      inner: 'Support Services | MDEV Digital ',
+      complement: ' London, Toronto, Montreal'
     },
     meta: [
-      { property: 'og:title', content: 'Consulting & Support | MDEV Digital - London, Ontario ' },
-      { name: 'twitter:title', content: 'Consulting & Support | MDEV Digital - London, Ontario ' }
-
+      { property: 'og:title', content: 'Support Services | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'twitter:title', content: 'Support Services | MDEV Digital | London, Toronto, Montreal' },
+      { name: 'description', content: 'We\'ll help you with your email deployments, domain hosting, migration & dispute resolution, and cloud computing services.', id:'desc'},
+      { name: 'twitter:description', content: 'We\'ll help you with your email deployments, domain hosting, migration & dispute resolution, and cloud computing services.'},
+      { property: 'og:description', content: 'We\'ll help you with your email deployments, domain hosting, migration & dispute resolution, and cloud computing services.'}
     ]
   },
 

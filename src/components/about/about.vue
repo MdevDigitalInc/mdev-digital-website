@@ -98,12 +98,15 @@ export default{
   // SEE - https://github.com/ktquez/vue-head
   head: {
     title: {
-      inner: 'Company Overview',
+      inner: 'Hybrid Digital Agency',
       complement: 'Process Driven UI/UX and Development - London, Ontario '
     },
     meta: [
-      { property: 'og:title', content: 'Company Overview | Process Driven UI/UX and Development - London, Ontario' },
-      { name: 'twitter:title', content: 'Company Overview | Process Driven UI/UX and Development - London, Ontario' }
+      { property: 'og:title', content: 'Hybrid Digital Agency | Process Driven UI/UX and Development - London, Ontario' },
+      { name: 'twitter:title', content: 'Hybrid Digital Agency | Process Driven UI/UX and Development - London, Ontario' },
+      { name: 'description', content: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.', id:'desc'},
+      { name: 'twitter:description', content: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.'},
+      { property: 'og:description', content: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.'}
     ]
   },
 
