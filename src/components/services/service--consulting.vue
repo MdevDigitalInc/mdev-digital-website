@@ -184,7 +184,7 @@ export default{
     meta: [
       { property: 'og:title', content: 'Support Services | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Support Services | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'We\'ll help you with your email deployments, domain hosting, migration & dispute resolution, and cloud computing services.', id:'desc'},
+      { name: 'description', content: 'We\'ll help you with your email deployments, domain hosting, migration & dispute resolution, and cloud computing services.', },
       { name: 'twitter:description', content: 'We\'ll help you with your email deployments, domain hosting, migration & dispute resolution, and cloud computing services.'},
       { property: 'og:description', content: 'We\'ll help you with your email deployments, domain hosting, migration & dispute resolution, and cloud computing services.'}
     ]

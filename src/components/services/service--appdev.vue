@@ -124,7 +124,7 @@ export default{
     meta: [
       { property: 'og:title', content: 'Custom Web & Application Development | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Custom Web & Application Development | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'We bring your ideas to life through cutting-edge development services to agile development practices, modern UX/UI principles, and secure, cloud-based technology.', id:'desc'},
+      { name: 'description', content: 'We bring your ideas to life through cutting-edge development services to agile development practices, modern UX/UI principles, and secure, cloud-based technology.', },
       { name: 'twitter:description', content: 'We bring your ideas to life through cutting-edge development services to agile development practices, modern UX/UI principles, and secure, cloud-based technology.'},
       { property: 'og:description', content: 'We bring your ideas to life through cutting-edge development services to agile development practices, modern UX/UI principles, and secure, cloud-based technology.'}
     ]

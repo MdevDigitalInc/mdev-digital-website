@@ -116,7 +116,7 @@ export default{
     meta: [
       { property: 'og:title', content: 'Web Design Services | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Web Design Services | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'We\'ll help you with custom web design & development, user interface design, responsive web design, and custom wordpress development.', id:'desc'},
+      { name: 'description', content: 'We\'ll help you with custom web design & development, user interface design, responsive web design, and custom wordpress development.', },
       { name: 'twitter:description', content: 'We\'ll help you with custom web design & development, user interface design, responsive web design, and custom wordpress development.'},
       { property: 'og:description', content: 'We\'ll help you with custom web design & development, user interface design, responsive web design, and custom wordpress development.'}
     ]

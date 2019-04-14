@@ -116,7 +116,7 @@ export default{
     meta: [
       { property: 'og:title', content: 'Web & Application Development Services | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Web & Application Development Services | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'We provide highly customized software and websites that suit your business needs. From e-commerce to custom apps, we\'ll help you stand out in the digital realm.', id:'desc'},
+      { name: 'description', content: 'We provide highly customized software and websites that suit your business needs. From e-commerce to custom apps, we\'ll help you stand out in the digital realm.', },
       { name: 'twitter:description', content: 'We provide highly customized software and websites that suit your business needs. From e-commerce to custom apps, we\'ll help you stand out in the digital realm.'},
       { property: 'og:description', content: 'We provide highly customized software and websites that suit your business needs. From e-commerce to custom apps, we\'ll help you stand out in the digital realm.'}
     ]

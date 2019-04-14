@@ -99,7 +99,7 @@ export default{
     meta: [
       { property: 'og:title', content: 'Hybrid Digital Agency | Process Driven UI/UX and Development - London, Ontario' },
       { name: 'twitter:title', content: 'Hybrid Digital Agency | Process Driven UI/UX and Development - London, Ontario' },
-      { name: 'description', content: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.', id:'desc'},
+      { name: 'description', content: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.'},
       { name: 'twitter:description', content: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.'},
       { property: 'og:description', content: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.'}
     ]

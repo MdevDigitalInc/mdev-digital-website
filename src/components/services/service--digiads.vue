@@ -126,7 +126,7 @@ export default{
     meta: [
       { property: 'og:title', content: 'Digital Marketing Services | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Digital Marketing Services | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'We\'re experts at integrating compelling marketing strategies and tactics with understandable and measuarable results. It\'s data science mixed with marketing art.', id:'desc'},
+      { name: 'description', content: 'We\'re experts at integrating compelling marketing strategies and tactics with understandable and measuarable results. It\'s data science mixed with marketing art.', },
       { name: 'twitter:description', content: 'We\'re experts at integrating compelling marketing strategies and tactics with understandable and measuarable results. It\'s data science mixed with marketing art.'},
       { property: 'og:description', content: 'We\'re experts at integrating compelling marketing strategies and tactics with understandable and measuarable results. It\'s data science mixed with marketing art.'}
     ]
