@@ -27,17 +27,15 @@ import BrandAnimation from './components/shared/brand-animation.vue';
 export default{
   name: 'App',
   // SEE - https://github.com/ktquez/vue-head
-  head: {
-    title: {
-      inner: 'Process-Driven Development | MDEV Digital ',
-      complement: ' London, Toronto, Montreal'
-    },
+  metaInfo: {
+    //title: 'Process-Driven Development',
+    titleTemplate: '%s | MDEV Digital | London, Toronto, Montreal',
     meta: [
-      { property: 'og:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'twitter:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions', id:'desc'},
-      { name: 'twitter:description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'},
-      { property: 'og:description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'}
+      //{ property: 'og:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
+      //{ name: 'twitter:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
+      //{ name: 'description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions', id:'desc'},
+      //{ name: 'twitter:description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'},
+      //{ property: 'og:description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'}
     ]
   },
 

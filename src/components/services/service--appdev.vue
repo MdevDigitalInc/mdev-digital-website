@@ -119,11 +119,8 @@ import MdevData       from '../../mdev-data.js';
 export default{
   name: 'ServicesAppDev',
 
-  head: {
-    title: {
-      inner: 'Custom Web & Application Development | MDEV Digital ',
-      complement: ' London, Toronto, Montreal'
-    },
+  metaInfo: {
+    inner: 'Custom Web & Application Development',
     meta: [
       { property: 'og:title', content: 'Custom Web & Application Development | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Custom Web & Application Development | MDEV Digital | London, Toronto, Montreal' },

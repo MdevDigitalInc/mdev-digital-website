@@ -33,12 +33,9 @@ import MdevData           from '../../mdev-data.js';
 
 export default{
   name: 'HomePage',
-  // SEE - https://github.com/ktquez/vue-head
-  head: {
-    title: {
-      inner: 'Process-Driven Development | MDEV Digital ',
-      complement: ' London, Toronto, Montreal'
-    },
+
+  metaInfo: {
+    title: 'Process-Driven Development',
     meta: [
       { property: 'og:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },

@@ -103,12 +103,8 @@ import MdevData       from '../../mdev-data.js';
 
 export default{
   name: 'ServicesBranding',
-  // SEE - https://github.com/ktquez/vue-head
-  head: {
-    title: {
-      inner: 'Branding & Corporate Identity Services | MDEV Digital ',
-      complement: ' London, Toronto, Montreal'
-    },
+  metaInfo: {
+    title: 'Branding & Corporate Identity Services',
     meta: [
       { property: 'og:title', content: 'Branding & Corporate Identity Services | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Branding & Corporate Identity Services | MDEV Digital | London, Toronto, Montreal' },

@@ -56,12 +56,8 @@ import ContactForm        from './contact--form.vue';
 
 export default {
   name: 'Contact',
-  // SEE - https://github.com/ktquez/vue-head
-  head: {
-    title: {
-      inner: 'Contact Us | MDEV Digital ',
-      complement: ' London, Toronto, Montreal'
-    },
+  metaInfo: {
+    inner: 'Contact Us',
     meta: [
       { property: 'og:title', content: 'Contact Us | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Contact Us | MDEV Digital | London, Toronto, Montreal' },

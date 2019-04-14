@@ -94,13 +94,8 @@ import MdevData           from '../../mdev-data.js';
 
 export default{
   name: 'About',
-
-  // SEE - https://github.com/ktquez/vue-head
-  head: {
-    title: {
-      inner: 'Hybrid Digital Agency',
-      complement: 'Process Driven UI/UX and Development - London, Ontario '
-    },
+  metaInfo: {
+    title: 'Hybrid Digital Agency',
     meta: [
       { property: 'og:title', content: 'Hybrid Digital Agency | Process Driven UI/UX and Development - London, Ontario' },
       { name: 'twitter:title', content: 'Hybrid Digital Agency | Process Driven UI/UX and Development - London, Ontario' },

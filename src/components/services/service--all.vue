@@ -111,12 +111,8 @@ import MdevData       from '../../mdev-data.js';
 
 export default{
   name: 'ServicesAll',
-  // SEE - https://github.com/ktquez/vue-head
-  head: {
-    title: {
-      inner: 'Web & Application Development Services | MDEV Digital ',
-      complement: ' London, Toronto, Montreal'
-    },
+  metaInfo: {
+    title: 'Web & Application Development Services',
     meta: [
       { property: 'og:title', content: 'Web & Application Development Services | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Web & Application Development Services | MDEV Digital | London, Toronto, Montreal' },

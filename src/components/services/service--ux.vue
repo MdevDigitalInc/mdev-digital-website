@@ -111,11 +111,8 @@ import MdevData       from '../../mdev-data.js';
 export default{
   name: 'ServicesUX',
 
-  head: {
-    title: {
-      inner: 'Web Design Services | MDEV Digital ',
-      complement: ' London, Toronto, Montreal'
-    },
+  metaInfo: {
+    title: 'Web Design Services',
     meta: [
       { property: 'og:title', content: 'Web Design Services | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Web Design Services | MDEV Digital | London, Toronto, Montreal' },

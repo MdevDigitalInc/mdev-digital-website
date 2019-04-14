@@ -121,11 +121,8 @@ import MdevData       from '../../mdev-data.js';
 export default{
   name: 'ServicesDigitalMarketing',
 
-  head: {
-    title: {
-      inner: 'Digital Marketing Services | MDEV Digital ',
-      complement: ' London, Toronto, Montreal'
-    },
+  metaInfo: {
+    title: 'Digital Marketing Services',
     meta: [
       { property: 'og:title', content: 'Digital Marketing Services | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Digital Marketing Services | MDEV Digital | London, Toronto, Montreal' },
