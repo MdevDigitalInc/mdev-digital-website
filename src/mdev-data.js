@@ -867,7 +867,7 @@ export default  {
     serviceSolo: [
       {
         anchor: 'anc-email',
-        title: 'Email in style',
+        title: 'Email</br>in style',
         subTitle: 'G Suite Management',
         description: 'As part our our overarching branding services, we want to make sure you look good when communicating about your business. It’s the little things that count, like using a professional email URL and having a sweet, branded signature.',
         topics: [

@@ -7,7 +7,7 @@
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-digiads">
           <div class="mdev-center">
-            <div class="flex flex-vert-start  flex-hor-start --portrait-wrap">
+            <div class="flex flex-vert-center  flex-hor-start --portrait-wrap">
               <object class="--con-keep" id="anim-keep" type="image/svg+xml" :data="loadImage(keepAnim)"></object>
               <div data-header-intro class="--header-cta u-desk-only ">
                  <p>
@@ -21,7 +21,7 @@
               <object class="--con-wheels" id="anim-wheels" type="image/svg+xml" :data="loadImage(wheelsAnim)"></object>
               <!-- CTA Text & Button -->
             </div>
-            <div class="flex flex-hor-end">
+            <div class="flex --turning">
               <object class="--con-turning" id="anim-turning" type="image/svg+xml" :data="loadImage(turningAnim)"></object>
             </div>
               <div data-header-intro class="--header-cta u-phone-only ">
@@ -339,6 +339,13 @@ $heading-top-padding-mob: 15px;
     opacity: 1;
   }
 
+  .--turning {
+    justify-content: flex-end;
+
+    @media #{$portrait} {
+      justify-content: flex-start;
+    }
+  }
 
   p {
     color: $white;
