@@ -230,6 +230,10 @@ export default{
   .mdev-service-desc {
     width: 80%;
 
+    @media #{$laptop-only} {
+      width: 95%;
+    }
+
     @media #{$portrait} {
       width: 100%;
     }

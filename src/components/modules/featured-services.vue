@@ -68,7 +68,7 @@ export default {
   .mdev-service-content {
     width: 56%;
     order: 1;
-    padding-right: 9%;
+    padding-right: 5%;
 
     @media #{$portrait} {
       width: 100%;
@@ -111,6 +111,10 @@ export default {
 
   .mdev-service-desc {
     width: 85%;
+
+    @media #{$laptop-only} {
+      width: 95%;
+    }
   }
 }
 

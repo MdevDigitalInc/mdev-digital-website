@@ -54,20 +54,17 @@ export default{
     }
   }
 
-  .mdev-featured-wrapper {
-    width: 74%;
-    margin: 0 auto;
-  }
-
-  .--pre-title {
-    left: 15px;
+  h3 {
+    @media #{$laptop-only} {
+      margin-bottom: 15px;
+    }
   }
 }
 
 .mdev-service-title {
   width: 70%;
   position: relative;
-  padding-left: 9%;
+  padding-left: 5%;
 
   &:before {
     right: 70%;

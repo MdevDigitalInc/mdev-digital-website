@@ -344,7 +344,7 @@ export default  {
       description: 'A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.',
       topics: [
         'Logos',
-        'Corporate identity systems',
+        'Corporate identities',
         'Print & digital design',
         'Packaging'
       ],
@@ -486,12 +486,12 @@ export default  {
     services: [
       {
         anchor: 'anc-logos',
-        title: 'Think before you brand',
-        subTitle: 'Corporate identity systems',
+        title: 'Think before</br>you brand',
+        subTitle: 'Corporate Identities',
         description: 'Creating a brand with impact is crucial for any product or company to succeed. We can help you distill your unique corporate personality into a new identity, refresh an existing logo, or consolidate existing sub-brands into a cohesive corporate identity system.',
         topics: [
           'Logo design',
-          'Corporate Identity Systems',
+          'Corporate Identities',
           'Brand &amp; style guidelines',
           'Business cards &amp; stationery packages'
         ],
@@ -567,7 +567,7 @@ export default  {
     services: [
       {
         anchor: 'anc-webdev',
-        title: 'The web has gotten crowded',
+        title: 'The web</br>has gotten crowded',
         subTitle: 'Design & Development',
         description: 'Stand out in the digital realm with a powerful, feature-rich custom website, built to be fully accessible and mobile-friendly from the very beginning. Our design and development team stays on top of the latest user experience design trends and coding practices to produce lightning-fast, mobile-friendly websites.',
         topics: [

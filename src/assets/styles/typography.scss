@@ -52,6 +52,7 @@ $h2-font-sizes: (
 
 $h3-font-sizes: (
   null  : 1.6vw,
+  $desktop-only: 50px,
   $portrait: 5vw,
   $phone-only: 6vw
 );

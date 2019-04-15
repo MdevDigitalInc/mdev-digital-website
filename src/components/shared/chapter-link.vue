@@ -63,7 +63,7 @@ export default{
     width: 30%;
 
     @media #{$laptop-only} {
-      width: 35%;
+      width: 45%;
     }
 
     @media #{$desktop-only} {

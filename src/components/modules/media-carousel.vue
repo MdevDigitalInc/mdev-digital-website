@@ -180,7 +180,8 @@ $buttonSize: 10px;
     z-index: 2;
 
     @media #{$portrait} {
-      margin-top: 0;
+      margin: 0;
+      padding: 0 20px;
     }
   }
 
