@@ -127,7 +127,7 @@ export default{
         backgroundColor: '#0f1617'
       },
       // Disables Page Title bar
-      pageTitle: 'Apps & Software',
+      pageTitle: 'Aapps & Software Services',
       headerDsc: 'Innovate With Passion.',
       innovateAnim: 'services/appdev/MDEV_HEADER_innovate_animated.svg',
       withAnim: 'services/appdev/MDEV_HEADER_with.svg',
@@ -248,7 +248,7 @@ $heading-top-padding-mob: 15px;
 
   .--header-cta {
     opacity: 0;
-    width: 47%;
+    width: 60%;
     transition: opacity 1.2s;
     position: relative;
     margin-top: 20px;

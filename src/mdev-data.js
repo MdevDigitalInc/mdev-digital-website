@@ -691,7 +691,7 @@ export default  {
     servicesNomedia: [
       {
         anchor: 'anc-discovery',
-        title: 'Simplicity in planning',
+        title: 'Simplicity</br>in planning',
         content: [
           {
             title: 'Guided Discovery',

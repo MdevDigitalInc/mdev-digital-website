@@ -66,6 +66,10 @@ export default{
       width: 35%;
     }
 
+    @media #{$desktop-only} {
+      width: 40%;
+    }
+
     @media #{$portrait} {
       width: 85%;
     }
