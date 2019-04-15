@@ -94,23 +94,6 @@ import MdevData           from '../../mdev-data.js';
 
 export default{
   name: 'About',
-  metaInfo: {
-    changed (newInfo, addedTags, removedTags) {
-      document.dispatchEvent(new Event('spa-rendered'));
-      console.log('Meta info was updated!');
-      console.log(addedTags);
-      console.log(removedTags);
-    },
-
-    title: 'Hybrid Digital Agency',
-    meta: [
-      { property: 'og:title', content: 'Hybrid Digital Agency | Process Driven UI/UX and Development - London, Ontario' },
-      { name: 'twitter:title', content: 'Hybrid Digital Agency | Process Driven UI/UX and Development - London, Ontario' },
-      { name: 'description', content: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.'},
-      { name: 'twitter:description', content: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.'},
-      { property: 'og:description', content: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.'}
-    ]
-  },
 
   data: function() {
     return {
@@ -126,6 +109,22 @@ export default{
       pageTitle: 'About MDEV Digital',
       headerDsc: 'About MDEV Digital',
       company: MdevData.aboutPage,
+      // SEO
+      seo: MdevData.siteSeo
+    };
+  },
+
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.about.title,
+      meta: [
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.about.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.about.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.about.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.about.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.about.desc }
+      ]
     };
   },
 

@@ -119,24 +119,6 @@ import MdevData       from '../../mdev-data.js';
 export default{
   name: 'ServicesAppDev',
 
-  metaInfo: {
-    changed (newInfo, addedTags, removedTags) {
-      document.dispatchEvent(new Event('spa-rendered'));
-      console.log('Meta info was updated!');
-      console.log(addedTags);
-      console.log(removedTags);
-    },
-
-    title: 'Custom Web & Application Development',
-    meta: [
-      { property: 'og:title', content: 'Custom Web & Application Development | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'twitter:title', content: 'Custom Web & Application Development | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'We bring your ideas to life through cutting-edge development services to agile development practices, modern UX/UI principles, and secure, cloud-based technology.', },
-      { name: 'twitter:description', content: 'We bring your ideas to life through cutting-edge development services to agile development practices, modern UX/UI principles, and secure, cloud-based technology.'},
-      { property: 'og:description', content: 'We bring your ideas to life through cutting-edge development services to agile development practices, modern UX/UI principles, and secure, cloud-based technology.'}
-    ]
-  },
-
   data: function(){
     return{
       heroStyles: {
@@ -155,7 +137,23 @@ export default{
       prefooter: MdevData.prefooter,
       serviceFlag: MdevData.appdev.serviceFlag,
       nomedia: MdevData.appdev.servicesNomedia,
-      serviceIntro: MdevData.appdev.serviceIntro
+      serviceIntro: MdevData.appdev.serviceIntro,
+      // SEO
+      seo: MdevData.siteSeo
+    };
+  },
+
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.appdev.title,
+      meta: [
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.appdev.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.appdev.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.appdev.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.appdev.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.appdev.desc }
+      ]
     };
   },
 

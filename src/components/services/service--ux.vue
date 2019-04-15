@@ -111,24 +111,6 @@ import MdevData       from '../../mdev-data.js';
 export default{
   name: 'ServicesUX',
 
-  metaInfo: {
-    changed (newInfo, addedTags, removedTags) {
-      document.dispatchEvent(new Event('spa-rendered'));
-      console.log('Meta info was updated!');
-      console.log(addedTags);
-      console.log(removedTags);
-    },
-
-    title: 'Web Design Services',
-    meta: [
-      { property: 'og:title', content: 'Web Design Services | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'twitter:title', content: 'Web Design Services | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'We\'ll help you with custom web design & development, user interface design, responsive web design, and custom wordpress development.', },
-      { name: 'twitter:description', content: 'We\'ll help you with custom web design & development, user interface design, responsive web design, and custom wordpress development.'},
-      { property: 'og:description', content: 'We\'ll help you with custom web design & development, user interface design, responsive web design, and custom wordpress development.'}
-    ]
-  },
-
   data: function(){
     return{
       heroStyles: {
@@ -146,7 +128,23 @@ export default{
       services: MdevData.webdev.services,
       prefooter: MdevData.prefooter,
       serviceFlag: MdevData.webdev.serviceFlag,
-      nomedia: MdevData.webdev.servicesNomedia
+      nomedia: MdevData.webdev.servicesNomedia,
+      // SEO
+      seo: MdevData.siteSeo
+    };
+  },
+
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.webdev.title,
+      meta: [
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.webdev.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.webdev.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.webdev.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.webdev.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.webdev.desc }
+      ]
     };
   },
 

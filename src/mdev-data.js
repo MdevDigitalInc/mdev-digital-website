@@ -126,6 +126,10 @@ export default  {
         'Lending his insights on technology, marketing, media relations and efficient development practices to every project he touches, Lucas ensures that MDEV’s clients can expect an extremely high level of quality.',
         'Lucas is a board member of the MACC in London, ON, serves on the London Chamber of Commerce Marketing Committee and is also known for his expertise in FPV Drones and 3D printing on his Loose Transistor YouTube channel.'
       ],
+      seo: {
+        title: 'Lucas Moreira - CEO, Founder',
+        description: 'Meet Lucas Moreira, our Chief Executive Officer and Founder.'
+      },
       employeeOrigin: 'Sao Paulo - Brazil',
       employeeQuote: 'Think like a man of action, act like a man of thought.',
       employeeTrick: 'Drone Guru / Media Maven / Eagle Eye',
@@ -160,6 +164,10 @@ export default  {
         'After years of leading creative and software projects, Becky has developed an uncanny ability to navigate complex timing and requirements to ensure successful project completion.',
         'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory committee and as a LTUX Committee Member for the #ldnont chapter.'
       ],
+      seo: {
+        title: 'Becky Domenico - CCO, Founder',
+        description: 'Meet Becky Domenico, our Chief Creative Officer and Founder.'
+      },
       employeeOrigin: 'Timmins, ON',
       employeeQuote: 'Fear is the mind killer.',
       employeeTrick: 'Coffee Fanatic / InDesign Wizard / Agility',
@@ -200,6 +208,10 @@ export default  {
         'Winning the Americas division, and placing top five globally in the 2014 Google Online Marketing Challenge jump started Luis’ career in internet and social media marketing.',
         'He’s naturally passionate person with a love for music and dance (he teaches salsa and bachata), and a lover of sports.'
       ],
+      seo: {
+        title: 'Luis Guerrero - Digital Marketing Manager',
+        description: 'Meet Luis Guerrero, our Digital Marketing Manager.'
+      },
       employeeOrigin: 'Guatemala',
       employeeQuote: false,
       employeeTrick: 'Salsa and Bachata Instructor',
@@ -234,6 +246,10 @@ export default  {
         'As an organized team player Haly took on many roles at Fanshawe. From national scholar, leadership, and athletic awards being a student-employee and student-athlete has proven her wonders.',
         'Haly has recently embarked on a month long marine conservation volunteer trip in Thailand to research, protect and restore coral reefs'
       ],
+      seo: {
+        title: 'Haly Hawkins - Lead Designer',
+        description: 'Meet Haly Hawkins, our Lead Designer.'
+      },
       employeeOrigin: 'London, ON',
       employeeQuote: 'Work smarter, not harder.',
       employeeTrick: 'Ruler of yard games',
@@ -267,6 +283,10 @@ export default  {
       employeeStory: [
         'Graham also occasionally teaches programming classes as a part-time instructor at Fanshawe College as a part of the Advanced Programming Game development program.'
       ],
+      seo: {
+        title: 'Graham Coutts - Full-stack Developer',
+        description: 'Meet Graham Coutts, our Full-stack Developer.'
+      },
       employeeOrigin: 'Guelph, ON',
       employeeQuote: 'So much time and so little to do! Strike that. Reverse it.',
       employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
@@ -281,6 +301,10 @@ export default  {
       employeeStory: [
         'Graham also occasionally teaches programming classes as a part-time instructor at Fanshawe College as a part of the Advanced Programming Game development program.'
       ],
+      seo: {
+        title: 'Dorian Hall - Front-end Developer',
+        description: 'Meet Dorian Hall, our Front-end Developer.'
+      },
       employeeOrigin: 'Guelph, ON',
       employeeQuote: 'Quote Here',
       employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
@@ -1307,5 +1331,54 @@ export default  {
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
       name: 'Edward Norton, CTO Zucora Inc.'
     }
-  ]
+  ],
+
+  siteSeo: {
+    template: '%s | MDEV Digital | London, Toronto, Montreal',
+    templateAddon: ' | MDEV Digital | London, Toronto, Montreal',
+    about: {
+      title: 'Hybrid Digital Agency',
+      desc: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.'
+    },
+    app: {
+      title: 'Process-Driven Development',
+      desc: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'
+    },
+    home: {
+      title: 'Process-Driven Development',
+      desc: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'
+    },
+    contact: {
+      title: 'Contact Us',
+      desc: 'Get in touch to learn more about our services. Let\'s start something new.'
+    },
+    services: {
+      title: 'Web & Application Development Services',
+      desc: 'We provide highly customized software and websites that suit your business needs. From e-commerce to custom apps, we\'ll help you stand out in the digital realm.'
+    },
+    appdev: {
+      title: 'Custom Software Application Development',
+      desc: 'We bring your ideas to life through cutting-edge development services to agile development practices, modern UX/UI principles, and secure, cloud-based technology.'
+    },
+    branding: {
+      title: 'Branding & Corporate Identity Services',
+      desc: 'We will help you discover and share your brand. We can start from scratch or help you enhance your existing brand(s) into a cohesive corporate identity system.'
+    },
+    support: {
+      title: 'Support Services',
+      desc: 'We\'ll help you with your email deployments, domain hosting, migration & dispute resolution, and cloud computing services.'
+    },
+    digiads: {
+      title: 'Digital Marketing Services',
+      desc: 'We\'re experts at integrating compelling marketing strategies and tactics with understandable and measuarable results. It\'s data science mixed with marketing art.'
+    },
+    webdev: {
+      title: 'Web Design Services',
+      desc: 'We\'ll help you with custom web design & development, user interface design, responsive web design, and custom wordpress development.'
+    },
+    error: {
+      title: 'Oops, sorry!',
+      desc: 'Something went wrong with your request.'
+    }
+  }
 };

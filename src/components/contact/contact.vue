@@ -53,25 +53,11 @@ import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
 import ContactMap         from './contact--map.vue';
 import ContactForm        from './contact--form.vue';
+// Import Data From Flat File
+import MdevData       from '../../mdev-data.js';
 
 export default {
   name: 'Contact',
-  metaInfo: {
-    changed (newInfo, addedTags, removedTags) {
-      document.dispatchEvent(new Event('spa-rendered'));
-      console.log('Meta info was updated!');
-      console.log(addedTags);
-      console.log(removedTags);
-    },
-    title: 'Contact Us',
-    meta: [
-      { property: 'og:title', content: 'Contact Us | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'twitter:title', content: 'Contact Us | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'Get in touch to learn more about our services. Let\'s start something new.'},
-      { name: 'twitter:description', content: 'Get in touch to learn more about our services. Let\'s start something new.'},
-      { property: 'og:description', content: 'Get in touch to learn more about our services. Let\'s start something new.'}
-    ]
-  },
 
   data: function(){
     return{
@@ -84,7 +70,23 @@ export default {
       letsAnim: 'contact/MDEV_HEADER_lets_animated.svg',
       startAnim: 'contact/MDEV_HEADER_start_animated.svg',
       somethingAnim: 'contact/MDEV_HEADER_something.svg',
-      newAnim: 'contact/MDEV_HEADER_new_animated.svg'
+      newAnim: 'contact/MDEV_HEADER_new_animated.svg',
+      // SEO
+      seo: MdevData.siteSeo
+    };
+  },
+
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.contact.title,
+      meta: [
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.contact.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.contact.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.contact.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.contact.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.contact.desc }
+      ]
     };
   },
 

@@ -124,7 +124,9 @@ module.exports = merge(common, {
 
       renderer: new Renderer({
         headless: true,
-        renderAfterDocumentEvent: 'spa-rendered'
+        // Using render after time because trigger doesn't work.
+        renderAfterTime: 12000
+        //renderAfterDocumentEvent: 'spa-rendered'
       })
     }),
     // Gzip Compression

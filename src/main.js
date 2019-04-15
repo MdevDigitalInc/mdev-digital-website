@@ -51,10 +51,10 @@ Vue.config.lang = 'en';
 
 // Create Global Method for accepting language change
 Vue.prototype.$locale = {
-  change (lang) {
+  change(lang) {
     Vue.config.lang = lang;
   },
-  current () {
+  current() {
     return Vue.config.lang;
   }
 };
@@ -148,7 +148,7 @@ Vue.mixin({
       return require('./assets/images/' + path);
     },
     // Change Application Language
-    change () {
+    change() {
       let current = this.$locale.current();
       if (current === 'en') {
         this.$locale.change('pt');

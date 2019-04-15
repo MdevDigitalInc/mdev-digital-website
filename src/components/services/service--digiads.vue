@@ -121,24 +121,6 @@ import MdevData       from '../../mdev-data.js';
 export default{
   name: 'ServicesDigitalMarketing',
 
-  metaInfo: {
-    changed (newInfo, addedTags, removedTags) {
-      document.dispatchEvent(new Event('spa-rendered'));
-      console.log('Meta info was updated!');
-      console.log(addedTags);
-      console.log(removedTags);
-    },
-
-    title: 'Digital Marketing Services',
-    meta: [
-      { property: 'og:title', content: 'Digital Marketing Services | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'twitter:title', content: 'Digital Marketing Services | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'We\'re experts at integrating compelling marketing strategies and tactics with understandable and measuarable results. It\'s data science mixed with marketing art.', },
-      { name: 'twitter:description', content: 'We\'re experts at integrating compelling marketing strategies and tactics with understandable and measuarable results. It\'s data science mixed with marketing art.'},
-      { property: 'og:description', content: 'We\'re experts at integrating compelling marketing strategies and tactics with understandable and measuarable results. It\'s data science mixed with marketing art.'}
-    ]
-  },
-
   data: function(){
     return{
       heroStyles: {
@@ -155,7 +137,23 @@ export default{
       // Services Data
       services: MdevData.digiads.services,
       prefooter: MdevData.prefooter,
-      serviceFlag: MdevData.digiads.serviceFlag
+      serviceFlag: MdevData.digiads.serviceFlag,
+      // SEO
+      seo: MdevData.siteSeo
+    };
+  },
+
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.digiads.title,
+      meta: [
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.digiads.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.digiads.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.digiads.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.digiads.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.digiads.desc }
+      ]
     };
   },
 

@@ -23,35 +23,35 @@
 //Local Component registration
 import MainNavigation from './components/shared/navigation.vue';
 import BrandAnimation from './components/shared/brand-animation.vue';
+// Import Data From Flat File
+import MdevData       from './mdev-data.js';
 
 export default{
   name: 'App',
-  // SEE - https://github.com/ktquez/vue-head
-  metaInfo: {
-    changed (newInfo, addedTags, removedTags) {
-      document.dispatchEvent(new Event('spa-rendered'));
-      console.log('Meta info was updated!');
-      console.log(addedTags);
-      console.log(removedTags);
-    },
-    title: 'Process-Driven Development',
-    titleTemplate: '%s | MDEV Digital | London, Toronto, Montreal',
-    meta: [
-      { property: 'og:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'twitter:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'},
-      { name: 'twitter:description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'},
-      { property: 'og:description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'}
-    ]
-  },
+  // SEO Meta Information
 
   data: function(){
     return {
-      isLoading: false,
+      seo: MdevData.siteSeo,
+      isLoading: true,
       isHome: true,
       brandReverse: false,
       keys: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
       current: 0
+    };
+  },
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.app.title,
+      titleTemplate: this.seo.template,
+      meta: [
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.app.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.app.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.app.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.app.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.app.desc }
+      ]
     };
   },
 

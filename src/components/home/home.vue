@@ -34,17 +34,6 @@ import MdevData           from '../../mdev-data.js';
 export default{
   name: 'HomePage',
 
-  metaInfo: {
-    title: 'Process-Driven Development',
-    meta: [
-      { property: 'og:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'twitter:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'},
-      { name: 'twitter:description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'},
-      { property: 'og:description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'}
-    ]
-  },
-
   data: function() {
     return {
       heroStyles: {
@@ -57,7 +46,23 @@ export default{
       pageTitle: 'Humanize The Web',
       headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.',
       // Testimonials loaded from flat file
-      testimonials: MdevData.testimonials
+      testimonials: MdevData.testimonials,
+      // SEO
+      seo: MdevData.siteSeo
+    };
+  },
+
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.home.title,
+      meta: [
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.home.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.home.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.home.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.home.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.home.desc }
+      ]
     };
   },
 

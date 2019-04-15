@@ -103,23 +103,7 @@ import MdevData       from '../../mdev-data.js';
 
 export default{
   name: 'ServicesBranding',
-  metaInfo: {
-    changed (newInfo, addedTags, removedTags) {
-      document.dispatchEvent(new Event('spa-rendered'));
-      console.log('Meta info was updated!');
-      console.log(addedTags);
-      console.log(removedTags);
-    },
 
-    title: 'Branding & Corporate Identity Services',
-    meta: [
-      { property: 'og:title', content: 'Branding & Corporate Identity Services | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'twitter:title', content: 'Branding & Corporate Identity Services | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'We will help you discover and share your brand. We can start from scratch or help you enhance your existing brand(s) into a cohesive corporate identity system.', },
-      { name: 'twitter:description', content: 'We will help you discover and share your brand. We can start from scratch or help you enhance your existing brand(s) into a cohesive corporate identity system.'},
-      { property: 'og:description', content: 'We will help you discover and share your brand. We can start from scratch or help you enhance your existing brand(s) into a cohesive corporate identity system.'}
-    ]
-  },
   data: function(){
     return{
       heroStyles: {
@@ -136,7 +120,23 @@ export default{
       // Services Data
       services: MdevData.branding.services,
       prefooter: MdevData.prefooter,
-      serviceFlag: MdevData.branding.serviceFlag
+      serviceFlag: MdevData.branding.serviceFlag,
+      // SEO
+      seo: MdevData.siteSeo
+    };
+  },
+
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.branding.title,
+      meta: [
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.branding.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.branding.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.branding.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.branding.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.branding.desc }
+      ]
     };
   },
 

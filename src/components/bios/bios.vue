@@ -80,23 +80,6 @@ import MdevData       from '../../mdev-data.js';
 
 export default {
   name: "BiosView",
-  metaInfo: {
-    changed (newInfo, addedTags, removedTags) {
-      document.dispatchEvent(new Event('spa-rendered'));
-      console.log('Meta info was updated!');
-      console.log(addedTags);
-      console.log(removedTags);
-    },
-
-    title: 'Process-Driven Development',
-    meta: [
-      { property: 'og:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'twitter:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
-      { name: 'description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'},
-      { name: 'twitter:description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'},
-      { property: 'og:description', content: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'}
-    ]
-  },
 
   props: [ 'teammember' ],
 
@@ -109,6 +92,20 @@ export default {
       nextIndex: 1,
       // Data imported from mdev-data.js
       mdevBios: MdevData.mdevEmployees
+    };
+  },
+
+  // SEO Meta Information
+  metaInfo() {
+    return {
+      title: this.mdevBios[this.desiredIndex].seo.title,
+      meta: [
+        { vmid: 'ogtitle', property: 'og:title', content: this.mdevBios[this.desiredIndex].seo.title + ' | MDEV Digital | London, Toronto, Montreal' },
+        { vmid: 'twtitle', name: 'twitter:title', content: this.mdevBios[this.desiredIndex].seo.title + ' | MDEV Digital | London, Toronto, Montreal' },
+        { vmid: 'desc', name: 'description', content: this.mdevBios[this.desiredIndex].seo.title.description},
+        { vmid: 'twdesc', name: 'twitter:description', content: this.mdevBios[this.desiredIndex].seo.title.description},
+        { vmid: 'ogdesc', property: 'og:description', content: this.mdevBios[this.desiredIndex].seo.title.description}
+      ]
     };
   },
 
