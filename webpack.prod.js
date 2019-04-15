@@ -122,6 +122,14 @@ module.exports = merge(common, {
         '/team/graham-coutts',
       ],
 
+      minify: {
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true,
+        decodeEntities: true,
+        keepClosingSlash: true,
+        sortAttributes: true
+      },
+
       renderer: new Renderer({
         headless: true,
         // Using render after time because trigger doesn't work.
