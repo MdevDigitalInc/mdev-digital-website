@@ -78,7 +78,7 @@ export default  {
     {
       linkName: 'Digital Marketing',
       linkTitle: 'View our Digital Marketing services',
-      route: '/services/digital-advertisign',
+      route: '/services/digital-marketing',
       linkIndex: '04'
     },
     {
@@ -325,6 +325,7 @@ export default  {
   services: [
     {
       title: 'Branding',
+      anchor: 'anc-branding',
       squareImg: false,
       media: [
         {
@@ -359,7 +360,8 @@ export default  {
       }
     },
     {
-      title: 'web design',
+      title: 'Web Design',
+      anchor: 'anc-webdesign',
       squareImg: true,
       media: [
         {
@@ -387,6 +389,7 @@ export default  {
     },
     {
       title: 'Apps & Software',
+      anchor: 'anc-apps',
       squareImg: true,
       media: [
         {
@@ -415,6 +418,7 @@ export default  {
     },
     {
       title: 'Digital Marketing',
+      anchor: 'anc-digimarketing',
       squareImg: false,
       media: [
         {
@@ -443,6 +447,7 @@ export default  {
     },
     {
       title: 'Support Services',
+      anchor: 'anc-support',
       media: false,
       description: 'We offer consulting and support services to help your business run smoothly. This includes setting up your business infrastructure or identifying new ways to be efficient through process development, operational software deployments or custom application development, our ultimate goal is to help you reduce your internal costs.',
       topics: [
@@ -480,6 +485,7 @@ export default  {
     },
     services: [
       {
+        anchor: 'anc-logos',
         title: 'Think before you brand',
         subTitle: 'Corporate identity systems',
         description: 'Creating a brand with impact is crucial for any product or company to succeed. We can help you distill your unique corporate personality into a new identity, refresh an existing logo, or consolidate existing sub-brands into a cohesive corporate identity system.',
@@ -498,6 +504,7 @@ export default  {
         ]
       },
       {
+        anchor: 'anc-print',
         title: 'Cross- channel creative',
         subTitle: 'Print & Digital Design',
         description: 'Your brand is going to need more than a logo and a website to succeed. Our creative services span print and digital media to ensure that the look and feel of your materials is consistent.',
@@ -520,6 +527,7 @@ export default  {
         ]
       },
       {
+        anchor: 'anc-packaging',
         title: 'Road to retail readiness',
         subTitle: 'Packaging',
         description: 'We create vibrant and informative packaging that leaps off store shelves. We can also help you handle barcode creation, compliance with labelling regulations, and French translation requirements if the product is to be sold in Canada.',
@@ -558,6 +566,7 @@ export default  {
     },
     services: [
       {
+        anchor: 'anc-webdev',
         title: 'The web has gotten crowded',
         subTitle: 'Design & Development',
         description: 'Stand out in the digital realm with a powerful, feature-rich custom website, built to be fully accessible and mobile-friendly from the very beginning. Our design and development team stays on top of the latest user experience design trends and coding practices to produce lightning-fast, mobile-friendly websites.',
@@ -584,6 +593,7 @@ export default  {
         ]
       },
       {
+        anchor: 'anc-ecomm',
         title: 'Set</br>Up</br>Shop',
         subTitle: 'Ecommerce',
         description: 'If you build it, they will come. But will they know what to do when they get there? Guide your users from start to cart with custom ecommerce sites built around your unique user journey. We\'ll help you choose the best platform for your online store, provide advice on how to organize your products and prepare your site for integrated marketing strategies right from launch.',
@@ -613,6 +623,7 @@ export default  {
     ],
     servicesNomedia: [
       {
+        anchor: 'anc-a11y',
         title: 'Remove Digital Barriers',
         content: [
           {
@@ -657,6 +668,7 @@ export default  {
     },
     services: [
       {
+        anchor: 'anc-appdev',
         title: 'Build Your Empire',
         subTitle: 'Application Development',
         description: 'You can expect regular feature releases as we work to build a product you can quickly take to market. Once released, we’ll help you analyze post-launch feature-set priorities to continue application growth as you discover more about your users\' needs. We focus on security, scalability and longevity to ensure that your investment in technology can scale with your business.',
@@ -678,6 +690,7 @@ export default  {
     ],
     servicesNomedia: [
       {
+        anchor: 'anc-discovery',
         title: 'Simplicity in planning',
         content: [
           {
@@ -703,6 +716,7 @@ export default  {
         ]
       },
       {
+        anchor: 'anc-ux',
         title: 'Engage your audience',
         content: [
           {
@@ -744,6 +758,7 @@ export default  {
     },
     services: [
       {
+        anchor: 'anc-content',
         title: 'Share your narrative',
         subTitle: 'Content Marketing',
         description: 'Authentic, up-to-date content is essential to growth and retention. We will help you develop an engaging narrative that gives people genuine reasons to love and follow your site and social media channels.',
@@ -758,6 +773,7 @@ export default  {
         media: false
       },
       {
+        anchor: 'anc-social',
         title: 'Connect with your audience',
         subTitle: 'Social Media Marketing',
         description: 'Strategic, impactful content will help give your followers immediate and tactile reasons to engage with your page, purchase your product or interact with your service. We know how to make your brand stand out in a world dominated by hashtags and emojis.',
@@ -776,6 +792,7 @@ export default  {
         ]
       },
       {
+        anchor: 'anc-seo',
         title: 'Algorithms Not Alchemy',
         subTitle: 'Search Engine Optimization',
         description: 'Google search results are often the first point of contact with your brand in the digital world. Providing valuable answers to search queries is key to reaching new audiences and retaining existing customers. Let our expert team worry about keeping on top of the latest search engine and social media algorithms to keep you ahead of the competition.',
@@ -790,6 +807,7 @@ export default  {
         media: false
       },
       {
+        anchor: 'anc-paid',
         title: 'Generate Qualified Leads',
         subTitle: 'Search Engine Marketing',
         description: 'Search engine marketing, also known as pay-per-click advertising, yields immediate results. Whether it\'s awareness, leads or sales, we will help you develop paid strategies designed to convert highly qualified leads into loyal clients.',
@@ -808,6 +826,7 @@ export default  {
         ]
       },
       {
+        anchor: 'anc-launch',
         title: 'Set the wheels in motion',
         subTitle: 'Launch Your Campaign',
         description: 'We know that you are eager to get the word out about your product or service quickly. We will help you structure a omni-channel launch campaign tailored specifically to your audience including social media, print design, and trade show setups. Our launch campaigns often include a landing page that can supply teaser content while we help you build up to the big announcement.',
@@ -847,6 +866,7 @@ export default  {
 
     serviceSolo: [
       {
+        anchor: 'anc-email',
         title: 'Email in style',
         subTitle: 'G Suite Management',
         description: 'As part our our overarching branding services, we want to make sure you look good when communicating about your business. It’s the little things that count, like using a professional email URL and having a sweet, branded signature.',
@@ -862,6 +882,7 @@ export default  {
 
     servicesNomedia: [
       {
+        anchor: 'anc-domains',
         title: 'Stake your digital claim',
         content: [
           {
@@ -890,6 +911,7 @@ export default  {
 
     services: [
       {
+        anchor: 'anc-startup',
         title: 'Jump start your business',
         subTitle: 'Startup Support',
         description: 'We know the joy and growing pains that come along with starting a new business, in fact, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding, all the way to setting up your internal operations software, we know what it takes to get you up and running. ',
@@ -903,6 +925,7 @@ export default  {
         }
       },
       {
+        anchor: 'anc-cloud',
         title: 'Get your head out of the clouds',
         subTitle: 'Cloud Technologies',
         description: 'Cloud technologies give you flexibility to create secure, optimized solutions that streamline internal processes. Based on your business requirements, we can help identify which technologies best suit your needs, then provide all of the assistance necessary to install and configure your chosen software.',
@@ -919,6 +942,7 @@ export default  {
         BtnData: false
       },
       {
+        anchor: 'anc-consulting',
         title: 'Enhance Efficiency',
         subTitle: 'Consulting',
         description: 'With our guidance, learn how to innovate effectively within your own business. We can help you reduce your overhead costs and increase productivity by turning your trickiest challenges into growth opportunities. Get in touch to find out how.',
@@ -949,22 +973,22 @@ export default  {
         list: [
           {
             linkName: 'Logos',
-            linkRoute: '/services/branding',
+            linkRoute: '/services/branding#anc-logos',
             a11y: 'Custom Logo Designs'
           },
           {
             linkName: 'Corporate Identities',
-            linkRoute: '/services/branding',
+            linkRoute: '/services/branding#anc-logos',
             a11y: 'Corporate Identities'
           },
           {
             linkName: 'Print & Digital design',
-            linkRoute: '/services/branding',
+            linkRoute: '/services/branding#anc-print',
             a11y: 'Pring & Digital Design'
           },
           {
             linkName: 'Packaging',
-            linkRoute: '/services/branding',
+            linkRoute: '/services/branding#anc-packaging',
             a11y: 'Custom Packaging'
           }
         ]
@@ -975,22 +999,22 @@ export default  {
         list: [
           {
             linkName: 'Custom Design & Development',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/ui-ux#anc-webdev',
             a11y: 'Custom Web Design'
           },
           {
             linkName: 'Ecommerce',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/ui-ux#anc-ecomm',
             a11y: 'Custom Ecommerce'
           },
           {
             linkName: 'Mobile-friendly Websites',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/ui-ux#anc-a11y',
             a11y: 'Mobile-friendly websites'
           },
           {
             linkName: 'Online Accessibility',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/ui-ux#anc-a11y',
             a11y: 'Accessibility'
           }
         ]
@@ -1001,27 +1025,27 @@ export default  {
         list: [
           {
             linkName: 'Guided discovery',
-            linkRoute: '/services/app-development',
+            linkRoute: '/services/app-development#anc-discovery',
             a11y: 'Guided discovery & Requirements Gathering'
           },
           {
             linkName: 'Agile Project Management',
-            linkRoute: '/services/app-development',
+            linkRoute: '/services/app-development#anc-discovery',
             a11y: 'Flexibility and Scalability'
           },
           {
             linkName: 'User Experience Design',
-            linkRoute: '/services/app-development',
+            linkRoute: '/services/app-development#anc-ux',
             a11y: 'Humanize the web'
           },
           {
             linkName: 'User Interface Design',
-            linkRoute: '/services/app-development',
+            linkRoute: '/services/app-development#anc-ux',
             a11y: 'Custom Interfaces'
           },
           {
             linkName: 'Application Development',
-            linkRoute: '/services/app-development',
+            linkRoute: '/services/app-development#anc-appdev',
             a11y: 'Custom app development'
           }
         ]
@@ -1032,27 +1056,27 @@ export default  {
         list: [
           {
             linkName: 'Search Engine Optimization',
-            linkRoute: '/services/digital-marketing',
+            linkRoute: '/services/digital-marketing#anc-seo',
             a11y: 'Raise your profile'
           },
           {
             linkName: 'Search Engine Marketing',
-            linkRoute: '/services/digital-marketing',
+            linkRoute: '/services/digital-marketing#anc-paid',
             a11y: 'Targeting the right customers'
           },
           {
             linkName: 'Social Media Marketing',
-            linkRoute: '/services/digital-marketing',
+            linkRoute: '/services/digital-marketing#anc-social',
             a11y: 'Social Media strategy & Executioin'
           },
           {
             linkName: 'Content Marketing',
-            linkRoute: '/services/digital-marketing',
+            linkRoute: '/services/digital-marketing#anc-content',
             a11y: 'Content Marketing services'
           },
           {
             linkName: 'Launch Campaigns',
-            linkRoute: '/services/digital-marketing',
+            linkRoute: '/services/digital-marketing#anc-launch',
             a11y: 'We help you make a splash!'
           }
         ]
@@ -1063,32 +1087,32 @@ export default  {
         list: [
           {
             linkName: 'IT Consulting',
-            linkRoute: '/services/consulting',
+            linkRoute: '/services/consulting#anc-cloud',
             a11y: 'Solutions & Consulting services'
           },
           {
             linkName: 'Startup Support',
-            linkRoute: '/services/consulting',
+            linkRoute: '/services/consulting#anc-startup',
             a11y: 'Startup launch services'
           },
           {
-            linkName: 'IT Consulting',
-            linkRoute: '/services/consulting',
+            linkName: 'Efficiency Consulting',
+            linkRoute: '/services/consulting#anc-consulting',
             a11y: 'Setup & Configuration services'
           },
           {
             linkName: 'Domain Management',
-            linkRoute: '/services/consulting',
+            linkRoute: '/services/consulting#anc-domains',
             a11y: 'Keep your domain secure'
           },
           {
             linkName: 'Domain dispute Resolution',
-            linkRoute: '/services/consulting',
+            linkRoute: '/services/consulting#anc-domains',
             a11y: 'Domain retrieval'
           },
           {
             linkName: 'G Suite Management',
-            linkRoute: '/services/consulting',
+            linkRoute: '/services/consulting#anc-email',
             a11y: 'Gsuite setup & management'
           }
         ]

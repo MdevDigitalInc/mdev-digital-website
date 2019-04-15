@@ -45,6 +45,7 @@
     <--
     <!-- Chapter Content -->
     <service-tile v-for="(service, index) in services"
+      :id="service.anchor"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :key="index"
       :flip="((index + 1) % 2) == 1"

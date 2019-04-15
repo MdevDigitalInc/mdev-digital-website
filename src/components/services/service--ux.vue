@@ -36,6 +36,7 @@
     <--
     <!-- Chapter Content -->
     <service-tile v-for="(service, index) in services"
+      :id="service.anchor"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 1"
       :key="index"
@@ -71,6 +72,7 @@
     </service-tile>
     <!-- No Media -->
     <service-nomedia
+      :id="service.anchor"
       v-for="(service, index) in nomedia"
       :key="index"
       :title="service.title"

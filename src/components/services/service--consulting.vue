@@ -48,6 +48,7 @@
     <!-- Chapter Content -->
     <!-- Service Solo -->
     <service-tile v-for="(service, index) in serviceSolo"
+      :id="service.anchor"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 1"
       :linkData="service.caseStudy"
@@ -91,6 +92,7 @@
 
     <!-- Service Nomedia -->
     <service-nomedia
+      :id="service.anchor"
       v-for="(service, index) in nomedia"
       :key="index"
       :title="service.title"
@@ -99,6 +101,7 @@
 
     <!-- Services All -->
     <service-tile v-for="(service, index) in services"
+      :id="service.anchor"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 1"
       :key="index"
