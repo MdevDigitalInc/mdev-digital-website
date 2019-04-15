@@ -46,7 +46,7 @@ export default{
   margin-top: 100px;
 
   .mdev-featured-column {
-    width: 40%;
+    width: 44%;
 
     @media #{$portrait} {
       width: 100%;
@@ -55,7 +55,7 @@ export default{
   }
 
   .mdev-featured-wrapper {
-    width: 76%;
+    width: 74%;
     margin: 0 auto;
   }
 
@@ -67,7 +67,7 @@ export default{
 .mdev-service-title {
   width: 70%;
   position: relative;
-  padding-left: 7%;
+  padding-left: 9%;
 
   &:before {
     right: 70%;

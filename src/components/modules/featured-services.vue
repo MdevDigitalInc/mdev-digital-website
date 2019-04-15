@@ -50,22 +50,6 @@ export default {
     width: 100%;
   }
 
-  // Feature wrapper to keep things centered
-  .mdev-featured-wrapper {
-    width: 91%;
-    margin: 0 0 0 9%;
-
-    @media #{$portrait} {
-      width: 100%;
-      flex-wrap: wrap;
-      margin: 0;
-    }
-
-    @media #{$phone-only} {
-      width: 100%;
-    }
-  }
-
   .mdev-service-media {
     width: 45%;
     order: 2;
@@ -90,6 +74,7 @@ export default {
       width: 100%;
       order: 4;
       padding: 0 10%;
+      margin: 25px 0 50px;
     }
 
     @media #{$xl-up} {
@@ -138,7 +123,8 @@ export default {
   margin: 0 10% 0 0;
 
   @media #{$portrait} {
-    margin: 0 auto;
+    margin: 0;
+    with: 100%;
   }
 
   // Move content to last
@@ -149,8 +135,7 @@ export default {
     padding-left: 5%;
 
     @media #{$portrait} {
-      margin: 100px auto;
-      padding: 0 10%;
+      padding: 0 9%;
     }
   }
 
@@ -177,8 +162,12 @@ export default {
 // On the right. This is OPPOSITE to the default where media is always on
 // the left first.
 .mdev-featured-services.--no-image .mdev-featured-wrapper {
-  margin: 0 7%;
+  margin: 0 9%;
   width: auto;
+
+  @media #{$laptop-only} {
+    margin: 0 5%;
+  }
 
   // Override title margin
   .mdev-service-title {
@@ -203,16 +192,11 @@ export default {
     bottom: -50px;
   }
 
-
   // Default content LEFT
   .mdev-service-content {
     order: 2;
     padding-right: 0;
     padding-left: 5%;
-
-    @media #{$portrait} {
-      padding: 0;
-    }
   }
 
   // Flip Order

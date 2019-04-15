@@ -44,6 +44,20 @@ export default{
   overflow-x: hidden;
   overflow-y: visible;
 
+  @media #{$tablet-lnd-only} {
+    margin-top: -50px;
+    padding-bottom: 60px;
+  }
+
+  @media #{$laptop-only} {
+    padding-bottom: 80px;
+    margin-top: -50px;
+  }
+
+  @media #{$portrait} {
+    padding-bottom: 50px;
+    margin-top: -20px;
+  }
   .mdev-link-content {
     transition: all .3s;
     width: 30%;

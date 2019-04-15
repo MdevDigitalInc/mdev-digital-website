@@ -765,9 +765,9 @@ export default  {
         topics: [
           'Blogging',
           'Website Copy',
-          'Ad Copy',
-          'Proofreading & Editing',
-          'Email Marketing'
+          'Marketing Videos',
+          'Email Marketing',
+          'Proofreading & Editing'
         ],
         caseStudy: false,
         media: false
@@ -786,8 +786,8 @@ export default  {
         caseStudy: false,
         media: [
           {
-            image: 'services/digiads/social-phone-instagram.png',
-            imageDesc: 'Organic Social Media.'
+            image: 'services/digiads/sem-keto-pintrest.png',
+            imageDesc: 'Ketolibriyum Pinterest Templates.'
           }
         ]
       },
@@ -820,8 +820,8 @@ export default  {
         caseStudy: false,
         media: [
           {
-            image: 'services/digiads/sem-keto-pintrest.png',
-            imageDesc: 'Ketolibriyum Pinterest Templates.'
+            image: 'services/digiads/social-phone-instagram.png',
+            imageDesc: 'Organic Social Media.'
           }
         ]
       },

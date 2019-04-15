@@ -303,6 +303,10 @@ $heading-top-padding-mob: 15px;
       width: 100%;
     }
 
+    @media #{$laptop-only} {
+      width: 85%;
+    }
+
     @media #{$xl-up} {
       top: 40%;
     }

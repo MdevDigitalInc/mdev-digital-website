@@ -15,6 +15,28 @@
   }
 }
 
+// Feature wrapper to keep things centered
+.mdev-featured-wrapper {
+  width: 91%;
+  margin: 0 0 0 9%;
+
+  @media #{$laptop-only} {
+    width: 95%;
+    margin-left: 5%;
+    margin-right: 0;
+  }
+
+  @media #{$portrait} {
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  @media #{$phone-only} {
+    width: 100%;
+  }
+}
+
 // Section Types
 .mdev-full-section {
   width: 100%;
