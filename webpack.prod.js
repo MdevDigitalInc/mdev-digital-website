@@ -5,12 +5,16 @@
 // ----------------------------------------
 
 // Require Imports
-const webpack = require('webpack')
+var webpack = require('webpack');
+var path = require('path')
 const RobotstxtPlugin = require("robotstxt-webpack-plugin").default;
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const PrerenderSPAPlugin = require('prerender-spa-plugin');
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
+
 
 // Webpack Merge Configuration
 const merge = require('webpack-merge');
@@ -97,6 +101,31 @@ module.exports = merge(common, {
         yandex: false,
         windows: false
       }
+    }),
+    new PrerenderSPAPlugin({
+      staticDir: path.join(__dirname, 'dist'),
+      routes: [
+        '/',
+        '/contact',
+        '/company',
+        '/services/overview',
+        '/services/branding',
+        '/services/app-development',
+        '/services/consulting',
+        '/services/digital-marketing',
+        '/services/ui-ux',
+        '/team/lucas-moreira',
+        '/team/becky-domenico',
+        '/team/haly-hawkins',
+        '/team/dorian-hall',
+        '/team/luis-guerrero',
+        '/team/graham-coutts',
+      ],
+
+      renderer: new Renderer({
+        headless: true,
+        renderAfterDocumentEvent: 'spa-rendered'
+      })
     }),
     // Gzip Compression
     new CompressionPlugin({

@@ -122,6 +122,13 @@ export default{
   name: 'ServicesDigitalMarketing',
 
   metaInfo: {
+    changed (newInfo, addedTags, removedTags) {
+      document.dispatchEvent(new Event('spa-rendered'));
+      console.log('Meta info was updated!');
+      console.log(addedTags);
+      console.log(removedTags);
+    },
+
     title: 'Digital Marketing Services',
     meta: [
       { property: 'og:title', content: 'Digital Marketing Services | MDEV Digital | London, Toronto, Montreal' },

@@ -112,6 +112,13 @@ export default{
   name: 'ServicesUX',
 
   metaInfo: {
+    changed (newInfo, addedTags, removedTags) {
+      document.dispatchEvent(new Event('spa-rendered'));
+      console.log('Meta info was updated!');
+      console.log(addedTags);
+      console.log(removedTags);
+    },
+
     title: 'Web Design Services',
     meta: [
       { property: 'og:title', content: 'Web Design Services | MDEV Digital | London, Toronto, Montreal' },

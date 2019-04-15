@@ -28,6 +28,12 @@ export default{
   name: 'App',
   // SEE - https://github.com/ktquez/vue-head
   metaInfo: {
+    changed (newInfo, addedTags, removedTags) {
+      document.dispatchEvent(new Event('spa-rendered'));
+      console.log('Meta info was updated!');
+      console.log(addedTags);
+      console.log(removedTags);
+    },
     title: 'Process-Driven Development',
     titleTemplate: '%s | MDEV Digital | London, Toronto, Montreal',
     meta: [
@@ -41,7 +47,7 @@ export default{
 
   data: function(){
     return {
-      isLoading: true,
+      isLoading: false,
       isHome: true,
       brandReverse: false,
       keys: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],

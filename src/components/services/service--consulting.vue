@@ -180,6 +180,13 @@ export default{
   name: 'ServicesConsulting',
 
   metaInfo: {
+    changed (newInfo, addedTags, removedTags) {
+      document.dispatchEvent(new Event('spa-rendered'));
+      console.log('Meta info was updated!');
+      console.log(addedTags);
+      console.log(removedTags);
+    },
+
     title: 'Support Services',
     meta: [
       { property: 'og:title', content: 'Support Services | MDEV Digital | London, Toronto, Montreal' },

@@ -57,7 +57,13 @@ import ContactForm        from './contact--form.vue';
 export default {
   name: 'Contact',
   metaInfo: {
-    inner: 'Contact Us',
+    changed (newInfo, addedTags, removedTags) {
+      document.dispatchEvent(new Event('spa-rendered'));
+      console.log('Meta info was updated!');
+      console.log(addedTags);
+      console.log(removedTags);
+    },
+    title: 'Contact Us',
     meta: [
       { property: 'og:title', content: 'Contact Us | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Contact Us | MDEV Digital | London, Toronto, Montreal' },

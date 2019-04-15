@@ -120,7 +120,14 @@ export default{
   name: 'ServicesAppDev',
 
   metaInfo: {
-    inner: 'Custom Web & Application Development',
+    changed (newInfo, addedTags, removedTags) {
+      document.dispatchEvent(new Event('spa-rendered'));
+      console.log('Meta info was updated!');
+      console.log(addedTags);
+      console.log(removedTags);
+    },
+
+    title: 'Custom Web & Application Development',
     meta: [
       { property: 'og:title', content: 'Custom Web & Application Development | MDEV Digital | London, Toronto, Montreal' },
       { name: 'twitter:title', content: 'Custom Web & Application Development | MDEV Digital | London, Toronto, Montreal' },

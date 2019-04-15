@@ -95,6 +95,13 @@ import MdevData           from '../../mdev-data.js';
 export default{
   name: 'About',
   metaInfo: {
+    changed (newInfo, addedTags, removedTags) {
+      document.dispatchEvent(new Event('spa-rendered'));
+      console.log('Meta info was updated!');
+      console.log(addedTags);
+      console.log(removedTags);
+    },
+
     title: 'Hybrid Digital Agency',
     meta: [
       { property: 'og:title', content: 'Hybrid Digital Agency | Process Driven UI/UX and Development - London, Ontario' },

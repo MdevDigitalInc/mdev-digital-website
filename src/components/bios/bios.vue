@@ -81,6 +81,13 @@ import MdevData       from '../../mdev-data.js';
 export default {
   name: "BiosView",
   metaInfo: {
+    changed (newInfo, addedTags, removedTags) {
+      document.dispatchEvent(new Event('spa-rendered'));
+      console.log('Meta info was updated!');
+      console.log(addedTags);
+      console.log(removedTags);
+    },
+
     title: 'Process-Driven Development',
     meta: [
       { property: 'og:title', content: 'Process-Driven Development | MDEV Digital | London, Toronto, Montreal' },
