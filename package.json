@@ -9,9 +9,8 @@
     "dev": "webpack-dev-server --open --config webpack.dev.js",
     "lintcss": "stylelint '**/*.scss' --syntax scss",
     "lintvue": "stylelint '**/*.vue' --syntax scss",
-    "prerender": "",
     "prod": "webpack --config webpack.prod.js",
-    "build": "npm run lintcss && npm run lintvue && npm run prod && npm run prerender",
+    "build": "npm run lintcss && npm run lintvue && npm run prod",
     "clean": "rm -r dist/",
     "build-deploy": "npm run build && s3-website deploy && npm run clean",
     "deploy": "s3-website deploy"
