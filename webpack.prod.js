@@ -102,8 +102,10 @@ module.exports = merge(common, {
         windows: false
       }
     }),
+    // Prerenderer Plugin
     new PrerenderSPAPlugin({
       staticDir: path.join(__dirname, 'dist'),
+      // Routes to render
       routes: [
         '/',
         '/contact',
@@ -121,7 +123,7 @@ module.exports = merge(common, {
         '/team/luis-guerrero',
         '/team/graham-coutts',
       ],
-
+      // Export & Optimization options
       minify: {
         collapseBooleanAttributes: true,
         collapseWhitespace: true,
@@ -129,7 +131,7 @@ module.exports = merge(common, {
         keepClosingSlash: true,
         sortAttributes: true
       },
-
+      // Renderer Options
       renderer: new Renderer({
         headless: true,
         // Using render after time because trigger doesn't work.

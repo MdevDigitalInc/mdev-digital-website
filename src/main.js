@@ -202,5 +202,3 @@ const _vue = new Vue({
   store,
   render: h => h(App)
 });
-// Prerenderer call
-window._vuePrerender = _vue;
