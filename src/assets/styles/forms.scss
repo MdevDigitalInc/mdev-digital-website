@@ -70,6 +70,10 @@ textarea {
   border-bottom: 4px solid $border-color-passive;
   border-top: 4px solid $border-color-active;
 
+  @media #{$portrait} {
+    margin-top: 7px;
+  }
+
   &:hover, &:focus, &:active {
     border-top: 4px solid $border-color-passive;
     border-bottom: 4px solid $border-color-active;

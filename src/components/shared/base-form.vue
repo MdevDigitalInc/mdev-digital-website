@@ -236,7 +236,7 @@ export default{
     font-weight: 700;
     font-size: 1.8vw;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: .5px;
 
     @media #{$portrait} {
       font-size: 3.3vw;
@@ -268,6 +268,18 @@ export default{
 
     @media #{$phone-only} {
       width: 100%;
+    }
+
+    &:last-child {
+      margin-bottom: 25px;
+
+      @media #{$portrait} {
+        margin-bottom: 40px;
+      }
+
+      @media #{$phone-only} {
+        margin-bottom: 25px;
+      }
     }
   }
 }
