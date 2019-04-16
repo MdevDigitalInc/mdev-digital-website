@@ -371,7 +371,7 @@ export default  {
       ],
       description: 'We specialize in designing carefully crafted custom sites to showcase your unique offerings. Our digital team keeps on top of the latest web trends and coding practices to produce clear user journeys and enjoyable web experiences. After a collaborative planning process, you can sit back while we put a laser-focus on all the details, large and small.',
       topics: [
-        'Custom Website Design & Development',
+        'Custom Design & Development',
         'Ecommerce',
         'Mobile-friendly Websites',
         'WCAG 2.0 Accessibility'
@@ -462,7 +462,7 @@ export default  {
       BtnData: {
         accessibility: 'Explore our Business Support services.',
         btnRoute: '/services/consulting',
-        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
       },
       config: {
         showDecoration: false,

@@ -92,10 +92,15 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     margin-right: 5vw;
     position: relative;
     z-index: 2;
+    margin-top: 70px;
 
     @media #{$portrait} {
       width: 100%;
       margin: 100px auto;
+    }
+
+    @media #{$phone-only} {
+      margin: 85px auto 25px;
     }
 
     // Green decorative background lines
@@ -111,7 +116,12 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
       @media #{$portrait} {
         top: -50px;
         left: -100px;
-        bottom: 50px;
+        bottom: 15vh;
+      }
+
+      @media #{$laptop-only} {
+        left: -25px;
+        top: -25px;
       }
     }
 
@@ -144,7 +154,7 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     }
 
     .mdev-service-desc {
-      width: 60%;
+      width: 55%;
 
       @media #{$portrait} {
         width: 100%;
@@ -152,7 +162,7 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     }
 
     .mdev-service-topics {
-      width: 30%;
+      width: 35%;
       margin-top: 0;
 
       @media #{$portrait} {
@@ -187,6 +197,11 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
       left: -100px;
       right: 15%;
     }
+
+    @media #{$laptop-only} {
+      bottom: -25px;
+      right: -25px;
+    }
   }
 }
 
@@ -218,6 +233,11 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
         top: -50px;
         bottom: -50px;
         right: 10%;
+      }
+
+      @media #{$laptop-only} {
+        top: -25px;
+        bottom: -25px;
       }
     }
   }

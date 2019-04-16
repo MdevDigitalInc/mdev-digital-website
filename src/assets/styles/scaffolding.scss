@@ -69,12 +69,27 @@
 }
 
 .--featured-space {
-  margin-top: 250px;
-  margin-bottom: 250px;
+  margin-top: 200px;
+  margin-bottom: 200px;
 
   @media #{$portrait} {
-    margin-top: 150px;
-    margin-bottom: 150px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  @media #{$laptop-only} {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  @media #{$tablet-prt-only} {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  @media #{$phone-only} {
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 }
 

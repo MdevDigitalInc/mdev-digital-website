@@ -181,7 +181,7 @@ $buttonSize: 10px;
 
     @media #{$portrait} {
       margin: 0;
-      padding: 0 20px;
+      padding: 20px;
     }
   }
 

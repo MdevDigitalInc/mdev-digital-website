@@ -232,6 +232,14 @@ $mask-arrow-anim-time: 3.2s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 
+  @media #{$portrait} {
+    animation: hero-animation-prt;
+    animation-duration: $mask-hero-anim-time;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
   .mdev-page-title {
     opacity: 1;
   }

@@ -1,6 +1,7 @@
 // Keyframe Animations for Hero Header
 $hero-polygon-start: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
 $hero-polygon-end: polygon(50% 0%, 100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+$hero-polygon-prt-end: polygon(50% 0%, 100% 0, 100% 95%, 50% 100%, 0 95%, 0 0);
 // Controls the open and close animation
 // at the bottom of the hero-main.vue
 @keyframes hero-animation {
@@ -9,6 +10,14 @@ $hero-polygon-end: polygon(50% 0%, 100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
   }
   100% {
     clip-path: $hero-polygon-end;
+  }
+}
+@keyframes hero-animation-prt {
+  0% {
+    clip-path: $hero-polygon-start;
+  }
+  100% {
+    clip-path: $hero-polygon-prt-end;
   }
 }
 // Controls the pulsating arrow effect

@@ -207,24 +207,32 @@ export default{
   }
 
   @media #{$phone-only} {
-    padding-top: 150%;
-    padding-bottom: 10%;
+    padding-top: 125%;
   }
 
   @media #{$tablet-lnd-only} {
     padding-top: 45%;
+  }
+
+  @media #{$tablet-prt-only} {
+    padding-top: 95%;
   }
 }
 
 .mdev-service {
   .mdev-service-index {
     font-size: 40px;
+    font-weight: 100;
     line-height: 1.5;
   }
 
   .mdev-service-topics {
     line-height: 1.82;
     font-size: 20px;
+
+    @media #{$phone-only} {
+      font-size: 10px;
+    }
   }
 
   .mdev-service-desc {

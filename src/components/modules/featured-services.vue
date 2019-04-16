@@ -57,6 +57,7 @@ export default {
     overflow: visible;
     z-index: 2;
     margin-left: 5vw;
+    margin-top: 70px;
 
     @media #{$portrait} {
       width: 100%;

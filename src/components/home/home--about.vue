@@ -25,8 +25,8 @@ export default {
   data: function() {
     return {
       mdevLogoMask: 'svg/about/MDEV-Cutout.svg',
-      mdevSlogan: 'svg/about/MDEV-Slogan.svg',
-      mdevSloganMob: 'svg/about/MDEV-Slogan-mob.svg',
+      mdevSlogan: 'svg/about/MDEV_Cutout_Text_Desktop.svg',
+      mdevSloganMob: 'svg/about/MDEV_Cutout_Text.svg',
       BtnData: {
         accessibility: 'Learn more about MDEV Digital',
         btnRoute: '/company',
