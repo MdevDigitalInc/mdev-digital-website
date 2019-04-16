@@ -13,13 +13,13 @@
 export default  {
   links: [
     {
-      linkName: 'Company',
-      linkTitle: 'Coming Soon!',
-      route: '/company',
+      linkName: 'About',
+      linkTitle: 'About MDEV Digital',
+      route: '/about',
       linkIndex: '01'
     },
     {
-      linkName: 'Work',
+      linkName: 'Client Stories',
       linkTitle: 'Coming Soon!',
       route: '/comingsoon',
       linkIndex: '02'
