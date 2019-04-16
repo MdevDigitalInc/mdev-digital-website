@@ -10,7 +10,7 @@
           <div class="--huge-title u-uppercase">
             {{ $t("contact.largeTitle") }}
           </div>
-          <div class="flex flex-vert-center flex-hor-start">
+          <div class="flex flex-vert-center flex-hor-start flex-wrap">
             <!-- Loads Social Links -->
             <social-links
               darkTheme="true"
@@ -53,7 +53,7 @@ export default{
       BtnData: {
         accessibility: 'View Our Services',
         btnRoute: '/services',
-        btnClass: 'mdev-dark-btn --space-left-sm'
+        btnClass: 'mdev-dark-btn'
       },
       // Links pulled from Flat File
       socialLinks: MdevData.socialLinks,
@@ -79,6 +79,14 @@ export default{
   background: $color-brand-accent;
   overflow: hidden;
 
+  @media #{$portrait} {
+    padding-left: 50px;
+  }
+
+  @media #{$phone-only} {
+    padding: 50px 20px;
+  }
+
   .--huge-title {
     margin-bottom: 50px;
   }
@@ -99,6 +107,11 @@ export default{
     @media #{$portrait} {
       font-size: 6vw;
     }
+
+    @media #{$phone-only} {
+      font-size: 10vw;
+      width: 100%;
+    }
   }
 
   .mdev-about-service {
@@ -106,6 +119,15 @@ export default{
 
     @media #{$portrait} {
       justify-content: flex-start;
+    }
+  }
+
+  .mdev-dark-btn {
+    margin-left: 25px;
+
+    @media #{$phone-only} {
+      margin-left: 0;
+      margin-top: 25px;
     }
   }
 }

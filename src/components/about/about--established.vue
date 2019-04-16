@@ -92,7 +92,7 @@ $est-padding: 60px;
   }
 
   .mdev-est-badge {
-    width: 15%;
+    width: 17%;
     position: absolute;
     left: 4vw;
     bottom: 4vw;

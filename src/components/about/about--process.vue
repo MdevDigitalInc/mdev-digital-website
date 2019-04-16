@@ -36,10 +36,14 @@ export default{
 
   @media #{$portrait} {
     padding: 320px 0 210px;
+  }
 
-    &.--triangle-bottom {
-      clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 92%, 0 100%, 0 0);
-    }
+  @media #{$phone-only} {
+    padding: 280px 0 120px;
+  }
+
+  h3 {
+    font-size: 30px;
   }
 }
 
@@ -48,7 +52,12 @@ export default{
   margin: 0 auto;
 
   @media #{$portrait} {
-    width: 90%;
+    width: 82%;
+
+    p {
+      width: 85%;
+      margin: 0 auto;
+    }
   }
 }
 

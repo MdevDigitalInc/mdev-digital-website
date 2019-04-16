@@ -54,6 +54,10 @@ export default{
   background: $color-brand-bkg;
   z-index: -1;
   overflow: hidden;
+
+  @media #{$phone-only} {
+    padding: 140px 0 75px;
+  }
 }
 
 .mdev-philosophy {
@@ -77,10 +81,15 @@ export default{
   .mdev-philosophy-icon {
     height: 7vw;
     width: auto;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
     @media #{$portrait} {
       height: 20vw;
+    }
+
+    @media #{$phone-only} {
+      margin: 0 auto 20px;
+      height: 25vw;
     }
   }
 
@@ -104,6 +113,11 @@ export default{
 h3 {
   margin-bottom: 70px;
   margin-top: 10px;
+
+  @media #{$portrait} {
+    margin-top: 5px;
+    margin-bottom: 50px;
+  }
 }
 /*--------------------------------------*/
 </style>

@@ -65,9 +65,19 @@ export default{
   }
 }
 
+.mdev-team-text {
+  width: 52%;
+}
+
+.mdev-team-title {
+  white-space: nowrap;
+  width: 48%;
+}
+
+
+
 .mdev-team-title,
 .mdev-team-text {
-  width: 50%;
   padding: 20px;
 
   @media #{$portrait} {
@@ -78,10 +88,6 @@ export default{
   @media #{$phone-only} {
     padding: 0 20px;
   }
-}
-
-.mdev-team-title {
-  white-space: nowrap;
 }
 
 .mdev-member {

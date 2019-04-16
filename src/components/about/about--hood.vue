@@ -12,7 +12,7 @@
       <img :src="loadImage(foreground)" :alt="a11y"/>
     </div>
     <div class="mdev-hood-mask --triangle-top-r">
-      <img :src="loadImage(background)" class="--rotate-hood"/>
+      <img :src="loadImage(background)" class="--rotate-hood" v-in-viewport/>
     </div>
   </section>
 </template>
@@ -47,7 +47,8 @@ export default{
   z-index: 1;
 }
 
-.--rotate-hood {
+.--rotate-hood.in-viewport,
+.--rotate-hood.above-viewport {
   animation: rotate-anim infinite;
   animation-duration: 320s;
   animation-timing-function: linear;
@@ -74,7 +75,6 @@ export default{
 
 .mdev-100-kell {
   z-index: 2;
-  margin-top: 50px;
   position: relative;
   width: 100%;
 
@@ -105,8 +105,12 @@ export default{
   width: 40vw;
   position: absolute;
   z-index: 3;
-  top: 230px;
+  top: 19vw;
   left: 10%;
+
+  @media #{$laptop-only} {
+    top: 15vw;
+  }
 
   @media #{$portrait} {
     top: 120px;

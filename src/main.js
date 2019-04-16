@@ -122,7 +122,7 @@ let whiteBkgPaths = [
   "contact",
   "team",
   "services",
-  "company"
+  "about"
 ]
 
 router.beforeEach(function( to, from, next){

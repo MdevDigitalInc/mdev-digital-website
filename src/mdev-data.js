@@ -1224,7 +1224,7 @@ export default  {
           icon: 'icons/icon-tenacity.svg',
           a11y: 'Tenacity Icon',
           heading: 'Tenacity',
-          subheading: 'Stick to it!',
+          subheading: 'Stick to it',
           text: 'Tenacity is our strength of purpose. We believe in taking a persistent approach to solving complex problems.'
         },
         {
@@ -1295,15 +1295,6 @@ export default  {
       text: 'Our rockstar team of web development and user experience professionals are passionate learners and kick ass problem solvers determined to do things the right way.',
       members: [
         {
-          name: 'Haly Hawkins',
-          title: 'Lead Designer',
-          image: 'bios/bio-haly.png',
-          a11y: 'Our lead designer Haly',
-          route: '/team/haly-hawkins',
-          linka11y: 'Visit Haly\'s Profile!',
-          class: '--haly'
-        },
-        {
           name: 'Luis Guerrero',
           title: 'Digital Marketing Manager',
           image: 'bios/bio-luis.png',
@@ -1311,6 +1302,15 @@ export default  {
           route: '/team/luis-guerrero',
           linka11y: 'Visit Luis\' Profile!',
           class: '--luis'
+        },
+        {
+          name: 'Haly Hawkins',
+          title: 'Lead Designer',
+          image: 'bios/bio-haly.png',
+          a11y: 'Our lead designer Haly',
+          route: '/team/haly-hawkins',
+          linka11y: 'Visit Haly\'s Profile!',
+          class: '--haly'
         },
         {
           name: 'Graham Coutts',
