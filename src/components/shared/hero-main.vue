@@ -3,6 +3,7 @@
     <div class="mdev-hero-mask" data-main-hero >
       <slot></slot>
       <div v-if="pageTitle" class="mdev-page-title" data-main-title>
+        <span data-crossbeam class="--crossbeam"></span>
         <h1 data-page-title>
           <svg xmlns="http://www.w3.org/2000/svg" width="52" height="9"><defs/><path id="arrow_right" data-name="arrow right" class="cls-1" d="M1096.35
         4885l7.65-4.5-7.65-4.51v3.55H1052v1.91h44.35v3.55z" transform="translate(-1052 -4876)"/></svg>
@@ -37,8 +38,8 @@ export default {
   mounted: function() {
     // Resize timer to debounce scroll
 
-    //let resizeTimer;
-    //let resizeTime = 50;
+    let resizeTimer;
+    let resizeTime = 50;
 
     // Adjust Arrow height
 
@@ -46,24 +47,22 @@ export default {
     this.$nextTick(() => {
       // Adjust background arrow size
       //this.adjustArrow();
+      this.adjustCrossbeam();
       // Activate Header
       $('[data-main-hero]').addClass('--mask-active');
+
+      // this.arrowTimer = setInterval( this.adjustArrow, 1000);
+
+      $(window).resize(() => {
+        // Clear Timer
+        clearTimeout( resizeTimer );
+        //resizeTimer = setTimeout( this.adjustArrow, resizeTime );
+        resizeTimer = setTimeout( this.adjustCrossbeam, resizeTime );
+      });
     });
-
-    // Start repeating interval to set arrow size
-
-    // this.arrowTimer = setInterval( this.adjustArrow, 1000);
-
-    // Adjust arrow size on resize
-
-    //$(window).resize(() => {
-      // Clear Timer
-      //clearTimeout( resizeTimer );
-      //resizeTimer = setTimeout( this.adjustArrow, resizeTime );
-    //});
   },
 
-  //methods: {
+  methods: {
     //adjustArrow() {
       //let height;
       //height = $('[data-main-hero]').outerHeight(true);
@@ -71,7 +70,12 @@ export default {
           //'height': height + 'px'
       //});
     //}
-  //},
+    adjustCrossbeam() {
+      var brandHeight = null;
+      brandHeight = $('[data-main-nav]').height();
+      $('[data-crossbeam]').css({ 'height': (brandHeight + 16) + 'px' });
+    }
+  },
 
   beforeDestroy: function() {
     // Clear repeating inverval to adjust arrow
@@ -261,6 +265,16 @@ $mask-arrow-anim-time: 3.2s;
   .mdev-header-arrow-mask {
     opacity: 0;
   }
+}
+
+.--crossbeam {
+  width: 100%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid $white;
+  z-index: -1;
 }
 
 /*--------------------------------------*/
