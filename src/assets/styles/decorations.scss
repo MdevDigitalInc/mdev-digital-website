@@ -20,6 +20,15 @@
   }
 }
 
+.--sexy-white {
+  background: $white;
+  opacity: .4;
+
+  @media #{$portrait} {
+    opacity: .15;
+  }
+}
+
 .--sexy-green {
   background: $color-brand-primary;
   opacity: .5;
