@@ -75,6 +75,7 @@ export default {
 
   a {
     display: block;
+    line-height: 150%;
     color: $white;
     padding: .5vw 0;
     transition: all .3s;

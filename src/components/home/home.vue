@@ -2,7 +2,7 @@
   <div class="mdev-main-content">
     <hero-main v-view="(e) => changeNavBrand(e, '--teal-white')" :pageTitle="pageTitle" :headerDsc="headerDsc">
       <!-- Header Slot -->
-      <div class="mdev-main-hero" :style="heroStyles"></div>
+      <div class="mdev-main-hero --bkg-sizing" :style="heroStyles"></div>
     </hero-main>
     <!-- Process -->
     <home-process v-view="(e) => changeNavBrand(e, '--teal-white')" id="mainContent"></home-process>
@@ -39,8 +39,8 @@ export default{
       heroStyles: {
         backgroundColor: '#0f1617',
         backgroundImage: 'url(' + this.loadImage('MDEV-main-hero.png') + ')',
-        backgroundSize: 'cover',
-        backgroundPosition: 'top center'
+        backgroundPosition: 'top center',
+        backgroundRepeat: 'norepeat'
       },
       // Disables Page Title bar
       pageTitle: 'Humanize The Web',

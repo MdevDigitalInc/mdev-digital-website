@@ -107,6 +107,14 @@ export default {
   h1 {
     font-weight: 500;
   }
+
+  &.--bkg-sizing {
+    background-size: cover;
+
+    @media #{$desktop-only} {
+      background-size: auto 100%;
+    }
+  }
 }
 
 // Masks

@@ -29,9 +29,9 @@
         </div>
         <!-- Position Marker -->
         <div class="ctrl-position u-light">
-          <span>0{{ desiredIndex + 1 }}</span>
+          <span class="u-bold">0{{ desiredIndex + 1 }}</span>
           <span class="u-italic">of</span>
-          <span>0{{ testimonials.length }}</span>
+          <span class="u-bold">0{{ testimonials.length }}</span>
         </div>
         <!-- Arrow W/ embedded SVG - Moves Array Forward -->
         <div

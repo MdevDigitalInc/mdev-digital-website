@@ -10,7 +10,7 @@
   padding: 0;
   min-width: 290px;
 
-  @media #{$desktop-up} {
+  @media #{$laptop-up} {
     width: 80%;
   }
 }
@@ -224,7 +224,7 @@ $md: 75px;
 // Pull Up | Down
 .--pull-up-section {
   padding-top: 350px;
-  margin-top: -200px;
+  margin-top: -250px;
   z-index: 0;
   position: relative;
 }
