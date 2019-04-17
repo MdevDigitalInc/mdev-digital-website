@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-founders-section --section-space">
-    <div class="mdev-founders flex">
+    <div class="mdev-main-wrapper mdev-founders flex">
       <!-- Founder Content -->
       <div class="mdev-founder-content">
         <span v-in-viewport class="--subheading u-light u-uppercase a-fade-in-full">
@@ -59,10 +59,6 @@ export default{
 }
 
 .mdev-founders {
-  width: 85%;
-  margin: 0 auto;
-  max-width: 1800px;
-
   @media #{$portrait} {
     flex-wrap: wrap;
   }

@@ -1,5 +1,5 @@
 <template>
-  <section class="mdev-main-content">
+  <section  v-view="(e) => changeNavBrand(e, '--teal-white')" class="mdev-main-content">
     <brand-animation v-if="isLoading"></brand-animation>
     <div v-if="!isLoading" class="mdev-coming-soon u-text-center u-c-white" :class="{ '--active' : isActive }">
       <h2 class="u-uppercase">

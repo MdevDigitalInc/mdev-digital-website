@@ -123,7 +123,7 @@ export default{
   }
 
   .mdev-dark-btn {
-    margin-left: 25px;
+    margin-left: 40px;
 
     @media #{$phone-only} {
       margin-left: 0;
