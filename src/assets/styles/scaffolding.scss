@@ -139,6 +139,14 @@ $xs: 25px;
 $sm: 50px;
 $md: 75px;
 
+.--space-top-md {
+  margin-top: $md;
+
+  @media #{$phone-only} {
+    margin-top: $sm;
+  }
+}
+
 .--space-top-sm {
   margin-top: $sm;
 
@@ -169,6 +177,11 @@ $md: 75px;
 
 .--space-right-sm {
   margin-right: $sm;
+}
+
+.--space-lr-sm {
+  margin-right: $xs;
+  margin-left: $xs;
 }
 
 // Flex Modifiers

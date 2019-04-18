@@ -7,7 +7,7 @@
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-error">
           <div class="mdev-center">
-            <!-- Bottom Container -->
+            <!-- Top Container -->
             <div class="flex flex-vert-center --portrait-wrap">
               <object class="--error-fourofour" id="anim-error" type="image/svg+xml" :data="loadImage(errorAnim)"></object>
               <!-- CTA Text & Button -->
@@ -19,6 +19,17 @@
                   {{ $t('errorpage.intro') }}
                 </p>
               </div>
+            </div>
+            <!-- 404 Navigation -->
+            <div class="mdev-error-action flex flex-hor-center flex-vert-center">
+              <!-- Primary Button -->
+              <btn-primary :BtnData="BtnData">
+                {{ $t('errorpage.path1') }}
+              </btn-primary>
+              <!-- Primary Button -->
+              <btn-primary :BtnData="BtnData">
+                {{ $t('errorpage.path2') }}
+              </btn-primary>
             </div>
           </div>
         </div>
@@ -40,6 +51,7 @@ import MdevData       from '../../mdev-data.js';
 // Components Import
 import HeroMain       from '../shared/hero-main.vue';
 import MainFooter     from '../shared/main-footer.vue';
+import BtnPrimary   from '../shared/btn-primary.vue';
 
 export default {
   name: 'ErrorPage',
@@ -49,12 +61,22 @@ export default {
       heroStyles: {
         backgroundColor: '#0a1315'
       },
+      BtnDataTwo: {
+        accessibility: 'About MDEV Digital',
+        btnRoute: '/about',
+        btnClass: 'mdev-primary-btn --space-lr-sm --space-top-sm'
+      },
+      BtnData: {
+        accessibility: 'Contact Us!',
+        btnRoute: '/contact',
+        btnClass: 'mdev-primary-btn --space-lr-sm --space-top-sm'
+      },
       // SEO
       seo: MdevData.siteSeo,
       // Disables Page Title bar
       pageTitle: 'ERROR 404',
       headerDsc: 'Sorry, Something went wrong. This is a 404 page.',
-      errorAnim: 'services/branding/MDEV_HEADER_story_animated.svg',
+      errorAnim: 'svg/MDEV_HEADER_404_animated.svg',
     };
   },
 
@@ -74,23 +96,16 @@ export default {
 
   mounted: function() {
     this.$nextTick(() => {
-        $('[data-main-nav]').addClass('--teal-white');
-      setTimeout(() => {
-        new Vivus('anim-tell', {duration: 150});
-      }, 100);
-      setTimeout(() => {
-        new Vivus('anim-your', {duration: 180});
-        $('#anim-your').addClass('--anim-visible');
-      }, 450);
+      $('[data-main-nav]').addClass('--teal-white');
       setTimeout(() => {
         new Vivus('anim-error', {duration: 180});
-      }, 1700);
+      }, 700);
       setTimeout(() => {
         $('[data-header-intro]').addClass('--anim-visible');
       }, 2200);
       setTimeout(() => {
         $('[data-header-btn]').addClass('fully-in-viewport');
-      }, 3400);
+      }, 2800);
     });
   },
 
@@ -98,6 +113,7 @@ export default {
   components: {
     'hero-main'      : HeroMain,
     'main-footer'    : MainFooter,
+    'btn-primary'    : BtnPrimary
   }
 
 };
@@ -120,45 +136,43 @@ $heading-top-padding-mob: 10px;
   padding: 0 5%;
 }
 
-.mdev-error-page .mdev-main-footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+.mdev-error-page {
+
+  .mdev-error-action {
+    margin-top: 100px;
+
+    @media #{$portrait} {
+      margin-top: 0;
+    }
+
+    @media #{$phone-only} {
+      flex-wrap: wrap;
+    }
+  }
+
+  .mdev-main-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
 }
 
 .--hero-padding {
   padding-top: 50%;
+
+  @media #{$portrait} {
+    padding-top: 110%;
+  }
+
+  @media #{$phone-only} {
+    padding-top: 130%;
+  }
 }
 
 .--vivus-error {
 
-  .--branding-tell {
-    width: 40%;
-    margin-bottom: $heading-top-padding;
-
-    @media #{$laptop-only} {
-      margin-bottom: 20px;
-    }
-    @media #{$portrait} {
-      width: 44%;
-      margin-bottom: $heading-top-padding-mob;
-    }
-  }
-
-  .--branding-your {
-    width: 47%;
-    margin-bottom: $heading-top-padding;
-    transform: translatey(5px);
-
-    @media #{$portrait} {
-      width: 52%;
-      transform: translatey(0);
-      margin-bottom: $heading-top-padding-mob;
-    }
-  }
-
   .--error-fourofour {
-    width: 55%;
+    width: 60%;
     margin-right: 30px;
 
     @media #{$portrait} {
@@ -170,7 +184,8 @@ $heading-top-padding-mob: 10px;
 
   .--header-cta {
     opacity: 0;
-    width: 38%;
+    width: 33%;
+    padding-left: 20px;
     transition: opacity 1.2s;
 
     @media #{$portrait} {
@@ -195,7 +210,7 @@ $heading-top-padding-mob: 10px;
 
   .mdev-center {
     @include center(both);
-    width: 70%;
+    width: 80%;
 
     @media #{$portrait} {
       text-align: left;
@@ -209,14 +224,6 @@ $heading-top-padding-mob: 10px;
 
     @media #{$tablet-lnd-only} {
       width: 100%;
-    }
-  }
-
-  .mdev-primary-btn {
-    margin-top: 25px;
-
-    @media #{$desktop-up} {
-      margin-top: 50px;
     }
   }
 }

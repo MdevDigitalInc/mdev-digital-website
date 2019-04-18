@@ -283,6 +283,10 @@ $mask-arrow-anim-time: 3.2s;
 
   .mdev-hero-mask {
     max-height: 80vh;
+
+    @media #{$portrait} {
+      max-height: 90vh;
+    }
   }
 
   .mdev-main-header {
