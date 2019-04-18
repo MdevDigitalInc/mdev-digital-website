@@ -234,4 +234,20 @@ body {
     width: 100%;
   }
 }
+
+/* stylelint-disable */
+body::-webkit-scrollbar {
+  width: 1vw;
+}
+
+body::-webkit-scrollbar-track {
+  background: lighten($color-brand-bkg, 10%);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: lighten($color-brand-primary, 10%);
+  outline: 4px solid darken($color-brand-bkg, 10%);
+}
+/* stylelint-enable */
 </style>
