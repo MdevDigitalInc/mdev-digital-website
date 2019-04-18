@@ -96,17 +96,29 @@ export default{
   .mdev-icon-subhead {
     display: block;
     font-size: 18px;
+
+    @media #{$phone-only} {
+      text-align: center;
+    }
   }
 
   .mdev-icon-head {
     display: block;
     font-size: 32px;
     margin: 10px 0 15px;
+
+    @media #{$phone-only} {
+      text-align: center;
+    }
   }
 
   .mdev-icon-text {
     font-size: 18px;
     line-height: 30px;
+
+    @media #{$phone-only} {
+      text-align: center;
+    }
   }
 }
 

@@ -52,6 +52,8 @@ export default{
   overflow: hidden;
 
   &.--section-space {
+    margin: 150px 0 75px;
+
     @media #{$portrait} {
       margin: 100px 0 50px;
     }

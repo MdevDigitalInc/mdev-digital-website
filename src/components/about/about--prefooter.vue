@@ -81,6 +81,7 @@ export default{
 
   @media #{$portrait} {
     padding-left: 50px;
+    padding-bottom: 60px;
   }
 
   @media #{$phone-only} {
@@ -89,10 +90,18 @@ export default{
 
   .--huge-title {
     margin-bottom: 50px;
+
+    @media #{$phone-only} {
+      margin-bottom: 25px;
+    }
   }
 
   .mdev-section-links {
     width: auto;
+
+    @media #{$phone-only} {
+      padding-top: 25px;
+    }
 
     a {
       color: $color-brand-bkg;
@@ -128,6 +137,7 @@ export default{
     @media #{$phone-only} {
       margin-left: 0;
       margin-top: 25px;
+      font-size: 7.3vw;
     }
   }
 }

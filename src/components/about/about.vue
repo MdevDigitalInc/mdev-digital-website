@@ -30,9 +30,11 @@
       :title="company.process.title">
       <!-- Action Slot -->
       <template slot="action">
+        <!-- [ Temporarily Disabled ]
         <btn-primary :BtnData="BtnData">
           {{ $t("homepage.casestudies.action") }}
         </btn-primary>
+        -->
       </template>
     </process-section>
     <!-- Philosophy Section -->
@@ -65,6 +67,7 @@
     <about-hood
       :background="company.hood.background"
       :foreground="company.hood.foreground"
+      :foregroundMob="company.hood.foregroundMob"
       :a11y="company.hood.a11y"
       :heading="company.hood.heading"
       :text="company.hood.text"
@@ -215,7 +218,7 @@ export default{
   padding-top: 40%;
 
   @media #{$portrait} {
-    padding-top: 115%;
+    padding-top: 100%;
   }
 
   @media #{$phone-only} {

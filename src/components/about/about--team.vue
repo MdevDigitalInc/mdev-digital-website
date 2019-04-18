@@ -53,6 +53,14 @@ export default{
   position: relative;
   overflow: hidden;
 
+  &.--section-space {
+    margin: 75px 0 150px;
+
+    @media #{$portrait} {
+      margin: 50px 0;
+    }
+  }
+
   .--subheading {
     font-size: 40px;
   }
@@ -141,11 +149,19 @@ export default{
   left: -20px;
   right: 15%;
   bottom: 125px;
+
+  @media #{$portrait} {
+    left: 5px;
+  }
 }
 
 .--luis:before {
   right: -15px;
   left: 10%;
+
+  @media #{$portrait} {
+    right: 15px;
+  }
 }
 
 .--graham:before {

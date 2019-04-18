@@ -9,7 +9,8 @@
       </p>
     </div>
     <div class="mdev-100-kell" :class="{'--decoration' : decoration}">
-      <img :src="loadImage(foreground)" :alt="a11y"/>
+      <img :src="loadImage(foreground)" :alt="a11y" class="--landscape"/>
+      <img :src="loadImage(foregroundMob)" :alt="a11y" class="--portrait"/>
     </div>
     <div class="mdev-hood-mask --triangle-top-r">
       <img :src="loadImage(background)" class="--rotate-hood" v-in-viewport/>
@@ -24,6 +25,7 @@ export default{
   props: [
     'background',
     'foreground',
+    'foregroundMob',
     'a11y',
     'heading',
     'text',
@@ -45,30 +47,32 @@ export default{
   top: 0;
   bottom: 0;
   z-index: 1;
+  overflow: hidden;
 }
+$rotate-duration: 930s;
 
 .--rotate-hood.in-viewport,
 .--rotate-hood.above-viewport {
   animation: rotate-anim infinite;
-  animation-duration: 320s;
+  animation-duration: $rotate-duration;
   animation-timing-function: linear;
   z-index: 1;
 
   @media #{$portrait} {
     animation: rotate-anim-prt infinite;
-    animation-duration: 320s;
+    animation-duration: $rotate-duration;
     animation-timing-function: linear;
   }
 
   @media #{$phone-only} {
     animation: rotate-anim-mob infinite;
-    animation-duration: 320s;
+    animation-duration: $rotate-duration;
     animation-timing-function: linear;
   }
 
   @media #{$xl-up} {
     animation: rotate-anim-xl infinite;
-    animation-duration: 320s;
+    animation-duration: $rotate-duration;
     animation-timing-function: linear;
   }
 }
@@ -98,6 +102,11 @@ export default{
     bottom: 30%;
     border: 4px solid $color-brand-accent;
     z-index: -1;
+
+    @media #{$portrait} {
+      top: 25px;
+      right: -200%;
+    }
   }
 }
 
@@ -114,8 +123,16 @@ export default{
 
   @media #{$portrait} {
     top: 120px;
-    width: 70%;
+    width: 80%;
     @include center(horizontal);
+
+    h2 {
+      font-size: 115px;
+    }
+
+    p {
+      padding-right: 10%;
+    }
   }
 
   @media #{$laptop-only} {
@@ -130,8 +147,16 @@ export default{
   }
 
   @media #{$phone-only} {
-    width: 80%;
-    top: 80px;
+    top: 50px;
+    text-align: center;
+
+    h2 {
+      font-size: 80px;
+    }
+
+    p {
+      padding-right: 0;
+    }
   }
 
   @media #{$xl-up} {
