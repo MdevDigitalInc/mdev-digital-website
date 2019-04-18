@@ -1361,6 +1361,14 @@ export default  {
   siteSeo: {
     template: '%s | MDEV Digital | London, Toronto, Montreal',
     templateAddon: ' | MDEV Digital | London, Toronto, Montreal',
+    social: {
+      appid: 'ID-GOES-HERE',
+      ogtype: 'website',
+      cardtype: 'summary_large_image',
+      twsite: '@MDEVdigital',
+      ogimage: 'social/MDEV-FB-OG_v01.jpg',
+      twimage: 'social/MDEV-TW-Card_v01.png'
+    },
     about: {
       title: 'Hybrid Digital Agency',
       desc: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.'

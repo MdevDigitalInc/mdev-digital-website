@@ -46,11 +46,15 @@ export default{
       title: this.seo.app.title,
       titleTemplate: this.seo.template,
       meta: [
-        { vmid: 'ogtitle', property: 'og:title', content: this.seo.app.title + this.seo.templateAddon },
-        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.app.title + this.seo.templateAddon },
         { vmid: 'desc', name: 'description', content: this.seo.app.desc },
-        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.app.desc },
-        { vmid: 'ogdesc', property: 'og:description', content: this.seo.app.desc }
+        { vmid: 'ogappid', property: 'fb:app_id', content: this.seo.social.appid },
+        { vmid: 'ogtype', property: 'og:type', content: this.seo.social.ogtype },
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.app.title + this.seo.templateAddon },
+        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.social.ogimage) },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.app.desc },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.app.title + this.seo.templateAddon },
+        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.social.twimage) },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.app.desc }
       ]
     };
   },
