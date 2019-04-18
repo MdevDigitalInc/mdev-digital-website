@@ -18,13 +18,20 @@
     <div v-if="secret" class="--secret">
       <img :src="loadImage(seo.secret)" alt="You found me!"/>
     </div>
+    <!-- Brand Animation -->
     <brand-animation v-if="isLoading"></brand-animation>
+    <!-- Cookies -->
+    <cookie-popup
+      :active="showCookies"
+      v-if="cookies"
+      v-on:dismiss="cookies = false"></cookie-popup>
   </main>
 </template>
 
 <script>
 //Local Component registration
 import MainNavigation from './components/shared/navigation.vue';
+import CookiePopup    from './components/shared/cookies.vue';
 import BrandAnimation from './components/shared/brand-animation.vue';
 // Import Data From Flat File
 import MdevData       from './mdev-data.js';
@@ -38,6 +45,8 @@ export default{
       seo: MdevData.siteSeo,
       secret: false,
       isLoading: true,
+      cookies: false,
+      showCookies: false,
       isHome: true,
       brandReverse: false,
       keys: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
@@ -65,14 +74,17 @@ export default{
 
   components: {
     'main-navigation' : MainNavigation,
-    'brand-animation' : BrandAnimation
+    'brand-animation' : BrandAnimation,
+    'cookie-popup'    : CookiePopup,
   },
 
   created: function(){
+    // Add key event listener for Konami
     window.addEventListener("keyup", this.konami);
   },
 
   beforeDestroy: function() {
+    // Remove listener on Destroy
     window.removeEcentListener("keyup", this.konami);
   },
 
@@ -97,7 +109,7 @@ export default{
 
       // Update Data
       setTimeout(() => {
-        // Flip Flag
+        // Flip Flag to finish loading
         this.isLoading = false;
       }, 2500);
 
@@ -107,6 +119,11 @@ export default{
         $('[data-main-hero]').addClass('--mask-active');
         $('[data-main-nav]').addClass('--nav-active');
       }, 2550);
+
+      // Check Cookies
+      setTimeout(() => {
+        this.checkCookie();
+      }, 5000);
     });
   },
 
@@ -127,16 +144,47 @@ export default{
 
   watch: {
     $route (to,from) {
+      // Removes active class from hero every time route changes
+      // This allows the shadow DOM to still play animations
       $('[data-main-hero]').removeClass('--mask-active');
     }
   },
 
   methods: {
+    // Skip Navigation for a11y
     skipNav() {
       var anchor = $("#mainContent").offset().top;
       $('html,body').scrollTop(anchor);
     },
 
+    // Check Cookies & Show Popup
+    checkCookie() {
+      // Poll local storage for data
+      var cookie = localStorage.getItem('acceptCookie');
+      var expiration = localStorage.getItem('cookieExpiration');
+
+      // Destroy Records
+      var destroyTokens = () => {
+        localStorage.removeItem('acceptCookie');
+        localStorage.removeItem('cookieExpiration');
+        // Show Cookie Prompt
+        this.cookies = true;
+        setTimeout( () => {
+          this.showCookies = true;
+        }, 800);
+      };
+
+      // If either Cookie or Expiration is missing...
+      if ( !cookie || !expiration ) {
+        destroyTokens();
+      }
+      // If token is expired..
+      else if ( Date.now() > parseInt(expiration) ) {
+        destroyTokens();
+      }
+    },
+
+    // Secret stuff...
     konami(e) {
       const key = e.which || e.keyCode || e.detail;
       if (this.keys.includes(key)) {
@@ -235,16 +283,22 @@ body {
   }
 }
 
+// Scrollbar Styling ( Webkit Only )
+/* Disabled to use hacks.. */
 /* stylelint-disable */
+
+// Scrollbar Width
 body::-webkit-scrollbar {
   width: 1vw;
 }
 
+// Background of Scrollbar
 body::-webkit-scrollbar-track {
   background: lighten($color-brand-bkg, 10%);
   box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
 
+// Scroll Thumb ( Part that moves )
 body::-webkit-scrollbar-thumb {
   background-color: lighten($color-brand-primary, 10%);
   outline: 4px solid darken($color-brand-bkg, 10%);

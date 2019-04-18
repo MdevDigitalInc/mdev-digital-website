@@ -156,5 +156,11 @@ export default {
     origin: 'Point of Origin:',
     quote: 'Favorite Quote:',
     tricks: 'Bag of Tricks:'
+  },
+
+  cookies: {
+    heading: 'Cookies & Privacy',
+    text: 'We use cookies so that we can provide our users with the best experience. You can learn more about cookies and how to disable and delete them in our Privacy Policy. By clicking ‘OK, got it’, ‘X’ on this banner and/or by using our website, you consent to the use of cookies.',
+    action: 'Ok, Got it.'
   }
 };

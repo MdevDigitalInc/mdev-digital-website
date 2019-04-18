@@ -275,6 +275,7 @@ $mask-arrow-anim-time: 3.2s;
   left: 0;
   border-bottom: 1px solid $white;
   z-index: -1;
+  transition: all .4s;
 }
 
 // Error Page Override
