@@ -15,6 +15,9 @@
     <transition name="fade" v-if="!isLoading">
       <router-view></router-view>
     </transition>
+    <div v-if="secret" class="--secret">
+      <img :src="loadImage(seo.secret)" alt="You found me!"/>
+    </div>
     <brand-animation v-if="isLoading"></brand-animation>
   </main>
 </template>
@@ -33,6 +36,7 @@ export default{
   data: function(){
     return {
       seo: MdevData.siteSeo,
+      secret: false,
       isLoading: true,
       isHome: true,
       brandReverse: false,
@@ -139,7 +143,12 @@ export default{
         if (key === this.keys[this.current]) {
           this.current += 1;
           if (this.current === this.keys.length) {
-            alert("Konami In Yo Face!");
+            // Show Secret
+            this.secret = true;
+            // Hide secret!
+            setTimeout(() => {
+              this.secret = false;
+            },3000);
             this.current = 0;
           }
         } else {
@@ -207,6 +216,22 @@ body {
     color: $white;
     background: $color-brand-primary;
     transform: translate3d(-50%, 0, 0);
+  }
+}
+
+// secret...
+.--secret {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: $color-brand-bkg;
+  z-index: 100;
+
+  img {
+    @include center(both);
+    width: 100%;
   }
 }
 </style>

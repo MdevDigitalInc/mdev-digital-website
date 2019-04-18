@@ -1369,6 +1369,7 @@ export default  {
       ogimage: 'social/MDEV-FB-OG_v01.jpg',
       twimage: 'social/MDEV-TW-Card_v01.png'
     },
+    secret: 'ongbak/konami.gif',
     about: {
       title: 'Hybrid Digital Agency',
       desc: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.'
