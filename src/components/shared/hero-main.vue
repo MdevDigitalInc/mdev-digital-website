@@ -277,5 +277,17 @@ $mask-arrow-anim-time: 3.2s;
   z-index: -1;
 }
 
+// Error Page Override
+.mdev-error-page {
+
+  .mdev-hero-mask {
+    max-height: 80vh;
+  }
+
+  .mdev-main-header {
+    margin-bottom: 0;
+  }
+}
+
 /*--------------------------------------*/
 </style>

@@ -146,6 +146,11 @@ export default {
     }
   },
 
+  errorpage: {
+    heading: 'Oops',
+    intro: 'So sorry, you’re in the wrong place. A 404 error has occured and we can’t seem to find the page you are looking for. Check to see that you have typed in the correct address, or use the options below to contiune your journey on our website.',
+  },
+
   teampage: {
     meet: 'Meet',
     origin: 'Point of Origin:',

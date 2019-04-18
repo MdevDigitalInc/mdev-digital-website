@@ -108,7 +108,7 @@ export default{
   data: function(){
     return{
       heroStyles: {
-        backgroundColor: '#0f1617'
+        backgroundColor: '#0a1315'
       },
       // Disables Page Title bar
       pageTitle: 'Branding Services',

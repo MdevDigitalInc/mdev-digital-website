@@ -101,7 +101,7 @@ export default{
   data: function() {
     return {
       heroStyles: {
-        backgroundColor: '#0f1617'
+        backgroundColor: '#0a1315'
       },
       BtnData: {
         accessibility: 'Learn more about our work!',
