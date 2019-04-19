@@ -35,6 +35,12 @@
   @media #{$phone-only} {
     width: 100%;
   }
+
+  &.--margin-mod {
+    margin-left: 9%;
+    margin-right: 9%;
+    width: auto;
+  }
 }
 
 // Section Types

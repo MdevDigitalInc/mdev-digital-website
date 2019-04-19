@@ -5,7 +5,7 @@
       <h2 v-html="title" class="--title u-bold u-uppercase"></h2>
     </div>
     <!-- Content -->
-    <div class="mdev-featured-wrapper flex flex-vert-start flex-hor-between flex-wrap">
+    <div class="mdev-featured-wrapper --margin-mod flex flex-vert-start flex-hor-between flex-wrap">
       <div v-for="(block, index) in content"
         class="mdev-featured-column">
           <h3 class="u-capitalize">
@@ -72,5 +72,4 @@ export default{
     bottom: 20%;
   }
 }
-
 </style>
