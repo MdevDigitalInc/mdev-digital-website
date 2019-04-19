@@ -63,6 +63,7 @@
           :src="loadImage(service.media.image)">
         <!-- Title Only appears here if no image -->
         <h2 v-if="!service.media"
+          :data-dec="service.anchor"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"
           v-in-viewport></h2>
@@ -70,6 +71,7 @@
       <!-- Content -->
       <template slot="contentSlot">
         <h2 v-if="service.media"
+          :data-dec="service.anchor"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"
           v-in-viewport></h2>
@@ -93,6 +95,7 @@
     <!-- Service Nomedia -->
     <service-nomedia
       :id="service.anchor"
+      :decoration="service.anchor"
       v-for="(service, index) in nomedia"
       :key="index"
       :title="service.title"
@@ -116,6 +119,7 @@
           :src="loadImage(service.media.image)">
         <!-- Title Only appears here if no image -->
         <h2 v-if="!service.media"
+          :data-dec="service.anchor"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"
           v-in-viewport></h2>
@@ -123,6 +127,7 @@
       <!-- Content -->
       <template slot="contentSlot">
         <h2 v-if="service.media"
+          :data-dec="service.anchor"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"
           v-in-viewport></h2>

@@ -62,6 +62,7 @@
           :media="service.media"></media-carousel>
         <!-- Title Only appears here if no image -->
         <h2 v-if="!service.media"
+          :data-dec="service.anchor"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"
           v-in-viewport></h2>
@@ -69,6 +70,7 @@
       <!-- Content -->
       <template slot="contentSlot">
         <h2 v-if="service.media"
+          :data-dec="service.anchor"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"
           v-in-viewport></h2>

@@ -53,6 +53,7 @@
       <!-- Content -->
       <template slot="contentSlot">
         <h2 class="mdev-service-title u-uppercase a-fade-in"
+          :data-dec="service.anchor"
           v-html="service.title" v-in-viewport></h2>
         <h3 class="mdev-service-subtitle">
           {{ service.subTitle }}

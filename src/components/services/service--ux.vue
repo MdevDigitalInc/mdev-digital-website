@@ -52,7 +52,10 @@
       </template>
       <!-- Content -->
       <template slot="contentSlot">
-        <h2 v-html="service.title" class="mdev-service-title u-uppercase a-fade-in" v-in-viewport></h2>
+        <h2
+          :data-dec="service.anchor"
+          v-html="service.title"
+          class="mdev-service-title u-uppercase a-fade-in" v-in-viewport></h2>
         <h3 class="mdev-service-subtitle">
           {{ service.subTitle }}
         </h3>
