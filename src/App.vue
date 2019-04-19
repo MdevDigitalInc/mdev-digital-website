@@ -36,10 +36,9 @@ import BrandAnimation from './components/shared/brand-animation.vue';
 // Import Data From Flat File
 import MdevData       from './mdev-data.js';
 
-export default{
+export default {
   name: 'App',
   // SEO Meta Information
-
   data: function(){
     return {
       seo: MdevData.siteSeo,
