@@ -18,11 +18,11 @@
 // Feature wrapper to keep things centered
 .mdev-featured-wrapper {
   width: 91%;
-  margin: 0 0 0 9%;
+  margin: 0 0 0 auto;
 
   @media #{$laptop-only} {
     width: 95%;
-    margin-left: 5%;
+    margin-left: auto;
     margin-right: 0;
   }
 
@@ -37,9 +37,8 @@
   }
 
   &.--margin-mod {
-    margin-left: 9%;
-    margin-right: 9%;
-    width: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
