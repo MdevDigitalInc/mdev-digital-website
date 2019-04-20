@@ -12,10 +12,11 @@
     </button>
     <!-- Main Nav -->
     <main-navigation v-if="!isLoading" :reverseBrand="brandReverse"></main-navigation>
+    <!-- Main View -->
     <transition name="fade" v-if="!isLoading">
       <router-view></router-view>
     </transition>
-    <div v-if="secret" class="--secret">
+    <div v-if="secret && !isLoading" class="--secret">
       <img :src="loadImage(seo.secret)" alt="You found me!"/>
     </div>
     <!-- Brand Animation -->
@@ -23,7 +24,7 @@
     <!-- Cookies -->
     <cookie-popup
       :active="showCookies"
-      v-if="cookies"
+      v-if="cookies && !isLoading"
       v-on:dismiss="cookies = false"></cookie-popup>
   </main>
 </template>
