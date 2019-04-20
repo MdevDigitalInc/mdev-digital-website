@@ -7,14 +7,17 @@
 // Require Imports
 var webpack = require('webpack');
 var path = require('path')
+// Robots TXT
 const RobotstxtPlugin = require("robotstxt-webpack-plugin").default;
+// Favicons
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+// Compression
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// Prerendering
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
-
 
 // Webpack Merge Configuration
 const merge = require('webpack-merge');
@@ -25,6 +28,9 @@ const setPath = function(folderName) {
   return path.join(__dirname, folderName);
 }
 
+// SEO & Sitemap Configuration
+const hostDomainUrl = "https://mdev.digital"
+const sitemapFile = hostDomainUrl + "/sitemap.xml"
 // Robots.TXT Configuration
 const robotOptions = {
   policy: [
@@ -50,11 +56,31 @@ const robotOptions = {
       cleanParam: "ref /articles/"
     }
   ],
-  sitemap: "http://example.com/sitemap.xml",
-  host: "http://example.com"
+  // Configured on SEO &Sitemap Configuration
+  sitemap: sitemapFile,
+  host: hostDomainUrl
 }
 
-// Module Exports
+// Prerenderer Routes
+const prerenderRoutes = [
+  //'/',
+  '/contact',
+  '/company',
+  '/services/overview',
+  '/services/branding',
+  '/services/app-development',
+  '/services/consulting',
+  '/services/digital-marketing',
+  '/services/ui-ux',
+  '/team/lucas-moreira',
+  '/team/becky-domenico',
+  '/team/haly-hawkins',
+  '/team/dorian-hall',
+  '/team/luis-guerrero',
+  '/team/graham-coutts',
+]
+
+// Production Environment Exports
 module.exports = merge(common, {
   // Set Webpack Mode
   mode: 'production',
@@ -106,23 +132,7 @@ module.exports = merge(common, {
     new PrerenderSPAPlugin({
       staticDir: path.join(__dirname, 'dist'),
       // Routes to render
-      routes: [
-        //'/',
-        '/contact',
-        '/company',
-        '/services/overview',
-        '/services/branding',
-        '/services/app-development',
-        '/services/consulting',
-        '/services/digital-marketing',
-        '/services/ui-ux',
-        '/team/lucas-moreira',
-        '/team/becky-domenico',
-        '/team/haly-hawkins',
-        '/team/dorian-hall',
-        '/team/luis-guerrero',
-        '/team/graham-coutts',
-      ],
+      routes: prerenderRoutes,
       // Export & Optimization options
       minify: {
         collapseBooleanAttributes: true,
