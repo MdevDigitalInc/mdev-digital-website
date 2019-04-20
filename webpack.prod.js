@@ -18,6 +18,8 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 // Prerendering
 const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
+// Sitemap Generator
+const SitemapPlugin = require('sitemap-webpack-plugin').default;
 
 // Webpack Merge Configuration
 const merge = require('webpack-merge');
@@ -63,7 +65,7 @@ const robotOptions = {
 
 // Prerenderer Routes
 const prerenderRoutes = [
-  //'/',
+  '/',
   '/contact',
   '/company',
   '/services/overview',
@@ -148,6 +150,13 @@ module.exports = merge(common, {
         renderAfterTime: 12000
         //renderAfterDocumentEvent: 'spa-rendered'
       })
+    }),
+    // Sitemap Generation
+    new SitemapPlugin(hostDomainUrl, prerenderRoutes, {
+      changeFreq: 'monthly',
+      lastMod: true,
+      priority: '0.4',
+      skipGzip: true,
     }),
     // Gzip Compression
     new CompressionPlugin({
