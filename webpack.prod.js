@@ -107,7 +107,7 @@ module.exports = merge(common, {
       staticDir: path.join(__dirname, 'dist'),
       // Routes to render
       routes: [
-        '/',
+        //'/',
         '/contact',
         '/company',
         '/services/overview',
