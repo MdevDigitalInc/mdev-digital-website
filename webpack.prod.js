@@ -143,6 +143,16 @@ module.exports = merge(common, {
         keepClosingSlash: true,
         sortAttributes: true
       },
+      // Process page before output..
+      postProcess(renderedRoute) {
+        // Remove active classes from prerendered routes
+        renderedRoute.html = renderedRoute.html
+          .replace('--mask-active', '')
+          .replace('--nav-active', '')
+          .replace('--active', '');
+
+        return renderedRoute;
+      },
       // Renderer Options
       renderer: new Renderer({
         headless: true,
