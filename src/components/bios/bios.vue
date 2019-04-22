@@ -21,7 +21,7 @@
         <p class="mdev-bio-intro">
           {{ mdevBio.employeeIntro }}
         </p>
-        <p v-for="snippet in mdevBio.employeeStory"
+        <p v-for="(snippet, index) in mdevBio.employeeStory"
           class="mdev-bio-paragraph">
           {{ snippet }}
         </p>

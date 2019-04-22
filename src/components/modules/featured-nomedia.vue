@@ -19,7 +19,7 @@
             <li
               v-html="topic"
               class="u-uppercase u-bold"
-              v-for="topic in block.topics">
+              v-for="(topic, index) in block.topics">
             </li>
           </ul>
       </div>

@@ -18,7 +18,8 @@
     </div>
     <!-- Team Photos -->
     <div class="mdev-team mdev-main-wrapper flex flex-hor-between flex-vert-end">
-      <router-link v-for="(member, index) in members"
+      <router-link v-for="(member, key, index) in members"
+        :key="member.id"
         :title="member.linka11y"
         :to="member.route"
         v-in-viewport

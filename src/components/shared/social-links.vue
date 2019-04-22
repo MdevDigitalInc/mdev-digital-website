@@ -1,7 +1,7 @@
 <template>
     <div class="mdev-social-links flex flex-hor-start flex-vert-center" :class="{'--dark-theme':darkTheme}">
       <!-- Social Link Loop -->
-      <a v-for="link in linkContent"
+      <a v-for="(link, index) in linkContent"
         :href="link.linkUrl"
         :aria-label="link.accessibility"
         aria-haspopup="true"

@@ -23,9 +23,10 @@ module.exports = {
     build: './src/main.js',
     vendor: [
       'vue',
-      'vue-i18n',
-      'vue-resource',
-      'vue-router'
+      //'vue-i18n',
+      //'vue-check-view',
+      //'vue-in-viewport-directive',
+      //'vue-meta'
     ]
   },
   // Output Files

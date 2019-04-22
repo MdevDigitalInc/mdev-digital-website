@@ -15,7 +15,8 @@
       </div>
       <!-- Founder -->
       <div class="mdev-founder-media flex flex-vert-start flex-hor-center">
-        <router-link v-for="(founder, index) in founders"
+        <router-link v-for="(founder, key, index) in founders"
+          :key="founder.id"
           :to="founder.route"
           :title="founder.linka11y"
           v-in-viewport
