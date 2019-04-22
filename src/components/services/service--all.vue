@@ -206,6 +206,10 @@ export default{
     padding-top: 115%;
   }
 
+  @media #{$laptop-only} {
+    padding-top: 50%;
+  }
+
   @media #{$phone-only} {
     padding-top: 125%;
   }

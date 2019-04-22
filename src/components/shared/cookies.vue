@@ -66,14 +66,19 @@ export default{
   bottom: 0;
   left: 0;
   width: 100%;
-  background: $color-brand-primary;
+  background: rgba(22, 177, 169, .83);
   padding: 40px 0;
   z-index: 98;
   box-shadow: 0 -3px 5px rgba(0, 0, 0, .2);
   opacity: 0;
   transition: all .5s;
 
+  @media #{$laptop-only} {
+    padding: 25px 0;
+  }
+
   @media #{$portrait} {
+    padding: 20px 0;
     // Hacky override... srry!
     .flex-hor-between {
       justify-content: flex-end;
@@ -109,6 +114,14 @@ export default{
     right: 0;
     transition: all .5s;
 
+    @media #{$portrait} {
+      padding: 15px;
+    }
+
+    @media #{$laptop-only} {
+      padding: 20px;
+    }
+
     &:hover,
     &:focus,
     &:active {
@@ -120,6 +133,10 @@ export default{
   &.--active {
     transition: all .5s;
     opacity: 1;
+  }
+
+  .mdev-btn {
+    line-height: inherit;
   }
 }
 
