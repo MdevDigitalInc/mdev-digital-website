@@ -230,6 +230,9 @@ $heading-top-padding-mob: 10px;
     margin-bottom: $heading-top-padding;
     transform: translatey(5px);
 
+    @media #{$laptop-only} {
+      margin-bottom: 20px;
+    }
     @media #{$portrait} {
       width: 52%;
       transform: translatey(0);

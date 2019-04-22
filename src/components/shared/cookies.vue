@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-cookies" :class="{'--active' : active }">
-    <div class="mdev-main-wrapper flex flex-vert-center flex-hor-between u-c-white">
+    <div class="mdev-main-wrapper flex-wrap flex flex-vert-center flex-hor-between u-c-white">
       <!-- Cookies Text Content -->
       <div class="mdev-cookies-content">
         <span class="--title u-bold u-uppercase">
@@ -73,17 +73,31 @@ export default{
   opacity: 0;
   transition: all .5s;
 
+  @media #{$portrait} {
+    // Hacky override... srry!
+    .flex-hor-between {
+      justify-content: flex-end;
+    }
+  }
+
   .mdev-cookies-content {
-    width: 80%;
+    width: 60%;
+
+    @media #{$portrait} {
+      width: 100%;
+      margin-bottom: 20px;
+    }
 
     .--title {
       font-size: 17px;
       letter-spacing: 1.6px;
+      margin-bottom: 10px;
     }
 
     .--text {
       font-size: 15px;
       letter-spacing: .45px;
+      line-height: 25px;
     }
   }
 

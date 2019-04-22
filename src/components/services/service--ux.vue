@@ -222,6 +222,10 @@ $heading-top-padding-mob: 15px;
     width: 90%;
     margin-bottom: $heading-top-padding;
 
+    @media #{$laptop-only} {
+      margin-bottom: 25px;
+    }
+
     @media #{$portrait} {
       width: 100%;
       margin-bottom: $heading-top-padding-mob;
