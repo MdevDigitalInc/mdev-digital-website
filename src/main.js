@@ -2,6 +2,7 @@
 // Author: Lucas Moreira - l.moreira@live.ca
 
 // [ Vue.js ] -------------------------------------------
+import '@babel/polyfill'
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import VueResource from 'vue-resource';

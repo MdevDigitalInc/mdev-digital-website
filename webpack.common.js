@@ -24,8 +24,8 @@ module.exports = {
     vendor: [
       'vue',
       //'vue-i18n',
-      //'vue-check-view',
-      //'vue-in-viewport-directive',
+      'vue-check-view',
+      'vue-in-viewport-directive',
       //'vue-meta'
     ]
   },

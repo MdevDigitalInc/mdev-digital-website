@@ -16,6 +16,14 @@
     "deploy-staging": "s3-website deploy",
     "deploy-live": "./live-deploy.sh"
   },
+  "browserslist": "> 0.25%, ie >=11, safari >= 8",
+  "vue": {
+    "transpileDependencies": [
+      "vue-check-view",
+      "vue-in-viewport-directive",
+      "vue-meta"
+    ]
+  },
   "dependencies": {
     "sass-resources-loader": "^1.3.3",
     "vue": "^2.6.7",
@@ -24,6 +32,7 @@
     "vue-meta": "^1.6.0"
   },
   "devDependencies": {
+    "@babel/polyfill": "^7.4.3",
     "@babel/core": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.0.0",
