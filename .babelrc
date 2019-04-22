@@ -1,9 +1,11 @@
 {
   "presets": [
-    ["env", { 
+    ["env", {
       "targets": {
-          "browsers": ["last 2 versions", "safari >= 7"]
-        } 
+          "browsers": ["last 2 versions", "safari >= 8", "ie >= 11"],
+          "node": "current",
+          "uglify": "true"
+        }
     }],
     ["stage-2"]
   ]
