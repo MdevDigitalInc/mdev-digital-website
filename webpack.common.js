@@ -84,7 +84,14 @@ module.exports = {
         test: /\.js$/,
           exclude: /(node_modules)/,
           use: [{
-            loader: "babel-loader"
+            loader: "babel-loader",
+            options: {
+              include: [
+                path.resolve(__dirname, "src"),
+                path.resolve(__dirname, "node_modules/vue-check-view"),
+                path.resolve(__dirname, "node_modules/vue-in-viewport-directive"),
+              ]
+            }
           }]
       },
       // CSS & SCSS Processing
