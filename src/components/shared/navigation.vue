@@ -1,7 +1,6 @@
 q<template>
   <nav
     class="mdev-main-nav --nav-color"
-    :class="{ '--teal-black': reverseBrand }"
     aria-role="navigation"
     data-main-nav role="navigation">
     <div class="mdev-nav-wrapper flex flex-nowrap flex-hor-between flex-vert-center">
@@ -90,7 +89,9 @@ export default{
       // Flag for controlling the nav states
       navIsOpen: false,
       labelOpen: 'Open Main Navigation Menu',
-      labelClose: 'Close Main Navigation Menu'
+      labelClose: 'Close Main Navigation Menu',
+      desiredOffset: 420,
+      scrollDistance: 0
     };
   },
 
@@ -109,66 +110,83 @@ export default{
   mounted: function() {
     // Scroll timer to debounce
     let scrollTimer;
-    let scrollDistance;
-    let desiredOffset = 420;
     let scrollTime = 20;
+    let pageTitleEl = document.querySelectorAll('[data-page-title]');
 
     // Check to see that the page title is there
-    if ( $('[data-page-title]').length !== 0 ) {
-      scrollDistance = $('[data-page-title]').offset().top;
+    if ( pageTitleEl.length !== 0 ) {
+      this.scrollDistance = pageTitleEl[0].offsetTop;
     }
     else {
-      scrollDistance = 600;
+      this.scrollDistance = 600;
     }
-
-    function userScroll( distance ) {
-      // If user scrolls past desired distance remove effects
-      if ( distance >= (scrollDistance - desiredOffset) ) {
-        $('[data-main-header]').addClass('--user-scroll');
-        $('[data-main-nav]').addClass('--user-scroll');
-      }
-      else if (distance <= 10) {
-        $('[data-main-header').removeClass('--user-scroll');
-        $('[data-main-nav').removeClass('--user-scroll');
-      }
-      else {
-        $('[data-main-header').removeClass('--user-scroll');
-        $('[data-main-nav').removeClass('--user-scroll');
-      }
-    }
-
     // Event Listener on scroll with debounce
-    $(window).scroll( function() {
-      let distanceTop = $(document).scrollTop();
+    window.addEventListener('scroll', () => {
+      // Grab the Window Path for Scroll Y
+      let distanceTop = event.path[1].scrollY;
       clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(userScroll(distanceTop),scrollTime);
+      scrollTimer = setTimeout(this.userScroll(distanceTop),scrollTime);
     });
   },
 
   methods: {
     // Flip Nav flag & animate sidebar
     openMenu() {
+      // Flip the flag...
       this.navIsOpen = !this.navIsOpen;
-      $('[data-main-links]').removeClass('--showLinks');
-      $('body').toggleClass('u-freeze-scroll');
+      // Set Vars
+      var mainNavLinks = document.querySelectorAll('[data-main-links]');
+      var mainBody = document.querySelectorAll('body')[0];
+      var mainNavContent = document.querySelectorAll('[data-nav-content]')[0];
+      var mainDeep = document.querySelectorAll('[data-main-deep]')[0];
+
+      // Always remove Link Active Class
+      for ( var i=0; i < mainNavLinks.length; i++ ) {
+        this.removeClass(mainNavLinks[i], '--showLinks');
+      }
+      // Toggle Freeze Scroll
+      this.toggleClass(mainBody, 'u-freeze-scroll');
       // Timeout is either 400 / 0 depending on if its opening or closing
-      setTimeout(function(){
-        $('[data-nav-content]').toggleClass('--active-sidebar');
+      setTimeout(() => {
+        this.toggleClass(mainNavContent, '--active-sidebar');
       }, ( this.navIsOpen ? 400 : 0) );
       // Turn on Dive Deep
-      setTimeout(function(){
-        $('[data-main-deep]').toggleClass('--active-deep');
+      setTimeout(() => {
+        this.toggleClass(mainDeep, '--active-deep');
       }, ( this.navIsOpen ? 800 : 0) );
     },
-
     // Force close menu on route change
     // avoids issues if user goes back on history
     closeMenu() {
+      var mainNavLinks = document.querySelectorAll('[data-main-links]');
+      var mainBody = document.querySelectorAll('body')[0];
+      var mainNavContent = document.querySelectorAll('[data-nav-content]')[0];
+      var mainDeep = document.querySelectorAll('[data-main-deep]')[0];
       this.navIsOpen = false;
-      $('[data-main-links]').removeClass('--showLinks');
-      $('body').removeClass('u-freeze-scroll');
-      $('[data-nav-content]').removeClass('--active-sidebar');
-      $('[data-main-deep]').removeClass('--active-deep');
+      for ( var i=0; i < mainNavLinks.length; i++ ) {
+        this.removeClass(mainNavLinks[i], '--showLinks');
+      }
+      this.removeClass(mainBody, 'u-freeze-scroll');
+      this.removeClass(mainNavContent, '--active-sidebar');
+      this.removeClass(mainDeep, '--active-deep');
+    },
+    // User Scroll Handler
+    userScroll( distance ) {
+      var mainHeader = document.querySelectorAll('[data-main-header]')[0];
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      // If user scrolls past desired distance remove effects
+      if ( distance >= (this.scrollDistance - this.desiredOffset) ) {
+        this.addClass(mainHeader, '--user-scroll');
+        this.addClass(mainNav, '--user-scroll');
+      }
+      else if (distance <= 10) {
+        this.removeClass(mainHeader, '--user-scroll');
+        this.removeClass(mainNav, '--user-scroll');
+      }
+      else {
+        this.removeClass(mainHeader, '--user-scroll');
+        this.removeClass(mainNav, '--user-scroll');
+      }
     }
   },
 

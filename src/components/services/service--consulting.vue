@@ -228,12 +228,17 @@ export default{
 
   mounted: function() {
     this.$nextTick(() => {
-        $('[data-main-nav]').addClass('--teal-white');
+      // Collect Elements
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var introAnim = document.querySelectorAll('#anim-the')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      this.addClass(mainNav, '--teal-white');
+
       setTimeout(() => {
         new Vivus('anim-keep', {duration: 150});
       }, 100);
       setTimeout(() => {
-        $('#anim-the').addClass('--anim-visible');
+        this.addClass(introAnim, '--anim-visible');
       }, 450);
       setTimeout(() => {
         new Vivus('anim-wheels', {duration: 150});
@@ -242,7 +247,7 @@ export default{
         new Vivus('anim-turning', {duration: 150});
       }, 1200);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
+        this.addClass(introHeading, '--anim-visible');
       }, 1700);
     });
   },

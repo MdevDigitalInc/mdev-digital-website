@@ -11,7 +11,7 @@
       Skip To Main Content
     </button>
     <!-- Main Nav -->
-    <main-navigation v-if="!isLoading" :reverseBrand="brandReverse"></main-navigation>
+    <main-navigation v-if="!isLoading"></main-navigation>
     <!-- Main View -->
     <transition name="fade" v-if="!isLoading">
       <router-view></router-view>
@@ -58,6 +58,19 @@ export default {
     return {
       title: this.seo.app.title,
       titleTemplate: this.seo.template,
+      link: [
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' },
+        { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity:'sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin: 'anonymous' },
+        { rel: 'stylesheet', href: '//cdn.jsdelivr.net/alertifyjs/1.9.0/css/alertify.min.css' }
+      ],
+      script: [
+        // Alertify
+        { src: '//cdn.jsdelivr.net/alertifyjs/1.9.0/alertify.min.js', async: true, defer: true },
+        // Load Tracking Scripts
+        { src: 'https://www.googletagmanager.com/gtag/js?id=UA-91898048-1', async: true, defer: true },
+        { src: 'js/googletag.js', async: true, defer: true },
+        { src: 'js/fbpixel.js', async: true, defer: true },
+      ],
       meta: [
         { vmid: 'desc', name: 'description', content: this.seo.app.desc },
         { vmid: 'ogappid', property: 'fb:app_id', content: this.seo.social.appid },
@@ -68,7 +81,11 @@ export default {
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.app.title + this.seo.templateAddon },
         { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.social.twimage) },
         { vmid: 'twdesc', name: 'twitter:description', content: this.seo.app.desc }
-      ]
+      ],
+      noscript: [
+        { innerHTML: '<img height="1" width="1" src="https://www.facebook.com/tr?id=687879194986132&ev=PageView &noscript=1"/>' }
+      ],
+      __dangerouslyDisableSanitizers: 'noscript'
     };
   },
 
@@ -91,34 +108,31 @@ export default {
   mounted: function(){
     // Wait for full load and next tic on VM
     this.$nextTick(() => {
+      // Load elements
+      var loadAnim = document.querySelectorAll('[data-load-anim]')[0];
+      var loadWindow = document.querySelectorAll('[data-load-window]')[0];
+
       // Logo & Loading screen
       setTimeout(() => {
         // Make Logo appear...
-        $('[data-load-anim]').addClass('--opacity-active');
+        this.addClass(loadAnim, '--opacity-active');
       }, 100);
       setTimeout(() => {
         // Make Logo Move...
-        $('[data-load-anim]').addClass('--transform-active');
+        this.addClass(loadAnim, '--transform-active');
       }, 900);
       setTimeout(() => {
         // Make Logo Disappear...
-        $('[data-load-anim]').removeClass('--opacity-active');
+        this.removeClass(loadAnim, '--opacity-active');
         // Make Content Disappear
-        $('[data-load-window]').addClass('--opacity');
+        this.addClass(loadWindow, '--opacity');
       }, 1900);
 
       // Update Data
       setTimeout(() => {
         // Flip Flag to finish loading
         this.isLoading = false;
-      }, 2500);
-
-      // Update rest of the UI
-      setTimeout(() => {
-        // Add active class for Hero & Nav
-        $('[data-main-hero]').addClass('--mask-active');
-        $('[data-main-nav]').addClass('--nav-active');
-      }, 2550);
+      }, 2800);
 
       // Check Cookies
       setTimeout(() => {
@@ -127,34 +141,16 @@ export default {
     });
   },
 
-  beforeUpdate: function() {
-    // Check if this is a reverse white page and add the class
-    if ( $('body').hasClass('--body-white') ) {
-      this.brandReverse = true;
-    }
-    else {
-      this.brandReverse = false;
-    }
-  },
-
   updated: function () {
     // Add the active class back since it gets stripped on update above
-    $('[data-main-nav]').addClass('--nav-active');
-  },
-
-  watch: {
-    $route (to,from) {
-      // Removes active class from hero every time route changes
-      // This allows the shadow DOM to still play animations
-      $('[data-main-hero]').removeClass('--mask-active');
-    }
+    var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+    this.addClass(mainNav, '--nav-active');
   },
 
   methods: {
     // Skip Navigation for a11y
     skipNav() {
-      var anchor = $("#mainContent").offset().top;
-      $('html,body').scrollTop(anchor);
+      this.scrollToHash('#mainContent', 50);
     },
 
     // Check Cookies & Show Popup

@@ -20,7 +20,7 @@ var ValidatePlugin = {
     for (i = 0; i < payload.length; i++){
       if (payload[i].value === ""){
         errorPresent = true;
-        $(payload[i]).addClass('mdev-error');
+        this.addClass(payload[i], 'mdev-error');
       }
     }
 
@@ -46,7 +46,7 @@ var ValidatePlugin = {
         errorPresent = false;
       }
       else {
-        $(payload[i]).addClass('mdev-error');
+        this.addClass(payload[i], 'mdev-error');
         errorPresent = true;
       }
     }
@@ -74,7 +74,7 @@ var ValidatePlugin = {
         errorPresent = false;
       }
       else {
-        $(payload[i]).addClass('mdev-error');
+        this.addClass(payload[i], 'mdev-error');
         errorPresent = true;
       }
     }
@@ -126,8 +126,32 @@ var ValidatePlugin = {
 
   },
 
+  removeClass: function (element, className) {
+    if (element.classList) {
+      element.classList.remove(className);
+    }
+    else {
+      element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    }
+  },
+
+  addClass: function (element, className) {
+    if (element.classList) {
+      element.classList.add(className);
+    }
+    else {
+      element.className += ' ' + className;
+    }
+  },
+
   clearErrors: function(){
-    $('.mdev-error').removeClass('mdev-error');
+    var errorEl = document.querySelectorAll('.mdev-error');
+    // If errors present
+    if (errorEl.length > 0) {
+      for (var i=0; i <= errorEl.length; i++) {
+        this.removeClass(errorEl[i], 'mdev-error');
+      }
+    }
   }
 };
 

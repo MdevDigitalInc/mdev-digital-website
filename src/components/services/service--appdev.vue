@@ -164,18 +164,24 @@ export default{
 
   mounted: function() {
     this.$nextTick(() => {
-        $('[data-main-nav]').addClass('--teal-white');
+      // Collect Elements
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var introAnim = document.querySelectorAll('#anim-with')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      // Add Class to Nav
+      this.addClass(mainNav, '--teal-white');
+      // Fire off Animations
       setTimeout(() => {
         new Vivus('anim-innovate', {duration: 150});
       }, 100);
       setTimeout(() => {
-        $('#anim-with').addClass('--anim-visible');
+        this.addClass(introAnim, '--anim-visible');
       }, 450);
       setTimeout(() => {
         new Vivus('anim-passion', {duration: 150});
       }, 800);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
+        this.addClass(introHeading, '--anim-visible');
       }, 1200);
     });
   },
@@ -231,6 +237,10 @@ $heading-top-padding-mob: 15px;
   .--app-innovate {
     width: 90%;
     margin-bottom: $heading-top-padding;
+
+    @media #{$laptop-only} {
+      margin-bottom: 25px;
+    }
 
     @media #{$portrait} {
       width: 100%;

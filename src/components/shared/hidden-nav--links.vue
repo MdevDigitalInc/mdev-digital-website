@@ -49,21 +49,27 @@ export default{
     showLinks: function() {
       // Nav Flag True is opening, false is closing
       let isNavOpening = this.showLinks;
-      // Show LInks function
-      function showLinks(target, index) {
-        // Timeout Interval is a function of Index
-        setTimeout(function(){
-          $(target).addClass('--showLinks');
-        }, (isNavOpening ? (200 * index) : 0 ));
-      }
-      // Wait for nav to open..
-      setTimeout( function() {
-        // Loop through all links and call function
-        $('[data-main-links]').each( function(index){
-          // Passes the button object and the index
-          new showLinks(this,index);
-        });
+      // Capture elements
+      let hiddenLinks = document.querySelectorAll('[data-main-links]');
+
+      // Wait for nav to finish opening
+      setTimeout( () => {
+        // Iterate through links and add timing
+        for (var i=0; i < hiddenLinks.length; i++) {
+          // Call toggle links..
+          this.toggleLinks(hiddenLinks[i], i, isNavOpening);
+        }
       }, (isNavOpening ? 1000 : 0));
+    }
+  },
+  methods: {
+    // Toggle Links Timer
+    toggleLinks(target, index, isNavOpening) {
+      setTimeout(() => {
+        // Add active class
+        this.addClass(target, '--showLinks');
+        // Index determines interval
+      }, (isNavOpening ? (200 * index) : 0 ));
     }
   }
 };

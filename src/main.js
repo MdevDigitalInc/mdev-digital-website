@@ -118,29 +118,6 @@ const router = new VueRouter ({
 // Route Guard - Executes before each route change
 // In this case being used to dynamically change BKG color
 
-// Add regex for routes where you want white BKG
-let whiteBkgPaths = [
-  "contact",
-  "team",
-  "services",
-  "about"
-]
-
-router.beforeEach(function( to, from, next){
-  let bodyWhite = "--body-white";
-  var regEx = new RegExp(whiteBkgPaths.join("|"), "i");
-
-  if ( regEx.test(to.path) ) {
-    // Ternary operator adds class when body doesn't already have it
-    // prevents multiple classes being added to body
-    !$('body').hasClass(bodyWhite) ? $('body').addClass(bodyWhite) : '';
-  }
-  else {
-    $('body').hasClass(bodyWhite) ? $('body').removeClass(bodyWhite) : '';
-  }
-  next();
-});
-
 // [ Global Mixins ] --------------------------------
 Vue.mixin({
   methods: {
@@ -159,16 +136,18 @@ Vue.mixin({
     },
     // Change Navigation Logo Colors
     changeNavBrand(e, brandClass) {
+      // Grab Element
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
       if ( e.target.rect.y <= 0 ) {
-        $('[data-main-nav]').removeClass('--teal-black');
-        $('[data-main-nav]').removeClass('--white-black');
-        $('[data-main-nav]').removeClass('--teal-white');
-        $('[data-main-nav]').addClass(brandClass);
+        this.removeClass(mainNav, '--teal-black');
+        this.removeClass(mainNav, '--white-black');
+        this.removeClass(mainNav, '--teal-white');
+        this.addClass(mainNav, brandClass);
       }
     },
     // Scroll to specific anchor link
     scrollToHash(hashRef, offset) {
-      var element = $(hashRef);
+      var element = document.querySelectorAll(hashRef);
       var top = element.offset().top;
       window.scrollTo(0, (top - offset));
     },
@@ -186,6 +165,62 @@ Vue.mixin({
       else {
         return false;
       }
+    },
+    // Add Class JQUERY replacement
+    addClass(element, className) {
+      if (element.classList) {
+        element.classList.add(className);
+      }
+      else {
+        element.className += ' ' + className;
+      }
+    },
+    // Remove Class
+    removeClass(element, className) {
+      if (element.classList) {
+        element.classList.remove(className);
+      }
+      else {
+        element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+      }
+    },
+    // Check for class
+    hasClass(element, className) {
+      if (element.classList) {
+        element.classList.contains(className);
+      }
+      else {
+        new RegExp('(^| )' + className + '( |$)', 'gi').test(element.className);
+      }
+    },
+    // Toggle Class
+    toggleClass(element, className) {
+      if (element.classList) {
+        element.classList.toggle(className);
+      }
+      else {
+        var classes = element.className.split(' ');
+        var existingIndex = classes.indexOf(className);
+
+        if (existingIndex >= 0) {
+          classes.splice(existingIndex, 1);
+        }
+        else {
+          classes.push(className);
+        }
+        element.className = classes.join(' ');
+      }
+    },
+    // Reset Body Class
+    bodyReset(className) {
+      var mainBody = document.querySelectorAll('body')[0];
+      this.removeClass(mainBody, className);
+    },
+    // Add Body Class
+    bodyClass(className) {
+      // Change body class
+      var mainBody = document.querySelectorAll('body')[0];
+      this.addClass(mainBody, className);
     }
   }
 })

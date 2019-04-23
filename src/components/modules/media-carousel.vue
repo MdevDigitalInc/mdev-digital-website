@@ -81,7 +81,7 @@ export default {
       this.initialize();
     }
     // Event Listener on scroll with debounce
-    $(window).scroll( () => {
+    window.addEventListener('scroll', () => {
       // Clear scroll timer (Debounce)
       clearTimeout(this.scrollTimer);
       // Initiate scroll timer (Bounce)
@@ -199,10 +199,11 @@ $buttonSize: 10px;
     cursor: pointer;
     outline: none;
 
-    &:hover,
-    &:focus,
+    &:hover {
+      border-right: ($buttonSize * 2) solid $color-brand-accent;
+    }
     &:active {
-      border-right: ($buttonSize * 2) solid $color-brand-primary;
+      border-right: ($buttonSize * 2) solid darken($color-brand-accent, 15%);
     }
 
     &:nth-child( 2 ) {

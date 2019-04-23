@@ -164,6 +164,16 @@ export default {
     }
   },
 
+  // Make BKG White
+  mounted: function() {
+    this.bodyClass('--body-white');
+  },
+
+  // Return BKG to stock
+  destroyed: function() {
+    this.bodyReset('--body-white');
+  },
+
   components: {
     'bios-navigation' : BiosNavigation,
     'social-links'    : SocialLinks

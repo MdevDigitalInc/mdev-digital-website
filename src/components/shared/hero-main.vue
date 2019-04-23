@@ -1,6 +1,6 @@
 <template>
   <header class="mdev-main-header --section-space-btm" data-main-header aria-describedby="headerDescription">
-    <div class="mdev-hero-mask" data-main-hero >
+    <div class="mdev-hero-mask" data-main-hero :class="{'--mask-active' : isLoaded }" >
       <slot></slot>
       <div v-if="pageTitle" class="mdev-page-title" data-main-title>
         <span data-crossbeam class="--crossbeam"></span>
@@ -11,11 +11,6 @@
         </h1>
       </div>
     </div>
-    <!--
-    <div class="mdev-header-arrow-mask" data-main-arrow >
-      <div class="mdev-main-header-arrow"></div>
-    </div>
-    -->
     <!-- Accessibility Image Description -->
     <div class="u-screenreader" id="headerDescription">
       {{ headerDsc }}
@@ -29,31 +24,25 @@ export default {
 
   props: [ 'pageTitle', 'headerDsc' ],
 
-  //data: function() {
-    //return {
-      //arrowTimer: null
-    //};
-  //},
+  data: function() {
+    return {
+      isLoaded: false
+    };
+  },
 
   mounted: function() {
     // Resize timer to debounce scroll
-
     let resizeTimer;
     let resizeTime = 50;
 
-    // Adjust Arrow height
-
     // Run for first time on first tick
     this.$nextTick(() => {
-      // Adjust background arrow size
-      //this.adjustArrow();
+      // Adjust Crossbeam
       this.adjustCrossbeam();
       // Activate Header
-      $('[data-main-hero]').addClass('--mask-active');
+      this.isLoaded = true;
 
-      // this.arrowTimer = setInterval( this.adjustArrow, 1000);
-
-      $(window).resize(() => {
+      window.addEventListener('resize', () => {
         // Clear Timer
         clearTimeout( resizeTimer );
         //resizeTimer = setTimeout( this.adjustArrow, resizeTime );
@@ -63,24 +52,13 @@ export default {
   },
 
   methods: {
-    //adjustArrow() {
-      //let height;
-      //height = $('[data-main-hero]').outerHeight(true);
-      //$('[data-main-arrow]').css({
-          //'height': height + 'px'
-      //});
-    //}
     adjustCrossbeam() {
+      var brandEl = document.querySelectorAll('[data-main-nav]')[0];
+      var crossEl = document.querySelectorAll('[data-crossbeam]')[0];
       var brandHeight = null;
-      brandHeight = $('[data-main-nav]').height();
-      $('[data-crossbeam]').css({ 'height': (brandHeight + 16) + 'px' });
+      brandHeight = brandEl.offsetHeight;
+      crossEl.style.height = (brandHeight + 4) + 'px';
     }
-  },
-
-  beforeDestroy: function() {
-    // Clear repeating inverval to adjust arrow
-    //clearInterval( this.arrowTimer );
-    $('[data-main-hero]').removeClass('--mask-active');
   },
 };
 
@@ -200,41 +178,6 @@ export default {
 $mask-hero-anim-time: 1s;
 $mask-anim-delay: 1s;
 $mask-arrow-anim-time: 3.2s;
-
-/*
-.mdev-main-header-arrow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding-top: 80%;
-
-  background: linear-gradient(
-  to bottom, rgba(194, 236, 47, 1)
-  0%, rgba(181, 221, 45, 1)
-  7%, rgba(71, 91, 30, 0)
-  87%, rgba(10, 19, 21, 0) 100%);
-
-  opacity: 0;
-  background-position: 0% 25%;
-  transform: translate3d(0, -480px, 0);
-
-  animation: hero-gradient infinite;
-  animation-duration: $mask-arrow-anim-time;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  animation-delay: $mask-hero-anim-time + $mask-anim-delay;
-
-  @media #{$portrait} {
-    padding-top: 280%;
-    animation: hero-gradient-prt infinite;
-    animation-duration: $mask-arrow-anim-time;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-    animation-delay: $mask-hero-anim-time + $mask-anim-delay;
-  }
-}
-*/
 
 .--mask-active {
   opacity: 1;

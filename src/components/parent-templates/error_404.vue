@@ -96,19 +96,24 @@ export default {
 
   mounted: function() {
     this.$nextTick(() => {
-      $('[data-main-nav]').addClass('--teal-white');
+      // Collect Elements
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var introBtn = document.querySelectorAll('[data-header-btn]')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      // Add class to nav
+      this.addClass(mainNav, '--teal-white');
+
       setTimeout(() => {
         new Vivus('anim-error', {duration: 180});
       }, 700);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
+        this.addClass(introHeading, '--anim-visible');
       }, 2200);
       setTimeout(() => {
-        $('[data-header-btn]').addClass('fully-in-viewport');
+        this.addClass(introBtn, 'fully-in-viewport');
       }, 2800);
     });
   },
-
 
   components: {
     'hero-main'      : HeroMain,

@@ -148,9 +148,9 @@ export default{
       // Clear Errors First
       this.$validate.clearErrors();
       // Collect Fields
-      let formFields = $('[data-required]');
-      let emailField = $('input[type="email"]');
-      let phoneField = $('input[type="tel"]');
+      let formFields = document.querySelectorAll('[data-required]');
+      let emailField = document.querySelectorAll('input[type="email"]');
+      let phoneField = document.querySelectorAll('input[type="tel"]');
       // Validate fields and store result
       let fieldsValid = this.$validate.validateFields(formFields, this.$t("validation.errors.form"));
       let emailValid  = this.$validate.validateEmail(emailField, this.$t("validation.errors.email"));

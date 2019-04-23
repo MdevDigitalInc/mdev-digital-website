@@ -162,7 +162,12 @@ export default{
 
   mounted: function() {
     this.$nextTick(() => {
-        $('[data-main-nav]').addClass('--teal-white');
+      // Collect Elements
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      // Add class to nav
+      this.addClass(mainNav, '--teal-white');
+
       setTimeout(() => {
         new Vivus('anim-demystify', {duration: 150});
       }, 100);
@@ -176,7 +181,7 @@ export default{
         new Vivus('anim-digital', {duration: 150});
       }, 1200);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
+        this.addClass(introHeading, '--anim-visible');
       }, 1400);
     });
   },

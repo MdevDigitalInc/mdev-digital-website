@@ -86,13 +86,25 @@ export default {
         { vmid: 'desc', name: 'description', content: this.seo.contact.desc },
         { vmid: 'twdesc', name: 'twitter:description', content: this.seo.contact.desc },
         { vmid: 'ogdesc', property: 'og:description', content: this.seo.contact.desc }
+      ],
+      script: [
+        { src: 'https://code.jquery.com/jquery-3.3.1.min.js', integrity:'sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin:'anonymous' }
       ]
     };
   },
 
   mounted: function() {
+    // Make BKG White
+    this.bodyClass('--body-white');
     this.$nextTick(() => {
-        $('[data-main-nav]').addClass('--teal-white');
+      // Collect Elements
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      var introAnim = document.querySelectorAll('#anim-something')[0];
+      var introBtn = document.querySelectorAll('[data-header-btn]')[0];
+      // Add Class to Nav
+      this.addClass(mainNav, '--teal-white');
+      // Fire off Animations
       setTimeout(() => {
         new Vivus('anim-lets', {duration: 150});
       }, 100);
@@ -100,18 +112,23 @@ export default {
         new Vivus('anim-start', {duration: 150});
       }, 400);
       setTimeout(() => {
-        $('#anim-something').addClass('--anim-visible');
+        this.addClass(introAnim, '--anim-visible');
       }, 650);
       setTimeout(() => {
         new Vivus('anim-new', {duration: 180});
       }, 2700);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
+        this.addClass(introHeading, '--anim-visible');
       }, 3200);
       setTimeout(() => {
-        $('[data-header-btn]').addClass('fully-in-viewport');
+        this.addClass(introBtn, 'fully-in-viewport');
       }, 3400);
     });
+  },
+
+  // Return BKG to stock
+  destroyed: function() {
+    this.bodyReset('--body-white');
   },
 
   components: {

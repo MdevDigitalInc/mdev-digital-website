@@ -57,22 +57,25 @@ export default{
   mounted: function(){
     // Wait for full load and next tic on VM
     this.$nextTick(() => {
+      // Load elements
+      var loadAnim = document.querySelectorAll('[data-load-anim]')[0];
+      var loadWindow = document.querySelectorAll('[data-load-window]')[0];
+
       // Logo & Loading screen
       setTimeout(() => {
         // Make Logo appear...
-        $('[data-load-anim]').addClass('--opacity-active');
+        this.addClass(loadAnim, '--opacity-active');
       }, 100);
       setTimeout(() => {
         // Make Logo Move...
-        $('[data-load-anim]').addClass('--transform-active');
+        this.addClass(loadAnim, '--transform-active');
       }, 900);
       setTimeout(() => {
         // Make Logo Disappear...
-        $('[data-load-anim]').removeClass('--opacity-active');
+        this.removeClass(loadAnim, '--opacity-active');
         // Make Content Disappear
-        $('[data-load-window]').addClass('--opacity');
+        this.addClass(loadWindow, '--opacity');
       }, 1900);
-      // Update Data
       setTimeout(() => {
         // Start countdown function
         this.countdown();
@@ -89,7 +92,7 @@ export default{
       // Run every 1 Sec..
       this.redirectTimer = setInterval(()=> {
         // If time is not zero, subtract 1
-        if (this.time > 0) {
+        if (this.time > 1) {
           this.time --;
         }
         // Once it gets to zero, clear timer and redirect

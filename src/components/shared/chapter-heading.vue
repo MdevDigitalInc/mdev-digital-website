@@ -19,12 +19,6 @@ export default{
   name: 'ChapterHeading',
 
   props: ['chapterTitle', 'chapterIndex'],
-
-  data: function(){
-    return{
-
-    };
-  },
 };
 </script>
 

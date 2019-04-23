@@ -147,15 +147,20 @@ export default{
 
   mounted: function() {
     this.$nextTick(() => {
+      // Collect Elements
+      var introHeading = document.querySelectorAll('[data-intro-heading]')[0];
+      var introSubhead = document.querySelectorAll('[data-intro-subhead]')[0];
+      var introBtn = document.querySelectorAll('[data-header-btn]')[0];
+      // Fire off animations
       setTimeout(() => {
-        $('[data-intro-heading]').addClass('fully-in-viewport');
+        this.addClass(introHeading, 'fully-in-viewport');
         // Adjust Arrow
       }, 300);
       setTimeout(() => {
-        $('[data-intro-subhead]').addClass('fully-in-viewport');
+        this.addClass(introSubhead, 'fully-in-viewport');
       }, 900);
       setTimeout(() => {
-        $('[data-header-btn]').addClass('fully-in-viewport');
+        this.addClass(introBtn, 'fully-in-viewport');
       }, 1500);
     });
   },

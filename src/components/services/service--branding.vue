@@ -144,23 +144,27 @@ export default{
 
   mounted: function() {
     this.$nextTick(() => {
-        $('[data-main-nav]').addClass('--teal-white');
+      // Collect Elements
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      var introBtn = document.querySelectorAll('[data-header-btn]')[0];
+      var introAnim = document.querySelectorAll('#anim-your')[0];
+      // Add class to nav
+      this.addClass(mainNav, '--teal-white');
+      // Fire off animation
       setTimeout(() => {
         new Vivus('anim-tell', {duration: 150});
       }, 100);
       setTimeout(() => {
         new Vivus('anim-your', {duration: 180});
-        $('#anim-your').addClass('--anim-visible');
+        this.addClass(introAnim, '--anim-visible');
       }, 450);
       setTimeout(() => {
         new Vivus('anim-story', {duration: 180});
       }, 1700);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
+        this.addClass(introHeading, '--anim-visible');
       }, 2200);
-      setTimeout(() => {
-        $('[data-header-btn]').addClass('fully-in-viewport');
-      }, 3400);
     });
   },
 

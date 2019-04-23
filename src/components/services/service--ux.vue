@@ -39,7 +39,7 @@
       :id="service.anchor"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 1"
-      :key="index"
+      :key="index + 1"
       :linkData="service.caseStudy"
       v-in-viewport
       class="a-fade-in mdev-service">
@@ -155,18 +155,24 @@ export default{
 
   mounted: function() {
     this.$nextTick(() => {
-        $('[data-main-nav]').addClass('--teal-white');
+      // Collect Elements
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var introAnim = document.querySelectorAll('#anim-the')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      // Add class to nav
+      this.addClass(mainNav, '--teal-white');
+
       setTimeout(() => {
         new Vivus('anim-humanize', {duration: 150}, console.log('fired'));
       }, 100);
       setTimeout(() => {
-        $('#anim-the').addClass('--anim-visible');
+        this.addClass(introAnim, '--anim-visible');
       }, 450);
       setTimeout(() => {
         new Vivus('anim-web', {duration: 150}, console.log('fired'));
       }, 800);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
+        this.addClass(introHeading, '--anim-visible');
       }, 1200);
     });
   },

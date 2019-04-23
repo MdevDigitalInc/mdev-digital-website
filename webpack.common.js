@@ -9,8 +9,9 @@ const path = require('path')
 const webpack = require('webpack')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const HtmlWebpackPlugin = require ('html-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const setPath = function(folderName) {
   return path.join(__dirname, folderName);
@@ -162,7 +163,10 @@ module.exports = {
     // CSS Output
     new MiniCssExtractPlugin({
       filename: "assets/styles/styles-[hash].css"
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: 'src/assets/js', to: 'js', force: true }
+    ])
   ],
   resolve: {
     alias: {

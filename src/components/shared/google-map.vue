@@ -17,9 +17,9 @@ export default{
       let mapCenter = this.mapData.mapCenter;
       let zoom = this.mapData.zoomLevel;
       // Get Window Information
-      let mainWindow = $(window);
-      let windowHeight = mainWindow.height();
-      let windowWidth = mainWindow.width();
+      let mainWindow = window;
+      let windowHeight = mainWindow.screen.availHeight;
+      let windowWidth = mainWindow.screen.availWidth;
 
       // Check to see if it is Portrait or Landscape
       if ( windowHeight > windowWidth ) {
@@ -232,8 +232,9 @@ export default{
       });
 
       // Wait for map to load and add active class
-      map.addListener('tilesloaded', function () {
-        $('[data-map-active]').addClass('--map-loaded');
+      map.addListener('tilesloaded',  () => {
+        var mapObject = document.querySelectorAll('[data-map-active]')[0];
+        this.addClass(mapObject, '--map-loaded');
       });
     }
   },

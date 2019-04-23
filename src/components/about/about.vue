@@ -132,15 +132,25 @@ export default{
   },
 
   mounted: function() {
+    // Make Body White
+    this.bodyClass('--body-white');
+
     this.$nextTick(() => {
+      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      var introSubhead = document.querySelectorAll('[data-intro-subhead]')[0];
       setTimeout(() => {
-        $('[data-intro-heading]').addClass('fully-in-viewport');
+        this.addClass(introHeading, 'fully-in-viewport');
         // Adjust Arrow
       }, 300);
       setTimeout(() => {
-        $('[data-intro-subhead]').addClass('fully-in-viewport');
+        this.addClass(introSubhead, 'fully-in-viewport');
       }, 900);
     });
+  },
+
+  // Return BKG to default
+  destroyed: function() {
+    this.bodyReset('--body-white');
   },
 
   components: {

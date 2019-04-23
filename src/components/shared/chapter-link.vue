@@ -24,12 +24,6 @@ export default{
   name: 'ChapterLink',
 
   props: ['chapterTitle', 'chapterIndex', 'chapterLink', 'a11y'],
-
-  data: function(){
-    return{
-
-    };
-  },
 };
 </script>
 
