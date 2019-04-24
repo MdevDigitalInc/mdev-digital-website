@@ -271,7 +271,7 @@ export default{
     }
 
     &:last-child {
-      margin-bottom: 25px;
+      margin-bottom: 40px;
 
       @media #{$portrait} {
         margin-bottom: 40px;

@@ -59,19 +59,17 @@ export default {
       title: this.seo.app.title,
       titleTemplate: this.seo.template,
       link: [
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' },
+        // Font Awesome
         { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity:'sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin: 'anonymous' },
-        { rel: 'stylesheet', href: '//cdn.jsdelivr.net/alertifyjs/1.9.0/css/alertify.min.css' }
+        // Alertify
+        { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/alertifyjs/1.9.0/css/alertify.min.css' }
       ],
       script: [
         // Alertify
-        { src: '//cdn.jsdelivr.net/alertifyjs/1.9.0/alertify.min.js', async: true, defer: true },
-        // Load Tracking Scripts
-        { src: 'https://www.googletagmanager.com/gtag/js?id=UA-91898048-1', async: true, defer: true },
-        { src: 'js/googletag.js', async: true, defer: true },
-        { src: 'js/fbpixel.js', async: true, defer: true },
+        { src: 'https://cdn.jsdelivr.net/alertifyjs/1.9.0/alertify.min.js', async: true, defer: true },
       ],
       meta: [
+        // SEO
         { vmid: 'desc', name: 'description', content: this.seo.app.desc },
         { vmid: 'ogappid', property: 'fb:app_id', content: this.seo.social.appid },
         { vmid: 'ogtype', property: 'og:type', content: this.seo.social.ogtype },
@@ -81,11 +79,7 @@ export default {
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.app.title + this.seo.templateAddon },
         { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.social.twimage) },
         { vmid: 'twdesc', name: 'twitter:description', content: this.seo.app.desc }
-      ],
-      noscript: [
-        { innerHTML: '<img height="1" width="1" src="https://www.facebook.com/tr?id=687879194986132&ev=PageView &noscript=1"/>' }
-      ],
-      __dangerouslyDisableSanitizers: 'noscript'
+      ]
     };
   },
 
@@ -96,6 +90,17 @@ export default {
   },
 
   created: function(){
+    // Disable Script Output on Prerenderer
+    // Still outputs scripts on live.
+    if (!window.__PRERENDER_INJECTED) {
+      // Load Google Maps
+      this.asyncScript( 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBBqIEqMAu1tnDhpPmRlesqA7Q1Na46AZs', true, true);
+      // Load Google Tag Manager
+      this.asyncScript( 'https://www.googletagmanager.com/gtag/js?id=UA-91898048-1', true, true);
+      this.asyncScript( '/js/googletag.js', false, false);
+      // Load Facebook Pixel
+      this.asyncScript( '/js/fbpixel.js', false, false);
+    }
     // Add key event listener for Konami
     window.addEventListener("keyup", this.konami);
   },
@@ -132,12 +137,15 @@ export default {
       setTimeout(() => {
         // Flip Flag to finish loading
         this.isLoading = false;
+        // [ prerender-plugin ] ------------------------
+        // Dispatches event to tell the prerenderer to take snapshot
+        document.dispatchEvent(new Event('spa-rendered'));
       }, 2800);
 
       // Check Cookies
       setTimeout(() => {
         this.checkCookie();
-      }, 5000);
+      }, 9000);
     });
   },
 

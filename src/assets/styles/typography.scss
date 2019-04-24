@@ -96,6 +96,7 @@ $link-font-sizes: (
 /* Generate Responsive Sizing */
 
 p {
+  font-family: $main-font;
   line-height: 150%;
   font-weight: 400;
   @include font-size($p-font-sizes);

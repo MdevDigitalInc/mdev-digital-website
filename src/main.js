@@ -221,6 +221,18 @@ Vue.mixin({
       // Change body class
       var mainBody = document.querySelectorAll('body')[0];
       this.addClass(mainBody, className);
+    },
+    // Async Load Scipts
+    asyncScript( src, asyncLoad, deferLoad) {
+      var s = document.createElement( 'script' );
+      s.setAttribute( 'src', src );
+      if ( asyncLoad ) {
+        s.setAttribute( 'async', true );
+      }
+      if ( deferLoad ) {
+        s.setAttribute( 'defer', true );
+      }
+      document.head.appendChild( s );
     }
   }
 })

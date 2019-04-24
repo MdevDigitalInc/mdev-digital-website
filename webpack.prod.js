@@ -155,10 +155,11 @@ module.exports = merge(common, {
       },
       // Renderer Options
       renderer: new Renderer({
+        // Inject window property
+        injectProperty: '__PRERENDER_INJECTED',
         headless: true,
-        // Using render after time because trigger doesn't work.
-        renderAfterTime: 12000
-        //renderAfterDocumentEvent: 'spa-rendered'
+        // Triggered by App.Vue
+        renderAfterDocumentEvent: 'spa-rendered'
       })
     }),
     // Sitemap Generation
