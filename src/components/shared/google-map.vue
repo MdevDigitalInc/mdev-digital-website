@@ -233,8 +233,10 @@ export default{
 
       // Wait for map to load and add active class
       map.addListener('tilesloaded',  () => {
-        var mapObject = document.querySelectorAll('[data-map-active]')[0];
-        this.addClass(mapObject, '--map-loaded');
+        var mapObject = document.querySelectorAll('[data-map-active]');
+        for ( var i=0; i < mapObject.length; i++ ) {
+          this.addClass(mapObject[i], '--map-loaded');
+        }
       });
     }
   },

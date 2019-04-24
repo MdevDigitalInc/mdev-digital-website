@@ -109,7 +109,7 @@ export default{
 /--------------------------------------*/
 
 .mdev-map-location {
-  width: 90%;
+  width: 100%;
   position: relative;
   left: 0;
   overflow: hidden;
@@ -161,7 +161,7 @@ export default{
   z-index: 3;
   padding: 10px 0;
   line-height: 130%;
-  border-bottom: 4px solid $white;
+  border-bottom: 4px solid $color-brand-accent;
   font-size: 1.8vw;
 
   @media #{$portrait} {
@@ -189,20 +189,23 @@ export default{
 
 // Decoration Overrides
 .mdev-box-dec {
-  width: 72vw;
+  width: 32vw;
   height: 60vh;
   right: 0;
   bottom: 75px;
 
   @media #{$portrait} {
-    bottom: 30px;
+    width: 70vw;
+    right: 10%;
+    bottom: 20px;
   }
 }
 
 .mdev-frame-dec {
-  width: 40vw;
-  height: 10vh;
+  width: 44vw;
   left: 10%;
+  bottom: 50%;
+  height: auto;
   top: 0;
   opacity: 0;
   transition: opacity 1s;
