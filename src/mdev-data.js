@@ -1337,24 +1337,12 @@ export default  {
 
   testimonials: [
     {
-      content: 'Dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-      name: 'Aaron Finkenzeller, CTO Zucora Inc.'
+      content: 'Working with MDEV exceeded my expectations.  They were knowledgeable, creative and aligned seamlessly to the vision of the project. Through the twists and turns of a start-up, they were able to adapt and executed the project beautifully.',
+      name: '- Angela Hawkins, Former Marketing Director of The Factory'
     },
     {
-      content: 'House In The Thaw Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-      name: 'Brad Geddes, CEO Zucora Inc.'
-    },
-    {
-      content: 'Dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-      name: 'Albert Einstein, EMC Industries'
-    },
-    {
-      content: 'House In The Thaw Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-      name: 'Bradd Pitt, CTO Zucora Inc.'
-    },
-    {
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-      name: 'Edward Norton, CTO Zucora Inc.'
+      content: 'MDEV worked closely with us to craft a unique and professional website to suit our needs, they were amazing to collaborate with and we couldn\'t be happier with the result!',
+      name: '- Devan Long, Owner/Operator of The Next Level'
     }
   ],
 

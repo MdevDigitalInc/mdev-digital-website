@@ -66,7 +66,7 @@ export default{
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(22, 177, 169, .83);
+  background: rgba(22, 177, 169, .95);
   padding: 40px 0;
   z-index: 98;
   box-shadow: 0 -3px 5px rgba(0, 0, 0, .2);
@@ -78,15 +78,15 @@ export default{
   }
 
   @media #{$portrait} {
-    padding: 20px 0;
+    padding: 30px 0;
     // Hacky override... srry!
     .flex-hor-between {
-      justify-content: flex-end;
+      justify-content: center;
     }
   }
 
   .mdev-cookies-content {
-    width: 60%;
+    width: 80%;
 
     @media #{$portrait} {
       width: 100%;
@@ -94,9 +94,15 @@ export default{
     }
 
     .--title {
+      display: inline-block;
       font-size: 17px;
       letter-spacing: 1.6px;
       margin-bottom: 10px;
+
+      @media #{$portrait} {
+        width: 100%;
+        text-align: center;
+      }
     }
 
     .--text {
