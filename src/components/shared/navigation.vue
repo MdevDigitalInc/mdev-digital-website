@@ -108,24 +108,26 @@ export default{
   },
 
   mounted: function() {
-    // Scroll timer to debounce
-    let scrollTimer;
-    let scrollTime = 20;
-    let pageTitleEl = document.querySelectorAll('[data-page-title]');
+    this.$nextTick(() => {
+      // Scroll timer to debounce
+      let scrollTimer;
+      let scrollTime = 20;
+      let pageTitleEl = document.querySelectorAll('[data-page-title]');
 
-    // Check to see that the page title is there
-    if ( pageTitleEl.length !== 0 ) {
-      this.scrollDistance = pageTitleEl[0].offsetTop;
-    }
-    else {
-      this.scrollDistance = 600;
-    }
-    // Event Listener on scroll with debounce
-    window.addEventListener('scroll', () => {
-      // Grab the Window Path for Scroll Y
-      let distanceTop = event.path[1].scrollY;
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(this.userScroll(distanceTop),scrollTime);
+      // Check to see that the page title is there
+      if ( pageTitleEl.length !== 0 ) {
+        this.scrollDistance = pageTitleEl[0].offsetTop;
+      }
+      else {
+        this.scrollDistance = 600;
+      }
+      // Event Listener on scroll with debounce
+      window.addEventListener('scroll', () => {
+        // Grab the Window Path for Scroll Y
+        let distanceTop = event.path[1].scrollY;
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(this.userScroll(distanceTop),scrollTime);
+      });
     });
   },
 

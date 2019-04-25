@@ -7,7 +7,7 @@
 export default{
   name: 'GoogleMaps',
 
-  props: [ 'mapData' ],
+  props: [ 'mapData', 'initMap' ],
 
   methods: {
     setupMap() {
@@ -233,17 +233,15 @@ export default{
 
       // Wait for map to load and add active class
       map.addListener('tilesloaded',  () => {
-        var mapObject = document.querySelectorAll('[data-map-active]');
-        for ( var i=0; i < mapObject.length; i++ ) {
-          this.addClass(mapObject[i], '--map-loaded');
-        }
+        this.$emit('mapIsLoaded');
       });
     }
   },
 
-  mounted: function() {
-    // Setup Map
-    this.setupMap();
-  }
+  watch: {
+    initMap: function(newVal, oldVal) { // watch it
+      this.setupMap();
+    }
+  },
 };
 </script>

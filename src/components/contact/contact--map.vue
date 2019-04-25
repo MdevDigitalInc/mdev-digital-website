@@ -3,7 +3,7 @@
     <!-- Google Maps Container Mask -->
     <div data-map-active class="mdev-map-location">
       <!-- Maps Component -->
-      <google-map :mapData="mapData" ></google-map>
+      <google-map :initMap="animLoaded" :mapData="mapData" v-on:mapIsLoaded="initPresentation" ></google-map>
       <!-- Contact Information -->
       <!-- Phone Number -->
       <div
@@ -65,6 +65,7 @@ import googleMap from '../shared/google-map.vue';
 
 export default{
   name: 'ContactMap',
+  props: ['animLoaded'],
   data: function(){
     return{
       contact: {
@@ -93,6 +94,16 @@ export default{
         zoomLevel: 17.2
       }
     };
+  },
+
+  methods: {
+    initPresentation() {
+      // Emit event for Parent
+      var mapObject = document.querySelectorAll('[data-map-active]');
+      for ( var i=0; i < mapObject.length; i++ ) {
+        this.addClass(mapObject[i], '--map-loaded');
+      }
+    }
   },
 
   components: {

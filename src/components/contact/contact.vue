@@ -38,7 +38,7 @@
       </div>
     </hero-main>
     <!-- Map -->
-    <contact-map v-view="(e) => changeNavBrand(e, '--teal-white')"></contact-map>
+    <contact-map :animLoaded="animDone" v-view="(e) => changeNavBrand(e, '--teal-white')"></contact-map>
     <!-- form -->
     <contact-form  v-view="(e) => changeNavBrand(e, '--white-black')" id="mainContent"></contact-form>
     <!-- Footer -->
@@ -73,7 +73,9 @@ export default {
       somethingAnim: 'contact/MDEV_HEADER_something.svg',
       newAnim: 'contact/MDEV_HEADER_new_animated.svg',
       // SEO
-      seo: SEOData.siteSeo
+      seo: SEOData.siteSeo,
+      // Animation Flag
+      animDone: false
     };
   },
 
@@ -110,22 +112,36 @@ export default {
       // Fire off Animations
       setTimeout(() => {
         new Vivus('anim-lets', {duration: 150});
-      }, 100);
+      }, 200);
       setTimeout(() => {
         new Vivus('anim-start', {duration: 150});
-      }, 400);
+      }, 500);
       setTimeout(() => {
         this.addClass(introAnim, '--anim-visible');
-      }, 650);
+      }, 750);
       setTimeout(() => {
         new Vivus('anim-new', {duration: 180});
-      }, 2700);
+      }, 2800);
       setTimeout(() => {
         this.addClass(introHeading, '--anim-visible');
-      }, 3200);
+      }, 3300);
       setTimeout(() => {
         this.addClass(introBtn, 'fully-in-viewport');
-      }, 3400);
+      }, 3500);
+      setTimeout(() => {
+        // Flip Flag --------------[ STARTS LOADING MAP ]
+        this.animDone = true;
+      }, 3800);
+      // Listen to scroll and load map sooner if user moves
+      let scrollTimer;
+      let scrollTime = 20;
+      // Event Listener on scroll with debounce
+      window.addEventListener('scroll', () => {
+        // Grab the Window Path for Scroll Y
+        let distanceTop = event.path[1].scrollY;
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(this.animDone = true,scrollTime);
+      });
     });
   },
 
