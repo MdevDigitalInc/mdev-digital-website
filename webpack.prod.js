@@ -64,10 +64,12 @@ const robotOptions = {
 }
 
 // Prerenderer Routes
+// These tell the prerenreder which routes to render..
+// These should match routes.js
 const prerenderRoutes = [
   '/',
   '/contact',
-  '/company',
+  '/about',
   '/services/overview',
   '/services/branding',
   '/services/app-development',

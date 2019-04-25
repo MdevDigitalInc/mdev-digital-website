@@ -297,17 +297,18 @@ export default  {
       employeeName: 'Dorian Hall',
       employeeTitle: 'Front-End Developer',
       employeeRoute: 'dorian-hall',
-      employeeIntro: 'Whether he\'s improving the efficiency and processing capabilities of antiquated systems for large companies, or working on integrating numerous emerging web technologies, Graham always plays key role in designing and developing effective systems for any situation.',
+      employeeIntro: 'With monk-like patience, Dorian excels at delving into complex existing codebases to develop robust front end code. He’s a badass glutton for punishment and we’ve yet to hear him grumble.',
       employeeStory: [
-        'Graham also occasionally teaches programming classes as a part-time instructor at Fanshawe College as a part of the Advanced Programming Game development program.'
+        'Dorian has a deep knowledge on working with WordPress and is constantly pushing himself to learn more about customizing plugins and templates to create unqiue, user-friendly sites.',
+        'In his off time, you’ll find Dorian challenging himself with an unforgiving action role-playing game or burying himself in an apocalptic novel. '
       ],
       seo: {
         title: 'Dorian Hall - Front-end Developer',
         description: 'Meet Dorian Hall, our Front-end Developer.'
       },
       employeeOrigin: 'Guelph, ON',
-      employeeQuote: 'Quote Here',
-      employeeTrick: 'Avid Reader / Dark Souls Master / Front-end ',
+      employeeQuote: 'Humanity is a discontinuous series of free men irreparably isolated by their subjectivity.',
+      employeeTrick: 'Green Tea Aficionado / Curry Tasting Champion / Skill Acquisition',
       employeeImage: 'bios/bio-dorian.png',
       socialLinks: false
     }
@@ -1354,51 +1355,73 @@ export default  {
       ogtype: 'website',
       cardtype: 'summary_large_image',
       twsite: '@MDEVdigital',
-      ogimage: 'social/MDEV-FB-OG_v01.jpg',
-      twimage: 'social/MDEV-TW-Card_v01.png'
+      ogimage: 'social/MDEV-FB-OG-Home_v01.jpg',
+      twimage: 'social/MDEV-TW-Card-Home_v01.png'
     },
     secret: 'ongbak/konami.gif',
     about: {
+      ogimage: 'social/MDEV-FB-OG-About_v01.jpg',
+      twimage: 'social/MDEV-TW-Card-About_v01.jpg',
       title: 'Hybrid Digital Agency',
       desc: 'We create powerful user experiences, combining digital solutions and integrated marketing to maximize your ROI.'
     },
     app: {
+      ogimage: 'social/MDEV-FB-OG-Home_v01.jpg',
+      twimage: 'social/MDEV-TW-Card-Home_v01.png',
       title: 'Process-Driven Development',
       desc: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'
     },
     home: {
+      ogimage: 'social/MDEV-FB-OG-Home_v01.jpg',
+      twimage: 'social/MDEV-TW-Card-Home_v01.png',
       title: 'Process-Driven Development',
       desc: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'
     },
     contact: {
+      ogimage: 'social/MDEV-FB-OG-Contact_v01.jpg',
+      twimage: 'social/MDEV-TW-Card-Contact_v01.jpg',
       title: 'Contact Us',
       desc: 'Get in touch to learn more about our services. Let\'s start something new.'
     },
     services: {
+      ogimage: 'social/MDEV-FB-OG-Services_v01.jpg',
+      twimage: 'social/MDEV-TW-Card-Services_v01.jpg',
       title: 'Web & Application Development Services',
       desc: 'We provide highly customized software and websites that suit your business needs. From e-commerce to custom apps, we\'ll help you stand out in the digital realm.'
     },
     appdev: {
+      ogimage: 'social/MDEV-FB-OG-Apps_v01.jpg',
+      twimage: 'social/MDEV-TW-Card-Apps_v01.jpg',
       title: 'Custom Software Application Development',
       desc: 'We bring your ideas to life through cutting-edge development services to agile development practices, modern UX/UI principles, and secure, cloud-based technology.'
     },
     branding: {
+      ogimage: 'social/MDEV-FB-OG-Branding_v01.jpg',
+      twimage: 'social/MDEV-TW-Card-Branding_v01.jpg',
       title: 'Branding & Corporate Identity Services',
       desc: 'We will help you discover and share your brand. We can start from scratch or help you enhance your existing brand(s) into a cohesive corporate identity system.'
     },
     support: {
+      ogimage: 'social/MDEV-FB-OG-Support_v01.jpg',
+      twimage: 'social/MDEV-TW-Card-Support_v01.jpg',
       title: 'Support Services',
       desc: 'We\'ll help you with your email deployments, domain hosting, migration & dispute resolution, and cloud computing services.'
     },
     digiads: {
+      ogimage: 'social/MDEV-FB-OG-Marketing_v01.jpg',
+      twimage: 'social/MDEV-TW-Card-Marketing_v01.jpg',
       title: 'Digital Marketing Services',
       desc: 'We\'re experts at integrating compelling marketing strategies and tactics with understandable and measuarable results. It\'s data science mixed with marketing art.'
     },
     webdev: {
+      ogimage: 'social/MDEV-FB-OG-Web_v01.jpg',
+      twimage: 'social/MDEV-TW-Card-Web_v01.jpg',
       title: 'Web Design Services',
       desc: 'We\'ll help you with custom web design & development, user interface design, responsive web design, and custom wordpress development.'
     },
     error: {
+      ogimage: 'social/MDEV-FB-OG-Home_v01.jpg',
+      twimage: 'social/MDEV-TW-Card-Home_v01.png',
       title: 'Oops, sorry!',
       desc: 'Something went wrong with your request.'
     }

@@ -14,14 +14,15 @@ import App from './App.vue';
 import { routes  } from './routes.js';
 import store from './store/store.js';
 
-// In Viewport Custom Directive
+// In Viewport Custom Directive -------------------------
 // Adds classes to elements given the v-in-viewport directive
 // can be used to target animations.
 // To see an example, check buttons.css and the btn-primary.vue element
 import inViewportDirective from 'vue-in-viewport-directive';
 Vue.directive('in-viewport', inViewportDirective);
 
-// Check View Directive
+// Check View Directive ---------------------------------
+// Executes event as elements enter view
 import checkView from 'vue-check-view';
 Vue.use(checkView);
 // Import Auth Plugin
@@ -29,8 +30,7 @@ Vue.use(checkView);
 import Validate from './plugins/validate.js';
 Vue.use(Validate);
 // [ i18n - Internationalization ] ----------------------
-
-// Configure I18n Internationalization Locales
+// Load Locales
 import en from './locales/en.js';
 //import pt from './locales/pt.js';
 const locales = {
@@ -40,11 +40,11 @@ const locales = {
 // Initialize vue-resource | vue-router | vue-i18n
 Vue.use(VueI18n);
 Vue.use(VueResource);
-
 // Vue Router
 Vue.use(VueRouter);
 // Meta Info
 Vue.use(Meta)
+// Auth Plugin
 //Vue.use(Auth);
 
 // Set Language Default [ ENGLISH ]
@@ -115,17 +115,21 @@ const router = new VueRouter ({
 });
 //--------------------------------------[ vue-router ]
 
-// Route Guard - Executes before each route change
-// In this case being used to dynamically change BKG color
 
 // [ Global Mixins ] --------------------------------
+// Global mixins are functions available to all of the components
+// inside of the vue VM instance.
+//
+// These can be called with this.functioName(param); from
+// any of the component methods.
 Vue.mixin({
   methods: {
     // Load images with require
+    // Returns path and tags image for webpack.
     loadImage(path){
       return require('./assets/images/' + path);
     },
-    // Change Application Language
+    // Change Application Language - Toggle
     change() {
       let current = this.$locale.current();
       if (current === 'en') {
@@ -134,14 +138,16 @@ Vue.mixin({
         this.$locale.change('en');
       }
     },
-    // Change Navigation Logo Colors
+    // Change Navigation Logo Colors via class
     changeNavBrand(e, brandClass) {
       // Grab Element
       var mainNav = document.querySelectorAll('[data-main-nav]')[0];
       if ( e.target.rect.y <= 0 ) {
+        // Remove classes
         this.removeClass(mainNav, '--teal-black');
         this.removeClass(mainNav, '--white-black');
         this.removeClass(mainNav, '--teal-white');
+        // Add intended class
         this.addClass(mainNav, brandClass);
       }
     },
@@ -166,6 +172,11 @@ Vue.mixin({
         return false;
       }
     },
+    // Look Ma No JQUERY ------------------------------
+    // These are simple functions to replace dependency on
+    // jquery UI. All we use it for is toggling classes..
+    // there is no need to load a full library.
+    //
     // Add Class JQUERY replacement
     addClass(element, className) {
       if (element.classList) {
@@ -222,17 +233,25 @@ Vue.mixin({
       var mainBody = document.querySelectorAll('body')[0];
       this.addClass(mainBody, className);
     },
-    // Async Load Scipts
+    // Async Load Scipts -----------------------------------
+    // This script is a little trick to load scripts AFTER vue
+    // has a chance to fully load. It serves the purpose of boosting
+    // performance and fixing the issue with prerendered pages
     asyncScript( src, asyncLoad, deferLoad) {
-      var s = document.createElement( 'script' );
-      s.setAttribute( 'src', src );
+      // Create a script element
+      var script = document.createElement( 'script' );
+      // Set Source
+      script.setAttribute( 'src', src );
+      // If async...
       if ( asyncLoad ) {
-        s.setAttribute( 'async', true );
+        script.setAttribute( 'async', true );
       }
+      // if Defer
       if ( deferLoad ) {
-        s.setAttribute( 'defer', true );
+        script.setAttribute( 'defer', true );
       }
-      document.head.appendChild( s );
+      // Append to the end of the head
+      document.head.appendChild( script );
     }
   }
 })

@@ -81,6 +81,8 @@ export default {
     return {
       title: this.seo.contact.title,
       meta: [
+        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.contact.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.contact.ogimage) },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.contact.title + this.seo.templateAddon },
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.contact.title + this.seo.templateAddon },
         { vmid: 'desc', name: 'description', content: this.seo.contact.desc },

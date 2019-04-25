@@ -144,6 +144,8 @@ export default{
     return {
       title: this.seo.webdev.title,
       meta: [
+        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.webdev.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.webdev.ogimage) },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.webdev.title + this.seo.templateAddon },
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.webdev.title + this.seo.templateAddon },
         { vmid: 'desc', name: 'description', content: this.seo.webdev.desc },

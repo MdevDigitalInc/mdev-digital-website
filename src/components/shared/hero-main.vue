@@ -51,6 +51,10 @@ export default {
     });
   },
 
+  updated: function() {
+    this.adjustCrossbeam();
+  },
+
   methods: {
     adjustCrossbeam() {
       var brandEl = document.querySelectorAll('[data-main-nav]')[0];

@@ -122,6 +122,8 @@ export default{
     return {
       title: this.seo.about.title,
       meta: [
+        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.about.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.about.ogimage) },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.about.title + this.seo.templateAddon },
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.about.title + this.seo.templateAddon },
         { vmid: 'desc', name: 'description', content: this.seo.about.desc },
@@ -136,7 +138,7 @@ export default{
     this.bodyClass('--body-white');
 
     this.$nextTick(() => {
-      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      var introHeading = document.querySelectorAll('[data-intro-heading]')[0];
       var introSubhead = document.querySelectorAll('[data-intro-subhead]')[0];
       setTimeout(() => {
         this.addClass(introHeading, 'fully-in-viewport');

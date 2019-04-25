@@ -90,8 +90,14 @@ export default {
   },
 
   created: function(){
-    // Disable Script Output on Prerenderer
-    // Still outputs scripts on live.
+    // [ PRERENDERER CAVEATS ] -----------------------------
+    // Prerenderers are great cuz SEO... but they suck at handling
+    // script injection from trackers.
+    // To solve the problem, we prevent the scripts from being loaded.
+    //
+    // __PRERENDER_INJECTED is a window object that only gets added by
+    // the prerenderer. These async calls will only execute on the intended
+    // client side environment.
     if (!window.__PRERENDER_INJECTED) {
       // Load Google Maps
       this.asyncScript( 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBBqIEqMAu1tnDhpPmRlesqA7Q1Na46AZs', true, true);
@@ -116,7 +122,6 @@ export default {
       // Load elements
       var loadAnim = document.querySelectorAll('[data-load-anim]')[0];
       var loadWindow = document.querySelectorAll('[data-load-window]')[0];
-
       // Logo & Loading screen
       setTimeout(() => {
         // Make Logo appear...
@@ -137,7 +142,7 @@ export default {
       setTimeout(() => {
         // Flip Flag to finish loading
         this.isLoading = false;
-        // [ prerender-plugin ] ------------------------
+        // [ PRERENDER SNAPSHOT ] ------------------------
         // Dispatches event to tell the prerenderer to take snapshot
         document.dispatchEvent(new Event('spa-rendered'));
       }, 2800);
@@ -203,7 +208,8 @@ export default {
             },3000);
             this.current = 0;
           }
-        } else {
+        }
+        else {
           this.current = 0;
         }
       }
