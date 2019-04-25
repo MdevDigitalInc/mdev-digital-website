@@ -3,7 +3,7 @@
     <div class="mdev-hero-mask" data-main-hero :class="{'--mask-active' : isLoaded }" >
       <slot></slot>
       <div v-if="pageTitle" class="mdev-page-title" data-main-title>
-        <span data-crossbeam class="--crossbeam"></span>
+        <div data-crossbeam class="--crossbeam"></div>
         <h1 data-page-title>
           <svg xmlns="http://www.w3.org/2000/svg" width="52" height="9"><defs/><path id="arrow_right" data-name="arrow right" class="cls-1" d="M1096.35
         4885l7.65-4.5-7.65-4.51v3.55H1052v1.91h44.35v3.55z" transform="translate(-1052 -4876)"/></svg>
@@ -22,11 +22,11 @@
 export default {
   name: 'MainHero',
 
-  props: [ 'pageTitle', 'headerDsc' ],
+  props: [ 'pageTitle', 'headerDsc', 'updateCross' ],
 
   data: function() {
     return {
-      isLoaded: false
+      isLoaded: false,
     };
   },
 
@@ -52,18 +52,9 @@ export default {
   },
 
   updated: function() {
+    // Adjust Crossbeam
     this.adjustCrossbeam();
-  },
-
-  methods: {
-    adjustCrossbeam() {
-      var brandEl = document.querySelectorAll('[data-main-nav]')[0];
-      var crossEl = document.querySelectorAll('[data-crossbeam]')[0];
-      var brandHeight = null;
-      brandHeight = brandEl.offsetHeight;
-      crossEl.style.height = (brandHeight + 4) + 'px';
-    }
-  },
+  }
 };
 
 </script>
@@ -220,6 +211,7 @@ $mask-arrow-anim-time: 3.2s;
   position: absolute;
   top: 0;
   left: 0;
+  height: 0;
   border-bottom: 1px solid $white;
   z-index: -1;
   transition: all .4s;

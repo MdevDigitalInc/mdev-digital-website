@@ -186,6 +186,10 @@ export default{
   transition: all .4s;
   transform: translate3d(65%, 0, 0);
 
+  @media #{$phone-only} {
+    padding: 15px;
+  }
+
   &:hover,
   &:focus,
   &:active {
@@ -195,11 +199,23 @@ export default{
   .mdev-deep-title {
     font-size: 28px;
     margin-right: 60px;
+
+    @media #{$phone-only} {
+      font-size: 20px;
+      display: block;
+      min-width: 150px;
+    }
   }
 
   .mdev-deep-link {
     margin-right: 30px;
     transition: all .4s;
+
+    @media #{$phone-only} {
+      margin-right: 15px;
+      width: 90px;
+      font-size: 13px;
+    }
   }
 
   &.--active-deep {

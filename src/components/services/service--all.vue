@@ -18,12 +18,14 @@
               {{ $t('servicepage.intro.subHeading') }}
             </p>
 
+            <!-- [ Disabled for launch ]
             <router-link to="/comingsoon"
               data-header-btn
               title="Coming Soon"
               class="mdev-btn mdev-primary-btn --space-top-xs">
               {{ $t('servicepage.intro.action') }}
             </router-link>
+            -->
           </div>
         </div>
 

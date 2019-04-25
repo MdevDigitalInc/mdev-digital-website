@@ -157,7 +157,17 @@ Vue.mixin({
       var top = element.offset().top;
       window.scrollTo(0, (top - offset));
     },
-    // Checks Visibility of Element (vue-check-view npm)
+
+    adjustCrossbeam() {
+      var brandEl = document.querySelectorAll('[data-main-nav]')[0];
+      var crossEl = document.querySelectorAll('[data-crossbeam]');
+      var brandHeight = null;
+      brandHeight = brandEl.offsetHeight;
+      for (var i=0; i < crossEl.length; i++) {
+        crossEl[i].style.height = (brandHeight + 8) + 'px';
+      }
+    },
+// Checks Visibility of Element (vue-check-view npm)
     // Takes in event, amount of overlap and Array Length
     checkVisibility(event, overlap) {
       if (event.percentInView >= overlap) {

@@ -159,6 +159,7 @@ export default {
     // Add the active class back since it gets stripped on update above
     var mainNav = document.querySelectorAll('[data-main-nav]')[0];
     this.addClass(mainNav, '--nav-active');
+    this.adjustCrossbeam();
   },
 
   methods: {
