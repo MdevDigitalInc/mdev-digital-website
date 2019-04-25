@@ -149,11 +149,12 @@ export default{
 
     @media #{$portrait} {
       margin: 30px 0;
-      font-size: 7vw;
+      font-size: 9vw;
     }
 
     @media #{$phone-only} {
       margin: 20px 0;
+      font-size: 12vw;
     }
 
     @media #{$laptop-only} {
@@ -163,6 +164,10 @@ export default{
     a {
       display: block;
       margin: 0 4%;
+
+      @media #{$phone-only} {
+        margin: 0 6%;
+      }
 
       &:first-child {
         margin-left: 0;

@@ -55,6 +55,10 @@ export default{
   width: 100%;
   position: relative;
 
+  @media #{$portrait} {
+    padding: 50px 0;
+  }
+
   @media #{$phone-only} {
     flex-wrap: wrap;
   }

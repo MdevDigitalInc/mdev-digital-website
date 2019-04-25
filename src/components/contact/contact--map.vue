@@ -141,6 +141,9 @@ export default{
     width: 100%;
     box-shadow: inset 0 0 150px 10vw rgba(0, 0, 0, .8);
     z-index: 2;
+    @media #{$portrait} {
+      box-shadow: inset 0 0 150px 30vw rgba(0, 0, 0, .9);
+    }
   }
 }
 
