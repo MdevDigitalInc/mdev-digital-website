@@ -55,6 +55,7 @@ import ContactMap         from './contact--map.vue';
 import ContactForm        from './contact--form.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default {
   name: 'Contact',
@@ -72,7 +73,7 @@ export default {
       somethingAnim: 'contact/MDEV_HEADER_something.svg',
       newAnim: 'contact/MDEV_HEADER_new_animated.svg',
       // SEO
-      seo: MdevData.siteSeo
+      seo: SEOData.siteSeo
     };
   },
 

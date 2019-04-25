@@ -172,7 +172,7 @@ Vue.mixin({
         return false;
       }
     },
-    // Look Ma No JQUERY ------------------------------
+    // Look Mom! - No JQUERY! ------------------------------
     // These are simple functions to replace dependency on
     // jquery UI. All we use it for is toggling classes..
     // there is no need to load a full library.

@@ -120,6 +120,7 @@ import ChapterLink        from '../shared/chapter-link.vue';
 import PageIntro          from '../shared/page-intro.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default{
   name: 'ServicesAppDev',
@@ -144,7 +145,7 @@ export default{
       nomedia: MdevData.appdev.servicesNomedia,
       serviceIntro: MdevData.appdev.serviceIntro,
       // SEO
-      seo: MdevData.siteSeo
+      seo: SEOData.siteSeo
     };
   },
 

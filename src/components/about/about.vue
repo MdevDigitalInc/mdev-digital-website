@@ -94,6 +94,7 @@ import AboutPrefooter     from './about--prefooter.vue';
 import AboutHood          from './about--hood.vue';
 // Flat Data File
 import MdevData           from '../../mdev-data.js';
+import SEOData            from '../../site-seo.js';
 
 export default{
   name: 'About',
@@ -113,7 +114,7 @@ export default{
       headerDsc: 'About MDEV Digital',
       company: MdevData.aboutPage,
       // SEO
-      seo: MdevData.siteSeo
+      seo: SEOData.siteSeo
     };
   },
 

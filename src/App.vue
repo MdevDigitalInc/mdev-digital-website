@@ -36,13 +36,14 @@ import CookiePopup    from './components/shared/cookies.vue';
 import BrandAnimation from './components/shared/brand-animation.vue';
 // Import Data From Flat File
 import MdevData       from './mdev-data.js';
+import SEOData        from './site-seo.js';
 
 export default {
   name: 'App',
   // SEO Meta Information
   data: function(){
     return {
-      seo: MdevData.siteSeo,
+      seo: SEOData.siteSeo,
       secret: false,
       isLoading: true,
       cookies: false,

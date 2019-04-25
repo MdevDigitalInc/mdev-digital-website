@@ -9,7 +9,8 @@
 
 <script>
 // Flat Data File
-import MdevData           from '../../mdev-data.js';
+import MdevData       from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default{
   name: 'CaseStudiesAll',
@@ -17,7 +18,7 @@ export default{
   data: function(){
     return{
       // SEO
-      seo: MdevData.siteSeo
+      seo: SEOData.siteSeo
     };
   },
 

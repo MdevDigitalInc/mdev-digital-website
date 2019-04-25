@@ -120,6 +120,7 @@ import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default{
   name: 'ServicesDigitalMarketing',
@@ -142,7 +143,7 @@ export default{
       prefooter: MdevData.prefooter,
       serviceFlag: MdevData.digiads.serviceFlag,
       // SEO
-      seo: MdevData.siteSeo
+      seo: SEOData.siteSeo
     };
   },
 

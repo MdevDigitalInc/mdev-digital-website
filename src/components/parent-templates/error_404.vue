@@ -47,11 +47,12 @@
 
 <script>
 // Import Data From Flat File
+import SEOData        from '../../site-seo.js';
 import MdevData       from '../../mdev-data.js';
 // Components Import
 import HeroMain       from '../shared/hero-main.vue';
 import MainFooter     from '../shared/main-footer.vue';
-import BtnPrimary   from '../shared/btn-primary.vue';
+import BtnPrimary     from '../shared/btn-primary.vue';
 
 export default {
   name: 'ErrorPage',
@@ -72,7 +73,7 @@ export default {
         btnClass: 'mdev-primary-btn --space-lr-sm --space-top-sm'
       },
       // SEO
-      seo: MdevData.siteSeo,
+      seo: SEOData.siteSeo,
       // Disables Page Title bar
       pageTitle: 'ERROR 404',
       headerDsc: 'Sorry, Something went wrong. This is a 404 page.',

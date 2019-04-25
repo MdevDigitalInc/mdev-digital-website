@@ -7,6 +7,7 @@
 <script>
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
+import SEOData        from './site-seo.js';
 
 export default{
   name: 'BaseTemplate',
@@ -14,7 +15,7 @@ export default{
   data: function(){
     return{
       // SEO
-      seo: MdevData.siteSeo
+      seo: SEOData.siteSeo
     };
   },
 

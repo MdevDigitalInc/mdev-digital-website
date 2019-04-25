@@ -30,6 +30,7 @@ import MainFooter         from '../shared/main-footer.vue';
 import HomeTestimonials   from './home--testimonials.vue';
 // Flat Data File
 import MdevData           from '../../mdev-data.js';
+import SEOData            from '../../site-seo.js';
 
 export default{
   name: 'HomePage',
@@ -48,7 +49,7 @@ export default{
       // Testimonials loaded from flat file
       testimonials: MdevData.testimonials,
       // SEO
-      seo: MdevData.siteSeo
+      seo: SEOData.siteSeo
     };
   },
 

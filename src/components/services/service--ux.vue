@@ -112,6 +112,7 @@ import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default{
   name: 'ServicesUX',
@@ -135,7 +136,7 @@ export default{
       serviceFlag: MdevData.webdev.serviceFlag,
       nomedia: MdevData.webdev.servicesNomedia,
       // SEO
-      seo: MdevData.siteSeo
+      seo: SEOData.siteSeo
     };
   },
 

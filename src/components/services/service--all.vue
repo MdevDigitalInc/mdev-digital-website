@@ -109,6 +109,7 @@ import FeaturedContent    from '../modules/featured-content.vue';
 import BtnPrimary         from '../shared/btn-primary.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default{
   name: 'ServicesAll',
@@ -127,7 +128,7 @@ export default{
       // Services loaded from flat file
       services: MdevData.services,
       // SEO
-      seo: MdevData.siteSeo
+      seo: SEOData.siteSeo
     };
   },
 

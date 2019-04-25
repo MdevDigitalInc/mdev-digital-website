@@ -20,7 +20,8 @@
 // Brand Animation
 import BrandAnimation from '../shared/brand-animation.vue';
 // Flat Data File
-import MdevData           from '../../mdev-data.js';
+import MdevData       from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default{
   name: 'ComingSoon',
@@ -36,7 +37,7 @@ export default{
       // Redirect timer container
       redirectTimer: null,
       // SEO
-      seo: MdevData.siteSeo
+      seo: SEOData.siteSeo
     };
   },
 
