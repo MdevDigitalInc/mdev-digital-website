@@ -154,15 +154,17 @@ Vue.mixin({
     // Scroll to specific anchor link
     scrollToHash(hashRef, offset) {
       var element = document.querySelectorAll(hashRef);
-      var top = element.offset().top;
-      window.scrollTo(0, (top - offset));
+      console.log(element[0]);
+      var top = element[0].offsetTop;
+      console.log(top);
+      window.scrollTo(0, top );
     },
 
     adjustCrossbeam() {
       var brandEl = document.querySelectorAll('[data-main-nav]')[0];
       var crossEl = document.querySelectorAll('[data-crossbeam]');
       var brandHeight = null;
-      brandHeight = brandEl.offsetHeight;
+      brandHeight = brandEl.offsetHeight
       for (var i=0; i < crossEl.length; i++) {
         crossEl[i].style.height = (brandHeight + 8) + 'px';
       }

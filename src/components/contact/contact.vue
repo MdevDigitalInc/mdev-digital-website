@@ -22,7 +22,7 @@
                 </p>
                  <a data-header-btn
                     href="javascript:void(0)"
-                    v-on:click.prevent.stop="scrollToHash('#contactus', 50)"
+                    v-on:click.prevent.stop="scrollToHash('#mainContent', 50)"
                     title="Contact Us"
                     class="mdev-btn mdev-primary-btn">
                    {{ $t('contact.headerBtn') }}

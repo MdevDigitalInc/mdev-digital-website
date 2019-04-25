@@ -39,7 +39,7 @@
     <!-- Flip checks for Odd/Even  -->
     <service-tile v-for="(service, index) in services"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
-      :id="service.anchor"
+      :id="(index > 0) ? service.anchor : 'mainContent'"
       :flip="((index + 1) % 2) == 0"
       :key="index"
       :media="service.media"
@@ -164,9 +164,9 @@ export default{
       setTimeout(() => {
         this.addClass(introSubhead, 'fully-in-viewport');
       }, 900);
-      setTimeout(() => {
-        this.addClass(introBtn, 'fully-in-viewport');
-      }, 1500);
+      //setTimeout(() => {
+      //  this.addClass(introBtn, 'fully-in-viewport');
+      //}, 1500);
     });
   },
 

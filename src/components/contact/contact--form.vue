@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-full-section --accent-bkg --triangle-top --form-padding">
-    <div class="mdev-main-form" id="contactus">
+    <div class="mdev-main-form">
       <!-- Split Component 60 / 40 Reversed -->
       <split-sixty
         animClassLeft=""
