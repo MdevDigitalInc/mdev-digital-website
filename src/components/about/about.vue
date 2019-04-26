@@ -17,9 +17,9 @@
         </div>
 
         <!-- Sexy Lines -->
-        <div class="mdev-sexy-line --sexy-green" data-line-one></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-two></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-three></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-one></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-two></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-three></div>
       </div>
     </hero-main>
     <!-- Process Section -->
@@ -142,11 +142,11 @@ export default{
       var introHeading = document.querySelectorAll('[data-intro-heading]')[0];
       var introSubhead = document.querySelectorAll('[data-intro-subhead]')[0];
       setTimeout(() => {
-        this.addClass(introHeading, 'fully-in-viewport');
+        this.addClass(introHeading, 'in-viewport');
         // Adjust Arrow
       }, 300);
       setTimeout(() => {
-        this.addClass(introSubhead, 'fully-in-viewport');
+        this.addClass(introSubhead, 'in-viewport');
       }, 900);
     });
   },

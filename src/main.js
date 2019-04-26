@@ -19,6 +19,7 @@ import store from './store/store.js';
 // can be used to target animations.
 // To see an example, check buttons.css and the btn-primary.vue element
 import inViewportDirective from 'vue-in-viewport-directive';
+inViewportDirective.defaults.top = -100
 Vue.directive('in-viewport', inViewportDirective);
 
 // Check View Directive ---------------------------------

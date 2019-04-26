@@ -148,7 +148,7 @@ $rotate-duration: 930s;
 
   @media #{$phone-only} {
     top: 50px;
-    text-align: center;
+    text-align: left;
 
     h2 {
       font-size: 80px;
@@ -164,7 +164,7 @@ $rotate-duration: 930s;
   }
 
   p {
-    margin-right: 25%;
+    margin-right: 30%;
 
     @media #{$portrait} {
       margin-right: 10%;

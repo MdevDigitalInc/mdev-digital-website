@@ -118,6 +118,7 @@ export default{
 
     @media #{$phone-only} {
       text-align: center;
+      font-size: 12px;
     }
   }
 }

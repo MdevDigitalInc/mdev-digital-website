@@ -76,10 +76,22 @@ export default{
   }
   @media #{$phone-only} {
     padding: 0 20px;
+
+    h2 {
+      font-size: 45px;
+    }
   }
 
   .--subheading {
-    font-size: 40px;
+    font-size: 30px;
+
+    @media #{$desktop-up} {
+      margin-bottom: 10px;
+    }
+
+    @media #{$tablet-up} {
+      font-size: 40px;
+    }
   }
 }
 

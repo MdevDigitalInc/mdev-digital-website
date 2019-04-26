@@ -1316,18 +1316,18 @@ export default  {
         },
         {
           name: 'Graham Coutts',
-          title: 'Full Stack Developer',
+          title: 'Full-Stack Developer',
           image: 'bios/bio-graham.png',
-          a11y: 'Our Full Stack Developer Graham',
+          a11y: 'Our Full-Stack Developer Graham',
           route: '/team/graham-coutts',
           linka11y: 'Visit Graham\'s Profile!',
           class: '--graham'
         },
         {
           name: 'Dorian Hall',
-          title: 'Front End Developer',
+          title: 'Front-End Developer',
           image: 'bios/bio-dorian.png',
-          a11y: 'Our Front End Developer Dorian',
+          a11y: 'Our Front-End Developer Dorian',
           route: '/team/dorian-hall',
           linka11y: 'Visit Dorian\'s Profile!',
           class: '--dorian'

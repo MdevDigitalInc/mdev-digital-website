@@ -126,7 +126,7 @@ export default {
         this.addClass(introHeading, '--anim-visible');
       }, 3300);
       setTimeout(() => {
-        this.addClass(introBtn, 'fully-in-viewport');
+        this.addClass(introBtn, 'in-viewport');
       }, 3500);
       setTimeout(() => {
         // Flip Flag --------------[ STARTS LOADING MAP ]

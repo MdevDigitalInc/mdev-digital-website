@@ -98,9 +98,9 @@
 
 $border-time: .4s;
 // Utilizing the vue-in-viewport-directive Package
-.mdev-primary-btn.fully-in-viewport,
+.mdev-primary-btn.in-viewport,
 .mdev-primary-btn.above-viewport ,
-.mdev-dark-btn.fully-in-viewport,
+.mdev-dark-btn.in-viewport,
 .mdev-dark-btn.above-viewport {
   opacity: 1;
 
@@ -146,7 +146,7 @@ $border-time: .4s;
   }
 }
 // Override animation for Dark BTN
-.mdev-dark-btn.fully-in-viewport,
+.mdev-dark-btn.in-viewport,
 .mdev-dark-btn.above-viewport {
   &:before {
     border-top-color: $color-brand-bkg;

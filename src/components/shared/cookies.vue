@@ -15,7 +15,7 @@
         <button
           v-on:click="acceptCookie"
           class="mdev-btn mdev-primary-btn"
-          :class="{ 'fully-in-viewport' : active }">
+          :class="{ 'in-viewport' : active }">
           {{ $t('cookies.action') }}
         </button>
       </div>

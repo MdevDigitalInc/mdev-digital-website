@@ -64,6 +64,10 @@ export default{
 
   .--subheading {
     font-size: 40px;
+
+    @media #{$tablet-up} {
+      font-size: 40px;
+    }
   }
 }
 
@@ -75,12 +79,24 @@ export default{
 }
 
 .mdev-team-text {
-  width: 52%;
+  width: 45%;
 }
 
 .mdev-team-title {
   white-space: nowrap;
   width: 48%;
+
+  @media #{$desktop-up} {
+    h2 {
+      margin-top: 10px;
+    }
+  }
+
+  @media #{$phone-only} {
+    h2 {
+      font-size: 45px;
+    }
+  }
 }
 
 
@@ -146,7 +162,7 @@ export default{
 }
 
 // Individual Team Decorative Frame
-.--haly:before {
+.--luis:before {
   left: -20px;
   right: 15%;
   bottom: 125px;
@@ -156,7 +172,7 @@ export default{
   }
 }
 
-.--luis:before {
+.--haly:before {
   right: -15px;
   left: 10%;
 

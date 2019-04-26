@@ -111,7 +111,7 @@ export default {
         this.addClass(introHeading, '--anim-visible');
       }, 2200);
       setTimeout(() => {
-        this.addClass(introBtn, 'fully-in-viewport');
+        this.addClass(introBtn, 'in-viewport');
       }, 2800);
     });
   },

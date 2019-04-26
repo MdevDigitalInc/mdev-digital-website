@@ -39,7 +39,7 @@ import MdevData       from './mdev-data.js';
 import SEOData        from './site-seo.js';
 
 export default {
-  name: 'App',
+  name: 'MDEVDigitalApp',
   // SEO Meta Information
   data: function(){
     return {

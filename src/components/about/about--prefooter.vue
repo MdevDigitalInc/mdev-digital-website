@@ -51,8 +51,8 @@ export default{
     return {
       // Button Data
       BtnData: {
-        accessibility: 'View Our Services',
-        btnRoute: '/services',
+        accessibility: 'Contact Us!',
+        btnRoute: '/contact#mainContent',
         btnClass: 'mdev-dark-btn'
       },
       // Links pulled from Flat File
