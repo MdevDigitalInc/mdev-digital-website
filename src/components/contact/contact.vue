@@ -134,7 +134,7 @@ export default {
       }, 3800);
       // Listen to scroll and load map sooner if user moves
       let scrollTimer;
-      let scrollTime = 20;
+      let scrollTime = 50;
       // Event Listener on scroll with debounce
       window.addEventListener('scroll', () => {
         // Grab the Window Path for Scroll Y

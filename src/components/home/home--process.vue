@@ -33,3 +33,13 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.mdev-hero-text {
+  max-width: 90%;
+
+  @media #{$portrait} {
+    max-width: 100%;
+  }
+}
+</style>

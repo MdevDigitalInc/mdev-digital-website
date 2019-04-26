@@ -30,7 +30,7 @@ export default {
       BtnData: {
         accessibility: 'Learn more about MDEV Digital',
         btnRoute: '/company',
-        btnClass: 'mdev-primary-btn --space-top-sm'
+        btnClass: 'mdev-primary-btn --space-top-sm --bot-mod'
       }
     };
   },
@@ -75,6 +75,12 @@ export default {
     width: 100%;
     overflow: hidden;
     transform: scale(1.01);
+  }
+}
+
+.--bot-mod {
+  @media #{$portrait} {
+    margin-bottom: 20px;
   }
 }
 

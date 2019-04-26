@@ -1,5 +1,5 @@
 // MDEV Site SEO
-export default  {
+export default {
   siteSeo: {
     template: '%s | MDEV Digital | London, Toronto, Montreal',
     templateAddon: ' | MDEV Digital | London, Toronto, Montreal',

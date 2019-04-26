@@ -1,5 +1,5 @@
 <template>
-  <main id="app">
+  <main>
     <img :src="loadImage('MDEV-main-hero.png')" class="u-screenreader" />
     <!-- Skip Navigatio Accessbility -->
     <button href="#mainContent"

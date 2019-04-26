@@ -80,6 +80,10 @@ export default{
     text-align: center;
     font-size: 3vw;
   }
+
+  @media screen and (max-width: 320px) {
+    font-size: 9px;
+  }
 }
 
 .mdev-footer-copyright {

@@ -1339,11 +1339,11 @@ export default  {
   testimonials: [
     {
       content: 'Working with MDEV exceeded my expectations.  They were knowledgeable, creative and aligned seamlessly to the vision of the project. Through the twists and turns of a start-up, they were able to adapt and executed the project beautifully.',
-      name: '- Angela Hawkins, Former Marketing Director of The Factory'
+      name: 'Angela Hawkins, Former Marketing Director of The Factory'
     },
     {
       content: 'MDEV worked closely with us to craft a unique and professional website to suit our needs, they were amazing to collaborate with and we couldn\'t be happier with the result!',
-      name: '- Devan Long, Owner/Operator of The Next Level'
+      name: 'Devan Long, Owner/Operator of The Next Level'
     }
   ],
 };

@@ -70,7 +70,11 @@ export default {
   position: relative;
 
   @media #{$portrait} {
-    padding: 60px 0 0;
+    padding: 60px 0 25px;
+  }
+
+  @media #{$phone-only} {
+    padding: 40px 0 25px;
   }
 
   a {
@@ -105,6 +109,7 @@ export default {
 
     @media #{$portrait} {
       font-size: 4.6vw;
+      line-height: 38px;
     }
     @media #{$phone-only} {
       font-size: 6vw;

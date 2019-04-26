@@ -67,10 +67,18 @@ export default{
 .mdev-top-subhead {
   display: block;
   margin-bottom: .8vw;
+
+  @media #{$portrait} {
+    font-size: 18px;
+  }
 }
 
 h3 {
-  margin-bottom: 70px;
+  margin-bottom: 35px;
+
+  @media #{$tablet-up} {
+    margin-bottom: 70px;
+  }
 }
 
 /*--------------------------------------*/
