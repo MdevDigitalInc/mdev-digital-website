@@ -130,7 +130,7 @@ export default  {
         title: 'Lucas Moreira - CEO, Founder',
         description: 'Meet Lucas Moreira, our Chief Executive Officer and Founder.'
       },
-      employeeOrigin: 'Sao Paulo - Brazil',
+      employeeOrigin: 'Sao Paulo, Brazil',
       employeeQuote: 'Think like a man of action, act like a man of thought.',
       employeeTrick: 'Drone Guru / Media Maven / Eagle Eye',
       employeeImage: 'bios/bio-lucas.png',
@@ -239,7 +239,7 @@ export default  {
     },
     {
       employeeName: 'Haly Hawkins',
-      employeeTitle: 'Graphic Designer',
+      employeeTitle: 'Lead Graphic Designer',
       employeeRoute: 'haly-hawkins',
       employeeIntro: 'Haly gained an abundance of experience from her 3 years at Fanshawe College. While taking the Graphic Design Advanced Diploma program, Haly was also a student-employee in the Fanshawe Athletics Department, and the captain of the Women’s Varsity Basketball team.',
       employeeStory: [
@@ -252,7 +252,7 @@ export default  {
       },
       employeeOrigin: 'London, ON',
       employeeQuote: 'Work smarter, not harder.',
-      employeeTrick: 'Ruler of yard games',
+      employeeTrick: 'Nimble / Ruler of Yard Games / Sneaker Head',
       employeeImage: 'bios/bio-haly.png',
       socialLinks: [
         {

@@ -245,6 +245,7 @@ export default {
 
   @media #{$phone-only} {
     top: 80px;
+    width: 85%;
   }
 
   .mdev-bios-name {
@@ -253,6 +254,12 @@ export default {
 
     @media #{$portrait} {
       font-size: 6vw;
+      margin-bottom: 8px;
+    }
+
+    @media #{$phone-only} {
+      margin-bottom: 0;
+      font-size: 29px;
     }
   }
 
@@ -262,6 +269,14 @@ export default {
 
     @media #{$portrait} {
       font-size: 5vw;
+      margin-bottom: 8px;
+    }
+
+    @media #{$phone-only} {
+      margin-bottom: 0;
+      font-size: 25px;
+      line-height: 40px;
+      letter-spacing: .5px;
     }
   }
 
@@ -271,6 +286,12 @@ export default {
     @media #{$portrait} {
       font-size: 3vw;
     }
+
+    @media #{$phone-only} {
+      margin-bottom: 0;
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
 
   .mdev-bio-paragraph {
@@ -279,6 +300,12 @@ export default {
 
     @media #{$portrait} {
       font-size: inherit;
+    }
+
+    @media #{$phone-only} {
+      padding: 5px 0;
+      font-size: 12px;
+      line-height: 20px;
     }
   }
 
@@ -306,7 +333,7 @@ export default {
     }
 
     @media #{$phone-only} {
-      display: none;
+      font-size: 15px;
     }
   }
 }
@@ -365,7 +392,7 @@ export default {
     }
 
     img {
-      width: 80%;
+      width: 95%;
       position: relative;
       bottom: -5px;
     }

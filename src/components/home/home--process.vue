@@ -21,8 +21,8 @@ export default {
   data: function() {
     return {
       BtnData: {
-        accessibility: 'About Our Process',
-        btnRoute: '/company',
+        accessibility: 'About MDEV Digitial.',
+        btnRoute: '/about',
         btnClass: 'mdev-primary-btn --space-top-sm'
       }
     };

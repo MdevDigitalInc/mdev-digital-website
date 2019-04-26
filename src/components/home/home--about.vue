@@ -29,7 +29,7 @@ export default {
       mdevSloganMob: 'svg/about/MDEV_Cutout_Text_Mobile.svg',
       BtnData: {
         accessibility: 'Learn more about MDEV Digital',
-        btnRoute: '/company',
+        btnRoute: '/about',
         btnClass: 'mdev-primary-btn --space-top-sm --bot-mod'
       }
     };

@@ -132,38 +132,40 @@ module.exports = merge(common, {
         windows: false
       }
     }),
+    // Disabled to fix site for now
     // Prerenderer Plugin
-    new PrerenderSPAPlugin({
-      staticDir: path.join(__dirname, 'dist'),
-      // Routes to render
-      routes: prerenderRoutes,
-      // Export & Optimization options
-      minify: {
-        collapseBooleanAttributes: true,
-        collapseWhitespace: true,
-        decodeEntities: true,
-        keepClosingSlash: true,
-        sortAttributes: true
-      },
+//    new PrerenderSPAPlugin({
+//      staticDir: path.join(__dirname, 'dist'),
+//      // Routes to render
+//      routes: prerenderRoutes,
+//      // Export & Optimization options
+//      minify: {
+//        collapseBooleanAttributes: true,
+//        collapseWhitespace: true,
+//        decodeEntities: true,
+//        keepClosingSlash: true,
+//        sortAttributes: true
+//      },
       // Process page before output..
-      postProcess(renderedRoute) {
+//      postProcess(renderedRoute) {
         // Remove active classes from prerendered routes
-        renderedRoute.html = renderedRoute.html
-          .replace('--mask-active', '')
-          .replace('--nav-active', '')
-          .replace('--active', '');
-
-        return renderedRoute;
-      },
-      // Renderer Options
-      renderer: new Renderer({
-        // Inject window property
-        injectProperty: '__PRERENDER_INJECTED',
-        headless: true,
-        // Triggered by App.Vue
-        renderAfterDocumentEvent: 'spa-rendered'
-      })
-    }),
+//        renderedRoute.html = renderedRoute.html
+//          .replace('--mask-active', '')
+//          .replace('--nav-active', '')
+//          .replace('--active', '');
+//
+//        return renderedRoute;
+//      },
+//      // Renderer Options
+//      renderer: new Renderer({
+//        // Inject window property
+//        injectProperty: '__PRERENDER_INJECTED',
+//        headless: true,
+//        // Triggered by App.Vue
+//        //renderAfterDocumentEvent: 'spa-rendered'
+//        renderAfterTime: 10000
+//      })
+//    }),
     // Sitemap Generation
     new SitemapPlugin(hostDomainUrl, prerenderRoutes, {
       changeFreq: 'monthly',

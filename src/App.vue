@@ -143,22 +143,36 @@ export default {
       setTimeout(() => {
         // Flip Flag to finish loading
         this.isLoading = false;
-        // [ PRERENDER SNAPSHOT ] ------------------------
-        // Dispatches event to tell the prerenderer to take snapshot
-        document.dispatchEvent(new Event('spa-rendered'));
       }, 2800);
 
       // Check Cookies
       setTimeout(() => {
         this.checkCookie();
+        // [ PRERENDER SNAPSHOT ] ------------------------
+        // Dispatches event to tell the prerenderer to take snapshot
+        document.dispatchEvent(new Event('spa-rendered'));
       }, 9000);
+
+      // Output fancy Console Message
+      if ( navigator.userAgent.toLowerCase().indexOf("chrome") > -1 ) {
+        window.console.log.apply(console, [
+          "\n %c Made with SASS by MDEV Digital 😜 %c %c https://mdev.digital/ %c  \n",
+          "color: #fff; background: #16b1a9; font-size: 22px; font-weight: 700; padding:10px; border-radius: 20px 0 0 0;",
+          "background: #16b1a9; padding:10px 0; font-size: 22px; font-weight: 700;",
+          "color: #fff; background: #1c1c1c; padding:10px 0; font-size: 22px; font-weight: 700;",
+          "background: #1c1c1c; padding:10px 0; font-size: 22px; font-weight: 700; border-radius: 0 0 30px 0;",
+        ]);
+      }
+      // Output standard message for other browsers
+      else {
+        console.log('Made by MDEV Digital 😜 | https://mdev.digital');
+      }
     });
   },
 
   updated: function () {
     // Add the active class back since it gets stripped on update above
     var mainNav = document.querySelectorAll('[data-main-nav]')[0];
-    console.log(mainNav);
     this.addClass(mainNav, '--nav-active');
     //this.adjustCrossbeam();
   },

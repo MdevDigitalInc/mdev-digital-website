@@ -12,7 +12,7 @@
       <div class="mdev-bios-name u-pointer u-uppercase u-bold">
         {{ nextBioName }}
       </div>
-      <div class="mdev-bios-arrow mded-bios-arrow-right">
+      <div class="mdev-bios-arrow mdev-bios-arrow-right">
         <svg xmlns="http://www.w3.org/2000/svg" width="52" height="9"><defs/><path id="arrow_right" data-name="arrow right" class="cls-1" d="M1096.35
       4885l7.65-4.5-7.65-4.51v3.55H1052v1.91h44.35v3.55z" transform="translate(-1052 -4876)"/></svg>
       </div>
@@ -69,8 +69,12 @@ export default{
     position: relative;
   }
 
-  .mded-bios-arrow-right {
+  .mdev-bios-arrow-right {
     margin-left: 20px;
+
+    @media #{$phone-only} {
+      margin-left: 10px;
+    }
   }
 
   .mdev-bios-arrow-left {
@@ -79,6 +83,16 @@ export default{
 
   .mdev-bios-name {
     margin-left: 5px;
+
+    @media #{$phone-only} {
+      font-size: 14.5px;
+    }
+  }
+
+  .mdev-next-bio {
+    @media #{$phone-only} {
+      font-size: 10px;
+    }
   }
 }
 

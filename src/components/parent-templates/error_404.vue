@@ -8,7 +8,7 @@
         <div class="mdev-vivus-header --vivus-error">
           <div class="mdev-center">
             <!-- Top Container -->
-            <div class="flex flex-vert-center --portrait-wrap">
+            <div class="flex flex-hor-center flex-vert-center --portrait-wrap">
               <object class="--error-fourofour" id="anim-error" type="image/svg+xml" :data="loadImage(errorAnim)"></object>
               <!-- CTA Text & Button -->
               <div data-header-intro class="--header-cta">
@@ -145,10 +145,18 @@ $heading-top-padding-mob: 10px;
 .mdev-error-page {
 
   .mdev-error-action {
-    margin-top: 100px;
+    margin-top: 3%;
+
+    @media #{$laptop-only} {
+      margin-top: 30px;
+    }
 
     @media #{$portrait} {
       margin-top: 0;
+    }
+
+    @media #{$tablet-lnd-only} {
+      margin-top: 20px;
     }
 
     @media #{$phone-only} {
@@ -170,6 +178,10 @@ $heading-top-padding-mob: 10px;
     padding-top: 110%;
   }
 
+  @media #{$tablet-lnd-only} {
+    padding-top: 60%;
+  }
+
   @media #{$phone-only} {
     padding-top: 130%;
   }
@@ -178,11 +190,15 @@ $heading-top-padding-mob: 10px;
 .--vivus-error {
 
   .--error-fourofour {
-    width: 60%;
+    width: 40%;
     margin-right: 30px;
 
+    @media #{$tablet-lnd-only} {
+      width: 44%;
+    }
+
     @media #{$portrait} {
-      width: 70%;
+      width: 100%;
       margin-bottom: $heading-top-padding-mob;
       margin-right: 0;
     }
@@ -193,6 +209,10 @@ $heading-top-padding-mob: 10px;
     width: 33%;
     padding-left: 20px;
     transition: opacity 1.2s;
+
+    @media #{$tablet-lnd-only} {
+      width: 44%;
+    }
 
     @media #{$portrait} {
       width: 100%;
@@ -222,6 +242,10 @@ $heading-top-padding-mob: 10px;
       text-align: left;
       width: 76%;
       padding: 0;
+    }
+
+    @media #{$desktop-only} {
+      top: 40%;
     }
 
     @media #{$tablet-prt-only} {

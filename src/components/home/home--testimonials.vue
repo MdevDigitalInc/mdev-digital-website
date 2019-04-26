@@ -102,7 +102,7 @@ export default{
 }
 
 .mdev-testimonial {
-  width: 80%;
+  width: 78%;
   user-select: none;
   margin: 0 auto;
 
