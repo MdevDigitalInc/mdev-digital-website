@@ -182,6 +182,9 @@ module.exports = merge(common, {
       renderer: new Renderer({
         // Inject window property
         injectProperty: '__PRERENDER_INJECTED',
+        inject: {
+          stopScripts: true
+        },
         headless: true,
         // Triggered by App.Vue
         renderAfterDocumentEvent: 'spa-rendered'
