@@ -140,6 +140,10 @@
     @media #{$portrait} {
       letter-spacing: 2px;
     }
+
+    @media #{$phone-only} {
+      font-size: 10px;
+    }
   }
 
   .mdev-sidebar-contact {

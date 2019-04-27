@@ -112,16 +112,20 @@ export default{
 
     @media #{$portrait} {
       margin: 0 auto;
-      padding-left: 34%;
+      padding-left: 24%;
       transform: translate3d( 0, 1000px, 0);
       font-size: 6.2vw;
       line-height: 150%;
       min-width: 240px;
     }
 
+    @media #{$tablet-only} {
+      font-size: 40px;
+    }
+
     @media #{$phone-only} {
       font-size: 7vw;
-      padding-left: 30%;
+      padding-left: 20%;
     }
 
     &:before {
@@ -151,6 +155,7 @@ export default{
 
   .mdev-link-index {
     font-size: 1.9vw;
+    margin-right: 5px;
 
     @media #{$portrait} {
       font-size: 3.6vw;
@@ -163,7 +168,11 @@ export default{
   /* Disabling lint because of necessary !important; */
   /* stylelint-disable */
   .--active {
-    opacity: .5 !important;
+    text-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    &:before {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
   /* stylelint-enable */
 
@@ -186,6 +195,14 @@ export default{
   transition: all .4s;
   transform: translate3d(65%, 0, 0);
 
+  @media #{$laptop-only} {
+    transform: translate3d(70%, 0, 0);
+  }
+
+  @media #{$tablet-lnd-only} {
+    transform: translate3d(70%, 0, 0);
+  }
+
   @media #{$phone-only} {
     padding: 15px;
   }
@@ -199,6 +216,14 @@ export default{
   .mdev-deep-title {
     font-size: 28px;
     margin-right: 60px;
+
+    @media #{$laptop-only} {
+      font-size: 20px;
+    }
+
+    @media #{$tablet-lnd-only} {
+      font-size: 20px;
+    }
 
     @media #{$phone-only} {
       font-size: 20px;
