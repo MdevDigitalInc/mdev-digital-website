@@ -257,6 +257,10 @@ export default {
       margin-bottom: 8px;
     }
 
+    @media #{$tablet-prt-only} {
+      letter-sapacing: 2px;
+    }
+
     @media #{$phone-only} {
       margin-bottom: 0;
       font-size: 29px;
@@ -287,6 +291,10 @@ export default {
       font-size: 3vw;
     }
 
+    @media #{$tablet-prt-only} {
+      letter-sapacing: 2px;
+    }
+
     @media #{$phone-only} {
       margin-bottom: 0;
       font-size: 18px;
@@ -300,6 +308,10 @@ export default {
 
     @media #{$portrait} {
       font-size: inherit;
+    }
+
+    @media #{$tablet-prt-only} {
+      font-size: 22px;
     }
 
     @media #{$phone-only} {
@@ -317,6 +329,10 @@ export default {
       font-size: 3vw;
     }
 
+    @media #{$tablet-prt-only} {
+      font-size: 24px;
+    }
+
     @media #{$phone-only} {
       font-size: 4vw;
     }
@@ -330,6 +346,10 @@ export default {
     @media #{$portrait} {
       font-size: 2vw;
       margin-bottom: 40px;
+    }
+
+    @media #{$tablet-prt-only} {
+      font-size: 20px;
     }
 
     @media #{$phone-only} {
@@ -408,7 +428,7 @@ export default {
     z-index: 6;
 
     @media #{$phone-only} {
-      font-size: 5vw;
+      font-size: 6.9vw;
       bottom: 30%;
     }
 

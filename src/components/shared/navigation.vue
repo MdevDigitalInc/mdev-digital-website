@@ -502,10 +502,10 @@ export default{
   }
 }
 
-.--white-black,
-.--teal-white,
-.--teal-black,
-.--nav-color {
+.--user-scroll.--white-black,
+.--user-scroll.--teal-white,
+.--user-scroll.--teal-black,
+.--user-scroll.--nav-color {
   @media #{$phone-only} {
     .mdev-svg-1 {
       fill: $color-brand-primary;

@@ -214,7 +214,7 @@ export default  {
       },
       employeeOrigin: 'Guatemala',
       employeeQuote: 'He who says he can and he who says he can\'t are both usually right - Confucius',
-      employeeTrick: 'Salsa and Bachata Instructor',
+      employeeTrick: 'Salsa & Bachata Instructor / Speaks Fluent Sarcasm',
       employeeImage: 'bios/bio-luis.png',
       socialLinks: [
         {
@@ -239,7 +239,7 @@ export default  {
     },
     {
       employeeName: 'Haly Hawkins',
-      employeeTitle: 'Lead Graphic Designer',
+      employeeTitle: 'Lead Designer',
       employeeRoute: 'haly-hawkins',
       employeeIntro: 'Haly gained an abundance of experience from her 3 years at Fanshawe College. While taking the Graphic Design Advanced Diploma program, Haly was also a student-employee in the Fanshawe Athletics Department, and the captain of the Women’s Varsity Basketball team.',
       employeeStory: [
