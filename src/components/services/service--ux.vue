@@ -231,6 +231,10 @@ $heading-top-padding-mob: 15px;
   @media #{$tablet-lnd-only} {
     padding-top: 60%;
   }
+
+  @media #{$tablet-prt-only} {
+    padding-top: 80%;
+  }
 }
 
 .--vivus-branding {
@@ -265,6 +269,10 @@ $heading-top-padding-mob: 15px;
     opacity: 0;
     width: 52%;
     transition: opacity 1.2s;
+
+    @media #{$desktop-up} {
+      width: 40%;
+    }
 
     @media #{$portrait} {
       width: 100%;

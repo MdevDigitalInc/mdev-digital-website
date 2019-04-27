@@ -45,6 +45,10 @@ export default {
     margin: 100px 0;
   }
 
+  @media #{$phone-only} {
+    margin: 60px 0;
+  }
+
   // Applies to all images
   img {
     width: 100%;
@@ -63,13 +67,16 @@ export default {
       width: 100%;
       margin: 0 auto 100px;
     }
+
+    @media #{$phone-only} {
+      margin: 0 auto 25px;
+    }
   }
 
   // Content portion of the split
   .mdev-service-content {
     width: 56%;
     order: 1;
-    padding-right: 5%;
 
     @media #{$portrait} {
       width: 100%;
@@ -85,6 +92,16 @@ export default {
     .--pre-title {
       left: 5px;
     }
+
+    /* stylelint-disable */
+    & *:not(h2):not(li) {
+      padding-left: 6%;
+
+      @media #{$phone-only} {
+        padding-left: 0;
+      }
+    }
+    /* stylelint-enable */
   }
 
   .mdev-service-title {
@@ -136,8 +153,6 @@ export default {
   // Adjust padding accordingly
   .mdev-service-content {
     order: 4;
-    padding-right: 0;
-    padding-left: 5%;
 
     @media #{$portrait} {
       padding: 0 9%;
@@ -200,8 +215,6 @@ export default {
   // Default content LEFT
   .mdev-service-content {
     order: 2;
-    padding-right: 0;
-    padding-left: 5%;
   }
 
   // Flip Order

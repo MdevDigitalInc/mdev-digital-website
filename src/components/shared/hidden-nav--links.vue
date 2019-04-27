@@ -1,6 +1,7 @@
 <template>
   <div class="mdev-nav-links">
     <router-link
+      exact
       v-for="(link, index) in links"
       :to="link.route"
       :key="index"

@@ -234,7 +234,7 @@ export default{
       // Collect Elements
       var mainNav = document.querySelectorAll('[data-main-nav]')[0];
       var introAnim = document.querySelectorAll('#anim-the')[0];
-      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]');
       this.addClass(mainNav, '--teal-white');
 
       setTimeout(() => {
@@ -259,7 +259,9 @@ export default{
       }, 1200);
       setTimeout(() => {
         requestAnimationFrame(() => {
-          this.addClass(introHeading, '--anim-visible');
+          for (var i=0; i < introHeading.length; i++) {
+            this.addClass(introHeading[i], '--anim-visible');
+          };
         });
       }, 1700);
     });
@@ -308,6 +310,10 @@ $heading-top-padding-mob: 15px;
 
   @media #{$tablet-lnd-only} {
     padding-top: 60%;
+  }
+
+  @media #{$tablet-prt-only} {
+    padding-top: 88%;
   }
 }
 

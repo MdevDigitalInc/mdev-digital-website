@@ -27,7 +27,7 @@ export default  {
     {
       linkName: 'Services',
       linkTitle: 'Our Services',
-      route: '/services',
+      route: '/services/overview',
       linkIndex: '03'
     },
     {
@@ -452,12 +452,12 @@ export default  {
       media: false,
       description: 'We offer consulting and support services to help your business run smoothly. This includes setting up your business infrastructure or identifying new ways to be efficient through process development, operational software deployments or custom application development, our ultimate goal is to help you reduce your internal costs.',
       topics: [
-        'Consulting',
+        'IT Consulting',
         'Startup Support',
         'Cloud Technologies',
         'Domain Management',
         'Domain Dispute Resolution',
-        'Gsuite Management'
+        'G suite Management'
       ],
       action: 'Learn More',
       BtnData: {
