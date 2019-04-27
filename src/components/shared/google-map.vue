@@ -21,7 +21,10 @@ export default {
 
   watch: {
     initMap: function(newVal, oldVal) { // watch it
-      this.setupMap();
+      // Request frame...
+      requestAnimationFrame(() => {
+        this.setupMap();
+      });
     }
   },
 
@@ -33,9 +36,13 @@ export default {
     window.addEventListener('resize', () => {
       // Clear timout for debounce
       clearTimeout(resizeTimer);
+      // Set timeout and fire off animation
       resizeTimer = setTimeout(() => {
-        // Recentering!
-        this.setupMap();
+        // Request frame...
+        requestAnimationFrame(() => {
+          // Recentering!
+          this.setupMap();
+        });
       } ,resizeTime);
     });
   },

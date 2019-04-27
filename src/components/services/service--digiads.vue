@@ -172,19 +172,29 @@ export default{
       this.addClass(mainNav, '--teal-white');
 
       setTimeout(() => {
-        new Vivus('anim-demystify', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-demystify', {duration: 150});
+        });
       }, 100);
       setTimeout(() => {
-        new Vivus('anim-online', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-online', {duration: 150});
+        });
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-marketing', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-marketing', {duration: 150});
+        });
       }, 800);
       setTimeout(() => {
-        new Vivus('anim-digital', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-digital', {duration: 150});
+        });
       }, 1200);
       setTimeout(() => {
-        this.addClass(introHeading, '--anim-visible');
+        requestAnimationFrame(() => {
+          this.addClass(introHeading, '--anim-visible');
+        });
       }, 1400);
     });
   },

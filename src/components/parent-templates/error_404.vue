@@ -105,13 +105,19 @@ export default {
       this.addClass(mainNav, '--teal-white');
 
       setTimeout(() => {
-        new Vivus('anim-error', {duration: 180});
+        requestAnimationFrame(() => {
+          new Vivus('anim-error', {duration: 180});
+        });
       }, 700);
       setTimeout(() => {
-        this.addClass(introHeading, '--anim-visible');
+        requestAnimationFrame(() => {
+          this.addClass(introHeading, '--anim-visible');
+        });
       }, 2200);
       setTimeout(() => {
-        this.addClass(introBtn, 'in-viewport');
+        requestAnimationFrame(() => {
+          this.addClass(introBtn, 'in-viewport');
+        });
       }, 2800);
     });
   },

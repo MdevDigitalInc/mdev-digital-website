@@ -155,22 +155,19 @@ Vue.mixin({
     // Scroll to specific anchor link
     scrollToHash(hashRef, offset) {
       var element = document.querySelectorAll(hashRef);
-      console.log(element[0]);
       var top = element[0].offsetTop;
-      console.log(top);
-      window.scrollTo(0, top );
     },
-
+    // Adjust position of crossbeam under logo
     adjustCrossbeam() {
       var brandEl = document.querySelectorAll('[data-main-nav]')[0];
       var crossEl = document.querySelectorAll('[data-crossbeam]');
       var brandHeight = null;
       brandHeight = brandEl.offsetHeight
       for (var i=0; i < crossEl.length; i++) {
-        crossEl[i].style.height = (brandHeight + 8) + 'px';
+        crossEl[i].style.transform = 'translate3d(0,' + (brandHeight + 8) + 'px, 0)';
       }
     },
-// Checks Visibility of Element (vue-check-view npm)
+    // Checks Visibility of Element (vue-check-view npm)
     // Takes in event, amount of overlap and Array Length
     checkVisibility(event, overlap) {
       if (event.percentInView >= overlap) {
@@ -192,47 +189,75 @@ Vue.mixin({
     //
     // Add Class JQUERY replacement
     addClass(element, className) {
-      if (element.classList) {
-        element.classList.add(className);
+      // Check for valid element
+      if ( element ) {
+        if (element.classList) {
+          element.classList.add(className);
+        }
+        else {
+          element.className += ' ' + className;
+        }
       }
       else {
-        element.className += ' ' + className;
+        // Output clean error
+        console.log('ERROR | Element is not valid');
       }
     },
     // Remove Class
     removeClass(element, className) {
-      if (element.classList) {
-        element.classList.remove(className);
+      // Check for valid element
+      if ( element ) {
+        if (element.classList) {
+          element.classList.remove(className);
+        }
+        else {
+          element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        }
       }
       else {
-        element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        // Output clean error
+        console.log('ERROR | Element is not valid');
       }
     },
     // Check for class
     hasClass(element, className) {
-      if (element.classList) {
-        element.classList.contains(className);
+      // Check for valid element
+      if ( element ) {
+        if (element.classList) {
+          element.classList.contains(className);
+        }
+        else {
+          new RegExp('(^| )' + className + '( |$)', 'gi').test(element.className);
+        }
       }
       else {
-        new RegExp('(^| )' + className + '( |$)', 'gi').test(element.className);
+        // Output clean error
+        console.log('ERROR | Element is not valid');
       }
     },
     // Toggle Class
     toggleClass(element, className) {
-      if (element.classList) {
-        element.classList.toggle(className);
-      }
-      else {
-        var classes = element.className.split(' ');
-        var existingIndex = classes.indexOf(className);
-
-        if (existingIndex >= 0) {
-          classes.splice(existingIndex, 1);
+      // Check for valid element
+      if ( element ) {
+        if (element.classList) {
+          element.classList.toggle(className);
         }
         else {
-          classes.push(className);
+          var classes = element.className.split(' ');
+          var existingIndex = classes.indexOf(className);
+
+          if (existingIndex >= 0) {
+            classes.splice(existingIndex, 1);
+          }
+          else {
+            classes.push(className);
+          }
+          element.className = classes.join(' ');
         }
-        element.className = classes.join(' ');
+      }
+      else {
+        // Output clean error
+        console.log('ERROR | Element is not valid');
       }
     },
     // Reset Body Class

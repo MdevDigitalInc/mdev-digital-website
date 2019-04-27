@@ -76,7 +76,9 @@ export default{
       let animInterval = 800; // Matches CSS
       // Hide the form visually
       var formEl = document.querySelectorAll('[data-form]')[0];
-      this.addClass(formEl, '--form-sent');
+      requestAnimationFrame(() => {
+        this.addClass(formEl, '--form-sent');
+      });
       // Swap out the components via the flag
       setTimeout(() => {
         this.formSubmitted = true;
@@ -84,7 +86,9 @@ export default{
       // Reveal Thankyou
       setTimeout(() => {
         var thanksEl = document.querySelectorAll('[data-form-thankyou]')[0];
-        this.addClass(thanksEl, '--form-notify');
+        requestAnimationFrame(() => {
+          this.addClass(thanksEl, '--form-notify');
+        });
       },animInterval + 100);
     }
   },

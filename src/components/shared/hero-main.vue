@@ -38,22 +38,31 @@ export default {
     // Run for first time on first tick
     this.$nextTick(() => {
       // Adjust Crossbeam
-      this.adjustCrossbeam();
-      // Activate Header
-      this.isLoaded = true;
+      requestAnimationFrame(() => {
+        this.adjustCrossbeam();
+        // Activate Header
+        this.isLoaded = true;
+      });
 
       window.addEventListener('resize', () => {
         // Clear Timer
         clearTimeout( resizeTimer );
-        //resizeTimer = setTimeout( this.adjustArrow, resizeTime );
-        resizeTimer = setTimeout( this.adjustCrossbeam, resizeTime );
+        // Fire off function after timer runs out
+        resizeTimer = setTimeout(() => {
+          // Request frame...
+          requestAnimationFrame(() => {
+            this.adjustCrossbeam();
+          });
+        }, resizeTime );
       });
     });
   },
 
   updated: function() {
     // Adjust Crossbeam
-    this.adjustCrossbeam();
+    requestAnimationFrame(() => {
+      this.adjustCrossbeam();
+    });
   }
 };
 

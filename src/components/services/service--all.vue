@@ -158,11 +158,15 @@ export default{
       var introBtn = document.querySelectorAll('[data-header-btn]')[0];
       // Fire off animations
       setTimeout(() => {
-        this.addClass(introHeading, 'in-viewport');
+        requestAnimationFrame(() => {
+          this.addClass(introHeading, 'in-viewport');
+        });
         // Adjust Arrow
       }, 300);
       setTimeout(() => {
-        this.addClass(introSubhead, 'in-viewport');
+        requestAnimationFrame(() => {
+          this.addClass(introSubhead, 'in-viewport');
+        });
       }, 900);
       //setTimeout(() => {
       //  this.addClass(introBtn, 'in-viewport');

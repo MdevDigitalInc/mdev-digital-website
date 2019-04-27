@@ -33,7 +33,10 @@ const setPath = function(folderName) {
 // SEO & Sitemap Configuration
 const hostDomainUrl = "https://mdev.digital"
 const sitemapFile = hostDomainUrl + "/sitemap.xml"
-// Robots.TXT Configuration
+// [ Robots.TXT Configuration ]
+// Fully automated robots.txt generation based on policy listed
+// below. Remember to disalow bots during staging and enable for
+// prod environment.
 const robotOptions = {
   policy: [
     {
@@ -125,7 +128,34 @@ module.exports = merge(common, {
         windows: false
       }
     }),
-    // Prerenderer Plugin
+    // [ PRERENDERER ]--------------------------------
+    // The prerenderer is the solution for the SEO problem
+    // encountered by all SPAs. This plugin will run through the
+    // routes present on the renderedRoutes array and generate a
+    // plain HTML file. When crawlers hit the site, they will see
+    // these HTML files and index the information
+    //
+    // CAVEATS --
+    // Some plugins and scripts will cause issues and must be prevented
+    // from running on the prerenderer
+    //
+    // __PRERENDER_INJECTED  -----
+    // We can control script execution on the application by looking for
+    // the window.__PRERENDER_INJECTED property. This property will be either
+    // undefined or true. True value indicates you are in the pupeteeer
+    // prerender environment. Adjust scripts accordingly
+    //
+    // postProcess() -----
+    // this function is used to remove active classes from the body of the HTML
+    // to prevent flashes of content during initial load. We want the vue instance
+    // to take care of placing those classes when needed.
+    //
+    // SNAPSHOT ----
+    // This plugin takes a snapshot of the HTML when it sees a trigger event. In
+    // our configuration the prerenderer is looking for the following event:
+    //
+    // document.dispatchEvent(new Event('spa-rendered'));
+    //
     new PrerenderSPAPlugin({
       staticDir: path.join(__dirname, 'dist'),
       // Routes to render
@@ -158,7 +188,9 @@ module.exports = merge(common, {
         //renderAfterTime: 10000
       })
     }),
-    // Sitemap Generation
+    // [ Sitemap Generation ]
+    // Also to aid with SEO and automation this plugin will generate
+    // a full XML sitemap based on the routes given to the prerenderer.
     new SitemapPlugin(hostDomainUrl, prerenderRoutes, {
       changeFreq: 'monthly',
       lastMod: true,

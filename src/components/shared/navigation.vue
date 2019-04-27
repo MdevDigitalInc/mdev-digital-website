@@ -146,15 +146,25 @@ export default{
       for ( var i=0; i < mainNavLinks.length; i++ ) {
         this.removeClass(mainNavLinks[i], '--showLinks');
       }
+
       // Toggle Freeze Scroll
       this.toggleClass(mainBody, 'u-freeze-scroll');
+
+      // Toggle nav sidebar
+      setTimeout(() => {
+        // request Frame
+        requestAnimationFrame(() => {
+          this.toggleClass(mainNavContent, '--active-sidebar');
+        });
       // Timeout is either 400 / 0 depending on if its opening or closing
-      setTimeout(() => {
-        this.toggleClass(mainNavContent, '--active-sidebar');
       }, ( this.navIsOpen ? 400 : 0) );
-      // Turn on Dive Deep
+
+      // Turn on Dive Deep Links
       setTimeout(() => {
-        this.toggleClass(mainDeep, '--active-deep');
+        requestAnimationFrame(() => {
+          this.toggleClass(mainDeep, '--active-deep');
+        });
+      // Timeout is either 800 / 0 depending on if its opening or closing
       }, ( this.navIsOpen ? 800 : 0) );
     },
     // Force close menu on route change
@@ -178,16 +188,22 @@ export default{
       var mainNav = document.querySelectorAll('[data-main-nav]')[0];
       // If user scrolls past desired distance remove effects
       if ( distance >= (this.scrollDistance - this.desiredOffset) ) {
-        this.addClass(mainHeader, '--user-scroll');
-        this.addClass(mainNav, '--user-scroll');
+        requestAnimationFrame(() => {
+          this.addClass(mainHeader, '--user-scroll');
+          this.addClass(mainNav, '--user-scroll');
+        });
       }
       else if (distance <= 10) {
-        this.removeClass(mainHeader, '--user-scroll');
-        this.removeClass(mainNav, '--user-scroll');
+        requestAnimationFrame(() => {
+          this.removeClass(mainHeader, '--user-scroll');
+          this.removeClass(mainNav, '--user-scroll');
+        });
       }
       else {
-        this.removeClass(mainHeader, '--user-scroll');
-        this.removeClass(mainNav, '--user-scroll');
+        requestAnimationFrame(() => {
+          this.removeClass(mainHeader, '--user-scroll');
+          this.removeClass(mainNav, '--user-scroll');
+        });
       }
     }
   },

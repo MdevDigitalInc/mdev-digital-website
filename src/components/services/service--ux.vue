@@ -166,16 +166,24 @@ export default{
       this.addClass(mainNav, '--teal-white');
 
       setTimeout(() => {
-        new Vivus('anim-humanize', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-humanize', {duration: 150});
+        });
       }, 100);
       setTimeout(() => {
-        this.addClass(introAnim, '--anim-visible');
+        requestAnimationFrame(() => {
+          this.addClass(introAnim, '--anim-visible');
+        });
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-web', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-web', {duration: 150});
+        });
       }, 800);
       setTimeout(() => {
-        this.addClass(introHeading, '--anim-visible');
+        requestAnimationFrame(() => {
+          this.addClass(introHeading, '--anim-visible');
+        });
       }, 1200);
     });
   },

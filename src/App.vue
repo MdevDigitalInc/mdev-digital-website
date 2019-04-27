@@ -125,18 +125,23 @@ export default {
       var loadWindow = document.querySelectorAll('[data-load-window]')[0];
       // Logo & Loading screen
       setTimeout(() => {
-        // Make Logo appear...
-        this.addClass(loadAnim, '--opacity-active');
+        requestAnimationFrame(() => {
+          // Make Logo appear...
+          this.addClass(loadAnim, '--opacity-active');
+       });
       }, 100);
       setTimeout(() => {
-        // Make Logo Move...
-        this.addClass(loadAnim, '--transform-active');
+        requestAnimationFrame(() => {
+          this.addClass(loadAnim, '--transform-active');
+        });
       }, 900);
       setTimeout(() => {
-        // Make Logo Disappear...
-        this.removeClass(loadAnim, '--opacity-active');
-        // Make Content Disappear
-        this.addClass(loadWindow, '--opacity');
+        requestAnimationFrame(() => {
+          // Make Logo Disappear...
+          this.removeClass(loadAnim, '--opacity-active');
+          // Make Content Disappear
+          this.addClass(loadWindow, '--opacity');
+        });
       }, 1900);
 
       // Update Data
@@ -147,13 +152,18 @@ export default {
 
       // Check Cookies
       setTimeout(() => {
-        this.checkCookie();
-        // [ PRERENDER SNAPSHOT ] ------------------------
-        // Dispatches event to tell the prerenderer to take snapshot
-        document.dispatchEvent(new Event('spa-rendered'));
+        requestAnimationFrame(() => {
+          // Check if cookies are enabled
+          this.checkCookie();
+          // [ PRERENDER SNAPSHOT ] ------------------------
+          // Dispatches event to tell the prerenderer to take snapshot
+          document.dispatchEvent(new Event('spa-rendered'));
+        });
       }, 9000);
 
-      // Output fancy Console Message
+      // [ FANCY CONSOLE OUTPUT ] --------------------------
+      // each %c allows you to create a styling block
+      // style each block in order below it
       if ( navigator.userAgent.toLowerCase().indexOf("chrome") > -1 ) {
         window.console.log.apply(console, [
           "\n %c Made with SASS by MDEV Digital 😜 %c %c https://mdev.digital/ %c  \n",
@@ -173,8 +183,9 @@ export default {
   updated: function () {
     // Add the active class back since it gets stripped on update above
     var mainNav = document.querySelectorAll('[data-main-nav]')[0];
-    this.addClass(mainNav, '--nav-active');
-    //this.adjustCrossbeam();
+    requestAnimationFrame(() => {
+      this.addClass(mainNav, '--nav-active');
+    });
   },
 
   methods: {

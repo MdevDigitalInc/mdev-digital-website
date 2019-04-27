@@ -142,11 +142,14 @@ export default{
       var introHeading = document.querySelectorAll('[data-intro-heading]')[0];
       var introSubhead = document.querySelectorAll('[data-intro-subhead]')[0];
       setTimeout(() => {
-        this.addClass(introHeading, 'in-viewport');
-        // Adjust Arrow
+        requestAnimationFrame(() => {
+          this.addClass(introHeading, 'in-viewport');
+        });
       }, 300);
       setTimeout(() => {
-        this.addClass(introSubhead, 'in-viewport');
+        requestAnimationFrame(() => {
+          this.addClass(introSubhead, 'in-viewport');
+        });
       }, 900);
     });
   },

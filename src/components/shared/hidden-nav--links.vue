@@ -66,9 +66,12 @@ export default{
     // Toggle Links Timer
     toggleLinks(target, index, isNavOpening) {
       setTimeout(() => {
-        // Add active class
-        this.addClass(target, '--showLinks');
-        // Index determines interval
+        // Request Frames
+        requestAnimationFrame(() => {
+          // Add active class
+          this.addClass(target, '--showLinks');
+        });
+      // Index determines interval
       }, (isNavOpening ? (200 * index) : 0 ));
     }
   }

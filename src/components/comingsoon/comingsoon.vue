@@ -66,22 +66,30 @@ export default{
 
       // Logo & Loading screen
       setTimeout(() => {
-        // Make Logo appear...
-        this.addClass(loadAnim, '--opacity-active');
+        requestAnimationFrame(() => {
+          // Make Logo appear...
+          this.addClass(loadAnim, '--opacity-active');
+        });
       }, 100);
       setTimeout(() => {
-        // Make Logo Move...
-        this.addClass(loadAnim, '--transform-active');
+        requestAnimationFrame(() => {
+          // Make Logo Move...
+          this.addClass(loadAnim, '--transform-active');
+        });
       }, 900);
       setTimeout(() => {
-        // Make Logo Disappear...
-        this.removeClass(loadAnim, '--opacity-active');
-        // Make Content Disappear
-        this.addClass(loadWindow, '--opacity');
+        requestAnimationFrame(() => {
+          // Make Logo Disappear...
+          this.removeClass(loadAnim, '--opacity-active');
+          // Make Content Disappear
+          this.addClass(loadWindow, '--opacity');
+        });
       }, 1900);
       setTimeout(() => {
-        // Start countdown function
-        this.countdown();
+        requestAnimationFrame(() => {
+          // Start countdown function
+          this.countdown();
+        });
       }, 150);
       // Reveal hidden text
       setTimeout(() => {

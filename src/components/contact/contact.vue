@@ -111,25 +111,38 @@ export default {
       this.addClass(mainNav, '--teal-white');
       // Fire off Animations
       setTimeout(() => {
-        new Vivus('anim-lets', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-lets', {duration: 150});
+        });
       }, 200);
       setTimeout(() => {
-        new Vivus('anim-start', {duration: 150});
-      }, 500);
+        requestAnimationFrame(() => {
+          new Vivus('anim-start', {duration: 150});
+        });
+      }, 600);
       setTimeout(() => {
-        this.addClass(introAnim, '--anim-visible');
+        requestAnimationFrame(() => {
+          this.addClass(introAnim, '--anim-visible');
+        });
       }, 750);
       setTimeout(() => {
-        new Vivus('anim-new', {duration: 180});
+        requestAnimationFrame(() => {
+          new Vivus('anim-new', {duration: 180});
+        });
       }, 2800);
       setTimeout(() => {
-        this.addClass(introHeading, '--anim-visible');
+        requestAnimationFrame(() => {
+          this.addClass(introHeading, '--anim-visible');
+        });
       }, 3300);
       setTimeout(() => {
-        this.addClass(introBtn, 'in-viewport');
+        requestAnimationFrame(() => {
+          this.addClass(introBtn, 'in-viewport');
+        });
       }, 3500);
       setTimeout(() => {
         // Flip Flag --------------[ STARTS LOADING MAP ]
+        // Deferred till end of animation for performance
         this.animDone = true;
       }, 3800);
       // Listen to scroll and load map sooner if user moves
@@ -140,6 +153,7 @@ export default {
         // Grab the Window Path for Scroll Y
         let distanceTop = event.path[1].scrollY;
         clearTimeout(scrollTimer);
+        // If user scrolls load map right away
         scrollTimer = setTimeout(this.animDone = true,scrollTime);
       });
     });
