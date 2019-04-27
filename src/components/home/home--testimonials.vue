@@ -29,9 +29,9 @@
         </div>
         <!-- Position Marker -->
         <div class="ctrl-position u-light">
-          <span>0{{ desiredIndex + 1 }}</span>
+          <span class="u-normal">0{{ desiredIndex + 1 }}</span>
           <span class="u-italic">of</span>
-          <span>0{{ testimonials.length }}</span>
+          <span class="u-normal">0{{ testimonials.length }}</span>
         </div>
         <!-- Arrow W/ embedded SVG - Moves Array Forward -->
         <div
@@ -102,7 +102,7 @@ export default{
 }
 
 .mdev-testimonial {
-  width: 80%;
+  width: 78%;
   user-select: none;
   margin: 0 auto;
 
@@ -127,6 +127,11 @@ export default{
 
   .u-italic {
     padding-right: 8px;
+
+    @media #{$portrait} {
+      padding-left: 4px;
+      padding-right: 6px;
+    }
   }
 
   .--left {
@@ -149,6 +154,10 @@ export default{
 
   @media #{ $portrait } {
     margin: 0 40px;
+  }
+
+  @media #{$phone-only} {
+    margin: 0 20px;
   }
 
   &:hover,

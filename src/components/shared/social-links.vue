@@ -1,7 +1,7 @@
 <template>
     <div class="mdev-social-links flex flex-hor-start flex-vert-center" :class="{'--dark-theme':darkTheme}">
       <!-- Social Link Loop -->
-      <a v-for="link in linkContent"
+      <a v-for="(link, index) in linkContent"
         :href="link.linkUrl"
         :aria-label="link.accessibility"
         aria-haspopup="true"
@@ -32,14 +32,16 @@
   a {
     color: $white;
     transition: color .5s, text-shadow .8s;
-    text-shadow: 0 0 30px rgba(187, 251, 236, 0);
 
     &:hover,
     &:focus,
     &:active {
-      text-shadow: 0 0 30px rgba(187, 251, 236, .4);
       color: $color-brand-primary;
     }
+  }
+
+  .fa-facebook-f {
+    font-size: 88%;
   }
 }
 
@@ -49,16 +51,24 @@
   a {
     color: $color-brand-bkg;
     transition: color .5s, text-shadow .8s;
-    text-shadow: 0 0 30px rgba(0, 0, 0, 0);
 
     &:hover,
     &:focus,
     &:active {
-      text-shadow: 0 0 30px rgba(0, 0, 0, .4);
+      color: $white;
+    }
+  }
+}
+.--teal-hover {
+
+  a {
+
+    &:hover,
+    &:focus,
+    &:active {
       color: $color-brand-primary;
     }
   }
 }
-
 /*--------------------------------------*/
 </style>

@@ -11,106 +11,236 @@
       Skip To Main Content
     </button>
     <!-- Main Nav -->
-    <main-navigation v-if="!isLoading" :reverseBrand="brandReverse"></main-navigation>
+    <main-navigation v-if="!isLoading"></main-navigation>
+    <!-- Main View -->
     <transition name="fade" v-if="!isLoading">
       <router-view></router-view>
     </transition>
+    <div v-if="secret && !isLoading" class="--secret">
+      <img :src="loadImage(seo.secret)" alt="You found me!"/>
+    </div>
+    <!-- Brand Animation -->
     <brand-animation v-if="isLoading"></brand-animation>
+    <!-- Cookies -->
+    <cookie-popup
+      :active="showCookies"
+      v-if="cookies && !isLoading"
+      v-on:dismiss="cookies = false"></cookie-popup>
   </main>
 </template>
 
 <script>
 //Local Component registration
 import MainNavigation from './components/shared/navigation.vue';
+import CookiePopup    from './components/shared/cookies.vue';
 import BrandAnimation from './components/shared/brand-animation.vue';
+// Import Data From Flat File
+import MdevData       from './mdev-data.js';
+import SEOData        from './site-seo.js';
 
-export default{
-  name: 'App',
-  // TODO - Edit meta Title
-  // SEE - https://github.com/ktquez/vue-head
-  head: {
-    title: {
-      inner: 'MDEV Digital',
-      complement: 'Process Driven UI/UX and Development - London, Ontario '
-    },
-    meta: [
-      { property: 'og:title', content: 'MDEV Digital | Process Driven UI/UX and Development - London, Ontario' },
-      { name: 'twitter:title', content: 'MDEV Digital | Process Driven UI/UX and Development - London, Ontario' }
-    ]
-  },
-
+export default {
+  name: 'MDEVDigitalApp',
+  // SEO Meta Information
   data: function(){
     return {
+      seo: SEOData.siteSeo,
+      secret: false,
       isLoading: true,
+      cookies: false,
+      showCookies: false,
       isHome: true,
-      brandReverse: false
+      brandReverse: false,
+      keys: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+      current: 0
+    };
+  },
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.app.title,
+      titleTemplate: this.seo.template,
+      link: [
+        // Font Awesome
+        { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity:'sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin: 'anonymous' },
+        // Alertify
+        { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/alertifyjs/1.9.0/css/alertify.min.css' }
+      ],
+      script: [
+        // Alertify
+        { src: 'https://cdn.jsdelivr.net/alertifyjs/1.9.0/alertify.min.js', async: true, defer: true },
+      ],
+      meta: [
+        // SEO
+        { vmid: 'desc', name: 'description', content: this.seo.app.desc },
+        { vmid: 'ogappid', property: 'fb:app_id', content: this.seo.social.appid },
+        { vmid: 'ogtype', property: 'og:type', content: this.seo.social.ogtype },
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.app.title + this.seo.templateAddon },
+        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.social.ogimage) },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.app.desc },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.app.title + this.seo.templateAddon },
+        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.social.twimage) },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.app.desc }
+      ]
     };
   },
 
   components: {
     'main-navigation' : MainNavigation,
-    'brand-animation' : BrandAnimation
+    'brand-animation' : BrandAnimation,
+    'cookie-popup'    : CookiePopup,
+  },
+
+  created: function(){
+    // [ PRERENDERER CAVEATS ] -----------------------------
+    // Prerenderers are great cuz SEO... but they suck at handling
+    // script injection from trackers.
+    // To solve the problem, we prevent the scripts from being loaded.
+    //
+    // __PRERENDER_INJECTED is a window object that only gets added by
+    // the prerenderer. These async calls will only execute on the intended
+    // client side environment.
+    if (!window.__PRERENDER_INJECTED) {
+      // Load Google Maps
+      this.asyncScript( 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBBqIEqMAu1tnDhpPmRlesqA7Q1Na46AZs', true, true);
+      // Load Google Tag Manager
+      this.asyncScript( 'https://www.googletagmanager.com/gtag/js?id=UA-91898048-1', true, true);
+      this.asyncScript( '/js/googletag.js', false, false);
+      // Load Facebook Pixel
+      this.asyncScript( '/js/fbpixel.js', false, false);
+    }
+    // Add key event listener for Konami
+    window.addEventListener("keyup", this.konami);
+  },
+
+  beforeDestroy: function() {
+    // Remove listener on Destroy
+    window.removeEventListener("keyup", this.konami);
   },
 
   mounted: function(){
     // Wait for full load and next tic on VM
     this.$nextTick(() => {
+      // Load elements
+      var loadAnim = document.querySelectorAll('[data-load-anim]')[0];
+      var loadWindow = document.querySelectorAll('[data-load-window]')[0];
       // Logo & Loading screen
       setTimeout(() => {
-        // Make Logo appear...
-        $('[data-load-anim]').addClass('--opacity-active');
+        requestAnimationFrame(() => {
+          // Make Logo appear...
+          this.addClass(loadAnim, '--opacity-active');
+       });
       }, 100);
       setTimeout(() => {
-        // Make Logo Move...
-        $('[data-load-anim]').addClass('--transform-active');
+        requestAnimationFrame(() => {
+          this.addClass(loadAnim, '--transform-active');
+        });
       }, 900);
       setTimeout(() => {
-        // Make Logo Disappear...
-        $('[data-load-anim]').removeClass('--opacity-active');
-        // Make Content Disappear
-        $('[data-load-window]').addClass('--opacity');
+        requestAnimationFrame(() => {
+          // Make Logo Disappear...
+          this.removeClass(loadAnim, '--opacity-active');
+          // Make Content Disappear
+          this.addClass(loadWindow, '--opacity');
+        });
       }, 1900);
 
       // Update Data
       setTimeout(() => {
-        // Flip Flag
+        // Flip Flag to finish loading
         this.isLoading = false;
-      }, 2500);
+      }, 2800);
 
-      // Update rest of the UI
+      // Check Cookies
       setTimeout(() => {
-        // Add active class for Hero & Nav
-        $('[data-main-hero]').addClass('--mask-active');
-        $('[data-main-nav]').addClass('--nav-active');
-      }, 2550);
-    });
-  },
+        requestAnimationFrame(() => {
+          // Check if cookies are enabled
+          this.checkCookie();
+          // [ PRERENDER SNAPSHOT ] ------------------------
+          // Dispatches event to tell the prerenderer to take snapshot
+          document.dispatchEvent(new Event('spa-rendered'));
+        });
+      }, 9000);
 
-  beforeUpdate: function() {
-    // Check if this is a reverse white page and add the class
-    if ( $('body').hasClass('--body-white') ) {
-      this.brandReverse = true;
-    }
-    else {
-      this.brandReverse = false;
-    }
+      // [ FANCY CONSOLE OUTPUT ] --------------------------
+      // each %c allows you to create a styling block
+      // style each block in order below it
+      if ( navigator.userAgent.toLowerCase().indexOf("chrome") > -1 ) {
+        window.console.log.apply(console, [
+          "\n %c Made with SASS by MDEV Digital 😜 %c %c https://mdev.digital/ %c  \n",
+          "color: #fff; background: #16b1a9; font-size: 22px; font-weight: 700; padding:10px; border-radius: 20px 0 0 0;",
+          "background: #16b1a9; padding:10px 0; font-size: 22px; font-weight: 700;",
+          "color: #fff; background: #1c1c1c; padding:10px 0; font-size: 22px; font-weight: 700;",
+          "background: #1c1c1c; padding:10px 0; font-size: 22px; font-weight: 700; border-radius: 0 0 30px 0;",
+        ]);
+      }
+      // Output standard message for other browsers
+      else {
+        console.log('Made by MDEV Digital 😜 | https://mdev.digital');
+      }
+    });
   },
 
   updated: function () {
     // Add the active class back since it gets stripped on update above
-    $('[data-main-nav]').addClass('--nav-active');
-  },
-
-  watch: {
-    $route (to,from) {
-      $('[data-main-hero]').removeClass('--mask-active');
-    }
+    var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+    requestAnimationFrame(() => {
+      this.addClass(mainNav, '--nav-active');
+    });
   },
 
   methods: {
+    // Skip Navigation for a11y
     skipNav() {
-      var anchor = $("#mainContent").offset().top;
-      $('html,body').scrollTop(anchor);
+      this.scrollToHash('#mainContent', 50);
+    },
+
+    // Check Cookies & Show Popup
+    checkCookie() {
+      // Poll local storage for data
+      var cookie = localStorage.getItem('acceptCookie');
+      var expiration = localStorage.getItem('cookieExpiration');
+
+      // Destroy Records
+      var destroyTokens = () => {
+        localStorage.removeItem('acceptCookie');
+        localStorage.removeItem('cookieExpiration');
+        // Show Cookie Prompt
+        this.cookies = true;
+        setTimeout( () => {
+          this.showCookies = true;
+        }, 800);
+      };
+
+      // If either Cookie or Expiration is missing...
+      if ( !cookie || !expiration ) {
+        destroyTokens();
+      }
+      // If token is expired..
+      else if ( Date.now() > parseInt(expiration) ) {
+        destroyTokens();
+      }
+    },
+
+    // Secret stuff...
+    konami(e) {
+      const key = e.which || e.keyCode || e.detail;
+      if (this.keys.includes(key)) {
+        if (key === this.keys[this.current]) {
+          this.current += 1;
+          if (this.current === this.keys.length) {
+            // Show Secret
+            this.secret = true;
+            // Hide secret!
+            setTimeout(() => {
+              this.secret = false;
+            },3000);
+            this.current = 0;
+          }
+        }
+        else {
+          this.current = 0;
+        }
+      }
     }
   }
 };
@@ -174,4 +304,42 @@ body {
     transform: translate3d(-50%, 0, 0);
   }
 }
+
+// secret...
+.--secret {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: $color-brand-bkg;
+  z-index: 100;
+
+  img {
+    @include center(both);
+    width: 100%;
+  }
+}
+
+// Scrollbar Styling ( Webkit Only )
+/* Disabled to use hacks.. */
+/* stylelint-disable */
+
+// Scrollbar Width
+body::-webkit-scrollbar {
+  width: 1vw;
+}
+
+// Background of Scrollbar
+body::-webkit-scrollbar-track {
+  background: lighten($color-brand-bkg, 10%);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+// Scroll Thumb ( Part that moves )
+body::-webkit-scrollbar-thumb {
+  background-color: lighten($color-brand-primary, 10%);
+  outline: 4px solid darken($color-brand-bkg, 10%);
+}
+/* stylelint-enable */
 </style>

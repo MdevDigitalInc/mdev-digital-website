@@ -23,20 +23,23 @@
         </div>
 
         <!-- Sexy Lines -->
-        <div class="mdev-sexy-line --sexy-green" data-line-one></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-two></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-three></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-one></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-two></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-three></div>
       </div>
     </hero-main>
-    <!-- Chapter Heading -->
+    <!-- Chapter Heading
+    [ TEMPORARILY COMMENTED OUT ]
     <chapter-heading
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
+    <--
     <!-- Chapter Content -->
     <service-tile v-for="(service, index) in services"
+      :id="service.anchor"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 1"
-      :key="index"
+      :key="index + 1"
       :linkData="service.caseStudy"
       v-in-viewport
       class="a-fade-in mdev-service">
@@ -49,10 +52,10 @@
       </template>
       <!-- Content -->
       <template slot="contentSlot">
-        <span class="--pre-title" v-if="service.preTitle">
-          {{ service.preTitle }}
-        </span>
-        <h2 v-html="service.title" class="mdev-service-title u-uppercase a-fade-in" v-in-viewport></h2>
+        <h2
+          :data-dec="service.anchor"
+          v-html="service.title"
+          class="mdev-service-title u-uppercase a-fade-in" v-in-viewport></h2>
         <h3 class="mdev-service-subtitle">
           {{ service.subTitle }}
         </h3>
@@ -72,14 +75,15 @@
     </service-tile>
     <!-- No Media -->
     <service-nomedia
+      :id="service.anchor"
       v-for="(service, index) in nomedia"
       :key="index"
-      :preTitle="service.preTitle"
       :title="service.title"
       :content="service.content"
       ></service-nomedia>
     <!-- Chapter Link -->
     <chapter-link
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
       :chapterIndex="chapter.next.index"
       :chapterLink="chapter.next.link"
       :a11y="chapter.next.a11y"
@@ -108,29 +112,18 @@ import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default{
   name: 'ServicesUX',
 
-  head: {
-    title: {
-      inner: 'Webdesign & UX Services',
-      complement: 'MDEV Digital - London, Ontario'
-    },
-    meta: [
-      { property: 'og:title', content: 'Webdesign & UX Services | MDEV Digital - London, Ontario ' },
-      { name: 'twitter:title', content: 'Webdesign & UX Services | MDEV Digital - London, Ontario ' }
-
-    ]
-  },
-
   data: function(){
     return{
       heroStyles: {
-        backgroundColor: '#0f1617'
+        backgroundColor: '#0a1315'
       },
       // Disables Page Title bar
-      pageTitle: 'User Experience Design',
+      pageTitle: 'Web Design Services',
       headerDsc: 'Humanize The Web',
       humanizeAnim: 'services/webdev/MDEV_HEADER_humanize_animated.svg',
       theAnim: 'services/webdev/MDEV_HEADER_the.svg',
@@ -141,24 +134,56 @@ export default{
       services: MdevData.webdev.services,
       prefooter: MdevData.prefooter,
       serviceFlag: MdevData.webdev.serviceFlag,
-      nomedia: MdevData.webdev.servicesNomedia
+      nomedia: MdevData.webdev.servicesNomedia,
+      // SEO
+      seo: SEOData.siteSeo
+    };
+  },
+
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.webdev.title,
+      meta: [
+        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.webdev.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.webdev.ogimage) },
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.webdev.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.webdev.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.webdev.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.webdev.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.webdev.desc }
+      ]
     };
   },
 
   mounted: function() {
     this.$nextTick(() => {
-        $('[data-main-nav]').addClass('--teal-white');
+      // Collect Elements
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var introAnim = document.querySelectorAll('#anim-the')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      // Add class to nav
+      this.addClass(mainNav, '--teal-white');
+
       setTimeout(() => {
-        new Vivus('anim-humanize', {duration: 150}, console.log('fired'));
+        requestAnimationFrame(() => {
+          new Vivus('anim-humanize', {duration: 150});
+        });
       }, 100);
       setTimeout(() => {
-        $('#anim-the').addClass('--anim-visible');
+        requestAnimationFrame(() => {
+          this.addClass(introAnim, '--anim-visible');
+        });
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-web', {duration: 150}, console.log('fired'));
+        requestAnimationFrame(() => {
+          new Vivus('anim-web', {duration: 150});
+        });
       }, 800);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
+        requestAnimationFrame(() => {
+          this.addClass(introHeading, '--anim-visible');
+        });
       }, 1200);
     });
   },
@@ -202,6 +227,14 @@ $heading-top-padding-mob: 15px;
   @media #{$phone-only} {
     padding-top: 130%;
   }
+
+  @media #{$tablet-lnd-only} {
+    padding-top: 60%;
+  }
+
+  @media #{$tablet-prt-only} {
+    padding-top: 80%;
+  }
 }
 
 .--vivus-branding {
@@ -209,6 +242,10 @@ $heading-top-padding-mob: 15px;
   .--web-humanize {
     width: 90%;
     margin-bottom: $heading-top-padding;
+
+    @media #{$laptop-only} {
+      margin-bottom: 25px;
+    }
 
     @media #{$portrait} {
       width: 100%;
@@ -230,8 +267,12 @@ $heading-top-padding-mob: 15px;
 
   .--header-cta {
     opacity: 0;
-    width: 47%;
+    width: 52%;
     transition: opacity 1.2s;
+
+    @media #{$desktop-up} {
+      width: 40%;
+    }
 
     @media #{$portrait} {
       width: 100%;
@@ -274,6 +315,10 @@ $heading-top-padding-mob: 15px;
 
     @media #{$xl-up} {
       top: 40%;
+    }
+
+    @media #{$tablet-lnd-only} {
+      width: 100%;
     }
   }
 

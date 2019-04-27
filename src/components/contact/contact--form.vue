@@ -1,22 +1,26 @@
 <template>
   <section class="mdev-full-section --accent-bkg --triangle-top --form-padding">
-    <div class="mdev-main-form" id="contactus">
+    <div class="mdev-main-form">
       <!-- Split Component 60 / 40 Reversed -->
       <split-sixty
         animClassLeft=""
         animClassRight="a-flyin a-flyin-left a-in-viewport" :reverse="true" :top="!formSubmitted">
         <!-- Right Split [reversed:true] -->
         <template slot="leftSlot">
-          <base-form v-on:submitted="swapForm" v-if="!formSubmitted" data-form></base-form>
+          <base-form
+            v-on:submitted="swapForm"
+            v-if="!formSubmitted" data-form></base-form>
           <div class="mdev-acknowledge u-text-center" v-if="formSubmitted" data-form-thankyou>
             <img :src="loadImage(thankyouIcon)" alt="Paper Airplane Flying">
             <p>
               {{ $t("contact.thankyouMsg") }}
             </p>
             <!-- Primary Button -->
+            <!--
             <btn-primary :BtnData="BtnData">
               {{ $t("contact.thankyouAction") }}
             </btn-primary>
+            -->
           </div>
         </template>
 
@@ -71,14 +75,20 @@ export default{
     swapForm() {
       let animInterval = 800; // Matches CSS
       // Hide the form visually
-      $('[data-form]').addClass('--form-sent');
+      var formEl = document.querySelectorAll('[data-form]')[0];
+      requestAnimationFrame(() => {
+        this.addClass(formEl, '--form-sent');
+      });
       // Swap out the components via the flag
       setTimeout(() => {
         this.formSubmitted = true;
       },animInterval);
       // Reveal Thankyou
       setTimeout(() => {
-        $('[data-form-thankyou]').addClass('--form-notify');
+        var thanksEl = document.querySelectorAll('[data-form-thankyou]')[0];
+        requestAnimationFrame(() => {
+          this.addClass(thanksEl, '--form-notify');
+        });
       },animInterval + 100);
     }
   },
@@ -103,6 +113,10 @@ export default{
   @media #{$portrait} {
     padding: 125px 0 75px;
   }
+
+  @media #{$phone-only} {
+    padding: 125px 0 50px;
+  }
 }
 
 .mdev-form-title {
@@ -112,6 +126,10 @@ export default{
 
   @media #{$portrait} {
     font-size: 13.2vw;
+  }
+
+  @media #{$phone-only} {
+    font-size: 17.2vw;
   }
 }
 
@@ -127,28 +145,33 @@ export default{
 .mdev-main-form {
   width: 100%;
   padding: 0 10%;
-
   color: $color-brand-bkg;
+
   .mdev-social-links {
     font-size: 380%;
     margin: 2vw 0;
 
     @media #{$portrait} {
       margin: 30px 0;
-      font-size: 4vw;
-
-      @media #{$portrait} {
-        font-size: 7vw;
-      }
+      font-size: 9vw;
     }
 
     @media #{$phone-only} {
       margin: 20px 0;
+      font-size: 12vw;
+    }
+
+    @media #{$laptop-only} {
+      font-size: 3vw;
     }
 
     a {
       display: block;
       margin: 0 4%;
+
+      @media #{$phone-only} {
+        margin: 0 6%;
+      }
 
       &:first-child {
         margin-left: 0;
@@ -184,6 +207,10 @@ export default{
 
   p {
     padding-top: 15px;
+  }
+
+  img {
+    width: 100%;
   }
 }
 

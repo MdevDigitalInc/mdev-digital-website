@@ -21,7 +21,7 @@ export default {
   data: function() {
     return {
       BtnData: {
-        accessibility: 'About Our Process',
+        accessibility: 'About MDEV Digitial.',
         btnRoute: '/about',
         btnClass: 'mdev-primary-btn --space-top-sm'
       }
@@ -33,3 +33,13 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.mdev-hero-text {
+  max-width: 90%;
+
+  @media #{$portrait} {
+    max-width: 100%;
+  }
+}
+</style>

@@ -2,16 +2,13 @@
   <section class="mdev-featured-services --section-space mdev-service">
     <!-- Title -->
     <div class="mdev-service-title">
-      <span v-if="preTitle" class="--pre-title u-uppercase">
-        {{ preTitle }}
-      </span>
       <h2 v-html="title" class="--title u-bold u-uppercase"></h2>
     </div>
     <!-- Content -->
-    <div class="mdev-featured-wrapper flex flex-vert-start flex-hor-between flex-wrap">
+    <div class="mdev-featured-wrapper --margin-mod flex flex-vert-start flex-hor-between flex-wrap">
       <div v-for="(block, index) in content"
         class="mdev-featured-column">
-          <h3 class="u-uppercase">
+          <h3 class="u-capitalize">
             {{ block.title }}
           </h3>
           <p>
@@ -22,7 +19,7 @@
             <li
               v-html="topic"
               class="u-uppercase u-bold"
-              v-for="topic in block.topics">
+              v-for="(topic, index) in block.topics">
             </li>
           </ul>
       </div>
@@ -34,7 +31,7 @@
 export default{
   name: 'FeatureNomedia',
 
-  props: [ 'preTitle', 'title', 'content'],
+  props: [ 'title', 'content'],
 
 };
 </script>
@@ -57,20 +54,17 @@ export default{
     }
   }
 
-  .mdev-featured-wrapper {
-    width: 76%;
-    margin: 0 auto;
-  }
-
-  .--pre-title {
-    left: 15px;
+  h3 {
+    @media #{$laptop-only} {
+      margin-bottom: 15px;
+    }
   }
 }
 
 .mdev-service-title {
   width: 70%;
   position: relative;
-  padding-left: 7%;
+  padding-left: 5%;
 
   &:before {
     right: 70%;
@@ -78,5 +72,4 @@ export default{
     bottom: 20%;
   }
 }
-
 </style>

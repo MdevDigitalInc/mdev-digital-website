@@ -1,7 +1,6 @@
 q<template>
   <nav
     class="mdev-main-nav --nav-color"
-    :class="{ '--teal-black': reverseBrand }"
     aria-role="navigation"
     data-main-nav role="navigation">
     <div class="mdev-nav-wrapper flex flex-nowrap flex-hor-between flex-vert-center">
@@ -90,7 +89,9 @@ export default{
       // Flag for controlling the nav states
       navIsOpen: false,
       labelOpen: 'Open Main Navigation Menu',
-      labelClose: 'Close Main Navigation Menu'
+      labelClose: 'Close Main Navigation Menu',
+      desiredOffset: 300,
+      scrollDistance: 0
     };
   },
 
@@ -107,68 +108,93 @@ export default{
   },
 
   mounted: function() {
-    // Scroll timer to debounce
-    let scrollTimer;
-    let scrollDistance;
-    let desiredOffset = 420;
-    let scrollTime = 20;
+    this.$nextTick(() => {
+      // Scroll timer to debounce
+      let scrollTimer;
+      let scrollTime = 50;
 
-    // Check to see that the page title is there
-    if ( $('[data-page-title]').length !== 0 ) {
-      scrollDistance = $('[data-page-title]').offset().top;
-    }
-    else {
-      scrollDistance = 600;
-    }
-
-    function userScroll( distance ) {
-      // If user scrolls past desired distance remove effects
-      if ( distance >= (scrollDistance - desiredOffset) ) {
-        $('[data-main-header]').addClass('--user-scroll');
-        $('[data-main-nav]').addClass('--user-scroll');
-      }
-      else if (distance <= 0) {
-        $('[data-main-header').removeClass('--user-scroll');
-        $('[data-main-nav').removeClass('--user-scroll');
-      }
-      else {
-        $('[data-main-header').removeClass('--user-scroll');
-        $('[data-main-nav').removeClass('--user-scroll');
-      }
-    }
-
-    // Event Listener on scroll with debounce
-    $(window).scroll( function() {
-      let distanceTop = $(document).scrollTop();
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(userScroll(distanceTop),scrollTime);
+      // Event Listener on scroll with debounce
+      window.addEventListener('scroll', () => {
+        // Grab the Window Path for Scroll Y
+        let distanceTop = event.path[1].scrollY;
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(this.userScroll(distanceTop),scrollTime);
+      });
     });
   },
 
   methods: {
     // Flip Nav flag & animate sidebar
     openMenu() {
+      // Flip the flag...
       this.navIsOpen = !this.navIsOpen;
-      $('[data-main-links]').removeClass('--showLinks');
-      $('body').toggleClass('u-freeze-scroll');
+      // Set Vars
+      var mainNavLinks = document.querySelectorAll('[data-main-links]');
+      var mainBody = document.querySelectorAll('body')[0];
+      var mainNavContent = document.querySelectorAll('[data-nav-content]')[0];
+      var mainDeep = document.querySelectorAll('[data-main-deep]')[0];
+
+      // Always remove Link Active Class
+      for ( var i=0; i < mainNavLinks.length; i++ ) {
+        this.removeClass(mainNavLinks[i], '--showLinks');
+      }
+
+      // Toggle Freeze Scroll
+      this.toggleClass(mainBody, 'u-freeze-scroll');
+
+      // Toggle nav sidebar
+      setTimeout(() => {
+        // request Frame
+        requestAnimationFrame(() => {
+          this.toggleClass(mainNavContent, '--active-sidebar');
+        });
       // Timeout is either 400 / 0 depending on if its opening or closing
-      setTimeout(function(){
-        $('[data-nav-content]').toggleClass('--active-sidebar');
       }, ( this.navIsOpen ? 400 : 0) );
-      // Turn on Dive Deep
-      setTimeout(function(){
-        $('[data-main-deep]').toggleClass('--active-deep');
+
+      // Turn on Dive Deep Links
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          this.toggleClass(mainDeep, '--active-deep');
+        });
+      // Timeout is either 800 / 0 depending on if its opening or closing
       }, ( this.navIsOpen ? 800 : 0) );
     },
-
     // Force close menu on route change
     // avoids issues if user goes back on history
     closeMenu() {
+      var mainNavLinks = document.querySelectorAll('[data-main-links]');
+      var mainBody = document.querySelectorAll('body')[0];
+      var mainNavContent = document.querySelectorAll('[data-nav-content]')[0];
+      var mainDeep = document.querySelectorAll('[data-main-deep]')[0];
       this.navIsOpen = false;
-      $('[data-main-links]').removeClass('--showLinks');
-      $('body').removeClass('u-freeze-scroll');
-      $('[data-nav-content]').removeClass('--active-sidebar');
-      $('[data-main-deep]').removeClass('--active-deep');
+      for ( var i=0; i < mainNavLinks.length; i++ ) {
+        this.removeClass(mainNavLinks[i], '--showLinks');
+      }
+      this.removeClass(mainBody, 'u-freeze-scroll');
+      this.removeClass(mainNavContent, '--active-sidebar');
+      this.removeClass(mainDeep, '--active-deep');
+    },
+    // User Scroll Handler
+    userScroll( distance ) {
+      var mainHeader = document.querySelectorAll('[data-main-header]')[0];
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      let pageTitleEl = document.querySelectorAll('[data-page-title]');
+
+      this.scrollDistance = pageTitleEl[0].offsetTop > 0 ? pageTitleEl[0].offsetTop : mainHeader.offsetHeight;
+      this.desiredOffset = pageTitleEl[0].offsetTop > 0 ? 300 : 20;
+      // If user scrolls past desired distance remove effects
+      if ( (distance + this.desiredOffset) >= this.scrollDistance) {
+        requestAnimationFrame(() => {
+          this.addClass(mainHeader, '--user-scroll');
+          this.addClass(mainNav, '--user-scroll');
+        });
+      }
+      else {
+        requestAnimationFrame(() => {
+          this.removeClass(mainHeader, '--user-scroll');
+          this.removeClass(mainNav, '--user-scroll');
+        });
+      }
     }
   },
 
@@ -186,7 +212,6 @@ export default{
 /*--------------------------------------*/
 /* MAIN NAVIGATION Component Styles
 /*--------------------------------------*/
-
 .mdev-main-nav {
   width: 100%;
   position: fixed;
@@ -194,8 +219,15 @@ export default{
   left: 0;
   padding: $nav-padding;
   z-index: 10;
-  transition: all, .3s;
-  background: rgba(51, 51, 51, 0);
+  transition: all, .4s;
+  background: rgba(10, 19, 21, 0);
+
+  &.--user-scroll {
+    padding-bottom: 5px;
+    @media #{$phone-only} {
+      background: rgba(10, 19, 21, .95);
+    }
+  }
 
   @media #{$portrait} {
     padding: $nav-padding-prt;
@@ -467,6 +499,23 @@ export default{
 
   .mdev-nav-open span {
     background-color: black;
+  }
+}
+
+.--user-scroll.--white-black,
+.--user-scroll.--teal-white,
+.--user-scroll.--teal-black,
+.--user-scroll.--nav-color {
+  @media #{$phone-only} {
+    .mdev-svg-1 {
+      fill: $color-brand-primary;
+    }
+    .mdev-svg-2 {
+      fill: $white;
+    }
+    .mdev-nav-open span {
+      background-color: $color-brand-primary;
+    }
   }
 }
 

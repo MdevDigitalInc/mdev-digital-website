@@ -1,14 +1,25 @@
 // MDEV Data export
+// Case Study Structure Saved
+//        caseStudy: {
+//          action: 'View case study',
+//          hook: 'See how we worked with The Factory to create an Adventure booking system.',
+//          BtnData: {
+//            accessibility: 'View The Factory case study',
+//            btnRoute: '/casestudy',
+//            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
+//          },
+//          reverse: true
+//        },
 export default  {
   links: [
     {
       linkName: 'About',
-      linkTitle: 'Coming Soon!',
-      route: '/comingsoon',
+      linkTitle: 'About MDEV Digital',
+      route: '/about',
       linkIndex: '01'
     },
     {
-      linkName: 'Work',
+      linkName: 'Client Stories',
       linkTitle: 'Coming Soon!',
       route: '/comingsoon',
       linkIndex: '02'
@@ -16,7 +27,7 @@ export default  {
     {
       linkName: 'Services',
       linkTitle: 'Our Services',
-      route: '/services',
+      route: '/services/overview',
       linkIndex: '03'
     },
     {
@@ -47,33 +58,33 @@ export default  {
 
   serviceLinks: [
     {
-      linkName: 'Consulting',
-      linkTitle: 'View our consulting services',
-      route: '/services/consulting',
+      linkName: 'Branding',
+      linkTitle: 'View our Branding & Print Design services',
+      route: '/services/branding',
       linkIndex: '01'
     },
     {
-      linkName: 'Branding & Print',
-      linkTitle: 'View our Branding & Print Design services',
-      route: '/services/branding',
+      linkName: 'Web Design',
+      linkTitle: 'View our UX & Web Design services',
+      route: '/services/ui-ux',
       linkIndex: '02'
     },
     {
-      linkName: 'UX & Web Design',
-      linkTitle: 'View our UX & Web Design services',
-      route: '/services/ui-ux',
-      linkIndex: '03'
-    },
-    {
-      linkName: 'Application Development',
+      linkName: 'Apps & Software',
       linkTitle: 'View our custom app development services',
       route: '/services/app-development',
-      linkIndex: '04'
+      linkIndex: '03'
     },
     {
       linkName: 'Digital Marketing',
       linkTitle: 'View our Digital Marketing services',
-      route: '/services/digital-advertisign',
+      route: '/services/digital-marketing',
+      linkIndex: '04'
+    },
+    {
+      linkName: 'Support Services',
+      linkTitle: 'View our consulting services',
+      route: '/services/consulting',
       linkIndex: '05'
     }
   ],
@@ -108,18 +119,28 @@ export default  {
   mdevEmployees: [
     {
       employeeName: 'Lucas Moreira',
-      employeeTitle: 'CEO, Founder',
+      employeeTitle: 'Chief Executive Officer, Founder',
       employeeRoute: 'lucas-moreira',
-      employeeIntro: 'With over 10 years of experience working on large-scale, high-demand web applications, Lucas has a wealth of expertise in creating web applications to serve a variety of needs.',
+      employeeIntro: 'With over 10 years of experience working on large-scale, high-demand web applications, Lucas has a wealth of expertise in creating web platforms to serve a variety of needs.',
       employeeStory: [
         'Lending his insights on technology, marketing, media relations and efficient development practices to every project he touches, Lucas ensures that MDEV’s clients can expect an extremely high level of quality.',
-        'Lucas is a board member of the MACC in London, ON, serves on the London Chamber of Commerce Marketing Committee and is also known for his expertise in FPV Drones and 3D printing on his Loose Transistor YouTube channel.'
+        'Lucas is a board member of the MACC in London, ON, serves on the London Chamber of Commerce Marketing Committee and is also known for his expertise in FPV Drones and 3D printing. You can find him on YouTube as Loose Transistor.'
       ],
-      employeeOrigin: 'Sao Paulo - Brazil',
+      seo: {
+        title: 'Lucas Moreira - CEO, Founder',
+        description: 'Meet Lucas Moreira, our Chief Executive Officer and Founder.'
+      },
+      employeeOrigin: 'Sao Paulo, Brazil',
       employeeQuote: 'Think like a man of action, act like a man of thought.',
       employeeTrick: 'Drone Guru / Media Maven / Eagle Eye',
       employeeImage: 'bios/bio-lucas.png',
       socialLinks: [
+        {
+          linkClass: 'fa-linkedin',
+          target: '_blank',
+          accessibility: 'Follow us on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/in/moreiradevelopment/'
+        },
         {
           linkClass: 'fa-instagram',
           target: '_blank',
@@ -127,32 +148,36 @@ export default  {
           linkUrl: 'https://www.instagram.com/loose_transistor/'
         },
         {
-          linkClass: 'fa-linkedin',
+          linkClass: 'fa-youtube',
           target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/in/moreiradevelopment/'
+          accessibility: 'Subscribe on Youtube',
+          linkUrl: 'https://www.youtube.com/c/LooseTransistorFPV'
         }
       ]
     },
     {
       employeeName: 'Becky Domenico',
-      employeeTitle: 'CCO, Founder',
+      employeeTitle: 'Chief Creative Officer, Founder',
       employeeRoute: 'becky-domenico',
-      employeeIntro: 'A disruptive thinker and creative visionary, Becky is constantly digging deeper to find innovative solutions to complex problems. Able to distill client goals into a cohesive creative vision that she communicates to the team for execution.',
+      employeeIntro: 'A disruptive thinker and creative visionary, Becky is constantly digging deeper to find innovative solutions to unique challenges. She’s spent the last 10 years building successful new brands and products in the emerging technology space.',
       employeeStory: [
-        'After years of leading creative and software projects, Becky has developed an uncanny ability to navigate complex timing and requirements to ensure successful project completion.',
-        'Becky currently serves as the co-chair of the Junior Achievement Marketing Advisory committee and as a LTUX Committee Member for the #ldnont chapter.'
+        'After years of leading creative and digital projects, Becky has developed an uncanny ability to navigate complex timing and requirements to ensure successful project completion.',
+        'Becky volunteers for Junior Achievement, working with their Marketing Advisory Group for the last 5 years. She also helps JA put on their annual Business Warriors Axe Throwing event.'
       ],
+      seo: {
+        title: 'Becky Domenico - CCO, Founder',
+        description: 'Meet Becky Domenico, our Chief Creative Officer and Founder.'
+      },
       employeeOrigin: 'Timmins, ON',
       employeeQuote: 'Fear is the mind killer.',
-      employeeTrick: 'Coffee Fanatic / InDesign Wizard / Agility',
+      employeeTrick: 'Coffee Enthusiast / Design Wizard / Tower Defender',
       employeeImage: 'bios/bio-becky.png',
       socialLinks: [
         {
-          linkClass: 'fa-facebook-f',
+          linkClass: 'fa-linkedin',
           target: '_blank',
-          accessibility: 'Like Becky on Facebook',
-          linkUrl: 'https://www.facebook.com/becky.domenico'
+          accessibility: 'Follow us on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/in/beckydomenico/'
         },
         {
           linkClass: 'fa-instagram',
@@ -167,154 +192,133 @@ export default  {
           linkUrl: 'https://twitter.com/BECKYDOMENICO'
         },
         {
+          linkClass: 'fa-pinterest',
+          target: '_blank',
+          accessibility: 'Follow Becky on Pinterest',
+          linkUrl: 'https://www.pinterest.ca/beckydomenico/'
+        }
+      ]
+    },
+    {
+      employeeName: 'Luis Guerrero',
+      employeeTitle: 'Digital Marketing Manager',
+      employeeRoute: 'luis-guerrero',
+      employeeIntro: 'An award-winning digital marketer with a vast amount of experience ranging from sales to department director, Luis has developed a knack for making the digital space a little more human.',
+      employeeStory: [
+        'In 2014, Luis won the Google Online Marketing Challenge in the America’s division, placing top five overall globally, which jump-started his career in internet and social media marketing.',
+        'His experience working with companies and major social media influencers from all parts of the world allows him to bring unique and refreshing ideas to the marketing table. Luis is a naturally passionate person with a love for music, dance, and sports.'
+      ],
+      seo: {
+        title: 'Luis Guerrero - Digital Marketing Manager',
+        description: 'Meet Luis Guerrero, our Digital Marketing Manager.'
+      },
+      employeeOrigin: 'Guatemala',
+      employeeQuote: 'He who says he can and he who says he can\'t are both usually right - Confucius',
+      employeeTrick: 'Salsa & Bachata Instructor / Speaks Fluent Sarcasm',
+      employeeImage: 'bios/bio-luis.png',
+      socialLinks: [
+        {
           linkClass: 'fa-linkedin',
           target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/in/beckydomenico/'
-        }
+          accessibility: 'Follow Luis on LinkedIn',
+          linkUrl: 'https://www.instagram.com/halyhawkinsdesigns/'
+        },
+        {
+          linkClass: 'fa-facebook-f',
+          target: '_blank',
+          accessibility: 'Like Luis on Facebook',
+          linkUrl: 'https://www.facebook.com/JLuisG12'
+        },
+        {
+          linkClass: 'fas fa-globe',
+          target: '_blank',
+          accessibility: 'Personal Website',
+          linkUrl: 'https://luisguerrero.ca/'
+        },
       ]
     },
     {
       employeeName: 'Haly Hawkins',
-      employeeTitle: 'Graphic Designer',
+      employeeTitle: 'Lead Designer',
       employeeRoute: 'haly-hawkins',
-      employeeIntro: 'Haly gained an abundance of experience from her 3 years at Fanshawe College, graduating from the Graphic Design Advanced Diploma program, being a student-employee in the Fanshawe Athletics Department as the PR Publications Assistant, and the captain of the Women’s Varsity Basketball team.',
+      employeeIntro: 'Haly gained an abundance of experience from her 3 years at Fanshawe College. While taking the Graphic Design Advanced Diploma program, Haly was also a student-employee in the Fanshawe Athletics Department, and the captain of the Women’s Varsity Basketball team.',
       employeeStory: [
-        'As an organized team player Haly took on many roles at Fanshawe. From national scholar, leadership, and athletic awards being a student-employee and student-athlete has proven her wonders.',
-        'Haly has recently embarked on a month long marine conservation volunteer trip in Thailand to research, protect and restore coral reefs'
+        'Her ability to take on many roles at Fanshawe translated naturally into her role at MDEV. A national scholar, who earned leadership and athletic awards, all while balancing a full course-load and part-time design job, Haly has proven herself to be extremely organized and versatile.',
+        'Haly has recently embarked on a month-long marine conservation volunteer trip in Thailand to research, protect and restore coral reefs. On her down time, Haly also volunteers with the local non-profit organization OneRun.'
       ],
+      seo: {
+        title: 'Haly Hawkins - Lead Designer',
+        description: 'Meet Haly Hawkins, our Lead Designer.'
+      },
       employeeOrigin: 'London, ON',
       employeeQuote: 'Work smarter, not harder.',
-      employeeTrick: 'Ruler of yard games',
+      employeeTrick: 'Nimble / Ruler of Yard Games / Sneaker Head',
       employeeImage: 'bios/bio-haly.png',
       socialLinks: [
         {
-          linkClass: 'fa-facebook-f',
+          linkClass: 'fa-linkedin',
           target: '_blank',
-          accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
+          accessibility: 'Follow Haly on LinkedIn',
+          linkUrl: 'https://www.linkedin.com/in/haly-hawkins/'
         },
         {
           linkClass: 'fa-instagram',
           target: '_blank',
           accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
+          linkUrl: 'https://www.instagram.com/halyhawkinsdesigns/'
         },
-        {
-          linkClass: 'fa-linkedin',
-          target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-        }
-      ]
-    },
-    {
-      employeeName: 'Luis Guerriero',
-      employeeTitle: 'Digital Marketing Manager',
-      employeeRoute: 'luis-guerriero',
-      employeeIntro: 'An award-winning digital marketer with a vast amount of experience ranging from sales to department director, Luis has developed a knack for making the digital space a little more human. His experience in working with companies and major social media influencers from all parts of the world allows him to bring unique and refreshing ideas to the marketing table.',
-      employeeStory: [
-        'Winning the Americas division, and placing top five globally in the 2014 Google Online Marketing Challenge jump started Luis’ career in internet and social media marketing.',
-        'He’s naturally passionate person with a love for music and dance (he teaches salsa and bachata), and a lover of sports.'
-      ],
-      employeeOrigin: 'Guatemala City, Guatemala',
-      employeeQuote: false,
-      employeeTrick: 'Hips Don’t Lie - Salsa and Bachata Instructor',
-      employeeImage: 'bios/bio-luis.png',
-      socialLinks: [
         {
           linkClass: 'fa-facebook-f',
           target: '_blank',
           accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
-        },
-        {
-          linkClass: 'fa-instagram',
-          target: '_blank',
-          accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
-        },
-        {
-          linkClass: 'fa-linkedin',
-          target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
+          linkUrl: 'https://www.facebook.com/Haly-Hawkins-Designs-758389274364073/'
         }
       ]
     },
     {
       employeeName: 'Graham Coutts',
-      employeeTitle: 'Full-stack Developer',
+      employeeTitle: 'Full-Stack Developer',
       employeeRoute: 'graham-coutts',
-      employeeIntro: 'Whether he\'s improving the efficiency and processing capabilities of antiquated systems for large companies, or working on integrating numerous emerging web technologies, Graham always plays key role in designing and developing effective systems for any situation.',
+      employeeIntro: 'Whether he\'s improving the efficiency and processing capabilities of antiquated systems for large companies, or working on integrating numerous emerging web technologies, Graham plays a key role at MDEV in designing and developing effective systems for any situation.',
       employeeStory: [
-        'Graham also occasionally teaches programming classes as a part-time instructor at Fanshawe College as a part of the Advanced Programming Game development program.'
+        'He also occasionally teaches programming classes as a part-time instructor at Fanshawe College in the Advanced Programming Game development program. Graham enjoys a diverse range of challenging hobbies including brain teaser puzzles, 3D printing and VR programming.'
       ],
+      seo: {
+        title: 'Graham Coutts - Full-stack Developer',
+        description: 'Meet Graham Coutts, our Full-stack Developer.'
+      },
       employeeOrigin: 'Guelph, ON',
-      employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
+      employeeQuote: 'So much time and so little to do! Strike that. Reverse it.',
       employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
       employeeImage: 'bios/bio-graham.png',
-      socialLinks: [
-        {
-          linkClass: 'fa-facebook-f',
-          target: '_blank',
-          accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
-        },
-        {
-          linkClass: 'fa-instagram',
-          target: '_blank',
-          accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
-        },
-        {
-          linkClass: 'fa-linkedin',
-          target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-        }
-      ]
+      socialLinks: false
     },
     {
       employeeName: 'Dorian Hall',
-      employeeTitle: 'Front-end Developer',
+      employeeTitle: 'Front-End Developer',
       employeeRoute: 'dorian-hall',
-      employeeIntro: 'Whether he\'s improving the efficiency and processing capabilities of antiquated systems for large companies, or working on integrating numerous emerging web technologies, Graham always plays key role in designing and developing effective systems for any situation.',
+      employeeIntro: 'With monk-like patience, Dorian excels at delving into complex existing codebases to develop robust front end code. He’s a badass glutton for punishment and we’ve yet to hear him grumble.',
       employeeStory: [
-        'Graham also occasionally teaches programming classes as a part-time instructor at Fanshawe College as a part of the Advanced Programming Game development program.'
+        'Dorian has a deep knowledge on working with WordPress and is constantly pushing himself to learn more about customizing plugins and templates to create unqiue, user-friendly sites.',
+        'In his off time, you’ll find Dorian challenging himself with an unforgiving action role-playing game or burying himself in an apocalptic novel. '
       ],
+      seo: {
+        title: 'Dorian Hall - Front-end Developer',
+        description: 'Meet Dorian Hall, our Front-end Developer.'
+      },
       employeeOrigin: 'Guelph, ON',
-      employeeQuote: 'We have so much time and so little to do! Strike that. Reverse it.',
-      employeeTrick: 'Tea Drinker / Human Mop / Technologic Swiss Army Knife',
+      employeeQuote: 'Humanity is a discontinuous series of free men irreparably isolated by their subjectivity.',
+      employeeTrick: 'Green Tea Aficionado / Curry Tasting Champion / Skill Acquisition',
       employeeImage: 'bios/bio-dorian.png',
-      socialLinks: [
-        {
-          linkClass: 'fa-facebook-f',
-          target: '_blank',
-          accessibility: 'Like us on Facebook',
-          linkUrl: 'https://www.facebook.com/MDEVDigital'
-        },
-        {
-          linkClass: 'fa-instagram',
-          target: '_blank',
-          accessibility: 'Follow us on Instagram',
-          linkUrl: 'https://www.instagram.com/mdev_digital/'
-        },
-        {
-          linkClass: 'fa-linkedin',
-          target: '_blank',
-          accessibility: 'Follow us on LinkedIn',
-          linkUrl: 'https://www.linkedin.com/company/mdev-digital/'
-        }
-      ]
+      socialLinks: false
     }
   ],
 
   employeeRoutes: [
     'lucas-moreira',
     'becky-domenico',
+    'luis-guerrero',
     'haly-hawkins',
-    'luis-guerriero',
     'graham-coutts',
     'dorian-hall'
   ],
@@ -322,13 +326,25 @@ export default  {
   services: [
     {
       title: 'Branding',
-      media: {
-        image: 'services/01-branding.png',
-        imageDesc: 'Samples of our Branding Work.',
-        squareImg: false
-      },
+      anchor: 'anc-branding',
+      squareImg: false,
+      media: [
+        {
+          image: 'services/01-branding-concepts.png',
+          imageDesc: 'Samples of our Conceptual work.',
+        },
+        {
+          image: 'services/01-branding-logos.png',
+          imageDesc: 'Samples of our Branding Work.',
+        },
+        {
+          image: 'services/01-branding-business-cards.png',
+          imageDesc: 'Samples of our Business Cards.',
+        }
+      ],
       description: 'A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.',
       topics: [
+        'Logos',
         'Corporate identities',
         'Print & digital design',
         'Packaging'
@@ -345,18 +361,21 @@ export default  {
       }
     },
     {
-      title: 'web design',
-      media: {
-        image: 'services/02-web-design.png',
-        imageDesc: 'Samples of our Web Design Work.',
-        squareImg: true,
-      },
-      description: 'We specialize in designing custom sites carefully crafted to showcase your unique offering. Our robust and forward- thinking web practices ensure site longevity and scalability. After a collaborative planning process, you can sit back while we put a laser-focus on all the details, large and small.',
+      title: 'Web Design',
+      anchor: 'anc-webdesign',
+      squareImg: true,
+      media: [
+        {
+          image: 'services/02-web-design.png',
+          imageDesc: 'Samples of our Web Design Work.',
+        }
+      ],
+      description: 'We specialize in designing carefully crafted custom sites to showcase your unique offerings. Our digital team keeps on top of the latest web trends and coding practices to produce clear user journeys and enjoyable web experiences. After a collaborative planning process, you can sit back while we put a laser-focus on all the details, large and small.',
       topics: [
-        'Custom Website Design & Development',
+        'Custom Design & Development',
         'Ecommerce',
         'Mobile-friendly Websites',
-        'Accessibility'
+        'WCAG 2.0 Accessibility'
       ],
       action: 'Learn More',
       BtnData: {
@@ -365,18 +384,21 @@ export default  {
         btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
       },
       config: {
-        showDecoration: true,
+        showDecoration: false,
         reverse: false
       }
     },
     {
       title: 'Apps & Software',
-      media: {
-        image: 'services/03-apps-software.png',
-        imageDesc: 'Samples of our Software Development Work.',
-        squareImg: true
-      },
-      description: 'Utilizing robust, scalable platforms, we build efficient, cost-effective software solutions. Our forward-thinking development practices and thorough documentation will ensure long-lasting quality and scalability, allowing your software capabilities to expand with your business.',
+      anchor: 'anc-apps',
+      squareImg: true,
+      media: [
+        {
+          image: 'services/03-apps-software.png',
+          imageDesc: 'Samples of our Software Development Work.',
+        }
+      ],
+      description: 'Utilizing reliable platforms and technology, we build efficient, cost-effective software solutions. Our forward-thinking development practices and thorough documentation will ensure long-lasting quality and scalability, allowing your software capabilities to expand with your business.',
       topics: [
         'Guided Discovery',
         'Agile Project Management',
@@ -397,17 +419,21 @@ export default  {
     },
     {
       title: 'Digital Marketing',
-      media: {
-        image: 'services/04-digital-marketing.png',
-        imageDesc: 'Samples of our Digital Marketing Work.',
-        squareImg: false
-      },
-      description: 'Digital marketing is the art of being noticed online. With our help, carefully craft a digital marketing strategy that combines conversion-focused content with qualified lead generation to build brand awareness and drive traffic to your website.',
+      anchor: 'anc-digimarketing',
+      squareImg: false,
+      media: [
+        {
+          image: 'services/04-digital-marketing.png',
+          imageDesc: 'Samples of our Digital Marketing Work.',
+        }
+      ],
+      description: 'Digital marketing is the art of being noticed online. Let\'s collaborate on buidling a digital marketing strategy that combines conversion-focused content with qualified lead generation to build brand awareness and drive traffic to your website.',
       topics: [
         'Search Engine Optimization',
         'Search Engine Marketing',
         'Social Media Marketing',
-        'Content Marketing'
+        'Content Marketing',
+        'Launch Campaigns'
       ],
       action: 'Learn More',
       BtnData: {
@@ -416,21 +442,22 @@ export default  {
         btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
       },
       config: {
-        showDecoration: true,
+        showDecoration: false,
         reverse: true
       }
     },
     {
       title: 'Support Services',
+      anchor: 'anc-support',
       media: false,
       description: 'We offer consulting and support services to help your business run smoothly. This includes setting up your business infrastructure or identifying new ways to be efficient through process development, operational software deployments or custom application development, our ultimate goal is to help you reduce your internal costs.',
       topics: [
-        'Consulting',
+        'IT Consulting',
         'Startup Support',
         'Cloud Technologies',
         'Domain Management',
         'Domain Dispute Resolution',
-        'Gsuite Management'
+        'G suite Management'
       ],
       action: 'Learn More',
       BtnData: {
@@ -459,26 +486,17 @@ export default  {
     },
     services: [
       {
-        preTitle: false,
-        title: 'Think before you brand',
-        subTitle: 'Corporate identity systems',
-        description: 'Systems Creating a brand with impact is crucial for any product or company to be noticed. We can help you develop a new brands, refresh an exist logo, or work with you to consolidate your existing brands into a cohesive corporate identity system.',
+        anchor: 'anc-logos',
+        title: 'Think before</br>you brand',
+        subTitle: 'Corporate Identities',
+        description: 'Creating a brand with impact is crucial for any product or company to succeed. We can help you distill your unique corporate personality into a new identity, refresh an existing logo, or consolidate existing sub-brands into a cohesive corporate identity system.',
         topics: [
           'Logo design',
-          'Corporate Identity Systems',
+          'Corporate Identities',
           'Brand &amp; style guidelines',
-          'Business card &amp; stationery packages'
+          'Business cards &amp; stationery packages'
         ],
-        caseStudy: {
-          action: 'View case study',
-          hook: 'View our Ketolibriyum Case Study',
-          BtnData: {
-            accessibility: 'View our Branding case study',
-            btnRoute: '/Coming Soon',
-            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
-          },
-          reverse: false
-        },
+        caseStudy: false,
         media: [
           {
             image: 'services/branding/logo-design.png',
@@ -487,16 +505,15 @@ export default  {
         ]
       },
       {
-        preTitle: false,
+        anchor: 'anc-print',
         title: 'Cross- channel creative',
         subTitle: 'Print & Digital Design',
-        description: 'A brand needs more than a logo and a website to succeed. Our creative services span traditional print and digital media to ensure that the look and feel of your brand matches across all mediums.',
+        description: 'Your brand is going to need more than a logo and a website to succeed. Our creative services span print and digital media to ensure that the look and feel of your materials is consistent.',
         topics: [
-          'Print &amp; Digital Design',
-          'Marketing Materials',
+          'Brochure Design',
           'Publication Layout',
           'Banners &amp; Tradeshow Graphics',
-          'Retail Signage'
+          'Retail Signage &amp; Point of Purchase Displays'
         ],
         caseStudy: false,
         media: [
@@ -511,16 +528,15 @@ export default  {
         ]
       },
       {
-        preTitle: 'The',
+        anchor: 'anc-packaging',
         title: 'Road to retail readiness',
         subTitle: 'Packaging',
         description: 'We create vibrant and informative packaging that leaps off store shelves. We can also help you handle barcode creation, compliance with labelling regulations, and French translation requirements if the product is to be sold in Canada.',
         topics: [
-          'Print &amp; Digital Design',
-          'Marketing Materials',
-          'Publication Layout',
-          'Banners &amp; Tradeshow Graphics',
-          'Retail Signage'
+          'Packaging Design Service',
+          'Translate Existing Packaging',
+          'Vendor & Print Facilitation',
+          'Retail & Regulation Compliance'
         ],
         caseStudy: false,
         media: [
@@ -551,26 +567,17 @@ export default  {
     },
     services: [
       {
-        preTitle: false,
-        title: 'The web has gotten crowded',
-        subTitle: 'Custom Design & Development',
-        description: 'Stand out in the digital realm with powerful, feature rich websites, built to be fully accessible and mobile-responsive from the very beginning. Utilizing the latest technologies, modern design techniques and methodical coding practices, we deliver quality digital solutions tailored to fit.',
+        anchor: 'anc-webdev',
+        title: 'The web</br>has gotten crowded',
+        subTitle: 'Design & Development',
+        description: 'Stand out in the digital realm with a powerful, feature-rich custom website, built to be fully accessible and mobile-friendly from the very beginning. Our design and development team stays on top of the latest user experience design trends and coding practices to produce lightning-fast, mobile-friendly websites.',
         topics: [
-          'Custom Web Design & Development',
+          'Custom Design & Development',
           'User Interface Design',
           'Responsive Web Design',
           'Custom Wordpress Development'
         ],
-        caseStudy: {
-          action: 'View case study',
-          hook: 'See how we worked with The Factory to create an Adventure booking system.',
-          BtnData: {
-            accessibility: 'View The Factory case study',
-            btnRoute: '/casestudy',
-            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
-          },
-          reverse: true
-        },
+        caseStudy: false,
         media: [
           {
             image: 'services/webdev/web-design-tfac.png',
@@ -587,26 +594,18 @@ export default  {
         ]
       },
       {
-        preTitle: false,
+        anchor: 'anc-ecomm',
         title: 'Set</br>Up</br>Shop',
         subTitle: 'Ecommerce',
-        description: 'If you have a product or service to sell, our team can help you choose the best software for your store, provide advice on how to organize your products and how best to position your offerings. We can also help you with integrated cross-channel marketing campaigns to grow your new empire.',
+        description: 'If you build it, they will come. But will they know what to do when they get there? Guide your users from start to cart with custom ecommerce sites built around your unique user journey. We\'ll help you choose the best platform for your online store, provide advice on how to organize your products and prepare your site for integrated marketing strategies right from launch.',
         topics: [
           'Custom ecommerce development',
           'Shopify',
           'Woocommerce',
           'Digital Marketing',
+          'Email Marketing &amp; Email Templates'
         ],
-        caseStudy: {
-          action: 'View case study',
-          hook: 'Find out how we created a shoe empire from an overstock colletion.',
-          BtnData: {
-            accessibility: 'View Aster Shoes case study',
-            btnRoute: '/casestudy',
-            btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text'
-          },
-          reverse: false
-        },
+        caseStudy: false,
         media: [
           {
             image: 'services/webdev/ecom-keto.png',
@@ -625,12 +624,12 @@ export default  {
     ],
     servicesNomedia: [
       {
-        preTitle: 'It\'s the right thing to do',
+        anchor: 'anc-a11y',
         title: 'Remove Digital Barriers',
         content: [
           {
-            title: 'Mobile Friendly Sites',
-            description: 'it is no longer acceptable to have a website that doesn\'t function across multiple devices and browsers. Mobile-friendly design is part of every web project we handle. Prior to any launch, we perform extensive testing to insure optimum performance in all environments.',
+            title: 'Mobile-friendly sites',
+            description: 'It is no longer acceptable to have a website that doesn\'t function across multiple devices and browsers. Mobile-friendly design is part of every web project we handle. Prior to any launch, we perform extensive testing to insure optimum performance in all environments.',
             topics: [
               'Cross-device testing',
               'Multi-browser testing',
@@ -670,10 +669,10 @@ export default  {
     },
     services: [
       {
-        preTitle: false,
-        title: 'Place Holder Text',
+        anchor: 'anc-appdev',
+        title: 'Build</br>Your</br>Empire',
         subTitle: 'Application Development',
-        description: 'You can expect regular feature releases as we work to build a product you can quickly take to market. Once released, we’ll help you analyze post-launch feature-set priorities to continue application growth as you discover more about your users needs. We focus on security, scalability and longevity to ensure that your investment in technology can scale with your business.',
+        description: 'You can expect regular feature releases as we work to build a product you can quickly take to market. Once released, we’ll help you analyze post-launch feature-set priorities to continue application growth as you discover more about your users\' needs. We focus on security, scalability and longevity to ensure that your investment in technology can scale with your business.',
         topics: [
           'Custom software development',
           'vue.js, node, react, mongo, postgres',
@@ -692,8 +691,8 @@ export default  {
     ],
     servicesNomedia: [
       {
-        preTitle: false,
-        title: 'Simplicity in planning',
+        anchor: 'anc-discovery',
+        title: 'Simplicity</br>in planning',
         content: [
           {
             title: 'Guided Discovery',
@@ -718,7 +717,7 @@ export default  {
         ]
       },
       {
-        preTitle: false,
+        anchor: 'anc-ux',
         title: 'Engage your audience',
         content: [
           {
@@ -760,30 +759,64 @@ export default  {
     },
     services: [
       {
-        preTitle: false,
+        anchor: 'anc-content',
         title: 'Share your narrative',
         subTitle: 'Content Marketing',
-        description: 'We can help you write compelling, up-to-date content that will give users a reason to return to your site and social media channels. We can also help you with clear, strong wording about products and services that will give users quick and tactile reasons to purchase your product or interact with your service.',
+        description: 'Authentic, up-to-date content is essential to growth and retention. We will help you develop an engaging narrative that gives people genuine reasons to love and follow your site and social media channels.',
         topics: [
           'Blogging',
           'Website Copy',
-          'Ad Copy',
-          'Proofreading & Editing',
-          'Email Marketing'
+          'Marketing Videos',
+          'Email Marketing',
+          'Proofreading & Editing'
         ],
         caseStudy: false,
         media: false
       },
       {
-        preTitle: false,
+        anchor: 'anc-social',
         title: 'Connect with your audience',
         subTitle: 'Social Media Marketing',
-        description: 'Social media has become the central hub of communication for many businesses. We can help you develop and execute a social media strategy to promote your products and services to the world.',
+        description: 'Strategic, impactful content will help give your followers immediate and tactile reasons to engage with your page, purchase your product or interact with your service. We know how to make your brand stand out in a world dominated by hashtags and emojis.',
         topics: [
-          'Social Media Strategy',
-          'Social Media Campaigns',
-          'Social Media Advertising',
+          'Social Media content & posting strategies',
+          'social media advertising campaigns',
+          'social media best practices & reporting',
           'Graphical & Video Asset Creation'
+        ],
+        caseStudy: false,
+        media: [
+          {
+            image: 'services/digiads/sem-keto-pintrest.png',
+            imageDesc: 'Ketolibriyum Pinterest Templates.'
+          }
+        ]
+      },
+      {
+        anchor: 'anc-seo',
+        title: 'Algorithms Not Alchemy',
+        subTitle: 'Search Engine Optimization',
+        description: 'Google search results are often the first point of contact with your brand in the digital world. Providing valuable answers to search queries is key to reaching new audiences and retaining existing customers. Let our expert team worry about keeping on top of the latest search engine and social media algorithms to keep you ahead of the competition.',
+        topics: [
+          'Seo Audits',
+          'UX Assessments',
+          'Content Ideation',
+          'Competitive Analysis',
+          'Keyword & Ranking Analysis'
+        ],
+        caseStudy: false,
+        media: false
+      },
+      {
+        anchor: 'anc-paid',
+        title: 'Generate Qualified Leads',
+        subTitle: 'Search Engine Marketing',
+        description: 'Search engine marketing, also known as pay-per-click advertising, yields immediate results. Whether it\'s awareness, leads or sales, we will help you develop paid strategies designed to convert highly qualified leads into loyal clients.',
+        topics: [
+          'Paid Digital Ad Strategy',
+          'Account Set Up & Optimization',
+          'Search & Remarketing Campaigns',
+          'Conversion Rate Optimization'
         ],
         caseStudy: false,
         media: [
@@ -794,33 +827,10 @@ export default  {
         ]
       },
       {
-        preTitle: false,
-        title: 'Algorithm Not Alchemy',
-        subTitle: 'Search Engine Optimization',
-        description: 'Reaching a new audience for your products and services through proper search engine optimization is a great way to increase your market share. We’ll collaborate with you to understand your goals to create a strong SEO backbone for your site. Sit back and let our expert team worry about keeping on top of the latest search engine and social media algorithms to keep you ahead of the competition.',
-        topics: false,
-        caseStudy: false,
-        media: false
-      },
-      {
-        preTitle: false,
-        title: 'Demystify Online Marketing',
-        subTitle: 'Search Engine Marketing',
-        description: 'Social media has become the central hub of communication for many businesses. We can help you develop and execute a social media strategy to promote your products and services to the world.',
-        topics: false,
-        caseStudy: false,
-        media: [
-          {
-            image: 'services/digiads/sem-keto-pintrest.png',
-            imageDesc: 'Ketolibriyum Pinterest Templates.'
-          }
-        ]
-      },
-      {
-        preTitle: false,
+        anchor: 'anc-launch',
         title: 'Set the wheels in motion',
-        subTitle: 'Launch Campaigns',
-        description: 'We know that you are eager to get the word out about your new product or service quickly. We can help you structure a cross-channel launch campaign tailored specifically to your audience including social media, print design, and trade show setups. Our launch campaigns often include a landing page that can supply teaser content while we help you build up to the big announcement.',
+        subTitle: 'Launch Your Campaign',
+        description: 'We know that you are eager to get the word out about your product or service quickly. We will help you structure a omni-channel launch campaign tailored specifically to your audience including social media, print design, and trade show setups. Our launch campaigns often include a landing page that can supply teaser content while we help you build up to the big announcement.',
         topics: [
           'Landing Pages',
           'Event Promotion',
@@ -857,8 +867,8 @@ export default  {
 
     serviceSolo: [
       {
-        preTitle: false,
-        title: 'Email in style',
+        anchor: 'anc-email',
+        title: 'Email</br>in style',
         subTitle: 'G Suite Management',
         description: 'As part our our overarching branding services, we want to make sure you look good when communicating about your business. It’s the little things that count, like using a professional email URL and having a sweet, branded signature.',
         topics: [
@@ -873,12 +883,12 @@ export default  {
 
     servicesNomedia: [
       {
-        preTitle: 'It\'s not the wild west anymore',
+        anchor: 'anc-domains',
         title: 'Stake your digital claim',
         content: [
           {
             title: 'Domain Management',
-            description: 'Domain management can be complex, time consuming, and damaging to your business if handled poorly. We provide worry-free hosting, migration and configuration services, to ensure that your hosting can handle your volume of traffic and serve the performance and capabilities your website needs.',
+            description: 'Domain management can be complex, time consuming, and damaging to your business if handled poorly. We provide worry-free hosting, migration and configuration services, to ensure that your hosting can handle your volume of traffic and serve the performance and capabilities your website needs',
             topics: [
               'Domain & Hosting Migration',
               'Domain configuration & set up',
@@ -902,10 +912,10 @@ export default  {
 
     services: [
       {
-        preTitle: 'Find out how we can help',
+        anchor: 'anc-startup',
         title: 'Jump start your business',
         subTitle: 'Startup Support',
-        description: 'We know the joy and growing pains that come along with starting a new business, in fact, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding, all the way to setting up your internal operations software, we know what it takes to get you up and running.We know the joy and growing pains that come along with starting a new business, in fact, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding, all the way to setting up your internal operations software, we know what it takes to get you up and running.',
+        description: 'We know the joy and growing pains that come along with starting a new business, in fact, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding, all the way to setting up your internal operations software, we know what it takes to get you up and running. ',
         topics: false,
         caseStudy: false,
         media: false,
@@ -916,7 +926,7 @@ export default  {
         }
       },
       {
-        preTitle: false,
+        anchor: 'anc-cloud',
         title: 'Get your head out of the clouds',
         subTitle: 'Cloud Technologies',
         description: 'Cloud technologies give you flexibility to create secure, optimized solutions that streamline internal processes. Based on your business requirements, we can help identify which technologies best suit your needs, then provide all of the assistance necessary to install and configure your chosen software.',
@@ -933,7 +943,7 @@ export default  {
         BtnData: false
       },
       {
-        preTitle: false,
+        anchor: 'anc-consulting',
         title: 'Enhance Efficiency',
         subTitle: 'Consulting',
         description: 'With our guidance, learn how to innovate effectively within your own business. We can help you reduce your overhead costs and increase productivity by turning your trickiest challenges into growth opportunities. Get in touch to find out how.',
@@ -950,8 +960,8 @@ export default  {
   },
 
   prefooter: {
-    heading: 'More services we offer',
-    subheading: 'Ready to get started?',
+    heading: 'Let\'s See how we can help',
+    subheading: 'Start something new',
     BtnData: {
       accessibility: 'Get in touch today!',
       btnRoute: '/contact',
@@ -964,22 +974,22 @@ export default  {
         list: [
           {
             linkName: 'Logos',
-            linkRoute: '/services/branding',
+            linkRoute: '/services/branding#anc-logos',
             a11y: 'Custom Logo Designs'
           },
           {
-            linkName: 'Corporate Identity Systems',
-            linkRoute: '/services/branding',
-            a11y: 'Corporate Identity Systems'
+            linkName: 'Corporate Identities',
+            linkRoute: '/services/branding#anc-logos',
+            a11y: 'Corporate Identities'
           },
           {
             linkName: 'Print & Digital design',
-            linkRoute: '/services/branding',
+            linkRoute: '/services/branding#anc-print',
             a11y: 'Pring & Digital Design'
           },
           {
             linkName: 'Packaging',
-            linkRoute: '/services/branding',
+            linkRoute: '/services/branding#anc-packaging',
             a11y: 'Custom Packaging'
           }
         ]
@@ -990,22 +1000,22 @@ export default  {
         list: [
           {
             linkName: 'Custom Design & Development',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/ui-ux#anc-webdev',
             a11y: 'Custom Web Design'
           },
           {
             linkName: 'Ecommerce',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/ui-ux#anc-ecomm',
             a11y: 'Custom Ecommerce'
           },
           {
             linkName: 'Mobile-friendly Websites',
-            linkRoute: '/services/ui-ux',
+            linkRoute: '/services/ui-ux#anc-a11y',
             a11y: 'Mobile-friendly websites'
           },
           {
-            linkName: 'Accessibility',
-            linkRoute: '/services/ui-ux',
+            linkName: 'Online Accessibility',
+            linkRoute: '/services/ui-ux#anc-a11y',
             a11y: 'Accessibility'
           }
         ]
@@ -1016,27 +1026,27 @@ export default  {
         list: [
           {
             linkName: 'Guided discovery',
-            linkRoute: '/services/app-development',
+            linkRoute: '/services/app-development#anc-discovery',
             a11y: 'Guided discovery & Requirements Gathering'
           },
           {
             linkName: 'Agile Project Management',
-            linkRoute: '/services/app-development',
+            linkRoute: '/services/app-development#anc-discovery',
             a11y: 'Flexibility and Scalability'
           },
           {
             linkName: 'User Experience Design',
-            linkRoute: '/services/app-development',
+            linkRoute: '/services/app-development#anc-ux',
             a11y: 'Humanize the web'
           },
           {
             linkName: 'User Interface Design',
-            linkRoute: '/services/app-development',
+            linkRoute: '/services/app-development#anc-ux',
             a11y: 'Custom Interfaces'
           },
           {
             linkName: 'Application Development',
-            linkRoute: '/services/app-development',
+            linkRoute: '/services/app-development#anc-appdev',
             a11y: 'Custom app development'
           }
         ]
@@ -1047,27 +1057,27 @@ export default  {
         list: [
           {
             linkName: 'Search Engine Optimization',
-            linkRoute: '/services/digital-marketing',
+            linkRoute: '/services/digital-marketing#anc-seo',
             a11y: 'Raise your profile'
           },
           {
             linkName: 'Search Engine Marketing',
-            linkRoute: '/services/digital-marketing',
+            linkRoute: '/services/digital-marketing#anc-paid',
             a11y: 'Targeting the right customers'
           },
           {
             linkName: 'Social Media Marketing',
-            linkRoute: '/services/digital-marketing',
+            linkRoute: '/services/digital-marketing#anc-social',
             a11y: 'Social Media strategy & Executioin'
           },
           {
             linkName: 'Content Marketing',
-            linkRoute: '/services/digital-marketing',
+            linkRoute: '/services/digital-marketing#anc-content',
             a11y: 'Content Marketing services'
           },
           {
             linkName: 'Launch Campaigns',
-            linkRoute: '/services/digital-marketing',
+            linkRoute: '/services/digital-marketing#anc-launch',
             a11y: 'We help you make a splash!'
           }
         ]
@@ -1077,33 +1087,33 @@ export default  {
         heading: 'Support',
         list: [
           {
-            linkName: 'Consulting',
-            linkRoute: '/services/consulting',
+            linkName: 'IT Consulting',
+            linkRoute: '/services/consulting#anc-cloud',
             a11y: 'Solutions & Consulting services'
           },
           {
             linkName: 'Startup Support',
-            linkRoute: '/services/consulting',
+            linkRoute: '/services/consulting#anc-startup',
             a11y: 'Startup launch services'
           },
           {
-            linkName: 'Cloud Technologies',
-            linkRoute: '/services/consulting',
+            linkName: 'Efficiency Consulting',
+            linkRoute: '/services/consulting#anc-consulting',
             a11y: 'Setup & Configuration services'
           },
           {
             linkName: 'Domain Management',
-            linkRoute: '/services/consulting',
+            linkRoute: '/services/consulting#anc-domains',
             a11y: 'Keep your domain secure'
           },
           {
             linkName: 'Domain dispute Resolution',
-            linkRoute: '/services/consulting',
+            linkRoute: '/services/consulting#anc-domains',
             a11y: 'Domain retrieval'
           },
           {
-            linkName: 'Gsuite Management',
-            linkRoute: '/services/consulting',
+            linkName: 'G Suite Management',
+            linkRoute: '/services/consulting#anc-email',
             a11y: 'Gsuite setup & management'
           }
         ]
@@ -1116,19 +1126,19 @@ export default  {
       longImg: {
         src: 'home/case-study-ORA.png',
         a11y: 'Off-Road Addiction | Digital Marketing',
-        route: '/about',
+        route: '/comingsoon',
         title: 'View Off-Road Addiction Case Study'
       },
       leftImg: {
         src: 'home/case-study-NXL.png',
         a11y: 'The Next Level VR | Web Design & Development',
-        route: '/about',
+        route: '/comingsoon',
         title: 'View The Next level VR Case Study'
       },
       rightImg: {
         src: 'home/case-study-GLEN.png',
         a11y: 'Arbour Glen Daycare | Web Design & Development',
-        route: '/about',
+        route: '/comingsoon',
         title: 'View Arbout Glen Case Study'
       },
     },
@@ -1136,19 +1146,19 @@ export default  {
       longImg: {
         src: 'home/case-study-TFAC.png',
         a11y: 'The Factory London | User Experience & Development',
-        route: '/services',
+        route: '/comingsoon',
         title: 'View The Factory London Case Study'
       },
       leftImg: {
         src: 'home/case-study-KETO.png',
         a11y: 'Ketolibriyum | Branding & Ecommerce Development',
-        route: '/services',
+        route: '/comingsoon',
         title: 'View Ketolibriyum Case Study'
       },
       rightImg: {
         src: 'home/case-study-ASTER.png',
         a11y: 'Aster Shoes | Branding & Ecommerce Development',
-        route: '/services',
+        route: '/comingsoon',
         title: 'View Aster Shoes Case Study'
       },
     },
@@ -1156,44 +1166,184 @@ export default  {
       longImg: {
         src: 'home/case-study-ZUC.png',
         a11y: 'Zucora Home | User Experience & Ecommerce Development',
-        route: '/services',
+        route: '/comingsoon',
         title: 'View Zucora Home Case Study'
       },
       leftImg: {
         src: 'home/case-study-PWH.png',
         a11y: 'Powerhouse Brewery | Web Design & Development',
-        route: '/services',
+        route: '/comingsoon',
         title: 'View Powerhouse Brewery Case Study'
       },
       rightImg: {
         src: 'home/case-study-AGCAP.png',
         a11y: 'Ag Capital Canada | Web Design & Development',
-        route: '/services',
+        route: '/comingsoon',
         title: 'View Ag Capital Canada Case Study'
       },
     }
   ],
 
+  aboutPage: {
+    process: {
+      title: 'Your internal team just got a lot more powerful',
+      text: 'No two brands or services are alike, and we don’t believe in one-size-fits-all solutions. Instead, we’ll work closely with your team to share knowledge and develop solutions. We like to think of ourselves as an extension of your internal team’s capabilities. When you partner with us, we care as deeply about the work as you do. That means we don’t shy away from the facts, even when the trurth hurts. At the end of the day, your success is our success.'
+    },
+    icons: [
+      {
+        src: 'icons/icon-discovery-white.svg'
+      },
+      {
+        src: 'icons/icon-roadmap-white.svg'
+      },
+      {
+        src: 'icons/icon-development-white.svg'
+      },
+      {
+        src: 'icons/icon-launch-white.svg'
+      },
+    ],
+    philosophy: {
+      title: 'Our Philosophy',
+      subtitle: 'Values',
+      icons: [
+        {
+          icon: 'icons/icon-quality.svg',
+          a11y: 'Quality Guarantee Icon',
+          heading: 'Quality',
+          subheading: 'Bang for your buck',
+          text: 'Quality means that we care about our work. We believe in creating brands and technology that we want to use.'
+        },
+        {
+          icon: 'icons/icon-integrity.svg',
+          a11y: 'Integrity Guarantee Icon',
+          heading: 'Integrity',
+          subheading: 'No hidden agenda',
+          text: 'Integrity guides our approach in all matters. We believe that trust and honesty are the fundamentals that form lasting relationships.'
+        },
+        {
+          icon: 'icons/icon-tenacity.svg',
+          a11y: 'Tenacity Icon',
+          heading: 'Tenacity',
+          subheading: 'Stick to it',
+          text: 'Tenacity is our strength of purpose. We believe in taking a persistent approach to solving complex problems.'
+        },
+        {
+          icon: 'icons/icon-curiosity.svg',
+          a11y: 'Curiosity Icon',
+          heading: 'Curiosity',
+          subheading: 'Push the envelope',
+          text: 'Curiosity is our relentless drive to do better. We believe that asking tough questions brings better end results.'
+        },
+        {
+          icon: 'icons/icon-innovation.svg',
+          a11y: 'Innovation Guarantee Icon',
+          heading: 'Innovation',
+          subheading: 'Sky\'s the limit',
+          text: 'Innovation is key to growth. We believe in pushing ourselves to explore new solutions and more efficient workflows.'
+        },
+        {
+          icon: 'icons/icon-adaptability.svg',
+          a11y: 'Adaptability Icon',
+          heading: 'Adaptability',
+          subheading: 'Be Flexible',
+          text: 'Adaptability reminds us that there are many paths to success. We believe that flexibility is an advantage in our ever-changing industry.'
+        }
+      ]
+    },
+    established: {
+      image: 'about/office-banner.png',
+      a11y: 'Our lovely office!',
+      badge: {
+        src: 'about/MDEV-est-badge.svg',
+        a11y: 'MDEV Digital, Established in 2017'
+      }
+    },
+    hood: {
+      foreground: 'about/100-kellogg-building.png',
+      foregroundMob: 'about/100-kellogg-building-mobile.png',
+      a11y: 'Our offices located on 100 Kellogg',
+      decoration: true,
+      background: 'about/100-kellogg-background.png',
+      heading: 'The \'Hood',
+      text: 'Welcome to Old East Village in London, Ontario, Canada – an up-and-coming neighborhood that we decided to make our home. Our offices are located in the historic Kellogg’s cereal factory at 100 Kellogg Lane in the heart of O.E.V.'
+    },
+    founders: {
+      subheading: 'Meet the',
+      heading: 'Founders',
+      text: 'Founded in 2017 by husband and wife team Lucas Moreira and Becky Domenico, MDEV Digital is not your average agency! Fueled by coffee, tattoos and a shared passion for working on great products, Lucas and Becky envisioned a quality-first, process-driven tech agency intent on creating websites and applications that humanize the web.',
+      chiefs: [
+        {
+          name: 'Lucas Moreira',
+          title: 'Chief Executive Officer',
+          image: 'bios/bio-lucas.png',
+          route: '/team/lucas-moreira',
+          linka11y: 'Visit Lucas\' Profile!',
+          a11y: 'Our CEO Lucas Moreira'
+        },
+        {
+          name: 'Becky Domenico',
+          title: 'Chief Creative Officer',
+          image: 'bios/bio-becky.png',
+          route: '/team/becky-domenico',
+          linka11y: 'Visit Becky\'s Profile!',
+          a11y: 'Our CCO Becky Domenico'
+        }
+      ]
+    },
+    team: {
+      subheading: 'Meet',
+      heading: 'Our team',
+      text: 'Our rockstar team of web development and user experience professionals are passionate learners and kick ass problem solvers determined to do things the right way.',
+      members: [
+        {
+          name: 'Luis Guerrero',
+          title: 'Digital Marketing Manager',
+          image: 'bios/bio-luis.png',
+          a11y: 'Our Digital Marketing Manager Luis',
+          route: '/team/luis-guerrero',
+          linka11y: 'Visit Luis\' Profile!',
+          class: '--luis'
+        },
+        {
+          name: 'Haly Hawkins',
+          title: 'Lead Designer',
+          image: 'bios/bio-haly.png',
+          a11y: 'Our lead designer Haly',
+          route: '/team/haly-hawkins',
+          linka11y: 'Visit Haly\'s Profile!',
+          class: '--haly'
+        },
+        {
+          name: 'Graham Coutts',
+          title: 'Full-Stack Developer',
+          image: 'bios/bio-graham.png',
+          a11y: 'Our Full-Stack Developer Graham',
+          route: '/team/graham-coutts',
+          linka11y: 'Visit Graham\'s Profile!',
+          class: '--graham'
+        },
+        {
+          name: 'Dorian Hall',
+          title: 'Front-End Developer',
+          image: 'bios/bio-dorian.png',
+          a11y: 'Our Front-End Developer Dorian',
+          route: '/team/dorian-hall',
+          linka11y: 'Visit Dorian\'s Profile!',
+          class: '--dorian'
+        }
+      ]
+    }
+  },
+
   testimonials: [
     {
-      content: 'Dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-      name: 'Aaron Finkenzeller, CTO Zucora Inc.'
+      content: 'Working with MDEV exceeded my expectations.  They were knowledgeable, creative and aligned seamlessly to the vision of the project. Through the twists and turns of a start-up, they were able to adapt and executed the project beautifully.',
+      name: 'Angela Hawkins, Former Marketing Director of The Factory'
     },
     {
-      content: 'House In The Thaw Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-      name: 'Brad Geddes, CEO Zucora Inc.'
-    },
-    {
-      content: 'Dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-      name: 'Albert Einstein, EMC Industries'
-    },
-    {
-      content: 'House In The Thaw Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-      name: 'Bradd Pitt, CTO Zucora Inc.'
-    },
-    {
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in velit at ex mollis ultrices non eget diam. Integer id velit ac arcu faucibus porttitor et at metus. Nam non odio et tellus placerat aliquet. Morbi sem metus, gravida in arcu in, pharetra mattis augue. In hac habitasse platea dictumst.',
-      name: 'Edward Norton, CTO Zucora Inc.'
+      content: 'MDEV worked closely with us to craft a unique and professional website to suit our needs, they were amazing to collaborate with and we couldn\'t be happier with the result!',
+      name: 'Devan Long, Owner/Operator of The Next Level'
     }
-  ]
+  ],
 };

@@ -40,10 +40,6 @@
 -----*/
 @import './typography.scss';
 
-/*----
- 	Utilities
------*/
-@import './utilities.scss';
 
 /*---
   Scaffolding
@@ -75,6 +71,11 @@
 -----*/
 @import './forms.scss';
 
+/*----
+ 	Utilities
+-----*/
+
+@import './utilities.scss';
 /*----
   Print
 -----*/

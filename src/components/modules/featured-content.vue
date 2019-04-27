@@ -1,7 +1,7 @@
 <template>
-  <section class="mdev-featured-content --section-space">
-    <div class="mdev-featured-wrapper flex flex-vert-start flex-hor-center"
-      :class="{ '--flip-order' : flip }">
+  <section class="mdev-featured-content">
+    <div class="mdev-featured-wrapper flex flex-vert-start"
+      :class="{ '--flip-order' : flip, 'flex-hor-center' : media, 'flex-hor-start' : !media }">
       <!-- Media slot for image -->
       <div v-if="media" class="mdev-service-media">
         <slot name="mediaSlot"></slot>
@@ -87,38 +87,52 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
   // Before pseudo element controls the background green lines
   // They are merely decorative and get overriden often
   .mdev-service-media {
-    width: 30%;
+    width: 50%;
     order: 1;
     margin-right: 5vw;
     position: relative;
     z-index: 2;
+    margin-top: 70px;
 
     @media #{$portrait} {
       width: 100%;
       margin: 100px auto;
     }
 
+    @media #{$phone-only} {
+      margin: 85px auto 25px;
+    }
+
     // Green decorative background lines
     &:before {
       @include pseudo();
-      top: 25%;
+      bottom: 25%;
       left: -50px;
       right: 10%;
-      bottom: -50px;
+      top: -50px;
       z-index: -1;
       border: 4px solid $color-brand-accent;
 
       @media #{$portrait} {
         top: -50px;
         left: -100px;
-        bottom: 50px;
+        bottom: 15vh;
       }
+
+      @media #{$laptop-only} {
+        left: -25px;
+        top: -25px;
+      }
+    }
+
+    img {
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
     }
   }
 
   // Content portion of the split
   .mdev-service-content {
-    width: 60%;
+    width: 50%;
     order: 2;
 
     @media #{$portrait} {
@@ -140,7 +154,7 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     }
 
     .mdev-service-desc {
-      width: 60%;
+      width: 55%;
 
       @media #{$portrait} {
         width: 100%;
@@ -148,7 +162,7 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     }
 
     .mdev-service-topics {
-      width: 30%;
+      width: 35%;
       margin-top: 0;
 
       @media #{$portrait} {
@@ -175,13 +189,18 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
   // Green decorative lines
   &:before {
     right: -50px;
+    bottom: -50px;
+    top: 50px;
     left: 10%;
 
     @media #{$portrait} {
-      top: -50px;
       left: -100px;
-      bottom: 50px;
       right: 15%;
+    }
+
+    @media #{$laptop-only} {
+      bottom: -25px;
+      right: -25px;
     }
   }
 }
@@ -214,6 +233,11 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
         top: -50px;
         bottom: -50px;
         right: 10%;
+      }
+
+      @media #{$laptop-only} {
+        top: -25px;
+        bottom: -25px;
       }
     }
   }

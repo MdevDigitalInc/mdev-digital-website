@@ -31,18 +31,21 @@
         </div>
 
         <!-- Sexy Lines -->
-        <div class="mdev-sexy-line --sexy-green" data-line-one></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-two></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-three></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-one></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-two></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-three></div>
       </div>
     </hero-main>
-    <!-- Chapter Heading -->
+    <!-- Chapter Heading
+    [ TEMPORARILY COMMENTED OUT ]
     <chapter-heading
        v-view="(e) => changeNavBrand(e, '--teal-black')"
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
+    <--
     <!-- Chapter Content -->
     <service-tile v-for="(service, index) in services"
+      :id="service.anchor"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :key="index"
       :flip="((index + 1) % 2) == 1"
@@ -59,16 +62,15 @@
           :media="service.media"></media-carousel>
         <!-- Title Only appears here if no image -->
         <h2 v-if="!service.media"
+          :data-dec="service.anchor"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"
           v-in-viewport></h2>
       </template>
       <!-- Content -->
       <template slot="contentSlot">
-        <span class="--pre-title" v-if="service.preTitle">
-          {{ service.preTitle }}
-        </span>
         <h2 v-if="service.media"
+          :data-dec="service.anchor"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"
           v-in-viewport></h2>
@@ -83,13 +85,14 @@
           <li
             v-html="topic"
             class="u-uppercase u-bold"
-            v-for="topic in service.topics">
+            v-for="(topic, index) in service.topics">
           </li>
         </ul>
       </template>
     </service-tile>
     <!-- Chapter Link -->
     <chapter-link
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
       :chapterIndex="chapter.next.index"
       :chapterLink="chapter.next.link"
       :a11y="chapter.next.a11y"
@@ -117,29 +120,18 @@ import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default{
   name: 'ServicesDigitalMarketing',
 
-  head: {
-    title: {
-      inner: 'Digital Marketing',
-      complement: 'MDEV Digital - London, Ontario'
-    },
-    meta: [
-      { property: 'og:title', content: 'Digital Marketing | MDEV Digital - London, Ontario ' },
-      { name: 'twitter:title', content: 'Digital Marketing | MDEV Digital - London, Ontario ' }
-
-    ]
-  },
-
   data: function(){
     return{
       heroStyles: {
-        backgroundColor: '#0f1617'
+        backgroundColor: '#0a1315'
       },
       // Disables Page Title bar
-      pageTitle: 'Be heard',
+      pageTitle: 'Digital Marketing Services',
       headerDsc: 'Once you go digital...',
       demistifyAnim: 'services/digiads/MDEV_HEADER_demystify_animated.svg',
       onlineAnim: 'services/digiads/MDEV_HEADER_online_animated.svg',
@@ -149,27 +141,62 @@ export default{
       // Services Data
       services: MdevData.digiads.services,
       prefooter: MdevData.prefooter,
-      serviceFlag: MdevData.digiads.serviceFlag
+      serviceFlag: MdevData.digiads.serviceFlag,
+      // SEO
+      seo: SEOData.siteSeo
+    };
+  },
+
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.digiads.title,
+      meta: [
+        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.digiads.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.digiads.ogimage) },
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.digiads.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.digiads.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.digiads.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.digiads.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.digiads.desc }
+      ]
     };
   },
 
   mounted: function() {
     this.$nextTick(() => {
-        $('[data-main-nav]').addClass('--teal-white');
+      // Collect Elements
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]');
+      // Add class to nav
+      this.addClass(mainNav, '--teal-white');
+
       setTimeout(() => {
-        new Vivus('anim-demystify', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-demystify', {duration: 150});
+        });
       }, 100);
       setTimeout(() => {
-        new Vivus('anim-online', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-online', {duration: 150});
+        });
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-marketing', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-marketing', {duration: 150});
+        });
       }, 800);
       setTimeout(() => {
-        new Vivus('anim-digital', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-digital', {duration: 150});
+        });
       }, 1200);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
+        requestAnimationFrame(() => {
+          for (var i=0; i < introHeading.length; i++) {
+            this.addClass(introHeading[i], '--anim-visible');
+          }
+        });
       }, 1400);
     });
   },
@@ -213,6 +240,14 @@ $heading-top-padding-mob: 15px;
   @media #{$phone-only} {
     padding-top: 130%;
   }
+
+  @media #{$tablet-lnd-only} {
+    padding-top: 60%;
+  }
+
+  @media #{$tablet-prt-only} {
+    padding-top: 88%;
+  }
 }
 
 .--vivus-digiads {
@@ -251,6 +286,11 @@ $heading-top-padding-mob: 15px;
       text-align: left;
       margin-top: 30px;
     }
+
+    @media #{$tablet-lnd-only} {
+      width: 80%;
+      font-size: 14px;
+    }
   }
 
   .--anim-visible {
@@ -283,6 +323,14 @@ $heading-top-padding-mob: 15px;
 
     @media #{$tablet-prt-only} {
       width: 75%;
+    }
+
+    @media #{$tablet-lnd-only} {
+      width: 100%;
+    }
+
+    @media #{$laptop-only} {
+      width: 85%;
     }
 
     @media #{$xl-up} {

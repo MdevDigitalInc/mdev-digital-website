@@ -44,7 +44,7 @@ export default {
       BtnData: {
         accessibility: 'View Our Services',
         btnRoute: '/services',
-        btnClass: 'mdev-primary-btn --space-top-sm --tab'
+        btnClass: 'mdev-primary-btn --space-top-xs --tab'
       },
       // Links pulled from Flat File
       links: MdevData.serviceLinks
@@ -70,11 +70,16 @@ export default {
   position: relative;
 
   @media #{$portrait} {
-    padding: 60px 0 0;
+    padding: 60px 0 25px;
+  }
+
+  @media #{$phone-only} {
+    padding: 40px 0 25px;
   }
 
   a {
     display: block;
+    line-height: 150%;
     color: $white;
     padding: .5vw 0;
     transition: all .3s;
@@ -85,6 +90,9 @@ export default {
       .mdev-link-name {
         border-bottom: 4px solid rgba(255, 255, 255, 1);
       }
+      .--dark {
+        border-bottom: 4px solid rgba(0, 0, 0, 1);
+      }
     }
   }
 
@@ -93,6 +101,7 @@ export default {
     border-bottom: 4px solid rgba(255, 255, 255, 0);
     display: inline-block;
     transition: all .6s;
+    letter-spacing: 2px;
 
     @media #{$xl-up} {
       font-size: 1.3vw;
@@ -100,11 +109,16 @@ export default {
 
     @media #{$portrait} {
       font-size: 4.6vw;
+      line-height: 38px;
     }
     @media #{$phone-only} {
       font-size: 6vw;
       line-height: 120%;
     }
+  }
+
+  .--dark {
+    border-bottom: 4px solid rgba(0, 0, 0, 0);
   }
 
   .mdev-link-index {
@@ -129,7 +143,7 @@ export default {
 }
 
 .mdev-split-6 {
-  padding-right: 3vw;
+  padding-right: 5vw;
 
   @media #{$tablet-lnd-only} {
     padding-right: 5.7vw;

@@ -148,9 +148,9 @@ export default{
       // Clear Errors First
       this.$validate.clearErrors();
       // Collect Fields
-      let formFields = $('[data-required]');
-      let emailField = $('input[type="email"]');
-      let phoneField = $('input[type="tel"]');
+      let formFields = document.querySelectorAll('[data-required]');
+      let emailField = document.querySelectorAll('input[type="email"]');
+      let phoneField = document.querySelectorAll('input[type="tel"]');
       // Validate fields and store result
       let fieldsValid = this.$validate.validateFields(formFields, this.$t("validation.errors.form"));
       let emailValid  = this.$validate.validateEmail(emailField, this.$t("validation.errors.email"));
@@ -228,11 +228,15 @@ export default{
     margin-bottom: 25px;
   }
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   .mdev-input-name {
     font-weight: 700;
     font-size: 1.8vw;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: .5px;
 
     @media #{$portrait} {
       font-size: 3.3vw;
@@ -255,8 +259,28 @@ export default{
 }
 
 .mdev-input-split {
+  @media #{$phone-only} {
+    flex-wrap: wrap;
+  }
+
   .mdev-input-group {
     width: 48%;
+
+    @media #{$phone-only} {
+      width: 100%;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @media #{$portrait} {
+        margin-bottom: 40px;
+      }
+
+      @media #{$phone-only} {
+        margin-bottom: 25px;
+      }
+    }
   }
 }
 

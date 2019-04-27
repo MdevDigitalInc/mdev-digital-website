@@ -22,7 +22,7 @@ h4,.h4,
 h5,.h5,
 h6,.h6, {
   font-family: $main-font;
-  font-weight: 700;
+  font-weight: 800;
   color: inherit;
   margin-bottom: 25px;
 }
@@ -30,6 +30,7 @@ h6,.h6, {
 // Responsive Font Size Maps
 $p-font-sizes: (
   null  : 22px,
+  $tablet-lnd-only: 18px,
   $phone-only : 15px
 );
 
@@ -37,20 +38,22 @@ $h1-font-sizes: (
   null  : 2.5vw,
   $portrait : 5.3vw,
   $laptop-only : 3vw,
-  $phone-only: 8vw
+  $phone-only: 18px
 );
 
 $h2-font-sizes: (
   null : 55px,
   $desktop-up  : 120px,
-  $laptop-only: 101px,
-  $tablet-lnd-only: 80px,
+  $laptop-only: 6.6vw,
+  $tablet-lnd-only: 60px,
   $portrait: 85px,
   $phone-only: 55px
 );
 
 $h3-font-sizes: (
   null  : 1.6vw,
+  $laptop-only: 35px,
+  $desktop-only: 30px,
   $portrait: 5vw,
   $phone-only: 6vw
 );
@@ -94,36 +97,47 @@ $link-font-sizes: (
 /* Generate Responsive Sizing */
 
 p {
-  line-height: 180%;
+  font-family: $main-font;
+  line-height: 150%;
   font-weight: 400;
   @include font-size($p-font-sizes);
 
-  @media #{$phone-only} {
-    line-height: 150%;
+  @media #{$desktop-up} {
+    line-height: 180%;
   }
 }
 
 h1,
 .h1 {
+  line-height: 140%;
   @include font-size($h1-font-sizes);
+
+  @media #{$portrait} {
+    line-height: 110%;
+  }
 }
 
 h2,
 .h2 {
   @include font-size($h2-font-sizes);
+  line-height: 84%;
+
+  @media #{$laptop-only} {
+    margin-bottom: 15px;
+  }
+
+  @media #{$phone-only} {
+    margin-bottom: 15px;
+  }
 }
 
 h3,
 .h3 {
   @include font-size($h3-font-sizes);
-  letter-spacing: 5px;
+  letter-spacing: 2px;
 
   @media #{$portrait} {
     line-height: 120%;
-  }
-
-  @media #{$tablet-lnd-only} {
-    letter-spacing: 2px;
   }
 }
 
@@ -172,4 +186,20 @@ a {
   font-weight: 100;
   text-transform: uppercase;
   position: relative;
+}
+
+.--huge-title {
+  font-size: 125px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @media #{$laptop-only} {
+    font-size: 90px;
+  }
+  @media #{$tablet-lnd-only} {
+    font-size: 80px;
+  }
+  @media #{$phone-only} {
+    font-size: 85px;
+  }
 }

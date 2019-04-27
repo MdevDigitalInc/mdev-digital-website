@@ -6,43 +6,57 @@
       <a href="/" class="mdev-footer-brand" title="MDEV Digital Home Page">
         <img :src="loadImage(mdevBrand)" alt="MDEV Digital Logo" />
       </a>
-      <div class="mdev-footer-copyright">
+      <div class="mdev-footer-copyright flex flex-nowrap">
+        <span>
           &copy; MDEV Digital Inc. {{year}}
-          <span class="--divider"> | </span>
-          <a href="#" title="View our Sitemap">Sitemap</a>
+        </span>
+        <span class="--divider"> | </span>
+        <social-links darkTheme="" :linkContent="socialLinks"></social-links>
       </div>
   </footer>
 </template>
 
 <script>
-  export default{
-    name: 'mainFooter',
-    data: function(){
-      return{
-        mdevBrand: 'svg/MDEV_RGB_Icon_Primary_Reverse.svg',
-        year: null
-      };
-    },
+import SocialLinks      from './social-links.vue';
+// Import Flat File Data
+import MdevData         from '../../mdev-data.js';
 
-    created: function() {
-      this.year = (new Date()).getFullYear();
-    }
-  };
+export default{
+  name: 'mainFooter',
+  data: function(){
+    return{
+      socialLinks: MdevData.socialLinks,
+      mdevBrand: 'svg/MDEV_RGB_Icon_Primary_Reverse.svg',
+      year: null
+    };
+  },
+
+  // Components
+  components: {
+    'social-links' : SocialLinks
+  },
+
+  created: function() {
+    this.year = (new Date()).getFullYear();
+  }
+};
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 /*-------------------------------------*/
 /* MAIN FOOTER Component Styles
 /--------------------------------------*/
 
 .mdev-main-footer {
   padding: 70px 0;
+  // Negative margin needed to close 1px gap
+  margin-top: -1px;
   background: $color-brand-bkg;
   width: 100%;
   position: relative;
 
-  @media #{$desktop-up} {
-    padding: 30px 0;
+  @media #{$portrait} {
+    padding: 50px 0;
   }
 
   @media #{$phone-only} {
@@ -53,6 +67,8 @@
 .mdev-footer-slogan {
   font-weight: 700;
   letter-spacing: 2px;
+  width: 50%;
+  text-align: right;
   font-size: .85vw;
 
   @media #{$portrait} {
@@ -63,6 +79,10 @@
     width: 100%;
     text-align: center;
     font-size: 3vw;
+  }
+
+  @media screen and (max-width: 320px) {
+    font-size: 9px;
   }
 }
 
@@ -70,6 +90,7 @@
   font-weight: 400;
   letter-spacing: 3px;
   font-size: .85vw;
+  width: 50%;
 
   @media #{$portrait} {
     font-size: 1.2vw;
@@ -77,9 +98,14 @@
 
   @media #{$phone-only} {
     width: 100%;
-    text-align: center;
     font-size: 3vw;
     padding-top: 8px;
+    display: flex;
+    justify-content: center;
+  }
+
+  span {
+    white-space: nowrap;
   }
 }
 
@@ -107,7 +133,20 @@
 }
 
 .--divider {
-  margin: 0 10px;
+  margin: 0 15px;
+}
+
+.mdev-social-links {
+  width: 5vw;
+  justify-content: space-between;
+
+  @media #{$portrait} {
+    width: 10vw;
+  }
+
+  @media #{$phone-only} {
+    width: 20vw;
+  }
 }
 
 /*--------------------------------------*/

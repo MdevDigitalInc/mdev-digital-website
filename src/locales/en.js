@@ -2,14 +2,14 @@ export default {
 
   homepage: {
     intro: {
-      heading: "Process-driven UX + Innovative Application Development",
+      heading: "Process-driven UX + Application Development",
       content: "Our process is honed through experience and framed by the belief that quality matters. We craft innovative digital solutions with the future in mind.",
-      action: "Our Process"
+      action: "Who We Are"
     },
 
     services: {
       heading: "We are a hybrid digital agency",
-      content: "We're a small but capable team with services extending far beyond those of a traditional full service agency. We don't stop at building websites or applications - we create powerful user experiences, combining integrated marketing and engaging digital solutions to maximize your return on investment.",
+      content: "Our services extend far beyond those of a traditional agency. We don’t stop at websites and applications – we create powerful user experiences, combining digital solutions and integrated marketing to maximize your return on investment.",
       action: "See All Services",
 
       servicelist: {
@@ -23,9 +23,9 @@ export default {
     },
 
     casestudies: {
-      heading: "Case Studies",
+      heading: "Client Stories",
       subheading: "Featured",
-      action: "See all case studies",
+      action: "Coming Soon",
 
       cases: {
         tfac: "The Factory",
@@ -44,15 +44,15 @@ export default {
   },
 
   general: {
-    slogan: "Your internal team without the overhead"
+    slogan: "process-driven ux + application development"
   },
 
   contact: {
     smallTitle: "Getting in touch is easy",
     largeTitle: "Don't wait, say hello!",
-    description: "Get in touch to learn more about our services. We’ll start with a Discovery session to explore how we can help you reach your goals.",
+    description: "Get in touch to learn more about our services. We’ll start with a discovery session to explore how we can help you reach your goals.",
     headerBtn: "Send a message",
-    thankyouMsg: "Thanks for reaching out, we'll be in touch as soon as possible. While you wait, our case studies are a great place to learn about the value we've brought to our clients. If you've already seen them, we highly recommend creeping our social channels!",
+    thankyouMsg: "Thanks for reaching out, we'll be in touch as soon as possible. While you wait, we highly recommend creeping our social channels!",
     thankyouAction: "See All Case Studies",
 
     fields: {
@@ -70,7 +70,7 @@ export default {
       },
       phone: {
         label: "Phone number",
-        placeholder: "000 000 000"
+        placeholder: "Your preferred phone number"
       },
       email: {
         label: "Email Address",
@@ -99,6 +99,7 @@ export default {
   },
 
   navigation: {
+    contact: "Contact Us",
     getInTouch: "Contact Us:",
     addressRegion: "London, Ontario",
     addressStreet: "100 Kellogg Lane, N5W 0B4",
@@ -108,13 +109,13 @@ export default {
   servicepage: {
     intro: {
       heading: "We create with the future in mind; longevity and scalability are of key importance as we develop brands, websites and products.",
-      subHeading: "Our process of guided discovery and collaboration allows us to gain a deep understanding of your business and technology landscape to ensure we are delivering an end result that is the right fit for you.",
+      subHeading: "Our process of guided discovery and collaboration allows us to gain a deep understanding of your business and technology landscape to ensure we are delivering an end result that is the right fit for you and your clients.",
       action: "Our Process"
     }
   },
 
   brandingpage: {
-    intro: "Every business has a unique story - what’s yours? Whether you’re launching a startup, releasing a new product or service, or overhauling your current brand, we can help you discover your voice and your style."
+    intro: "Every brand has a unique story - what’s yours? Whether you’re launching a startup, releasing a new product or service, or overhauling your current brand, we can help you develop an authentic identity and tell your story through engaging creative materials."
   },
 
   prefooter: {
@@ -122,7 +123,7 @@ export default {
   },
 
   webdevpage: {
-    intro: "We believe in humanizing the web. We accomplish this mission through carefully planned site architecture and a focus on mobile-friendliness, accessibility and approachable web design. The end result is of this consistently user-friendly sites that delight our clients and visitors."
+    intro: "We believe in making the web a nicer place to be. We accomplish this mission through carefully planned site architecture and approachable web design. We keep the end user in mind, providing clear user journeys and personalized experiences."
   },
 
   appdevpage: {
@@ -130,7 +131,7 @@ export default {
   },
 
   digiadspage: {
-    intro: "We combine the art of marketing backed by the science of data. We're experts at amalgamating compelling marketing strategies and tactics with understandable and measurable results."
+    intro: "Dive into the digital space with confidence. We back the art of marketing with the science of data. We're experts at integrating compelling marketing strategies with strong branding to provide understandable and measureable results."
   },
 
   consultingpage: {
@@ -139,6 +140,17 @@ export default {
   },
 
   aboutpage: {
+    intro: {
+      heading: "Hi there! We’re mdev digital,",
+      subheading: "We’re a hybrid digital agency offering services tailored to our client’s unique needs. We offer branding, custom web design, user experience design, application development and digital marketing (and we never forget the SEO)."
+    }
+  },
+
+  errorpage: {
+    heading: 'Oops',
+    intro: 'So sorry, you’re in the wrong place. A 404 error has occured and we can’t seem to find the page you are looking for. Check to see that you have typed in the correct address, or use the options below to contiune your journey on our website.',
+    path1: 'About MDEV',
+    path2: 'Contact Us'
   },
 
   teampage: {
@@ -146,5 +158,11 @@ export default {
     origin: 'Point of Origin:',
     quote: 'Favorite Quote:',
     tricks: 'Bag of Tricks:'
+  },
+
+  cookies: {
+    heading: 'Cookies & Privacy',
+    text: 'We use cookies so that we can provide our users with the best experience. You can learn more about cookies and how to disable and delete them in our Privacy Policy. By clicking ‘OK, got it’, ‘X’ on this banner and/or by using our website, you consent to the use of cookies.',
+    action: 'Ok, Got it'
   }
 };

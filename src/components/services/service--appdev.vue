@@ -25,20 +25,24 @@
         </div>
 
         <!-- Sexy Lines -->
-        <div class="mdev-sexy-line --sexy-green" data-line-one></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-two></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-three></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-one></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-two></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-three></div>
       </div>
     </hero-main>
-    <!-- Chapter Heading -->
+    <!-- Chapter Heading
+    [ TEMPORARILY COMMENTED OUT ]
     <chapter-heading
        v-view="(e) => changeNavBrand(e, '--teal-black')"
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
-    <!-- Chapter Content -->
-    <page-intro :pageIntro="serviceIntro"></page-intro>
+    <page-intro
+      :pageIntro="serviceIntro"></page-intro>
+    -->
     <!-- No Media -->
     <service-nomedia
+      :id="service.anchor"
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
       v-for="(service, index) in nomedia"
       :key="index"
       :preTitle="service.preTitle"
@@ -47,6 +51,7 @@
       ></service-nomedia>
     <!-- Service Tile W/ Media -->
     <service-tile v-for="(service, index) in services"
+      :id="service.anchor"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :key="index"
       :flip="((index + 1) % 2) == 1"
@@ -62,10 +67,10 @@
       </template>
       <!-- Content -->
       <template slot="contentSlot">
-        <span class="--pre-title" v-if="service.preTitle">
-          {{ service.preTitle }}
-        </span>
-        <h2 v-html="service.title" class="mdev-service-title u-uppercase a-fade-in" v-in-viewport></h2>
+        <h2
+          :data-dec="service.anchor"
+          v-html="service.title"
+          class="mdev-service-title u-uppercase a-fade-in" v-in-viewport></h2>
         <h3 class="mdev-service-subtitle">
           {{ service.subTitle }}
         </h3>
@@ -77,7 +82,7 @@
           <li
             v-html="topic"
             class="u-uppercase u-bold"
-            v-for="topic in service.topics">
+            v-for="(topic, index) in service.topics">
           </li>
         </ul>
       </template>
@@ -86,6 +91,7 @@
     <!-- Chapter Link -->
     <chapter-link
       :chapterIndex="chapter.next.index"
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
       :chapterLink="chapter.next.link"
       :a11y="chapter.next.a11y"
       :chapterTitle="chapter.next.title"></chapter-link>
@@ -114,29 +120,18 @@ import ChapterLink        from '../shared/chapter-link.vue';
 import PageIntro          from '../shared/page-intro.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default{
   name: 'ServicesAppDev',
 
-  head: {
-    title: {
-      inner: 'App\'s & Software',
-      complement: 'MDEV Digital - London, Ontario'
-    },
-    meta: [
-      { property: 'og:title', content: 'App\'s & UX Software | MDEV Digital - London, Ontario ' },
-      { name: 'twitter:title', content: 'App\'s & UX Software | MDEV Digital - London, Ontario ' }
-
-    ]
-  },
-
   data: function(){
     return{
       heroStyles: {
-        backgroundColor: '#0f1617'
+        backgroundColor: '#0a1315'
       },
       // Disables Page Title bar
-      pageTitle: 'App\'s & Software',
+      pageTitle: 'Aapps & Software Services',
       headerDsc: 'Innovate With Passion.',
       innovateAnim: 'services/appdev/MDEV_HEADER_innovate_animated.svg',
       withAnim: 'services/appdev/MDEV_HEADER_with.svg',
@@ -148,24 +143,56 @@ export default{
       prefooter: MdevData.prefooter,
       serviceFlag: MdevData.appdev.serviceFlag,
       nomedia: MdevData.appdev.servicesNomedia,
-      serviceIntro: MdevData.appdev.serviceIntro
+      serviceIntro: MdevData.appdev.serviceIntro,
+      // SEO
+      seo: SEOData.siteSeo
+    };
+  },
+
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.appdev.title,
+      meta: [
+        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.appdev.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.appdev.ogimage) },
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.appdev.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.appdev.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.appdev.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.appdev.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.appdev.desc }
+      ]
     };
   },
 
   mounted: function() {
     this.$nextTick(() => {
-        $('[data-main-nav]').addClass('--teal-white');
+      // Collect Elements
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var introAnim = document.querySelectorAll('#anim-with')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      // Add Class to Nav
+      this.addClass(mainNav, '--teal-white');
+      // Fire off Animations
       setTimeout(() => {
-        new Vivus('anim-innovate', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-innovate', {duration: 150});
+        });
       }, 100);
       setTimeout(() => {
-        $('#anim-with').addClass('--anim-visible');
+        requestAnimationFrame(() => {
+          this.addClass(introAnim, '--anim-visible');
+        });
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-passion', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-passion', {duration: 150});
+        });
       }, 800);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
+        requestAnimationFrame(() => {
+          this.addClass(introHeading, '--anim-visible');
+        });
       }, 1200);
     });
   },
@@ -210,6 +237,10 @@ $heading-top-padding-mob: 15px;
   @media #{$phone-only} {
     padding-top: 130%;
   }
+
+  @media #{$tablet-lnd-only} {
+    padding-top: 70%;
+  }
 }
 
 .--vivus-branding {
@@ -217,6 +248,10 @@ $heading-top-padding-mob: 15px;
   .--app-innovate {
     width: 90%;
     margin-bottom: $heading-top-padding;
+
+    @media #{$laptop-only} {
+      margin-bottom: 25px;
+    }
 
     @media #{$portrait} {
       width: 100%;
@@ -237,7 +272,7 @@ $heading-top-padding-mob: 15px;
 
   .--header-cta {
     opacity: 0;
-    width: 47%;
+    width: 60%;
     transition: opacity 1.2s;
     position: relative;
     margin-top: 20px;
@@ -247,6 +282,10 @@ $heading-top-padding-mob: 15px;
       width: 100%;
       text-align: left;
       margin-top: $heading-top-padding-mob + 10;
+    }
+
+    @media #{$tablet-lnd-only} {
+      width: 60%;
     }
   }
 
@@ -280,6 +319,10 @@ $heading-top-padding-mob: 15px;
 
     @media #{$tablet-prt-only} {
       width: 75%;
+    }
+
+    @media #{$tablet-lnd-only} {
+      width: 100%;
     }
 
     @media #{$xl-up} {

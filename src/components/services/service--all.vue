@@ -18,34 +18,41 @@
               {{ $t('servicepage.intro.subHeading') }}
             </p>
 
-             <router-link to="/contact#contactus"
-                data-header-btn
-                class="mdev-btn mdev-primary-btn --space-top-xs">
-               {{ $t('contact.headerBtn') }}
-             </router-link>
+            <!-- [ Disabled for launch ]
+            <router-link to="/comingsoon"
+              data-header-btn
+              title="Coming Soon"
+              class="mdev-btn mdev-primary-btn --space-top-xs">
+              {{ $t('servicepage.intro.action') }}
+            </router-link>
+            -->
           </div>
         </div>
 
         <!-- Sexy Lines -->
-        <div class="mdev-sexy-line --sexy-green" data-line-one></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-two></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-three></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-one></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-two></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-three></div>
       </div>
     </hero-main>
     <!-- Service Tile Loop  -->
     <!-- Flip checks for Odd/Even  -->
     <service-tile v-for="(service, index) in services"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
+      :id="(index > 0) ? service.anchor : 'mainContent'"
       :flip="((index + 1) % 2) == 0"
       :key="index"
       :media="service.media"
       v-in-viewport
-      class="a-fade-in mdev-service"
-      :class="{ '--square-media' : service.media.squareImg }"
+      class="a-fade-in mdev-service --featured-space"
+      :class="{ '--square-media' : service.squareImg }"
       :serviceConfig="service.config">
       <!-- Media Slot (Order can be flipped) -->
       <template v-if="service.media" slot="mediaSlot">
-        <img :alt="service.media.imageDesc" :src="loadImage(service.media.image)">
+        <!-- Image Carousel -->
+        <media-carousel
+         :flip="((index + 1) % 2) == 1"
+         :media="service.media"></media-carousel>
       </template>
       <!-- Content Slot (Order can be flipped) -->
       <template slot="contentSlot">
@@ -63,7 +70,7 @@
           <li
             v-html="topic"
             class="u-uppercase u-bold"
-            v-for="topic in service.topics">
+            v-for="(topic, index) in service.topics">
           </li>
         </ul>
         <!-- Primary Button -->
@@ -99,59 +106,78 @@
 //Local Component registration
 import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
-import FeaturedContent        from '../modules/featured-content.vue';
+import MediaCarousel      from '../modules/media-carousel.vue';
+import FeaturedContent    from '../modules/featured-content.vue';
 import BtnPrimary         from '../shared/btn-primary.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default{
   name: 'ServicesAll',
-  // SEE - https://github.com/ktquez/vue-head
-  head: {
-    title: {
-      inner: 'Our Services',
-      complement: 'MDEV Digital - London, Ontario'
-    },
-    meta: [
-      { property: 'og:title', content: 'Our Services | MDEV Digital - London, Ontario ' },
-      { name: 'twitter:title', content: 'Our Services | MDEV Digital - London, Ontario ' }
-
-    ]
-  },
 
   data: function() {
     return {
       heroStyles: {
-        backgroundColor: '#0f1617'
+        backgroundColor: '#0a1315'
       },
       // Disables Page Title bar
-      pageTitle: 'Our Skillset',
+      pageTitle: 'Services',
       headerDsc: 'A simple animation enticing users to explore all of MDEV digital various services.',
       connectAnim: 'contact/MDEV_HEADER_connect_animated.svg',
       withAnim: 'contact/MDEV_HEADER_with.svg',
       usAnim: 'contact/MDEV_HEADER_us_animated.svg',
       // Services loaded from flat file
-      services: MdevData.services
+      services: MdevData.services,
+      // SEO
+      seo: SEOData.siteSeo
+    };
+  },
 
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.services.title,
+      meta: [
+        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.services.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.services.ogimage) },
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.services.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.services.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.services.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.services.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.services.desc }
+      ]
     };
   },
 
   mounted: function() {
-    setTimeout(() => {
-      $('[data-intro-heading]').addClass('fully-in-viewport');
-      // Adjust Arrow
-    }, 300);
-    setTimeout(() => {
-      $('[data-intro-subhead]').addClass('fully-in-viewport');
-    }, 900);
-    setTimeout(() => {
-      $('[data-header-btn]').addClass('fully-in-viewport');
-    }, 1500);
+    this.$nextTick(() => {
+      // Collect Elements
+      var introHeading = document.querySelectorAll('[data-intro-heading]')[0];
+      var introSubhead = document.querySelectorAll('[data-intro-subhead]')[0];
+      var introBtn = document.querySelectorAll('[data-header-btn]')[0];
+      // Fire off animations
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          this.addClass(introHeading, 'in-viewport');
+        });
+        // Adjust Arrow
+      }, 300);
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          this.addClass(introSubhead, 'in-viewport');
+        });
+      }, 900);
+      //setTimeout(() => {
+      //  this.addClass(introBtn, 'in-viewport');
+      //}, 1500);
+    });
   },
 
   components: {
     'hero-main'     : HeroMain,
     'main-footer'   : MainFooter,
+    'media-carousel' : MediaCarousel,
     'btn-primary'   : BtnPrimary,
     'service-tile'   : FeaturedContent
   }
@@ -194,25 +220,45 @@ export default{
     padding-top: 115%;
   }
 
+  @media #{$laptop-only} {
+    padding-top: 50%;
+  }
+
   @media #{$phone-only} {
-    padding-top: 150%;
-    padding-bottom: 10%;
+    padding-top: 125%;
+  }
+
+  @media #{$tablet-lnd-only} {
+    padding-top: 45%;
+  }
+
+  @media #{$tablet-prt-only} {
+    padding-top: 95%;
   }
 }
 
 .mdev-service {
   .mdev-service-index {
     font-size: 40px;
+    font-weight: 100;
     line-height: 1.5;
   }
 
   .mdev-service-topics {
     line-height: 1.82;
     font-size: 20px;
+
+    @media #{$phone-only} {
+      font-size: 10px;
+    }
   }
 
   .mdev-service-desc {
     width: 80%;
+
+    @media #{$laptop-only} {
+      width: 95%;
+    }
 
     @media #{$portrait} {
       width: 100%;

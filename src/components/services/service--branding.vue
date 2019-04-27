@@ -23,17 +23,20 @@
         </div>
 
         <!-- Sexy Lines -->
-        <div class="mdev-sexy-line --sexy-green" data-line-one></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-two></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-three></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-one></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-two></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-three></div>
       </div>
     </hero-main>
-    <!-- Chapter Heading -->
+    <!-- Chapter Heading
+    [ TEMPORARILY COMMENTED OUT ]
     <chapter-heading
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
+    -->
     <!-- Chapter Content -->
     <service-tile v-for="(service, index) in services"
+      :id="service.anchor"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 0"
       :key="index"
@@ -49,12 +52,9 @@
       </template>
       <!-- Content -->
       <template slot="contentSlot">
-        <span class="--pre-title" v-if="service.preTitle">
-          {{ service.preTitle }}
-        </span>
-        <h2 class="mdev-service-title u-uppercase a-fade-in" v-in-viewport>
-          {{ service.title }}
-        </h2>
+        <h2 class="mdev-service-title u-uppercase a-fade-in"
+          :data-dec="service.anchor"
+          v-html="service.title" v-in-viewport></h2>
         <h3 class="mdev-service-subtitle">
           {{ service.subTitle }}
         </h3>
@@ -66,7 +66,7 @@
           <li
             v-html="topic"
             class="u-uppercase u-bold"
-            v-for="topic in service.topics">
+            v-for="(topic, index) in service.topics">
           </li>
         </ul>
       </template>
@@ -74,6 +74,7 @@
 
     <!-- Chapter Link -->
     <chapter-link
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
       :chapterIndex="chapter.next.index"
       :chapterLink="chapter.next.link"
       :a11y="chapter.next.a11y"
@@ -101,29 +102,18 @@ import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default{
   name: 'ServicesBranding',
-  // TODO - Edit meta Title
-  // SEE - https://github.com/ktquez/vue-head
-  head: {
-    title: {
-      inner: 'Branding Services',
-      complement: 'MDEV Digital - London, Ontario'
-    },
-    meta: [
-      { property: 'og:title', content: 'Branding Services | MDEV Digital - London, Ontario ' },
-      { name: 'twitter:title', content: 'Branding Services | MDEV Digital - London, Ontario ' }
 
-    ]
-  },
   data: function(){
     return{
       heroStyles: {
-        backgroundColor: '#0f1617'
+        backgroundColor: '#0a1315'
       },
       // Disables Page Title bar
-      pageTitle: 'Make your  mark',
+      pageTitle: 'Branding Services',
       headerDsc: 'Tell Your Story',
       tellAnim: 'services/branding/MDEV_HEADER_tell_animated.svg',
       yourAnim: 'services/branding/MDEV_HEADER_your_animated.svg',
@@ -133,29 +123,51 @@ export default{
       // Services Data
       services: MdevData.branding.services,
       prefooter: MdevData.prefooter,
-      serviceFlag: MdevData.branding.serviceFlag
+      serviceFlag: MdevData.branding.serviceFlag,
+      // SEO
+      seo: SEOData.siteSeo
+    };
+  },
+
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.branding.title,
+      meta: [
+        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.branding.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.branding.ogimage) },
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.branding.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.branding.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.branding.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.branding.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.branding.desc }
+      ]
     };
   },
 
   mounted: function() {
     this.$nextTick(() => {
-        $('[data-main-nav]').addClass('--teal-white');
+      // Collect Elements
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      var introBtn = document.querySelectorAll('[data-header-btn]')[0];
+      var introAnim = document.querySelectorAll('#anim-your')[0];
+      // Add class to nav
+      this.addClass(mainNav, '--teal-white');
+      // Fire off animation
       setTimeout(() => {
         new Vivus('anim-tell', {duration: 150});
       }, 100);
       setTimeout(() => {
         new Vivus('anim-your', {duration: 180});
-        $('#anim-your').addClass('--anim-visible');
+        this.addClass(introAnim, '--anim-visible');
       }, 450);
       setTimeout(() => {
         new Vivus('anim-story', {duration: 180});
       }, 1700);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
+        this.addClass(introHeading, '--anim-visible');
       }, 2200);
-      setTimeout(() => {
-        $('[data-header-btn]').addClass('fully-in-viewport');
-      }, 3400);
     });
   },
 
@@ -199,6 +211,10 @@ $heading-top-padding-mob: 10px;
   @media #{$phone-only} {
     padding-top: 130%;
   }
+
+  @media #{$tablet-lnd-only} {
+    padding-top: 60%;
+  }
 }
 
 .--vivus-branding {
@@ -207,6 +223,9 @@ $heading-top-padding-mob: 10px;
     width: 40%;
     margin-bottom: $heading-top-padding;
 
+    @media #{$laptop-only} {
+      margin-bottom: 20px;
+    }
     @media #{$portrait} {
       width: 44%;
       margin-bottom: $heading-top-padding-mob;
@@ -218,6 +237,9 @@ $heading-top-padding-mob: 10px;
     margin-bottom: $heading-top-padding;
     transform: translatey(5px);
 
+    @media #{$laptop-only} {
+      margin-bottom: 20px;
+    }
     @media #{$portrait} {
       width: 52%;
       transform: translatey(0);
@@ -238,7 +260,7 @@ $heading-top-padding-mob: 10px;
 
   .--header-cta {
     opacity: 0;
-    width: 40%;
+    width: 38%;
     transition: opacity 1.2s;
 
     @media #{$portrait} {
@@ -273,6 +295,10 @@ $heading-top-padding-mob: 10px;
 
     @media #{$tablet-prt-only} {
       width: 75%;
+    }
+
+    @media #{$tablet-lnd-only} {
+      width: 100%;
     }
   }
 

@@ -9,8 +9,9 @@ const path = require('path')
 const webpack = require('webpack')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const HtmlWebpackPlugin = require ('html-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const setPath = function(folderName) {
   return path.join(__dirname, folderName);
@@ -23,9 +24,10 @@ module.exports = {
     build: './src/main.js',
     vendor: [
       'vue',
-      'vue-i18n',
-      'vue-resource',
-      'vue-router'
+      //'vue-i18n',
+      //'vue-check-view',
+      //'vue-in-viewport-directive',
+      //'vue-meta'
     ]
   },
   // Output Files
@@ -84,7 +86,13 @@ module.exports = {
           exclude: /(node_modules)/,
           use: [{
             loader: "babel-loader",
-            options: { presets: ['env'] }
+            options: {
+              include: [
+                path.resolve(__dirname, "src"),
+                path.resolve(__dirname, "node_modules/vue-check-view"),
+                path.resolve(__dirname, "node_modules/vue-in-viewport-directive"),
+              ]
+            }
           }]
       },
       // CSS & SCSS Processing
@@ -155,7 +163,10 @@ module.exports = {
     // CSS Output
     new MiniCssExtractPlugin({
       filename: "assets/styles/styles-[hash].css"
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: 'src/assets/js', to: 'js', force: true }
+    ])
   ],
   resolve: {
     alias: {

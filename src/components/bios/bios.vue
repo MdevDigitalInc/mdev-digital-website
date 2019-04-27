@@ -1,5 +1,5 @@
 <template>
-  <div class="mdev-bios-mask" data-bio-mask>
+  <div class="mdev-bios-mask"  v-view="(e) => changeNavBrand(e, '--teal-black')" data-bio-mask>
     <!-- Bios Content -->
     <div v-for="(mdevBio, index) in mdevBios"
       v-if=" index == desiredIndex"
@@ -21,7 +21,7 @@
         <p class="mdev-bio-intro">
           {{ mdevBio.employeeIntro }}
         </p>
-        <p v-for="snippet in mdevBio.employeeStory"
+        <p v-for="(snippet, index) in mdevBio.employeeStory"
           class="mdev-bio-paragraph">
           {{ snippet }}
         </p>
@@ -52,7 +52,8 @@
         <social-links
           darkTheme="true"
           v-in-viewport
-          class="a-flyin-lnd a-flyin-lnd-left --portrait-left"
+          v-if="mdevBio.socialLinks"
+          class="a-flyin-lnd a-flyin-lnd-left --portrait-left --teal-hover"
           :linkContent="mdevBio.socialLinks">
         </social-links>
         <!-- Team Member Picture -->
@@ -79,17 +80,6 @@ import MdevData       from '../../mdev-data.js';
 
 export default {
   name: "BiosView",
-  // SEE - https://github.com/ktquez/vue-head
-  head: {
-    title: {
-      inner: 'Our Team',
-      complement: 'MDEV Digital - London, Ontario'
-    },
-    meta: [
-      { property: 'og:title', content: 'Our Team | MDEV Digital - London, Ontario' },
-      { name: 'twitter:title', content: 'Our Team | MDEV Digital - London, Ontario' }
-    ]
-  },
 
   props: [ 'teammember' ],
 
@@ -102,6 +92,20 @@ export default {
       nextIndex: 1,
       // Data imported from mdev-data.js
       mdevBios: MdevData.mdevEmployees
+    };
+  },
+
+  // SEO Meta Information
+  metaInfo() {
+    return {
+      title: this.mdevBios[this.desiredIndex].seo.title,
+      meta: [
+        { vmid: 'ogtitle', property: 'og:title', content: this.mdevBios[this.desiredIndex].seo.title + ' | MDEV Digital | London, Toronto, Montreal' },
+        { vmid: 'twtitle', name: 'twitter:title', content: this.mdevBios[this.desiredIndex].seo.title + ' | MDEV Digital | London, Toronto, Montreal' },
+        { vmid: 'desc', name: 'description', content: this.mdevBios[this.desiredIndex].seo.title.description},
+        { vmid: 'twdesc', name: 'twitter:description', content: this.mdevBios[this.desiredIndex].seo.title.description},
+        { vmid: 'ogdesc', property: 'og:description', content: this.mdevBios[this.desiredIndex].seo.title.description}
+      ]
     };
   },
 
@@ -160,6 +164,16 @@ export default {
     }
   },
 
+  // Make BKG White
+  mounted: function() {
+    this.bodyClass('--body-white');
+  },
+
+  // Return BKG to stock
+  destroyed: function() {
+    this.bodyReset('--body-white');
+  },
+
   components: {
     'bios-navigation' : BiosNavigation,
     'social-links'    : SocialLinks
@@ -199,6 +213,10 @@ export default {
   @media #{$portrait} {
     height: auto;
   }
+
+  p {
+    line-height: 160%;
+  }
 }
 
 .mdev-bios-info {
@@ -227,22 +245,42 @@ export default {
 
   @media #{$phone-only} {
     top: 80px;
+    width: 85%;
   }
 
   .mdev-bios-name {
     font-size: 3.9vw;
-    margin-bottom: 10px;
+    margin-bottom: -10px;
 
     @media #{$portrait} {
       font-size: 6vw;
+      margin-bottom: 8px;
+    }
+
+    @media #{$tablet-prt-only} {
+      letter-sapacing: 2px;
+    }
+
+    @media #{$phone-only} {
+      margin-bottom: 0;
+      font-size: 29px;
     }
   }
 
   .--meet {
     font-size: 1.5vw;
+    margin-bottom: -10px;
 
     @media #{$portrait} {
       font-size: 5vw;
+      margin-bottom: 8px;
+    }
+
+    @media #{$phone-only} {
+      margin-bottom: 0;
+      font-size: 25px;
+      line-height: 40px;
+      letter-spacing: .5px;
     }
   }
 
@@ -251,6 +289,16 @@ export default {
 
     @media #{$portrait} {
       font-size: 3vw;
+    }
+
+    @media #{$tablet-prt-only} {
+      letter-sapacing: 2px;
+    }
+
+    @media #{$phone-only} {
+      margin-bottom: 0;
+      font-size: 18px;
+      line-height: 24px;
     }
   }
 
@@ -261,6 +309,16 @@ export default {
     @media #{$portrait} {
       font-size: inherit;
     }
+
+    @media #{$tablet-prt-only} {
+      font-size: 22px;
+    }
+
+    @media #{$phone-only} {
+      padding: 5px 0;
+      font-size: 12px;
+      line-height: 20px;
+    }
   }
 
   .mdev-bio-intro {
@@ -269,6 +327,10 @@ export default {
 
     @media #{$portrait} {
       font-size: 3vw;
+    }
+
+    @media #{$tablet-prt-only} {
+      font-size: 24px;
     }
 
     @media #{$phone-only} {
@@ -286,8 +348,12 @@ export default {
       margin-bottom: 40px;
     }
 
+    @media #{$tablet-prt-only} {
+      font-size: 20px;
+    }
+
     @media #{$phone-only} {
-      display: none;
+      font-size: 15px;
     }
   }
 }
@@ -346,7 +412,7 @@ export default {
     }
 
     img {
-      width: 70%;
+      width: 95%;
       position: relative;
       bottom: -5px;
     }
@@ -362,7 +428,7 @@ export default {
     z-index: 6;
 
     @media #{$phone-only} {
-      font-size: 5vw;
+      font-size: 6.9vw;
       bottom: 30%;
     }
 

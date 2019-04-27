@@ -25,12 +25,12 @@ export default {
   data: function() {
     return {
       mdevLogoMask: 'svg/about/MDEV-Cutout.svg',
-      mdevSlogan: 'svg/about/MDEV-Slogan.svg',
-      mdevSloganMob: 'svg/about/MDEV-Slogan-mob.svg',
+      mdevSlogan: 'svg/about/MDEV_Cutout_Text_Desktop.svg',
+      mdevSloganMob: 'svg/about/MDEV_Cutout_Text_Mobile.svg',
       BtnData: {
         accessibility: 'Learn more about MDEV Digital',
         btnRoute: '/about',
-        btnClass: 'mdev-primary-btn --space-top-sm'
+        btnClass: 'mdev-primary-btn --space-top-sm --bot-mod'
       }
     };
   },
@@ -75,6 +75,12 @@ export default {
     width: 100%;
     overflow: hidden;
     transform: scale(1.01);
+  }
+}
+
+.--bot-mod {
+  @media #{$portrait} {
+    margin-bottom: 20px;
   }
 }
 

@@ -7,7 +7,7 @@
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-digiads">
           <div class="mdev-center">
-            <div class="flex flex-vert-start  flex-hor-between --portrait-wrap">
+            <div class="flex flex-vert-center  flex-hor-start --portrait-wrap">
               <object class="--con-keep" id="anim-keep" type="image/svg+xml" :data="loadImage(keepAnim)"></object>
               <div data-header-intro class="--header-cta u-desk-only ">
                  <p>
@@ -21,7 +21,7 @@
               <object class="--con-wheels" id="anim-wheels" type="image/svg+xml" :data="loadImage(wheelsAnim)"></object>
               <!-- CTA Text & Button -->
             </div>
-            <div class="flex flex-hor-end">
+            <div class="flex --turning">
               <object class="--con-turning" id="anim-turning" type="image/svg+xml" :data="loadImage(turningAnim)"></object>
             </div>
               <div data-header-intro class="--header-cta u-phone-only ">
@@ -33,19 +33,22 @@
         </div>
 
         <!-- Sexy Lines -->
-        <div class="mdev-sexy-line --sexy-green" data-line-one></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-two></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-three></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-one></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-two></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-three></div>
       </div>
     </hero-main>
-    <!-- Chapter Heading -->
+    <!-- Chapter Heading
+    [ TEMPORARILY COMMENTED OUT ]
     <chapter-heading
        v-view="(e) => changeNavBrand(e, '--teal-black')"
       :chapterIndex="chapter.index"
       :chapterTitle="chapter.title"></chapter-heading>
+    <--
     <!-- Chapter Content -->
     <!-- Service Solo -->
     <service-tile v-for="(service, index) in serviceSolo"
+      :id="service.anchor"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 1"
       :linkData="service.caseStudy"
@@ -60,16 +63,15 @@
           :src="loadImage(service.media.image)">
         <!-- Title Only appears here if no image -->
         <h2 v-if="!service.media"
+          :data-dec="service.anchor"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"
           v-in-viewport></h2>
       </template>
       <!-- Content -->
       <template slot="contentSlot">
-        <span class="--pre-title" v-if="service.preTitle">
-          {{ service.preTitle }}
-        </span>
         <h2 v-if="service.media"
+          :data-dec="service.anchor"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"
           v-in-viewport></h2>
@@ -84,7 +86,7 @@
           <li
             v-html="topic"
             class="u-uppercase u-bold"
-            v-for="topic in service.topics">
+            v-for="(topic, index) in service.topics">
           </li>
         </ul>
       </template>
@@ -92,15 +94,17 @@
 
     <!-- Service Nomedia -->
     <service-nomedia
+      :id="service.anchor"
+      :decoration="service.anchor"
       v-for="(service, index) in nomedia"
       :key="index"
-      :preTitle="service.preTitle"
       :title="service.title"
       :content="service.content"
       ></service-nomedia>
 
     <!-- Services All -->
     <service-tile v-for="(service, index) in services"
+      :id="service.anchor"
       v-view="(e) => changeNavBrand(e, '--teal-black')"
       :flip="((index + 1) % 2) == 1"
       :key="index"
@@ -114,10 +118,8 @@
           :alt="service.media.imageDesc"
           :src="loadImage(service.media.image)">
         <!-- Title Only appears here if no image -->
-        <span class="--pre-title" v-if="service.preTitle">
-          {{ service.preTitle }}
-        </span>
         <h2 v-if="!service.media"
+          :data-dec="service.anchor"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"
           v-in-viewport></h2>
@@ -125,6 +127,7 @@
       <!-- Content -->
       <template slot="contentSlot">
         <h2 v-if="service.media"
+          :data-dec="service.anchor"
           v-html="service.title"
           class="mdev-service-title u-uppercase a-fade-in"
           v-in-viewport></h2>
@@ -143,7 +146,7 @@
           <li
             v-html="topic"
             class="u-uppercase u-bold"
-            v-for="topic in service.topics">
+            v-for="(topic, index) in service.topics">
           </li>
         </ul>
       </template>
@@ -151,6 +154,7 @@
 
     <!-- Chapter Link -->
     <chapter-link
+      v-view="(e) => changeNavBrand(e, '--teal-black')"
       :chapterIndex="chapter.next.index"
       :chapterLink="chapter.next.link"
       :a11y="chapter.next.a11y"
@@ -179,29 +183,18 @@ import ChapterHeading     from '../shared/chapter-heading.vue';
 import ChapterLink        from '../shared/chapter-link.vue';
 // Import Data From Flat File
 import MdevData           from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default{
   name: 'ServicesConsulting',
 
-  head: {
-    title: {
-      inner: 'Consulting & Support',
-      complement: 'MDEV Digital - London, Ontario'
-    },
-    meta: [
-      { property: 'og:title', content: 'Consulting & Support | MDEV Digital - London, Ontario ' },
-      { name: 'twitter:title', content: 'Consulting & Support | MDEV Digital - London, Ontario ' }
-
-    ]
-  },
-
   data: function(){
     return{
       heroStyles: {
-        backgroundColor: '#0f1617'
+        backgroundColor: '#0a1315'
       },
       // Disables Page Title bar
-      pageTitle: 'We can help!',
+      pageTitle: 'Support Services',
       headerDsc: 'Innovate With Passion',
       keepAnim: 'services/support/MDEV_HEADER_keep_animated.svg',
       turningAnim: 'services/support/MDEV_HEADER_turning_animated.svg',
@@ -214,27 +207,62 @@ export default{
       nomedia: MdevData.consulting.servicesNomedia,
       services: MdevData.consulting.services,
       prefooter: MdevData.prefooter,
-      serviceFlag: MdevData.consulting.serviceFlag
+      serviceFlag: MdevData.consulting.serviceFlag,
+      // SEO
+      seo: SEOData.siteSeo
+    };
+  },
+
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.support.title,
+      meta: [
+        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.support.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.support.ogimage) },
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.support.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.support.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.support.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.support.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.support.desc }
+      ]
     };
   },
 
   mounted: function() {
     this.$nextTick(() => {
-        $('[data-main-nav]').addClass('--teal-white');
+      // Collect Elements
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var introAnim = document.querySelectorAll('#anim-the')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]');
+      this.addClass(mainNav, '--teal-white');
+
       setTimeout(() => {
-        new Vivus('anim-keep', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-keep', {duration: 150});
+        });
       }, 100);
       setTimeout(() => {
-        $('#anim-the').addClass('--anim-visible');
+        requestAnimationFrame(() => {
+          this.addClass(introAnim, '--anim-visible');
+        });
       }, 450);
       setTimeout(() => {
-        new Vivus('anim-wheels', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-wheels', {duration: 150});
+        });
       }, 800);
       setTimeout(() => {
-        new Vivus('anim-turning', {duration: 150});
+        requestAnimationFrame(() => {
+          new Vivus('anim-turning', {duration: 150});
+        });
       }, 1200);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
+        requestAnimationFrame(() => {
+          for (var i=0; i < introHeading.length; i++) {
+            this.addClass(introHeading[i], '--anim-visible');
+          };
+        });
       }, 1700);
     });
   },
@@ -279,6 +307,14 @@ $heading-top-padding-mob: 15px;
   @media #{$phone-only} {
     padding-top: 130%;
   }
+
+  @media #{$tablet-lnd-only} {
+    padding-top: 60%;
+  }
+
+  @media #{$tablet-prt-only} {
+    padding-top: 88%;
+  }
 }
 
 .--vivus-digiads {
@@ -309,15 +345,22 @@ $heading-top-padding-mob: 15px;
 
   .--header-cta {
     opacity: 0;
-    width: 48%;
+    width: 40%;
     transition: opacity 1.2s;
+    margin-left: 20px;
     position: relative;
     right: 0;
 
     @media #{$portrait} {
       width: 100%;
+      margin-left: 0;
       text-align: left;
       margin-top: $heading-top-padding-mob + 10;
+    }
+
+    @media #{$tablet-lnd-only} {
+      width: 60%;
+      font-size: 14px;
     }
   }
 
@@ -325,6 +368,13 @@ $heading-top-padding-mob: 15px;
     opacity: 1;
   }
 
+  .--turning {
+    justify-content: flex-end;
+
+    @media #{$portrait} {
+      justify-content: flex-start;
+    }
+  }
 
   p {
     color: $white;
@@ -351,6 +401,10 @@ $heading-top-padding-mob: 15px;
 
     @media #{$tablet-prt-only} {
       width: 75%;
+    }
+
+    @media #{$tablet-lnd-only} {
+      width: 100%;
     }
 
     @media #{$xl-up} {

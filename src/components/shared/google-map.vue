@@ -4,32 +4,81 @@
 </template>
 
 <script>
-export default{
+// Import Map Styles from file
+import MapStyles       from '../../g-maps-styling.js';
+
+export default {
   name: 'GoogleMaps',
 
-  props: [ 'mapData' ],
+  props: [ 'mapData', 'initMap' ],
+
+  data: function() {
+    return {
+      // Styles imported from file
+      GStyles: MapStyles
+    };
+  },
+
+  watch: {
+    initMap: function(newVal, oldVal) { // watch it
+      // Request frame...
+      requestAnimationFrame(() => {
+        this.setupMap();
+      });
+    }
+  },
+
+  mounted: function() {
+    // Listen to resize and recenter map if it is portrait
+    let resizeTimer;
+    let resizeTime = 150;
+    // Event Listener on scroll with debounce
+    window.addEventListener('resize', () => {
+      // Clear timout for debounce
+      clearTimeout(resizeTimer);
+      // Set timeout and fire off animation
+      resizeTimer = setTimeout(() => {
+        // Request frame...
+        requestAnimationFrame(() => {
+          // Recentering!
+          this.setupMap();
+        });
+      } ,resizeTime);
+    });
+  },
 
   methods: {
-    setupMap() {
-      // Pin Location
-      let pinLocation = this.mapData.pinLocation;
-      // Map Settings
-      let mapCenter = this.mapData.mapCenter;
-      let zoom = this.mapData.zoomLevel;
+    portraitScreen() {
       // Get Window Information
-      let mainWindow = $(window);
-      let windowHeight = mainWindow.height();
-      let windowWidth = mainWindow.width();
+      let mainWindow = window;
+      let windowHeight = mainWindow.screen.availHeight;
+      let windowWidth = mainWindow.screen.availWidth;
 
       // Check to see if it is Portrait or Landscape
       if ( windowHeight > windowWidth ) {
         // If portrait, center map and pin
+        return true;
+      }
+      else {
+        return false;
+      }
+    },
+
+    setupMap( recenter ) {
+      // Pin Location
+      let pinLocation = this.mapData.pinLocation;
+      // Map Settings - Default
+      let mapCenter = this.mapData.mapCenter;
+      let zoom = this.mapData.zoomLevel;
+
+      // Check if screen is portrait
+      if ( this.portraitScreen() ) {
+        // Center map on pin if its portrait
         mapCenter = pinLocation;
       }
 
       let map = new google.maps.Map(document.getElementById('map'), {
         zoom: zoom,
-        center: mapCenter,
         mapTypeId: this.mapData.mapStyle,
         zoomControl: this.mapData.zoom,
         mapTypeControl: this.mapData.controls,
@@ -45,186 +94,12 @@ export default{
         panControl: this.mapData.drag,
         streetViewControl: this.mapData.controls,
         keyboardShortcuts: this.mapData.kbShortcuts,
-
-        styles: [
-          {
-            "elementType": "geometry",
-            "stylers": [
-              {
-                "color": "#f5f5f5"
-              }
-            ]
-          },
-          {
-            "elementType": "labels.icon",
-            "stylers": [
-              {
-                "visibility": "off"
-              }
-            ]
-          },
-          {
-            "elementType": "labels.text.fill",
-            "stylers": [
-              {
-                "color": "#616161"
-              }
-            ]
-          },
-          {
-            "elementType": "labels.text.stroke",
-            "stylers": [
-              {
-                "color": "#f5f5f5"
-              }
-            ]
-          },
-          {
-            "featureType": "administrative.land_parcel",
-            "elementType": "labels.text.fill",
-            "stylers": [
-              {
-                "color": "#bdbdbd"
-              }
-            ]
-          },
-          {
-            "featureType": "landscape.man_made",
-            "elementType": "geometry.fill",
-            "stylers": [
-              {
-                "color": "#a0a0a0"
-              }
-            ]
-          },
-          {
-          "featureType": "poi",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "color": "#eeeeee"
-            }
-          ]
-          },
-          {
-          "featureType": "poi",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-              "color": "#757575"
-            }
-          ]
-          },
-          {
-          "featureType": "poi.park",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "color": "#e5e5e5"
-            }
-          ]
-          },
-          {
-          "featureType": "poi.park",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-            "color": "#9e9e9e"
-            }
-          ]
-          },
-          {
-          "featureType": "road",
-          "elementType": "geometry",
-          "stylers": [
-            {
-            "color": "#ffffff"
-            }
-          ]
-          },
-          {
-          "featureType": "road",
-          "elementType": "geometry.fill",
-          "stylers": [
-            {
-            "color": "#cdcdcd"
-            }
-          ]
-          },
-          {
-          "featureType": "road.arterial",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-            "color": "#757575"
-            }
-          ]
-          },
-          {
-          "featureType": "road.highway",
-          "elementType": "geometry",
-          "stylers": [
-            {
-            "color": "#dadada"
-            }
-          ]
-          },
-          {
-          "featureType": "road.highway",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-            "color": "#616161"
-            }
-          ]
-          },
-          {
-          "featureType": "road.local",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-            "color": "#9e9e9e"
-            }
-          ]
-          },
-          {
-          "featureType": "transit.line",
-          "elementType": "geometry",
-          "stylers": [
-            {
-            "color": "#e5e5e5"
-            }
-          ]
-          },
-          {
-          "featureType": "transit.station",
-          "elementType": "geometry",
-          "stylers": [
-            {
-            "color": "#eeeeee"
-            }
-          ]
-          },
-          {
-          "featureType": "water",
-          "elementType": "geometry",
-          "stylers": [
-            {
-            "color": "#c9c9c9"
-            }
-          ]
-          },
-          {
-          "featureType": "water",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-            "color": "#9e9e9e"
-            }
-          ]
-          }
-          ]
+        // Imported Externally
+        styles: this.GStyles.styles
       });
+
+      map.setCenter( mapCenter );
+
       var marker = new google.maps.Marker({
         position: pinLocation,
         map: map,
@@ -232,15 +107,10 @@ export default{
       });
 
       // Wait for map to load and add active class
-      map.addListener('tilesloaded', function () {
-        $('[data-map-active]').addClass('--map-loaded');
+      map.addListener('tilesloaded',  () => {
+        this.$emit('mapIsLoaded');
       });
     }
   },
-
-  mounted: function() {
-    // Setup Map
-    this.setupMap();
-  }
 };
 </script>

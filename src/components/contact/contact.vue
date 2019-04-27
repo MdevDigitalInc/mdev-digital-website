@@ -22,7 +22,7 @@
                 </p>
                  <a data-header-btn
                     href="javascript:void(0)"
-                    v-on:click.prevent.stop="scrollToHash('#contactus', 50)"
+                    v-on:click.prevent.stop="scrollToHash('#mainContent', 50)"
                     title="Contact Us"
                     class="mdev-btn mdev-primary-btn">
                    {{ $t('contact.headerBtn') }}
@@ -32,13 +32,13 @@
           </div>
         </div>
         <!-- Sexy Lines -->
-        <div class="mdev-sexy-line --sexy-green" data-line-one></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-two></div>
-        <div class="mdev-sexy-line --sexy-green" data-line-three></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-one></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-two></div>
+        <div class="mdev-sexy-line --sexy-white" data-line-three></div>
       </div>
     </hero-main>
     <!-- Map -->
-    <contact-map v-view="(e) => changeNavBrand(e, '--teal-white')"></contact-map>
+    <contact-map :animLoaded="animDone" v-view="(e) => changeNavBrand(e, '--teal-white')"></contact-map>
     <!-- form -->
     <contact-form  v-view="(e) => changeNavBrand(e, '--white-black')" id="mainContent"></contact-form>
     <!-- Footer -->
@@ -53,25 +53,17 @@ import HeroMain           from '../shared/hero-main.vue';
 import MainFooter         from '../shared/main-footer.vue';
 import ContactMap         from './contact--map.vue';
 import ContactForm        from './contact--form.vue';
+// Import Data From Flat File
+import MdevData       from '../../mdev-data.js';
+import SEOData        from '../../site-seo.js';
 
 export default {
   name: 'Contact',
-  // SEE - https://github.com/ktquez/vue-head
-  head: {
-    title: {
-      inner: 'Get In Touch',
-      complement: 'MDEV Digital - London, Ontario'
-    },
-    meta: [
-      { property: 'og:title', content: 'Get In Touch | MDEV Digital - London, Ontario' },
-      { name: 'twitter:title', content: 'Get In Touch | MDEV Digital - London, Ontario' }
-    ]
-  },
 
   data: function(){
     return{
       heroStyles: {
-        backgroundColor: '#0f1617'
+        backgroundColor: '#0a1315'
       },
       // Disables Page Title bar
       pageTitle: 'Let\'s Talk!',
@@ -79,32 +71,97 @@ export default {
       letsAnim: 'contact/MDEV_HEADER_lets_animated.svg',
       startAnim: 'contact/MDEV_HEADER_start_animated.svg',
       somethingAnim: 'contact/MDEV_HEADER_something.svg',
-      newAnim: 'contact/MDEV_HEADER_new_animated.svg'
+      newAnim: 'contact/MDEV_HEADER_new_animated.svg',
+      // SEO
+      seo: SEOData.siteSeo,
+      // Animation Flag
+      animDone: false
+    };
+  },
+
+  // Meta SEO Function
+  metaInfo() {
+    return {
+      title: this.seo.contact.title,
+      meta: [
+        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.contact.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.contact.ogimage) },
+        { vmid: 'ogtitle', property: 'og:title', content: this.seo.contact.title + this.seo.templateAddon },
+        { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.contact.title + this.seo.templateAddon },
+        { vmid: 'desc', name: 'description', content: this.seo.contact.desc },
+        { vmid: 'twdesc', name: 'twitter:description', content: this.seo.contact.desc },
+        { vmid: 'ogdesc', property: 'og:description', content: this.seo.contact.desc }
+      ],
+      script: [
+        { src: 'https://code.jquery.com/jquery-3.3.1.min.js', integrity:'sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin:'anonymous' }
+      ]
     };
   },
 
   mounted: function() {
+    // Make BKG White
+    this.bodyClass('--body-white');
     this.$nextTick(() => {
-        $('[data-main-nav]').addClass('--teal-white');
+      // Collect Elements
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      var introAnim = document.querySelectorAll('#anim-something')[0];
+      var introBtn = document.querySelectorAll('[data-header-btn]')[0];
+      // Add Class to Nav
+      this.addClass(mainNav, '--teal-white');
+      // Fire off Animations
       setTimeout(() => {
-        new Vivus('anim-lets', {duration: 150});
-      }, 100);
+        requestAnimationFrame(() => {
+          new Vivus('anim-lets', {duration: 150});
+        });
+      }, 200);
       setTimeout(() => {
-        new Vivus('anim-start', {duration: 150});
-      }, 400);
+        requestAnimationFrame(() => {
+          new Vivus('anim-start', {duration: 150});
+        });
+      }, 600);
       setTimeout(() => {
-        $('#anim-something').addClass('--anim-visible');
-      }, 650);
+        requestAnimationFrame(() => {
+          this.addClass(introAnim, '--anim-visible');
+        });
+      }, 750);
       setTimeout(() => {
-        new Vivus('anim-new', {duration: 180});
-      }, 2700);
+        requestAnimationFrame(() => {
+          new Vivus('anim-new', {duration: 180});
+        });
+      }, 2800);
       setTimeout(() => {
-        $('[data-header-intro]').addClass('--anim-visible');
-      }, 3200);
+        requestAnimationFrame(() => {
+          this.addClass(introHeading, '--anim-visible');
+        });
+      }, 3300);
       setTimeout(() => {
-        $('[data-header-btn]').addClass('fully-in-viewport');
-      }, 3400);
+        requestAnimationFrame(() => {
+          this.addClass(introBtn, 'in-viewport');
+        });
+      }, 3500);
+      setTimeout(() => {
+        // Flip Flag --------------[ STARTS LOADING MAP ]
+        // Deferred till end of animation for performance
+        this.animDone = true;
+      }, 3800);
+      // Listen to scroll and load map sooner if user moves
+      let scrollTimer;
+      let scrollTime = 50;
+      // Event Listener on scroll with debounce
+      window.addEventListener('scroll', () => {
+        // Grab the Window Path for Scroll Y
+        let distanceTop = event.path[1].scrollY;
+        clearTimeout(scrollTimer);
+        // If user scrolls load map right away
+        scrollTimer = setTimeout(this.animDone = true,scrollTime);
+      });
     });
+  },
+
+  // Return BKG to stock
+  destroyed: function() {
+    this.bodyReset('--body-white');
   },
 
   components: {
@@ -140,6 +197,10 @@ export default {
   @media #{$phone-only} {
     padding-top: 100%;
   }
+
+  @media #{$tablet-lnd-only} {
+    padding-top: 60%;
+  }
 }
 
 .--vivus-contact {
@@ -151,6 +212,7 @@ export default {
 
     @media #{$portrait} {
       height: 9vw;
+      margin-bottom: 10px;
     }
   }
 
@@ -189,17 +251,17 @@ export default {
 
   .--header-cta {
     opacity: 0;
-    width: 20%;
+    width: 30%;
     transition: opacity 1.2s;
-
-    @media #{$laptop-only} {
-      width: 30%;
-    }
 
     @media #{$portrait} {
       width: 100%;
       text-align: left;
       margin-top: 20px;
+    }
+
+    @media #{$tablet-lnd-only} {
+      width: 40%;
     }
   }
 
@@ -225,13 +287,17 @@ export default {
       text-align: center;
       width: 100%;
     }
+
+    @media #{$tablet-lnd-only} {
+      width: 100%;
+    }
   }
 
   .mdev-primary-btn {
     margin-top: 25px;
 
     @media #{$desktop-up} {
-      margin-top: 50px;
+      margin-top: 30px;
     }
   }
 }

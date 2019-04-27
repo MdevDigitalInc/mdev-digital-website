@@ -45,50 +45,44 @@ export default {
     margin: 100px 0;
   }
 
+  @media #{$phone-only} {
+    margin: 60px 0;
+  }
+
   // Applies to all images
   img {
     width: 100%;
-  }
-
-  // Feature wrapper to keep things centered
-  .mdev-featured-wrapper {
-    width: 91%;
-    margin: 0 0 0 9%;
-
-    @media #{$portrait} {
-      width: 100%;
-      flex-wrap: wrap;
-      margin: 0;
-    }
-
-    @media #{$phone-only} {
-      width: 100%;
-    }
   }
 
   .mdev-service-media {
     width: 45%;
     order: 2;
     position: relative;
+    overflow: visible;
     z-index: 2;
     margin-left: 5vw;
+    margin-top: 70px;
 
     @media #{$portrait} {
       width: 100%;
       margin: 0 auto 100px;
     }
+
+    @media #{$phone-only} {
+      margin: 0 auto 25px;
+    }
   }
 
   // Content portion of the split
   .mdev-service-content {
-    width: 55%;
+    width: 56%;
     order: 1;
-    padding-right: 10%;
 
     @media #{$portrait} {
       width: 100%;
       order: 4;
       padding: 0 10%;
+      margin: 25px 0 50px;
     }
 
     @media #{$xl-up} {
@@ -98,6 +92,16 @@ export default {
     .--pre-title {
       left: 5px;
     }
+
+    /* stylelint-disable */
+    & *:not(h2):not(li) {
+      padding-left: 6%;
+
+      @media #{$phone-only} {
+        padding-left: 0;
+      }
+    }
+    /* stylelint-enable */
   }
 
   .mdev-service-title {
@@ -120,10 +124,15 @@ export default {
 
   .mdev-service-subtitle {
     margin-bottom: 10px;
+    text-transform: capitalize;
   }
 
   .mdev-service-desc {
     width: 85%;
+
+    @media #{$laptop-only} {
+      width: 95%;
+    }
   }
 }
 
@@ -136,19 +145,17 @@ export default {
   margin: 0 10% 0 0;
 
   @media #{$portrait} {
-    margin: 0 auto;
+    margin: 0;
+    with: 100%;
   }
 
   // Move content to last
   // Adjust padding accordingly
   .mdev-service-content {
     order: 4;
-    padding-right: 0;
-    padding-left: 10%;
 
     @media #{$portrait} {
-      margin: 100px auto;
-      padding: 0 10%;
+      padding: 0 9%;
     }
   }
 
@@ -178,6 +185,10 @@ export default {
   margin: 0 9%;
   width: auto;
 
+  @media #{$laptop-only} {
+    margin: 0 5%;
+  }
+
   // Override title margin
   .mdev-service-title {
     margin: 50px 0;
@@ -201,16 +212,9 @@ export default {
     bottom: -50px;
   }
 
-
   // Default content LEFT
   .mdev-service-content {
     order: 2;
-    padding-right: 0;
-    padding-left: 10%;
-
-    @media #{$portrait} {
-      padding: 0;
-    }
   }
 
   // Flip Order
@@ -234,5 +238,4 @@ export default {
   }
 }
 /*--------------------------------------*/
-
 </style>

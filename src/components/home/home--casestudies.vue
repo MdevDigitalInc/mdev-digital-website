@@ -42,7 +42,7 @@ export default{
     return {
       BtnData: {
         accessibility: 'Learn more about our work!',
-        btnRoute: '/casestudy',
+        btnRoute: '/comingsoon',
         btnClass: 'mdev-primary-btn --space-top-sm'
       },
       casestudies: MdevData.homeCasestudy
@@ -67,6 +67,22 @@ export default{
 .mdev-top-subhead {
   display: block;
   margin-bottom: .8vw;
+
+  @media #{$portrait} {
+    font-size: 18px;
+  }
+
+  @media #{$tablet-prt-only} {
+    font-size: 24px;
+  }
+}
+
+h3 {
+  margin-bottom: 35px;
+
+  @media #{$tablet-up} {
+    margin-bottom: 70px;
+  }
 }
 
 /*--------------------------------------*/

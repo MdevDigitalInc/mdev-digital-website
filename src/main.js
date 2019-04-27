@@ -2,25 +2,28 @@
 // Author: Lucas Moreira - l.moreira@live.ca
 
 // [ Vue.js ] -------------------------------------------
+import '@babel/polyfill'
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
-import VueHead from 'vue-head';
+import Meta from 'vue-meta'
 import App from './App.vue';
 
 // Import Routes & Central Stores
 import { routes  } from './routes.js';
-import store from './store/store.js';
+//import store from './store/store.js';
 
-// In Viewport Custom Directive
+// In Viewport Custom Directive -------------------------
 // Adds classes to elements given the v-in-viewport directive
 // can be used to target animations.
 // To see an example, check buttons.css and the btn-primary.vue element
 import inViewportDirective from 'vue-in-viewport-directive';
+inViewportDirective.defaults.top = -100
 Vue.directive('in-viewport', inViewportDirective);
 
-// Check View Directive
+// Check View Directive ---------------------------------
+// Executes event as elements enter view
 import checkView from 'vue-check-view';
 Vue.use(checkView);
 // Import Auth Plugin
@@ -28,8 +31,7 @@ Vue.use(checkView);
 import Validate from './plugins/validate.js';
 Vue.use(Validate);
 // [ i18n - Internationalization ] ----------------------
-
-// Configure I18n Internationalization Locales
+// Load Locales
 import en from './locales/en.js';
 //import pt from './locales/pt.js';
 const locales = {
@@ -39,13 +41,11 @@ const locales = {
 // Initialize vue-resource | vue-router | vue-i18n
 Vue.use(VueI18n);
 Vue.use(VueResource);
-// Vue Head Configuration
-// SEE - https://github.com/ktquez/vue-head
-Vue.use(VueHead, {
-  separator: ' | '
-})
 // Vue Router
 Vue.use(VueRouter);
+// Meta Info
+Vue.use(Meta)
+// Auth Plugin
 //Vue.use(Auth);
 
 // Set Language Default [ ENGLISH ]
@@ -53,10 +53,10 @@ Vue.config.lang = 'en';
 
 // Create Global Method for accepting language change
 Vue.prototype.$locale = {
-  change (lang) {
+  change(lang) {
     Vue.config.lang = lang;
   },
-  current () {
+  current() {
     return Vue.config.lang;
   }
 };
@@ -116,39 +116,22 @@ const router = new VueRouter ({
 });
 //--------------------------------------[ vue-router ]
 
-// Route Guard - Executes before each route change
-// In this case being used to dynamically change BKG color
-
-// Add regex for routes where you want white BKG
-let whiteBkgPaths = [
-  "contact",
-  "team",
-  "services"
-]
-
-router.beforeEach(function( to, from, next){
-  let bodyWhite = "--body-white";
-  var regEx = new RegExp(whiteBkgPaths.join("|"), "i");
-
-  if ( regEx.test(to.path) ) {
-    // Ternary operator adds class when body doesn't already have it
-    // prevents multiple classes being added to body
-    !$('body').hasClass(bodyWhite) ? $('body').addClass(bodyWhite) : '';
-  }
-  else {
-    $('body').hasClass(bodyWhite) ? $('body').removeClass(bodyWhite) : '';
-  }
-  next();
-});
 
 // [ Global Mixins ] --------------------------------
+// Global mixins are functions available to all of the components
+// inside of the vue VM instance.
+//
+// These can be called with this.functioName(param); from
+// any of the component methods.
 Vue.mixin({
   methods: {
+    // Load images with require
+    // Returns path and tags image for webpack.
     loadImage(path){
       return require('./assets/images/' + path);
     },
-    // Change Language METHOD
-    change () {
+    // Change Application Language - Toggle
+    change() {
       let current = this.$locale.current();
       if (current === 'en') {
         this.$locale.change('pt');
@@ -156,18 +139,157 @@ Vue.mixin({
         this.$locale.change('en');
       }
     },
-    changeNavBrand(e, brandClass){
+    // Change Navigation Logo Colors via class
+    changeNavBrand(e, brandClass) {
+      // Grab Element
+      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
       if ( e.target.rect.y <= 0 ) {
-        $('[data-main-nav]').removeClass('--teal-black');
-        $('[data-main-nav]').removeClass('--white-black');
-        $('[data-main-nav]').removeClass('--teal-white');
-        $('[data-main-nav]').addClass(brandClass);
+        // Remove classes
+        this.removeClass(mainNav, '--teal-black');
+        this.removeClass(mainNav, '--white-black');
+        this.removeClass(mainNav, '--teal-white');
+        // Add intended class
+        this.addClass(mainNav, brandClass);
       }
     },
+    // Scroll to specific anchor link
     scrollToHash(hashRef, offset) {
-      var element = $(hashRef);
-      var top = element.offset().top;
-      window.scrollTo(0, (top - offset));
+      var element = document.querySelectorAll(hashRef);
+      var top = element[0].offsetTop;
+    },
+    // Adjust position of crossbeam under logo
+    adjustCrossbeam() {
+      var brandEl = document.querySelectorAll('[data-main-nav]')[0];
+      var crossEl = document.querySelectorAll('[data-crossbeam]');
+      var brandHeight = null;
+      brandHeight = brandEl.offsetHeight
+      for (var i=0; i < crossEl.length; i++) {
+        crossEl[i].style.transform = 'translate3d(0,' + (brandHeight + 8) + 'px, 0)';
+      }
+    },
+    // Checks Visibility of Element (vue-check-view npm)
+    // Takes in event, amount of overlap and Array Length
+    checkVisibility(event, overlap) {
+      if (event.percentInView >= overlap) {
+        if (event.type == 'exit') {
+          return false;
+        }
+        else {
+          return true;
+        }
+      }
+      else {
+        return false;
+      }
+    },
+    // Look Mom! - No JQUERY! ------------------------------
+    // These are simple functions to replace dependency on
+    // jquery UI. All we use it for is toggling classes..
+    // there is no need to load a full library.
+    //
+    // Add Class JQUERY replacement
+    addClass(element, className) {
+      // Check for valid element
+      if ( element ) {
+        if (element.classList) {
+          element.classList.add(className);
+        }
+        else {
+          element.className += ' ' + className;
+        }
+      }
+      else {
+        // Output clean error
+        console.log('ERROR | Element is not valid');
+      }
+    },
+    // Remove Class
+    removeClass(element, className) {
+      // Check for valid element
+      if ( element ) {
+        if (element.classList) {
+          element.classList.remove(className);
+        }
+        else {
+          element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        }
+      }
+      else {
+        // Output clean error
+        console.log('ERROR | Element is not valid');
+      }
+    },
+    // Check for class
+    hasClass(element, className) {
+      // Check for valid element
+      if ( element ) {
+        if (element.classList) {
+          element.classList.contains(className);
+        }
+        else {
+          new RegExp('(^| )' + className + '( |$)', 'gi').test(element.className);
+        }
+      }
+      else {
+        // Output clean error
+        console.log('ERROR | Element is not valid');
+      }
+    },
+    // Toggle Class
+    toggleClass(element, className) {
+      // Check for valid element
+      if ( element ) {
+        if (element.classList) {
+          element.classList.toggle(className);
+        }
+        else {
+          var classes = element.className.split(' ');
+          var existingIndex = classes.indexOf(className);
+
+          if (existingIndex >= 0) {
+            classes.splice(existingIndex, 1);
+          }
+          else {
+            classes.push(className);
+          }
+          element.className = classes.join(' ');
+        }
+      }
+      else {
+        // Output clean error
+        console.log('ERROR | Element is not valid');
+      }
+    },
+    // Reset Body Class
+    bodyReset(className) {
+      var mainBody = document.querySelectorAll('body')[0];
+      this.removeClass(mainBody, className);
+    },
+    // Add Body Class
+    bodyClass(className) {
+      // Change body class
+      var mainBody = document.querySelectorAll('body')[0];
+      this.addClass(mainBody, className);
+    },
+    // Async Load Scipts -----------------------------------
+    // This script is a little trick to load scripts AFTER vue
+    // has a chance to fully load. It serves the purpose of boosting
+    // performance and fixing the issue with prerendered pages
+    asyncScript( src, asyncLoad, deferLoad) {
+      // Create a script element
+      var script = document.createElement( 'script' );
+      // Set Source
+      script.setAttribute( 'src', src );
+      // If async...
+      if ( asyncLoad ) {
+        script.setAttribute( 'async', true );
+      }
+      // if Defer
+      if ( deferLoad ) {
+        script.setAttribute( 'defer', true );
+      }
+      // Append to the end of the head
+      document.head.appendChild( script );
     }
   }
 })
@@ -182,8 +304,5 @@ const _vue = new Vue({
     }
   },
   router,
-  store,
   render: h => h(App)
 });
-// Prerenderer call
-window._vuePrerender = _vue;

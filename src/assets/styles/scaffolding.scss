@@ -3,38 +3,47 @@
 /-------------------------------------*/
 
 // Wrapper Classes
-
 .mdev-main-wrapper {
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
   position: relative;
   padding: 0;
   min-width: 290px;
 
   @media #{$tablet-prt-only} {
-    max-width: 800px;
-    width: 76%;
+    width: 80%;
   }
 
-  @media #{$tablet-lnd-only} {
-    max-width: 900px;
-    width: 76%;
+  @media #{$laptop-up} {
+    width: 80%;
   }
+}
+
+// Feature wrapper to keep things centered
+.mdev-featured-wrapper {
+  width: 91%;
+  margin: 0 0 0 auto;
 
   @media #{$laptop-only} {
-    max-width: 1000px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: 0;
   }
 
-  @media #{$desktop-only} {
-    max-width: 1300px;
-  }
-
-  @media #{$xl-up} {
-    max-width: 1500px;
+  @media #{$portrait} {
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 0;
   }
 
   @media #{$phone-only} {
-    width: 90%;
+    width: 100%;
+  }
+
+  &.--margin-mod {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
   }
 }
 
@@ -69,6 +78,31 @@
   }
 }
 
+.--featured-space {
+  margin-top: 200px;
+  margin-bottom: 200px;
+
+  @media #{$portrait} {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  @media #{$laptop-only} {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  @media #{$tablet-prt-only} {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  @media #{$phone-only} {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+
 .--section-space {
   margin-top: 150px;
   margin-bottom: 150px;
@@ -78,6 +112,18 @@
     margin-bottom: 50px;
   }
 }
+
+.--section-space-m {
+  margin-top: 75px;
+  margin-bottom: 75px;
+
+  @media #{$portrait} {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+
 
 .--section-pad {
   padding-top: 150px;
@@ -97,20 +143,55 @@
   }
 }
 
-.--space-top-sm {
-  margin-top: 50px;
+// Spacing Units
+$uxs: 15px;
+$xs: 25px;
+$sm: 50px;
+$md: 75px;
+
+.--space-top-md {
+  margin-top: $md;
 
   @media #{$phone-only} {
-    margin-top: 25px;
+    margin-top: $sm;
+  }
+}
+
+.--space-top-sm {
+  margin-top: $sm;
+
+  @media #{$phone-only} {
+    margin-top: $xs;
   }
 }
 
 .--space-top-xs {
-  margin-top: 25px;
+  margin-top: $xs;
 
   @media #{$phone-only} {
-    margin-top: 15px;
+    margin-top: $uxs;
   }
+}
+
+.--space-left-xs {
+  margin-left: $xs;
+}
+
+.--space-right-xs {
+  margin-right: $xs;
+}
+
+.--space-left-sm {
+  margin-left: $sm;
+}
+
+.--space-right-sm {
+  margin-right: $sm;
+}
+
+.--space-lr-sm {
+  margin-right: $xs;
+  margin-left: $xs;
 }
 
 // Flex Modifiers
@@ -154,10 +235,19 @@
   }
 }
 
+
+.--triangle-top-r {
+  clip-path: $clip-triangle-top-reverse;
+
+  @media #{ $portrait } {
+    clip-path: $clip-triangle-top-reverse-prt;
+  }
+}
+
 // Pull Up | Down
 .--pull-up-section {
   padding-top: 350px;
-  margin-top: -200px;
+  margin-top: -250px;
   z-index: 0;
   position: relative;
 }
@@ -186,3 +276,56 @@
     display: block;
   }
 }
+
+// Position reference div
+.--pos-reference {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+// Member - Founder
+.--team {
+  span {
+    display: block;
+  }
+
+  .--name {
+    font-size: 28px;
+    margin: 20px 0 10px;
+    letter-spacing: .56px;
+
+    @media #{$laptop-only} {
+      font-size: 20px;
+    }
+
+    @media #{$tablet-lnd-only} {
+      font-size: 15px;
+    }
+
+    @media #{$tablet-prt-only} {
+      font-size: 22px;
+    }
+  }
+
+  .--title {
+    font-size: 20px;
+    letter-spacing: .4px;
+
+    @media #{$laptop-only} {
+      font-size: 15px;
+    }
+
+    @media #{$tablet-lnd-only} {
+      font-size: 12px;
+    }
+
+    @media #{$tablet-prt-only} {
+      font-size: 18px;
+    }
+  }
+}
+
+

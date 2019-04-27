@@ -24,7 +24,7 @@
           :key="index"
           v-if="link.serviceFlag != serviceFlag">
           <!-- Column Heading -->
-          <span class="--heading u-uppercase u-bold">
+          <span class="--heading u-uppercase">
             {{ link.heading }}
           </span>
           <router-link :to="item.linkRoute"
@@ -62,7 +62,19 @@ export default{
   background: $color-brand-primary;
   width: 100%;
   position: relative;
-  padding: 180px 0 120px;
+  padding: 180px 0 100px;
+
+  @media #{$laptop-only} {
+    padding-bottom: 80px;
+  }
+
+  @media #{$portrait} {
+    padding-bottom: 70px;
+  }
+
+  @media #{$phone-only} {
+    padding: 150px 0 50px;
+  }
 
   .mdev-main-wrapper {
     max-width: 1900px;
@@ -70,18 +82,30 @@ export default{
   }
 
   .mdev-prefooter-title {
-    font-size: 100px;
+    font-size: 5.79vw;
     display: block;
     font-weight: 700;
 
     @media #{$portrait} {
-      font-size: 30px;
+      font-size: 90px;
+    }
+
+    @media #{$phone-only} {
+      font-size: 60px;
     }
   }
 
   .mdev-prefooter-subtitle {
     display: block;
-    font-size: 203%;
+    font-size: 2.4vw;
+
+    @media #{$portrait} {
+      font-size: 40px;
+    }
+
+    @media #{$phone-only} {
+      font-size: 20px;
+    }
   }
 
   .mdev-prefooter-cta {
@@ -111,15 +135,28 @@ export default{
 
     @media #{$portrait} {
       width: 100%;
+
+      &:first-child {
+        margin-top: 25px;
+      }
     }
 
     .--heading {
       display: block;
       width: 100%;
       font-size: 25px;
+      font-weight: 500;
       letter-spacing: 1.3px;
       line-height: 1;
       margin-bottom: 5px;
+
+      @media #{$laptop-only} {
+        font-size: 20px;
+      }
+
+      @media #{$tablet-lnd-only} {
+        font-size: 18px;
+      }
     }
 
     .mdev-footer-link {
@@ -131,6 +168,14 @@ export default{
       font-weight: 400;
       font-size: 18px;
       letter-spacing: .2px;
+
+      @media #{$laptop-only} {
+        font-size: 14px;
+      }
+
+      @media #{$tablet-lnd-only} {
+        font-size: 13px;
+      }
 
       &:hover,
       &:focus,

@@ -1,5 +1,5 @@
 <template>
-  <section class="mdev-section-links u-c-white">
+  <section class="mdev-section-links" :class="{'u-c-black' : darkMode, 'u-c-white' : !darkMode}">
     <span class="mdev-links-title u-ultralight u-uppercase">
       <span class="mdev-link-index u-transparent" aria-hidden="true">
         00
@@ -15,7 +15,7 @@
         <span class="mdev-link-index u-ultralight" aria-hidden="true">
           {{ link.linkIndex }}
         </span>
-        <span class="mdev-link-name u-bold u-uppercase">
+        <span class="mdev-link-name u-bold u-uppercase" :class="{'--dark' :  darkMode}">
           {{ link.linkName }}
         </span>
       </router-link>
@@ -26,7 +26,7 @@
   export default{
     name: 'ServiceLinks',
     // Data passed in via Parent
-    props: ['links', 'linksTitle']
+    props: ['links', 'linksTitle', 'darkMode']
     // Watch for changes in parent data
   };
 </script>

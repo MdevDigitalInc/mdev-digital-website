@@ -3,7 +3,7 @@
     <!-- Google Maps Container Mask -->
     <div data-map-active class="mdev-map-location">
       <!-- Maps Component -->
-      <google-map :mapData="mapData" ></google-map>
+      <google-map :initMap="animLoaded" :mapData="mapData" v-on:mapIsLoaded="initPresentation" ></google-map>
       <!-- Contact Information -->
       <!-- Phone Number -->
       <div
@@ -65,6 +65,7 @@ import googleMap from '../shared/google-map.vue';
 
 export default{
   name: 'ContactMap',
+  props: ['animLoaded'],
   data: function(){
     return{
       contact: {
@@ -95,6 +96,16 @@ export default{
     };
   },
 
+  methods: {
+    initPresentation() {
+      // Emit event for Parent
+      var mapObject = document.querySelectorAll('[data-map-active]');
+      for ( var i=0; i < mapObject.length; i++ ) {
+        this.addClass(mapObject[i], '--map-loaded');
+      }
+    }
+  },
+
   components: {
     'google-map'  : googleMap
   }
@@ -109,7 +120,7 @@ export default{
 /--------------------------------------*/
 
 .mdev-map-location {
-  width: 90%;
+  width: 100%;
   position: relative;
   left: 0;
   overflow: hidden;
@@ -130,7 +141,7 @@ export default{
   bottom: 0;
   width: 100%;
   z-index: 1;
-  filter: grayscale(.5) blur(5px);
+  filter: grayscale(.2) blur(5px);
   transition: 1s filter 1.4s;
 
   &:after {
@@ -139,8 +150,11 @@ export default{
     top: 0;
     bottom: 0;
     width: 100%;
-    box-shadow: inset 0 0 150px 10vw rgba(0, 0, 0, .8);
+    box-shadow: inset 0 0 160px 16vw rgba(0, 0, 0, .9);
     z-index: 2;
+    @media #{$portrait} {
+      box-shadow: inset 0 0 150px 30vw rgba(0, 0, 0, .9);
+    }
   }
 }
 
@@ -161,7 +175,7 @@ export default{
   z-index: 3;
   padding: 10px 0;
   line-height: 130%;
-  border-bottom: 8px solid $white;
+  border-bottom: 4px solid $color-brand-accent;
   font-size: 1.8vw;
 
   @media #{$portrait} {
@@ -189,20 +203,23 @@ export default{
 
 // Decoration Overrides
 .mdev-box-dec {
-  width: 72vw;
+  width: 32vw;
   height: 60vh;
   right: 0;
   bottom: 75px;
 
   @media #{$portrait} {
-    bottom: 30px;
+    width: 70vw;
+    right: 10%;
+    bottom: 20px;
   }
 }
 
 .mdev-frame-dec {
-  width: 40vw;
-  height: 10vh;
+  width: 44vw;
   left: 10%;
+  bottom: 50%;
+  height: auto;
   top: 0;
   opacity: 0;
   transition: opacity 1s;
@@ -242,7 +259,7 @@ export default{
   opacity: 1;
 
   .mdev-g-map {
-    filter: grayscale(.5) blur(0);
+    filter: grayscale(1) blur(0);
   }
 }
 
