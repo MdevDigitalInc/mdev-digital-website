@@ -12,7 +12,7 @@ import App from './App.vue';
 
 // Import Routes & Central Stores
 import { routes  } from './routes.js';
-import store from './store/store.js';
+//import store from './store/store.js';
 
 // In Viewport Custom Directive -------------------------
 // Adds classes to elements given the v-in-viewport directive
@@ -304,6 +304,5 @@ const _vue = new Vue({
     }
   },
   router,
-  store,
   render: h => h(App)
 });

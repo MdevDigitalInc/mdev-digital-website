@@ -114,7 +114,7 @@ export default {
 
   beforeDestroy: function() {
     // Remove listener on Destroy
-    window.removeEcentListener("keyup", this.konami);
+    window.removeEventListener("keyup", this.konami);
   },
 
   mounted: function(){

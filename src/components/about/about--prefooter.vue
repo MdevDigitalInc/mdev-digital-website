@@ -71,9 +71,8 @@ export default{
 </script>
 
 <style lang="scss">
-
 /*-------------------------------------*/
-/* BASE TEMPLATE Component Styles
+/* PREFOOTER  Component Styles
 /--------------------------------------*/
 .mdev-about-prefooter {
   background: $color-brand-accent;
@@ -141,7 +140,5 @@ export default{
     }
   }
 }
-
 /*--------------------------------------*/
-
 </style>

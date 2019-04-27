@@ -2,8 +2,7 @@
   <section class="mdev-established">
     <div class="mdev-established-media">
       <img :src="loadImage(image)" :alt="a11y" class="mdev-est-image"/>
-      <img :src="loadImage(badge.src)"
-        :alt="badge.a11y" class="mdev-est-badge"/>
+      <img :src="loadImage(badge.src)" :alt="badge.a11y" class="mdev-est-badge"/>
     </div>
     <div class="--bkg-extend"></div>
     <div class="--parallelogram"></div>
@@ -99,7 +98,5 @@ $est-padding: 60px;
     z-index: 2;
   }
 }
-
 /*--------------------------------------*/
-
 </style>

@@ -109,7 +109,6 @@ export default{
         btnRoute: '/comingsoon',
         btnClass: 'mdev-primary-btn --space-top-sm'
       },
-      // Disables Page Title bar
       pageTitle: 'About MDEV Digital',
       headerDsc: 'About MDEV Digital',
       company: MdevData.aboutPage,
@@ -174,14 +173,10 @@ export default{
 };
 </script>
 
-
-
 <style lang="scss" scoped>
-
 /*-------------------------------------*/
 /* ABOUT Component Styles
 /--------------------------------------*/
-
 .mdev-vivus-header {
   width: 100%;
   position: absolute;
@@ -265,6 +260,5 @@ export default{
   animation: line-three-anim;
   @include arrow-anim-rules(17s);
 }
-
 /*--------------------------------------*/
 </style>

@@ -99,8 +99,6 @@ export default{
   }
 }
 
-
-
 .mdev-team-title,
 .mdev-team-text {
   padding: 20px;
@@ -193,5 +191,4 @@ export default{
   left: 9%;
 }
 /*--------------------------------------*/
-
 </style>

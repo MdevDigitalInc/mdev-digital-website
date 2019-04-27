@@ -47,7 +47,7 @@ $blur-anim-props: filter 1s, opacity .6s;
 .a-blur-in.in-viewport,
 .a-blur-in.above-viewport,
 .a-blur-in-lnd.in-viewport,
-.a-blur-in-lnd.in-viewport,
+.a-blur-in-lnd.fully-in-viewport,
 .a-blur-in-lnd.above-viewport {
   opacity: 1;
   filter: blur(0);
@@ -191,18 +191,22 @@ $flyin-anim-props: opacity .2s ease-out, transform .6s ease-out;
 }
 
 // Trigger animation based on viewport
+.a-flyin-lnd-left.fully-in-viewport,
 .a-flyin-lnd-left.in-viewport,
 .a-flyin-lnd-left.above-viewport,
 .a-flyin-left.in-viewport,
 .a-flyin-left.above-viewport,
+.a-flyin-lnd-right.fully-in-viewport,
 .a-flyin-lnd-right.in-viewport,
 .a-flyin-lnd-right.above-viewport,
 .a-flyin-right.in-viewport,
 .a-flyin-right.above-viewport,
+.a-flyin-lnd-bot.fully-in-viewport,
 .a-flyin-lnd-bot.in-viewport,
 .a-flyin-lnd-bot.above-viewport,
 .a-flyin-bot.in-viewport,
 .a-flyin-bot.above-viewport,
+.a-flyin-lnd-top.in-fully-viewport,
 .a-flyin-lnd-top.in-viewport,
 .a-flyin-lnd-top.above-viewport,
 .a-flyin-top.in-viewport,

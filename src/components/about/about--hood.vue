@@ -31,7 +31,6 @@ export default{
     'text',
     'decoration'
   ]
-
 };
 </script>
 
@@ -221,5 +220,4 @@ $rotate-duration: 930s;
   }
 }
 /*--------------------------------------*/
-
 </style>
