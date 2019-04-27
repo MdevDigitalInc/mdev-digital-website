@@ -90,7 +90,7 @@ export default{
       navIsOpen: false,
       labelOpen: 'Open Main Navigation Menu',
       labelClose: 'Close Main Navigation Menu',
-      desiredOffset: 420,
+      desiredOffset: 300,
       scrollDistance: 0
     };
   },
@@ -111,16 +111,8 @@ export default{
     this.$nextTick(() => {
       // Scroll timer to debounce
       let scrollTimer;
-      let scrollTime = 20;
-      let pageTitleEl = document.querySelectorAll('[data-page-title]');
+      let scrollTime = 50;
 
-      // Check to see that the page title is there
-      if ( pageTitleEl.length !== 0 ) {
-        this.scrollDistance = pageTitleEl[0].offsetTop;
-      }
-      else {
-        this.scrollDistance = 600;
-      }
       // Event Listener on scroll with debounce
       window.addEventListener('scroll', () => {
         // Grab the Window Path for Scroll Y
@@ -186,17 +178,15 @@ export default{
     userScroll( distance ) {
       var mainHeader = document.querySelectorAll('[data-main-header]')[0];
       var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      let pageTitleEl = document.querySelectorAll('[data-page-title]');
+
+      this.scrollDistance = pageTitleEl[0].offsetTop > 0 ? pageTitleEl[0].offsetTop : mainHeader.offsetHeight;
+      this.desiredOffset = pageTitleEl[0].offsetTop > 0 ? 300 : 20;
       // If user scrolls past desired distance remove effects
-      if ( distance >= (this.scrollDistance - this.desiredOffset) ) {
+      if ( (distance + this.desiredOffset) >= this.scrollDistance) {
         requestAnimationFrame(() => {
           this.addClass(mainHeader, '--user-scroll');
           this.addClass(mainNav, '--user-scroll');
-        });
-      }
-      else if (distance <= 10) {
-        requestAnimationFrame(() => {
-          this.removeClass(mainHeader, '--user-scroll');
-          this.removeClass(mainNav, '--user-scroll');
         });
       }
       else {
@@ -222,7 +212,6 @@ export default{
 /*--------------------------------------*/
 /* MAIN NAVIGATION Component Styles
 /*--------------------------------------*/
-
 .mdev-main-nav {
   width: 100%;
   position: fixed;
@@ -230,8 +219,15 @@ export default{
   left: 0;
   padding: $nav-padding;
   z-index: 10;
-  transition: all, .3s;
-  background: rgba(51, 51, 51, 0);
+  transition: all, .4s;
+  background: rgba(10, 19, 21, 0);
+
+  &.--user-scroll {
+    padding-bottom: 5px;
+    @media #{$phone-only} {
+      background: rgba(10, 19, 21, .95);
+    }
+  }
 
   @media #{$portrait} {
     padding: $nav-padding-prt;
@@ -503,6 +499,23 @@ export default{
 
   .mdev-nav-open span {
     background-color: black;
+  }
+}
+
+.--white-black,
+.--teal-white,
+.--teal-black,
+.--nav-color {
+  @media #{$phone-only} {
+    .mdev-svg-1 {
+      fill: $color-brand-primary;
+    }
+    .mdev-svg-2 {
+      fill: $white;
+    }
+    .mdev-nav-open span {
+      background-color: $color-brand-primary;
+    }
   }
 }
 

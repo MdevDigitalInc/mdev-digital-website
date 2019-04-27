@@ -63,4 +63,9 @@ img {
   height: auto;
 }
 
+*:focus {
+  outline: 2px solid rgba(22, 177, 169, .25);
+  box-shadow: 0 0 0 2px rgba(22,177,169,.25);
+}
+
 /* stylelint-enable */

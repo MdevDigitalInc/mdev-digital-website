@@ -71,6 +71,10 @@ export default{
   @media #{$portrait} {
     font-size: 18px;
   }
+
+  @media #{$tablet-prt-only} {
+    font-size: 24px;
+  }
 }
 
 h3 {
