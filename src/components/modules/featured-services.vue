@@ -92,16 +92,6 @@ export default {
     .--pre-title {
       left: 5px;
     }
-
-    /* stylelint-disable */
-    & *:not(h2):not(li) {
-      padding-left: 6%;
-
-      @media #{$phone-only} {
-        padding-left: 0;
-      }
-    }
-    /* stylelint-enable */
   }
 
   .mdev-service-title {

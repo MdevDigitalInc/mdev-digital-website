@@ -1,6 +1,6 @@
 // Import Parent Compontents
-const About = r => require.ensure([], () => r(require('./components/about/about.vue')), 'about');
-const Contact = r => require.ensure([], () => r(require('./components/contact/contact.vue')), 'contact');
+const About = r => require.ensure([], () => r(require('./components/about/about.vue')), 'home');
+const Contact = r => require.ensure([], () => r(require('./components/contact/contact.vue')), 'home');
 const ErrorPage = r => require.ensure([], () => r(require('./components/parent-templates/error_404.vue')), 'errorpage');
 const Home = r => require.ensure([], () => r(require('./components/home/home.vue')), 'home');
 // Case Studies
@@ -9,13 +9,13 @@ const Home = r => require.ensure([], () => r(require('./components/home/home.vue
 //const ZucoraRsp            from './components/casestudies/zucora--rsp.vue';
 //const ZucoraTwop           from './components/casestudies/zucora--twop.vue';
 // Services
-const Services = r => require.ensure([], () => r(require('./components/services/services.vue')), 'big-pages');
-const ServicesAppDev = r => require.ensure([], () => r(require('./components/services/service--appdev.vue')), 'appdev');
-const ServicesBranding = r => require.ensure([], () => r(require('./components/services/service--branding.vue')), 'branding');
-const ServicesConsulting = r => require.ensure([], () => r(require('./components/services/service--consulting.vue')), 'consulting');
-const ServicesDigiAds = r => require.ensure([], () => r(require('./components/services/service--digiads.vue')), 'digiads');
-const ServicesOverview = r => require.ensure([], () => r(require('./components/services/service--all.vue')), 'overview');
-const ServicesUx = r => require.ensure([], () => r(require('./components/services/service--ux.vue')), 'uiux');
+const Services = r => require.ensure([], () => r(require('./components/services/services.vue')), 'services');
+const ServicesAppDev = r => require.ensure([], () => r(require('./components/services/service--appdev.vue')), 'services');
+const ServicesBranding = r => require.ensure([], () => r(require('./components/services/service--branding.vue')), 'services');
+const ServicesConsulting = r => require.ensure([], () => r(require('./components/services/service--consulting.vue')), 'services');
+const ServicesDigiAds = r => require.ensure([], () => r(require('./components/services/service--digiads.vue')), 'services');
+const ServicesOverview = r => require.ensure([], () => r(require('./components/services/service--all.vue')), 'services');
+const ServicesUx = r => require.ensure([], () => r(require('./components/services/service--ux.vue')), 'services');
 // Bios
 const Bios = r => require.ensure([], () => r(require('./components/bios/bios.vue')), 'bios');
 // Coming Soon
