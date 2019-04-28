@@ -166,11 +166,12 @@ export default {
       // style each block in order below it
       if ( navigator.userAgent.toLowerCase().indexOf("chrome") > -1 ) {
         window.console.log.apply(console, [
-          "\n %c Made with SASS by MDEV Digital 😜 %c %c https://mdev.digital/ %c  \n",
-          "color: #fff; background: #16b1a9; font-size: 22px; font-weight: 700; padding:10px; border-radius: 20px 0 0 0;",
-          "background: #16b1a9; padding:10px 0; font-size: 22px; font-weight: 700;",
-          "color: #fff; background: #1c1c1c; padding:10px 0; font-size: 22px; font-weight: 700;",
-          "background: #1c1c1c; padding:10px 0; font-size: 22px; font-weight: 700; border-radius: 0 0 30px 0;",
+          "\n %c Made with SASS by MDEV Digital 😜 %c \n %c Hey Psst...like playing with code? Send your resume to contact@mdev.digital!",
+          "color: #fff; background: #16b1a9; ;font-family: sans-serif; text-transform: uppercase; font-size: 225%; font-weight: 700; padding:10px; border-radius: 20px 20px 0 0;",
+          "background: transparent;",
+          "color: #16b1a9; background: #1c1c1c; ;font-family: sans-serif; text-transform: uppercase; font-size: 100%; font-weight: 400; padding:20px 10px; border-radius: 0 0  20px 20px;",
+        ]);
+        window.console.log.apply(console, [
         ]);
       }
       // Output standard message for other browsers
