@@ -238,6 +238,10 @@ export default{
     padding: $nav-padding-prt;
   }
 
+  @media #{$internet-exploder} {
+    height: 60px;
+  }
+
   svg {
     width: 100%;
   }
@@ -257,6 +261,10 @@ export default{
   position: relative;
   padding: 0;
   min-width: 290px;
+
+  @media #{$internet-exploder} {
+    height: 60px;
+  }
 }
 
 .mdev-live-brand {
@@ -285,10 +293,18 @@ export default{
 
   svg[ data-mdev-top ] {
     transform: translate3d(0, 53%, 0);
+
+    @media #{$internet-exploder} {
+      transform: translate3d(0, 93%, 0);
+    }
   }
 
   svg[ data-mdev-bot ] {
     transform: translate3d(0, -74%, 0);
+
+    @media #{$internet-exploder} {
+      transform: translate3d(0, -95%, 0);
+    }
   }
 }
 
@@ -438,6 +454,10 @@ export default{
       @media #{$phone-only} {
         transform: translate3d(0, 44%, 0);
       }
+
+      @media #{$internet-exploder} {
+        transform: translate3d(0, 95%, 0);
+      }
     }
 
     svg[ data-mdev-bot ] {
@@ -445,6 +465,10 @@ export default{
 
       @media #{$phone-only} {
         transform: translate3d(0, -60%, 0);
+      }
+
+      @media #{$internet-exploder} {
+        transform: translate3d(0, -97%, 0);
       }
     }
   }
