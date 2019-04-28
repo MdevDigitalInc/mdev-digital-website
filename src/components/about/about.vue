@@ -138,8 +138,8 @@ export default{
     this.bodyClass('--body-white');
 
     this.$nextTick(() => {
-      var introHeading = document.querySelectorAll('[data-intro-heading]')[0];
-      var introSubhead = document.querySelectorAll('[data-intro-subhead]')[0];
+      var introHeading = document.querySelectorAll('[data-intro-heading]');
+      var introSubhead = document.querySelectorAll('[data-intro-subhead]');
       setTimeout(() => {
         requestAnimationFrame(() => {
           this.addClass(introHeading, 'in-viewport');

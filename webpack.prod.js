@@ -174,7 +174,8 @@ module.exports = merge(common, {
         renderedRoute.html = renderedRoute.html
           .replace('--mask-active', '')
           .replace('--nav-active', '')
-          .replace('--active', '');
+          .replace('--active', '')
+          .replace('id="map"', '');
 
         return renderedRoute;
       },

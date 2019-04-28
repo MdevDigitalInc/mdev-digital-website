@@ -130,9 +130,9 @@ export default{
       this.navIsOpen = !this.navIsOpen;
       // Set Vars
       var mainNavLinks = document.querySelectorAll('[data-main-links]');
-      var mainBody = document.querySelectorAll('body')[0];
-      var mainNavContent = document.querySelectorAll('[data-nav-content]')[0];
-      var mainDeep = document.querySelectorAll('[data-main-deep]')[0];
+      var mainBody = document.querySelectorAll('body');
+      var mainNavContent = document.querySelectorAll('[data-nav-content]');
+      var mainDeep = document.querySelectorAll('[data-main-deep]');
 
       // Always remove Link Active Class
       for ( var i=0; i < mainNavLinks.length; i++ ) {
@@ -163,9 +163,9 @@ export default{
     // avoids issues if user goes back on history
     closeMenu() {
       var mainNavLinks = document.querySelectorAll('[data-main-links]');
-      var mainBody = document.querySelectorAll('body')[0];
-      var mainNavContent = document.querySelectorAll('[data-nav-content]')[0];
-      var mainDeep = document.querySelectorAll('[data-main-deep]')[0];
+      var mainBody = document.querySelectorAll('body');
+      var mainNavContent = document.querySelectorAll('[data-nav-content]');
+      var mainDeep = document.querySelectorAll('[data-main-deep]');
       this.navIsOpen = false;
       for ( var i=0; i < mainNavLinks.length; i++ ) {
         this.removeClass(mainNavLinks[i], '--showLinks');
@@ -176,8 +176,8 @@ export default{
     },
     // User Scroll Handler
     userScroll( distance ) {
-      var mainHeader = document.querySelectorAll('[data-main-header]')[0];
-      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var mainHeader = document.querySelectorAll('[data-main-header]');
+      var mainNav = document.querySelectorAll('[data-main-nav]');
       let pageTitleEl = document.querySelectorAll('[data-page-title]');
 
       this.scrollDistance = pageTitleEl[0].offsetTop > 0 ? pageTitleEl[0].offsetTop : mainHeader.offsetHeight;

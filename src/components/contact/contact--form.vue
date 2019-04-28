@@ -85,7 +85,7 @@ export default{
       },animInterval);
       // Reveal Thankyou
       setTimeout(() => {
-        var thanksEl = document.querySelectorAll('[data-form-thankyou]')[0];
+        var thanksEl = document.querySelectorAll('[data-form-thankyou]');
         requestAnimationFrame(() => {
           this.addClass(thanksEl, '--form-notify');
         });

@@ -153,9 +153,9 @@ export default{
   mounted: function() {
     this.$nextTick(() => {
       // Collect Elements
-      var introHeading = document.querySelectorAll('[data-intro-heading]')[0];
-      var introSubhead = document.querySelectorAll('[data-intro-subhead]')[0];
-      var introBtn = document.querySelectorAll('[data-header-btn]')[0];
+      var introHeading = document.querySelectorAll('[data-intro-heading]');
+      var introSubhead = document.querySelectorAll('[data-intro-subhead]');
+      var introBtn = document.querySelectorAll('[data-header-btn]');
       // Fire off animations
       setTimeout(() => {
         requestAnimationFrame(() => {

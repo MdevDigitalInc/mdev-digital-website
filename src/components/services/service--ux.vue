@@ -159,9 +159,9 @@ export default{
   mounted: function() {
     this.$nextTick(() => {
       // Collect Elements
-      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
-      var introAnim = document.querySelectorAll('#anim-the')[0];
-      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      var mainNav = document.querySelectorAll('[data-main-nav]');
+      var introAnim = document.querySelectorAll('#anim-the');
+      var introHeading = document.querySelectorAll('[data-header-intro]');
       // Add class to nav
       this.addClass(mainNav, '--teal-white');
 

@@ -166,7 +166,7 @@ export default{
   mounted: function() {
     this.$nextTick(() => {
       // Collect Elements
-      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var mainNav = document.querySelectorAll('[data-main-nav]');
       var introHeading = document.querySelectorAll('[data-header-intro]');
       // Add class to nav
       this.addClass(mainNav, '--teal-white');
@@ -193,9 +193,7 @@ export default{
       }, 1200);
       setTimeout(() => {
         requestAnimationFrame(() => {
-          for (var i=0; i < introHeading.length; i++) {
-            this.addClass(introHeading[i], '--anim-visible');
-          }
+          this.addClass(introHeading, '--anim-visible');
         });
       }, 1400);
     });
