@@ -64,7 +64,6 @@ q<template>
 import HiddenNav        from './hidden-nav.vue';
 import HiddenNavSidebar from './hidden-nav--sidebar.vue';
 import HiddenNavLinks   from './hidden-nav--links.vue';
-import SocialLinks      from './social-links.vue';
 // Import Flat File Data
 import MdevData         from '../../mdev-data.js';
 
@@ -207,8 +206,7 @@ export default{
   components: {
     'hidden-nav' : HiddenNav,
     'hidden-nav-sidebar' : HiddenNavSidebar,
-    'hidden-nav-links' : HiddenNavLinks,
-    'social-links' : SocialLinks
+    'hidden-nav-links' : HiddenNavLinks
   }
 };
 </script>

@@ -49,8 +49,6 @@
 
 <script>
 //Local Component registration
-import HeroMain           from '../shared/hero-main.vue';
-import MainFooter         from '../shared/main-footer.vue';
 import ContactMap         from './contact--map.vue';
 import ContactForm        from './contact--form.vue';
 // Import Data From Flat File
@@ -165,8 +163,6 @@ export default {
   },
 
   components: {
-    'hero-main'     : HeroMain,
-    'main-footer'   : MainFooter,
     'contact-map'   : ContactMap,
     'contact-form'  : ContactForm
   }

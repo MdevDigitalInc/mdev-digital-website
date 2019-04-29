@@ -48,8 +48,6 @@
 // Imports
 import BaseForm     from '../shared/base-form.vue';
 import SplitSixty   from '../modules/sixty-forty.vue';
-import SocialLinks  from '../shared/social-links.vue';
-import BtnPrimary   from '../shared/btn-primary.vue';
 // Import Flat File Data
 import MdevData     from '../../mdev-data.js';
 
@@ -95,9 +93,7 @@ export default{
 
   components: {
     'base-form'     : BaseForm,
-    'split-sixty'   : SplitSixty,
-    'social-links'  : SocialLinks,
-    'btn-primary'   : BtnPrimary
+    'split-sixty'   : SplitSixty
   }
 };
 </script>

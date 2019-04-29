@@ -111,13 +111,9 @@
 
 <script>
 // Local Component Registration
-import HeroMain           from '../shared/hero-main.vue';
-import MainFooter         from '../shared/main-footer.vue';
-import PreFooter          from '../shared/pre-footer.vue';
 import MediaCarousel      from '../modules/media-carousel.vue';
 import FeaturedServices   from '../modules/featured-services.vue';
-import ChapterHeading     from '../shared/chapter-heading.vue';
-import ChapterLink        from '../shared/chapter-link.vue';
+//import ChapterHeading     from '../shared/chapter-heading.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
 import SEOData        from '../../site-seo.js';
@@ -200,13 +196,9 @@ export default{
   },
 
   components: {
-    'hero-main'      : HeroMain,
-    'main-footer'    : MainFooter,
-    'pre-footer'     : PreFooter,
     'media-carousel' : MediaCarousel,
-    'service-tile'   : FeaturedServices,
-    'chapter-heading': ChapterHeading,
-    'chapter-link'   : ChapterLink
+    'service-tile'   : FeaturedServices
+    //'chapter-heading': ChapterHeading,
   }
 };
 </script>

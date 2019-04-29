@@ -82,9 +82,6 @@
 
 <script>
 // Local Component registration
-import HeroMain           from '../shared/hero-main.vue';
-import BtnPrimary         from '../shared/btn-primary.vue';
-import MainFooter         from '../shared/main-footer.vue';
 import ProcessSection     from './about--process.vue';
 import PhilosophySection  from './about--philosophy.vue';
 import EstablishedSection from './about--established.vue';
@@ -159,9 +156,6 @@ export default{
   },
 
   components: {
-    'btn-primary'         : BtnPrimary,
-    'hero-main'           : HeroMain,
-    'main-footer'         : MainFooter,
     'process-section'     : ProcessSection,
     'philosophy-section'  : PhilosophySection,
     'established-section' : EstablishedSection,

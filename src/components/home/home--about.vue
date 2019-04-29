@@ -17,9 +17,6 @@
 </template>
 
 <script>
-// Local Import
-import BtnPrimary   from '../shared/btn-primary.vue';
-
 export default {
   name: 'HomeAbout',
   data: function() {
@@ -33,10 +30,6 @@ export default {
         btnClass: 'mdev-primary-btn --space-top-sm --bot-mod'
       }
     };
-  },
-
-  components: {
-    'btn-primary' : BtnPrimary
   }
 };
 </script>

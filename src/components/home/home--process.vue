@@ -12,9 +12,6 @@
 </template>
 
 <script>
-// Local Import
-import BtnPrimary   from '../shared/btn-primary.vue';
-
 export default {
   name: 'HomeProcess',
 
@@ -26,10 +23,6 @@ export default {
         btnClass: 'mdev-primary-btn --space-top-sm'
       }
     };
-  },
-
-  components: {
-    'btn-primary' : BtnPrimary
   }
 };
 </script>

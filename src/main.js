@@ -300,6 +300,24 @@ Vue.mixin({
   }
 })
 
+// Global Component Registration
+// Centralizes components to ease on loading
+import HeroMain           from '../src/components/shared/hero-main.vue';
+import MainFooter         from '../src/components/shared/main-footer.vue';
+import BtnPrimary         from '../src/components/shared/btn-primary.vue';
+import ChapterLink        from '../src/components/shared/chapter-link.vue';
+import PreFooter          from '../src/components/shared/pre-footer.vue';
+import SocialLinks        from '../src/components/shared/social-links.vue';
+
+// Global Component Assign
+Vue.component('hero-main', HeroMain);
+Vue.component('main-footer', MainFooter);
+Vue.component('btn-primary', BtnPrimary);
+Vue.component('chapter-link', ChapterLink);
+Vue.component('pre-footer', PreFooter);
+Vue.component('social-links', SocialLinks);
+
+
 // [ Main Vue Instance ] ----------------------------
 const _vue = new Vue({
   el: '#app',

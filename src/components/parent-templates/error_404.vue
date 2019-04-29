@@ -49,10 +49,6 @@
 // Import Data From Flat File
 import SEOData        from '../../site-seo.js';
 import MdevData       from '../../mdev-data.js';
-// Components Import
-import HeroMain       from '../shared/hero-main.vue';
-import MainFooter     from '../shared/main-footer.vue';
-import BtnPrimary     from '../shared/btn-primary.vue';
 
 export default {
   name: 'ErrorPage',
@@ -121,13 +117,6 @@ export default {
       }, 2800);
     });
   },
-
-  components: {
-    'hero-main'      : HeroMain,
-    'main-footer'    : MainFooter,
-    'btn-primary'    : BtnPrimary
-  }
-
 };
 </script>
 

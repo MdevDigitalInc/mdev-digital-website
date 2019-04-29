@@ -50,5 +50,91 @@
   }
 }
 
+.mdev-section-links {
+  width: 100%;
+  position: relative;
+
+  @media #{$portrait} {
+    padding: 60px 0 25px;
+  }
+
+  @media #{$phone-only} {
+    padding: 40px 0 25px;
+  }
+
+  a {
+    display: block;
+    line-height: 150%;
+    color: $white;
+    padding: .5vw 0;
+    transition: all .3s;
+
+    &:hover,
+    &:focus,
+    &:active {
+      .mdev-link-name {
+        border-bottom: 4px solid rgba(255, 255, 255, 1);
+      }
+      .--dark {
+        border-bottom: 4px solid rgba(0, 0, 0, 1);
+      }
+    }
+  }
+
+  .mdev-link-name {
+    font-size: 1.6vw;
+    border-bottom: 4px solid rgba(255, 255, 255, 0);
+    display: inline-block;
+    transition: all .6s;
+    letter-spacing: 2px;
+
+    @media #{$xl-up} {
+      font-size: 1.3vw;
+    }
+
+    @media #{$portrait} {
+      font-size: 4.6vw;
+      line-height: 38px;
+    }
+    @media #{$phone-only} {
+      font-size: 6vw;
+      line-height: 120%;
+    }
+  }
+
+  .--dark {
+    border-bottom: 4px solid rgba(0, 0, 0, 0);
+  }
+
+  .mdev-link-index {
+    font-size: 1.1vw;
+    display: inline-block;
+    margin-right: .8vw;
+
+    @media #{$portrait} {
+      font-size: 4.1vw;
+    }
+
+    @media #{$phone-only} {
+      font-size: 5.1vw;
+    }
+  }
+}
+
+.--tab {
+  @media #{$portrait} {
+    margin-bottom: 60px;
+  }
+}
+
+.mdev-split-6 {
+  padding-right: 5vw;
+
+  @media #{$tablet-lnd-only} {
+    padding-right: 5.7vw;
+  }
+}
+
+
 /*--------------------------------------*/
 </style>
