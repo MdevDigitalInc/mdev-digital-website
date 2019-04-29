@@ -39,8 +39,6 @@
 // Local Import
 import SplitSixty   from '../modules/sixty-forty.vue';
 import ServiceLinks from '../home/home-services--links.vue';
-import SocialLinks  from '../shared/social-links.vue';
-import BtnPrimary   from '../shared/btn-primary.vue';
 // Flat Data File
 import MdevData     from '../../mdev-data.js';
 
@@ -62,8 +60,6 @@ export default{
   },
 
   components: {
-    'btn-primary'   : BtnPrimary,
-    'social-links'  : SocialLinks,
     'split-sixty'   : SplitSixty,
     'service-links' : ServiceLinks
   }

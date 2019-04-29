@@ -49,8 +49,6 @@
 
 <script>
 //Local Component registration
-import HeroMain           from '../shared/hero-main.vue';
-import MainFooter         from '../shared/main-footer.vue';
 import ContactMap         from './contact--map.vue';
 import ContactForm        from './contact--form.vue';
 // Import Data From Flat File
@@ -103,10 +101,10 @@ export default {
     this.bodyClass('--body-white');
     this.$nextTick(() => {
       // Collect Elements
-      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
-      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
-      var introAnim = document.querySelectorAll('#anim-something')[0];
-      var introBtn = document.querySelectorAll('[data-header-btn]')[0];
+      var mainNav = document.querySelectorAll('[data-main-nav]');
+      var introHeading = document.querySelectorAll('[data-header-intro]');
+      var introAnim = document.querySelectorAll('#anim-something');
+      var introBtn = document.querySelectorAll('[data-header-btn]');
       // Add Class to Nav
       this.addClass(mainNav, '--teal-white');
       // Fire off Animations
@@ -165,8 +163,6 @@ export default {
   },
 
   components: {
-    'hero-main'     : HeroMain,
-    'main-footer'   : MainFooter,
     'contact-map'   : ContactMap,
     'contact-form'  : ContactForm
   }
@@ -285,11 +281,6 @@ export default {
 
     @media #{$portrait} {
       text-align: center;
-      width: 100%;
-    }
-
-    @media #{$tablet-lnd-only} {
-      width: 100%;
     }
   }
 

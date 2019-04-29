@@ -31,7 +31,6 @@
 
 <script>
 // Local Import
-import BtnPrimary           from '../shared/btn-primary.vue';
 import MosaicLink           from '../modules/mosaic-link.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
@@ -50,7 +49,6 @@ export default{
   },
 
   components: {
-    'btn-primary'         : BtnPrimary,
     'mosaic-link'         : MosaicLink
   }
 };

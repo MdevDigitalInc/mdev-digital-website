@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import SocialLinks      from './social-links.vue';
 // Import Flat File Data
 import MdevData         from '../../mdev-data.js';
 
@@ -29,11 +28,6 @@ export default{
       mdevBrand: 'svg/MDEV_RGB_Icon_Primary_Reverse.svg',
       year: null
     };
-  },
-
-  // Components
-  components: {
-    'social-links' : SocialLinks
   },
 
   created: function() {

@@ -73,7 +73,6 @@
 
 <script>
 // Import
-import SocialLinks    from '../shared/social-links.vue';
 import BiosNavigation from './bios--navigation.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
@@ -175,8 +174,7 @@ export default {
   },
 
   components: {
-    'bios-navigation' : BiosNavigation,
-    'social-links'    : SocialLinks
+    'bios-navigation' : BiosNavigation
   }
 };
 </script>

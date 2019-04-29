@@ -40,16 +40,11 @@
 </template>
 
 <script>
-import BtnPrimary         from './btn-primary.vue';
 
 export default{
   name: 'preFooter',
 
   props: ['heading', 'subheading', 'BtnData', 'links', 'serviceFlag' ],
-
-  components: {
-    'btn-primary' : BtnPrimary
-  }
 };
 </script>
 

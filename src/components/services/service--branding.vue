@@ -93,13 +93,9 @@
 
 <script>
 // Local Component Registration
-import HeroMain           from '../shared/hero-main.vue';
-import MainFooter         from '../shared/main-footer.vue';
-import PreFooter          from '../shared/pre-footer.vue';
 import FeaturedServices   from '../modules/featured-services.vue';
 import MediaCarousel      from '../modules/media-carousel.vue';
-import ChapterHeading     from '../shared/chapter-heading.vue';
-import ChapterLink        from '../shared/chapter-link.vue';
+//import ChapterHeading     from '../shared/chapter-heading.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
 import SEOData        from '../../site-seo.js';
@@ -148,10 +144,10 @@ export default{
   mounted: function() {
     this.$nextTick(() => {
       // Collect Elements
-      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
-      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
-      var introBtn = document.querySelectorAll('[data-header-btn]')[0];
-      var introAnim = document.querySelectorAll('#anim-your')[0];
+      var mainNav = document.querySelectorAll('[data-main-nav]');
+      var introHeading = document.querySelectorAll('[data-header-intro]');
+      var introBtn = document.querySelectorAll('[data-header-btn]');
+      var introAnim = document.querySelectorAll('#anim-your');
       // Add class to nav
       this.addClass(mainNav, '--teal-white');
       // Fire off animation
@@ -172,12 +168,8 @@ export default{
   },
 
   components: {
-    'hero-main'      : HeroMain,
-    'main-footer'    : MainFooter,
-    'pre-footer'     : PreFooter,
-    'chapter-heading': ChapterHeading,
+    //'chapter-heading': ChapterHeading,
     'media-carousel' : MediaCarousel,
-    'chapter-link'   : ChapterLink,
     'service-tile'   : FeaturedServices
   }
 };

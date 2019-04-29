@@ -49,10 +49,6 @@
 // Import Data From Flat File
 import SEOData        from '../../site-seo.js';
 import MdevData       from '../../mdev-data.js';
-// Components Import
-import HeroMain       from '../shared/hero-main.vue';
-import MainFooter     from '../shared/main-footer.vue';
-import BtnPrimary     from '../shared/btn-primary.vue';
 
 export default {
   name: 'ErrorPage',
@@ -98,9 +94,9 @@ export default {
   mounted: function() {
     this.$nextTick(() => {
       // Collect Elements
-      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
-      var introBtn = document.querySelectorAll('[data-header-btn]')[0];
-      var introHeading = document.querySelectorAll('[data-header-intro]')[0];
+      var mainNav = document.querySelectorAll('[data-main-nav]');
+      var introBtn = document.querySelectorAll('[data-header-btn]');
+      var introHeading = document.querySelectorAll('[data-header-intro]');
       // Add class to nav
       this.addClass(mainNav, '--teal-white');
 
@@ -121,13 +117,6 @@ export default {
       }, 2800);
     });
   },
-
-  components: {
-    'hero-main'      : HeroMain,
-    'main-footer'    : MainFooter,
-    'btn-primary'    : BtnPrimary
-  }
-
 };
 </script>
 

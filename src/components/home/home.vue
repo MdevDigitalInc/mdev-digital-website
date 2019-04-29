@@ -21,12 +21,10 @@
 
 <script>
 // Local Component registration
-import HeroMain           from '../shared/hero-main.vue';
 import HomeCaseStudies    from './home--casestudies.vue';
 import HomeAbout          from './home--about.vue';
 import HomeServices       from './home--services.vue';
 import HomeProcess        from './home--process.vue';
-import MainFooter         from '../shared/main-footer.vue';
 import HomeTestimonials   from './home--testimonials.vue';
 // Flat Data File
 import MdevData           from '../../mdev-data.js';
@@ -70,12 +68,10 @@ export default{
   },
 
   components: {
-    'hero-main'         : HeroMain,
     'home-about'        : HomeAbout,
     'home-services'     : HomeServices,
     'home-process'      : HomeProcess,
     'home-testimonials' : HomeTestimonials,
-    'main-footer'       : MainFooter,
     'home-casestudies'  : HomeCaseStudies
   }
 };

@@ -61,8 +61,8 @@ export default{
     // Wait for full load and next tic on VM
     this.$nextTick(() => {
       // Load elements
-      var loadAnim = document.querySelectorAll('[data-load-anim]')[0];
-      var loadWindow = document.querySelectorAll('[data-load-window]')[0];
+      var loadAnim = document.querySelectorAll('[data-load-anim]');
+      var loadWindow = document.querySelectorAll('[data-load-window]');
 
       // Logo & Loading screen
       setTimeout(() => {

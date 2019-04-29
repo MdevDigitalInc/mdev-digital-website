@@ -64,7 +64,7 @@ export default {
       }
     },
 
-    setupMap( recenter ) {
+    setupMap() {
       // Pin Location
       let pinLocation = this.mapData.pinLocation;
       // Map Settings - Default

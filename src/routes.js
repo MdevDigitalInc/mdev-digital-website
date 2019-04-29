@@ -1,25 +1,25 @@
 // Import Parent Compontents
-import About                from './components/about/about.vue';
-import Contact              from './components/contact/contact.vue';
-import ErrorPage            from './components/parent-templates/error_404.vue';
-import Home                 from './components/home/home.vue';
+const About = r => require.ensure([], () => r(require('./components/about/about.vue')), 'about');
+const Contact = r => require.ensure([], () => r(require('./components/contact/contact.vue')), 'contact');
+const ErrorPage = r => require.ensure([], () => r(require('./components/parent-templates/error_404.vue')), 'errorpage');
+const Home = r => require.ensure([], () => r(require('./components/home/home.vue')), 'home');
 // Case Studies
-import CaseStudies          from './components/casestudies/casestudies.vue';
-import CaseStudiesOverview  from './components/casestudies/casestudies--all.vue';
-import ZucoraRsp            from './components/casestudies/zucora--rsp.vue';
-import ZucoraTwop           from './components/casestudies/zucora--twop.vue';
+//const CaseStudies = r => require.ensure([], () => r(require('./components/casestudies/casestudies.vue')), 'casestudies');
+//const CaseStudiesOverview  from './components/casestudies/casestudies--all.vue';
+//const ZucoraRsp            from './components/casestudies/zucora--rsp.vue';
+//const ZucoraTwop           from './components/casestudies/zucora--twop.vue';
 // Services
-import Services             from './components/services/services.vue';
-import ServicesAppDev       from './components/services/service--appdev.vue';
-import ServicesBranding     from './components/services/service--branding.vue';
-import ServicesConsulting   from './components/services/service--consulting.vue';
-import ServicesDigiAds      from './components/services/service--digiads.vue';
-import ServicesOverview     from './components/services/service--all.vue';
-import ServicesUx           from './components/services/service--ux.vue';
+const Services = r => require.ensure([], () => r(require('./components/services/services.vue')), 'services');
+const ServicesAppDev = r => require.ensure([], () => r(require('./components/services/service--appdev.vue')), 'services-app');
+const ServicesBranding = r => require.ensure([], () => r(require('./components/services/service--branding.vue')), 'services-brand');
+const ServicesConsulting = r => require.ensure([], () => r(require('./components/services/service--consulting.vue')), 'services-consult');
+const ServicesDigiAds = r => require.ensure([], () => r(require('./components/services/service--digiads.vue')), 'services-digi');
+const ServicesOverview = r => require.ensure([], () => r(require('./components/services/service--all.vue')), 'services-all');
+const ServicesUx = r => require.ensure([], () => r(require('./components/services/service--ux.vue')), 'services-ux');
 // Bios
-import Bios                 from './components/bios/bios.vue';
+const Bios = r => require.ensure([], () => r(require('./components/bios/bios.vue')), 'bios');
 // Coming Soon
-import ComingSoon           from './components/comingsoon/comingsoon.vue';
+const ComingSoon = r => require.ensure([], () => r(require('./components/comingsoon/comingsoon.vue')), 'comingsoon');
 // Import Data From Flat File
 import MdevData             from './mdev-data.js';
 
@@ -68,26 +68,26 @@ export const routes = [
       }
     }
   },  // Case Study Master Routes
-  {
-    path: '/casestudy',
-    component: CaseStudies,
-    redirect: '/casestudy/overview',
-    // Load case studies as child views
-    children: [
-      {
-        path: 'overview',
-        component: CaseStudiesOverview,
-      },
-      {
-        path: 'zucora-twop',
-        component: ZucoraTwop
-      },
-      {
-        path: 'zucora-rsp',
-        component: ZucoraRsp
-      }
-    ]
-  },
+//  {
+//    path: '/casestudy',
+//    component: CaseStudies,
+//    redirect: '/casestudy/overview',
+//    // Load case studies as child views
+//    children: [
+//      {
+//        path: 'overview',
+//        component: CaseStudiesOverview,
+//      },
+//      {
+//        path: 'zucora-twop',
+//        component: ZucoraTwop
+//      },
+//      {
+//        path: 'zucora-rsp',
+//        component: ZucoraRsp
+//      }
+//    ]
+//  },
   // Services Master Routes
   {
     path: '/services',

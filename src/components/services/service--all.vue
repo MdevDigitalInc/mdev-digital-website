@@ -104,11 +104,8 @@
 // having slots this element can easily take in different markup and presentation.
 
 //Local Component registration
-import HeroMain           from '../shared/hero-main.vue';
-import MainFooter         from '../shared/main-footer.vue';
 import MediaCarousel      from '../modules/media-carousel.vue';
 import FeaturedContent    from '../modules/featured-content.vue';
-import BtnPrimary         from '../shared/btn-primary.vue';
 // Import Data From Flat File
 import MdevData       from '../../mdev-data.js';
 import SEOData        from '../../site-seo.js';
@@ -153,9 +150,9 @@ export default{
   mounted: function() {
     this.$nextTick(() => {
       // Collect Elements
-      var introHeading = document.querySelectorAll('[data-intro-heading]')[0];
-      var introSubhead = document.querySelectorAll('[data-intro-subhead]')[0];
-      var introBtn = document.querySelectorAll('[data-header-btn]')[0];
+      var introHeading = document.querySelectorAll('[data-intro-heading]');
+      var introSubhead = document.querySelectorAll('[data-intro-subhead]');
+      var introBtn = document.querySelectorAll('[data-header-btn]');
       // Fire off animations
       setTimeout(() => {
         requestAnimationFrame(() => {
@@ -175,10 +172,7 @@ export default{
   },
 
   components: {
-    'hero-main'     : HeroMain,
-    'main-footer'   : MainFooter,
     'media-carousel' : MediaCarousel,
-    'btn-primary'   : BtnPrimary,
     'service-tile'   : FeaturedContent
   }
 };
@@ -236,36 +230,6 @@ export default{
     padding-top: 95%;
   }
 }
-
-.mdev-service {
-  .mdev-service-index {
-    font-size: 40px;
-    font-weight: 100;
-    line-height: 1.5;
-  }
-
-  .mdev-service-topics {
-    line-height: 1.82;
-    font-size: 20px;
-
-    @media #{$phone-only} {
-      font-size: 10px;
-    }
-  }
-
-  .mdev-service-desc {
-    width: 80%;
-
-    @media #{$laptop-only} {
-      width: 95%;
-    }
-
-    @media #{$portrait} {
-      width: 100%;
-    }
-  }
-}
-
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating
 [ data-line-one ] {
@@ -284,6 +248,5 @@ export default{
   animation: line-three-anim;
   @include arrow-anim-rules(17s);
 }
-
 /*--------------------------------------*/
 </style>

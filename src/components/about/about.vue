@@ -82,9 +82,6 @@
 
 <script>
 // Local Component registration
-import HeroMain           from '../shared/hero-main.vue';
-import BtnPrimary         from '../shared/btn-primary.vue';
-import MainFooter         from '../shared/main-footer.vue';
 import ProcessSection     from './about--process.vue';
 import PhilosophySection  from './about--philosophy.vue';
 import EstablishedSection from './about--established.vue';
@@ -138,8 +135,8 @@ export default{
     this.bodyClass('--body-white');
 
     this.$nextTick(() => {
-      var introHeading = document.querySelectorAll('[data-intro-heading]')[0];
-      var introSubhead = document.querySelectorAll('[data-intro-subhead]')[0];
+      var introHeading = document.querySelectorAll('[data-intro-heading]');
+      var introSubhead = document.querySelectorAll('[data-intro-subhead]');
       setTimeout(() => {
         requestAnimationFrame(() => {
           this.addClass(introHeading, 'in-viewport');
@@ -159,9 +156,6 @@ export default{
   },
 
   components: {
-    'btn-primary'         : BtnPrimary,
-    'hero-main'           : HeroMain,
-    'main-footer'         : MainFooter,
     'process-section'     : ProcessSection,
     'philosophy-section'  : PhilosophySection,
     'established-section' : EstablishedSection,

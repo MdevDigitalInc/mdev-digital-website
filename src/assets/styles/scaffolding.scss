@@ -329,3 +329,34 @@ $md: 75px;
 }
 
 
+// Service Tile Global styles
+.mdev-service {
+  .mdev-service-index {
+    font-size: 40px;
+    font-weight: 100;
+    line-height: 1.5;
+  }
+
+  .mdev-service-topics {
+    line-height: 1.82;
+    font-size: 20px;
+
+    @media #{$phone-only} {
+      font-size: 10px;
+    }
+  }
+
+  .mdev-service-desc {
+    width: 80%;
+
+    @media #{$laptop-only} {
+      width: 95%;
+    }
+
+    @media #{$portrait} {
+      width: 100%;
+    }
+  }
+}
+
+

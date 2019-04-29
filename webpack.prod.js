@@ -111,7 +111,7 @@ module.exports = merge(common, {
       persistentCache: true,
       inject: true, // Inject Calls on index.html automatically
       // CHANGE COLOR OF THEME
-      background: '#13b2a9',
+      background: '#0a1315',
       // CHANGE PROJECT TITLE
       title: 'MDEV Digital Inc.',
       // Icons to export
@@ -174,7 +174,8 @@ module.exports = merge(common, {
         renderedRoute.html = renderedRoute.html
           .replace('--mask-active', '')
           .replace('--nav-active', '')
-          .replace('--active', '');
+          .replace('--active', '')
+          .replace('id="map"', '');
 
         return renderedRoute;
       },

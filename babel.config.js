@@ -9,9 +9,8 @@ module.exports = {
         "edge": "16",
         "firefox": "52",
         "ie": "11",
-        "ios": "9.3",
-        "node": "8.9.3",
-        "safari": "10.1"
+        "ios": "8",
+        "safari": "9"
       },
       polyfills: [
         'es7.object.entries',

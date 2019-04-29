@@ -66,27 +66,6 @@ Object.keys(locales).forEach(function (lang) {
   Vue.locale(lang, locales[lang]);
 });
 //-----------------------------------------------[ i18n ]
-
-// [ Vue Resource ] ------------------------------------
-// Set Global Root path
-//Vue.http.options.root = 'https://vuejs-http-resource.firebaseio.com/';
-
-// Set Global Intercept
-//Vue.http.interceptors.push( (request, next) => {
-//  console.log(request);
-//  // To use when defining a single API that is not firebase
-//  //if (request.url[0] === '/'){
-//  //  request.url = "https:apiurl:3030" + request.url;
-//  //}
-//  next( function(response){
-//    if (response.status == 404){
-//      alertify.error('Sorry, Our systems are not responding right now.');
-//    }
-//  });
-//});
-
-//--------------------------------------[ vue-resource ]
-
 // [ Vue-Router ] ------------------------------------
 // --------------------------------
 // Server must be set to AWLAYWAS return
@@ -142,7 +121,7 @@ Vue.mixin({
     // Change Navigation Logo Colors via class
     changeNavBrand(e, brandClass) {
       // Grab Element
-      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var mainNav = document.querySelectorAll('[data-main-nav]');
       if ( e.target.rect.y <= 0 ) {
         // Remove classes
         this.removeClass(mainNav, '--teal-black');
@@ -163,6 +142,7 @@ Vue.mixin({
       var crossEl = document.querySelectorAll('[data-crossbeam]');
       var brandHeight = null;
       brandHeight = brandEl.offsetHeight
+      // Iterate through crossbeams (There is always two in prerender)
       for (var i=0; i < crossEl.length; i++) {
         crossEl[i].style.transform = 'translate3d(0,' + (brandHeight + 8) + 'px, 0)';
       }
@@ -189,15 +169,26 @@ Vue.mixin({
     //
     // Add Class JQUERY replacement
     addClass(element, className) {
-      // Check for valid element
-      if ( element ) {
-        if (element.classList) {
-          element.classList.add(className);
+      // Central Function
+      const addCl = function( el, cl ) {
+        if (el.classList) {
+          el.classList.add(cl);
         }
         else {
-          element.className += ' ' + className;
+          el.className += ' ' + cl;
         }
       }
+      // Check for Multiple elements
+      if ( element.length > 0 ) {
+        for (var i=0; i < element.length; i++) {
+          addCl(element[i], className);
+        }
+      }
+      // Check for valid element
+      else if ( element ) {
+          addCl(element, className);
+      }
+      // Error
       else {
         // Output clean error
         console.log('ERROR | Element is not valid');
@@ -205,15 +196,26 @@ Vue.mixin({
     },
     // Remove Class
     removeClass(element, className) {
-      // Check for valid element
-      if ( element ) {
-        if (element.classList) {
-          element.classList.remove(className);
+      // Central Function
+      const rmCl = function ( el, cl ) {
+        if (el.classList) {
+          el.classList.remove(cl);
         }
         else {
-          element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+          el.className = el.className.replace(new RegExp('(^|\\b)' + cl.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
         }
       }
+      // Check for Multiple elements
+      if ( element.length > 0 ) {
+        for (var i=0; i < element.length; i++) {
+          rmCl(element[i], className);
+        }
+      }
+      // Check for valid elements
+      else if ( element ) {
+        rmCl(element, className);
+      }
+      // ERROR
       else {
         // Output clean error
         console.log('ERROR | Element is not valid');
@@ -223,11 +225,13 @@ Vue.mixin({
     hasClass(element, className) {
       // Check for valid element
       if ( element ) {
-        if (element.classList) {
-          element.classList.contains(className);
-        }
-        else {
-          new RegExp('(^| )' + className + '( |$)', 'gi').test(element.className);
+        for (var i=0; i < element.length; i++) {
+          if (element[i].classList) {
+            element[i].classList.contains(className);
+          }
+          else {
+            new RegExp('(^| )' + className + '( |$)', 'gi').test(element[i].className);
+          }
         }
       }
       else {
@@ -239,20 +243,22 @@ Vue.mixin({
     toggleClass(element, className) {
       // Check for valid element
       if ( element ) {
-        if (element.classList) {
-          element.classList.toggle(className);
-        }
-        else {
-          var classes = element.className.split(' ');
-          var existingIndex = classes.indexOf(className);
-
-          if (existingIndex >= 0) {
-            classes.splice(existingIndex, 1);
+        for (var i=0; i < element.length; i++) {
+          if (element[i].classList) {
+            element[i].classList.toggle(className);
           }
           else {
-            classes.push(className);
+            var classes = element[i].className.split(' ');
+            var existingIndex = classes.indexOf(className);
+
+            if (existingIndex >= 0) {
+              classes.splice(existingIndex, 1);
+            }
+            else {
+              classes.push(className);
+            }
+            element[i].className = classes.join(' ');
           }
-          element.className = classes.join(' ');
         }
       }
       else {
@@ -262,13 +268,13 @@ Vue.mixin({
     },
     // Reset Body Class
     bodyReset(className) {
-      var mainBody = document.querySelectorAll('body')[0];
+      var mainBody = document.querySelectorAll('body');
       this.removeClass(mainBody, className);
     },
     // Add Body Class
     bodyClass(className) {
       // Change body class
-      var mainBody = document.querySelectorAll('body')[0];
+      var mainBody = document.querySelectorAll('body');
       this.addClass(mainBody, className);
     },
     // Async Load Scipts -----------------------------------
@@ -293,6 +299,24 @@ Vue.mixin({
     }
   }
 })
+
+// Global Component Registration
+// Centralizes components to ease on loading
+import HeroMain           from '../src/components/shared/hero-main.vue';
+import MainFooter         from '../src/components/shared/main-footer.vue';
+import BtnPrimary         from '../src/components/shared/btn-primary.vue';
+import ChapterLink        from '../src/components/shared/chapter-link.vue';
+import PreFooter          from '../src/components/shared/pre-footer.vue';
+import SocialLinks        from '../src/components/shared/social-links.vue';
+
+// Global Component Assign
+Vue.component('hero-main', HeroMain);
+Vue.component('main-footer', MainFooter);
+Vue.component('btn-primary', BtnPrimary);
+Vue.component('chapter-link', ChapterLink);
+Vue.component('pre-footer', PreFooter);
+Vue.component('social-links', SocialLinks);
+
 
 // [ Main Vue Instance ] ----------------------------
 const _vue = new Vue({

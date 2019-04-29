@@ -64,7 +64,6 @@ q<template>
 import HiddenNav        from './hidden-nav.vue';
 import HiddenNavSidebar from './hidden-nav--sidebar.vue';
 import HiddenNavLinks   from './hidden-nav--links.vue';
-import SocialLinks      from './social-links.vue';
 // Import Flat File Data
 import MdevData         from '../../mdev-data.js';
 
@@ -130,9 +129,9 @@ export default{
       this.navIsOpen = !this.navIsOpen;
       // Set Vars
       var mainNavLinks = document.querySelectorAll('[data-main-links]');
-      var mainBody = document.querySelectorAll('body')[0];
-      var mainNavContent = document.querySelectorAll('[data-nav-content]')[0];
-      var mainDeep = document.querySelectorAll('[data-main-deep]')[0];
+      var mainBody = document.querySelectorAll('body');
+      var mainNavContent = document.querySelectorAll('[data-nav-content]');
+      var mainDeep = document.querySelectorAll('[data-main-deep]');
 
       // Always remove Link Active Class
       for ( var i=0; i < mainNavLinks.length; i++ ) {
@@ -163,9 +162,9 @@ export default{
     // avoids issues if user goes back on history
     closeMenu() {
       var mainNavLinks = document.querySelectorAll('[data-main-links]');
-      var mainBody = document.querySelectorAll('body')[0];
-      var mainNavContent = document.querySelectorAll('[data-nav-content]')[0];
-      var mainDeep = document.querySelectorAll('[data-main-deep]')[0];
+      var mainBody = document.querySelectorAll('body');
+      var mainNavContent = document.querySelectorAll('[data-nav-content]');
+      var mainDeep = document.querySelectorAll('[data-main-deep]');
       this.navIsOpen = false;
       for ( var i=0; i < mainNavLinks.length; i++ ) {
         this.removeClass(mainNavLinks[i], '--showLinks');
@@ -176,20 +175,25 @@ export default{
     },
     // User Scroll Handler
     userScroll( distance ) {
+      console.log(distance);
       var mainHeader = document.querySelectorAll('[data-main-header]')[0];
-      var mainNav = document.querySelectorAll('[data-main-nav]')[0];
+      var mainNav = document.querySelectorAll('[data-main-nav]');
       let pageTitleEl = document.querySelectorAll('[data-page-title]');
 
       this.scrollDistance = pageTitleEl[0].offsetTop > 0 ? pageTitleEl[0].offsetTop : mainHeader.offsetHeight;
       this.desiredOffset = pageTitleEl[0].offsetTop > 0 ? 300 : 20;
       // If user scrolls past desired distance remove effects
+      console.log(this.desiredOffset);
+      console.log(this.scrollDistance);
       if ( (distance + this.desiredOffset) >= this.scrollDistance) {
+        console.log('case 1');
         requestAnimationFrame(() => {
           this.addClass(mainHeader, '--user-scroll');
           this.addClass(mainNav, '--user-scroll');
         });
       }
       else {
+        console.log('case 2');
         requestAnimationFrame(() => {
           this.removeClass(mainHeader, '--user-scroll');
           this.removeClass(mainNav, '--user-scroll');
@@ -202,8 +206,7 @@ export default{
   components: {
     'hidden-nav' : HiddenNav,
     'hidden-nav-sidebar' : HiddenNavSidebar,
-    'hidden-nav-links' : HiddenNavLinks,
-    'social-links' : SocialLinks
+    'hidden-nav-links' : HiddenNavLinks
   }
 };
 </script>
@@ -233,6 +236,10 @@ export default{
     padding: $nav-padding-prt;
   }
 
+  @media #{$internet-exploder} {
+    height: 60px;
+  }
+
   svg {
     width: 100%;
   }
@@ -252,6 +259,10 @@ export default{
   position: relative;
   padding: 0;
   min-width: 290px;
+
+  @media #{$internet-exploder} {
+    height: 60px;
+  }
 }
 
 .mdev-live-brand {
@@ -280,10 +291,18 @@ export default{
 
   svg[ data-mdev-top ] {
     transform: translate3d(0, 53%, 0);
+
+    @media #{$internet-exploder} {
+      transform: translate3d(0, 93%, 0);
+    }
   }
 
   svg[ data-mdev-bot ] {
     transform: translate3d(0, -74%, 0);
+
+    @media #{$internet-exploder} {
+      transform: translate3d(0, -95%, 0);
+    }
   }
 }
 
@@ -433,6 +452,10 @@ export default{
       @media #{$phone-only} {
         transform: translate3d(0, 44%, 0);
       }
+
+      @media #{$internet-exploder} {
+        transform: translate3d(0, 95%, 0);
+      }
     }
 
     svg[ data-mdev-bot ] {
@@ -440,6 +463,10 @@ export default{
 
       @media #{$phone-only} {
         transform: translate3d(0, -60%, 0);
+      }
+
+      @media #{$internet-exploder} {
+        transform: translate3d(0, -97%, 0);
       }
     }
   }
