@@ -342,10 +342,10 @@ export default  {
           imageDesc: 'Samples of our Business Cards.',
         }
       ],
-      description: 'A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.',
+      description: 'Distinguish yourself from the competition with authentic and memorable branding. By incorporating your values and unique selling propositions into our thinking process, we\'ll help you build a brand that effectively tells your story, in the way you want it to be heard.',
       topics: [
         'Logos',
-        'Corporate identities',
+        'Corporate identity systems',
         'Print & digital design',
         'Packaging'
       ],
@@ -370,7 +370,7 @@ export default  {
           imageDesc: 'Samples of our Web Design Work.',
         }
       ],
-      description: 'We specialize in designing carefully crafted custom sites to showcase your unique offerings. Our digital team keeps on top of the latest web trends and coding practices to produce clear user journeys and enjoyable web experiences. After a collaborative planning process, you can sit back while we put a laser-focus on all the details, large and small.',
+      description: 'Custom web design is the only way to ensure that you have full control over the look and feel of your brand. We\'ll give you the freedom to build the feature-set that you need to create a personalized experience for your users. Utilizing the latest technologies, modern design techniques and methodical coding practices, we\'ll help you stand out in a crowded marketplace.',
       topics: [
         'Custom Design & Development',
         'Ecommerce',
@@ -398,7 +398,7 @@ export default  {
           imageDesc: 'Samples of our Software Development Work.',
         }
       ],
-      description: 'Utilizing reliable platforms and technology, we build efficient, cost-effective software solutions. Our forward-thinking development practices and thorough documentation will ensure long-lasting quality and scalability, allowing your software capabilities to expand with your business.',
+      description: 'Utilizing reliable platforms and technology, we build efficient, cost-effective software solutions. Our forward-thinking development practices and thorough documentation ensure long-lasting quality and scalability, allowing your application\'s capabilities to expand with your business.',
       topics: [
         'Guided Discovery',
         'Agile Project Management',
@@ -427,7 +427,7 @@ export default  {
           imageDesc: 'Samples of our Digital Marketing Work.',
         }
       ],
-      description: 'Digital marketing is the art of being noticed online. Let\'s collaborate on buidling a digital marketing strategy that combines conversion-focused content with qualified lead generation to build brand awareness and drive traffic to your website.',
+      description: 'Digital marketing is the art of being noticed online. Our digital marketing strategies combine conversion-focused content with qualified lead generation to build brand awareness and drive traffic to your website.',
       topics: [
         'Search Engine Optimization',
         'Search Engine Marketing',
@@ -450,7 +450,7 @@ export default  {
       title: 'Support Services',
       anchor: 'anc-support',
       media: false,
-      description: 'We offer consulting and support services to help your business run smoothly. This includes setting up your business infrastructure or identifying new ways to be efficient through process development, operational software deployments or custom application development, our ultimate goal is to help you reduce your internal costs.',
+      description: 'We offer support and consulting services to help your business run smoothly. We can help you identify new ways to be efficient through process development, operational software deployments or custom application development, ultimately reducing your internal costs.',
       topics: [
         'IT Consulting',
         'Startup Support',
