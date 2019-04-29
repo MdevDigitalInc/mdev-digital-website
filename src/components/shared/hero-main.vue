@@ -171,6 +171,7 @@ export default {
     white-space: nowrap;
     margin: 0;
     transition: all .5s;
+    letter-spacing: 2px;
 
     @media #{ $portrait } {
       font-size: 90%;

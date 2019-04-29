@@ -75,6 +75,7 @@ export default {
 
   // Content portion of the split
   .mdev-service-content {
+    padding-top: 40px;
     width: 56%;
     order: 1;
 
@@ -95,6 +96,7 @@ export default {
   }
 
   .mdev-service-title {
+    line-height: .96;
     position: relative;
 
     @media #{$tablet-only} {
@@ -103,7 +105,7 @@ export default {
 
     &:before {
       @include pseudo();
-      top: 15%;
+      top: -30px;
       left: -3000px;
       right: 30%;
       bottom: 15%;

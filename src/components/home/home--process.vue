@@ -1,6 +1,6 @@
 <template>
   <section class="mdev-main-wrapper --section-space">
-    <h3 class="u-uppercase u-c-white a-blur-in" v-in-viewport>{{ $t("homepage.intro.heading") }} </h3>
+    <h4 class="u-uppercase u-c-white a-blur-in" v-in-viewport>{{ $t("homepage.intro.heading") }} </h4>
     <p class="mdev-hero-text a-blur-in" v-in-viewport>
       {{ $t("homepage.intro.content") }}
     </p>

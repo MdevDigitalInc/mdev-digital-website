@@ -175,7 +175,6 @@ export default{
     },
     // User Scroll Handler
     userScroll( distance ) {
-      console.log(distance);
       var mainHeader = document.querySelectorAll('[data-main-header]')[0];
       var mainNav = document.querySelectorAll('[data-main-nav]');
       let pageTitleEl = document.querySelectorAll('[data-page-title]');
@@ -183,17 +182,13 @@ export default{
       this.scrollDistance = pageTitleEl[0].offsetTop > 0 ? pageTitleEl[0].offsetTop : mainHeader.offsetHeight;
       this.desiredOffset = pageTitleEl[0].offsetTop > 0 ? 300 : 20;
       // If user scrolls past desired distance remove effects
-      console.log(this.desiredOffset);
-      console.log(this.scrollDistance);
       if ( (distance + this.desiredOffset) >= this.scrollDistance) {
-        console.log('case 1');
         requestAnimationFrame(() => {
           this.addClass(mainHeader, '--user-scroll');
           this.addClass(mainNav, '--user-scroll');
         });
       }
       else {
-        console.log('case 2');
         requestAnimationFrame(() => {
           this.removeClass(mainHeader, '--user-scroll');
           this.removeClass(mainNav, '--user-scroll');

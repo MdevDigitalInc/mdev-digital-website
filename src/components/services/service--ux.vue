@@ -264,7 +264,7 @@ $heading-top-padding-mob: 15px;
     transition: opacity 1.2s;
 
     @media #{$desktop-up} {
-      width: 40%;
+      width: 52%;
     }
 
     @media #{$portrait} {

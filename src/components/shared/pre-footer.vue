@@ -24,9 +24,11 @@
           :key="index"
           v-if="link.serviceFlag != serviceFlag">
           <!-- Column Heading -->
-          <span class="--heading u-uppercase">
+          <router-link :to="link.topRoute"
+            :title="link.topa11y"
+            class="--heading u-uppercase">
             {{ link.heading }}
-          </span>
+          </router-link>
           <router-link :to="item.linkRoute"
             class="mdev-footer-link u-uppercase"
             :key="index"

@@ -7,7 +7,7 @@
         animClassRight="a-flyin a-flyin-right" :reverse="false">
         <!-- Left Split -->
         <template slot="leftSlot">
-          <h3 class="u-uppercase u-c-white">{{ $t("homepage.services.heading") }} </h3>
+          <h4 class="u-uppercase u-c-white">{{ $t("homepage.services.heading") }} </h4>
           <p class="u-c-white">
             {{ $t("homepage.services.content") }}
           </p>

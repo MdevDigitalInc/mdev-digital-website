@@ -65,10 +65,12 @@
 .mdev-featured-services .mdev-service-title {
   &[ data-dec="anc-logos" ]:before {
     right: 48%;
+    top: 15%;
   }
   &[ data-dec="anc-ecomm" ]:before,
   &[ data-dec="anc-packaging" ]:before {
-    right: 53%;
+    top: 15%;
+    right: 63%;
   }
   &[ data-dec="anc-paid" ]:before,
   &[ data-dec="anc-social" ]:before {
@@ -80,11 +82,12 @@
 .mdev-featured-services .mdev-featured-wrapper.\--flip-order .mdev-service-title {
   &[ data-dec="anc-print" ]:before {
     left: 35%;
+    top: 15%;
   }
   &[ data-dec="anc-launch" ]:before,
   &[ data-dec="anc-webdev" ]:before {
     left: 13%;
-    top: 6%;
+    top: -30px;
   }
   &[ data-dec="anc-appdev" ]:before {
     left: 36%;

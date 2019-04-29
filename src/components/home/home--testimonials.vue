@@ -1,9 +1,9 @@
 <template>
   <section class="mdev-full-section --accent-bkg --pull-up-section --reduce-bottom">
     <div class="mdev-main-wrapper u-text-center">
-      <h3 class="u-uppercase u-c-black u-bold a-flyin a-flyin-right u-no-select" v-in-viewport>
+      <h4 class="u-uppercase u-c-black u-bold a-flyin a-flyin-right u-no-select" v-in-viewport>
         {{ $t("homepage.testimonials.heading") }}
-      </h3>
+      </h4>
       <!-- Testimonial Loop -->
       <p v-for="( testimonial, index ) in testimonials"
         v-if=" index == desiredIndex "

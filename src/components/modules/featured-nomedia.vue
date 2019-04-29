@@ -59,6 +59,10 @@ export default{
       margin-bottom: 15px;
     }
   }
+
+  h2 {
+    line-height: .96;
+  }
 }
 
 .mdev-service-title {

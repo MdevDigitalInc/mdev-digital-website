@@ -5,9 +5,9 @@
       <span class="mdev-top-subhead u-c-accent u-uppercase">
         {{ subtitle }}
       </span>
-      <h3 class="u-c-primary u-uppercase">
+      <h4 class="u-c-primary u-uppercase">
         {{ title }}
-      </h3>
+      </h4>
     </div>
 
     <div class="mdev-main-wrapper flex flex-vert-start flex-wrap">

@@ -53,15 +53,17 @@ $h2-font-sizes: (
 $h3-font-sizes: (
   null  : 1.6vw,
   $laptop-only: 35px,
-  $desktop-only: 30px,
+  $desktop-only: 50px,
   $portrait: 5vw,
   $phone-only: 6vw
 );
 
 $h4-font-sizes: (
-  null  : 22px,
-  $portrait: 18px
-);
+  null  : 1.6vw,
+  $laptop-only: 35px,
+  $desktop-only: 30px,
+  $portrait: 5vw,
+  $phone-only: 6vw);
 
 $h5-font-sizes: (
   null  : 14px
@@ -120,7 +122,7 @@ h1,
 h2,
 .h2 {
   @include font-size($h2-font-sizes);
-  line-height: 84%;
+  line-height: .83;
 
   @media #{$laptop-only} {
     margin-bottom: 15px;

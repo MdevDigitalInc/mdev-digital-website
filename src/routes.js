@@ -116,7 +116,7 @@ export const routes = [
         component: ServicesDigiAds
       },
       {
-        path: 'ui-ux',
+        path: 'custom-web-development',
         component: ServicesUx
       }
     ]

@@ -5,9 +5,9 @@
       <span class="mdev-top-subhead u-c-accent u-uppercase">
         {{ $t("homepage.casestudies.subheading") }}
       </span>
-      <h3 class="u-c-primary u-uppercase">
+      <h4 class="u-c-primary u-uppercase">
         {{ $t("homepage.casestudies.heading") }}
-      </h3>
+      </h4>
     </div>
     <!-- Case Study Carousel -->
     <div class="mdev-casestudy-mosaic flex flex-wrap">

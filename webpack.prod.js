@@ -71,7 +71,7 @@ const prerenderRoutes = [
   '/services/app-development',
   '/services/consulting',
   '/services/digital-marketing',
-  '/services/ui-ux',
+  '/services/custom-web-development',
   '/team/lucas-moreira',
   '/team/becky-domenico',
   '/team/haly-hawkins',

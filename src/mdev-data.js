@@ -66,7 +66,7 @@ export default  {
     {
       linkName: 'Web Design',
       linkTitle: 'View our UX & Web Design services',
-      route: '/services/ui-ux',
+      route: '/services/custom-web-development',
       linkIndex: '02'
     },
     {
@@ -380,7 +380,7 @@ export default  {
       action: 'Learn More',
       BtnData: {
         accessibility: 'Explore our web design services.',
-        btnRoute: '/services/ui-ux',
+        btnRoute: '/services/custom-web-development',
         btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
       },
       config: {
@@ -480,7 +480,7 @@ export default  {
       next: {
         title: 'Web Design Services',
         index: '02',
-        link: '/services/ui-ux',
+        link: '/services/custom-web-development',
         a11y: 'See our web design services'
       }
     },
@@ -971,6 +971,8 @@ export default  {
       {
         serviceFlag: 1,
         heading: 'Branding',
+        topRoute: '/services/branding',
+        topa11y: 'See our Branding Services',
         list: [
           {
             linkName: 'Logos',
@@ -997,25 +999,27 @@ export default  {
       {
         serviceFlag: 2,
         heading: 'Web Design',
+        topRoute: '/services/custom-web-development',
+        topa11y: 'See our Custom Web Development Services',
         list: [
           {
             linkName: 'Custom Design & Development',
-            linkRoute: '/services/ui-ux#anc-webdev',
+            linkRoute: '/services/custom-web-development#anc-webdev',
             a11y: 'Custom Web Design'
           },
           {
             linkName: 'Ecommerce',
-            linkRoute: '/services/ui-ux#anc-ecomm',
+            linkRoute: '/services/custom-web-development#anc-ecomm',
             a11y: 'Custom Ecommerce'
           },
           {
             linkName: 'Mobile-friendly Websites',
-            linkRoute: '/services/ui-ux#anc-a11y',
+            linkRoute: '/services/custom-web-development#anc-a11y',
             a11y: 'Mobile-friendly websites'
           },
           {
             linkName: 'Online Accessibility',
-            linkRoute: '/services/ui-ux#anc-a11y',
+            linkRoute: '/services/custom-web-development#anc-a11y',
             a11y: 'Accessibility'
           }
         ]
@@ -1023,6 +1027,8 @@ export default  {
       {
         serviceFlag: 3,
         heading: 'Apps & Software',
+        topRoute: '/services/app-development',
+        topa11y: 'See our Custom App Development Services',
         list: [
           {
             linkName: 'Guided discovery',
@@ -1054,6 +1060,8 @@ export default  {
       {
         serviceFlag: 4,
         heading: 'Digital Marketing',
+        topRoute: '/services/digital-marketing',
+        topa11y: 'See our Digital Marketing Services',
         list: [
           {
             linkName: 'Search Engine Optimization',
@@ -1085,6 +1093,8 @@ export default  {
       {
         serviceFlag: 5,
         heading: 'Support',
+        topRoute: '/services/consulting',
+        topa11y: 'See our IT & Support Services',
         list: [
           {
             linkName: 'IT Consulting',
@@ -1117,7 +1127,7 @@ export default  {
             a11y: 'Gsuite setup & management'
           }
         ]
-      },
+      }
     ]
   },
 
