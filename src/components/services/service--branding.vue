@@ -130,6 +130,7 @@ export default{
     return {
       title: this.seo.branding.title,
       meta: [
+        { vmid: 'ogurl', property: 'og:url', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + '/services/branding/index.html' },
         { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.branding.twimage) },
         { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.branding.ogimage) },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.branding.title + this.seo.templateAddon },

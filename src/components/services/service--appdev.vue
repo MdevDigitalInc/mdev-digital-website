@@ -146,7 +146,13 @@ export default{
       nomedia: MdevData.appdev.servicesNomedia,
       serviceIntro: MdevData.appdev.serviceIntro,
       // SEO
-      seo: SEOData.siteSeo
+      seo: SEOData.siteSeo,
+      // Staging Social URL
+      // These variables allow for the creation of OG tags
+      // for staging and prod. Change vars in site-seo.js!
+      stagingBuild: SEOData.siteSeo.stagingBuild,
+      liveUrl: SEOData.siteSeo.siteUrlLive,
+      stageUrl: SEOData.siteSeo.siteUrlStaging
     };
   },
 
@@ -155,8 +161,9 @@ export default{
     return {
       title: this.seo.appdev.title,
       meta: [
-        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.appdev.twimage) },
-        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.appdev.ogimage) },
+        { vmid: 'ogurl', property: 'og:url', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + '/services/app-development/index.html' },
+        { vmid: 'twimage', name: 'twitter:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.appdev.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.appdev.ogimage) },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.appdev.title + this.seo.templateAddon },
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.appdev.title + this.seo.templateAddon },
         { vmid: 'desc', name: 'description', content: this.seo.appdev.desc },

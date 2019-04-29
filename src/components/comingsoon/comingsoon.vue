@@ -46,8 +46,6 @@ export default{
     return {
       title: this.seo.home.title,
       meta: [
-        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.home.seo.twimage) },
-        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.home.seo.ogimage) },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.home.title + this.seo.templateAddon },
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.home.title + this.seo.templateAddon },
         { vmid: 'desc', name: 'description', content: this.seo.home.desc },

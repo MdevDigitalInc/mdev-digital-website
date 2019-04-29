@@ -99,6 +99,7 @@ export default {
     return {
       title: this.mdevBios[this.desiredIndex].seo.title,
       meta: [
+        { vmid: 'ogurl', property: 'og:url', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + '/team/lucas-moreira/index.html' },
         { vmid: 'ogtitle', property: 'og:title', content: this.mdevBios[this.desiredIndex].seo.title + ' | MDEV Digital | London, Toronto, Montreal' },
         { vmid: 'twtitle', name: 'twitter:title', content: this.mdevBios[this.desiredIndex].seo.title + ' | MDEV Digital | London, Toronto, Montreal' },
         { vmid: 'desc', name: 'description', content: this.mdevBios[this.desiredIndex].seo.title.description},

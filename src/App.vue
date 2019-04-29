@@ -51,7 +51,13 @@ export default {
       isHome: true,
       brandReverse: false,
       keys: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
-      current: 0
+      current: 0,
+      // Staging Social URL
+      // These variables allow for the creation of OG tags
+      // for staging and prod. Change vars in site-seo.js!
+      stagingBuild: SEOData.siteSeo.stagingBuild,
+      liveUrl: SEOData.siteSeo.siteUrlLive,
+      stageUrl: SEOData.siteSeo.siteUrlStaging
     };
   },
   // Meta SEO Function
@@ -72,13 +78,14 @@ export default {
       meta: [
         // SEO
         { vmid: 'desc', name: 'description', content: this.seo.app.desc },
+        { vmid: 'ogurl', property: 'og:url', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) },
         { vmid: 'ogappid', property: 'fb:app_id', content: this.seo.social.appid },
         { vmid: 'ogtype', property: 'og:type', content: this.seo.social.ogtype },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.app.title + this.seo.templateAddon },
-        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.social.ogimage) },
+        { vmid: 'ogimage', property: 'og:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.social.ogimage) },
         { vmid: 'ogdesc', property: 'og:description', content: this.seo.app.desc },
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.app.title + this.seo.templateAddon },
-        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.social.twimage) },
+        { vmid: 'twimage', name: 'twitter:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.social.twimage) },
         { vmid: 'twdesc', name: 'twitter:description', content: this.seo.app.desc }
       ]
     };
@@ -157,7 +164,13 @@ export default {
           this.checkCookie();
           // [ PRERENDER SNAPSHOT ] ------------------------
           // Dispatches event to tell the prerenderer to take snapshot
-          document.dispatchEvent(new Event('spa-rendered'));
+          if (window.__PRERENDER_INJECTED) {
+            document.dispatchEvent(new Event('spa-rendered'));
+          }
+          else {
+            // Track event on Facebook
+            window.fbq('track', 'PageView');
+          }
         });
       }, 9000);
 
@@ -187,6 +200,10 @@ export default {
     requestAnimationFrame(() => {
       this.addClass(mainNav, '--nav-active');
     });
+
+    if (!window.__PRERENDER_INJECTED) {
+      window.fbq('track', 'PageView');
+    }
   },
 
   methods: {
