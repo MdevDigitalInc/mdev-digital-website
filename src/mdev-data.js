@@ -1350,12 +1350,28 @@ export default  {
 
   testimonials: [
     {
+      content: 'We wanted an application with a fast, modern interface that would work equally well on phones, tablets and browsers. It also needed to work with our legacy systems and a historical data model. The application they created did both amazingly, managing payment information for thousands of orders annually, saving us huge amounts of time. Absolutely loved that project - way ahead of its time!',
+      name: 'Aaron Finkenzeller, Former CTO of Zucora Inc'
+    },
+    {
       content: 'Working with MDEV exceeded my expectations.  They were knowledgeable, creative and aligned seamlessly to the vision of the project. Through the twists and turns of a start-up, they were able to adapt and executed the project beautifully.',
       name: 'Angela Hawkins, Former Marketing Director of The Factory'
     },
     {
       content: 'MDEV worked closely with us to craft a unique and professional website to suit our needs, they were amazing to collaborate with and we couldn\'t be happier with the result!',
       name: 'Devan Long, Owner/Operator of The Next Level'
+    },
+    {
+      content: 'When creating our new website, Becky and her team at MDEV Digital really listened and asked us the right questions to guide us through the process. Their marketing and design expertise were invaluable, not to mention the energy they brought to the project. Each time a new family comments on how unique and great our website is, I thank MDEV Digital for making it happen! I highly recommend them if you are looking to stand out amongst your competitors.',
+      name: 'Jamie Monaghan, Executive Director of Arbour Glen Day Nursery'
+    },
+    {
+      content: 'MDEV helped us come up with a strong concept for our web design and brings a new level to our digital marketing efforts. Working with the team at MDEV is an incredible experience – they are readily available to discuss new concepts and ideas as well as consistently updating us on how our current ads are performing. MDEV will change the way you do digital marketing!',
+      name: 'Pamma Hubbert, Marketing Director of Rocky\'s Harley-Davidson'
+    },
+    {
+      content: 'MDEV Digital were able to take my ideas and run with them! They helped me create beautiful branding for my new business that I am so proud to share with the world. They built an incredible website for me and even set up my Facebook Business page. Thanks to their help, I am excited to have my new business up and running.',
+      name: 'Cassandra Roberts, Owner/Operator of Clean Slate Laser Studio'
     }
   ],
 };
