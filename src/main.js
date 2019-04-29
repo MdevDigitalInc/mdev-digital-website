@@ -179,7 +179,7 @@ Vue.mixin({
         }
       }
       // Check for Multiple elements
-      if ( element.length > 0 ) {
+      if ( element && element.length > 0 ) {
         for (var i=0; i < element.length; i++) {
           addCl(element[i], className);
         }
@@ -206,7 +206,7 @@ Vue.mixin({
         }
       }
       // Check for Multiple elements
-      if ( element.length > 0 ) {
+      if (element && element.length > 0 ) {
         for (var i=0; i < element.length; i++) {
           rmCl(element[i], className);
         }

@@ -91,7 +91,7 @@ export default {
         { vmid: 'ogdesc', property: 'og:description', content: this.seo.contact.desc }
       ],
       script: [
-        { src: 'https://code.jquery.com/jquery-3.3.1.min.js', integrity:'sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin:'anonymous' }
+        { src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js'}
       ]
     };
   },

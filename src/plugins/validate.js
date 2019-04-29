@@ -127,20 +127,56 @@ var ValidatePlugin = {
   },
 
   removeClass: function (element, className) {
-    if (element.classList) {
-      element.classList.remove(className);
+    // Central Function
+    const rmCl = function ( el, cl ) {
+      if (el.classList) {
+        el.classList.remove(cl);
+      }
+      else {
+        el.className = el.className.replace(new RegExp('(^|\\b)' + cl.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+      }
     }
+    // Check for Multiple elements
+    if (element && element.length > 0 ) {
+      for (var i=0; i < element.length; i++) {
+        rmCl(element[i], className);
+      }
+    }
+    // Check for valid elements
+    else if ( element ) {
+      rmCl(element, className);
+    }
+    // ERROR
     else {
-      element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+      // Output clean error
+      console.log('ERROR | Element is not valid');
     }
   },
 
   addClass: function (element, className) {
-    if (element.classList) {
-      element.classList.add(className);
+    // Central Function
+    const addCl = function( el, cl ) {
+      if (el.classList) {
+        el.classList.add(cl);
+      }
+      else {
+        el.className += ' ' + cl;
+      }
     }
+    // Check for Multiple elements
+    if ( element && element.length > 0 ) {
+      for (var i=0; i < element.length; i++) {
+        addCl(element[i], className);
+      }
+    }
+    // Check for valid element
+    else if ( element ) {
+        addCl(element, className);
+    }
+    // Error
     else {
-      element.className += ' ' + className;
+      // Output clean error
+      console.log('ERROR | Element is not valid');
     }
   },
 
