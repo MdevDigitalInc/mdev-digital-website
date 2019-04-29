@@ -342,5 +342,26 @@ body::-webkit-scrollbar-thumb {
   background-color: lighten($color-brand-primary, 10%);
   outline: 4px solid darken($color-brand-bkg, 10%);
 }
+
+
+::selection {
+  background: $color-brand-accent;
+}
+::-moz-selection {
+  background: $color-brand-accent;
+}
+
+h1.u-c-primary::selection,
+h2.u-c-primary::selection,
+h3.u-c-primary::selection,
+h4.u-c-primary::selection {
+  background: $color-brand-bkg;
+}
+h1.u-c-primary::-moz-selection,
+h2.u-c-primary::-moz-selection,
+h3.u-c-primary::-moz-selection,
+h4.u-c-primary::-moz-selection {
+  background: $color-brand-bkg;
+}
 /* stylelint-enable */
 </style>
