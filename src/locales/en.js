@@ -127,7 +127,7 @@ export default {
   },
 
   appdevpage: {
-    intro: "We provide cutting-edge, innovative development services to bring your ideas to life. Using Agile development practices, modern UX/UI principles and secure, cloud-based technologies, we turn dreams into quality applications that users love."
+    intro: "Using Agile development practices, modern UX/UI principles and secure, cloud-based technologies, we turn ideas into quality applications that users love."
   },
 
   digiadspage: {

@@ -670,9 +670,9 @@ export default  {
     services: [
       {
         anchor: 'anc-appdev',
-        title: 'Build</br>Your</br>Empire',
+        title: 'Forge</br>Your</br>Empire',
         subTitle: 'Application Development',
-        description: 'You can expect regular feature releases as we work to build a product you can quickly take to market. Once released, we’ll help you analyze post-launch feature-set priorities to continue application growth as you discover more about your users\' needs. We focus on security, scalability and longevity to ensure that your investment in technology can scale with your business.',
+        description: 'Developing your own internal tool or creating an innovative new application is a powerful way to solve a unique business challenge or take advantage of a market oppotrtunity. Our focus on security, scalability and longevity will ensure that your investment in technology can scale with your business.',
         topics: [
           'Custom software development',
           'vue.js, node, react, mongo, postgres',
@@ -696,7 +696,7 @@ export default  {
         content: [
           {
             title: 'Guided Discovery',
-            description: 'We kick off every project with a collaborative consulting session to start the gathering information for your project roadmap. This process is crucial to fully explore the scope of work to be done and to establish how we will work together.',
+            description: 'We begin all of our projects with a Guided Discovery session. We&apos;ll ask you a series of questions that allow us to start conceptualizing your software. Through collaborative ideation, we&apos;ll help you identify the ideal feature set to bring your idea to life.',
             topics: [
               'Ideation',
               'Requirements Gathering',
@@ -707,11 +707,13 @@ export default  {
           },
           {
             title: 'Agile Management',
-            description: 'Our agile team will provide iterative releases so you can start testing your new technology platform sooner, refining feature sets and defining functionality as the project progresses. Our transparent and collaborative approach keeps you in the loop with regular product deliveries, review meetings and consistent progress reporting.',
+            description: 'Our agile team will provide iterative releases so you can start testing your new technology platform sooner. Our transparent approach keeps you in the loop with regular product deliveries and consistent progress reporting.',
             topics: [
               'Ongoing Accountability',
-              'Regular Client Touchpoints',
-              'Adaptability'
+              'Regular Touchpoints',
+              'Continuous Integration',
+              'Adaptability',
+              'Iterative Releases'
             ]
           }
         ]
@@ -721,23 +723,23 @@ export default  {
         title: 'Engage your audience',
         content: [
           {
-            title: 'User Experience',
-            description: 'We combine well-defined workflows, detailed user personas and comprehensive product roadmaps with prototyping and wireframing to lay a solid foundation for your application. The goal is to provide a positive customer experience from first impression to the completion of your desired result.',
+            title: 'User Experience Design',
+            description: 'We combine well-defined workflows, detailed user personas and comprehensive product roadmaps with prototyping and wireframing to lay a solid foundation for your application.',
             topics: [
               'User Personas',
+              'User Journey Mapping',
               'Prototyping & Wireframing',
-              'User Experience Strategies'
+              'User Engagement Strategies'
             ]
           },
           {
-            title: 'User Interface',
-            description: 'Watch your application come to life as we create the user interface that your users will be interacting with. From dashboards and list views to complex reporting screens, our clean application design is user-friendly and provides clear guidance on how to perform new or complex functions.',
+            title: 'User Interface Design',
+            description: 'Watch your application come to life as we design the software your users will experience. We employ human-friendly UI practices so users can complete new or complex tasks with confidence.',
             topics: [
               'Dashboards',
               'List Views',
-              'Reporting',
-              'CSS Animations',
-              'User Engagement Strategies'
+              'Reporting Screens',
+              'CSS Animations & Transitions'
             ]
           }
         ]
@@ -960,7 +962,7 @@ export default  {
   },
 
   prefooter: {
-    heading: 'Let\'s See how we can help',
+    heading: 'Let’s See how we can help',
     subheading: 'Start something new',
     BtnData: {
       accessibility: 'Get in touch today!',
