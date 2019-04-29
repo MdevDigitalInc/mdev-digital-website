@@ -21,7 +21,8 @@
     "transpileDependencies": [
       "vue-check-view",
       "vue-in-viewport-directive",
-      "vue-meta"
+      "vue-meta",
+      "vue-router"
     ]
   },
   "dependencies": {
