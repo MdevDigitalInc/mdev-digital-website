@@ -242,7 +242,14 @@ export default{
 }
 
 textarea {
-  min-height: 10vh;
+
+  @media #{$laptop-only} {
+    min-height: 3vh;
+  }
+
+  @media #{$desktop-only} {
+    min-height: 16vh;
+  }
 
   @media #{$portrait} {
     min-height: 5vh;

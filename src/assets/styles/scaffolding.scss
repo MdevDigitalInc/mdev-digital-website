@@ -100,14 +100,14 @@
     margin-bottom: 100px;
   }
 
-  @media #{$tablet-prt-only} {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-
   @media #{$phone-only} {
     margin-top: 25px;
     margin-bottom: 25px;
+  }
+
+  @media #{$tablet-prt-only} {
+    margin-top: 75px;
+    margin-bottom: 75px;
   }
 }
 
@@ -396,7 +396,7 @@ $md: 75px;
     font-size: 20px;
 
     @media #{$phone-only} {
-      font-size: 10px;
+      font-size: 20px;
     }
   }
 

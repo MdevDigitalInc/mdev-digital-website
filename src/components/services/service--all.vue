@@ -9,7 +9,7 @@
           <div class="mdev-center">
             <h1
               data-intro-heading
-              class="u-c-primary a-blur-in">
+              class="mdev-serv-intro u-c-primary a-blur-in">
               {{ $t('servicepage.intro.heading') }}
             </h1>
             <p
@@ -209,9 +209,17 @@ export default{
     padding: 0 12%;
   }
 
-  @media #{$laptop-up} {
-    width: 60%;
+  @media #{$laptop-only} {
+    padding: 0 14%;
+  }
+
+  @media #{$desktop-up} {
+    width: 55%;
     padding: 0;
+  }
+
+  .mdev-serv-intro {
+    line-height: 120%;
   }
 }
 
@@ -227,7 +235,7 @@ export default{
   }
 
   @media #{$phone-only} {
-    padding-top: 125%;
+    padding-top: 140%;
   }
 
   @media #{$tablet-lnd-only} {
@@ -235,7 +243,7 @@ export default{
   }
 
   @media #{$tablet-prt-only} {
-    padding-top: 95%;
+    padding-top: 80%;
   }
 }
 // Line Starting Positions

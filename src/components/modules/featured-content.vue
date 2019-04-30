@@ -83,6 +83,14 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     }
   }
 
+  p {
+    @media #{$laptop-up} {
+      font-size: 16px;
+      line-height: 190%;
+      font-weight: 500;
+    }
+  }
+
   // Media portion of the split
   // Before pseudo element controls the background green lines
   // They are merely decorative and get overriden often
@@ -154,7 +162,8 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     }
 
     .mdev-service-desc {
-      width: 55%;
+      width: 45%;
+
 
       @media #{$portrait} {
         width: 100%;
@@ -164,6 +173,8 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     .mdev-service-topics {
       width: 35%;
       margin-top: 0;
+      margin-left: 5%;
+      margin-right: 5%;
 
       @media #{$portrait} {
         width: 100%;
@@ -230,8 +241,8 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
 
       @media #{$portrait} {
         left: 10%;
-        top: -50px;
-        bottom: -50px;
+        top: -25px;
+        bottom: -25px;
         right: 10%;
       }
 
