@@ -58,6 +58,10 @@ export default{
       transform: translate3d(0, 53%, 0);
     }
 
+    img[ data-mdev-mid ] {
+      transform: scale(1.001);
+    }
+
     img[ data-mdev-bot ] {
       transform: translate3d(0, -74%, 0);
     }
@@ -73,7 +77,7 @@ export default{
     }
 
     img[ data-mdev-bot ] {
-      transform: translate3d(0, -50%, 0);
+      transform: translate3d(0, -46%, 0);
     }
   }
 }

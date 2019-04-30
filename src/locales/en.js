@@ -50,19 +50,15 @@ export default {
   contact: {
     smallTitle: "Getting in touch is easy",
     largeTitle: "Don't wait, say hello!",
-    description: "Get in touch to learn more about our services. We’ll start with a discovery session to explore how we can help you reach your goals.",
+    description: "Get in touch to learn more about our services. We’ll start with a Discovery session to explore how we can help you reach your goals.",
     headerBtn: "Send a message",
     thankyouMsg: "Thanks for reaching out, we'll be in touch as soon as possible. While you wait, we highly recommend creeping our social channels!",
     thankyouAction: "See All Case Studies",
 
     fields: {
-      fname: {
-        label: "First Name",
-        placeholder: "Your first name"
-      },
-      lname: {
-        label: "Last Name",
-        placeholder: "Your last name"
+      name: {
+        label: "Name",
+        placeholder: "Your first & last name"
       },
       company: {
         label: "Company",
@@ -78,7 +74,7 @@ export default {
       },
       message: {
         label: "Message",
-        placeholder: "Your message to MDEV"
+        placeholder: "Tell us a little bit about what you are looking to accomplish."
       },
       submit: {
         label: "Send",

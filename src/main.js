@@ -135,6 +135,7 @@ Vue.mixin({
     scrollToHash(hashRef, offset) {
       var element = document.querySelectorAll(hashRef);
       var top = element[0].offsetTop;
+      window.scrollTo(0, top);
     },
     // Adjust position of crossbeam under logo
     adjustCrossbeam() {

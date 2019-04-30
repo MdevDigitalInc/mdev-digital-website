@@ -6,51 +6,35 @@
       <!-- First Name -->
       <div class="mdev-input-group">
         <div class="mdev-input-name">
-          {{ $t("contact.fields.fname.label") }}*
+          {{ $t("contact.fields.name.label") }}*
         </div>
         <input
           data-required
-          :class="{ '--filled' : fname }"
-          v-model="fname"
-          name="FirstName"
+          :class="{ '--filled' : name }"
+          v-model="name"
+          name="Name"
           tab-index="0"
           aria-required="true"
-          :aria-label="$t('contact.fields.fname.label')"
+          :aria-label="$t('contact.fields.name.label')"
           type="text"
-          :placeholder="$t('contact.fields.fname.placeholder')">
+          :placeholder="$t('contact.fields.name.placeholder')">
       </div>
       <!-- Last Name -->
       <div class="mdev-input-group">
         <div class="mdev-input-name">
-          {{ $t("contact.fields.lname.label") }}*
+          {{ $t("contact.fields.company.label") }}*
         </div>
         <input
           data-required
-          :class="{ '--filled' : lname }"
-          v-model="lname"
-          name="LastName"
+          :class="{ '--filled' : company }"
+          v-model="company"
+          name="Company"
           tab-index="0"
           aria-required="true"
-          :aria-label="$t('contact.fields.lname.label')"
+          :aria-label="$t('contact.fields.company.label')"
           type="text"
-          :placeholder="$t('contact.fields.lname.placeholder')">
+          :placeholder="$t('contact.fields.company.placeholder')">
       </div>
-    </div>
-    <!-- Company Name -->
-    <div class="mdev-input-group a-flyin a-flyin-right" v-in-viewport>
-      <div class="mdev-input-name">
-        {{ $t("contact.fields.company.label") }}*
-      </div>
-      <input
-        data-required
-        :class="{ '--filled' : company }"
-        v-model="company"
-        name="Company"
-        tab-index="0"
-        aria-required="true"
-        :aria-label="$t('contact.fields.company.label')"
-        type="text"
-        :placeholder="$t('contact.fields.company.placeholder')">
     </div>
     <!-- Phone Number -->
     <div class="mdev-input-group a-flyin a-flyin-right" v-in-viewport>
@@ -131,8 +115,7 @@ export default{
       // Data used here as a flag to mark fields as
       // filled witn the .--filled class
       // Allows for better UI control
-      fname       : '',
-      lname       : '',
+      name       : '',
       company     : '',
       phone       : '',
       email       : '',
@@ -234,12 +217,12 @@ export default{
 
   .mdev-input-name {
     font-weight: 700;
-    font-size: 1.8vw;
+    font-size: 1.55vw;
     text-transform: uppercase;
     letter-spacing: .5px;
 
     @media #{$portrait} {
-      font-size: 3.3vw;
+      font-size: 4.3vw;
     }
   }
 
@@ -253,8 +236,16 @@ export default{
     letter-spacing: 1px;
 
     @media #{$portrait} {
-      font-size: 2.7vw;
+      font-size: 3.7vw;
     }
+  }
+}
+
+textarea {
+  min-height: 10vh;
+
+  @media #{$portrait} {
+    min-height: 5vh;
   }
 }
 

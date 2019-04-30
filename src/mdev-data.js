@@ -221,7 +221,7 @@ export default  {
           linkClass: 'fa-linkedin',
           target: '_blank',
           accessibility: 'Follow Luis on LinkedIn',
-          linkUrl: 'https://www.instagram.com/halyhawkinsdesigns/'
+          linkUrl: 'www.linkedin.com/in/jluisg12'
         },
         {
           linkClass: 'fa-facebook-f',
