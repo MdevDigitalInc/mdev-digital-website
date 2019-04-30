@@ -70,6 +70,7 @@ export default {
       startAnim: 'contact/MDEV_HEADER_start_animated.svg',
       somethingAnim: 'contact/MDEV_HEADER_something.svg',
       newAnim: 'contact/MDEV_HEADER_new_animated.svg',
+      firstLoad: true,
       // SEO
       seo: SEOData.siteSeo,
       // Animation Flag
@@ -159,7 +160,13 @@ export default {
         let distanceTop = event.path[1].scrollY;
         clearTimeout(scrollTimer);
         // If user scrolls load map right away
-        scrollTimer = setTimeout(this.animDone = true,scrollTime);
+        // Only fires on first load to prevent endless redraw of map
+        if ( this.firstLoad ) {
+          scrollTimer = setTimeout(() => {
+            this.animDone = true;
+            this.firstLoad = false;
+          }, scrollTime);
+        }
       });
     });
   },
