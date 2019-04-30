@@ -14,7 +14,7 @@
           {{ mdevBio.employeeName }}
         </h1>
         <!-- Employee Title -->
-        <div class="u-italic u-light mdev-bios-title">
+        <div class="u-uppercase u-italic u-light mdev-bios-title">
           {{ mdevBio.employeeTitle }}
         </div>
         <!-- Employee description -->
@@ -164,9 +164,22 @@ export default {
     }
   },
 
+  updated: function() {
+    // Activate image on smaller screens
+    var social = document.querySelectorAll('.mdev-social-links');
+    var picture = document.querySelectorAll('.mdev-bios-picture');
+    this.addClass(social, 'in-viewport');
+    this.addClass(picture, 'in-viewport');
+  },
+
   // Make BKG White
   mounted: function() {
     this.bodyClass('--body-white');
+    // Activate image on smaller screens
+    var social = document.querySelectorAll('.mdev-social-links');
+    var picture = document.querySelectorAll('.mdev-bios-picture');
+    this.addClass(social, 'in-viewport');
+    this.addClass(picture, 'in-viewport');
   },
 
   // Return BKG to stock
@@ -224,6 +237,10 @@ export default {
   top: 8%;
   width: 40%;
 
+  @media #{$desktop-only} {
+    top: 15%;
+  }
+
   @media #{$laptop-only} {
     right: 4%;
   }
@@ -252,7 +269,7 @@ export default {
     margin-bottom: -10px;
 
     @media #{$portrait} {
-      font-size: 6vw;
+      font-size: 7vw;
       margin-bottom: 8px;
     }
 
@@ -271,14 +288,14 @@ export default {
     margin-bottom: -10px;
 
     @media #{$portrait} {
-      font-size: 5vw;
+      font-size: 4vw;
       margin-bottom: 8px;
     }
 
     @media #{$phone-only} {
       margin-bottom: 0;
       font-size: 25px;
-      line-height: 40px;
+      line-height: 30px;
       letter-spacing: .5px;
     }
   }
@@ -290,13 +307,17 @@ export default {
       font-size: 3vw;
     }
 
+    @media #{$laptop-only} {
+      font-size: 1.5vw;
+    }
+
     @media #{$tablet-prt-only} {
       letter-sapacing: 2px;
     }
 
     @media #{$phone-only} {
       margin-bottom: 0;
-      font-size: 18px;
+      font-size: 15px;
       line-height: 24px;
     }
   }
@@ -310,12 +331,12 @@ export default {
     }
 
     @media #{$tablet-prt-only} {
-      font-size: 22px;
+      font-size: 20px;
     }
 
     @media #{$phone-only} {
       padding: 5px 0;
-      font-size: 12px;
+      font-size: 14px;
       line-height: 20px;
     }
   }
@@ -324,23 +345,27 @@ export default {
     font-size: 1.25vw;
     padding: 20px 0;
 
+    @media #{$laptop-only} {
+      padding: 20px 0 10px;
+    }
+
     @media #{$portrait} {
       font-size: 3vw;
     }
 
     @media #{$tablet-prt-only} {
-      font-size: 24px;
+      font-size: 26px;
     }
 
     @media #{$phone-only} {
-      font-size: 4vw;
+      font-size: 4.5vw;
     }
   }
 
   .mdev-bio-list {
     font-size: 1.05vw;
     margin-top: 20px;
-    line-height: 120%;
+    line-height: 140%;
 
     @media #{$portrait} {
       font-size: 2vw;
@@ -389,7 +414,11 @@ export default {
 
     @media #{$portrait} {
       width: 100%;
-      margin-top: 150px;
+      margin-top: 120px;
+    }
+
+    @media #{$phone-only} {
+      margin-left: 20px;
     }
 
     &:before {
@@ -399,14 +428,18 @@ export default {
       border: 4px solid $color-brand-accent;
       left: 45%;
       border-bottom: 0;
-      top: 100px;
+      top: 270px;
       bottom: 0;
       z-index: -1;
 
       @media #{$portrait} {
         width: 80%;
-        top: 20px;
+        top: 240px;
         left: 50%;
+      }
+
+      @media #{$phone-only} {
+        top: 110px;
       }
     }
 
@@ -425,6 +458,11 @@ export default {
     flex-wrap: wrap;
     font-size: 1.4vw;
     z-index: 6;
+
+    @media #{$portrait} {
+      font-size: 5vw;
+      bottom: 25%;
+    }
 
     @media #{$phone-only} {
       font-size: 6.9vw;

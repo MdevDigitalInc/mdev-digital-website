@@ -213,7 +213,7 @@ export default  {
         description: 'Meet Luis Guerrero, our Digital Marketing Manager.'
       },
       employeeOrigin: 'Guatemala',
-      employeeQuote: 'He who says he can and he who says he can\'t are both usually right - Confucius',
+      employeeQuote: 'He who says he can and he who says he can\'t are both usually right. – Confucius',
       employeeTrick: 'Salsa & Bachata Instructor / Speaks Fluent Sarcasm',
       employeeImage: 'bios/bio-luis.png',
       socialLinks: [
@@ -308,7 +308,7 @@ export default  {
       },
       employeeOrigin: 'Guelph, ON',
       employeeQuote: 'Humanity is a discontinuous series of free men irreparably isolated by their subjectivity.',
-      employeeTrick: 'Green Tea Aficionado / Curry Tasting Champion / Skill Acquisition',
+      employeeTrick: 'Green Tea Aficionado / Curry Tasting Champion',
       employeeImage: 'bios/bio-dorian.png',
       socialLinks: false
     }

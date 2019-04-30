@@ -59,11 +59,12 @@ export default{
   left: 0;
   width: 100%;
   color: $white;
-  padding: 10px;
+  padding: 10px 30px;
   z-index: 10;
   user-select: none;
 
   @media #{$portrait} {
+    padding: 10px 15px;
     z-index: 20;
     background: $color-brand-bkg;
     position: relative;
@@ -90,8 +91,16 @@ export default{
   }
 
   .mdev-next-bio {
+    transition: all .3s;
     @media #{$phone-only} {
       font-size: 10px;
+    }
+
+    &:hover {
+      color: $color-brand-accent;
+      .cls-1 {
+        fill: $color-brand-accent;
+      }
     }
   }
 }
@@ -117,12 +126,6 @@ export default{
   .cls-1 {
     fill: $white;
     transition: fill .8s;
-  }
-
-  &:hover {
-    .cls-1 {
-      fill: $color-brand-accent;
-    }
   }
 }
 /*--------------------------------------*/
