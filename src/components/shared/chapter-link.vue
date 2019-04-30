@@ -68,6 +68,10 @@ export default{
       width: 85%;
     }
 
+    @media #{$phone-tiny} {
+      width: 95%;
+    }
+
     @media #{$tablet-lnd-only} {
       width: 50%;
     }

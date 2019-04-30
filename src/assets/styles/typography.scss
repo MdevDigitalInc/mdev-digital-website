@@ -108,6 +108,10 @@ p {
   @media #{$desktop-up} {
     line-height: 180%;
   }
+
+  @media #{$phone-tiny} {
+    font-size: 15px;
+  }
 }
 
 h1,
@@ -117,6 +121,10 @@ h1,
 
   @media #{$portrait} {
     line-height: 110%;
+  }
+
+  @media #{$phone-tiny} {
+    font-size: 22px;
   }
 }
 
@@ -131,6 +139,10 @@ h2,
 
   @media #{$phone-only} {
     margin-bottom: 15px;
+  }
+
+  @media #{$phone-tiny} {
+    font-size: 40px;
   }
 }
 

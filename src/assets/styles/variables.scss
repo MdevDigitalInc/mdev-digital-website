@@ -38,3 +38,6 @@ $clip-triangle-bot-prt: polygon(50% 0%, 100% 0, 100% 100%, 50% 96%, 0 100%, 0 0)
 $clip-triangle-top-prt: polygon(50% 3%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
 $clip-triangle-top-reverse-prt: polygon(50% 0%, 100% 5%, 100% 100%, 50% 100%, 0 100%, 0 5%);
 $clip-triangle-bot-reverse-prt: polygon(50% 0%, 100% 0, 100% 94%, 50% 100%, 0 94%, 0 0);
+
+//Media Queries
+$phone-tiny: screen and ( max-width: 320 ) and ( orientation: portrait ) !default;

@@ -125,6 +125,10 @@ export default {
     @media #{$laptop-only} {
       width: 95%;
     }
+
+    @media #{$portrait} {
+      width: 100%;
+    }
   }
 
   p {
