@@ -31,6 +31,10 @@ export default {
 .mdev-hero-text {
   max-width: 90%;
 
+  @media #{$desktop-up} {
+    max-width: 80%;
+  }
+
   @media #{$portrait} {
     max-width: 100%;
   }

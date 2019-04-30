@@ -90,6 +90,10 @@ export default {
   max-height: 70vh;
   z-index: 1;
 
+  @media #{$phone-only} {
+    padding-top: 66%;
+  }
+
   h1 {
     font-weight: 500;
   }

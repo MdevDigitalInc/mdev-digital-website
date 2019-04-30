@@ -1351,7 +1351,7 @@ export default  {
   testimonials: [
     {
       content: 'We wanted an application with a fast, modern interface that would work equally well on phones, tablets and browsers. It also needed to work with our legacy systems and a historical data model. The application they created did both amazingly, managing payment information for thousands of orders annually, saving us huge amounts of time. Absolutely loved that project - way ahead of its time!',
-      name: 'Aaron Finkenzeller, Former CTO of Zucora Inc'
+      name: 'Aaron Finkenzeller, Former CTO of Zucora Inc.'
     },
     {
       content: 'Working with MDEV exceeded my expectations.  They were knowledgeable, creative and aligned seamlessly to the vision of the project. Through the twists and turns of a start-up, they were able to adapt and executed the project beautifully.',

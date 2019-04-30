@@ -48,6 +48,10 @@
   font-weight: 700;
 }
 
+.u-medium {
+  font-weight: 500;
+}
+
 .u-normal {
   font-weight: 400;
 }
@@ -160,18 +164,14 @@
 }
 
 .u-desk-only {
-  display: none;
-
-  @media #{$landscape} {
-    display: block;
+  @media #{$portrait} {
+    display: none;
   }
 }
 
 .u-phone-only {
-  display: none;
-
-  @media #{$portrait} {
-    display: block;
+  @media #{$landscape} {
+    display: none;
   }
 }
 

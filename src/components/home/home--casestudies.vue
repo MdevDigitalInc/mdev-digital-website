@@ -62,18 +62,6 @@ export default{
 .mdev-full-section {
   padding-top: 50px;
 }
-.mdev-top-subhead {
-  display: block;
-  margin-bottom: .8vw;
-
-  @media #{$portrait} {
-    font-size: 18px;
-  }
-
-  @media #{$tablet-prt-only} {
-    font-size: 24px;
-  }
-}
 
 h3 {
   margin-bottom: 35px;
