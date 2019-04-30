@@ -63,6 +63,14 @@ export default{
   h2 {
     line-height: .96;
   }
+
+  p {
+    @media #{$laptop-up} {
+      font-size: 16px;
+      line-height: 190%;
+      font-weight: 500;
+    }
+  }
 }
 
 .mdev-service-title {

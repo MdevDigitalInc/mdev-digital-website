@@ -126,6 +126,14 @@ export default {
       width: 95%;
     }
   }
+
+  p {
+    @media #{$laptop-up} {
+      font-size: 16px;
+      line-height: 190%;
+      font-weight: 500;
+    }
+  }
 }
 
 // [ Flip Order override ]

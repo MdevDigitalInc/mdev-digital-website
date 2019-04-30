@@ -218,6 +218,10 @@ export default{
     padding: 0;
   }
 
+  @media #{$xl-up} {
+    width: 53%;
+  }
+
   .mdev-serv-intro {
     line-height: 120%;
   }
