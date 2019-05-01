@@ -249,6 +249,10 @@ export default{
   @media #{$tablet-prt-only} {
     padding-top: 80%;
   }
+
+  @media #{$xl-up} {
+    padding-top: 30%;
+  }
 }
 // Line Starting Positions
 // Because of rotation Y coordinate is actually X when translating

@@ -218,7 +218,7 @@ $heading-top-padding-mob: 15px;
 }
 
 .--hero-padding {
-  padding-top: 50%;
+  padding-top: 45%;
 
   @media #{$portrait} {
     padding-top: 98%;
@@ -234,6 +234,10 @@ $heading-top-padding-mob: 15px;
 
   @media #{$tablet-prt-only} {
     padding-top: 80%;
+  }
+
+  @media #{$xl-up} {
+    padding-top: 40%;
   }
 }
 
