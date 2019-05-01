@@ -32,6 +32,7 @@ $p-font-sizes: (
   null  : 22px,
   $laptop-only: 18px,
   $tablet-lnd-only: 18px,
+  $tablet-prt-only: 20px,
   $phone-only : 17px
 );
 
@@ -227,10 +228,11 @@ a {
 
 .mdev-top-subhead {
   display: block;
-  margin-bottom: .8vw;
+  margin-bottom: .4vw;
 
   @media #{$portrait} {
     font-size: 18px;
+    margin-bottom: .8vw;
   }
 
   @media #{$tablet-prt-only} {

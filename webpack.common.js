@@ -119,16 +119,16 @@ module.exports = {
             // JPEG Processing
             mozjpeg: {
               progressive: true,
-              quality: 90
+              quality: 95
             },
             // GIF Processing
             gifsicle: {
               interlaced: false,
-              optimizationLevel: 2
+              optimizationLevel: 3
             },
             // PNG Processing
             pngquant: {
-              quality: '75-80',
+              quality: '85-90',
               speed: 2
             },
             // SVG Processing

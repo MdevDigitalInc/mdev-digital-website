@@ -63,6 +63,12 @@ export default{
   padding-top: 50px;
 }
 
+.mdev-case-heading {
+  @media #{$laptop-up} {
+    margin-bottom: 50px;
+  }
+}
+
 h3 {
   margin-bottom: 35px;
 

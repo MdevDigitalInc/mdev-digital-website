@@ -9,7 +9,7 @@ export default {
 
     services: {
       heading: "We are a hybrid digital agency",
-      content: "Our services extend far beyond those of a traditional agency. – We create powerful user experiences. Combining digital solutions and integrated marketing to maximize your return on investment.",
+      content: "Our services extend far beyond those of a traditional agency. We create powerful user experiences – combining digital solutions and integrated marketing to maximize your return on investment.",
       action: "See All Services",
 
       servicelist: {

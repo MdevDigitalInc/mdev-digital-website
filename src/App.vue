@@ -172,7 +172,7 @@ export default {
             window.fbq('track', 'PageView');
           }
         });
-      }, 9000);
+      }, 15000);
 
       // [ FANCY CONSOLE OUTPUT ] --------------------------
       // each %c allows you to create a styling block
