@@ -696,7 +696,7 @@ export default  {
         content: [
           {
             title: 'Guided Discovery',
-            description: 'We begin all of our projects with a Guided Discovery session. We&apos;ll ask you a series of questions that allow us to start conceptualizing your software. Through collaborative ideation, we&apos;ll help you identify the ideal feature set to bring your idea to life.',
+            description: 'We begin all of our projects with a Guided Discovery session. We\'ll ask you a series of questions that allow us to start conceptualizing your software. Through collaborative ideation, we\'ll help you identify the ideal feature set to bring your idea to life.',
             topics: [
               'Ideation',
               'Requirements Gathering',

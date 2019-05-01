@@ -236,13 +236,21 @@ export default{
     letter-spacing: 1px;
 
     @media #{$portrait} {
+      font-size: 2.7vw;
+    }
+
+    @media #{$phone-only} {
       font-size: 3.7vw;
     }
+  }
+
+  textarea,
+  textarea::placeholder {
+    text-transform: none;
   }
 }
 
 textarea {
-
   @media #{$laptop-only} {
     min-height: 3vh;
   }

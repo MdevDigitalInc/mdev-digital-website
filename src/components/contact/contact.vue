@@ -41,11 +41,11 @@
               </div>
             </div>
           </div>
-        </div>
         <!-- Sexy Lines -->
         <div class="mdev-sexy-line --sexy-white" data-line-one></div>
         <div class="mdev-sexy-line --sexy-white" data-line-two></div>
         <div class="mdev-sexy-line --sexy-white" data-line-three></div>
+        </div>
       </div>
     </hero-main>
     <!-- Map -->
