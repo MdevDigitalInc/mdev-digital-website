@@ -72,8 +72,9 @@ export default{
 
   @media #{$portrait} {
     width: 100%;
-    padding: 0 60px;
+    padding: 0 20px;
   }
+
   @media #{$phone-only} {
     padding: 0 20px;
 

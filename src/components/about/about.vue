@@ -7,9 +7,9 @@
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header">
           <div class="mdev-center">
-            <h1 data-intro-heading class="a-blur-in u-c-white u-uppercase">
+            <h4 data-intro-heading class="a-blur-in u-c-white u-uppercase">
                 {{ $t('aboutpage.intro.heading') }}
-            </h1>
+            </h4>
             <h3 data-intro-subhead class="a-blur-in u-c-primary">
               {{ $t('aboutpage.intro.subheading') }}
             </h3>

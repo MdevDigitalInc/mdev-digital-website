@@ -83,7 +83,7 @@
 
   &:before,
   &:after {
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     width: 0;
     height: 0;
   }
@@ -137,6 +137,11 @@ $border-time: .4s;
 // Override for Dark BTN
 .mdev-dark-btn {
   color: $color-brand-bkg;
+
+  &:before,
+  &:after {
+    border: 3px solid transparent;
+  }
 
   &:hover,
   &:focus,

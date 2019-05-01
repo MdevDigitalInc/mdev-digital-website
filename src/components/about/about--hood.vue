@@ -106,6 +106,10 @@ $rotate-duration: 930s;
       top: 25px;
       right: -200%;
     }
+
+    @media #{$phone-only} {
+      display: none;
+    }
   }
 }
 

@@ -1277,7 +1277,7 @@ export default  {
       decoration: true,
       background: 'about/100-kellogg-background.png',
       heading: 'The \'Hood',
-      text: 'Welcome to Old East Village in London, Ontario, Canada – an up-and-coming neighborhood that we decided to make our home. Our offices are located in the historic Kellogg’s cereal factory at 100 Kellogg Lane in the heart of O.E.V.'
+      text: 'Welcome to Old East Village in London, Ontario, Canada – an up-and-coming neighbourhood that we decided to make our home. Our offices are located in the historic Kellogg’s cereal factory at 100 Kellogg Lane in the heart of O.E.V.'
     },
     founders: {
       subheading: 'Meet the',

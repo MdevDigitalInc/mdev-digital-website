@@ -1,9 +1,9 @@
 <template>
   <section class="mdev-process u-c-white --triangle-bottom">
     <div class="mdev-process-wrapper u-text-center a-blur-in" v-in-viewport>
-      <h3 class="u-uppercase">
+      <h4 class="u-uppercase">
         {{ title }}
-      </h3>
+      </h4>
       <p>
         {{ body }}
       </p>
@@ -55,7 +55,7 @@ export default{
     width: 82%;
 
     p {
-      width: 85%;
+      width: 100%;
       margin: 0 auto;
     }
   }
