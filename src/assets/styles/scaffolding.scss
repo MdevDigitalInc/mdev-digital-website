@@ -40,6 +40,10 @@
     width: 100%;
   }
 
+  @media #{$xl-up} {
+    width: 95%;
+  }
+
   &.--margin-mod {
     margin-left: auto;
     margin-right: auto;
@@ -396,11 +400,11 @@ $md: 75px;
     font-size: 20px;
 
     @media #{$phone-only} {
-      font-size: 20px;
+      font-size: 17px;
     }
 
     @media #{$phone-tiny} {
-      font-size: 17px;
+      font-size: 13px;
     }
   }
 

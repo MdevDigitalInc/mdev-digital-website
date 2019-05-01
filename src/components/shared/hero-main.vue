@@ -180,6 +180,10 @@ export default {
     @media #{ $portrait } {
       font-size: 90%;
     }
+
+    @media #{$laptop-only} {
+      font-size: 60%;
+    }
   }
 }
 

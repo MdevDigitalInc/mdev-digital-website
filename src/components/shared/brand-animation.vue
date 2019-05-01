@@ -65,6 +65,9 @@ export default{
       @media #{$laptop-only} {
         transform: scale(1.008);
       }
+      @media #{$xl-up} {
+        transform: scale(.999);
+      }
     }
 
     img[ data-mdev-bot ] {
@@ -88,6 +91,9 @@ export default{
       }
       @media #{$laptop-only} {
         transform: translate3d(0, -51%, 0);
+      }
+      @media #{$xl-up} {
+        transform: translate3d(0, -49%, 0);
       }
     }
   }

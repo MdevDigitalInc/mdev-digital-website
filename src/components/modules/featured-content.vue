@@ -54,7 +54,7 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
   };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 /*-------------------------------------*/
 /* Featured-Content Component Styles
 /--------------------------------------*/
@@ -85,9 +85,13 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
 
   p {
     @media #{$laptop-up} {
-      font-size: 18px;
+      font-size: 15px;
       line-height: 190%;
       font-weight: 500;
+    }
+
+    @media #{$desktop-up} {
+      font-size: 18px;
     }
   }
 

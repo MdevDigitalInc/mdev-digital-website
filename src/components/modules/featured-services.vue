@@ -46,7 +46,7 @@ export default {
   }
 
   @media #{$phone-only} {
-    margin: 60px 0;
+    margin: 40px 0;
   }
 
   // Applies to all images
@@ -82,12 +82,12 @@ export default {
     @media #{$portrait} {
       width: 100%;
       order: 4;
-      padding: 0 10%;
+      padding: 0 9%;
       margin: 25px 0 50px;
     }
 
     @media #{$xl-up} {
-      width: 42%;
+      width: 33%;
     }
 
     .--pre-title {
@@ -133,9 +133,12 @@ export default {
 
   p {
     @media #{$laptop-up} {
-      font-size: 18px;
       line-height: 190%;
       font-weight: 500;
+    }
+
+    @media #{$desktop-up} {
+      font-size: 18px;
     }
   }
 
@@ -190,8 +193,7 @@ export default {
 // On the right. This is OPPOSITE to the default where media is always on
 // the left first.
 .mdev-featured-services.--no-image .mdev-featured-wrapper {
-  margin: 0 9%;
-  width: auto;
+  width: 100%;
 
   @media #{$laptop-only} {
     margin: 0 5%;
@@ -200,6 +202,10 @@ export default {
   // Override title margin
   .mdev-service-title {
     margin: 50px 0;
+
+    @media #{$portrait} {
+      padding: 0 9%;
+    }
 
     // Override decoration direction
     &:before {

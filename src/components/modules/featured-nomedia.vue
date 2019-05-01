@@ -66,9 +66,13 @@ export default{
 
   p {
     @media #{$laptop-up} {
-      font-size: 18px;
+      font-size: 15px;
       line-height: 190%;
       font-weight: 500;
+    }
+
+    @media #{$desktop-up} {
+      font-size: 18px;
     }
   }
 }
@@ -77,6 +81,10 @@ export default{
   width: 70%;
   position: relative;
   padding-left: 5%;
+
+  @media #{$portrait} {
+    padding-left: 10%;
+  }
 
   &:before {
     right: 70%;

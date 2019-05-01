@@ -8,7 +8,6 @@ body {
   font-size: 16px;
   color: $black;
 }
-
 /* Headings & Body Copy */
 
 /* Reset Fonts */
@@ -30,7 +29,7 @@ h6,.h6, {
 // Responsive Font Size Maps
 $p-font-sizes: (
   null  : 22px,
-  $laptop-only: 18px,
+  $laptop-only: 15px,
   $tablet-lnd-only: 18px,
   $tablet-prt-only: 20px,
   $phone-only : 17px
@@ -49,7 +48,9 @@ $h2-font-sizes: (
   $laptop-only: 6.6vw,
   $tablet-lnd-only: 60px,
   $portrait: 85px,
-  $phone-only: 55px
+  $tablet-prt-only: 110px,
+  $phone-only: 58px,
+  $phone-tiny: 48px
 );
 
 $h3-font-sizes: (
@@ -57,7 +58,8 @@ $h3-font-sizes: (
   $laptop-only: 35px,
   $desktop-only: 50px,
   $portrait: 5vw,
-  $phone-only: 6vw
+  $phone-only: 7vw,
+  $phone-tiny: 6vw
 );
 
 $h4-font-sizes: (
@@ -140,10 +142,6 @@ h2,
 
   @media #{$phone-only} {
     margin-bottom: 15px;
-  }
-
-  @media #{$phone-tiny} {
-    font-size: 40px;
   }
 }
 
