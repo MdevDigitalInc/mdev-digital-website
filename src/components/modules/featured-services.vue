@@ -201,7 +201,12 @@ export default {
 // On the right. This is OPPOSITE to the default where media is always on
 // the left first.
 .mdev-featured-services.--no-image .mdev-featured-wrapper {
-  width: 100%;
+  margin-left: 15%;
+
+  @media #{$portrait} {
+    width: 100%;
+    margin-left: 0;
+  }
 
   @media #{$laptop-only} {
     margin: 0 5%;
