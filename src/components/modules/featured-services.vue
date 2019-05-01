@@ -223,7 +223,7 @@ export default {
     // Override decoration direction
     &:before {
       right: 30%;
-      left: -300px;
+      left: -3000px;
       top: -50px;
       bottom: -50px;
     }
@@ -232,6 +232,8 @@ export default {
   // Default media to the RIGHT
   .mdev-service-media {
     order: 1;
+    margin-left: 0;
+    margin-right: 5vw;
   }
 
   .--pre-title {
