@@ -85,10 +85,14 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
 
   p {
     @media #{$laptop-up} {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 190%;
       font-weight: 500;
     }
+  }
+
+  h3 {
+    margin-bottom: 15px;
   }
 
   // Media portion of the split

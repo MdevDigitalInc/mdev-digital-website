@@ -66,7 +66,7 @@ export default{
 
   p {
     @media #{$laptop-up} {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 190%;
       font-weight: 500;
     }

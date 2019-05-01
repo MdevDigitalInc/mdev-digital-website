@@ -63,6 +63,12 @@
 /* stylelint-disable */
 // Targeting Standard version of the flip module
 .mdev-featured-services .mdev-service-title {
+  &[ data-dec="anc-cloud" ]:before {
+    top: 40%!important;
+  }
+}
+
+.mdev-featured-services .mdev-service-title {
   &[ data-dec="anc-logos" ]:before {
     right: 48%;
     top: 15%;
@@ -77,6 +83,7 @@
     right: 65%;
     bottom: -10px;
   }
+
 }
 // Targetting flipped version of the service module
 .mdev-featured-services .mdev-featured-wrapper.\--flip-order .mdev-service-title {

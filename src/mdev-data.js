@@ -872,7 +872,7 @@ export default  {
         anchor: 'anc-email',
         title: 'Email</br>in style',
         subTitle: 'G Suite Management',
-        description: 'As part our our overarching branding services, we want to make sure you look good when communicating about your business. It’s the little things that count, like using a professional email URL and having a sweet, branded signature.',
+        description: 'As part our our branding services, we want to make sure your emails look as nice as your website. It’s the little things that count, like having a sweet, branded signature. Not using Gmail yet? We can help you with migration or deployment.',
         topics: [
           'G Suite Deployments',
           'Email Migrations',
@@ -886,20 +886,20 @@ export default  {
     servicesNomedia: [
       {
         anchor: 'anc-domains',
-        title: 'Stake your digital claim',
+        title: 'Stake your</br>digital claim',
         content: [
           {
             title: 'Domain Management',
             description: 'Domain management can be complex, time consuming, and damaging to your business if handled poorly. We provide worry-free hosting, migration and configuration services, to ensure that your hosting can handle your volume of traffic and serve the performance and capabilities your website needs',
             topics: [
               'Domain & Hosting Migration',
-              'Domain configuration & set up',
+              'Domain configuration & setup',
               'Website & Application Hosting'
             ]
           },
           {
             title: 'Dispute Resolution',
-            description: 'When things get a little more complicated than the average domain procurement, we can assist by digging into legacy domain structures and convoluted paths of ownership. We have successfully negotiated complex domain ownership disputes and can help you stake your digital claim.When things get a little more complicated than the average domain procurement, we can assist by digging into legacy domain structures and convoluted paths of ownership. We have successfully negotiated complex domain ownership disputes and can help you stake your digital claim.',
+            description: 'When things get a little more complicated than the average domain procurement, we can assist by digging into legacy domain structures and convoluted paths of ownership. We have successfully negotiated complex domain ownership disputes and can help you stake your digital claim.',
             topics: [
               'Domain Dispute Resolution',
               'Domain Ownership Assessment',
@@ -917,7 +917,7 @@ export default  {
         anchor: 'anc-startup',
         title: 'Jump start your business',
         subTitle: 'Startup Support',
-        description: 'We know the joy and growing pains that come along with starting a new business, in fact, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding, all the way to setting up your internal operations software, we know what it takes to get you up and running. ',
+        description: 'We understand the growing pains that come along with starting a new business, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding and ideation, to releasing your first product, we know what it takes to get you up and running.',
         topics: false,
         caseStudy: false,
         media: false,
@@ -929,12 +929,11 @@ export default  {
       },
       {
         anchor: 'anc-cloud',
-        title: 'Get your head out of the clouds',
-        subTitle: 'Cloud Technologies',
-        description: 'Cloud technologies give you flexibility to create secure, optimized solutions that streamline internal processes. Based on your business requirements, we can help identify which technologies best suit your needs, then provide all of the assistance necessary to install and configure your chosen software.',
+        title: 'Make Sense of the clouds',
+        subTitle: 'IT Consulting',
+        description: 'Cloud technologies provide flexibility to create secure, optimized solutions that streamline internal processes. Based on your business requirements, we can help identify software solutions that best suit your needs, then provide assistance with deployment including developing new APIs to connect with your infrastructure.',
         topics: [
-          'Cloud Storage',
-          'Cloud Computing',
+          'Cloud Storage / Cloud Computing',
           'Saas/IaaS/PaaS',
           'Cloud Application Security',
           'AWS, Digital Ocean, Google Cloud',

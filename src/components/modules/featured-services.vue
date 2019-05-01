@@ -120,7 +120,7 @@ export default {
   }
 
   .mdev-service-desc {
-    width: 85%;
+    width: 75%;
 
     @media #{$laptop-only} {
       width: 95%;
@@ -133,10 +133,14 @@ export default {
 
   p {
     @media #{$laptop-up} {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 190%;
       font-weight: 500;
     }
+  }
+
+  h3 {
+    margin-bottom: 15px;
   }
 }
 

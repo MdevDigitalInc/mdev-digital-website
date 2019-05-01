@@ -293,7 +293,7 @@ $heading-top-padding-mob: 15px;
 }
 
 .--hero-padding {
-  padding-top: 50%;
+  padding-top: 45%;
 
   @media #{$portrait} {
     padding-top: 98%;
@@ -314,12 +314,14 @@ $heading-top-padding-mob: 15px;
 
 .--vivus-digiads {
 
+  .--con-turning,
+  .--con-wheels,
   .--con-keep {
-    width: 48%;
-  }
+    height: 9vw;
 
-  .--con-turning {
-    height: 10vw;
+    @media #{$portrait} {
+      height: 12vw;
+    }
   }
 
   .--con-the {
@@ -331,12 +333,11 @@ $heading-top-padding-mob: 15px;
   .--con-the,
   .--con-wheels {
     margin: 20px 0;
-  }
 
-  .--con-wheels {
-    height: 10vw;
+    @media #{$portrait} {
+      margin: 10px 0;
+    }
   }
-
 
   .--header-cta {
     opacity: 0;
