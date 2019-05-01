@@ -264,7 +264,7 @@ $heading-top-padding-mob: 15px;
     margin-bottom: $heading-top-padding;
 
     @media #{$portrait} {
-      margin-bottom: $heading-top-padding-mob;
+      margin-bottom: 0;
     }
   }
 
@@ -289,7 +289,7 @@ $heading-top-padding-mob: 15px;
     @media #{$portrait} {
       width: 100%;
       text-align: left;
-      margin-top: $heading-top-padding-mob + 10;
+      margin-top: $heading-top-padding-mob;
     }
   }
 

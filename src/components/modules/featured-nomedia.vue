@@ -86,6 +86,10 @@ export default{
     padding-left: 10%;
   }
 
+  @media #{$xl-up} {
+    padding-left: 10%;
+  }
+
   &:before {
     right: 70%;
     top: -50px;

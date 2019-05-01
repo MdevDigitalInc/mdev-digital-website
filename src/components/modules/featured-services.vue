@@ -71,6 +71,10 @@ export default {
     @media #{$phone-only} {
       margin: 0 auto 25px;
     }
+
+    @media #{$xl-up} {
+      margin-left: 10vw;
+    }
   }
 
   // Content portion of the split
@@ -177,6 +181,10 @@ export default {
 
     @media #{$portrait} {
       margin: 0;
+    }
+
+    @media #{$xl-up} {
+      margin-right: 10vw;
     }
   }
 
