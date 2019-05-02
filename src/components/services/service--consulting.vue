@@ -99,6 +99,7 @@
       v-for="(service, index) in nomedia"
       :key="index"
       :title="service.title"
+      :anchor="service.anchor"
       :content="service.content"
       ></service-nomedia>
 
@@ -352,6 +353,14 @@ $heading-top-padding-mob: 15px;
       margin-left: 0;
       text-align: left;
       margin-top: $heading-top-padding-mob + 10;
+    }
+
+    @media #{$desktop-up} {
+      width: 34%;
+    }
+
+    @media #{$laptop-only} {
+      width: 43%;
     }
 
     @media #{$tablet-lnd-only} {

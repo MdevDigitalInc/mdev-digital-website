@@ -80,7 +80,7 @@ export default {
   // Content portion of the split
   .mdev-service-content {
     padding-top: 40px;
-    width: 56%;
+    width: 52%;
     order: 1;
 
     @media #{$landscape} {
@@ -131,10 +131,6 @@ export default {
   .mdev-service-desc {
     width: 75%;
 
-    @media #{$laptop-only} {
-      width: 95%;
-    }
-
     @media #{$portrait} {
       width: 100%;
     }
@@ -152,7 +148,11 @@ export default {
   }
 
   h3 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+
+    @media #{$portrait} {
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -211,7 +211,7 @@ export default {
 // On the right. This is OPPOSITE to the default where media is always on
 // the left first.
 .mdev-featured-services.--no-image .mdev-featured-wrapper {
-  margin-left: 15%;
+  margin-left: 10%;
 
   @media #{$portrait} {
     width: 100%;
@@ -220,6 +220,10 @@ export default {
 
   @media #{$laptop-only} {
     margin: 0 5%;
+  }
+
+  @media #{$xl-up} {
+    margin-right: 20%;
   }
 
   // Override title margin
@@ -258,11 +262,15 @@ export default {
 
   // Flip Order
   &.--flip-order {
+    @media #{$xl-up} {
+      margin-left: 20%;
+    }
     .mdev-service-media {
       order: 2;
     }
 
     .mdev-service-content {
+      margin-left: 0;
       order: 1;
 
       @media #{$portrait} {
@@ -272,7 +280,7 @@ export default {
 
     .mdev-service-title:before {
       left: 30%;
-      right: -300px;
+      right: -3000px;
     }
   }
 }

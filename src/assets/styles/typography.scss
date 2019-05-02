@@ -29,8 +29,8 @@ h6,.h6, {
 // Responsive Font Size Maps
 $p-font-sizes: (
   null  : 22px,
-  $laptop-only: 18px,
-  $tablet-lnd-only: 18px,
+  $laptop-only: 17px,
+  $tablet-lnd-only: 17px,
   $tablet-prt-only: 23px,
   $phone-only : 17px
 );
@@ -108,6 +108,10 @@ p {
   font-weight: 400;
   @include font-size($p-font-sizes);
 
+  @media #{$laptop-only} {
+    line-height: 140%;
+  }
+
   @media #{$desktop-up} {
     line-height: 180%;
   }
@@ -140,17 +144,24 @@ h2,
     margin-bottom: 15px;
   }
 
+  @media #{$portrait} {
+    margin-bottom: 0;
+  }
+
   @media #{$phone-only} {
     margin-bottom: 15px;
     // Sepecific override for Algorithm word
-    &[ data-dec = 'anc-seo' ] {
+
+    &[ data-dec = 'anc-seo' ],
+    &[ data-dec = 'anc-digimarketing' ] {
       font-size: 50px;
     }
   }
 
   @media #{$phone-tiny} {
     // Sepecific override for Algorithm word
-    &[ data-dec = 'anc-seo' ] {
+    &[ data-dec = 'anc-seo' ],
+    &[ data-dec = 'anc-digimarketing' ] {
       font-size: 40px;
     }
   }

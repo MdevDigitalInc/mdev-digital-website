@@ -14,7 +14,7 @@
             </h1>
             <p
               data-intro-subhead
-              class="u-c-white a-blur-in">
+              class="mdev-serv-text u-c-white a-blur-in">
               {{ $t('servicepage.intro.subHeading') }}
             </p>
 
@@ -59,7 +59,7 @@
         <span class="mdev-service-index a-fade-in" v-in-viewport>
           0{{ index + 1 }}
         </span>
-        <h2 class="mdev-service-title u-uppercase a-fade-in" v-in-viewport>
+        <h2 :data-dec="service.anchor" class="mdev-service-title u-uppercase a-fade-in" v-in-viewport>
           {{ service.title }}
         </h2>
         <p class="mdev-service-desc a-fade-in" v-in-viewport>
@@ -224,6 +224,12 @@ export default{
 
   .mdev-serv-intro {
     line-height: 120%;
+  }
+
+  .mdev-serv-text {
+    @media #{$laptop-only} {
+      width: 90%;
+    }
   }
 }
 

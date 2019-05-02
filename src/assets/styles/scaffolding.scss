@@ -21,7 +21,7 @@
 
 // Feature wrapper to keep things centered
 .mdev-featured-wrapper {
-  width: 86%;
+  width: 90%;
   margin: 0 0 0 auto;
 
   @media #{$laptop-only} {
@@ -41,7 +41,7 @@
   }
 
   @media #{$xl-up} {
-    width: 95%;
+    width: 85%;
   }
 
   &.--margin-mod {
@@ -107,8 +107,8 @@
   margin-bottom: 200px;
 
   @media #{$portrait} {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 120px;
+    margin-bottom: 120px;
   }
 
   @media #{$laptop-only} {
@@ -117,8 +117,8 @@
   }
 
   @media #{$phone-only} {
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 75px;
+    margin-bottom: 75px;
   }
 
   @media #{$tablet-prt-only} {
@@ -413,6 +413,11 @@ $md: 75px;
 
     @media #{$phone-only} {
       font-size: 17px;
+      line-height: 1.2;
+
+      li {
+        margin: 8px 0;
+      }
     }
 
     @media #{$phone-tiny} {

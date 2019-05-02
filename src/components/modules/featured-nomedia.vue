@@ -1,7 +1,7 @@
 <template>
   <section class="mdev-featured-services --section-space mdev-service">
     <!-- Title -->
-    <div class="mdev-service-title">
+    <div class="mdev-service-title" :data-dec="anchor">
       <h2 v-html="title" class="--title u-bold u-uppercase"></h2>
     </div>
     <!-- Content -->
@@ -31,7 +31,7 @@
 export default{
   name: 'FeatureNomedia',
 
-  props: [ 'title', 'content'],
+  props: [ 'title', 'content', 'anchor'],
 
 };
 </script>
@@ -56,7 +56,7 @@ export default{
 
   h3 {
     @media #{$laptop-only} {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
   }
 

@@ -184,6 +184,11 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
       margin-right: 10%;
       margin-left: 5%;
 
+      @media #{$xl-up} {
+        margin-left: 0;
+        margin-right: 16%;
+      }
+
       @media #{$portrait} {
         width: 100%;
         margin-top: 25px;

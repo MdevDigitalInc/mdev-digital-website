@@ -63,6 +63,11 @@
 /* stylelint-disable */
 // Targeting Standard version of the flip module
 .mdev-featured-services .mdev-service-title {
+  &[ data-dec="anc-domains" ]:before {
+    @media #{$portrait} {
+      right: 40%!important;
+    }
+  }
   &[ data-dec="anc-cloud" ]:before {
     top: 40%!important;
   }
@@ -95,6 +100,11 @@
   &[ data-dec="anc-webdev" ]:before {
     left: 13%;
     top: -30px;
+  }
+  &[ data-dec="anc-consulting" ]:before,
+  &[ data-dec="anc-email" ]:before {
+    top: -20px;
+    bottom: -20px;
   }
   &[ data-dec="anc-appdev" ]:before {
     left: 36%;
