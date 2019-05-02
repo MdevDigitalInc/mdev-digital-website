@@ -436,13 +436,9 @@ export default{
         background: $color-brand-primary;
       }
 
-      /* stylelint-disable */
       &:nth-child( 2 ) {
-        &:hover {
-          transform: rotate3d(0, 0, 1, -45deg) scalex(1);
-        }
+        transform: rotate3d(0, 0, 1, -45deg) scalex(1);
       }
-      /* stylelint-enable */
     }
   }
 }
