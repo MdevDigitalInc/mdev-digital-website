@@ -210,6 +210,13 @@ $buttonSize: 10px;
       transform: rotate( 180deg );
     }
   }
+
+  .flex-hor-end,
+  .flex-hor-start {
+    @media #{$portrait} {
+      justify-content: flex-end;
+    }
+  }
 }
 
 /*--------------------------------------*/

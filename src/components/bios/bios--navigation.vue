@@ -80,6 +80,12 @@ export default{
 
   .mdev-bios-arrow-left {
     transform: scale(-1);
+
+    &:hover {
+      .cls-1 {
+        fill: $color-brand-accent;
+      }
+    }
   }
 
   .mdev-bios-name {
