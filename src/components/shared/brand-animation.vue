@@ -59,7 +59,7 @@ export default{
     }
 
     img[ data-mdev-mid ] {
-      @media #{$landscape} {
+      @media #{$desktop-only} {
         transform: scale(1.001);
       }
       @media #{$laptop-only} {
@@ -82,13 +82,19 @@ export default{
   .--transform-active {
     img[ data-mdev-top ] {
       transform: translate3d(0, 36%, 0);
+
+      @media #{$desktop-only} {
+        transform: translate3d(0, 35%, 0);
+      }
     }
 
     img[ data-mdev-bot ] {
       transform: translate3d(0, -52%, 0);
-      @media #{$landscape} {
-        transform: translate3d(0, -46%, 0);
+
+      @media #{$desktop-only} {
+        transform: translate3d(0, -48%, 0);
       }
+
       @media #{$laptop-only} {
         transform: translate3d(0, -51%, 0);
       }

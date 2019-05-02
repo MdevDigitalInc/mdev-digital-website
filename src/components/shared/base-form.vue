@@ -256,16 +256,23 @@ export default{
 }
 
 textarea {
-  @media #{$laptop-only} {
-    min-height: 3vh;
-  }
+  transition: all .6s;
+  height: auto;
 
-  @media #{$desktop-only} {
-    min-height: 16vh;
-  }
+  &:hover,
+  &:focus,
+  &:active {
+    @media #{$laptop-only} {
+      min-height: 3vh;
+    }
 
-  @media #{$portrait} {
-    min-height: 5vh;
+    @media #{$desktop-only} {
+      min-height: 16vh;
+    }
+
+    @media #{$portrait} {
+      min-height: 5vh;
+    }
   }
 }
 
