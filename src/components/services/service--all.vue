@@ -51,6 +51,7 @@
       <template v-if="service.media" slot="mediaSlot">
         <!-- Image Carousel -->
         <media-carousel
+         class="--shadow"
          :flip="((index + 1) % 2) == 1"
          :media="service.media"></media-carousel>
       </template>

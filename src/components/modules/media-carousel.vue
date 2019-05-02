@@ -173,6 +173,10 @@ $buttonSize: 10px;
     opacity: 1;
   }
 
+  &.--shadow img {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
+  }
+
   .mdev-media-controls {
     margin-top: 35px;
     width: 100%;
