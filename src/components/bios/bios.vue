@@ -444,7 +444,7 @@ export default {
     }
 
     img {
-      width: 95%;
+      width: 90%;
       position: relative;
       bottom: -5px;
     }
