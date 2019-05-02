@@ -10,9 +10,9 @@
             <h4 data-intro-heading class="a-blur-in u-c-white u-uppercase">
                 {{ $t('aboutpage.intro.heading') }}
             </h4>
-            <h3 data-intro-subhead class="a-blur-in u-c-primary">
+            <p data-intro-subhead class="a-blur-in u-c-primary mdev-hero-text">
               {{ $t('aboutpage.intro.subheading') }}
-            </h3>
+            </p>
           </div>
         </div>
 
@@ -202,21 +202,12 @@ export default{
   }
 
   @media #{$desktop-up} {
-    width: 60%;
+    width: 70%;
     padding: 0;
   }
 
-  h3 {
-    font-size: 36px;
-    line-height: 134%;
-
-    @media #{$portrait} {
-      font-size: 20px;
-    }
-
-    @media #{$tablet-prt-only} {
-      font-size: 30px;
-    }
+  .mdev-hero-text {
+    width: 100%;
   }
 
   h1 {

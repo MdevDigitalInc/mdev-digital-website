@@ -181,12 +181,13 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     .mdev-service-topics {
       width: 35%;
       margin-top: 0;
+      margin-right: 10%;
       margin-left: 5%;
-      margin-right: 5%;
 
       @media #{$portrait} {
         width: 100%;
         margin-top: 25px;
+        margin-left: 0;
       }
     }
   }

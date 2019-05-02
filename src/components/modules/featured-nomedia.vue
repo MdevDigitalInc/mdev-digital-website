@@ -49,8 +49,8 @@ export default{
     width: 44%;
 
     @media #{$portrait} {
-      width: 100%;
-      margin: 20px 0;
+      width: 80%;
+      margin: 20px auto;
     }
   }
 

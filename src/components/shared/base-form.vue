@@ -1,5 +1,5 @@
 <template>
-  <form id="form" v-on:keyup.enter="submitForm">
+  <form id="form" v-on:keyup.enter.stop="submitForm">
     <input name="_caught" type="text" class="mdev-honeypot" v-model="honeypot">
     <div v-in-viewport
       class="flex flex-hor-between flex-vert-center mdev-input-split a-flyin a-flyin-right">
@@ -79,6 +79,7 @@
         data-required
         :class="{ '--filled' : message }"
         v-model="message"
+        v-on:keyup.enter.stop="nothing"
         name="Message"
         tab-index="0"
         aria-required="true"
@@ -127,6 +128,10 @@ export default{
 
   methods: {
     // Validate and Submit form
+    nothing(){
+      return;
+    },
+
     submitForm() {
       // Clear Errors First
       this.$validate.clearErrors();

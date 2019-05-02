@@ -83,6 +83,11 @@ export default {
     width: 56%;
     order: 1;
 
+    @media #{$landscape} {
+      margin-right: 5vw;
+      margin-left: 0;
+    }
+
     @media #{$portrait} {
       width: 100%;
       order: 4;
@@ -157,7 +162,7 @@ export default {
 // These CSS styles are needed to flip the presentation order of
 // MEDIA and CONTENT div.
 .mdev-featured-services .mdev-featured-wrapper.--flip-order {
-  margin: 0 10% 0 0;
+  margin: 0 9% 0 0;
 
   @media #{$portrait} {
     margin: 0;
@@ -168,6 +173,11 @@ export default {
   // Adjust padding accordingly
   .mdev-service-content {
     order: 4;
+
+    @media #{$landscape} {
+      margin-left: 5vw;
+      margin-right: 0;
+    }
 
     @media #{$portrait} {
       padding: 0 9%;
