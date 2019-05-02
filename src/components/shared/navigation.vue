@@ -355,6 +355,11 @@ export default{
       border: 1px solid rgba(13, 119, 113, 1);
       background: lighten( $color-brand-primary, 18%);
       box-shadow: 0 0 3px rgba(201, 255, 252, .5);
+
+      &:nth-child( 2 ) {
+        transform: scalex(.69);
+        transform-origin: center;
+      }
     }
   }
 
@@ -404,7 +409,7 @@ export default{
   transform: translate3d(0, 0, 0);
 }
 
-.--nav-open {
+.mdev-nav-open.--nav-open {
   span {
     background: white;
 
@@ -418,7 +423,7 @@ export default{
       top: -5px;
     }
 
-    &:nth-child( even ) {
+    &:nth-child( 2 ) {
       transform: rotate3d(0, 0, 1, -45deg);
     }
   }
@@ -430,6 +435,14 @@ export default{
       @media #{$portrait} {
         background: $color-brand-primary;
       }
+
+      /* stylelint-disable */
+      &:nth-child( 2 ) {
+        &:hover {
+          transform: rotate3d(0, 0, 1, -45deg) scalex(1);
+        }
+      }
+      /* stylelint-enable */
     }
   }
 }
