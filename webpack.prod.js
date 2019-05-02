@@ -175,6 +175,7 @@ module.exports = merge(common, {
           .replace('--mask-active', '')
           .replace('--nav-active', '')
           .replace('--active', '')
+          .replace('<body>','<body class="u-freeze-scroll">')
           .replace('id="map"', '');
 
         return renderedRoute;

@@ -146,6 +146,7 @@ export default {
         requestAnimationFrame(() => {
           // Make Logo Disappear...
           this.removeClass(loadAnim, '--opacity-active');
+          this.bodyReset('u-freeze-scroll');
           // Make Content Disappear
           this.addClass(loadWindow, '--opacity');
         });
