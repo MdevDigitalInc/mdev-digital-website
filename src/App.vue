@@ -68,12 +68,12 @@ export default {
       link: [
         // Font Awesome
         { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity:'sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin: 'anonymous' },
-        // Alertify
-        { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/alertifyjs/1.9.0/css/alertify.min.css' }
+        // Alertiry
+        { rel: 'stylesheet', href: 'https://mdevcdn.digital/alerts/alertify.css' }
       ],
       script: [
         // Alertify
-        { src: 'https://cdn.jsdelivr.net/alertifyjs/1.9.0/alertify.min.js', async: true, defer: true },
+        { src: 'https://mdevcdn.digital/alerts/alertify.js', async: true, defer: true },
       ],
       meta: [
         // SEO

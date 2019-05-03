@@ -261,7 +261,8 @@ textarea {
 
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &.--filled{
     @media #{$laptop-only} {
       min-height: 3vh;
     }

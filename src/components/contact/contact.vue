@@ -108,7 +108,7 @@ export default {
         { vmid: 'ogdesc', property: 'og:description', content: this.seo.contact.desc }
       ],
       script: [
-        { src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js'}
+        { src: 'https://mdevcdn.digital/jquery/jquery340.js'}
       ]
     };
   },
