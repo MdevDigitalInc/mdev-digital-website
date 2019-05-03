@@ -132,7 +132,7 @@ export default  {
       },
       employeeOrigin: 'Sao Paulo, Brazil',
       employeeQuote: 'Think like a man of action, act like a man of thought.',
-      employeeTrick: 'Drone Guru / Media Maven / Eagle Eye',
+      employeeTrick: 'Drone Guru / Media Maverick / Eagle Eye',
       employeeImage: 'bios/bio-lucas.png',
       socialLinks: [
         {
