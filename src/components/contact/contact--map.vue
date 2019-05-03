@@ -180,9 +180,25 @@ export default{
   line-height: 130%;
   border-bottom: 4px solid $color-brand-accent;
   font-size: 1.8vw;
+  transition: all .4s;
 
   @media #{$portrait} {
     font-size: 3.8vw;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-bottom: 4px solid $white;
+    transform: scale(1.1);
+  }
+
+  &:nth-child( odd ) {
+    transform-origin: right center;
+  }
+
+  &:nth-child( even ) {
+    transform-origin: left center;
   }
 
   .map-info-content,
