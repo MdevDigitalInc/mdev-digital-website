@@ -22,7 +22,11 @@
           v-in-viewport
           class="mdev-founder --team a-rotate-x">
           <!-- Founder Picture -->
-          <img :src="loadImage(founder.image)" :alt="founder.a11y" />
+          <picture>
+            <source media="screen" :srcset="loadImage(founder.image) + '.webp'" type="image/webp">
+            <source media="screen" :srcset="loadImage(founder.image)" type="image/png">
+            <img :src="loadImage(founder.image)" :alt="founder.a11y" />
+          </picture>
           <span class="--name u-uppercase u-bold">
             {{ founder.name }}
           </span>

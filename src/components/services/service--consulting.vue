@@ -58,9 +58,10 @@
       :class="{ '--no-image' : !service.media }">
       <!-- Media -->
       <template slot="mediaSlot">
-        <img v-if="service.media"
-          :alt="service.media.imageDesc"
-          :src="loadImage(service.media.image)">
+        <media-carousel
+         v-if="service.media"
+         :flip="((index + 1) % 2) == 0"
+         :media="service.media"></media-carousel>
         <!-- Title Only appears here if no image -->
         <h2 v-if="!service.media"
           :data-dec="service.anchor"
@@ -115,9 +116,10 @@
       :class="{ '--no-image' : !service.media }">
       <!-- Media -->
       <template slot="mediaSlot">
-        <img v-if="service.media"
-          :alt="service.media.imageDesc"
-          :src="loadImage(service.media.image)">
+        <media-carousel
+         v-if="service.media"
+         :flip="((index + 1) % 2) == 0"
+         :media="service.media"></media-carousel>
         <!-- Title Only appears here if no image -->
         <h2 v-if="!service.media"
           :data-dec="service.anchor"
@@ -176,6 +178,7 @@
 // Local Component Registration
 import FeaturedServices   from '../modules/featured-services.vue';
 import FeaturedNomedia    from '../modules/featured-nomedia.vue';
+import MediaCarousel      from '../modules/media-carousel.vue';
 //import ChapterHeading     from '../shared/chapter-heading.vue';
 // Import Data From Flat File
 import MdevData           from '../../mdev-data.js';
@@ -270,6 +273,7 @@ export default{
 
   components: {
     'service-tile'   : FeaturedServices,
+    'media-carousel' : MediaCarousel,
     //'chapter-heading': ChapterHeading,
     'service-nomedia': FeaturedNomedia
   }

@@ -37,7 +37,7 @@ export default{
     return {
       heroStyles: {
         backgroundColor: '#0a1315',
-        backgroundImage: 'url(' + this.loadImage('MDEV-main-hero.png') + ')',
+        backgroundImage: 'url(' + this.loadImage('MDEV-main-hero.png') + '.webp)',
         backgroundPosition: 'top center',
         backgroundRepeat: 'norepeat'
       },

@@ -41,9 +41,9 @@ export default{
 
   data: function(){
     return{
-      longImgBkg: 'url(' + this.loadImage(this.longImg.src) + ')',
-      leftImgBkg: 'url(' + this.loadImage(this.leftImg.src) + ')',
-      rightImgBkg: 'url(' + this.loadImage(this.rightImg.src) + ')'
+      longImgBkg: 'url(' + this.loadImage(this.longImg.src) + '.webp)',
+      leftImgBkg: 'url(' + this.loadImage(this.leftImg.src) + '.webp)',
+      rightImgBkg: 'url(' + this.loadImage(this.rightImg.src) + '.webp)'
     };
   }
 };

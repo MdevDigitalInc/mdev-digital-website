@@ -1,6 +1,6 @@
 <template>
   <main id="app">
-    <img :src="loadImage('MDEV-main-hero.png')" class="u-screenreader" />
+    <img :src="loadImage('MDEV-main-hero.png') + '.webp'" class="u-screenreader" />
     <!-- Skip Navigatio Accessbility -->
     <button href="#mainContent"
       v-if="!isLoading"

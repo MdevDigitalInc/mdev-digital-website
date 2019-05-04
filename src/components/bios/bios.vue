@@ -58,7 +58,11 @@
         </social-links>
         <!-- Team Member Picture -->
         <div class="mdev-bios-image u-text-center">
-          <img :src="loadImage(mdevBio.employeeImage)" :alt="mdevBio.employeeName"/>
+          <picture>
+            <source media="screen" :srcset="loadImage(mdevBio.employeeImage) + '.webp'" type="image/webp">
+            <source media="screen" :srcset="loadImage(mdevBio.employeeImage)" type="image/png">
+            <img :src="loadImage(mdevBio.employeeImage)" :alt="mdevBio.employeeName"/>
+          </picture>
         </div>
       </div>
     </div>
@@ -443,6 +447,7 @@ export default {
       }
     }
 
+    picture,
     img {
       width: 90%;
       position: relative;

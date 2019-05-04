@@ -2,11 +2,14 @@
   <section class="mdev-media-carousel"
     v-view="(e) => inView = ( this.multiImage ? checkVisibility(e, .3) : false )">
     <!-- Image Loop -->
-    <img
+    <picture
       :aria-hidden="(multiImage && index != desiredIndex)"
       v-for="(images, index) in media"
-      :class="{ '--active' : (index == desiredIndex)}"
-      :alt="images.imageDesc" :src="loadImage(images.image)">
+      :class="{ '--active' : (index == desiredIndex)}">
+        <source media="screen" :srcset="loadImage(images.image) + '.webp'" type="image/webp">
+        <source media="screen" :srcset="loadImage(images.image)" type="image/png">
+        <img :alt="images.imageDesc" :src="loadImage(images.image)">
+    </picture>
     <!-- Optional Controls -->
     <div v-if="multiImage"
       :class="{'flex-hor-end' : flip, 'flex-hor-start' : !flip}"
@@ -160,7 +163,7 @@ $buttonSize: 10px;
   width: 100%;
   z-index: 1;
 
-  img {
+  picture {
     position: absolute;
     left: 0;
     top: 0;
@@ -168,12 +171,12 @@ $buttonSize: 10px;
     transition: opacity .7s;
   }
 
-  img.--active {
+  picture.--active {
     position: relative;
     opacity: 1;
   }
 
-  &.--shadow img {
+  &.--shadow picture {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
   }
 

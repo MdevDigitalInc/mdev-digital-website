@@ -64,6 +64,7 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
   position: relative;
 
   // Applies to all images
+  picture,
   img {
     width: 100%;
   }

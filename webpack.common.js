@@ -18,6 +18,20 @@ const setPath = function(folderName) {
   return path.join(__dirname, folderName);
 }
 
+const webpOptions =  {
+  config: [{
+    test: /\.(jpe?g|png)/,
+    options: {
+      quality:  100,
+      lossless: true
+    }
+  }],
+  overrideExtension: false,
+  detailedLogs: false,
+  strict: true
+}
+
+
 // Module Exports
 module.exports = {
   // Asset Splitting [ Vendor | Build ]
@@ -166,19 +180,7 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: 'src/assets/js', to: 'js', force: true }
     ]),
-    new ImageminWebpWebpackPlugin([
-      {
-        config:[{
-          test: /\.(.jpe?g|png)/,
-          options: {
-            quality: 100
-          }
-        }],
-        overrideExtensions: false,
-        detailedLogs: false,
-        strict: true
-      }
-    ])
+    new ImageminWebpWebpackPlugin(webpOptions)
   ],
   resolve: {
     alias: {

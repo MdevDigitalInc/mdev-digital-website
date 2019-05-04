@@ -50,7 +50,8 @@ export default {
   }
 
   // Applies to all images
-  img {
+  img,
+  picture {
     width: 100%;
   }
 
