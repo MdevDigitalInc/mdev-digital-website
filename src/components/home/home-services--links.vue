@@ -1,11 +1,11 @@
 <template>
   <section class="mdev-section-links" :class="{'u-c-black' : darkMode, 'u-c-white' : !darkMode}">
-    <span class="mdev-links-title u-ultralight u-uppercase">
+    <router-link to="/services/overview" title="Service Page" class="mdev-links-title u-ultralight u-uppercase">
       <span class="mdev-link-index u-transparent" aria-hidden="true">
         00
       </span>
       {{ linksTitle }}
-    </span>
+    </router-link>
     <router-link
       v-for="(link, index) in links"
       :key="index"
@@ -40,6 +40,12 @@
   font-size: 1.25vw;
   display: block;
   margin-bottom: .7vw;
+  transition: all .4s;
+  transform-origin: left bottom;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media #{$portrait} {
     font-size: 4.25vw;

@@ -87,6 +87,10 @@ export default{
       height: 20vw;
     }
 
+    @media #{$tablet-prt-only} {
+      height: 15vw;
+    }
+
     @media #{$phone-only} {
       margin: 0 auto 20px;
       height: 25vw;
@@ -115,6 +119,11 @@ export default{
   .mdev-icon-text {
     font-size: 18px;
     line-height: 30px;
+
+    @media #{$laptop-only} {
+      font-size: 15px;
+      line-height: 23px;
+    }
 
     @media #{$phone-only} {
       text-align: center;

@@ -469,7 +469,7 @@ export default  {
       BtnData: {
         accessibility: 'Explore our Business Support services.',
         btnRoute: '/services/consulting',
-        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs --support-override'
       },
       config: {
         showDecoration: false,

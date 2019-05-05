@@ -194,3 +194,12 @@ $border-time: .4s;
     font-size: 4.3vw;
   }
 }
+
+.--support-override {
+  position: relative;
+  top: -50px;
+
+  @media #{$portrait} {
+    top: 0;
+  }
+}
