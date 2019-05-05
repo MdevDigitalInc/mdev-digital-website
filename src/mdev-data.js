@@ -330,14 +330,17 @@ export default  {
       squareImg: false,
       media: [
         {
+          gif: false,
           image: 'services/01-branding-concepts.png',
           imageDesc: 'Samples of our Conceptual work.',
         },
         {
+          gif: false,
           image: 'services/01-branding-logos.png',
           imageDesc: 'Samples of our Branding Work.',
         },
         {
+          gif: false,
           image: 'services/01-branding-business-cards.png',
           imageDesc: 'Samples of our Business Cards.',
         }
@@ -366,6 +369,7 @@ export default  {
       squareImg: true,
       media: [
         {
+          gif: false,
           image: 'services/02-web-design.png',
           imageDesc: 'Samples of our Web Design Work.',
         }
@@ -394,6 +398,7 @@ export default  {
       squareImg: true,
       media: [
         {
+          gif: false,
           image: 'services/03-apps-software.png',
           imageDesc: 'Samples of our Software Development Work.',
         }
@@ -423,6 +428,7 @@ export default  {
       squareImg: false,
       media: [
         {
+          gif: false,
           image: 'services/04-digital-marketing.png',
           imageDesc: 'Samples of our Digital Marketing Work.',
         }
@@ -499,6 +505,7 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/branding/logo-design.png',
             imageDesc: 'Branding Samples for Ketolibriyum'
           }
@@ -519,10 +526,12 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/branding/print-agcap-brochure.png',
             imageDesc: 'AgCapital Canada Print Brochure.'
           },
           {
+            gif: false,
             image: 'services/branding/print-zucora-printbook.png',
             imageDesc: 'Zucora Home Print Booklet.'
           }
@@ -542,10 +551,12 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/branding/packaging-zuc-purecare.png',
             imageDesc: 'Zucora Purecare Packaging.'
           },
           {
+            gif: false,
             image: 'services/branding/packaging-pwh-homecoming.png',
             imageDesc: 'Powerhouse Brewery Homecoming Beer Label.'
           }
@@ -581,14 +592,17 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/webdev/web-design-tfac.png',
             imageDesc: 'The Factory London Website Design.'
           },
           {
+            gif: false,
             image: 'services/webdev/web-design-glen.png',
             imageDesc: 'Arbour Glen Website Design.'
           },
           {
+            gif: false,
             image: 'services/webdev/web-design-zuc.png',
             imageDesc: 'Zucora Home Website Design.'
           }
@@ -609,14 +623,17 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/webdev/ecom-keto.png',
             imageDesc: 'Ketolibriyum ecommerce Website.'
           },
           {
+            gif: false,
             image: 'services/webdev/ecom-zucora.png',
             imageDesc: 'Zucora Home ecommerce Website.'
           },
           {
+            gif: false,
             image: 'services/webdev/ecom-aster.png',
             imageDesc: 'Aster Shoes ecommerce Website.'
           }
@@ -684,6 +701,7 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: true,
             image: 'services/appdev/ZUC_SoftwareAnimation_laptop.gif',
             imageDesc: 'Zucora Home Technician Portal Custom Software'
           }
@@ -790,6 +808,7 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/digiads/sem-keto-pintrest.png',
             imageDesc: 'Ketolibriyum Pinterest Templates.'
           }
@@ -824,6 +843,7 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/digiads/social-phone-instagram.png',
             imageDesc: 'Organic Social Media.'
           }
@@ -843,10 +863,12 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/digiads/launch-tfac-landing-page.png',
             imageDesc: 'The Factory London Landing Page.'
           },
           {
+            gif: false,
             image: 'services/digiads/launch-ora-landing-page.png',
             imageDesc: 'Offroad Addiction Landing Page.'
           }

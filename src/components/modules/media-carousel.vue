@@ -6,8 +6,8 @@
       :aria-hidden="(multiImage && index != desiredIndex)"
       v-for="(images, index) in media"
       :class="{ '--active' : (index == desiredIndex)}">
-        <source media="screen" :srcset="loadImage(images.image) + '.webp'" type="image/webp">
-        <source media="screen" :srcset="loadImage(images.image)" type="image/png">
+        <source v-if="!images.gif" media="screen" :srcset="loadImage(images.image) + '.webp'" type="image/webp">
+        <source v-if="!images.gif" media="screen" :srcset="loadImage(images.image)" type="image/png">
         <img :alt="images.imageDesc" :src="loadImage(images.image)">
     </picture>
     <!-- Optional Controls -->

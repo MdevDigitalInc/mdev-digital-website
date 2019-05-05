@@ -132,7 +132,7 @@ export default{
         backgroundColor: '#0a1315'
       },
       // Disables Page Title bar
-      pageTitle: 'Aapps & Software Services',
+      pageTitle: 'Apps & Software Services',
       headerDsc: 'Innovate With Passion.',
       buildAnim: 'services/appdev/MDEV_HEADER_build_animated.svg',
       theAnim: 'services/appdev/MDEV_HEADER_the.svg',
