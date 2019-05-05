@@ -41,15 +41,13 @@ const robotOptions = {
   policy: [
     {
       userAgent: "Googlebot",
-      //allow: "/",
-      //disallow: ["/search"],
-      disallow: ["/"],
+      allow: "/",
       crawlDelay: 2
     },
     {
       userAgent: "*",
-      //allow: "/",
-      disallow: "/",
+      allow: "/",
+      //disallow: "/",
       //disallow: "/search",
       crawlDelay: 10,
     }
