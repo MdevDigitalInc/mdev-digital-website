@@ -271,10 +271,18 @@ export default{
     cursor: pointer;
     opacity: .8;
 
+    @media #{$portrait} {
+      transform: scale(1.05);
+    }
+
     .mdev-hidden-brand svg {
       transform: translate3d(0, 0, 0);
       opacity: 1;
       transition: transform .3s, opacity .8s;
+
+      @media #{$portrait} {
+        display: none;
+      }
     }
   }
 

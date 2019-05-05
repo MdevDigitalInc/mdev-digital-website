@@ -67,7 +67,8 @@ $h4-font-sizes: (
   $laptop-only: 25px,
   $desktop-only: 30px,
   $portrait: 4.9vw,
-  $phone-only: 6vw);
+  $tablet-prt-only: 4vw,
+  $phone-only: 5.5vw);
 
 $h5-font-sizes: (
   null  : 14px
@@ -182,9 +183,11 @@ h4,
   @include font-size($h4-font-sizes);
   margin-bottom: 15px;
   font-weight: 500;
+  letter-spacing: 2px;
 
   @media #{$portrait} {
     line-height: 1.2;
+    letter-spacing: 1px;
   }
 }
 
@@ -256,7 +259,11 @@ a {
   }
 
   @media #{$tablet-prt-only} {
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  @media #{$phone-only} {
+    font-size: 10px;
   }
 }
 
