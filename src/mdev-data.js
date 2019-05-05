@@ -1221,7 +1221,7 @@ export default  {
   aboutPage: {
     process: {
       title: 'Your internal team just got a lot more powerful',
-      text: 'No two brands or services are alike, and we don’t believe in one-size-fits-all solutions. Instead, we’ll work closely with your team to share knowledge and develop solutions. We like to think of ourselves as an extension of your internal team’s capabilities. When you partner with us, we care as deeply about the work as you do. That means we don’t shy away from the facts, even when the trurth hurts. At the end of the day, your success is our success.'
+      text: 'No two brands or services are alike, and we don’t believe in one-size-fits-all solutions. Instead, we’ll work closely with your team to share knowledge and develop solutions. We like to think of ourselves as an extension of your internal team’s capabilities. When you partner with us, we care as deeply about the work as you do. That means we don’t shy away from the facts, even when the truth hurts. At the end of the day, your success is our success.'
     },
     icons: [
       {
