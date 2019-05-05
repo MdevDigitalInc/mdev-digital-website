@@ -4,13 +4,17 @@
       <!-- Split Component 60 / 40 -->
       <split-sixty
         animClassLeft="a-flyin a-flyin-left"
-        animClassRight="a-flyin a-flyin-right" :reverse="false">
+        animClassRight="a-flyin a-flyin-right" :reverse="false" :top="true">
         <!-- Left Split -->
         <template slot="leftSlot">
-          <h3 class="u-uppercase u-c-white">{{ $t("homepage.services.heading") }} </h3>
+          <h4 class="u-uppercase u-c-white u-medium">{{ $t("homepage.services.heading") }} </h4>
           <p class="u-c-white">
             {{ $t("homepage.services.content") }}
           </p>
+          <!-- Primary Button -->
+          <btn-primary :BtnData="BtnData" class="u-desk-only">
+            {{ $t("homepage.services.action") }}
+          </btn-primary>
         </template>
         <!-- Right Split -->
         <template slot="rightSlot">
@@ -18,8 +22,7 @@
         </template>
       </split-sixty>
 
-      <!-- Primary Button -->
-      <btn-primary :BtnData="BtnData">
+      <btn-primary :BtnData="BtnData" class="u-phone-only">
         {{ $t("homepage.services.action") }}
       </btn-primary>
     </div>
@@ -43,7 +46,7 @@ export default {
       BtnData: {
         accessibility: 'View Our Services',
         btnRoute: '/services',
-        btnClass: 'mdev-primary-btn --space-top-xs --tab'
+        btnClass: 'mdev-primary-btn --space-top-sm --tab'
       },
       // Links pulled from Flat File
       links: MdevData.serviceLinks

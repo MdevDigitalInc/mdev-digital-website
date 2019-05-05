@@ -66,7 +66,7 @@ export default  {
     {
       linkName: 'Web Design',
       linkTitle: 'View our UX & Web Design services',
-      route: '/services/ui-ux',
+      route: '/services/custom-web-development',
       linkIndex: '02'
     },
     {
@@ -132,7 +132,7 @@ export default  {
       },
       employeeOrigin: 'Sao Paulo, Brazil',
       employeeQuote: 'Think like a man of action, act like a man of thought.',
-      employeeTrick: 'Drone Guru / Media Maven / Eagle Eye',
+      employeeTrick: 'Drone Guru / Media Maverick / Eagle Eye',
       employeeImage: 'bios/bio-lucas.png',
       socialLinks: [
         {
@@ -213,7 +213,7 @@ export default  {
         description: 'Meet Luis Guerrero, our Digital Marketing Manager.'
       },
       employeeOrigin: 'Guatemala',
-      employeeQuote: 'He who says he can and he who says he can\'t are both usually right - Confucius',
+      employeeQuote: 'He who says he can and he who says he can\'t are both usually right. – Confucius',
       employeeTrick: 'Salsa & Bachata Instructor / Speaks Fluent Sarcasm',
       employeeImage: 'bios/bio-luis.png',
       socialLinks: [
@@ -221,7 +221,7 @@ export default  {
           linkClass: 'fa-linkedin',
           target: '_blank',
           accessibility: 'Follow Luis on LinkedIn',
-          linkUrl: 'https://www.instagram.com/halyhawkinsdesigns/'
+          linkUrl: 'www.linkedin.com/in/jluisg12'
         },
         {
           linkClass: 'fa-facebook-f',
@@ -308,7 +308,7 @@ export default  {
       },
       employeeOrigin: 'Guelph, ON',
       employeeQuote: 'Humanity is a discontinuous series of free men irreparably isolated by their subjectivity.',
-      employeeTrick: 'Green Tea Aficionado / Curry Tasting Champion / Skill Acquisition',
+      employeeTrick: 'Green Tea Aficionado / Curry Tasting Champion',
       employeeImage: 'bios/bio-dorian.png',
       socialLinks: false
     }
@@ -330,22 +330,25 @@ export default  {
       squareImg: false,
       media: [
         {
+          gif: false,
           image: 'services/01-branding-concepts.png',
           imageDesc: 'Samples of our Conceptual work.',
         },
         {
+          gif: false,
           image: 'services/01-branding-logos.png',
           imageDesc: 'Samples of our Branding Work.',
         },
         {
+          gif: false,
           image: 'services/01-branding-business-cards.png',
           imageDesc: 'Samples of our Business Cards.',
         }
       ],
-      description: 'A great brand begins with a logo, and thrives by providing a great user experience. We’ll can you define your style, tone, and voice to create a strong and cohesive identity that can be instantly recognized across physical and digital touchpoints.',
+      description: 'Distinguish yourself from the competition with authentic and memorable branding. By incorporating your values and unique selling propositions into our thinking process, we\'ll help you build a brand that effectively tells your story, in the way you want it to be heard.',
       topics: [
         'Logos',
-        'Corporate identities',
+        'Corporate identity systems',
         'Print & digital design',
         'Packaging'
       ],
@@ -366,11 +369,12 @@ export default  {
       squareImg: true,
       media: [
         {
+          gif: false,
           image: 'services/02-web-design.png',
           imageDesc: 'Samples of our Web Design Work.',
         }
       ],
-      description: 'We specialize in designing carefully crafted custom sites to showcase your unique offerings. Our digital team keeps on top of the latest web trends and coding practices to produce clear user journeys and enjoyable web experiences. After a collaborative planning process, you can sit back while we put a laser-focus on all the details, large and small.',
+      description: 'Custom web design is the only way to ensure that you have full control over the look and feel of your brand. We\'ll give you the freedom to build the feature-set that you need to create a personalized experience for your users. Utilizing the latest technologies, modern design techniques and methodical coding practices, we\'ll help you stand out in a crowded marketplace.',
       topics: [
         'Custom Design & Development',
         'Ecommerce',
@@ -380,7 +384,7 @@ export default  {
       action: 'Learn More',
       BtnData: {
         accessibility: 'Explore our web design services.',
-        btnRoute: '/services/ui-ux',
+        btnRoute: '/services/custom-web-development',
         btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
       },
       config: {
@@ -394,11 +398,12 @@ export default  {
       squareImg: true,
       media: [
         {
+          gif: false,
           image: 'services/03-apps-software.png',
           imageDesc: 'Samples of our Software Development Work.',
         }
       ],
-      description: 'Utilizing reliable platforms and technology, we build efficient, cost-effective software solutions. Our forward-thinking development practices and thorough documentation will ensure long-lasting quality and scalability, allowing your software capabilities to expand with your business.',
+      description: 'Utilizing reliable platforms and technology, we build efficient, cost-effective software solutions. Our forward-thinking development practices and thorough documentation ensure long-lasting quality and scalability, allowing your application\'s capabilities to expand with your business.',
       topics: [
         'Guided Discovery',
         'Agile Project Management',
@@ -423,11 +428,12 @@ export default  {
       squareImg: false,
       media: [
         {
+          gif: false,
           image: 'services/04-digital-marketing.png',
           imageDesc: 'Samples of our Digital Marketing Work.',
         }
       ],
-      description: 'Digital marketing is the art of being noticed online. Let\'s collaborate on buidling a digital marketing strategy that combines conversion-focused content with qualified lead generation to build brand awareness and drive traffic to your website.',
+      description: 'Digital marketing is the art of being noticed online. Our digital marketing strategies combine conversion-focused content with qualified lead generation to build brand awareness and drive traffic to your website.',
       topics: [
         'Search Engine Optimization',
         'Search Engine Marketing',
@@ -450,7 +456,7 @@ export default  {
       title: 'Support Services',
       anchor: 'anc-support',
       media: false,
-      description: 'We offer consulting and support services to help your business run smoothly. This includes setting up your business infrastructure or identifying new ways to be efficient through process development, operational software deployments or custom application development, our ultimate goal is to help you reduce your internal costs.',
+      description: 'We offer support and consulting services to help your business run smoothly. We can help you identify new ways to be efficient through process development, operational software deployments or custom application development, ultimately reducing your internal costs.',
       topics: [
         'IT Consulting',
         'Startup Support',
@@ -463,7 +469,7 @@ export default  {
       BtnData: {
         accessibility: 'Explore our Business Support services.',
         btnRoute: '/services/consulting',
-        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs'
+        btnClass: 'mdev-btn mdev-primary-btn mdev-btn-dark-text --space-top-xs --support-override'
       },
       config: {
         showDecoration: false,
@@ -480,7 +486,7 @@ export default  {
       next: {
         title: 'Web Design Services',
         index: '02',
-        link: '/services/ui-ux',
+        link: '/services/custom-web-development',
         a11y: 'See our web design services'
       }
     },
@@ -499,6 +505,7 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/branding/logo-design.png',
             imageDesc: 'Branding Samples for Ketolibriyum'
           }
@@ -513,15 +520,18 @@ export default  {
           'Brochure Design',
           'Publication Layout',
           'Banners &amp; Tradeshow Graphics',
-          'Retail Signage &amp; Point of Purchase Displays'
+          'Retail Signage',
+          'Point of Purchase Displays'
         ],
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/branding/print-agcap-brochure.png',
             imageDesc: 'AgCapital Canada Print Brochure.'
           },
           {
+            gif: false,
             image: 'services/branding/print-zucora-printbook.png',
             imageDesc: 'Zucora Home Print Booklet.'
           }
@@ -541,10 +551,12 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/branding/packaging-zuc-purecare.png',
             imageDesc: 'Zucora Purecare Packaging.'
           },
           {
+            gif: false,
             image: 'services/branding/packaging-pwh-homecoming.png',
             imageDesc: 'Powerhouse Brewery Homecoming Beer Label.'
           }
@@ -580,14 +592,17 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/webdev/web-design-tfac.png',
             imageDesc: 'The Factory London Website Design.'
           },
           {
+            gif: false,
             image: 'services/webdev/web-design-glen.png',
             imageDesc: 'Arbour Glen Website Design.'
           },
           {
+            gif: false,
             image: 'services/webdev/web-design-zuc.png',
             imageDesc: 'Zucora Home Website Design.'
           }
@@ -608,14 +623,17 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/webdev/ecom-keto.png',
             imageDesc: 'Ketolibriyum ecommerce Website.'
           },
           {
+            gif: false,
             image: 'services/webdev/ecom-zucora.png',
             imageDesc: 'Zucora Home ecommerce Website.'
           },
           {
+            gif: false,
             image: 'services/webdev/ecom-aster.png',
             imageDesc: 'Aster Shoes ecommerce Website.'
           }
@@ -670,9 +688,9 @@ export default  {
     services: [
       {
         anchor: 'anc-appdev',
-        title: 'Build</br>Your</br>Empire',
+        title: 'Forge</br>Your</br>Empire',
         subTitle: 'Application Development',
-        description: 'You can expect regular feature releases as we work to build a product you can quickly take to market. Once released, we’ll help you analyze post-launch feature-set priorities to continue application growth as you discover more about your users\' needs. We focus on security, scalability and longevity to ensure that your investment in technology can scale with your business.',
+        description: 'Developing your own internal tool or creating an innovative new application is a powerful way to solve a unique business challenge or take advantage of a market oppotrtunity. Our focus on security, scalability and longevity will ensure that your investment in technology can scale with your business.',
         topics: [
           'Custom software development',
           'vue.js, node, react, mongo, postgres',
@@ -683,6 +701,7 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: true,
             image: 'services/appdev/ZUC_SoftwareAnimation_laptop.gif',
             imageDesc: 'Zucora Home Technician Portal Custom Software'
           }
@@ -696,7 +715,7 @@ export default  {
         content: [
           {
             title: 'Guided Discovery',
-            description: 'We kick off every project with a collaborative consulting session to start the gathering information for your project roadmap. This process is crucial to fully explore the scope of work to be done and to establish how we will work together.',
+            description: 'We begin all of our projects with a Guided Discovery session. We\'ll ask you a series of questions that allow us to start conceptualizing your software. Through collaborative ideation, we\'ll help you identify the ideal feature set to bring your idea to life.',
             topics: [
               'Ideation',
               'Requirements Gathering',
@@ -707,11 +726,13 @@ export default  {
           },
           {
             title: 'Agile Management',
-            description: 'Our agile team will provide iterative releases so you can start testing your new technology platform sooner, refining feature sets and defining functionality as the project progresses. Our transparent and collaborative approach keeps you in the loop with regular product deliveries, review meetings and consistent progress reporting.',
+            description: 'Our agile team will provide iterative releases so you can start testing your new technology platform sooner. Our transparent approach keeps you in the loop with regular product deliveries and consistent progress reporting.',
             topics: [
               'Ongoing Accountability',
-              'Regular Client Touchpoints',
-              'Adaptability'
+              'Regular Touchpoints',
+              'Continuous Integration',
+              'Adaptability',
+              'Iterative Releases'
             ]
           }
         ]
@@ -721,23 +742,23 @@ export default  {
         title: 'Engage your audience',
         content: [
           {
-            title: 'User Experience',
-            description: 'We combine well-defined workflows, detailed user personas and comprehensive product roadmaps with prototyping and wireframing to lay a solid foundation for your application. The goal is to provide a positive customer experience from first impression to the completion of your desired result.',
+            title: 'User Experience Design',
+            description: 'We combine well-defined workflows, detailed user personas and comprehensive product roadmaps with prototyping and wireframing to lay a solid foundation for your application.',
             topics: [
               'User Personas',
+              'User Journey Mapping',
               'Prototyping & Wireframing',
-              'User Experience Strategies'
+              'User Engagement Strategies'
             ]
           },
           {
-            title: 'User Interface',
-            description: 'Watch your application come to life as we create the user interface that your users will be interacting with. From dashboards and list views to complex reporting screens, our clean application design is user-friendly and provides clear guidance on how to perform new or complex functions.',
+            title: 'User Interface Design',
+            description: 'Watch your application come to life as we design the software your users will experience. We employ human-friendly UI practices so users can complete new or complex tasks with confidence.',
             topics: [
               'Dashboards',
               'List Views',
-              'Reporting',
-              'CSS Animations',
-              'User Engagement Strategies'
+              'Reporting Screens',
+              'CSS Animations & Transitions'
             ]
           }
         ]
@@ -760,7 +781,7 @@ export default  {
     services: [
       {
         anchor: 'anc-content',
-        title: 'Share your narrative',
+        title: 'Share</br>your</br>narrative',
         subTitle: 'Content Marketing',
         description: 'Authentic, up-to-date content is essential to growth and retention. We will help you develop an engaging narrative that gives people genuine reasons to love and follow your site and social media channels.',
         topics: [
@@ -787,6 +808,7 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/digiads/sem-keto-pintrest.png',
             imageDesc: 'Ketolibriyum Pinterest Templates.'
           }
@@ -811,7 +833,7 @@ export default  {
         anchor: 'anc-paid',
         title: 'Generate Qualified Leads',
         subTitle: 'Search Engine Marketing',
-        description: 'Search engine marketing, also known as pay-per-click advertising, yields immediate results. Whether it\'s awareness, leads or sales, we will help you develop paid strategies designed to convert highly qualified leads into loyal clients.',
+        description: 'Search engine marketing, also known as pay-per-click advertising, yields immediate results. Whether it\'s awareness, leads or sales, we will help you develop paid strategies designed to convert highly qualified leads into loyal customers.',
         topics: [
           'Paid Digital Ad Strategy',
           'Account Set Up & Optimization',
@@ -821,6 +843,7 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/digiads/social-phone-instagram.png',
             imageDesc: 'Organic Social Media.'
           }
@@ -830,7 +853,7 @@ export default  {
         anchor: 'anc-launch',
         title: 'Set the wheels in motion',
         subTitle: 'Launch Your Campaign',
-        description: 'We know that you are eager to get the word out about your product or service quickly. We will help you structure a omni-channel launch campaign tailored specifically to your audience including social media, print design, and trade show setups. Our launch campaigns often include a landing page that can supply teaser content while we help you build up to the big announcement.',
+        description: 'We know that you are eager to get the word out about your product or service quickly. We will help you structure a omni-channel launch campaign tailored specifically to your audience including social media, print design, and trade show setups. Our launch campaigns often include a landing page that can supply teaser content while we help you build up to a big announcement.',
         topics: [
           'Landing Pages',
           'Event Promotion',
@@ -840,10 +863,12 @@ export default  {
         caseStudy: false,
         media: [
           {
+            gif: false,
             image: 'services/digiads/launch-tfac-landing-page.png',
             imageDesc: 'The Factory London Landing Page.'
           },
           {
+            gif: false,
             image: 'services/digiads/launch-ora-landing-page.png',
             imageDesc: 'Offroad Addiction Landing Page.'
           }
@@ -870,7 +895,7 @@ export default  {
         anchor: 'anc-email',
         title: 'Email</br>in style',
         subTitle: 'G Suite Management',
-        description: 'As part our our overarching branding services, we want to make sure you look good when communicating about your business. It’s the little things that count, like using a professional email URL and having a sweet, branded signature.',
+        description: 'As part our our branding services, we want to make sure your emails look as nice as your website. It’s the little things that count, like having a sweet, branded signature. Not using Gmail yet? We can help you with migration or deployment.',
         topics: [
           'G Suite Deployments',
           'Email Migrations',
@@ -884,20 +909,20 @@ export default  {
     servicesNomedia: [
       {
         anchor: 'anc-domains',
-        title: 'Stake your digital claim',
+        title: 'Stake your</br>digital claim',
         content: [
           {
             title: 'Domain Management',
             description: 'Domain management can be complex, time consuming, and damaging to your business if handled poorly. We provide worry-free hosting, migration and configuration services, to ensure that your hosting can handle your volume of traffic and serve the performance and capabilities your website needs',
             topics: [
               'Domain & Hosting Migration',
-              'Domain configuration & set up',
+              'Domain configuration & setup',
               'Website & Application Hosting'
             ]
           },
           {
             title: 'Dispute Resolution',
-            description: 'When things get a little more complicated than the average domain procurement, we can assist by digging into legacy domain structures and convoluted paths of ownership. We have successfully negotiated complex domain ownership disputes and can help you stake your digital claim.When things get a little more complicated than the average domain procurement, we can assist by digging into legacy domain structures and convoluted paths of ownership. We have successfully negotiated complex domain ownership disputes and can help you stake your digital claim.',
+            description: 'When things get a little more complicated than the average domain procurement, we can assist by digging into legacy domain structures and convoluted paths of ownership. We have successfully negotiated complex domain ownership disputes and can help you stake your digital claim.',
             topics: [
               'Domain Dispute Resolution',
               'Domain Ownership Assessment',
@@ -913,9 +938,9 @@ export default  {
     services: [
       {
         anchor: 'anc-startup',
-        title: 'Jump start your business',
+        title: 'Jump</br>start</br>your</br>business',
         subTitle: 'Startup Support',
-        description: 'We know the joy and growing pains that come along with starting a new business, in fact, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding, all the way to setting up your internal operations software, we know what it takes to get you up and running. ',
+        description: 'We understand the growing pains that come along with starting a new business, some of our deepest expertise lies in launching new products and services. Starting at the early stages of branding and ideation, to releasing your first product, we know what it takes to get you up and running.',
         topics: false,
         caseStudy: false,
         media: false,
@@ -927,12 +952,11 @@ export default  {
       },
       {
         anchor: 'anc-cloud',
-        title: 'Get your head out of the clouds',
-        subTitle: 'Cloud Technologies',
-        description: 'Cloud technologies give you flexibility to create secure, optimized solutions that streamline internal processes. Based on your business requirements, we can help identify which technologies best suit your needs, then provide all of the assistance necessary to install and configure your chosen software.',
+        title: 'Make Sense of the clouds',
+        subTitle: 'IT Consulting',
+        description: 'Cloud technologies provide flexibility to create secure, optimized solutions that streamline internal processes. Based on your business requirements, we can help identify software solutions that best suit your needs, then provide assistance with deployment including developing new APIs to connect with your infrastructure.',
         topics: [
-          'Cloud Storage',
-          'Cloud Computing',
+          'Cloud Storage / Cloud Computing',
           'Saas/IaaS/PaaS',
           'Cloud Application Security',
           'AWS, Digital Ocean, Google Cloud',
@@ -960,7 +984,7 @@ export default  {
   },
 
   prefooter: {
-    heading: 'Let\'s See how we can help',
+    heading: 'Let’s See how we can help',
     subheading: 'Start something new',
     BtnData: {
       accessibility: 'Get in touch today!',
@@ -971,6 +995,8 @@ export default  {
       {
         serviceFlag: 1,
         heading: 'Branding',
+        topRoute: '/services/branding',
+        topa11y: 'See our Branding Services',
         list: [
           {
             linkName: 'Logos',
@@ -997,25 +1023,27 @@ export default  {
       {
         serviceFlag: 2,
         heading: 'Web Design',
+        topRoute: '/services/custom-web-development',
+        topa11y: 'See our Custom Web Development Services',
         list: [
           {
             linkName: 'Custom Design & Development',
-            linkRoute: '/services/ui-ux#anc-webdev',
+            linkRoute: '/services/custom-web-development#anc-webdev',
             a11y: 'Custom Web Design'
           },
           {
             linkName: 'Ecommerce',
-            linkRoute: '/services/ui-ux#anc-ecomm',
+            linkRoute: '/services/custom-web-development#anc-ecomm',
             a11y: 'Custom Ecommerce'
           },
           {
             linkName: 'Mobile-friendly Websites',
-            linkRoute: '/services/ui-ux#anc-a11y',
+            linkRoute: '/services/custom-web-development#anc-a11y',
             a11y: 'Mobile-friendly websites'
           },
           {
             linkName: 'Online Accessibility',
-            linkRoute: '/services/ui-ux#anc-a11y',
+            linkRoute: '/services/custom-web-development#anc-a11y',
             a11y: 'Accessibility'
           }
         ]
@@ -1023,6 +1051,8 @@ export default  {
       {
         serviceFlag: 3,
         heading: 'Apps & Software',
+        topRoute: '/services/app-development',
+        topa11y: 'See our Custom App Development Services',
         list: [
           {
             linkName: 'Guided discovery',
@@ -1054,6 +1084,8 @@ export default  {
       {
         serviceFlag: 4,
         heading: 'Digital Marketing',
+        topRoute: '/services/digital-marketing',
+        topa11y: 'See our Digital Marketing Services',
         list: [
           {
             linkName: 'Search Engine Optimization',
@@ -1085,6 +1117,8 @@ export default  {
       {
         serviceFlag: 5,
         heading: 'Support',
+        topRoute: '/services/consulting',
+        topa11y: 'See our IT & Support Services',
         list: [
           {
             linkName: 'IT Consulting',
@@ -1117,7 +1151,7 @@ export default  {
             a11y: 'Gsuite setup & management'
           }
         ]
-      },
+      }
     ]
   },
 
@@ -1266,7 +1300,7 @@ export default  {
       decoration: true,
       background: 'about/100-kellogg-background.png',
       heading: 'The \'Hood',
-      text: 'Welcome to Old East Village in London, Ontario, Canada – an up-and-coming neighborhood that we decided to make our home. Our offices are located in the historic Kellogg’s cereal factory at 100 Kellogg Lane in the heart of O.E.V.'
+      text: 'Welcome to Old East Village in London, Ontario, Canada – an up-and-coming neighbourhood that we decided to make our home. Our offices are located in the historic Kellogg’s cereal factory at 100 Kellogg Lane in the heart of O.E.V.'
     },
     founders: {
       subheading: 'Meet the',
@@ -1338,12 +1372,28 @@ export default  {
 
   testimonials: [
     {
+      content: 'We wanted an application with a fast, modern interface that would work equally well on phones, tablets and browsers. It also needed to work with our legacy systems and a historical data model. The application they created did both amazingly, managing payment information for thousands of orders annually, saving us huge amounts of time. Absolutely loved that project - way ahead of its time!',
+      name: 'Aaron Finkenzeller, Former CTO of Zucora Inc.'
+    },
+    {
       content: 'Working with MDEV exceeded my expectations.  They were knowledgeable, creative and aligned seamlessly to the vision of the project. Through the twists and turns of a start-up, they were able to adapt and executed the project beautifully.',
       name: 'Angela Hawkins, Former Marketing Director of The Factory'
     },
     {
       content: 'MDEV worked closely with us to craft a unique and professional website to suit our needs, they were amazing to collaborate with and we couldn\'t be happier with the result!',
       name: 'Devan Long, Owner/Operator of The Next Level'
+    },
+    {
+      content: 'When creating our new website, Becky and her team at MDEV Digital really listened and asked us the right questions to guide us through the process. Their marketing and design expertise were invaluable, not to mention the energy they brought to the project. Each time a new family comments on how unique and great our website is, I thank MDEV Digital for making it happen! I highly recommend them if you are looking to stand out amongst your competitors.',
+      name: 'Jamie Monaghan, Executive Director of Arbour Glen Day Nursery'
+    },
+    {
+      content: 'MDEV helped us come up with a strong concept for our web design and brings a new level to our digital marketing efforts. Working with the team at MDEV is an incredible experience – they are readily available to discuss new concepts and ideas as well as consistently updating us on how our current ads are performing. MDEV will change the way you do digital marketing!',
+      name: 'Pamma Hubbert, Marketing Director of Rocky\'s Harley-Davidson'
+    },
+    {
+      content: 'MDEV Digital were able to take my ideas and run with them! They helped me create beautiful branding for my new business that I am so proud to share with the world. They built an incredible website for me and even set up my Facebook Business page. Thanks to their help, I am excited to have my new business up and running.',
+      name: 'Cassandra Roberts, Owner/Operator of Clean Slate Laser Studio'
     }
   ],
 };

@@ -54,7 +54,7 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
   };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 /*-------------------------------------*/
 /* Featured-Content Component Styles
 /--------------------------------------*/
@@ -64,6 +64,7 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
   position: relative;
 
   // Applies to all images
+  picture,
   img {
     width: 100%;
   }
@@ -80,6 +81,28 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
 
     @media #{$phone-only} {
       width: 78%;
+    }
+  }
+
+  p {
+    @media #{$laptop-up} {
+      font-size: 15px;
+      line-height: 190%;
+      font-weight: 500;
+    }
+
+    @media #{$desktop-up} {
+      font-size: 18px;
+    }
+  }
+
+  h3 {
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    @media #{$portrait} {
+      margin-bottom: 25px;
     }
   }
 
@@ -124,10 +147,6 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
         top: -25px;
       }
     }
-
-    img {
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
-    }
   }
 
   // Content portion of the split
@@ -154,7 +173,8 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     }
 
     .mdev-service-desc {
-      width: 55%;
+      width: 45%;
+
 
       @media #{$portrait} {
         width: 100%;
@@ -164,10 +184,18 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     .mdev-service-topics {
       width: 35%;
       margin-top: 0;
+      margin-right: 10%;
+      margin-left: 5%;
+
+      @media #{$xl-up} {
+        margin-left: 0;
+        margin-right: 16%;
+      }
 
       @media #{$portrait} {
         width: 100%;
         margin-top: 25px;
+        margin-left: 0;
       }
     }
   }
@@ -230,8 +258,8 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
 
       @media #{$portrait} {
         left: 10%;
-        top: -50px;
-        bottom: -50px;
+        top: -25px;
+        bottom: -25px;
         right: 10%;
       }
 

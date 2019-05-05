@@ -1,4 +1,4 @@
-![MDEV Digital](https://mdev.digital/social/githubLogo.svg)
+![MDEV Digital](https://mdevcdn.digital/images/githublogo.svg)
 
 # MDEV DIGITAL - MAIN CORPORATE WEBSITE
 ### Vue.js - Webpack - HTML5 - SASS - JS

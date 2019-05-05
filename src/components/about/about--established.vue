@@ -1,7 +1,11 @@
 <template>
   <section class="mdev-established">
     <div class="mdev-established-media">
-      <img :src="loadImage(image)" :alt="a11y" class="mdev-est-image"/>
+      <picture class="mdev-est-image">
+        <source media="screen" :srcset="loadImage(image) + '.webp'" type="image/webp">
+        <source media="screen" :srcset="loadImage(image)" type="image/png">
+        <img :src="loadImage(image)" :alt="a11y" />
+      </picture>
       <img :src="loadImage(badge.src)" :alt="badge.a11y" class="mdev-est-badge"/>
     </div>
     <div class="--bkg-extend"></div>

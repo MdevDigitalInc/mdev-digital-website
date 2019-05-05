@@ -58,6 +58,18 @@ export default{
       transform: translate3d(0, 53%, 0);
     }
 
+    img[ data-mdev-mid ] {
+      @media #{$desktop-only} {
+        transform: scale(1.001);
+      }
+      @media #{$laptop-only} {
+        transform: scale(1.008);
+      }
+      @media #{$xl-up} {
+        transform: scale(.999);
+      }
+    }
+
     img[ data-mdev-bot ] {
       transform: translate3d(0, -74%, 0);
     }
@@ -70,10 +82,25 @@ export default{
   .--transform-active {
     img[ data-mdev-top ] {
       transform: translate3d(0, 36%, 0);
+
+      @media #{$desktop-only} {
+        transform: translate3d(0, 35%, 0);
+      }
     }
 
     img[ data-mdev-bot ] {
-      transform: translate3d(0, -50%, 0);
+      transform: translate3d(0, -52%, 0);
+
+      @media #{$desktop-only} {
+        transform: translate3d(0, -48%, 0);
+      }
+
+      @media #{$laptop-only} {
+        transform: translate3d(0, -51%, 0);
+      }
+      @media #{$xl-up} {
+        transform: translate3d(0, -49%, 0);
+      }
     }
   }
 }

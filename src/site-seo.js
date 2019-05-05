@@ -1,10 +1,13 @@
 // MDEV Site SEO
 export default {
   siteSeo: {
+    stagingBuild: false,
     template: '%s | MDEV Digital | London, Toronto, Montreal',
     templateAddon: ' | MDEV Digital | London, Toronto, Montreal',
+    siteUrlStaging: 'http://4british3y3s0nly.s3-website-us-west-2.amazonaws.com',
+    siteUrlLive: 'https://mdev.digital',
     social: {
-      appid: 'ID-GOES-HERE',
+      appid: '717261358441107',
       ogtype: 'website',
       cardtype: 'summary_large_image',
       twsite: '@MDEVdigital',

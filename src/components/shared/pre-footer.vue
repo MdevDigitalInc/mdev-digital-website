@@ -24,9 +24,11 @@
           :key="index"
           v-if="link.serviceFlag != serviceFlag">
           <!-- Column Heading -->
-          <span class="--heading u-uppercase">
+          <router-link :to="link.topRoute"
+            :title="link.topa11y"
+            class="--heading u-uppercase">
             {{ link.heading }}
-          </span>
+          </router-link>
           <router-link :to="item.linkRoute"
             class="mdev-footer-link u-uppercase"
             :key="index"
@@ -142,6 +144,8 @@ export default{
       font-size: 25px;
       font-weight: 500;
       letter-spacing: 1.3px;
+      border-bottom: 2px solid transparent;
+      transition: all .4s;
       line-height: 1;
       margin-bottom: 5px;
 
@@ -151,6 +155,10 @@ export default{
 
       @media #{$tablet-lnd-only} {
         font-size: 18px;
+      }
+
+      &:hover {
+        border-bottom: 2px solid $white;
       }
     }
 

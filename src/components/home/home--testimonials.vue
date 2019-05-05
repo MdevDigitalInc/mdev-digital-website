@@ -1,9 +1,9 @@
 <template>
   <section class="mdev-full-section --accent-bkg --pull-up-section --reduce-bottom">
     <div class="mdev-main-wrapper u-text-center">
-      <h3 class="u-uppercase u-c-black u-bold a-flyin a-flyin-right u-no-select" v-in-viewport>
+      <h4 class="u-uppercase u-c-black u-bold a-flyin a-flyin-right u-no-select" v-in-viewport>
         {{ $t("homepage.testimonials.heading") }}
-      </h3>
+      </h4>
       <!-- Testimonial Loop -->
       <p v-for="( testimonial, index ) in testimonials"
         v-if=" index == desiredIndex "
@@ -12,7 +12,7 @@
         class="mdev-testimonial u-c-black --space-top-xs u-light u-italic a-blur-in">
           {{ testimonial.content }}
         <span class="testimonial-name">
-          - {{ testimonial.name }}
+          {{ testimonial.name }}
         </span>
       </p>
       <!-- Carousel Controls -->
@@ -113,7 +113,7 @@ export default{
   .testimonial-name {
     display: block;
     font-weight: 400;
-    margin-top: 10px;
+    margin-top: 20px;
     font-style: normal;
   }
 }
@@ -123,6 +123,10 @@ export default{
 
   @media #{$portrait} {
     font-size: 3.25vw;
+  }
+
+  @media #{$phone-only} {
+    font-size: 6vw;
   }
 
   .u-italic {

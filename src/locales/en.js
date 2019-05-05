@@ -9,7 +9,7 @@ export default {
 
     services: {
       heading: "We are a hybrid digital agency",
-      content: "Our services extend far beyond those of a traditional agency. We don’t stop at websites and applications – we create powerful user experiences, combining digital solutions and integrated marketing to maximize your return on investment.",
+      content: "Our services extend far beyond those of a traditional agency. We create powerful user experiences – combining digital solutions and integrated marketing to maximize your return on investment.",
       action: "See All Services",
 
       servicelist: {
@@ -25,7 +25,7 @@ export default {
     casestudies: {
       heading: "Client Stories",
       subheading: "Featured",
-      action: "Coming Soon",
+      action: "Case Studies Coming Soon",
 
       cases: {
         tfac: "The Factory",
@@ -50,19 +50,15 @@ export default {
   contact: {
     smallTitle: "Getting in touch is easy",
     largeTitle: "Don't wait, say hello!",
-    description: "Get in touch to learn more about our services. We’ll start with a discovery session to explore how we can help you reach your goals.",
+    description: "Get in touch to learn more about our services. We’ll start with a Discovery session to explore how we can help you reach your goals.",
     headerBtn: "Send a message",
     thankyouMsg: "Thanks for reaching out, we'll be in touch as soon as possible. While you wait, we highly recommend creeping our social channels!",
     thankyouAction: "See All Case Studies",
 
     fields: {
-      fname: {
-        label: "First Name",
-        placeholder: "Your first name"
-      },
-      lname: {
-        label: "Last Name",
-        placeholder: "Your last name"
+      name: {
+        label: "Name",
+        placeholder: "Your first & last name"
       },
       company: {
         label: "Company",
@@ -78,7 +74,7 @@ export default {
       },
       message: {
         label: "Message",
-        placeholder: "Your message to MDEV"
+        placeholder: "Tell us a little bit about what you are looking to accomplish."
       },
       submit: {
         label: "Send",
@@ -123,15 +119,15 @@ export default {
   },
 
   webdevpage: {
-    intro: "We believe in making the web a nicer place to be. We accomplish this mission through carefully planned site architecture and approachable web design. We keep the end user in mind, providing clear user journeys and personalized experiences."
+    intro: "We believe in making the web a nicer place to be. This mission is accomplished through carefully planned site architecture and approachable web design. We keep the end user in mind, providing clear user journeys and personalized experiences."
   },
 
   appdevpage: {
-    intro: "We provide cutting-edge, innovative development services to bring your ideas to life. Using Agile development practices, modern UX/UI principles and secure, cloud-based technologies, we turn dreams into quality applications that users love."
+    intro: "Using Agile development practices, modern UX/UI principles and secure, cloud-based technologies, we turn ideas into quality applications that users love."
   },
 
   digiadspage: {
-    intro: "Dive into the digital space with confidence. We back the art of marketing with the science of data. We're experts at integrating compelling marketing strategies with strong branding to provide understandable and measureable results."
+    intro: "We combine the art of marketing with the science of data. Our expertise lies in integrating compelling marketing strategies with strong branding to provide understandable and measurable results."
   },
 
   consultingpage: {
@@ -147,8 +143,7 @@ export default {
   },
 
   errorpage: {
-    heading: 'Oops',
-    intro: 'So sorry, you’re in the wrong place. A 404 error has occured and we can’t seem to find the page you are looking for. Check to see that you have typed in the correct address, or use the options below to contiune your journey on our website.',
+    intro: 'You have ventured too far and found a page that does not exist. Check to see that you have typed in the correct address, or use the options below to keep exploring.',
     path1: 'About MDEV',
     path2: 'Contact Us'
   },

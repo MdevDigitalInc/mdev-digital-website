@@ -50,12 +50,13 @@
 
   a {
     color: $color-brand-bkg;
-    transition: color .5s, text-shadow .8s;
+    transition: color .5s, text-shadow .8s, transform .5s;
 
     &:hover,
     &:focus,
     &:active {
-      color: $white;
+      color: $color-brand-bkg;
+      transform: scale( 1.2);
     }
   }
 }

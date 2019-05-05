@@ -9,12 +9,12 @@
           <div class="mdev-center">
             <h1
               data-intro-heading
-              class="u-c-primary a-blur-in">
+              class="mdev-serv-intro u-c-primary a-blur-in">
               {{ $t('servicepage.intro.heading') }}
             </h1>
             <p
               data-intro-subhead
-              class="u-c-white a-blur-in">
+              class="mdev-serv-text u-c-white a-blur-in">
               {{ $t('servicepage.intro.subHeading') }}
             </p>
 
@@ -51,6 +51,7 @@
       <template v-if="service.media" slot="mediaSlot">
         <!-- Image Carousel -->
         <media-carousel
+         class="--shadow"
          :flip="((index + 1) % 2) == 1"
          :media="service.media"></media-carousel>
       </template>
@@ -59,7 +60,7 @@
         <span class="mdev-service-index a-fade-in" v-in-viewport>
           0{{ index + 1 }}
         </span>
-        <h2 class="mdev-service-title u-uppercase a-fade-in" v-in-viewport>
+        <h2 :data-dec="service.anchor" class="mdev-service-title u-uppercase a-fade-in" v-in-viewport>
           {{ service.title }}
         </h2>
         <p class="mdev-service-desc a-fade-in" v-in-viewport>
@@ -127,7 +128,14 @@ export default{
       // Services loaded from flat file
       services: MdevData.services,
       // SEO
-      seo: SEOData.siteSeo
+      seo: SEOData.siteSeo,
+      // Staging Social URL
+      // These variables allow for the creation of OG tags
+      // for staging and prod. Change vars in site-seo.js!
+      stagingBuild: SEOData.siteSeo.stagingBuild,
+      liveUrl: SEOData.siteSeo.siteUrlLive,
+      stageUrl: SEOData.siteSeo.siteUrlStaging
+
     };
   },
 
@@ -136,8 +144,9 @@ export default{
     return {
       title: this.seo.services.title,
       meta: [
-        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.services.twimage) },
-        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.services.ogimage) },
+        { vmid: 'ogurl', property: 'og:url', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + '/services/overview/index.html' },
+        { vmid: 'twimage', name: 'twitter:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.services.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.services.ogimage) },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.services.title + this.seo.templateAddon },
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.services.title + this.seo.templateAddon },
         { vmid: 'desc', name: 'description', content: this.seo.services.desc },
@@ -201,9 +210,27 @@ export default{
     padding: 0 12%;
   }
 
-  @media #{$laptop-up} {
-    width: 60%;
+  @media #{$laptop-only} {
+    padding: 0 14%;
+  }
+
+  @media #{$desktop-up} {
+    width: 55%;
     padding: 0;
+  }
+
+  @media #{$xl-up} {
+    width: 53%;
+  }
+
+  .mdev-serv-intro {
+    line-height: 120%;
+  }
+
+  .mdev-serv-text {
+    @media #{$laptop-only} {
+      width: 90%;
+    }
   }
 }
 
@@ -219,7 +246,7 @@ export default{
   }
 
   @media #{$phone-only} {
-    padding-top: 125%;
+    padding-top: 140%;
   }
 
   @media #{$tablet-lnd-only} {
@@ -227,7 +254,11 @@ export default{
   }
 
   @media #{$tablet-prt-only} {
-    padding-top: 95%;
+    padding-top: 80%;
+  }
+
+  @media #{$xl-up} {
+    padding-top: 30%;
   }
 }
 // Line Starting Positions

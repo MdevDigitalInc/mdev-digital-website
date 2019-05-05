@@ -1,11 +1,11 @@
 <template>
   <section class="mdev-section-links" :class="{'u-c-black' : darkMode, 'u-c-white' : !darkMode}">
-    <span class="mdev-links-title u-ultralight u-uppercase">
+    <router-link to="/services/overview" title="Service Page" class="mdev-links-title u-ultralight u-uppercase">
       <span class="mdev-link-index u-transparent" aria-hidden="true">
         00
       </span>
       {{ linksTitle }}
-    </span>
+    </router-link>
     <router-link
       v-for="(link, index) in links"
       :key="index"
@@ -40,6 +40,12 @@
   font-size: 1.25vw;
   display: block;
   margin-bottom: .7vw;
+  transition: all .4s;
+  transform-origin: left bottom;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media #{$portrait} {
     font-size: 4.25vw;
@@ -62,12 +68,17 @@
     padding: 40px 0 25px;
   }
 
-  a {
+  a:not( .mdev-links-title ) {
+    line-height: 1.1;
     display: block;
-    line-height: 150%;
     color: $white;
-    padding: .5vw 0;
+    padding: .5vw 0  0;
     transition: all .3s;
+    font-weight: 700;
+
+    @media #{$desktop-up} {
+      padding: .3vw 0;
+    }
 
     &:hover,
     &:focus,
@@ -86,7 +97,7 @@
     border-bottom: 4px solid rgba(255, 255, 255, 0);
     display: inline-block;
     transition: all .6s;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 
     @media #{$xl-up} {
       font-size: 1.3vw;
@@ -94,11 +105,9 @@
 
     @media #{$portrait} {
       font-size: 4.6vw;
-      line-height: 38px;
     }
     @media #{$phone-only} {
       font-size: 6vw;
-      line-height: 120%;
     }
   }
 
@@ -112,7 +121,8 @@
     margin-right: .8vw;
 
     @media #{$portrait} {
-      font-size: 4.1vw;
+      font-size: 3.5vw;
+      margin-right: 2vw;
     }
 
     @media #{$phone-only} {
@@ -123,15 +133,20 @@
 
 .--tab {
   @media #{$portrait} {
+    margin-top: 25px;
     margin-bottom: 60px;
   }
 }
 
 .mdev-split-6 {
-  padding-right: 5vw;
+  padding-right: 7vw;
 
   @media #{$tablet-lnd-only} {
     padding-right: 5.7vw;
+  }
+
+  @media #{$portrait} {
+    padding-right: 0;
   }
 }
 

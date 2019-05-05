@@ -7,16 +7,27 @@
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-contact">
           <div class="mdev-center">
-            <div class="flex flex-vert-start">
+            <div class="flex flex-vert-start --portrait-wrap">
               <object class="--contact-lets" id="anim-lets" type="image/svg+xml" :data="loadImage(letsAnim)"></object>
-              <object class="--contact-start" id="anim-start" type="image/svg+xml" :data="loadImage(startAnim)"></object>
+              <!-- CTA Text & Button -->
+              <div data-header-intro class="--header-cta u-desk-only">
+                <p>
+                  {{ $t('contact.description') }}
+                </p>
+                 <a data-header-btn
+                    href="javascript:void(0)"
+                    v-on:click.prevent.stop="scrollToHash('#mainContent', 50)"
+                    title="Contact Us"
+                    class="mdev-btn mdev-primary-btn">
+                   {{ $t('contact.headerBtn') }}
+                 </a>
+              </div>
             </div>
             <!-- Bottom Container -->
-            <div class="flex flex-vert-start --portrait-wrap">
-              <object class="--contact-something" id="anim-something" type="image/svg+xml" :data="loadImage(somethingAnim)"></object>
-              <object class="--contact-new" id="anim-new" type="image/svg+xml" :data="loadImage(newAnim)"></object>
-              <!-- CTA Text & Button -->
-              <div data-header-intro class="--header-cta">
+            <div class="flex flex-vert-start">
+              <object class="--contact-talk" id="anim-talk" type="image/svg+xml" :data="loadImage(talkAnim)"></object>
+            </div>
+              <div data-header-intro class="--header-cta u-phone-only">
                 <p>
                   {{ $t('contact.description') }}
                 </p>
@@ -30,11 +41,11 @@
               </div>
             </div>
           </div>
-        </div>
         <!-- Sexy Lines -->
         <div class="mdev-sexy-line --sexy-white" data-line-one></div>
         <div class="mdev-sexy-line --sexy-white" data-line-two></div>
         <div class="mdev-sexy-line --sexy-white" data-line-three></div>
+        </div>
       </div>
     </hero-main>
     <!-- Map -->
@@ -64,16 +75,21 @@ export default {
         backgroundColor: '#0a1315'
       },
       // Disables Page Title bar
-      pageTitle: 'Let\'s Talk!',
-      headerDsc: 'An animated segment invites the user to Start something new by getting in touch with MDEV Digital',
+      pageTitle: 'Contact Us',
+      headerDsc: 'An animated segment invites the user to get in touch with MDEV Digital',
       letsAnim: 'contact/MDEV_HEADER_lets_animated.svg',
-      startAnim: 'contact/MDEV_HEADER_start_animated.svg',
-      somethingAnim: 'contact/MDEV_HEADER_something.svg',
-      newAnim: 'contact/MDEV_HEADER_new_animated.svg',
+      talkAnim: 'contact/MDEV_HEADER_talk_animated.svg',
+      firstLoad: true,
       // SEO
       seo: SEOData.siteSeo,
       // Animation Flag
-      animDone: false
+      animDone: false,
+      // Staging Social URL
+      // These variables allow for the creation of OG tags
+      // for staging and prod. Change vars in site-seo.js!
+      stagingBuild: SEOData.siteSeo.stagingBuild,
+      liveUrl: SEOData.siteSeo.siteUrlLive,
+      stageUrl: SEOData.siteSeo.siteUrlStaging
     };
   },
 
@@ -82,8 +98,9 @@ export default {
     return {
       title: this.seo.contact.title,
       meta: [
-        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.contact.twimage) },
-        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.contact.ogimage) },
+        { vmid: 'ogurl', property: 'og:url', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + '/contact/index.html' },
+        { vmid: 'twimage', name: 'twitter:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.contact.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.contact.ogimage) },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.contact.title + this.seo.templateAddon },
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.contact.title + this.seo.templateAddon },
         { vmid: 'desc', name: 'description', content: this.seo.contact.desc },
@@ -91,7 +108,7 @@ export default {
         { vmid: 'ogdesc', property: 'og:description', content: this.seo.contact.desc }
       ],
       script: [
-        { src: 'https://code.jquery.com/jquery-3.3.1.min.js', integrity:'sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin:'anonymous' }
+        { src: 'https://mdevcdn.digital/jquery/jquery340.js'}
       ]
     };
   },
@@ -115,19 +132,9 @@ export default {
       }, 200);
       setTimeout(() => {
         requestAnimationFrame(() => {
-          new Vivus('anim-start', {duration: 150});
+          new Vivus('anim-talk', {duration: 150});
         });
       }, 600);
-      setTimeout(() => {
-        requestAnimationFrame(() => {
-          this.addClass(introAnim, '--anim-visible');
-        });
-      }, 750);
-      setTimeout(() => {
-        requestAnimationFrame(() => {
-          new Vivus('anim-new', {duration: 180});
-        });
-      }, 2800);
       setTimeout(() => {
         requestAnimationFrame(() => {
           this.addClass(introHeading, '--anim-visible');
@@ -152,7 +159,13 @@ export default {
         let distanceTop = event.path[1].scrollY;
         clearTimeout(scrollTimer);
         // If user scrolls load map right away
-        scrollTimer = setTimeout(this.animDone = true,scrollTime);
+        // Only fires on first load to prevent endless redraw of map
+        if ( this.firstLoad ) {
+          scrollTimer = setTimeout(() => {
+            this.animDone = true;
+            this.firstLoad = false;
+          }, scrollTime);
+        }
       });
     });
   },
@@ -184,14 +197,14 @@ export default {
 }
 
 .--hero-padding {
-  padding-top: 40%;
+  padding-top: 46%;
 
   @media #{$portrait} {
-    padding-top: 68%;
+    padding-top: 80%;
   }
 
   @media #{$phone-only} {
-    padding-top: 100%;
+    padding-top: 135%;
   }
 
   @media #{$tablet-lnd-only} {
@@ -202,53 +215,57 @@ export default {
 .--vivus-contact {
 
   .--contact-lets,
-  .--contact-start {
-    height: 10vw;
-    margin-bottom: 20px;
+  .--contact-talk {
+    height: 12vw;
 
     @media #{$portrait} {
-      height: 9vw;
-      margin-bottom: 10px;
+      width: 100%;
+      height: auto;
     }
   }
 
   .--contact-lets {
     margin-right: 40px;
 
-    @media #{$portrait} {
-      margin-right: 20px;
+    @media #{$phone-only} {
+      margin: 0;
     }
   }
 
+  .--contact-talk {
+    margin-top: 40px;
+    margin-left: 15%;
 
-  .--contact-something {
-    width: 25%;
-    opacity: 0;
-    transition: 1.8s opacity 1.2s;
+    @media #{$laptop-only} {
+      margin-left: 10%;
+    }
+
+    @media #{$tablet-lnd-only} {
+      margin-left: 10%;
+    }
 
     @media #{$portrait} {
-      width: 30%;
+      margin-top: 20px;
+      margin-left: 10%;
     }
 
     @media #{$phone-only} {
-      width: 40%;
-    }
-  }
-
-  .--contact-new {
-    height: 10vw;
-    margin: 0 40px;
-
-    @media #{$portrait} {
-      height: 9vw;
-      margin: 0 20px;
+      margin-left: 0;
     }
   }
 
   .--header-cta {
     opacity: 0;
-    width: 30%;
+    width: 35%;
     transition: opacity 1.2s;
+
+    @media #{$laptop-only} {
+      width: 55%;
+    }
+
+    @media #{$tablet-lnd-only} {
+      width: 55%;
+    }
 
     @media #{$portrait} {
       width: 100%;
@@ -277,10 +294,22 @@ export default {
 
   .mdev-center {
     @include center(both);
-    width: 80%;
+    width: 65%;
+
+    @media #{$laptop-only} {
+      width: 80%;
+    }
+
+    @media #{$tablet-lnd-only} {
+      width: 80%;
+    }
 
     @media #{$portrait} {
       text-align: center;
+    }
+
+    @media #{$phone-only} {
+      width: 75%;
     }
   }
 

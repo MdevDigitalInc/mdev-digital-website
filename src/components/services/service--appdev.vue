@@ -7,19 +7,24 @@
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-branding">
           <div class="mdev-center">
-            <object class="--app-innovate" id="anim-innovate" type="image/svg+xml" :data="loadImage(innovateAnim)"></object>
-            <!-- Bottom Container -->
-            <div class="flex flex-vert-start --portrait-wrap">
-              <object class="--app-with" id="anim-with" type="image/svg+xml" :data="loadImage(withAnim)"></object>
-              <object class="--app-passion" id="anim-passion" type="image/svg+xml" :data="loadImage(passionAnim)"></object>
-              <!-- CTA Text & Button -->
-            </div>
-            <div class="flex flex-hor-end">
-              <div data-header-intro class="--header-cta">
+            <div class="flex flex-vert-center --portrait-wrap --build-pad">
+              <object class="--app-build" id="anim-build" type="image/svg+xml" :data="loadImage(buildAnim)"></object>
+              <div data-header-intro class="--header-cta u-desk-only">
                 <p>
                   {{ $t('appdevpage.intro') }}
                 </p>
               </div>
+            </div>
+            <!-- Bottom Container -->
+            <div class="flex flex-vert-start --portrait-wrap">
+              <object class="--app-the" id="anim-the" type="image/svg+xml" :data="loadImage(theAnim)"></object>
+              <object class="--app-future" id="anim-future" type="image/svg+xml" :data="loadImage(futureAnim)"></object>
+              <!-- CTA Text & Button -->
+            </div>
+            <div data-header-intro class="--header-cta u-phone-only">
+              <p>
+                {{ $t('appdevpage.intro') }}
+              </p>
             </div>
           </div>
         </div>
@@ -127,11 +132,11 @@ export default{
         backgroundColor: '#0a1315'
       },
       // Disables Page Title bar
-      pageTitle: 'Aapps & Software Services',
+      pageTitle: 'Apps & Software Services',
       headerDsc: 'Innovate With Passion.',
-      innovateAnim: 'services/appdev/MDEV_HEADER_innovate_animated.svg',
-      withAnim: 'services/appdev/MDEV_HEADER_with.svg',
-      passionAnim: 'services/appdev/MDEV_HEADER_passion_animated.svg',
+      buildAnim: 'services/appdev/MDEV_HEADER_build_animated.svg',
+      theAnim: 'services/appdev/MDEV_HEADER_the.svg',
+      futureAnim: 'services/appdev/MDEV_HEADER_future_animated.svg',
       // Chapter Info
       chapter: MdevData.appdev.chapter,
       // Services Data
@@ -141,7 +146,13 @@ export default{
       nomedia: MdevData.appdev.servicesNomedia,
       serviceIntro: MdevData.appdev.serviceIntro,
       // SEO
-      seo: SEOData.siteSeo
+      seo: SEOData.siteSeo,
+      // Staging Social URL
+      // These variables allow for the creation of OG tags
+      // for staging and prod. Change vars in site-seo.js!
+      stagingBuild: SEOData.siteSeo.stagingBuild,
+      liveUrl: SEOData.siteSeo.siteUrlLive,
+      stageUrl: SEOData.siteSeo.siteUrlStaging
     };
   },
 
@@ -150,8 +161,9 @@ export default{
     return {
       title: this.seo.appdev.title,
       meta: [
-        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.appdev.twimage) },
-        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.appdev.ogimage) },
+        { vmid: 'ogurl', property: 'og:url', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + '/services/app-development/index.html' },
+        { vmid: 'twimage', name: 'twitter:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.appdev.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.appdev.ogimage) },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.appdev.title + this.seo.templateAddon },
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.appdev.title + this.seo.templateAddon },
         { vmid: 'desc', name: 'description', content: this.seo.appdev.desc },
@@ -165,14 +177,14 @@ export default{
     this.$nextTick(() => {
       // Collect Elements
       var mainNav = document.querySelectorAll('[data-main-nav]');
-      var introAnim = document.querySelectorAll('#anim-with');
+      var introAnim = document.querySelectorAll('#anim-the');
       var introHeading = document.querySelectorAll('[data-header-intro]');
       // Add Class to Nav
       this.addClass(mainNav, '--teal-white');
       // Fire off Animations
       setTimeout(() => {
         requestAnimationFrame(() => {
-          new Vivus('anim-innovate', {duration: 150});
+          new Vivus('anim-build', {duration: 150});
         });
       }, 100);
       setTimeout(() => {
@@ -182,7 +194,7 @@ export default{
       }, 450);
       setTimeout(() => {
         requestAnimationFrame(() => {
-          new Vivus('anim-passion', {duration: 150});
+          new Vivus('anim-future', {duration: 150});
         });
       }, 800);
       setTimeout(() => {
@@ -237,27 +249,32 @@ $heading-top-padding-mob: 15px;
 
 .--vivus-branding {
 
-  .--app-innovate {
+  .--app-build {
     width: 90%;
-    margin-bottom: $heading-top-padding;
-
-    @media #{$laptop-only} {
-      margin-bottom: 25px;
-    }
+    margin-right: 4%;
 
     @media #{$portrait} {
       width: 100%;
+      margin-right: 0;
       margin-bottom: $heading-top-padding-mob;
     }
   }
 
-  .--app-with {
+  .--build-pad {
+    margin-bottom: $heading-top-padding;
+
+    @media #{$portrait} {
+      margin-bottom: 0;
+    }
+  }
+
+  .--app-the {
     width: 15%;
     opacity: 0;
     transition: all .6s;
   }
 
-  .--app-passion {
+  .--app-future {
     width: 83%;
     margin: 0 0 0 2%;
   }
@@ -267,17 +284,12 @@ $heading-top-padding-mob: 15px;
     width: 60%;
     transition: opacity 1.2s;
     position: relative;
-    margin-top: 20px;
     right: 0;
 
     @media #{$portrait} {
       width: 100%;
       text-align: left;
-      margin-top: $heading-top-padding-mob + 10;
-    }
-
-    @media #{$tablet-lnd-only} {
-      width: 60%;
+      margin-top: $heading-top-padding-mob;
     }
   }
 

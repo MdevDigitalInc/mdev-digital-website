@@ -58,9 +58,10 @@
       :class="{ '--no-image' : !service.media }">
       <!-- Media -->
       <template slot="mediaSlot">
-        <img v-if="service.media"
-          :alt="service.media.imageDesc"
-          :src="loadImage(service.media.image)">
+        <media-carousel
+         v-if="service.media"
+         :flip="((index + 1) % 2) == 0"
+         :media="service.media"></media-carousel>
         <!-- Title Only appears here if no image -->
         <h2 v-if="!service.media"
           :data-dec="service.anchor"
@@ -99,6 +100,7 @@
       v-for="(service, index) in nomedia"
       :key="index"
       :title="service.title"
+      :anchor="service.anchor"
       :content="service.content"
       ></service-nomedia>
 
@@ -114,9 +116,10 @@
       :class="{ '--no-image' : !service.media }">
       <!-- Media -->
       <template slot="mediaSlot">
-        <img v-if="service.media"
-          :alt="service.media.imageDesc"
-          :src="loadImage(service.media.image)">
+        <media-carousel
+         v-if="service.media"
+         :flip="((index + 1) % 2) == 0"
+         :media="service.media"></media-carousel>
         <!-- Title Only appears here if no image -->
         <h2 v-if="!service.media"
           :data-dec="service.anchor"
@@ -175,6 +178,7 @@
 // Local Component Registration
 import FeaturedServices   from '../modules/featured-services.vue';
 import FeaturedNomedia    from '../modules/featured-nomedia.vue';
+import MediaCarousel      from '../modules/media-carousel.vue';
 //import ChapterHeading     from '../shared/chapter-heading.vue';
 // Import Data From Flat File
 import MdevData           from '../../mdev-data.js';
@@ -204,7 +208,13 @@ export default{
       prefooter: MdevData.prefooter,
       serviceFlag: MdevData.consulting.serviceFlag,
       // SEO
-      seo: SEOData.siteSeo
+      seo: SEOData.siteSeo,
+      // Staging Social URL
+      // These variables allow for the creation of OG tags
+      // for staging and prod. Change vars in site-seo.js!
+      stagingBuild: SEOData.siteSeo.stagingBuild,
+      liveUrl: SEOData.siteSeo.siteUrlLive,
+      stageUrl: SEOData.siteSeo.siteUrlStaging
     };
   },
 
@@ -213,8 +223,9 @@ export default{
     return {
       title: this.seo.support.title,
       meta: [
-        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.support.twimage) },
-        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.support.ogimage) },
+        { vmid: 'ogurl', property: 'og:url', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + '/services/consulting/index.html' },
+        { vmid: 'twimage', name: 'twitter:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.support.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.support.ogimage) },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.support.title + this.seo.templateAddon },
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.support.title + this.seo.templateAddon },
         { vmid: 'desc', name: 'description', content: this.seo.support.desc },
@@ -262,6 +273,7 @@ export default{
 
   components: {
     'service-tile'   : FeaturedServices,
+    'media-carousel' : MediaCarousel,
     //'chapter-heading': ChapterHeading,
     'service-nomedia': FeaturedNomedia
   }
@@ -286,7 +298,7 @@ $heading-top-padding-mob: 15px;
 }
 
 .--hero-padding {
-  padding-top: 50%;
+  padding-top: 45%;
 
   @media #{$portrait} {
     padding-top: 98%;
@@ -307,12 +319,14 @@ $heading-top-padding-mob: 15px;
 
 .--vivus-digiads {
 
+  .--con-turning,
+  .--con-wheels,
   .--con-keep {
-    width: 48%;
-  }
+    height: 9vw;
 
-  .--con-turning {
-    height: 10vw;
+    @media #{$portrait} {
+      height: 12vw;
+    }
   }
 
   .--con-the {
@@ -324,12 +338,11 @@ $heading-top-padding-mob: 15px;
   .--con-the,
   .--con-wheels {
     margin: 20px 0;
-  }
 
-  .--con-wheels {
-    height: 10vw;
+    @media #{$portrait} {
+      margin: 10px 0;
+    }
   }
-
 
   .--header-cta {
     opacity: 0;
@@ -344,6 +357,14 @@ $heading-top-padding-mob: 15px;
       margin-left: 0;
       text-align: left;
       margin-top: $heading-top-padding-mob + 10;
+    }
+
+    @media #{$desktop-up} {
+      width: 34%;
+    }
+
+    @media #{$laptop-only} {
+      width: 43%;
     }
 
     @media #{$tablet-lnd-only} {

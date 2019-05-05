@@ -5,9 +5,9 @@
       <span class="mdev-top-subhead u-c-accent u-uppercase">
         {{ subtitle }}
       </span>
-      <h3 class="u-c-primary u-uppercase">
+      <h4 class="u-c-primary u-uppercase">
         {{ title }}
-      </h3>
+      </h4>
     </div>
 
     <div class="mdev-main-wrapper flex flex-vert-start flex-wrap">
@@ -87,6 +87,10 @@ export default{
       height: 20vw;
     }
 
+    @media #{$tablet-prt-only} {
+      height: 15vw;
+    }
+
     @media #{$phone-only} {
       margin: 0 auto 20px;
       height: 25vw;
@@ -116,9 +120,15 @@ export default{
     font-size: 18px;
     line-height: 30px;
 
+    @media #{$laptop-only} {
+      font-size: 15px;
+      line-height: 23px;
+    }
+
     @media #{$phone-only} {
       text-align: center;
-      font-size: 12px;
+      font-size: 16px;
+      line-height: 20px;
     }
   }
 }

@@ -7,12 +7,12 @@
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header">
           <div class="mdev-center">
-            <h1 data-intro-heading class="a-blur-in u-c-white u-uppercase">
+            <h4 data-intro-heading class="a-blur-in u-c-white u-uppercase">
                 {{ $t('aboutpage.intro.heading') }}
-            </h1>
-            <h3 data-intro-subhead class="a-blur-in u-c-primary">
+            </h4>
+            <p data-intro-subhead class="a-blur-in u-c-primary mdev-hero-text">
               {{ $t('aboutpage.intro.subheading') }}
-            </h3>
+            </p>
           </div>
         </div>
 
@@ -110,7 +110,13 @@ export default{
       headerDsc: 'About MDEV Digital',
       company: MdevData.aboutPage,
       // SEO
-      seo: SEOData.siteSeo
+      seo: SEOData.siteSeo,
+      // Staging Social URL
+      // These variables allow for the creation of OG tags
+      // for staging and prod. Change vars in site-seo.js!
+      stagingBuild: SEOData.siteSeo.stagingBuild,
+      liveUrl: SEOData.siteSeo.siteUrlLive,
+      stageUrl: SEOData.siteSeo.siteUrlStaging
     };
   },
 
@@ -119,8 +125,9 @@ export default{
     return {
       title: this.seo.about.title,
       meta: [
-        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.about.twimage) },
-        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.about.ogimage) },
+        { vmid: 'ogurl', property: 'og:url', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + '/about/index.html' },
+        { vmid: 'twimage', name: 'twitter:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.about.twimage) },
+        { vmid: 'ogimage', property: 'og:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.about.ogimage) },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.about.title + this.seo.templateAddon },
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.about.title + this.seo.templateAddon },
         { vmid: 'desc', name: 'description', content: this.seo.about.desc },
@@ -195,21 +202,12 @@ export default{
   }
 
   @media #{$desktop-up} {
-    width: 60%;
+    width: 70%;
     padding: 0;
   }
 
-  h3 {
-    font-size: 36px;
-    line-height: 134%;
-
-    @media #{$portrait} {
-      font-size: 20px;
-    }
-
-    @media #{$tablet-prt-only} {
-      font-size: 30px;
-    }
+  .mdev-hero-text {
+    width: 100%;
   }
 
   h1 {

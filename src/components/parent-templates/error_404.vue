@@ -12,9 +12,6 @@
               <object class="--error-fourofour" id="anim-error" type="image/svg+xml" :data="loadImage(errorAnim)"></object>
               <!-- CTA Text & Button -->
               <div data-header-intro class="--header-cta">
-                <h2 class="u-c-white u-bold u-uppercase">
-                  {{ $t('errorpage.heading') }}
-                </h2>
                 <p>
                   {{ $t('errorpage.intro') }}
                 </p>

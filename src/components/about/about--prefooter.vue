@@ -101,6 +101,11 @@ export default{
     a {
       color: $color-brand-bkg;
     }
+
+    .mdev-links-title.u-ultralight,
+    .mdev-link-index.u-ultralight {
+      font-weight: 400;
+    }
   }
 
   .mdev-social-links {

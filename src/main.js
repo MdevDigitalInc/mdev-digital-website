@@ -135,6 +135,7 @@ Vue.mixin({
     scrollToHash(hashRef, offset) {
       var element = document.querySelectorAll(hashRef);
       var top = element[0].offsetTop;
+      window.scrollTo(0, top);
     },
     // Adjust position of crossbeam under logo
     adjustCrossbeam() {
@@ -179,7 +180,7 @@ Vue.mixin({
         }
       }
       // Check for Multiple elements
-      if ( element.length > 0 ) {
+      if ( element && element.length > 0 ) {
         for (var i=0; i < element.length; i++) {
           addCl(element[i], className);
         }
@@ -206,7 +207,7 @@ Vue.mixin({
         }
       }
       // Check for Multiple elements
-      if ( element.length > 0 ) {
+      if (element && element.length > 0 ) {
         for (var i=0; i < element.length; i++) {
           rmCl(element[i], className);
         }

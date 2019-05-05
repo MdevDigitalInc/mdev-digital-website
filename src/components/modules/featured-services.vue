@@ -46,11 +46,12 @@ export default {
   }
 
   @media #{$phone-only} {
-    margin: 60px 0;
+    margin: 40px 0;
   }
 
   // Applies to all images
-  img {
+  img,
+  picture {
     width: 100%;
   }
 
@@ -71,22 +72,32 @@ export default {
     @media #{$phone-only} {
       margin: 0 auto 25px;
     }
+
+    @media #{$xl-up} {
+      margin-left: 10vw;
+    }
   }
 
   // Content portion of the split
   .mdev-service-content {
-    width: 56%;
+    padding-top: 40px;
+    width: 52%;
     order: 1;
+
+    @media #{$landscape} {
+      margin-right: 5vw;
+      margin-left: 0;
+    }
 
     @media #{$portrait} {
       width: 100%;
       order: 4;
-      padding: 0 10%;
+      padding: 0 9%;
       margin: 25px 0 50px;
     }
 
     @media #{$xl-up} {
-      width: 42%;
+      width: 33%;
     }
 
     .--pre-title {
@@ -95,7 +106,13 @@ export default {
   }
 
   .mdev-service-title {
+    line-height: .96;
     position: relative;
+    margin-bottom: 30px;
+
+    @media #{$portrait} {
+      margin-bottom: 60px;
+    }
 
     @media #{$tablet-only} {
       width: 80%;
@@ -103,7 +120,7 @@ export default {
 
     &:before {
       @include pseudo();
-      top: 15%;
+      top: -30px;
       left: -3000px;
       right: 30%;
       bottom: 15%;
@@ -115,13 +132,36 @@ export default {
   .mdev-service-subtitle {
     margin-bottom: 10px;
     text-transform: capitalize;
+
+    @media #{$phone-only} {
+      margin-bottom: 0;
+    }
   }
 
   .mdev-service-desc {
-    width: 85%;
+    width: 75%;
 
-    @media #{$laptop-only} {
-      width: 95%;
+    @media #{$portrait} {
+      width: 100%;
+    }
+  }
+
+  p {
+    @media #{$laptop-up} {
+      line-height: 190%;
+      font-weight: 500;
+    }
+
+    @media #{$desktop-up} {
+      font-size: 18px;
+    }
+  }
+
+  h3 {
+    margin-bottom: 10px;
+
+    @media #{$portrait} {
+      margin-bottom: 10px;
     }
   }
 }
@@ -132,7 +172,7 @@ export default {
 // These CSS styles are needed to flip the presentation order of
 // MEDIA and CONTENT div.
 .mdev-featured-services .mdev-featured-wrapper.--flip-order {
-  margin: 0 10% 0 0;
+  margin: 0 9% 0 0;
 
   @media #{$portrait} {
     margin: 0;
@@ -143,6 +183,11 @@ export default {
   // Adjust padding accordingly
   .mdev-service-content {
     order: 4;
+
+    @media #{$landscape} {
+      margin-left: 5vw;
+      margin-right: 0;
+    }
 
     @media #{$portrait} {
       padding: 0 9%;
@@ -156,6 +201,10 @@ export default {
 
     @media #{$portrait} {
       margin: 0;
+    }
+
+    @media #{$xl-up} {
+      margin-right: 10vw;
     }
   }
 
@@ -172,21 +221,33 @@ export default {
 // On the right. This is OPPOSITE to the default where media is always on
 // the left first.
 .mdev-featured-services.--no-image .mdev-featured-wrapper {
-  margin: 0 9%;
-  width: auto;
+  margin-left: 10%;
+
+  @media #{$portrait} {
+    width: 100%;
+    margin-left: 0;
+  }
 
   @media #{$laptop-only} {
     margin: 0 5%;
+  }
+
+  @media #{$xl-up} {
+    margin-right: 20%;
   }
 
   // Override title margin
   .mdev-service-title {
     margin: 50px 0;
 
+    @media #{$portrait} {
+      padding: 0 9%;
+    }
+
     // Override decoration direction
     &:before {
       right: 30%;
-      left: -300px;
+      left: -3000px;
       top: -50px;
       bottom: -50px;
     }
@@ -195,6 +256,8 @@ export default {
   // Default media to the RIGHT
   .mdev-service-media {
     order: 1;
+    margin-left: 0;
+    margin-right: 5vw;
   }
 
   .--pre-title {
@@ -209,11 +272,15 @@ export default {
 
   // Flip Order
   &.--flip-order {
+    @media #{$xl-up} {
+      margin-left: 20%;
+    }
     .mdev-service-media {
       order: 2;
     }
 
     .mdev-service-content {
+      margin-left: 0;
       order: 1;
 
       @media #{$portrait} {
@@ -223,7 +290,7 @@ export default {
 
     .mdev-service-title:before {
       left: 30%;
-      right: -300px;
+      right: -3000px;
     }
   }
 }

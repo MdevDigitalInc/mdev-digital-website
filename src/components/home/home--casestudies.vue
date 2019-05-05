@@ -5,9 +5,9 @@
       <span class="mdev-top-subhead u-c-accent u-uppercase">
         {{ $t("homepage.casestudies.subheading") }}
       </span>
-      <h3 class="u-c-primary u-uppercase">
+      <h4 class="u-c-primary u-uppercase">
         {{ $t("homepage.casestudies.heading") }}
-      </h3>
+      </h4>
     </div>
     <!-- Case Study Carousel -->
     <div class="mdev-casestudy-mosaic flex flex-wrap">
@@ -62,16 +62,10 @@ export default{
 .mdev-full-section {
   padding-top: 50px;
 }
-.mdev-top-subhead {
-  display: block;
-  margin-bottom: .8vw;
 
-  @media #{$portrait} {
-    font-size: 18px;
-  }
-
-  @media #{$tablet-prt-only} {
-    font-size: 24px;
+.mdev-case-heading {
+  @media #{$laptop-up} {
+    margin-bottom: 50px;
   }
 }
 

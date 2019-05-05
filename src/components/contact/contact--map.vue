@@ -14,7 +14,8 @@
           <span class="info-type u-c-primary">t. </span>
           <!-- Content -->
           <a :href="contact.phoneUrl"
-          :title="contact.phoneTitle">
+            target="_blank"
+            :title="contact.phoneTitle">
             {{ contact.phoneNumber }}
           </a>
         </div>
@@ -28,7 +29,8 @@
           <span class="info-type u-c-primary">e. </span>
           <!-- Content -->
           <a :href="contact.emailUrl"
-          :title="contact.emailTitle">
+            target="_blank"
+            :title="contact.emailTitle">
             {{ contact.email }}
           </a>
         </div>
@@ -42,7 +44,8 @@
           <span class="info-type u-c-primary">a. </span>
           <!-- Content -->
           <a :href="contact.addressUrl"
-          :title="contact.address">
+            target="_blank"
+            :title="contact.address">
             <!-- City -->
             <span class="map-info-city u-uppercase u-bold">
               {{ contact.city }}
@@ -77,8 +80,8 @@ export default{
         emailUrl: 'mailto:hello@mdev.digital',
         city: 'London, Ontario',
         address: '100 Kellogg Lane, N5W 0B4',
-        addressUrl: 'http://google.ca',
-        addressTitle: 'Come visit our offices!',
+        addressUrl: 'https://www.google.com/maps/place/MDEV+Digital+Inc./@42.992238,-81.2151707,17z/data=!3m1!4b1!4m5!3m4!1s0x882eedc4c74f6a6b:0x4640e8cfca6cbe7e!8m2!3d42.992238!4d-81.212982',
+        addressTitle: 'Get Directions to MDEV Digital.',
       },
 
       mapData: {
@@ -177,9 +180,25 @@ export default{
   line-height: 130%;
   border-bottom: 4px solid $color-brand-accent;
   font-size: 1.8vw;
+  transition: all .4s;
 
   @media #{$portrait} {
     font-size: 3.8vw;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-bottom: 4px solid $white;
+    transform: scale(1.05);
+  }
+
+  &:nth-child( odd ) {
+    transform-origin: right bottom;
+  }
+
+  &:nth-child( even ) {
+    transform-origin: left bottom;
   }
 
   .map-info-content,

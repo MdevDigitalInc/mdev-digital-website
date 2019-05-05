@@ -51,6 +51,7 @@ export default{
   @media #{$portrait} {
     padding-bottom: 50px;
     margin-top: -20px;
+    margin-bottom: 30px;
   }
   .mdev-link-content {
     transition: all .3s;
@@ -66,6 +67,10 @@ export default{
 
     @media #{$portrait} {
       width: 85%;
+    }
+
+    @media #{$phone-tiny} {
+      width: 95%;
     }
 
     @media #{$tablet-lnd-only} {
@@ -127,15 +132,15 @@ export default{
   }
 
   .mdev-link-index {
-    margin: 0 10px;
+    margin: 0 20px 0 0;
     font-size: 35px;
     font-weight: 300;
     line-height: .7;
     position: relative;
-    top: -5px;
+    top: 1px;
 
     @media #{$tablet-up} {
-      font-size: 78px;
+      font-size: 70px;
     }
   }
 }

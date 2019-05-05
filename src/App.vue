@@ -1,6 +1,6 @@
 <template>
   <main id="app">
-    <img :src="loadImage('MDEV-main-hero.png')" class="u-screenreader" />
+    <img :src="loadImage('MDEV-main-hero.png') + '.webp'" class="u-screenreader" />
     <!-- Skip Navigatio Accessbility -->
     <button href="#mainContent"
       v-if="!isLoading"
@@ -51,7 +51,13 @@ export default {
       isHome: true,
       brandReverse: false,
       keys: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
-      current: 0
+      current: 0,
+      // Staging Social URL
+      // These variables allow for the creation of OG tags
+      // for staging and prod. Change vars in site-seo.js!
+      stagingBuild: SEOData.siteSeo.stagingBuild,
+      liveUrl: SEOData.siteSeo.siteUrlLive,
+      stageUrl: SEOData.siteSeo.siteUrlStaging
     };
   },
   // Meta SEO Function
@@ -62,23 +68,24 @@ export default {
       link: [
         // Font Awesome
         { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity:'sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin: 'anonymous' },
-        // Alertify
-        { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/alertifyjs/1.9.0/css/alertify.min.css' }
+        // Alertiry
+        { rel: 'stylesheet', href: 'https://mdevcdn.digital/alerts/alertify.css' }
       ],
       script: [
         // Alertify
-        { src: 'https://cdn.jsdelivr.net/alertifyjs/1.9.0/alertify.min.js', async: true, defer: true },
+        { src: 'https://mdevcdn.digital/alerts/alertify.js', async: true, defer: true },
       ],
       meta: [
         // SEO
         { vmid: 'desc', name: 'description', content: this.seo.app.desc },
+        { vmid: 'ogurl', property: 'og:url', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) },
         { vmid: 'ogappid', property: 'fb:app_id', content: this.seo.social.appid },
         { vmid: 'ogtype', property: 'og:type', content: this.seo.social.ogtype },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.app.title + this.seo.templateAddon },
-        { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.social.ogimage) },
+        { vmid: 'ogimage', property: 'og:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.social.ogimage) },
         { vmid: 'ogdesc', property: 'og:description', content: this.seo.app.desc },
         { vmid: 'twtitle', name: 'twitter:title', content:  this.seo.app.title + this.seo.templateAddon },
-        { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.social.twimage) },
+        { vmid: 'twimage', name: 'twitter:image', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + this.loadImage(this.seo.social.twimage) },
         { vmid: 'twdesc', name: 'twitter:description', content: this.seo.app.desc }
       ]
     };
@@ -139,6 +146,7 @@ export default {
         requestAnimationFrame(() => {
           // Make Logo Disappear...
           this.removeClass(loadAnim, '--opacity-active');
+          this.bodyReset('u-freeze-scroll');
           // Make Content Disappear
           this.addClass(loadWindow, '--opacity');
         });
@@ -154,12 +162,19 @@ export default {
       setTimeout(() => {
         requestAnimationFrame(() => {
           // Check if cookies are enabled
-          this.checkCookie();
+          // [ DISABLED FOR LAUNCH ] --------------------
+          //this.checkCookie();
           // [ PRERENDER SNAPSHOT ] ------------------------
           // Dispatches event to tell the prerenderer to take snapshot
-          document.dispatchEvent(new Event('spa-rendered'));
+          if (window.__PRERENDER_INJECTED) {
+            document.dispatchEvent(new Event('spa-rendered'));
+          }
+          else {
+            // Track event on Facebook
+            window.fbq('track', 'PageView');
+          }
         });
-      }, 9000);
+      }, 15000);
 
       // [ FANCY CONSOLE OUTPUT ] --------------------------
       // each %c allows you to create a styling block
@@ -187,6 +202,10 @@ export default {
     requestAnimationFrame(() => {
       this.addClass(mainNav, '--nav-active');
     });
+
+    if (!window.__PRERENDER_INJECTED) {
+      window.fbq('track', 'PageView');
+    }
   },
 
   methods: {
@@ -341,6 +360,27 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: lighten($color-brand-primary, 10%);
   outline: 4px solid darken($color-brand-bkg, 10%);
+}
+
+
+::selection {
+  background: $color-brand-accent;
+}
+::-moz-selection {
+  background: $color-brand-accent;
+}
+
+h1.u-c-primary::selection,
+h2.u-c-primary::selection,
+h3.u-c-primary::selection,
+h4.u-c-primary::selection {
+  background: $color-brand-bkg;
+}
+h1.u-c-primary::-moz-selection,
+h2.u-c-primary::-moz-selection,
+h3.u-c-primary::-moz-selection,
+h4.u-c-primary::-moz-selection {
+  background: $color-brand-bkg;
 }
 /* stylelint-enable */
 </style>

@@ -90,6 +90,10 @@ export default {
   max-height: 70vh;
   z-index: 1;
 
+  @media #{$phone-only} {
+    padding-top: 66%;
+  }
+
   h1 {
     font-weight: 500;
   }
@@ -171,9 +175,14 @@ export default {
     white-space: nowrap;
     margin: 0;
     transition: all .5s;
+    letter-spacing: 2px;
 
     @media #{ $portrait } {
       font-size: 90%;
+    }
+
+    @media #{$laptop-only} {
+      font-size: 60%;
     }
   }
 }
@@ -239,6 +248,19 @@ $mask-arrow-anim-time: 3.2s;
 
   .mdev-main-header {
     margin-bottom: 0;
+  }
+}
+
+// Homepage override
+.--home-hero {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+  background: $color-brand-bkg;
+
+  @media #{$phone-only} {
+    transform: scale(1.2) translateY(18px);
   }
 }
 

@@ -77,7 +77,10 @@ export default{
       socialLinks: MdevData.socialLinks,
       // Links pulled from flat file
       links: MdevData.links,
-      deepLinks: MdevData.deepLinks,
+      // [ DISABLED FOR LAUNCH ] --------------------
+      //deepLinks: MdevData.deepLinks,
+      deepLinks: false,
+      // [ DISABLED FOR LAUNCH ] --------------------
       // Main Home Link On sidebar
       homeLink: '/',
       homeTitle: 'Home',
@@ -175,7 +178,6 @@ export default{
     },
     // User Scroll Handler
     userScroll( distance ) {
-      console.log(distance);
       var mainHeader = document.querySelectorAll('[data-main-header]')[0];
       var mainNav = document.querySelectorAll('[data-main-nav]');
       let pageTitleEl = document.querySelectorAll('[data-page-title]');
@@ -183,17 +185,13 @@ export default{
       this.scrollDistance = pageTitleEl[0].offsetTop > 0 ? pageTitleEl[0].offsetTop : mainHeader.offsetHeight;
       this.desiredOffset = pageTitleEl[0].offsetTop > 0 ? 300 : 20;
       // If user scrolls past desired distance remove effects
-      console.log(this.desiredOffset);
-      console.log(this.scrollDistance);
       if ( (distance + this.desiredOffset) >= this.scrollDistance) {
-        console.log('case 1');
         requestAnimationFrame(() => {
           this.addClass(mainHeader, '--user-scroll');
           this.addClass(mainNav, '--user-scroll');
         });
       }
       else {
-        console.log('case 2');
         requestAnimationFrame(() => {
           this.removeClass(mainHeader, '--user-scroll');
           this.removeClass(mainNav, '--user-scroll');
@@ -276,10 +274,18 @@ export default{
     cursor: pointer;
     opacity: .8;
 
+    @media #{$portrait} {
+      transform: scale(1.05);
+    }
+
     .mdev-hidden-brand svg {
       transform: translate3d(0, 0, 0);
       opacity: 1;
       transition: transform .3s, opacity .8s;
+
+      @media #{$portrait} {
+        display: none;
+      }
     }
   }
 
@@ -360,6 +366,11 @@ export default{
       border: 1px solid rgba(13, 119, 113, 1);
       background: lighten( $color-brand-primary, 18%);
       box-shadow: 0 0 3px rgba(201, 255, 252, .5);
+
+      &:nth-child( 2 ) {
+        transform: scalex(.69);
+        transform-origin: center;
+      }
     }
   }
 
@@ -409,7 +420,7 @@ export default{
   transform: translate3d(0, 0, 0);
 }
 
-.--nav-open {
+.mdev-nav-open.--nav-open {
   span {
     background: white;
 
@@ -423,7 +434,7 @@ export default{
       top: -5px;
     }
 
-    &:nth-child( even ) {
+    &:nth-child( 2 ) {
       transform: rotate3d(0, 0, 1, -45deg);
     }
   }
@@ -434,6 +445,10 @@ export default{
 
       @media #{$portrait} {
         background: $color-brand-primary;
+      }
+
+      &:nth-child( 2 ) {
+        transform: rotate3d(0, 0, 1, -45deg) scalex(1);
       }
     }
   }

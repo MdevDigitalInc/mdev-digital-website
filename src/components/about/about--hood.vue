@@ -9,11 +9,23 @@
       </p>
     </div>
     <div class="mdev-100-kell" :class="{'--decoration' : decoration}">
-      <img :src="loadImage(foreground)" :alt="a11y" class="--landscape"/>
-      <img :src="loadImage(foregroundMob)" :alt="a11y" class="--portrait"/>
+      <picture class="--landscape">
+        <source media="screen" :srcset="loadImage(foreground) + '.webp'" type="image/webp">
+        <source media="screen" :srcset="loadImage(foreground)" type="image/png">
+        <img :src="loadImage(foreground)" :alt="a11y"/>
+      </picture>
+      <picture class="--portrait">
+        <source media="screen" :srcset="loadImage(foregroundMob) + '.webp'" type="image/webp">
+        <source media="screen" :srcset="loadImage(foregroundMob)" type="image/png">
+        <img :src="loadImage(foregroundMob)" :alt="a11y"/>
+      </picture>
     </div>
     <div class="mdev-hood-mask --triangle-top-r">
-      <img :src="loadImage(background)" class="--rotate-hood" v-in-viewport/>
+      <picture class="--rotate-hood" v-in-viewport>
+        <source media="screen" :srcset="loadImage(background) + '.webp'" type="image/webp">
+        <source media="screen" :srcset="loadImage(background)" type="image/png">
+        <img :src="loadImage(background)"/>
+      </picture>
     </div>
   </section>
 </template>
@@ -81,6 +93,7 @@ $rotate-duration: 930s;
   position: relative;
   width: 100%;
 
+  picture,
   img {
     width: 100%;
   }
@@ -105,6 +118,10 @@ $rotate-duration: 930s;
     @media #{$portrait} {
       top: 25px;
       right: -200%;
+    }
+
+    @media #{$phone-only} {
+      display: none;
     }
   }
 }

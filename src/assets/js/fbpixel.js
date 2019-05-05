@@ -9,5 +9,4 @@ s.parentNode.insertBefore(t,s)}(window,document,'script',
 
 if (!window.__PRERENDER_INJECTED) {
   fbq('init', '687879194986132');
-  fbq('track', 'PageView');
 }

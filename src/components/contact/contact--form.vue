@@ -73,7 +73,7 @@ export default{
     swapForm() {
       let animInterval = 800; // Matches CSS
       // Hide the form visually
-      var formEl = document.querySelectorAll('[data-form]')[0];
+      var formEl = document.querySelectorAll('[data-form]');
       requestAnimationFrame(() => {
         this.addClass(formEl, '--form-sent');
       });

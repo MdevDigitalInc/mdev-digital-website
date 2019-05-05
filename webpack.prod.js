@@ -41,15 +41,13 @@ const robotOptions = {
   policy: [
     {
       userAgent: "Googlebot",
-      //allow: "/",
-      //disallow: ["/search"],
-      disallow: ["/"],
+      allow: "/",
       crawlDelay: 2
     },
     {
       userAgent: "*",
-      //allow: "/",
-      disallow: "/",
+      allow: "/",
+      //disallow: "/",
       //disallow: "/search",
       crawlDelay: 10,
     }
@@ -71,7 +69,7 @@ const prerenderRoutes = [
   '/services/app-development',
   '/services/consulting',
   '/services/digital-marketing',
-  '/services/ui-ux',
+  '/services/custom-web-development',
   '/team/lucas-moreira',
   '/team/becky-domenico',
   '/team/haly-hawkins',
@@ -175,6 +173,7 @@ module.exports = merge(common, {
           .replace('--mask-active', '')
           .replace('--nav-active', '')
           .replace('--active', '')
+          .replace('<body>','<body class="u-freeze-scroll">')
           .replace('id="map"', '');
 
         return renderedRoute;

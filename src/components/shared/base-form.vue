@@ -1,56 +1,40 @@
 <template>
-  <form id="form" v-on:keyup.enter="submitForm">
+  <form id="form" v-on:keyup.enter.stop="submitForm">
     <input name="_caught" type="text" class="mdev-honeypot" v-model="honeypot">
     <div v-in-viewport
       class="flex flex-hor-between flex-vert-center mdev-input-split a-flyin a-flyin-right">
       <!-- First Name -->
       <div class="mdev-input-group">
         <div class="mdev-input-name">
-          {{ $t("contact.fields.fname.label") }}*
+          {{ $t("contact.fields.name.label") }}*
         </div>
         <input
           data-required
-          :class="{ '--filled' : fname }"
-          v-model="fname"
-          name="FirstName"
+          :class="{ '--filled' : name }"
+          v-model="name"
+          name="Name"
           tab-index="0"
           aria-required="true"
-          :aria-label="$t('contact.fields.fname.label')"
+          :aria-label="$t('contact.fields.name.label')"
           type="text"
-          :placeholder="$t('contact.fields.fname.placeholder')">
+          :placeholder="$t('contact.fields.name.placeholder')">
       </div>
       <!-- Last Name -->
       <div class="mdev-input-group">
         <div class="mdev-input-name">
-          {{ $t("contact.fields.lname.label") }}*
+          {{ $t("contact.fields.company.label") }}*
         </div>
         <input
           data-required
-          :class="{ '--filled' : lname }"
-          v-model="lname"
-          name="LastName"
+          :class="{ '--filled' : company }"
+          v-model="company"
+          name="Company"
           tab-index="0"
           aria-required="true"
-          :aria-label="$t('contact.fields.lname.label')"
+          :aria-label="$t('contact.fields.company.label')"
           type="text"
-          :placeholder="$t('contact.fields.lname.placeholder')">
+          :placeholder="$t('contact.fields.company.placeholder')">
       </div>
-    </div>
-    <!-- Company Name -->
-    <div class="mdev-input-group a-flyin a-flyin-right" v-in-viewport>
-      <div class="mdev-input-name">
-        {{ $t("contact.fields.company.label") }}*
-      </div>
-      <input
-        data-required
-        :class="{ '--filled' : company }"
-        v-model="company"
-        name="Company"
-        tab-index="0"
-        aria-required="true"
-        :aria-label="$t('contact.fields.company.label')"
-        type="text"
-        :placeholder="$t('contact.fields.company.placeholder')">
     </div>
     <!-- Phone Number -->
     <div class="mdev-input-group a-flyin a-flyin-right" v-in-viewport>
@@ -95,6 +79,7 @@
         data-required
         :class="{ '--filled' : message }"
         v-model="message"
+        v-on:keyup.enter.stop="nothing"
         name="Message"
         tab-index="0"
         aria-required="true"
@@ -131,8 +116,7 @@ export default{
       // Data used here as a flag to mark fields as
       // filled witn the .--filled class
       // Allows for better UI control
-      fname       : '',
-      lname       : '',
+      name       : '',
       company     : '',
       phone       : '',
       email       : '',
@@ -144,6 +128,10 @@ export default{
 
   methods: {
     // Validate and Submit form
+    nothing(){
+      return;
+    },
+
     submitForm() {
       // Clear Errors First
       this.$validate.clearErrors();
@@ -234,12 +222,12 @@ export default{
 
   .mdev-input-name {
     font-weight: 700;
-    font-size: 1.8vw;
+    font-size: 1.55vw;
     text-transform: uppercase;
     letter-spacing: .5px;
 
     @media #{$portrait} {
-      font-size: 3.3vw;
+      font-size: 4.3vw;
     }
   }
 
@@ -254,6 +242,37 @@ export default{
 
     @media #{$portrait} {
       font-size: 2.7vw;
+    }
+
+    @media #{$phone-only} {
+      font-size: 3.7vw;
+    }
+  }
+
+  textarea,
+  textarea::placeholder {
+    text-transform: none;
+  }
+}
+
+textarea {
+  transition: all .6s;
+  height: auto;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.--filled {
+    @media #{$laptop-only} {
+      min-height: 3vh;
+    }
+
+    @media #{$desktop-only} {
+      min-height: 16vh;
+    }
+
+    @media #{$portrait} {
+      min-height: 5vh;
     }
   }
 }

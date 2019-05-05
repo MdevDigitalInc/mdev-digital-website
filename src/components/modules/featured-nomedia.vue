@@ -1,7 +1,7 @@
 <template>
   <section class="mdev-featured-services --section-space mdev-service">
     <!-- Title -->
-    <div class="mdev-service-title">
+    <div class="mdev-service-title" :data-dec="anchor">
       <h2 v-html="title" class="--title u-bold u-uppercase"></h2>
     </div>
     <!-- Content -->
@@ -31,7 +31,7 @@
 export default{
   name: 'FeatureNomedia',
 
-  props: [ 'title', 'content'],
+  props: [ 'title', 'content', 'anchor'],
 
 };
 </script>
@@ -49,14 +49,30 @@ export default{
     width: 44%;
 
     @media #{$portrait} {
-      width: 100%;
-      margin: 20px 0;
+      width: 80%;
+      margin: 20px auto;
     }
   }
 
   h3 {
     @media #{$laptop-only} {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+    }
+  }
+
+  h2 {
+    line-height: .96;
+  }
+
+  p {
+    @media #{$laptop-up} {
+      font-size: 15px;
+      line-height: 190%;
+      font-weight: 500;
+    }
+
+    @media #{$desktop-up} {
+      font-size: 18px;
     }
   }
 }
@@ -65,6 +81,14 @@ export default{
   width: 70%;
   position: relative;
   padding-left: 5%;
+
+  @media #{$portrait} {
+    padding-left: 10%;
+  }
+
+  @media #{$xl-up} {
+    padding-left: 10%;
+  }
 
   &:before {
     right: 70%;

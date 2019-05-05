@@ -55,12 +55,14 @@ html {
   box-sizing: border-box;
 }
 
-img {
+img,
+picture {
   border-style: none;
   vertical-align: bottom;
   display: block;
   max-width: 100%;
   height: auto;
+  width: 100%;
 }
 
 *:focus {

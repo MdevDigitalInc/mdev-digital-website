@@ -12,10 +12,25 @@ const HtmlWebpackPlugin = require ('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
 
 const setPath = function(folderName) {
   return path.join(__dirname, folderName);
 }
+
+const webpOptions =  {
+  config: [{
+    test: /\.(jpe?g|png)/,
+    options: {
+      quality:  100,
+      lossless: true
+    }
+  }],
+  overrideExtension: false,
+  detailedLogs: false,
+  strict: true
+}
+
 
 // Module Exports
 module.exports = {
@@ -119,16 +134,16 @@ module.exports = {
             // JPEG Processing
             mozjpeg: {
               progressive: true,
-              quality: 90
+              quality: 95
             },
             // GIF Processing
             gifsicle: {
               interlaced: false,
-              optimizationLevel: 2
+              optimizationLevel: 3
             },
             // PNG Processing
             pngquant: {
-              quality: '75-80',
+              quality: '85-90',
               speed: 2
             },
             // SVG Processing
@@ -164,7 +179,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: 'src/assets/js', to: 'js', force: true }
-    ])
+    ]),
+    new ImageminWebpWebpackPlugin(webpOptions)
   ],
   resolve: {
     alias: {

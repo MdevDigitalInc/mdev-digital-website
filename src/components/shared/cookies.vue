@@ -93,6 +93,10 @@ export default{
       margin-bottom: 20px;
     }
 
+    @media #{$xl-up} {
+      width: 60%;
+    }
+
     .--title {
       display: inline-block;
       font-size: 17px;
@@ -109,6 +113,10 @@ export default{
       font-size: 15px;
       letter-spacing: .45px;
       line-height: 25px;
+
+      @media #{$xl-up} {
+        font-size: 17px;
+      }
     }
   }
 

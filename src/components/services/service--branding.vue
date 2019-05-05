@@ -130,6 +130,7 @@ export default{
     return {
       title: this.seo.branding.title,
       meta: [
+        { vmid: 'ogurl', property: 'og:url', content: (this.stagingBuild ? this.stageUrl : this.liveUrl) + '/services/branding/index.html' },
         { vmid: 'twimage', name: 'twitter:image', content: this.loadImage(this.seo.branding.twimage) },
         { vmid: 'ogimage', property: 'og:image', content: this.loadImage(this.seo.branding.ogimage) },
         { vmid: 'ogtitle', property: 'og:title', content: this.seo.branding.title + this.seo.templateAddon },
@@ -201,11 +202,19 @@ $heading-top-padding-mob: 10px;
   }
 
   @media #{$phone-only} {
-    padding-top: 130%;
+    padding-top: 170%;
   }
 
   @media #{$tablet-lnd-only} {
     padding-top: 60%;
+  }
+
+  @media #{$tablet-prt-only} {
+    padding-top: 118%;
+  }
+
+  @media #{$xl-up} {
+    padding-top: 40%;
   }
 }
 
@@ -219,8 +228,11 @@ $heading-top-padding-mob: 10px;
       margin-bottom: 20px;
     }
     @media #{$portrait} {
-      width: 44%;
+      width: 100%;
       margin-bottom: $heading-top-padding-mob;
+    }
+    @media #{$tablet-prt-only} {
+      margin-bottom: $heading-top-padding-mob + 10;
     }
   }
 
@@ -233,9 +245,12 @@ $heading-top-padding-mob: 10px;
       margin-bottom: 20px;
     }
     @media #{$portrait} {
-      width: 52%;
+      width: 100%;
       transform: translatey(0);
       margin-bottom: $heading-top-padding-mob;
+    }
+    @media #{$tablet-prt-only} {
+      margin-bottom: $heading-top-padding-mob + 10;
     }
   }
 
@@ -244,9 +259,12 @@ $heading-top-padding-mob: 10px;
     margin-right: 30px;
 
     @media #{$portrait} {
-      width: 70%;
+      width: 100%;
       margin-bottom: $heading-top-padding-mob;
       margin-right: 0;
+    }
+    @media #{$tablet-prt-only} {
+      margin-bottom: $heading-top-padding-mob + 10;
     }
   }
 
@@ -268,11 +286,6 @@ $heading-top-padding-mob: 10px;
 
   p {
     color: $white;
-    font-size: 120%;
-
-    @media #{$phone-only} {
-      font-size: 100%;
-    }
   }
 
   .mdev-center {
