@@ -118,6 +118,8 @@
 .mdev-featured-services.--no-image .mdev-featured-wrapper.\--flip-order .mdev-service-title {
   &[ data-dec="anc-seo" ]:before {
     left: 42%;
+    top: -5%;
+    bottom: -5%;
   }
   &[ data-dec="anc-email" ]:before,
   &[ data-dec="anc-consulting" ]:before {

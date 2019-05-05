@@ -265,10 +265,18 @@ $heading-top-padding-mob: 15px;
 
   .--digi-demystify {
     margin-bottom: 20px;
+
+    @media #{$phone-only} {
+      margin-bottom: 10px;
+    }
   }
 
   .--digi-marketing {
     margin-top: 20px;
+
+    @media #{$phone-only} {
+      margin-top: 10px;
+    }
   }
 
   .--header-cta {

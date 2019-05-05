@@ -763,7 +763,7 @@ export default  {
     services: [
       {
         anchor: 'anc-content',
-        title: 'Share your narrative',
+        title: 'Share</br>your</br>narrative',
         subTitle: 'Content Marketing',
         description: 'Authentic, up-to-date content is essential to growth and retention. We will help you develop an engaging narrative that gives people genuine reasons to love and follow your site and social media channels.',
         topics: [
