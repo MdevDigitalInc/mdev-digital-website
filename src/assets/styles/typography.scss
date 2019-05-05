@@ -110,7 +110,7 @@ p {
   @include font-size($p-font-sizes);
 
   @media #{$laptop-only} {
-    line-height: 140%;
+    line-height: 130%;
   }
 
   @media #{$desktop-up} {
@@ -140,6 +140,7 @@ h2,
 .h2 {
   @include font-size($h2-font-sizes);
   line-height: .83;
+  letter-spacing: 1px;
 
   @media #{$laptop-only} {
     margin-bottom: 15px;

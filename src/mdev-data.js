@@ -513,7 +513,8 @@ export default  {
           'Brochure Design',
           'Publication Layout',
           'Banners &amp; Tradeshow Graphics',
-          'Retail Signage &amp; Point of Purchase Displays'
+          'Retail Signage',
+          'Point of Purchase Displays'
         ],
         caseStudy: false,
         media: [

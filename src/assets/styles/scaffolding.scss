@@ -234,8 +234,12 @@ $md: 75px;
 .--space-top-xs {
   margin-top: $xs;
 
+  @media #{$portrait} {
+    margin-top: 20px;
+  }
+
   @media #{$phone-only} {
-    margin-top: $uxs;
+    margin-top: 30px;
   }
 }
 

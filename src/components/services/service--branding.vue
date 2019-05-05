@@ -202,7 +202,7 @@ $heading-top-padding-mob: 10px;
   }
 
   @media #{$phone-only} {
-    padding-top: 130%;
+    padding-top: 170%;
   }
 
   @media #{$tablet-lnd-only} {
@@ -210,7 +210,7 @@ $heading-top-padding-mob: 10px;
   }
 
   @media #{$tablet-prt-only} {
-    padding-top: 80%;
+    padding-top: 118%;
   }
 
   @media #{$xl-up} {
@@ -228,8 +228,11 @@ $heading-top-padding-mob: 10px;
       margin-bottom: 20px;
     }
     @media #{$portrait} {
-      width: 44%;
+      width: 100%;
       margin-bottom: $heading-top-padding-mob;
+    }
+    @media #{$tablet-prt-only} {
+      margin-bottom: $heading-top-padding-mob + 10;
     }
   }
 
@@ -242,9 +245,12 @@ $heading-top-padding-mob: 10px;
       margin-bottom: 20px;
     }
     @media #{$portrait} {
-      width: 52%;
+      width: 100%;
       transform: translatey(0);
       margin-bottom: $heading-top-padding-mob;
+    }
+    @media #{$tablet-prt-only} {
+      margin-bottom: $heading-top-padding-mob + 10;
     }
   }
 
@@ -253,9 +259,12 @@ $heading-top-padding-mob: 10px;
     margin-right: 30px;
 
     @media #{$portrait} {
-      width: 70%;
+      width: 100%;
       margin-bottom: $heading-top-padding-mob;
       margin-right: 0;
+    }
+    @media #{$tablet-prt-only} {
+      margin-bottom: $heading-top-padding-mob + 10;
     }
   }
 

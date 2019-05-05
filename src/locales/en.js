@@ -119,7 +119,7 @@ export default {
   },
 
   webdevpage: {
-    intro: "We believe in making the web a nicer place to be. We accomplish this mission through carefully planned site architecture and approachable web design. We keep the end user in mind, providing clear user journeys and personalized experiences."
+    intro: "We believe in making the web a nicer place to be. This mission is accomplished through carefully planned site architecture and approachable web design. We keep the end user in mind, providing clear user journeys and personalized experiences."
   },
 
   appdevpage: {

@@ -100,6 +100,10 @@
   &[ data-dec="anc-webdev" ]:before {
     left: 13%;
     top: -30px;
+
+    @media #{$portrait} {
+      top: 15%;
+    }
   }
   &[ data-dec="anc-consulting" ]:before,
   &[ data-dec="anc-email" ]:before {

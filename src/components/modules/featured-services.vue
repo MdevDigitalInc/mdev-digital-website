@@ -108,6 +108,11 @@ export default {
   .mdev-service-title {
     line-height: .96;
     position: relative;
+    margin-bottom: 30px;
+
+    @media #{$portrait} {
+      margin-bottom: 60px;
+    }
 
     @media #{$tablet-only} {
       width: 80%;
@@ -127,6 +132,10 @@ export default {
   .mdev-service-subtitle {
     margin-bottom: 10px;
     text-transform: capitalize;
+
+    @media #{$phone-only} {
+      margin-bottom: 0;
+    }
   }
 
   .mdev-service-desc {

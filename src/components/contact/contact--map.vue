@@ -190,15 +190,15 @@ export default{
   &:focus,
   &:active {
     border-bottom: 4px solid $white;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   &:nth-child( odd ) {
-    transform-origin: right center;
+    transform-origin: right bottom;
   }
 
   &:nth-child( even ) {
-    transform-origin: left center;
+    transform-origin: left bottom;
   }
 
   .map-info-content,
