@@ -162,7 +162,8 @@ export default {
       setTimeout(() => {
         requestAnimationFrame(() => {
           // Check if cookies are enabled
-          this.checkCookie();
+          // [ DISABLED FOR LAUNCH ] --------------------
+          //this.checkCookie();
           // [ PRERENDER SNAPSHOT ] ------------------------
           // Dispatches event to tell the prerenderer to take snapshot
           if (window.__PRERENDER_INJECTED) {

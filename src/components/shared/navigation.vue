@@ -77,7 +77,10 @@ export default{
       socialLinks: MdevData.socialLinks,
       // Links pulled from flat file
       links: MdevData.links,
-      deepLinks: MdevData.deepLinks,
+      // [ DISABLED FOR LAUNCH ] --------------------
+      //deepLinks: MdevData.deepLinks,
+      deepLinks: false,
+      // [ DISABLED FOR LAUNCH ] --------------------
       // Main Home Link On sidebar
       homeLink: '/',
       homeTitle: 'Home',
