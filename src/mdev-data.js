@@ -833,7 +833,7 @@ export default  {
         anchor: 'anc-paid',
         title: 'Generate Qualified Leads',
         subTitle: 'Search Engine Marketing',
-        description: 'Search engine marketing, also known as pay-per-click advertising, yields immediate results. Whether it\'s awareness, leads or sales, we will help you develop paid strategies designed to convert highly qualified leads into loyal clients.',
+        description: 'Search engine marketing, also known as pay-per-click advertising, yields immediate results. Whether it\'s awareness, leads or sales, we will help you develop paid strategies designed to convert highly qualified leads into loyal customers.',
         topics: [
           'Paid Digital Ad Strategy',
           'Account Set Up & Optimization',
@@ -853,7 +853,7 @@ export default  {
         anchor: 'anc-launch',
         title: 'Set the wheels in motion',
         subTitle: 'Launch Your Campaign',
-        description: 'We know that you are eager to get the word out about your product or service quickly. We will help you structure a omni-channel launch campaign tailored specifically to your audience including social media, print design, and trade show setups. Our launch campaigns often include a landing page that can supply teaser content while we help you build up to the big announcement.',
+        description: 'We know that you are eager to get the word out about your product or service quickly. We will help you structure a omni-channel launch campaign tailored specifically to your audience including social media, print design, and trade show setups. Our launch campaigns often include a landing page that can supply teaser content while we help you build up to a big announcement.',
         topics: [
           'Landing Pages',
           'Event Promotion',

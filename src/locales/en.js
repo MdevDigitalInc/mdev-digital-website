@@ -127,7 +127,7 @@ export default {
   },
 
   digiadspage: {
-    intro: "Dive into the digital space with confidence. We back the art of marketing with the science of data. We're experts at integrating compelling marketing strategies with strong branding to provide understandable and measureable results."
+    intro: "We combine the art of marketing with the science of data. Our expertise lies in integrating compelling marketing strategies with strong branding to provide understandable and measurable results."
   },
 
   consultingpage: {

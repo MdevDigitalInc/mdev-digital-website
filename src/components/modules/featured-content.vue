@@ -100,6 +100,12 @@ import CircleBarDecoration     from '../shared/circle-bar-decoration.vue';
     margin-bottom: 15px;
   }
 
+  h2 {
+    @media #{$portrait} {
+      margin-bottom: 25px;
+    }
+  }
+
   // Media portion of the split
   // Before pseudo element controls the background green lines
   // They are merely decorative and get overriden often
