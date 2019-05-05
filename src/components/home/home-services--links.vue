@@ -68,7 +68,7 @@
     padding: 40px 0 25px;
   }
 
-  a {
+  a:not( .mdev-links-title ) {
     line-height: 1.1;
     display: block;
     color: $white;
