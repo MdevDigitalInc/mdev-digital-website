@@ -449,7 +449,7 @@ export default {
 
     picture,
     img {
-      width: 90%;
+      width: 95%;
       position: relative;
       bottom: -5px;
     }
