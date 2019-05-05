@@ -4,8 +4,12 @@
     <a
       :href="longImg.route"
       class="mdev-work mdev-work-long"
-      :style="{ backgroundImage: longImgBkg }"
       :title="longImg.title">
+      <picture>
+        <source media="screen" :srcset="loadImage(this.longImg.src) + '.webp'" type="image/webp">
+        <source media="screen" :srcset="loadImage(this.longImg.src)" type="image/png">
+        <img :alt="longImg.title" :src="loadImage(this.longImg.src)">
+      </picture>
       <span class="u-screenreader">
         {{ longImg.a11y }}
       </span>
@@ -13,9 +17,13 @@
     <!-- Left Image -->
     <a
       :href="leftImg.route"
-      :style="{ backgroundImage: leftImgBkg }"
       class="mdev-work mdev-work-square"
       :title="leftImg.title">
+      <picture>
+        <source media="screen" :srcset="loadImage(this.leftImg.src) + '.webp'" type="image/webp">
+        <source media="screen" :srcset="loadImage(this.leftImg.src)" type="image/png">
+        <img :alt="leftImg.title" :src="loadImage(this.leftImg.src)">
+      </picture>
       <span class="u-screenreader">
         {{ leftImg.a11y }}
       </span>
@@ -23,9 +31,13 @@
     <!-- Right Image -->
     <a
       :href="rightImg.route"
-      :style="{ backgroundImage: rightImgBkg }"
       class="mdev-work mdev-work-square"
       :title="rightImg.title">
+      <picture>
+        <source media="screen" :srcset="loadImage(this.rightImg.src) + '.webp'" type="image/webp">
+        <source media="screen" :srcset="loadImage(this.rightImg.src)" type="image/png">
+        <img :alt="rightImg.title" :src="loadImage(this.rightImg.src)">
+      </picture>
       <span class="u-screenreader">
         {{ rightImg.a11y }}
       </span>
@@ -38,14 +50,6 @@ export default{
   name: 'LinkMosaic',
 
   props: [ 'longImg', 'leftImg', 'rightImg' ],
-
-  data: function(){
-    return{
-      longImgBkg: 'url(' + this.loadImage(this.longImg.src) + '.webp)',
-      leftImgBkg: 'url(' + this.loadImage(this.leftImg.src) + '.webp)',
-      rightImgBkg: 'url(' + this.loadImage(this.rightImg.src) + '.webp)'
-    };
-  }
 };
 </script>
 
@@ -83,6 +87,7 @@ export default{
     transition: all .4s;
     position: relative;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0);
+    overflow: hidden;
     z-index: 1;
 
     &:hover,
@@ -91,6 +96,13 @@ export default{
       z-index: 2;
       transform: scale(1.05);
       box-shadow: 0 0 90px rgba(0, 0, 0, .9);
+    }
+
+    picture,
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 

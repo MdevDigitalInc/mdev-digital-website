@@ -251,5 +251,18 @@ $mask-arrow-anim-time: 3.2s;
   }
 }
 
+// Homepage override
+.--home-hero {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+  background: $color-brand-bkg;
+
+  @media #{$phone-only} {
+    transform: scale(1.2) translateY(18px);
+  }
+}
+
 /*--------------------------------------*/
 </style>

@@ -2,7 +2,13 @@
   <div class="mdev-main-content">
     <hero-main v-view="(e) => changeNavBrand(e, '--teal-white')" :pageTitle="pageTitle" :headerDsc="headerDsc">
       <!-- Header Slot -->
-      <div class="mdev-main-hero --bkg-sizing" :style="heroStyles"></div>
+      <div class="mdev-main-hero">
+        <picture class="--home-hero">
+          <source media="screen" :srcset="loadImage('MDEV-main-hero.png') + '.webp'" type="image/webp">
+          <source media="screen" :srcset="loadImage('MDEV-main-hero.png')" type="image/png">
+          <img alt="Mdev Digital" :src="loadImage('MDEV-main-hero.png')">
+        </picture>
+      </div>
     </hero-main>
     <!-- Process -->
     <home-process v-view="(e) => changeNavBrand(e, '--teal-white')" id="mainContent"></home-process>
@@ -35,12 +41,6 @@ export default{
 
   data: function() {
     return {
-      heroStyles: {
-        backgroundColor: '#0a1315',
-        backgroundImage: 'url(' + this.loadImage('MDEV-main-hero.png') + '.webp)',
-        backgroundPosition: 'top center',
-        backgroundRepeat: 'norepeat'
-      },
       // Disables Page Title bar
       pageTitle: 'Humanize The Web',
       headerDsc: 'A picture of a skelleton watch against a dark marble texture. The words: Mdev Hybrid Digital Agency can be seen woven through the intricate lattices and gears.',
