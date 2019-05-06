@@ -20,6 +20,21 @@ const PrerenderSPAPlugin = require('prerender-spa-plugin');
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 // Sitemap Generator
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
+// WebP Processing
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
+
+const webpOptions =  {
+  config: [{
+    test: /\.(jpe?g|png)/,
+    options: {
+      quality:  100,
+      lossless: true
+    }
+  }],
+  overrideExtension: false,
+  detailedLogs: false,
+  strict: true
+}
 
 // Webpack Merge Configuration
 const merge = require('webpack-merge');
@@ -126,6 +141,7 @@ module.exports = merge(common, {
         windows: false
       }
     }),
+    new ImageminWebpWebpackPlugin(webpOptions),
     // [ PRERENDERER ]--------------------------------
     // The prerenderer is the solution for the SEO problem
     // encountered by all SPAs. This plugin will run through the
