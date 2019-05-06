@@ -118,7 +118,7 @@ export default{
       // Event Listener on scroll with debounce
       window.addEventListener('scroll', () => {
         // Grab the Window Path for Scroll Y
-        let distanceTop = event.path[1].scrollY;
+        let distanceTop = document.body.scrollTop;
         clearTimeout(scrollTimer);
         scrollTimer = setTimeout(this.userScroll(distanceTop),scrollTime);
       });
