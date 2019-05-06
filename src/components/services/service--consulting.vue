@@ -6,7 +6,7 @@
       <div class="mdev-main-hero --hero-padding" :style="heroStyles">
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-digiads">
-          <div class="mdev-center">
+          <div class="--center-consulting">
             <div class="flex flex-vert-center  flex-hor-start --portrait-wrap">
               <object class="--con-keep" id="anim-keep" type="image/svg+xml" :data="loadImage(keepAnim)"></object>
               <div data-header-intro class="--header-cta u-desk-only ">
@@ -398,7 +398,7 @@ $heading-top-padding-mob: 15px;
     }
   }
 
-  .mdev-center {
+  .--center-consulting {
     @include center(both);
     width: 70%;
 

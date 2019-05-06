@@ -6,7 +6,7 @@
       <div class="mdev-main-hero --hero-padding" :style="heroStyles">
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-error">
-          <div class="mdev-center">
+          <div class="--center-err">
             <!-- Top Container -->
             <div class="flex flex-hor-center flex-vert-center --portrait-wrap">
               <object class="--error-fourofour" id="anim-error" type="image/svg+xml" :data="loadImage(errorAnim)"></object>
@@ -226,7 +226,7 @@ $heading-top-padding-mob: 10px;
     }
   }
 
-  .mdev-center {
+  .--center-err {
     @include center(both);
     width: 80%;
 

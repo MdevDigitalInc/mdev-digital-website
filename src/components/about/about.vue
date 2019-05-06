@@ -6,7 +6,7 @@
       <div class="mdev-main-hero --hero-padding" :style="heroStyles">
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header">
-          <div class="mdev-center">
+          <div class="--center-about">
             <h4 data-intro-heading class="a-blur-in u-c-white u-uppercase">
                 {{ $t('aboutpage.intro.heading') }}
             </h4>
@@ -187,7 +187,7 @@ export default{
   padding: 0 5%;
 }
 
-.mdev-center {
+.--center-about {
   width: 100%;
   padding: 0 13%;
   @include center(both);

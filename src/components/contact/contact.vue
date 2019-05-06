@@ -6,7 +6,7 @@
       <div class="mdev-main-hero --hero-padding" :style="heroStyles">
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-contact">
-          <div class="mdev-center">
+          <div class="--center-contact">
             <div class="flex flex-vert-start --portrait-wrap">
               <object class="--contact-lets" id="anim-lets" type="image/svg+xml" :data="loadImage(letsAnim)"></object>
               <!-- CTA Text & Button -->
@@ -289,7 +289,7 @@ export default {
     }
   }
 
-  .mdev-center {
+  .--center-contact {
     @include center(both);
     width: 65%;
 
