@@ -83,15 +83,15 @@ module.exports = {
       // JS Processing & Transpiling
       {
         test: /\.js$/,
-          use: [{
-            loader: "babel-loader",
-            options: {
-              include: [
-                path.resolve(__dirname, "node_modules"),
-                path.resolve(__dirname, "src")
-              ]
-            }
-          }]
+        use: [{
+          loader: "babel-loader",
+          options: {
+            include: [
+              path.resolve(__dirname, "node_modules"),
+              path.resolve(__dirname, "src")
+            ]
+          }
+        }]
       },
       // CSS & SCSS Processing
       {
