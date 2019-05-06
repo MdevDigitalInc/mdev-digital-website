@@ -133,12 +133,19 @@ $flyin-anim-props: opacity .2s ease-out, transform .6s ease-out;
 
 .a-flyin-left {
   transform: translate3d( -100%, 0, 0);
+
+  @media #{$phone-only} {
+    transform: translate3d( -50%, 0, 0);
+  }
 }
 
 // Landscape Only
 .a-flyin-lnd-left {
   @media #{$portrait} {
     transform: translate3d( -100%, 0, 0);
+  }
+  @media #{$phone-only} {
+    transform: translate3d( -50%, 0, 0);
   }
 }
 
@@ -149,12 +156,20 @@ $flyin-anim-props: opacity .2s ease-out, transform .6s ease-out;
 
 .a-flyin-right {
   transform: translate3d( 100%, 0, 0);
+
+  @media #{$phone-only} {
+    transform: translate3d( 50%, 0, 0);
+  }
 }
 
 // Landscape Only
 .a-flyin-lnd-right {
   @media #{$landscape} {
     transform: translate3d( 100%, 0, 0);
+  }
+
+  @media #{$phone-only} {
+    transform: translate3d( 50%, 0, 0);
   }
 }
 
@@ -244,5 +259,3 @@ $rotate-anim-props: transform 1s, opacity .6s;
   opacity: 1;
   transform: rotate3d( 1, 0, 1, 0);
 }
-
-

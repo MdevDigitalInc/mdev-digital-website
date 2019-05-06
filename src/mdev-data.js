@@ -690,7 +690,7 @@ export default  {
         anchor: 'anc-appdev',
         title: 'Forge</br>Your</br>Empire',
         subTitle: 'Application Development',
-        description: 'Developing your own internal tool or creating an innovative new application is a powerful way to solve a unique business challenge or take advantage of a market oppotrtunity. Our focus on security, scalability and longevity will ensure that your investment in technology can scale with your business.',
+        description: 'Developing your own internal tool or creating an innovative new application is a powerful way to solve a unique business challenge or take advantage of a market opportunity. Our focus on security, scalability and longevity will ensure that your investment in technology can scale with your business.',
         topics: [
           'Custom software development',
           'vue.js, node, react, mongo, postgres',
@@ -853,7 +853,7 @@ export default  {
         anchor: 'anc-launch',
         title: 'Set the wheels in motion',
         subTitle: 'Launch Your Campaign',
-        description: 'We know that you are eager to get the word out about your product or service quickly. We will help you structure a omni-channel launch campaign tailored specifically to your audience including social media, print design, and trade show setups. Our launch campaigns often include a landing page that can supply teaser content while we help you build up to a big announcement.',
+        description: 'We know that you are eager to get the word out about your product or service quickly. We will help you structure an omni-channel launch campaign tailored specifically to your audience including social media, print design, and trade show setups. Our launch campaigns often include a landing page that can supply teaser content while we help you build up to a big announcement.',
         topics: [
           'Landing Pages',
           'Event Promotion',

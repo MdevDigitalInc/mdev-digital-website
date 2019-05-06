@@ -3,10 +3,10 @@
     <!-- Hero Component -->
     <hero-main v-view="(e) => changeNavBrand(e, '--teal-white')" :pageTitle="pageTitle" :headerDsc="headerDsc">
       <!-- Slot Content -->
-      <div class="mdev-main-hero --hero-padding" :style="heroStyles">
+      <div class="mdev-main-hero --hero-pad-contact" :style="heroStyles">
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-contact">
-          <div class="mdev-center">
+          <div class="--center-contact">
             <div class="flex flex-vert-start --portrait-wrap">
               <object class="--contact-lets" id="anim-lets" type="image/svg+xml" :data="loadImage(letsAnim)"></object>
               <!-- CTA Text & Button -->
@@ -106,9 +106,6 @@ export default {
         { vmid: 'desc', name: 'description', content: this.seo.contact.desc },
         { vmid: 'twdesc', name: 'twitter:description', content: this.seo.contact.desc },
         { vmid: 'ogdesc', property: 'og:description', content: this.seo.contact.desc }
-      ],
-      script: [
-        { src: 'https://mdevcdn.digital/jquery/jquery340.js'}
       ]
     };
   },
@@ -196,7 +193,7 @@ export default {
   padding: 0 5%;
 }
 
-.--hero-padding {
+.--hero-pad-contact {
   padding-top: 46%;
 
   @media #{$portrait} {
@@ -292,7 +289,7 @@ export default {
     }
   }
 
-  .mdev-center {
+  .--center-contact {
     @include center(both);
     width: 65%;
 

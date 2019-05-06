@@ -108,6 +108,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default{
   name: 'BaseForm',
 
@@ -153,16 +155,18 @@ export default{
         // Flip flag for UX animations
         this.loading = true;
         // Collect fields and serialize them
-        let data = $('#form').serialize();
-        // Ajax call to POST
-        jQuery.ajax ({
-          type: "POST",
-          url: "https://api.formbucket.com/f/buk_4MuLPaj4f0PlLFxvxjFhlk9E",
-          data: data,
-          success: callback,
-          error: function() {
-            alertify.error(this.$t("validation.errors.fail"));
-          }
+        axios.post('https://api.formbucket.com/f/buk_4MuLPaj4f0PlLFxvxjFhlk9E', {
+          name: this.name,
+          company: this.company,
+          phone: this.phone,
+          email: this.email,
+          message: this.message
+        })
+        .then(function (response) {
+          callback();
+        })
+        .catch(function (error) {
+          alertify.error(this.$t("validation.errors.fail"));
         });
       }
       // Else, likely SPAM

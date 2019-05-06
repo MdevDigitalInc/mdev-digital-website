@@ -29,7 +29,7 @@
         </div>
         <!-- Position Marker -->
         <div class="ctrl-position u-light">
-          <span class="u-normal">0{{ desiredIndex + 1 }}</span>
+          <span class="u-normal">0{{ nextIndex }}</span>
           <span class="u-italic">of</span>
           <span class="u-normal">0{{ testimonials.length }}</span>
         </div>
@@ -60,30 +60,38 @@ export default{
   data: function(){
     return{
       arrow: 'svg/arrows/arrow-black.svg',
-      desiredIndex: 0
+      desiredIndex: 0,
+      nextIndex: 1
     };
+  },
+
+  watch: {
+    desiredIndex: function() {
+      this.nextIndex = this.desiredIndex + 1;
+    }
   },
 
   methods: {
     traverse(direction) {
-      let arrayLen = this.testimonials.length - 1;
+      this.$nextTick(() => {
+        let arrayLen = this.testimonials.length - 1;
 
-      // Are we going passed the end of the array?
-      if (direction + this.desiredIndex > arrayLen) {
-        // Reset to start
-        this.desiredIndex = 0;
-      }
-      // Are we going passed the start of the array?
-      else if (direction + this.desiredIndex < 0) {
-        // Reset to the end
-        this.desiredIndex = arrayLen;
-      }
-      else {
-        // Move as desired
-        this.desiredIndex += direction;
-      }
+        // Are we going passed the end of the array?
+        if (direction + this.desiredIndex > arrayLen) {
+          // Reset to start
+          this.desiredIndex = 0;
+        }
+        // Are we going passed the start of the array?
+        else if (direction + this.desiredIndex < 0) {
+          // Reset to the end
+          this.desiredIndex = arrayLen;
+        }
+        else {
+          // Move as desired
+          this.desiredIndex += direction;
+        }
+      });
     }
-
   }
 };
 </script>

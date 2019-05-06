@@ -3,10 +3,10 @@
     <!-- Hero Component -->
     <hero-main v-view="(e) => changeNavBrand(e, '--teal-white')" :pageTitle="pageTitle" :headerDsc="headerDsc">
       <!-- Slot Content -->
-      <div class="mdev-main-hero --hero-padding" :style="heroStyles">
+      <div class="mdev-main-hero --hero-pad-brand" :style="heroStyles">
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header --vivus-branding">
-          <div class="mdev-center">
+          <div class="--center-branding">
             <object class="--branding-tell" id="anim-tell" type="image/svg+xml" :data="loadImage(tellAnim)"></object>
             <object class="--branding-your" id="anim-your" type="image/svg+xml" :data="loadImage(yourAnim)"></object>
             <!-- Bottom Container -->
@@ -194,7 +194,7 @@ $heading-top-padding-mob: 10px;
   padding: 0 5%;
 }
 
-.--hero-padding {
+.--hero-pad-brand {
   padding-top: 50%;
 
   @media #{$portrait} {
@@ -288,7 +288,7 @@ $heading-top-padding-mob: 10px;
     color: $white;
   }
 
-  .mdev-center {
+  .--center-branding {
     @include center(both);
     width: 70%;
 
