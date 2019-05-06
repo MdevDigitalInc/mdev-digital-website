@@ -3,7 +3,7 @@
     <!-- Hero Component -->
     <hero-main v-view="(e) => changeNavBrand(e, '--teal-white')" :pageTitle="pageTitle" :headerDsc="headerDsc">
       <!-- Slot Content -->
-      <div class="mdev-main-hero --hero-padding" :style="heroStyles">
+      <div class="mdev-main-hero --hero-pad-about" :style="heroStyles">
         <!-- Vivus Namespace -->
         <div class="mdev-vivus-header">
           <div class="--center-about">
@@ -217,7 +217,7 @@ export default{
   }
 }
 
-.--hero-padding {
+.--hero-pad-about {
   padding-top: 40%;
 
   @media #{$portrait} {
