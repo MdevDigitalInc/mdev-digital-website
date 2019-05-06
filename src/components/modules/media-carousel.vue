@@ -52,7 +52,7 @@ export default {
   // [ Data ]
   // desiredIndex - Is used to track the current image
   // beind displayed.
-  data: function(){
+  data: function() {
     return{
       desiredIndex: 0,
       intervalTimer: null,

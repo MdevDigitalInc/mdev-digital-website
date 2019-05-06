@@ -153,13 +153,15 @@ export default{
       // Timeout is either 400 / 0 depending on if its opening or closing
       }, ( this.navIsOpen ? 400 : 0) );
 
-      // Turn on Dive Deep Links
-      setTimeout(() => {
-        requestAnimationFrame(() => {
-          this.toggleClass(mainDeep, '--active-deep');
+      // Turn on Dive Deep Links if they are enabled
+      if ( this.deepLinks ) {
+        setTimeout(() => {
+          requestAnimationFrame(() => {
+            this.toggleClass(mainDeep, '--active-deep');
         });
-      // Timeout is either 800 / 0 depending on if its opening or closing
-      }, ( this.navIsOpen ? 800 : 0) );
+        // Timeout is either 800 / 0 depending on if its opening or closing
+        }, ( this.navIsOpen ? 800 : 0) );
+      }
     },
     // Force close menu on route change
     // avoids issues if user goes back on history
@@ -174,7 +176,10 @@ export default{
       }
       this.removeClass(mainBody, 'u-freeze-scroll');
       this.removeClass(mainNavContent, '--active-sidebar');
-      this.removeClass(mainDeep, '--active-deep');
+      // If deep links are active..
+      if ( this.deepLinks ) {
+        this.removeClass(mainDeep, '--active-deep');
+      }
     },
     // User Scroll Handler
     userScroll( distance ) {

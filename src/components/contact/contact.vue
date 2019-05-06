@@ -106,9 +106,6 @@ export default {
         { vmid: 'desc', name: 'description', content: this.seo.contact.desc },
         { vmid: 'twdesc', name: 'twitter:description', content: this.seo.contact.desc },
         { vmid: 'ogdesc', property: 'og:description', content: this.seo.contact.desc }
-      ],
-      script: [
-        { src: 'https://mdevcdn.digital/jquery/jquery340.js'}
       ]
     };
   },
