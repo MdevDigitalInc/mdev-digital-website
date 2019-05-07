@@ -171,7 +171,12 @@ export default {
           }
           else {
             // Track event on Facebook
-            window.fbq('track', 'PageView');
+            if ( window.fbq ) {
+              window.fbq('track', 'PageView');
+            }
+            else {
+              console.log('Fb pixel not initialized');
+            }
           }
         });
       }, 15000);
@@ -204,7 +209,12 @@ export default {
     });
 
     if (!window.__PRERENDER_INJECTED) {
-      window.fbq('track', 'PageView');
+      if ( window.fbq ) {
+        window.fbq('track', 'PageView');
+      }
+      else {
+        console.log('Fb pixel not initialized');
+      }
     }
   },
 
