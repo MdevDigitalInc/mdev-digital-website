@@ -5,7 +5,6 @@
 import '@babel/polyfill'
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
-import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import Meta from 'vue-meta'
 import App from './App.vue';
@@ -38,9 +37,7 @@ const locales = {
   en
 };
 
-// Initialize vue-resource | vue-router | vue-i18n
 Vue.use(VueI18n);
-Vue.use(VueResource);
 // Vue Router
 Vue.use(VueRouter);
 // Meta Info
