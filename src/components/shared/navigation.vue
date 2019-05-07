@@ -121,7 +121,6 @@ export default{
         let distanceTop = event.path ? event.path[1].scrollY : document.body.scrollTop;
         //let distanceTop = document.body.scrollTop;
         clearTimeout(scrollTimer);
-        console.log(distanceTop);
         scrollTimer = setTimeout(this.userScroll(distanceTop),scrollTime);
       });
     });

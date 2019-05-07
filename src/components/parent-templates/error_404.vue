@@ -20,7 +20,7 @@
             <!-- 404 Navigation -->
             <div class="mdev-error-action flex flex-hor-center flex-vert-center">
               <!-- Primary Button -->
-              <btn-primary :BtnData="BtnData">
+              <btn-primary :BtnData="BtnDataTwo">
                 {{ $t('errorpage.path1') }}
               </btn-primary>
               <!-- Primary Button -->
