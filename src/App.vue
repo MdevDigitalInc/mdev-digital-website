@@ -392,5 +392,15 @@ h3.u-c-primary::-moz-selection,
 h4.u-c-primary::-moz-selection {
   background: $color-brand-bkg;
 }
+
+.mdev-link-index::selection,
+.mdev-link-name::selection {
+  background: transparent;
+}
+
+.mdev-link-index::-moz-selection,
+.mdev-link-name::-moz-selection {
+  background: transparent;
+}
 /* stylelint-enable */
 </style>

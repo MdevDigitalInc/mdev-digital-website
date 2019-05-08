@@ -101,6 +101,12 @@ export default{
       font-size: 45px;
     }
   }
+
+  @media screen and (min-width: 1441px) and (max-width: 1649px) {
+    h2 {
+      font-size: 100px;
+    }
+  }
 }
 
 .mdev-team-title,
