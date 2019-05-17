@@ -2,8 +2,8 @@
 export default {
   siteSeo: {
     stagingBuild: false,
-    template: '%s | MDEV Digital | London, Toronto, Montreal',
-    templateAddon: ' | MDEV Digital | London, Toronto, Montreal',
+    template: '%s | MDEV Digital | London, Toronto',
+    templateAddon: ' | MDEV Digital | London, Toronto',
     siteUrlStaging: 'http://4british3y3s0nly.s3-website-us-west-2.amazonaws.com',
     siteUrlLive: 'https://mdev.digital',
     social: {
