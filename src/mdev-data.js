@@ -306,7 +306,7 @@ export default  {
         title: 'Dorian Hall - Front-end Developer',
         description: 'Meet Dorian Hall, our Front-end Developer.'
       },
-      employeeOrigin: 'Guelph, ON',
+      employeeOrigin: 'London, ON',
       employeeQuote: 'Humanity is a discontinuous series of free men irreparably isolated by their subjectivity.',
       employeeTrick: 'Green Tea Aficionado / Curry Tasting Champion',
       employeeImage: 'bios/bio-dorian.png',
