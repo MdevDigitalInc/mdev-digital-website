@@ -2,8 +2,8 @@
 export default {
   siteSeo: {
     stagingBuild: false,
-    template: '%s | MDEV Digital | London, Toronto',
-    templateAddon: ' | MDEV Digital | London, Toronto',
+    template: '%s | MDEV Digital | London, Toronto, US',
+    templateAddon: ' | MDEV Digital | London, Toronto, US',
     siteUrlStaging: 'http://4british3y3s0nly.s3-website-us-west-2.amazonaws.com',
     siteUrlLive: 'https://mdev.digital',
     social: {
@@ -25,43 +25,43 @@ export default {
       ogimage: 'social/MDEV-FB-OG-Home_v01.jpg',
       twimage: 'social/MDEV-TW-Card-Home_v01.png',
       title: 'Process-Driven Development',
-      desc: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'
+      desc: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions.'
     },
     home: {
       ogimage: 'social/MDEV-FB-OG-Home_v01.jpg',
       twimage: 'social/MDEV-TW-Card-Home_v01.png',
       title: 'Process-Driven Development',
-      desc: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions'
+      desc: 'We are a London-based hybrid digital agency offering process-driven branding, website development, software architecture, and business technology solutions.'
     },
     contact: {
       ogimage: 'social/MDEV-FB-OG-Contact_v01.jpg',
       twimage: 'social/MDEV-TW-Card-Contact_v01.png',
       title: 'Contact Us',
-      desc: 'Get in touch to learn more about our services. Let\'s start something new.'
+      desc: 'Let\'s start something new. Get in touch to learn more about our services.'
     },
     services: {
       ogimage: 'social/MDEV-FB-OG-Services_v01.jpg',
       twimage: 'social/MDEV-TW-Card-Services_v01.png',
       title: 'Web & Application Development Services',
-      desc: 'We provide highly customized software and websites that suit your business needs. From e-commerce to custom apps, we\'ll help you stand out in the digital realm.'
+      desc: 'We provide customized software and websites that suit your business needs. Along with marketing and branding, we\'ll help you stand out in the digital realm.'
     },
     appdev: {
       ogimage: 'social/MDEV-FB-OG-Apps_v01.jpg',
       twimage: 'social/MDEV-TW-Card-Apps_v01.png',
       title: 'Custom Software Application Development',
-      desc: 'We bring your ideas to life through cutting-edge development services to agile development practices, modern UX/UI principles, and secure, cloud-based technology.'
+      desc: 'We bring your ideas to life through cutting-edge development services, agile development practices, modern UX/UI principles, and secure, cloud-based technology.'
     },
     branding: {
       ogimage: 'social/MDEV-FB-OG-Branding_v01.jpg',
       twimage: 'social/MDEV-TW-Card-Branding_v01.png',
       title: 'Branding & Corporate Identity Services',
-      desc: 'We will help you discover and share your brand. We can start from scratch or help you enhance your existing brand(s) into a cohesive corporate identity system.'
+      desc: 'We\'ll help you discover and share your brand. We\'ll start from the ground up or help you enhance your existing brand into a cohesive corporate identity system.'
     },
     support: {
       ogimage: 'social/MDEV-FB-OG-Support_v01.jpg',
       twimage: 'social/MDEV-TW-Card-Support_v01.png',
       title: 'Support Services',
-      desc: 'We\'ll help you with your email deployments, domain hosting, migration & dispute resolution, and cloud computing services.'
+      desc: 'We\'ll help you with your IT consulting needs. We do email deployments, domain hosting, migration & dispute resolution, and cloud computing services.'
     },
     digiads: {
       ogimage: 'social/MDEV-FB-OG-Marketing_v01.jpg',
@@ -73,7 +73,7 @@ export default {
       ogimage: 'social/MDEV-FB-OG-Web_v01.jpg',
       twimage: 'social/MDEV-TW-Card-Web_v01.png',
       title: 'Web Design Services',
-      desc: 'We\'ll help you with custom web design & development, user interface design, responsive web design, and custom wordpress development.'
+      desc: 'We\'ll help you humanize the web with custom web design & development, user interface design, responsive web design, and custom wordpress development. '
     },
     error: {
       ogimage: 'social/MDEV-FB-OG-Home_v01.jpg',
