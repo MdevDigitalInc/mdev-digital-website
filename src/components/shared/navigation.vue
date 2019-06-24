@@ -1,4 +1,4 @@
-q<template>
+<template>
   <nav
     class="mdev-main-nav --nav-color"
     aria-role="navigation"
