@@ -26,7 +26,7 @@
 // environment and disables webp when in dev mode.
 
 export default{
-  name: 'BaseTemplate',
+  name: 'UniversalImage',
 
   props: [ 'source', 'a11y', 'gif' ],
 

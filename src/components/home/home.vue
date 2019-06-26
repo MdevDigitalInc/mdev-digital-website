@@ -3,11 +3,8 @@
     <hero-main v-view="(e) => changeNavBrand(e, '--teal-white')" :pageTitle="pageTitle" :headerDsc="headerDsc">
       <!-- Header Slot -->
       <div class="mdev-main-hero">
-        <picture class="--home-hero">
-          <source media="screen" :srcset="loadImage('MDEV-main-hero.png') + '.webp'" type="image/webp">
-          <source media="screen" :srcset="loadImage('MDEV-main-hero.png')" type="image/png">
-          <img alt="Mdev Digital" :src="loadImage('MDEV-main-hero.png')">
-        </picture>
+        <!-- Universal Image -->
+        <universal-image class="--home-hero" source="MDEV-main-hero.png" a11y="MDEV Digital"></universal-image>
       </div>
     </hero-main>
     <!-- Process -->

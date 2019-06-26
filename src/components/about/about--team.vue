@@ -25,11 +25,8 @@
         v-in-viewport
         class="--team mdev-member a-rotate-x-r" :class="member.class">
         <!-- Team Picture -->
-        <picture>
-          <source media="screen" :srcset="loadImage(member.image) + '.webp'" type="image/webp">
-          <source media="screen" :srcset="loadImage(member.image)" type="image/png">
-          <img :src="loadImage(member.image)" :alt="member.a11y" />
-        </picture>
+        <universal-image :source="member.image" :a11y="member.a11y"></universal-image>
+
         <span class="--name u-uppercase u-bold">
           {{ member.name }}
         </span>

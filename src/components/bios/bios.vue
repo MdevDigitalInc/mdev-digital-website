@@ -58,11 +58,8 @@
         </social-links>
         <!-- Team Member Picture -->
         <div class="mdev-bios-image u-text-center">
-          <picture>
-            <source media="screen" :srcset="loadImage(mdevBio.employeeImage) + '.webp'" type="image/webp">
-            <source media="screen" :srcset="loadImage(mdevBio.employeeImage)" type="image/png">
-            <img :src="loadImage(mdevBio.employeeImage)" :alt="mdevBio.employeeName"/>
-          </picture>
+          <!-- Universal Image -->
+          <universal-image :source="mdevBio.employeeImage" :a11y="mdevBio.employeeName" ></universal-image>
         </div>
       </div>
     </div>
