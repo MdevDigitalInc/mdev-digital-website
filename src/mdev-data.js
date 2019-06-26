@@ -1198,10 +1198,10 @@ export default  {
     },
     {
       longImg: {
-        src: 'home/case-study-ZUC.png',
-        a11y: 'Zucora Home | User Experience & Ecommerce Development',
+        src: 'home/case-study-HAR.png',
+        a11y: 'Rockys Harley Davidson & Blackbridge Harley Davidson | Digital Marketing',
         route: '/comingsoon',
-        title: 'View Zucora Home Case Study'
+        title: 'View Harley Davidson Dealerships Case Study'
       },
       leftImg: {
         src: 'home/case-study-PWH.png',
