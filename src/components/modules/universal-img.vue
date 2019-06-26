@@ -1,7 +1,7 @@
 <template>
     <picture>
-      <source v-if="webpEnabled" media="screen" :srcset="loadImage(source) + '.webp'" type="image/webp">
-      <source media="screen" :srcset="loadImage(source)" type="image/png">
+      <source v-if="webpEnabled && !gif" media="screen" :srcset="loadImage(source) + '.webp'" type="image/webp">
+      <source v-if="!gif" media="screen" :srcset="loadImage(source)" type="image/png">
       <img :alt="a11y" :src="loadImage(source)">
     </picture>
 </template>
@@ -28,7 +28,7 @@
 export default{
   name: 'BaseTemplate',
 
-  props: [ 'source', 'a11y' ],
+  props: [ 'source', 'a11y', 'gif' ],
 
   // Before mount check environment
   beforeMount () {
