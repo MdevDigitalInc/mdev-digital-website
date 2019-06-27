@@ -5,11 +5,9 @@
       :href="longImg.route"
       class="mdev-work mdev-work-long"
       :title="longImg.title">
-      <picture>
-        <source media="screen" :srcset="loadImage(this.longImg.src) + '.webp'" type="image/webp">
-        <source media="screen" :srcset="loadImage(this.longImg.src)" type="image/png">
-        <img :alt="longImg.title" :src="loadImage(this.longImg.src)">
-      </picture>
+
+      <universal-image :source="this.longImg.src" :a11y="longImg.title"></universal-image>
+
       <span class="u-screenreader">
         {{ longImg.a11y }}
       </span>
@@ -19,11 +17,9 @@
       :href="leftImg.route"
       class="mdev-work mdev-work-square"
       :title="leftImg.title">
-      <picture>
-        <source media="screen" :srcset="loadImage(this.leftImg.src) + '.webp'" type="image/webp">
-        <source media="screen" :srcset="loadImage(this.leftImg.src)" type="image/png">
-        <img :alt="leftImg.title" :src="loadImage(this.leftImg.src)">
-      </picture>
+
+      <universal-image :source="this.leftImg.src" :a11y="leftImg.title"></universal-image>
+
       <span class="u-screenreader">
         {{ leftImg.a11y }}
       </span>
@@ -33,11 +29,9 @@
       :href="rightImg.route"
       class="mdev-work mdev-work-square"
       :title="rightImg.title">
-      <picture>
-        <source media="screen" :srcset="loadImage(this.rightImg.src) + '.webp'" type="image/webp">
-        <source media="screen" :srcset="loadImage(this.rightImg.src)" type="image/png">
-        <img :alt="rightImg.title" :src="loadImage(this.rightImg.src)">
-      </picture>
+
+      <universal-image :source="this.rightImg.src" :a11y="rightImg.title"></universal-image>
+
       <span class="u-screenreader">
         {{ rightImg.a11y }}
       </span>

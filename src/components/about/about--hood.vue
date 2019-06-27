@@ -9,23 +9,22 @@
       </p>
     </div>
     <div class="mdev-100-kell" :class="{'--decoration' : decoration}">
-      <picture class="--landscape">
-        <source media="screen" :srcset="loadImage(foreground) + '.webp'" type="image/webp">
-        <source media="screen" :srcset="loadImage(foreground)" type="image/png">
-        <img :src="loadImage(foreground)" :alt="a11y"/>
-      </picture>
-      <picture class="--portrait">
-        <source media="screen" :srcset="loadImage(foregroundMob) + '.webp'" type="image/webp">
-        <source media="screen" :srcset="loadImage(foregroundMob)" type="image/png">
-        <img :src="loadImage(foregroundMob)" :alt="a11y"/>
-      </picture>
+      <universal-image
+        class="--landscape"
+        :source="foreground"
+        :a11y="a11y"></universal-image>
+
+      <universal-image
+        class="--portrait"
+        :source="foregroundMob"
+        :a11y="a11y"></universal-image>
     </div>
     <div class="mdev-hood-mask --triangle-top-r">
-      <picture class="--rotate-hood" v-in-viewport>
-        <source media="screen" :srcset="loadImage(background) + '.webp'" type="image/webp">
-        <source media="screen" :srcset="loadImage(background)" type="image/png">
-        <img :src="loadImage(background)"/>
-      </picture>
+      <universal-image
+        v-in-viewport
+        class="--rotate-hood"
+        :source="background"
+        :a11y="a11y"></universal-image>
     </div>
   </section>
 </template>

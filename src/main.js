@@ -306,6 +306,7 @@ import BtnPrimary         from '../src/components/shared/btn-primary.vue';
 import ChapterLink        from '../src/components/shared/chapter-link.vue';
 import PreFooter          from '../src/components/shared/pre-footer.vue';
 import SocialLinks        from '../src/components/shared/social-links.vue';
+import UniversalImage     from '../src/components/modules/universal-img.vue';
 
 // Global Component Assign
 Vue.component('hero-main', HeroMain);
@@ -314,6 +315,7 @@ Vue.component('btn-primary', BtnPrimary);
 Vue.component('chapter-link', ChapterLink);
 Vue.component('pre-footer', PreFooter);
 Vue.component('social-links', SocialLinks);
+Vue.component('universal-image', UniversalImage);
 
 
 // [ Main Vue Instance ] ----------------------------

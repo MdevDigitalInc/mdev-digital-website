@@ -2,14 +2,15 @@
   <section class="mdev-media-carousel"
     v-view="(e) => inView = ( this.multiImage ? checkVisibility(e, .3) : false )">
     <!-- Image Loop -->
-    <picture
-      :aria-hidden="(multiImage && index != desiredIndex)"
+
+    <universal-image
       v-for="(images, index) in media"
-      :class="{ '--active' : (index == desiredIndex)}">
-        <source v-if="!images.gif" media="screen" :srcset="loadImage(images.image) + '.webp'" type="image/webp">
-        <source v-if="!images.gif" media="screen" :srcset="loadImage(images.image)" type="image/png">
-        <img :alt="images.imageDesc" :src="loadImage(images.image)">
-    </picture>
+      :gif="images.gif"
+      :class="{ '--active' : (index == desiredIndex)}"
+      :aria-hidden="(multiImage && index != desiredIndex)"
+      :source="images.image"
+      :a11y="images.imageDesc"></universal-image>
+
     <!-- Optional Controls -->
     <div v-if="multiImage"
       :class="{'flex-hor-end' : flip, 'flex-hor-start' : !flip}"
