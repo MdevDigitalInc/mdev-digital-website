@@ -507,7 +507,17 @@ export default  {
           {
             gif: false,
             image: 'services/branding/logo-design.png',
-            imageDesc: 'Branding Samples for Ketolibriyum'
+            imageDesc: 'Branding Samples'
+          },
+          {
+            gif: false,
+            image: 'services/branding/logo-design-pwh.png',
+            imageDesc: 'Branding Samples for Powerhouse Brewery in London Ontario'
+          },
+          {
+            gif: false,
+            image: 'services/branding/logo-design-tbc.png',
+            imageDesc: 'Branding Samples for Tobermory Brewery in Tobermory Ontario'
           }
         ]
       },
@@ -529,11 +539,6 @@ export default  {
             gif: false,
             image: 'services/branding/print-agcap-brochure.png',
             imageDesc: 'AgCapital Canada Print Brochure.'
-          },
-          {
-            gif: false,
-            image: 'services/branding/print-zucora-printbook.png',
-            imageDesc: 'Zucora Home Print Booklet.'
           }
         ]
       },
@@ -552,13 +557,13 @@ export default  {
         media: [
           {
             gif: false,
-            image: 'services/branding/packaging-zuc-purecare.png',
-            imageDesc: 'Zucora Purecare Packaging.'
+            image: 'services/branding/packaging-pwh-4up.png',
+            imageDesc: 'Powerhouse Brewery Beer Labels'
           },
           {
             gif: false,
-            image: 'services/branding/packaging-pwh-homecoming.png',
-            imageDesc: 'Powerhouse Brewery Homecoming Beer Label.'
+            image: 'services/branding/packaging-tbc-3up.png',
+            imageDesc: 'Tobermory Brewery Beer Labels'
           }
         ]
       }
@@ -603,8 +608,8 @@ export default  {
           },
           {
             gif: false,
-            image: 'services/webdev/web-design-zuc.png',
-            imageDesc: 'Zucora Home Website Design.'
+            image: 'services/webdev/web-design-nxl.png',
+            imageDesc: 'The Next Level VR Website Design.'
           }
         ]
       },
@@ -626,11 +631,6 @@ export default  {
             gif: false,
             image: 'services/webdev/ecom-keto.png',
             imageDesc: 'Ketolibriyum ecommerce Website.'
-          },
-          {
-            gif: false,
-            image: 'services/webdev/ecom-zucora.png',
-            imageDesc: 'Zucora Home ecommerce Website.'
           },
           {
             gif: false,
@@ -701,9 +701,9 @@ export default  {
         caseStudy: false,
         media: [
           {
-            gif: true,
-            image: 'services/appdev/ZUC_SoftwareAnimation_laptop.gif',
-            imageDesc: 'Zucora Home Technician Portal Custom Software'
+            gif: false,
+            image: 'services/appdev/TFAC_Wireframe-Scroll-laptop.png',
+            imageDesc: 'The Factory Portal Custom Software'
           }
         ]
       }
@@ -864,8 +864,8 @@ export default  {
         media: [
           {
             gif: false,
-            image: 'services/digiads/launch-tfac-landing-page.png',
-            imageDesc: 'The Factory London Landing Page.'
+            image: 'services/digiads/launch-pwh-landing-page.png',
+            imageDesc: 'Powerhouse Brewery Landing Page.'
           },
           {
             gif: false,
@@ -1371,10 +1371,6 @@ export default  {
   },
 
   testimonials: [
-    {
-      content: 'We wanted an application with a fast, modern interface that would work equally well on phones, tablets and browsers. It also needed to work with our legacy systems and a historical data model. The application they created did both amazingly, managing payment information for thousands of orders annually, saving us huge amounts of time. Absolutely loved that project - way ahead of its time!',
-      name: 'Aaron Finkenzeller, Former CTO of Zucora Inc.'
-    },
     {
       content: 'Working with MDEV exceeded my expectations.  They were knowledgeable, creative and aligned seamlessly to the vision of the project. Through the twists and turns of a start-up, they were able to adapt and executed the project beautifully.',
       name: 'Angela Hawkins, Former Marketing Director of The Factory'
